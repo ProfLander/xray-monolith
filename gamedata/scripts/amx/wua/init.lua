@@ -1,5 +1,5 @@
-local unlocalize = require("amx/wua/unlocalize").unlocalize
-local compile = require("amx/wua/compile").compile
+local unlocalize = import("unlocalize").unlocalize
+local compile = import("compile").compile
 
 local function expand(src, namespace_name, script_name)
    print("* " .. _PACKAGE .. ": expanding", namespace_name)
