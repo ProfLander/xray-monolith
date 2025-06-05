@@ -183,20 +183,6 @@ do
 		local file_name = t[i]
 		_G[file_name].on_xml_read()
 	end
-
-	-- Force load some other non modxml scripts
-	local force_load = {
-		["ui_options_modded_exes"] = true
-	}
-	k2t_table(force_load)
-	table_sort(force_load)
-
-	for _, k in ipairs(force_load) do
-		if (_G[k] and _G[k].on_xml_read) then
-			local s = _G[k]
-			s.on_xml_read()
-		end
-	end
 end
 
 -- Cache parsed files

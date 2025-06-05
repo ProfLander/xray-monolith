@@ -1,10 +1,9 @@
---local remap = import("/moved").remap
+local remap = import("/moved").remap
 
 local G = setmetatable(
    {},
    {
       __index = function(self, key)
-         --[[
          -- Fetch the remap for this key
          local redir = remap[key]
 
@@ -40,7 +39,6 @@ local G = setmetatable(
                return rv
             end
          end
-         --]]
 
          -- Otherwise, check the global key's value and return if valid
          local gv = _G[key]
