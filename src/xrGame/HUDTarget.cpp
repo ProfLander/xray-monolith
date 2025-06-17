@@ -204,8 +204,8 @@ void TargetCrosshair::Update(const SPickParam& pp, bool is_far)
 	crosshair.SetShader(&settings.shader);
 	crosshair.SetTexture(&settings.texture);
 
-	// If firepos is active
-	if (HUD().FireposActive())
+	// If aimpos is active
+	if (HUD().AimposActive())
 	{
 		// Rotate the crosshair
 		Fvector hpb_barrel, hpb_cam;
@@ -221,7 +221,6 @@ void TargetCrosshair::Update(const SPickParam& pp, bool is_far)
 		opacity_target = settings.occluded_opacity;
 
 	IntegrateOpacity(pp, opacity_target);
-
 }
 
 void TargetCrosshair::Render(const SPickParam& pp)
@@ -379,8 +378,8 @@ void CHUDTarget::Render()
 	if (psCrosshair_Flags.is(CROSSHAIR_INDEPENDENT))
 	{
 		const SPickParam& pick_hud = HUD().GetPick();
-		m_camera.crosshair_near.recon.SetDoTransform(!firepos_active && aimpos_active);
-		m_camera.crosshair_far.recon.SetDoTransform(!firepos_active && aimpos_active);
+		m_camera.crosshair_near.recon.SetDoTransform(firepos_active || aimpos_active);
+		m_camera.crosshair_far.recon.SetDoTransform(firepos_active || aimpos_active);
 		m_camera.Update(pick_hud);
 
 		if (m_bShowCrosshair)
@@ -414,9 +413,9 @@ void CHUDTarget::Render()
 	}
 	else
 	{
-		SPickParam& pick = pActor->GetPick();
+		const SPickParam& pick = pActor->GetPick();
 		m_camera.crosshair_near.recon.SetDoTransform(firepos_active || aimpos_active);
-		m_camera.crosshair_far.recon.SetDoTransform(!firepos_active && aimpos_active);
+		m_camera.crosshair_far.recon.SetDoTransform(firepos_active || aimpos_active);
 		m_camera.Update(pick);
 		if (m_bShowCrosshair)
 			m_camera.Render(pick);
