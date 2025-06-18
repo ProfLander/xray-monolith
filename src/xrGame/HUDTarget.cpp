@@ -43,7 +43,8 @@ CrosshairSettings g_crosshair_camera_near = CrosshairSettings(
 
 CrosshairSettings g_crosshair_weapon_far = CrosshairSettings(
 	{
-		CROSSHAIR_USE_SHADER
+		CROSSHAIR_SHOW |
+		CROSSHAIR_RECON
 	},
 	"hud\\cursor",
 	"ui\\cursor_plus",
@@ -73,7 +74,8 @@ CrosshairSettings g_crosshair_weapon_near = CrosshairSettings(
 
 CrosshairSettings g_crosshair_device_far = CrosshairSettings(
 	{
-		CROSSHAIR_USE_SHADER
+		CROSSHAIR_SHOW |
+		CROSSHAIR_RECON
 	},
 	"hud\\cursor",
 	"ui\\cursor_plus",
@@ -375,49 +377,56 @@ void CHUDTarget::Render()
 	bool firepos_active = hud.FireposActive();
 	bool aimpos_active = hud.AimposActive();
 
-	if (psCrosshair_Flags.is(CROSSHAIR_INDEPENDENT))
+	attachable_hud_item* pWeapon = g_player_hud->attached_item(0);
+	attachable_hud_item* pDevice = g_player_hud->attached_item(1);
+
+	const SPickParam& pick_hud = HUD().GetPick();
+	m_camera.crosshair_near.recon.SetDoTransform(firepos_active || aimpos_active);
+	m_camera.crosshair_far.recon.SetDoTransform(firepos_active || aimpos_active);
+	m_camera.Update(pick_hud);
+
+	const SPickParam* pick_wpn = nullptr;
+	if (pWeapon)
 	{
-		const SPickParam& pick_hud = HUD().GetPick();
-		m_camera.crosshair_near.recon.SetDoTransform(firepos_active || aimpos_active);
-		m_camera.crosshair_far.recon.SetDoTransform(firepos_active || aimpos_active);
-		m_camera.Update(pick_hud);
-
-		if (m_bShowCrosshair)
-			m_camera.Render(pick_hud);
-
-		attachable_hud_item* pWeapon = g_player_hud->attached_item(0);
-		if (pWeapon)
+		CHudItem* pItem = pWeapon->m_parent_hud_item;
+		if (pItem)
 		{
-			CHudItem* pItem = pWeapon->m_parent_hud_item;
-			if (pItem)
-			{
-				const SPickParam& pick = pItem->GetPick();
-				m_weapon.Update(pick);
-				if (m_bShowCrosshair)
-					m_weapon.Render(pick);
-			}
-		}
-
-		attachable_hud_item* pDevice = g_player_hud->attached_item(1);
-		if (pActor->HUDview() && pDevice)
-		{
-			CHudItem* pItem = pDevice->m_parent_hud_item;
-			if (pItem)
-			{
-				const SPickParam& pick = pItem->GetPick();
-				m_device.Update(pick);
-				if (m_bShowCrosshair)
-					m_device.Render(pick);
-			}
+			pick_wpn = &pItem->GetPick();
+			m_weapon.crosshair_near.recon.SetDoTransform(firepos_active || aimpos_active);
+			m_weapon.crosshair_far.recon.SetDoTransform(firepos_active || aimpos_active);
+			m_weapon.Update(*pick_wpn);
 		}
 	}
-	else
+
+	const SPickParam* pick_dev = nullptr;
+	if (pActor->HUDview() && pDevice)
 	{
-		const SPickParam& pick = pActor->GetPick();
-		m_camera.crosshair_near.recon.SetDoTransform(firepos_active || aimpos_active);
-		m_camera.crosshair_far.recon.SetDoTransform(firepos_active || aimpos_active);
-		m_camera.Update(pick);
-		if (m_bShowCrosshair)
-			m_camera.Render(pick);
+		CHudItem* pItem = pDevice->m_parent_hud_item;
+		if (pItem)
+		{
+			pick_dev = &pItem->GetPick();
+			m_device.crosshair_near.recon.SetDoTransform(firepos_active || aimpos_active);
+			m_device.crosshair_far.recon.SetDoTransform(firepos_active || aimpos_active);
+			m_device.Update(*pick_dev);
+		}
 	}
+
+	if (!m_bShowCrosshair)
+		return;
+
+	if (pick_wpn)
+	{
+		m_weapon.Render(*pick_wpn);
+		if (!psCrosshair_Flags.is(CROSSHAIR_INDEPENDENT))
+			return;
+	}
+
+	if (pick_dev)
+	{
+		m_device.Render(*pick_dev);
+		if (!psCrosshair_Flags.is(CROSSHAIR_INDEPENDENT))
+			return;
+	}
+
+	m_camera.Render(pick_hud);
 }

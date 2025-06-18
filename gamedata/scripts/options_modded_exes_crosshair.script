@@ -221,9 +221,9 @@ append(
 		prefix = "weapon",
 		defs = {
 			far = {
-				show = false,
-				use_shader = true,
-				recon = false,
+				show = true,
+				use_shader = false,
+				recon = true,
 				line = false,
 
 				shader = "hud\\cursor",
@@ -262,9 +262,9 @@ append(
 		prefix = "device",
 		defs = {
 			far = {
-				show = false,
-				use_shader = true,
-				recon = false,
+				show = true,
+				use_shader = false,
+				recon = true,
 				line = false,
 
 				shader = "hud\\cursor",
