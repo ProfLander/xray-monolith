@@ -390,6 +390,7 @@ bool LoadKernelScriptToGlobal(lua_State* L, const char* name)
 	return true;
 };
 
+BOOL lua_debug = FALSE;
 void CScriptStorage::reinit()
 {
 	if (m_virtual_machine)
@@ -445,24 +446,28 @@ void CScriptStorage::reinit()
 	}
 
 #endif //!USE_LUAJIT_ONE
-	bool isDebugEnabled = strstr(Core.Params, "-dbg") != nullptr;
+	bool isDebugEnabled = lua_debug;
 	luaopen_lua_extensions(lua(), isDebugEnabled);
 	disable_os_funcs(lua());
 
-	LoadKernelScriptToGlobal(lua(), "global.lua");
-	LoadKernelScriptToGlobal(lua(), "dynamic_callbacks.lua");
-
-	// Sockets
-	luajit::open_lib(lua(), "socket.core", luaopen_socket_core_init());
-	bool SocketTest = LoadKernelScriptToGlobal(lua(), "socket.lua");
-
-	// Panda
-	if (SocketTest)
+	if (isDebugEnabled)
 	{
-		pdebug_init_init(lua());
-		LoadKernelScriptToGlobal(lua(), "LuaPanda.lua");
-	}
+		Msg("!lua_debug 1, opening socket and initializing LuaPanda");
+		LoadKernelScriptToGlobal(lua(), "global.lua");
+		LoadKernelScriptToGlobal(lua(), "dynamic_callbacks.lua");
 
+		// Sockets
+		luajit::open_lib(lua(), "socket.core", luaopen_socket_core_init());
+		bool SocketTest = LoadKernelScriptToGlobal(lua(), "socket.lua");
+
+		// Panda
+		if (SocketTest)
+		{
+			pdebug_init_init(lua());
+			LoadKernelScriptToGlobal(lua(), "LuaPanda.lua");
+		}
+	}
+	
 	if (strstr(Core.Params, "-_g"))
 		file_header = file_header_new; //AVO: I get fatal crash at the start if this is used
 	else
