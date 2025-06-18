@@ -3280,13 +3280,23 @@ Fmatrix CWeapon::RayTransform()
 		matrix.mulB_43(Fmatrix().translate(vLoadedFirePoint));
 	}
 
+	// Fetch actor
+	const CActor* pActor = Actor();
+
 	// Fetch HUD pick
 	const SPickParam& hud_pick = HUD().GetPick();
 
-	// If firepos is disabled, use the hud pick's start position
+	// If firepos is disabled, use the eye position
 	bool firepos = HUD().FireposActive();
 	if (!firepos)
-		matrix.c = hud_pick.defs.start;
+	{
+		if (GetHUDmode())
+			// If we're in first-person, use the HUD pick start position
+			matrix.c = hud_pick.defs.start;
+		else
+			// If we're in third-person, project the actor position onto the HUD pick vector
+			matrix.c = Fvector().mad(hud_pick.defs.start, hud_pick.defs.dir, Fvector().sub(pActor->Position(), hud_pick.defs.start).dotproduct(hud_pick.defs.dir));
+	}
 
 	// If aim position is disabled...
 	bool aimpos = HUD().AimposActive();
@@ -3309,7 +3319,6 @@ Fmatrix CWeapon::RayTransform()
 		Device.mInvView.getHPB(_h, _p, b);
 
 		// Account for freelook offset
-		const CActor* pActor = Actor();
 		if (pActor && pActor->cam_freelook != eflDisabled)
 		{
 			float cam_h, cam_p, cam_b;

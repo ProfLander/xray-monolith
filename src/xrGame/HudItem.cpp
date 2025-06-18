@@ -1023,17 +1023,17 @@ void CHudItem::Ray(SPickParam& pp)
 	Fvector eye_pos;
 
 	// Start by choosing an eye position
-	if (GetHUDmode())
+	if (!GetHUDmode() && HUD().FireposActive())
 	{
-		// In first-person, use the camera
-		eye_pos = Device.vCameraPosition;
-	}
-	else
-	{
-		// If we're in third-person and firepos is active, use the actor's head bone
+		// If we're in third-person with firepos active, use the actor's head bone
 		eye_pos = pActor->XFORM().c;
 		auto model = pActor->Visual()->dcast_PKinematics();
 		eye_pos.add(model->LL_GetTransform(model->LL_BoneID("bip01_head")).c);
+	}
+	else
+	{
+		// Otherwise, use the camera
+		eye_pos = Device.vCameraPosition;
 	}
 
 	// Trace from eye -> barrel
@@ -1080,7 +1080,7 @@ void CHudItem::Ray(SPickParam& pp)
 		return;
 	}
 
-	// And trace from it
+	// Trace from the resulting transform
 	pp.defs.start = matrix.c;
 	pp.defs.dir = matrix.k;
 }
