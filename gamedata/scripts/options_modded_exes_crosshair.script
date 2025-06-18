@@ -231,7 +231,7 @@ append(
 
 				distance_lerp_rate = 40,
 
-				size = 4,
+				size = 1,
 				depth = 25,
 			},
 			near = {
@@ -262,7 +262,7 @@ append(
 		prefix = "device",
 		defs = {
 			far = {
-				show = true,
+				show = false,
 				use_shader = false,
 				recon = true,
 				line = false,
@@ -272,7 +272,7 @@ append(
 
 				distance_lerp_rate = 40,
 
-				size = 4,
+				size = 1,
 				depth = 25,
 			},
 			near = {
