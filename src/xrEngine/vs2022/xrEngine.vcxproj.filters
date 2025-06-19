@@ -788,15 +788,9 @@
     <ClCompile Include="..\..\3rd party\discord\voice_manager.cpp">
       <Filter>Interfaces\Discord</Filter>
     </ClCompile>
-    <ClCompile Include="..\imgui_base.cpp">
-      <Filter>Interfaces\ImGui</Filter>
-    </ClCompile>
-    <ClCompile Include="..\imgui_base_input.cpp">
-      <Filter>Interfaces\ImGui</Filter>
-    </ClCompile>
-    <ClCompile Include="..\imgui_helper.cpp">
-      <Filter>Interfaces\ImGui</Filter>
-    </ClCompile>
+    <ClCompile Include="..\imgui_base.cpp" />
+    <ClCompile Include="..\imgui_base_input.cpp" />
+    <ClCompile Include="..\imgui_helper.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="..\splash_xrcs_en.bmp">

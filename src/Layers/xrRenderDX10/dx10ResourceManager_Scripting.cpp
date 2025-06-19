@@ -327,7 +327,7 @@ static void *lua_alloc		(void *ud, void *ptr, size_t osize, size_t nsize) {
 #endif // USE_DL_ALLOCATOR
 
 // export
-extern int luaopen_lua_extensions(lua_State* L);
+extern int luaopen_lua_extensions(lua_State* L, bool IsDebug = false);
 
 void CResourceManager::LS_Load()
 {
