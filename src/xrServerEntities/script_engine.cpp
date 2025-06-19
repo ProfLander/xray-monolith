@@ -544,7 +544,7 @@ void CScriptEngine::reinit()
 	bool isDebugEnabled = lua_debug;
     luaopen_lua_extensions(lua());
 
-    if (isDebugEnabled || true)
+    if (isDebugEnabled)
     {
         init_socket_core(lua());
         pdebug_init_init(lua());
