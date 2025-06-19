@@ -1696,14 +1696,12 @@ end
 -- @filePath 被替换的路径
 -- @ext      后缀(后缀前的 . 不会被替换)
 function this.changePotToSep(filePath, ext)
-    local idx = filePath:find(ext, (-1) * ext:len(), true)
+    local idx = filePath:find(ext, (-1) * ext:len() , true)
     if idx then
-        local tmp = filePath:sub(1, idx - 2):gsub("%.", "/") -- Exclude the dot before the extension
-        filePath = tmp .. filePath:sub(idx - 1) -- Preserve the dot and extension
-    else
-        filePath = filePath:gsub("%.", "/")
+        local tmp = filePath:sub(1, idx - 1):gsub("%.", "/");
+        filePath = tmp .. ext;
     end
-    return filePath
+    return filePath;
 end
 
 --- this.truncatedPath 从 beTruncatedPath 字符串中去除 rep 匹配到的部分

@@ -43,7 +43,9 @@ _LUA_G = _G
 --- Emplace an error-checked lua compiler with customizable environment
 _LOADSTRING = loadstring
 function loadstring(src, namespace_name, script_name)
-   print("* [lua] loading " .. namespace_name)
+   if namespace_name then
+      print("* [lua] loading " .. namespace_name)
+   end
 
    local f, err = _LOADSTRING(src, namespace_name)
    if not f then

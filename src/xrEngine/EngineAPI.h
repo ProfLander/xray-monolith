@@ -48,7 +48,6 @@ public:
 	BOOL tune_enabled;
 	VTPause* tune_pause;
 	VTResume* tune_resume;
-
 	void Initialize();
 
 #ifndef DEDICATED_SERVER

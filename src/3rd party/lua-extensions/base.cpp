@@ -18,7 +18,17 @@ extern "C"{
     #include "lmarshal.h"
     #include "luasocket/socket.h"
     #include "luasocket/luasocket.h"
+    #include <lua.h>
 }
+
+struct luajit {
+    static void open_lib(lua_State* L, LPCSTR module_name, lua_CFunction function)
+    {
+        lua_pushcfunction(L, function);
+        lua_pushstring(L, module_name);
+        lua_call(L, 1, 0);
+    }
+};
 
 //#include "Libs.h"
 #include "script_additional_libs.h"
@@ -58,4 +68,8 @@ lua_CFunction luaopen_socket_core_init() {
 
 void pdebug_init_init(lua_State* L) {
     pdebug_init(L);
+}
+
+void init_socket_core(lua_State* L) {
+    luajit::open_lib(L, "socket.core", luaopen_socket_core_init());
 }
