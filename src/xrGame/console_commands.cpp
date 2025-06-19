@@ -78,9 +78,7 @@ ENGINE_API
 extern float psHUD_FOV_def;
 extern float psSqueezeVelocity;
 
-// Lua
 extern int psLUA_GCSTEP;
-extern BOOL lua_debug;
 
 float g_end_modif = 0.f;
 
@@ -2420,7 +2418,6 @@ void CCC_RegisterCommands()
 
     // Moved lua_gcstep outside of DEBUG to allow for easier experimentation.
 	CMD4(CCC_Integer, "lua_gcstep", &psLUA_GCSTEP, 1, 1000);
-	CMD4(CCC_Integer, "lua_debug", &lua_debug, 0, 1);
 
 #ifdef DEBUG
 	CMD3(CCC_Mask, "ai_debug", &psAI_Flags, aiDebug);

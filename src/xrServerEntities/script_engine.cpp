@@ -56,8 +56,6 @@ extern int luaopen_lua_extensions(lua_State* L, bool IsDebug = false);
 extern void init_socket_core(lua_State* L);
 extern void pdebug_init_init(lua_State* L);
 
-BOOL lua_debug = FALSE;
-
 struct raii_guard : private boost::noncopyable
 {
     int m_error_code;
@@ -541,7 +539,7 @@ void CScriptEngine::reinit()
     }
 
 #endif //!USE_LUAJIT_ONE
-	bool isDebugEnabled = lua_debug;
+	bool isDebugEnabled = strstr(Core.Params, "-luapanda") != nullptr;;
     luaopen_lua_extensions(lua());
 
     if (isDebugEnabled)
