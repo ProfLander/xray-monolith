@@ -22,7 +22,7 @@ function debug_jit_on()
     end
 end
 
-function attach_debugger_internal()
+function attach_debugger()
     if DebuggerMode then
         log('LuaPanda: Disabling jit...')
         debug_jit_off()
