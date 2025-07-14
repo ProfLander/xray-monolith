@@ -86,8 +86,6 @@ jobs:
 
     runs-on: windows-latest
 
-    if: false
-
     env:
       configure-preset: ${{needs.anomaly.outputs.configure-preset-gnu}}
       build-preset: ${{needs.anomaly.outputs.build-preset}}

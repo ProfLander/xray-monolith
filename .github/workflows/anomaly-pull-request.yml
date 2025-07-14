@@ -34,8 +34,8 @@ jobs:
           - 'MSVS.MSVC.Ninja.AVX'
           - 'System.Clang'
           - 'System.Clang.AVX'
-         #- 'System.GNU'
-         #- 'System.GNU.AVX'
+          - 'System.GNU'
+          - 'System.GNU.AVX'
         target:
           - 'Anomaly.DX8'
           - 'Anomaly.DX9'
