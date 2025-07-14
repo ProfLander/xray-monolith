@@ -42,16 +42,16 @@
 
 #define for if (false) {} else for
 
-#include <cstring>
+#endif
 
+#include <cstring>
+#include <typeinfo>
 namespace std
 {
 	using ::strlen;
 	using ::strcmp;
-	using ::type_info;
+    using ::type_info;
 }
-
-#endif
 
 #if defined (BOOST_MSVC) && (BOOST_MSVC <= 1300)
 	#define LUABIND_MSVC_TYPENAME

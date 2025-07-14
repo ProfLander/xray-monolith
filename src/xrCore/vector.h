@@ -47,7 +47,7 @@ const float PI_DIV_8 = 0.3926990816987241548078304229099f;
 
 
 #endif
-#ifdef M_BORLAND
+#if M_BORLAND || __GNUC__
 #define EPS_S 0.0000001f
 #define EPS 0.0000100f
 #define EPS_L 0.0010000f
