@@ -236,7 +236,7 @@ namespace CDB
 		size_t getVS() { return verts.size(); }
 		TRI* getT() { return &*faces.begin(); }
 		u32 getfFlags(u32 index) { return flags[index]; }
-		IC TRI& getT(u32 index) { return faces[index]; }
+		IC const TRI& getT(u32 index) { return faces[index]; }
 		size_t getTS() { return faces.size(); }
 		void clear();
 	};
