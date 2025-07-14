@@ -3,6 +3,10 @@ include_guard()
 set(XRAY_COMPILER_FLAGS
   # Compatibility flags
   -Wno-shift-negative-value
+  -Wno-narrowing
+  -Wno-template-body
+
+  -fpermissive
 )
 
 set(XRAY_C_COMPILER_FLAGS
