@@ -12,6 +12,9 @@ require("boot.paths")
 -- Setup package.loaders machinery
 require("boot.loader")
 
+-- Setup luapanda
+require("boot.debug")
+
 -- Setup engine interface
 require("boot.function_object")
 

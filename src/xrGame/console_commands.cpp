@@ -77,6 +77,7 @@ extern u64 g_qwEStartGameTime;
 ENGINE_API
 extern float psHUD_FOV_def;
 extern float psSqueezeVelocity;
+
 extern int psLUA_GCSTEP;
 
 float g_end_modif = 0.f;
@@ -2415,8 +2416,9 @@ void CCC_RegisterCommands()
 	CMD3(CCC_Mask, "ai_dbg_lua", &psAI_Flags, aiLua);
 #endif // MASTER_GOLD
 
-        // Moved lua_gcstep outside of DEBUG to allow for easier experimentation.
+    // Moved lua_gcstep outside of DEBUG to allow for easier experimentation.
 	CMD4(CCC_Integer, "lua_gcstep", &psLUA_GCSTEP, 1, 1000);
+
 #ifdef DEBUG
 	CMD3(CCC_Mask, "ai_debug", &psAI_Flags, aiDebug);
 	CMD3(CCC_Mask, "ai_dbg_brain", &psAI_Flags, aiBrain);
