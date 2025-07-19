@@ -70,7 +70,7 @@ void CPda::Load(LPCSTR section)
 	m_sounds.LoadSound(section, "snd_draw_empty", "sndShowEmpty", true);
 	m_sounds.LoadSound(section, "snd_holster_empty", "sndHideEmpty", true);
 	m_sounds.LoadSound(section, "snd_btn_press", "sndButtonPress");
-	m_sounds.LoadSound(section, "snd_btn_release", "sndButtonRelease"); 
+	m_sounds.LoadSound(section, "snd_btn_release", "sndButtonRelease");
 	m_sounds.LoadSound(section, "snd_empty", "sndEmptyBattery", true);
 	m_screen_on_delay = READ_IF_EXISTS(pSettings, r_float, section, "screen_on_delay", 0.f);
 	m_screen_off_delay = READ_IF_EXISTS(pSettings, r_float, section, "screen_off_delay", 0.f);
@@ -117,7 +117,7 @@ void CPda::OnStateSwitch(u32 S, u32 oldState)
 
 		m_sounds.PlaySound(hasEnoughBatteryPower() ? "sndShow" : "sndShowEmpty", Position(), H_Root(), !!GetHUDmode(), false);
 		PlayHUDMotion(!m_bNoticedEmptyBattery ? "anm_show" : "anm_show_empty", FALSE, this, GetState(), 1.f, 0.f, false);
-		
+
 		SetPending(TRUE);
 		target_screen_switch = Device.fTimeGlobal + m_screen_on_delay;
 	}
@@ -591,7 +591,7 @@ void CPda::UpdateHudAdditional(Fmatrix& trans)
 			curr_rot = hi->m_measures.m_hands_offset[1][1]; //rot,aim
 		}
 	}
-	
+
 	float factor;
 
 	factor = Device.fTimeDelta / (0.2f);

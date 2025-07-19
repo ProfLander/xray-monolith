@@ -11,4 +11,4 @@ public:
 	virtual		void				OnMessageSelected		(CUISpeechMenu* pMenu, u8 PhraseID);
 	virtual		void				OnSpeechMessage			(NET_Packet& P);
 
-	
+

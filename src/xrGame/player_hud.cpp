@@ -287,7 +287,7 @@ void attachable_hud_item::setup_firedeps(firedeps& fd)
 		                                               fd.m_FireParticlesXForm.i);
 
 		VERIFY(_valid(fd.m_FireParticlesXForm));
-		
+
 		// demonized: transforms for fire bone/point silencer, they should be identical to above if they dont exist
 		{
 			Fmatrix& fire_mat = m_model->LL_GetTransform(m_measures.m_fire_bone_silencer);
@@ -701,7 +701,7 @@ player_hud::player_hud()
 	//m_bone_callback_params.insert(mk_pair(bip01_r_finger1, xr_new<BoneCallbackParams>()));
 	//m_bone_callback_params.insert(mk_pair(bip01_r_finger11, xr_new<BoneCallbackParams>()));
 	//m_bone_callback_params.insert(mk_pair(bip01_r_finger12, xr_new<BoneCallbackParams>()));
-	
+
 	//Movement Layers
 	m_movement_layers.reserve(move_anms_end);
 
@@ -712,7 +712,7 @@ player_hud::player_hud()
 		char temp[20];
 		string512 tmp;
 		strconcat(sizeof(temp), temp, "movement_layer_", std::to_string(i).c_str());
-		
+
 		if (pSettings->line_exist("hud_movement_layers", temp))
 		{
 			LPCSTR layer_def = pSettings->r_string("hud_movement_layers", temp);
@@ -1057,7 +1057,7 @@ void player_hud::update(const Fmatrix& cam_trans)
 		float body_yaw = -angle_normalize_signed(Actor()->old_torso_yaw);
 		float cam_yaw = -angle_normalize_signed(Actor()->cam_FirstEye()->yaw);
 		float diff_yaw = angle_difference_signed(body_yaw, cam_yaw);
-		
+
 		if (final_pitch < 0.f)
 			sub_z += final_pitch * .35f;
 
@@ -1113,7 +1113,7 @@ void player_hud::update(const Fmatrix& cam_trans)
 
 	if (m_attached_items[0])
 		m_attached_items[0]->m_parent_hud_item->UpdateHudAdditional(trans);
-	
+
 	if (m_attached_items[1])
 	{
 		m_attached_items[1]->m_parent_hud_item->UpdateHudAdditional(trans_2);
@@ -1125,7 +1125,7 @@ void player_hud::update(const Fmatrix& cam_trans)
 		trans_2 = trans;
 	else if (m_attached_items[1] && !m_attached_items[0])
 		trans = trans_2;
-	
+
 	// override hand offset for single hand animation
 	if (script_anim_part == 2 || (script_anim_part && !m_attached_items[0] && !m_attached_items[1]))
 	{
@@ -1267,7 +1267,7 @@ void player_hud::update(const Fmatrix& cam_trans)
 		{
 			if (anm->blend_amount[0] > 0.f)
 				m_transform.mulB_43(anm->XFORM(0));
-			
+
 			if (anm->blend_amount[1] > 0.f)
 				m_transform_2.mulB_43(anm->XFORM(1));
 		}
@@ -1365,7 +1365,7 @@ void player_hud::PlayBlendAnm(LPCSTR name, u8 part, float speed, float power, bo
 
 			if (!anm->anm->IsPlaying())
 				anm->anm->Play(bLooped);
-				
+
 			anm->anm->bLoop = bLooped;
 			anm->m_part = part;
 			anm->anm->Speed() = speed;
@@ -1413,7 +1413,7 @@ float player_hud::SetBlendAnmTime(LPCSTR name, float time)
 			return speed;
 		}
 	}
-	
+
 	return 0;
 }
 
@@ -1471,7 +1471,7 @@ u32 player_hud::anim_play(u16 part, const MotionID& M, BOOL bMixIn, const CMotio
 
 	if (override_part != u16(-1))
 		part_id = override_part;
-	
+
 	play_blend(this, part_id, M, bMixIn, speed);
 
 	return motion_length(M, md, speed);
@@ -1484,7 +1484,7 @@ player_hud_motion_container* player_hud::get_hand_motions(LPCSTR section)
 		if (phm->section == section)
 			return &phm->pm;
 	}
-	
+
 	hand_motions* res = xr_new<hand_motions>();
 	res->section = section;
 	res->pm.load(m_model, section);
@@ -1518,7 +1518,7 @@ u32 player_hud::script_anim_play(u8 hand, LPCSTR section, LPCSTR anm_name, bool 
 		Msg("!script motion section [%s] does not exist", section);
 		m_bStopAtEndAnimIsRunning = true;
 		script_anim_end = Device.dwTimeGlobal;
-		
+
 		return 0;
 	}
 
@@ -1530,7 +1530,7 @@ u32 player_hud::script_anim_play(u8 hand, LPCSTR section, LPCSTR anm_name, bool 
 		pos.append("_16x9");
 		rot.append("_16x9");
 	}
-	
+
 	Fvector def = { 0.f, 0.f, 0.f };
 	Fvector offs = READ_IF_EXISTS(pSettings, r_fvector3, section, pos.c_str(), def);
 	Fvector rrot = READ_IF_EXISTS(pSettings, r_fvector3, section, rot.c_str(), def);
@@ -1572,7 +1572,7 @@ u32 player_hud::script_anim_play(u8 hand, LPCSTR section, LPCSTR anm_name, bool 
 
 		return 0;
 	}
-	
+
 	const motion_descr& M = phm->m_animations[Random.randI(phm->m_animations.size())];
 
 	if (script_anim_item_model)
@@ -1660,7 +1660,7 @@ void player_hud::re_sync_anim(u8 part)
 		CBlend* BR = part == 1 ? m_model_2->LL_PartBlend(part, bidx) : m_model->LL_PartBlend(part, bidx);
 		if (!BR)
 			continue;
-			
+
 		MotionID M = BR->motionID;
 
 		u16 pc = m_model->partitions().count(); //same on both armatures

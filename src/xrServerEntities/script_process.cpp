@@ -55,7 +55,7 @@ void CScriptProcess::run_scripts()
 	}
 }
 
-// Oles: 
+// Oles:
 //		changed to process one script per-frame
 //		changed log-output to stack-based buffer (avoid persistent 4K storage)
 void CScriptProcess::update()

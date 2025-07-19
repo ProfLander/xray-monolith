@@ -52,9 +52,9 @@ void CRenderTarget::phase_hdr10_lens_flare()
         u_setrt(rt_HDR10_HalfRes[dst], NULL, NULL, NULL);
         RCache.Render(D3DPT_TRIANGLELIST, Offset, 0, 4, 0, 2);
     }
-    
+
     Swap(src, dst);
-    
+
     // feature generation
     // viewport size already set
     {

@@ -571,7 +571,7 @@ void CInifile::Load(IReader* F, LPCSTR path
 				{
 					*i = tolower(*i);
 				}
-				
+
 				if (isOverrideSection(str)) { //Used to detect bad or unintended overrides
 					bIsCurrentSectionOverride = true;
 				} else if (isSafeOverrideSection(str)) { // Create section if it doesnt exist, override if it does
@@ -861,7 +861,7 @@ void CInifile::Load(IReader* F, LPCSTR path
 
 				// If item list doesn't exist and wasn't deleted by previous operation, insert as is
 				if (I.second != NULL && !deletedItems.contains(I.first.c_str()) && dltx_listmode == '>' && (sect_it == CurrentSect->Data.end() || !sect_it->first.equal(I.first))) {
-					CurrentSect->Data.insert(sect_it, I);	
+					CurrentSect->Data.insert(sect_it, I);
 
 				// If item list exists, split existing list and perform operation
 				} else if (sect_it != CurrentSect->Data.end() && sect_it->first.equal(I.first)) {
@@ -869,7 +869,7 @@ void CInifile::Load(IReader* F, LPCSTR path
 					//Msg("%s has dltx_listmode %s", I.first.c_str(), std::string(1, dltx_listmode).c_str());
 
 					if (dltx_listmode && sect_it->second != NULL) {
-						// Split list 
+						// Split list
 						auto split_list = [](const std::string items, const std::string delimiter = ",") {
 							std::string i = items;
 							std::vector<std::string> vec;
@@ -1247,7 +1247,7 @@ LPCSTR CInifile::r_string(LPCSTR S, LPCSTR L) const
 	{
 		Msg("!![ERROR] CInifile::r_string: S = [%s], L = [%s]", S, L);
 	}
-	
+
 	if (S && L) {
 		std::string s = S;
 		std::string l = L;
@@ -1527,7 +1527,7 @@ void CInifile::w_string(LPCSTR S, LPCSTR L, LPCSTR V, LPCSTR comment)
 	}
 
 	cacheValue(sect, I.first.c_str(), I.second);
-	
+
 }
 
 void CInifile::w_u8(LPCSTR S, LPCSTR L, u8 V, LPCSTR comment)

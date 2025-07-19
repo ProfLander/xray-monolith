@@ -17,7 +17,7 @@ namespace detail
 			return child->IsHelper();
 		}
 	}; // struct is_helper_pred
-} //namespace detail 
+} //namespace detail
 
 CUIInventoryCellItem::CUIInventoryCellItem(CInventoryItem* itm)
 {

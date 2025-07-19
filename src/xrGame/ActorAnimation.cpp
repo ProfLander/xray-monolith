@@ -750,7 +750,7 @@ void CActor::g_SetAnimation(u32 mstate_rl)
 		UI().Font().pFontStat->OutNext	("Accel     [%3.2f, %3.2f, %3.2f]",VPUSH(NET_SavedAccel));
 		UI().Font().pFontStat->OutNext	("V         [%3.2f, %3.2f, %3.2f]",VPUSH(m_PhysicMovementControl->GetVelocity()));
 		UI().Font().pFontStat->OutNext	("vertex ID   %d",ai_location().level_vertex_id());
-		
+
 		Game().m_WeaponUsageStatistic->Draw();
 		*/
 	};

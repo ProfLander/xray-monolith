@@ -78,17 +78,17 @@ void CSoundRender_CoreA::_restart()
 			T						= s_targets[tit];
 			T->_destroy				();
 		}
-	
+
 		// Reset the current context to NULL.
-	    alcMakeContextCurrent		(NULL);         
+	    alcMakeContextCurrent		(NULL);
 	    // Release the context and the device.
-	    alcDestroyContext			(pContext);		
+	    alcDestroyContext			(pContext);
 		pContext					= NULL;
-	    alcCloseDevice				(pDevice);		
+	    alcCloseDevice				(pDevice);
 		pDevice						= NULL;
-	
+
 		_initialize					(2);
-	
+
 		for (u32 tit=0; tit<s_targets.size(); tit++)
 		{
 			T						= s_targets[tit];
@@ -252,7 +252,7 @@ void CSoundRender_CoreA::update_listener(const Fvector& P, const Fvector& D, con
 	Listener.accVelocity.x = soundSmoothingParams::getSmoothedValue(Listener.curVelocity.x * p / dt, Listener.accVelocity.x, a);
 	Listener.accVelocity.y = soundSmoothingParams::getSmoothedValue(Listener.curVelocity.y * p / dt, Listener.accVelocity.y, a);
 	Listener.accVelocity.z = soundSmoothingParams::getSmoothedValue(Listener.curVelocity.z * p / dt, Listener.accVelocity.z, a);
-	
+
 	Listener.prevVelocity.set(Listener.accVelocity);
 
 	// Msg("listener sound update delta %.3f, velocity %.3f, %.3f, %.3f, power %.1f, alpha %.3f", dt, Listener.prevVelocity.x, Listener.prevVelocity.y, Listener.prevVelocity.z, soundSmoothingParams::power, soundSmoothingParams::alpha);

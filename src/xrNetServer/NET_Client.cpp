@@ -118,7 +118,7 @@ void dump_URL(LPCSTR p, IDirectPlay8Address* A)
 	Log(p, aaaa);
 }
 
-// 
+//
 INetQueue::INetQueue()
 #ifdef PROFILE_CRITICAL_SECTIONS
 	:cs(MUTEX_PROFILE_ID(INetQueue))
@@ -199,7 +199,7 @@ NET_Packet* INetQueue::Retreive()
 	//			Msg ("INetQueue::Retreive - ready %d, unused %d", ready.size(), unused.size());
 	//#endif
 	if (!ready.empty()) P = ready.front();
-		//---------------------------------------------	
+		//---------------------------------------------
 	else
 	{
 		u32 tmp_time = GetTickCount() - 60000;
@@ -210,7 +210,7 @@ NET_Packet* INetQueue::Retreive()
 			unused.pop_back();
 		}
 	}
-	//---------------------------------------------	
+	//---------------------------------------------
 	//cs.Leave		();
 	return P;
 }
@@ -232,7 +232,7 @@ void INetQueue::Release()
 	}
 	else
 		unused.push_back(ready.front());
-	//---------------------------------------------	
+	//---------------------------------------------
 	ready.pop_front();
 	//cs.Leave		();
 }
@@ -453,12 +453,12 @@ BOOL IPureClient::Connect(LPCSTR options)
 		//	{
 		//		DXTRACE_ERR(tmp, CoInitializeExRes);
 		//		CHK_DX(CoInitializeExRes);
-		//	};	
+		//	};
 		//---------------------------
 		// Create the IDirectPlay8Client object.
 		HRESULT CoCreateInstanceRes = CoCreateInstance(XR_GUID(CLSID_DirectPlay8Client), NULL, CLSCTX_INPROC_SERVER,
 		                                               XR_GUID(IID_IDirectPlay8Client), (LPVOID*)&NET);
-		//---------------------------	
+		//---------------------------
 		if (CoCreateInstanceRes != S_OK)
 		{
 			DXTRACE_ERR(tmp, CoCreateInstanceRes);
@@ -713,7 +713,7 @@ BOOL IPureClient::Connect(LPCSTR options)
 				NULL, // pvAsyncContext
 				NULL, // pvAsyncHandle
 				DPNCONNECT_SYNC); // dwFlags
-			//		R_CHK(res);		
+			//		R_CHK(res);
 			net_csEnumeration.Leave();
 			_RELEASE(pHostAddress);
 #ifdef DEBUG
@@ -746,7 +746,7 @@ BOOL IPureClient::Connect(LPCSTR options)
 		/*
 		GUID			sp_guid;
 		DPN_SP_CAPS		sp_caps;
-	
+
 		net_Address_device->GetSP(&sp_guid);
 		ZeroMemory		(&sp_caps,sizeof(sp_caps));
 		sp_caps.dwSize	= sizeof(sp_caps);
@@ -909,7 +909,7 @@ HRESULT IPureClient::net_Handler(u32 dwMessageType, PVOID pMessage)
 					{
 						const wchar_t* tmp = L"";
 						DXTRACE_ERR(tmp, pMsg->hResultCode);
-					}					
+					}
 #endif
 					if (pMsg->dwApplicationReplyDataSize)
 					{
@@ -970,7 +970,7 @@ void IPureClient::OnMessage(void* data, u32 size)
 	NET_Packet* P = net_Queue.Create();
 
 	P->construct(data, size);
-	P->timeReceive = timeServer_Async(); //TimerAsync				(device_timer);	
+	P->timeReceive = timeServer_Async(); //TimerAsync				(device_timer);
 
 	u16 m_type;
 	P->r_begin(m_type);

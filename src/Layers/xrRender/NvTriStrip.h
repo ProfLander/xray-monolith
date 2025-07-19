@@ -110,7 +110,7 @@ void GenerateStrips(const u16* in_indices, const s32 in_numIndices, xr_vector<Pr
 //  of acceptable values for indices in your primitive groups.
 // remappedGroups: array of remapped PrimitiveGroups
 //
-// Note that, according to the remapping handed back to you, you must reorder your 
+// Note that, according to the remapping handed back to you, you must reorder your
 //  vertex buffer.
 //
 // Credit goes to the MS Xbox crew for the idea for this interface.

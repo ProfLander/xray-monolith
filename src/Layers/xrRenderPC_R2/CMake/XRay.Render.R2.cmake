@@ -1,6 +1,6 @@
 add_module(XRay.Render.R2
   TYPE STATIC
-  
+
   PRECOMPILES stdafx.h
 
   INCLUDES ${CMAKE_CURRENT_SOURCE_DIR}
@@ -39,7 +39,7 @@ add_module(XRay.Render.R2.Core
 
   ../xrRender/PSLibrary.cpp
   ../xrRender/PSLibrary.h
-  
+
   ../xrRender/r__dsgraph_build.cpp
   ../xrRender/r__dsgraph_render.cpp
   ../xrRender/r__dsgraph_render_lods.cpp
@@ -254,7 +254,7 @@ add_module(XRay.Render.R2.Interfaces.ThunderboltDesc
 add_module(XRay.Render.R2.Interfaces.Thunderbolt
   SOURCES
   ../xrRender/ThunderboltRender.h
-  
+
   ../xrRender/dxThunderboltRender.cpp
   ../xrRender/dxThunderboltRender.h
 )
@@ -296,7 +296,7 @@ add_module(XRay.Render.R2.Lights
 
   ../xrRender/Light_DB.cpp
   ../xrRender/Light_DB.h
-  
+
   light_GI.cpp
   light_gi.h
 
@@ -315,7 +315,7 @@ add_module(XRay.Render.R2.Lights
 
   ../xrRender/LightTrack.cpp
   ../xrRender/LightTrack.h
-  
+
   SMAP_Allocator.h
 )
 
@@ -364,7 +364,7 @@ add_module(XRay.Render.R2.Refactored.Backend
   ../xrRender/R_Backend.h
 
   ../xrRender/R_Backend_DBG.cpp
-  
+
   ../xrRender/R_Backend_hemi.cpp
   ../xrRender/R_Backend_hemi.h
 
@@ -514,7 +514,7 @@ add_module(XRay.Render.R2.Refactored.Execution3D.Visuals.Skeleton
 
   ../xrRender/SkeletonAnimated.cpp
   ../xrRender/SkeletonAnimated.h
-  
+
   ../xrRender/SkeletonCustom.cpp
   ../xrRender/SkeletonCustom.h
 
@@ -605,7 +605,7 @@ add_module(XRay.Render.R2.ShadingTemplates
   blender_smaa.h
   blender_ssao.h
   blender_ss_sunshafts.h
-  
+
   ../xrRender/uber_deffer.cpp
   ../xrRender/uber_deffer.h
 )
@@ -658,7 +658,7 @@ add_module(XRay.Render.R2.Visibility.Sector
   SOURCES
   ../xrRender/r__sector.cpp
   ../xrRender/r__sector.h
-  
+
   ../xrRender/r__sector_traversal.cpp
 )
 

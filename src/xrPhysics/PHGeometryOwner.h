@@ -11,7 +11,7 @@ class IKinematics;
 class CPHGeometryOwner
 {
 protected:
-	GEOM_STORAGE m_geoms; //e			
+	GEOM_STORAGE m_geoms; //e
 	//bl
 	bool b_builded;
 private:

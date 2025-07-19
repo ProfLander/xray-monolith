@@ -35,10 +35,10 @@ shared_str const xr_dsa::sign		(private_key_t const & priv_key,
 	unsigned int	sign_size = DSA_size(m_dsa);
 	u8*				sign_dest = static_cast<u8*>(
 		_alloca(sign_size));
-	
+
 	BIGNUM			tmp_sign_res_bn;
 	BN_init			(&tmp_sign_res_bn);
-	
+
 	DSA_sign		(0, data, data_size, sign_dest, &sign_size, m_dsa);
 	BN_bin2bn		(sign_dest, sign_size, &tmp_sign_res_bn);
 
@@ -58,7 +58,7 @@ bool		xr_dsa::verify				(public_key_t const & pub_key,
 	u8* sig_buff			= static_cast<u8*>(_alloca(sig_size));
 	VERIFY					(sig_size == DSA_size(m_dsa));
 	BN_bn2bin				(tmp_bn, sig_buff);
-		
+
 	bool ret = DSA_verify	(0, data, data_size, sig_buff, sig_size, m_dsa) == 1 ? true : false;
 	BN_free(tmp_bn);
 	return ret;
@@ -125,19 +125,19 @@ void xr_dsa::generate_params()
 	VERIFY				(tmp_dsa_params->g->top * sizeof(u32)		== public_key_length);
 	VERIFY				(tmp_dsa_params->pub_key->top * sizeof(u32) == public_key_length);
 	VERIFY				(tmp_dsa_params->priv_key->top * sizeof(u32)== private_key_length);
-	
+
 	Msg("// DSA params ");
-	
+
 	Msg("u8 const p_number[crypto::xr_dsa::public_key_length] = {");
 	print_big_number	(tmp_dsa_params->p);
 	Msg("};//p_number");
 
-	
+
 	Msg("u8 const q_number[crypto::xr_dsa::private_key_length] = {");
 	print_big_number	(tmp_dsa_params->q);
 	Msg("};//q_number");
-	
-	
+
+
 	Msg("u8 const g_number[crypto::xr_dsa::public_key_length] = {");
 	print_big_number	(tmp_dsa_params->g);
 	Msg("};//g_number");
@@ -146,7 +146,7 @@ void xr_dsa::generate_params()
 	print_big_number	(tmp_dsa_params->pub_key);
 	Msg("};//public_key");
 
-	
+
 	u8	priv_bin[private_key_length];
 	BN_bn2bin			(tmp_dsa_params->priv_key, priv_bin);
 	Msg("// Private key:");
@@ -163,12 +163,12 @@ void xr_dsa::generate_params()
 
 	BIGNUM	bn_sign;
 	BN_init					(&bn_sign);
-	
+
 	VERIFY	(DSA_sign(0, debug_digest, sizeof(debug_digest), sig, &siglen, tmp_dsa_params) == 1);
 
 	BN_bin2bn				(sig, siglen, &bn_sign);
 	shared_str sig_str		= BN_bn2hex(&bn_sign);
-	
+
 	BIGNUM*	bn_rsing		= NULL;
 	ZeroMemory				(sig, siglen);
 	BN_hex2bn				(&bn_rsing, sig_str.c_str());

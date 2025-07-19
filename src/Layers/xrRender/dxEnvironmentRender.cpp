@@ -275,7 +275,7 @@ void dxEnvironmentRender::RenderSky(CEnvironment& env, bool OnlyMV)
 	// clouds_sh.create		("clouds","null");
 	//. this is the bug-fix for the case when the sky is broken
 	//. for some unknown reason the geoms happen to be invalid sometimes
-	//. if vTune show this in profile, please add simple cache (move-to-forward last found) 
+	//. if vTune show this in profile, please add simple cache (move-to-forward last found)
 	//. to the following functions:
 	//.		CResourceManager::_CreateDecl
 	//.		CResourceManager::CreateGeom
@@ -342,9 +342,9 @@ void dxEnvironmentRender::RenderSky(CEnvironment& env, bool OnlyMV)
 #if	RENDER!=R_R1
 		//
 		// This hack is done to make sure that the state is set for sure:
-		// The state may be not set by RCache if the state is changed using API SetRenderState() function before 
-		// and the RCache flag will remain unchanged to it's old value. 
-		// 
+		// The state may be not set by RCache if the state is changed using API SetRenderState() function before
+		// and the RCache flag will remain unchanged to it's old value.
+		//
 		RCache.set_Z(FALSE);
 		RCache.set_Z(TRUE);
 		env.eff_LensFlare->Render(TRUE, FALSE, FALSE);

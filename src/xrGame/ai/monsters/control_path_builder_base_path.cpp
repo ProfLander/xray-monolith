@@ -213,7 +213,7 @@ void CControlPathBuilderBase::find_node()
 		                        m_cover_info.deviation);
 		const CCoverPoint* point = ai().cover_manager().best_cover(m_object->Position(), m_cover_info.radius,
 		                                                           *m_cover_approach);
-		// нашли кавер?	
+		// нашли кавер?
 		if (point)
 		{
 			m_target_found.set_node(point->m_level_vertex_id);

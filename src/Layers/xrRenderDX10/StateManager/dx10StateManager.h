@@ -68,7 +68,7 @@ private:
 	bool m_bDSSNeedApply;
 	bool m_bBSNeedApply;
 
-	//	Appropriate state is invalid. 
+	//	Appropriate state is invalid.
 	//	Get a new state from cache by description before apply.
 	bool m_bRSChanged;
 	bool m_bDSSChanged;

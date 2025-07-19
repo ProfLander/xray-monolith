@@ -46,7 +46,7 @@
 #include "script_hit.h"
 #include "script_game_object.h"
 
-// Lain: added 
+// Lain: added
 #include "level_debug.h"
 #include "xrLevel.h"
 #include "level_graph.h"
@@ -66,7 +66,7 @@ CBaseMonster::CBaseMonster() : m_psy_aura(this, "psy"),
 
 	m_pPhysics_support->in_Init();
 
-	// Components external init 
+	// Components external init
 
 	m_control_manager = xr_new<CControl_Manager>(this);
 
@@ -78,7 +78,7 @@ CBaseMonster::CBaseMonster() : m_psy_aura(this, "psy"),
 	EnemyMan.init_external(this);
 	CorpseMan.init_external(this);
 
-	// Инициализация параметров анимации	
+	// Инициализация параметров анимации
 
 	StateMan = 0;
 
@@ -501,7 +501,7 @@ bool CBaseMonster::useful(const CItemManager* manager, const CGameObject* object
 
 	// Lain: added (temp?) guard due to bug http://tiger/bugz/view.php?id=15983
 	// sometimes accessible(object->Position())) returns true
-	// but accessible(ai_location().level_vertex_id()) crashes 
+	// but accessible(ai_location().level_vertex_id()) crashes
 	// because level_vertex_id is not valid, so this code syncs vertex_id with position
 	if (!ai().level_graph().valid_vertex_id(object->ai_location().level_vertex_id()))
 	{
@@ -751,7 +751,7 @@ void CBaseMonster::on_kill_enemy(const CEntity* obj)
 {
 	const CEntityAlive* entity = smart_cast<const CEntityAlive *>(obj);
 
-	// добавить в список трупов	
+	// добавить в список трупов
 	CorpseMemory.add_corpse(entity);
 
 	// удалить всю информацию о хитах
@@ -1049,7 +1049,7 @@ void CBaseMonster::update_eyes_visibility()
 	if (!(left_eye_bone_id != u16(-1) && right_eye_bone_id != u16(-1))) {
 		Msg("%s, section %s, id %d left_eye_bone_id != u16(-1) && right_eye_bone_id != u16(-1), crash", cName().c_str(), cNameSect().c_str(), ID());
 		R_ASSERT(left_eye_bone_id != u16(-1) && right_eye_bone_id != u16(-1));
-	}	
+	}
 
 	bool eyes_visible = !g_Alive() || get_screen_space_coverage_diagonal() > 0.05f;
 
@@ -1094,7 +1094,7 @@ float CBaseMonster::get_screen_space_coverage_diagonal()
 
 bool   CBaseMonster::is_paused () const
 {
-	bool monsters_result		=	false;	
+	bool monsters_result		=	false;
 	ai_dbg::get_var					("monsters_paused", monsters_result);
 
 	u32 const id				=	ID();

@@ -598,7 +598,7 @@ void CUIActorMenu::OnBtnPerformTradeBuy(CUIWindow* w, void* d)
 
 				FilterActorTradeBagList(i);
 			}
-				
+
 		}
 	}
 
@@ -708,7 +708,7 @@ void CUIActorMenu::DonateCurrentItem(CUICellItem* cell_item)
 	if (!item)
 		return;
 
-	//Alundaio: 
+	//Alundaio:
 	::luabind::functor<bool> funct;
 	if (ai().script_engine().functor("actor_menu_inventory.CUIActorMenu_DonateCurrentItem", funct))
 	{

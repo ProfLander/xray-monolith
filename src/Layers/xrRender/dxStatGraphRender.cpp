@@ -133,7 +133,7 @@ void dxStatGraphRender::RenderBack(CStatGraph& owner)
 	pv++; // 2
 	pv->set(owner.rb.x, owner.lt.y, owner.back_color);
 	pv++; // 3
-	// render	
+	// render
 	dwCount = u32(pv - pv_start);
 	RCache.Vertex.Unlock(dwCount, hGeomTri->vb_stride);
 	RCache.set_Geometry(hGeomTri);
@@ -153,7 +153,7 @@ void dxStatGraphRender::RenderBack(CStatGraph& owner)
 	pv++; // 3
 	pv->set(owner.lt.x, owner.lt.y, owner.rect_color);
 	pv++; // 0
-	// render	
+	// render
 	dwCount = u32(pv - pv_start);
 	RCache.Vertex.Unlock(dwCount, hGeomLine->vb_stride);
 	RCache.set_Geometry(hGeomLine);
@@ -175,7 +175,7 @@ void dxStatGraphRender::RenderBack(CStatGraph& owner)
 	pv->set(owner.lt.x, int(base_y), owner.base_color);
 	pv++; // 0
 	pv->set(owner.rb.x, int(base_y), owner.base_color);
-	pv++; // 0    
+	pv++; // 0
 	// owner.grid
 	//    float grid_offs_x		= float(owner.rb.x-owner.lt.x)/float(owner.grid.x+1);
 	//    float grid_offs_y		= float(owner.rb.y-owner.lt.y)/float(owner.grid.y+1);
@@ -204,8 +204,8 @@ void dxStatGraphRender::RenderBack(CStatGraph& owner)
 
 
 	//    for (int g_y=1; g_y<=owner.grid.y; g_y++){
-	//	    pv->set				(owner.lt.x,iFloor(g_y*grid_offs_y+owner.lt.y),owner.grid_color); pv++; 	
-	//	    pv->set				(owner.rb.x,iFloor(g_y*grid_offs_y+owner.lt.y),owner.grid_color); pv++; 	
+	//	    pv->set				(owner.lt.x,iFloor(g_y*grid_offs_y+owner.lt.y),owner.grid_color); pv++;
+	//	    pv->set				(owner.rb.x,iFloor(g_y*grid_offs_y+owner.lt.y),owner.grid_color); pv++;
 	//	}
 
 	dwCount = u32(pv - pv_start);

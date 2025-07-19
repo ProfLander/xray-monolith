@@ -32,7 +32,7 @@ public:
 #endif
 	virtual LPCSTR _BCL getDebugShader() { return nullptr; }
 	virtual LPCSTR _BCL getDebugTexture() { return nullptr; }
-	
+
 	virtual LPCSTR _BCL getDebugShaderDef() { return nullptr; }
 	virtual LPCSTR _BCL getDebugTextureDef() { return nullptr; }
 

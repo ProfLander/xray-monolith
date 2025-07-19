@@ -205,7 +205,7 @@ Frustum::Frustum(const D3DXMATRIX* matrix)
 
 
 //////////////////////////////////////////////////////////////////////////
-// OLES: naive builder of infinite volume expanded from base frustum towards 
+// OLES: naive builder of infinite volume expanded from base frustum towards
 //		 light source. really slow, but it works for our simple usage :)
 // note: normals points to 'outside'
 //////////////////////////////////////////////////////////////////////////
@@ -278,7 +278,7 @@ public:
 		int align_planes[2];
 		int align_planes_count = 0;
 
-		// find one or two planes that align to view frustum from behind. 
+		// find one or two planes that align to view frustum from behind.
 		for (u32 i = 0; i < LIGHT_CUBOIDSIDEPOLYS_COUNT; i++)
 		{
 			float tmp_dot = view_ray.D.dotproduct(light_cuboid_polys[i].plane.n);
@@ -327,7 +327,7 @@ public:
 		// Reset to reuse.
 		align_vector.set(0.f, 0.f, 0.f);
 
-		// Check if view edges intersect, and push planes................ 
+		// Check if view edges intersect, and push planes................
 		for (int p = 0; p < align_planes_count; ++p)
 		{
 			float max_mag = 0;
@@ -487,7 +487,7 @@ public:
 };
 
 //////////////////////////////////////////////////////////////////////////
-// OLES: naive builder of infinite volume expanded from base frustum towards 
+// OLES: naive builder of infinite volume expanded from base frustum towards
 //		 light source. really slow, but it works for our simple usage :)
 // note: normals points to 'outside'
 //////////////////////////////////////////////////////////////////////////
@@ -1147,7 +1147,7 @@ void CRender::render_sun()
 			view_clipper.planes.push_back(D3DXPLANE(P.n.x, P.n.y, P.n.z, P.d));
 		}
 
-		// 
+		//
 		Fbox3 b_casters, b_receivers;
 		Fvector3 pt;
 

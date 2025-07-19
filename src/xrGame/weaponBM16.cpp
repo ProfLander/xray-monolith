@@ -245,7 +245,7 @@ void CWeaponBM16::PlayAnimIdle()
 			}
 		}
 	}
-	
+
 	switch (m_magazine.size())
 	{
 	case 0:

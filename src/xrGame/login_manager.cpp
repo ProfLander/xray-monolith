@@ -218,7 +218,7 @@ namespace gamespy_gp
 		VERIFY2(m_current_profile, "not logged in");
 		//if (m_current_profile->online())
 		//{
-		//	m_gamespy_gp->Disconnect	(); 
+		//	m_gamespy_gp->Disconnect	();
 		//}
 		delete_profile_obj();
 		Msg("* GameSpy: Logged out.");
@@ -348,7 +348,7 @@ namespace gamespy_gp
 	//		return;
 	//	}
 	//	VERIFY(response);
-	//	
+	//
 	//	if (response->mLoginResult != WSLogin_Success)
 	//	{
 	//		tmp_cb(NULL, CGameSpy_ATLAS::TryToTranslate(response->mLoginResult).c_str());
@@ -356,8 +356,8 @@ namespace gamespy_gp
 	//		return;
 	//	}
 	//
-	//	VERIFY(my_inst->m_current_profile);	
-	//	
+	//	VERIFY(my_inst->m_current_profile);
+	//
 	//	my_inst->m_current_profile->mCertificate = response->mCertificate;
 	//	my_inst->m_current_profile->mPrivateData = response->mPrivateData;
 	//

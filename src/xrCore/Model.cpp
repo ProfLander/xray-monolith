@@ -269,9 +269,9 @@ PPM_CONTEXT::write( int o, FILE* fp )
 
     STATE* p;
     int f, a, b, c;
-    if (nc < o)                             
+    if (nc < o)
         nc=o;
-        
+
     putc(NumStats,fp);
     if ( !NumStats ) {
         f=(p=&oneState())->Freq;
@@ -1273,17 +1273,17 @@ static void _STDCALL StartModelRare(int MaxOrder, MR_METHOD MRMethod)
 		FoundState = 0;
 
 		/*
-		        if( !trained_model || _PPMD_E_GETC(trained_model) > MaxOrder ) 
+		        if( !trained_model || _PPMD_E_GETC(trained_model) > MaxOrder )
 		        {
 		            MaxContext->SummFreq=(MaxContext->NumStats=255)+2;
 		            MaxContext->Stats = (PPM_CONTEXT::STATE*) AllocUnits(256/2);
-		            for( PrevSuccess=i=0;i < 256;i++) 
+		            for( PrevSuccess=i=0;i < 256;i++)
 		            {
 		                MaxContext->Stats[i].Symbol=i;  MaxContext->Stats[i].Freq=1;
 		                MaxContext->Stats[i].Successor=NULL;
 		            }
-		        } 
-		        else 
+		        }
+		        else
 		        {
 		            MaxContext->read(trained_model,0xFF);
 		            MaxContext->makeSuffix();

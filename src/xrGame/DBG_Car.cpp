@@ -44,7 +44,7 @@ void CCar::DbgCreatePlots()
 
 	m_dbg_power_rpm.AddMarker(CStatGraph::stVert,0,D3DCOLOR_XRGB(127, 0, 0));
 	m_dbg_power_rpm.AddMarker(CStatGraph::stVert,0,D3DCOLOR_XRGB(0, 0, 127));
-	
+
 	y_pos+=y_w+10;
 
 	m_dbg_torque_rpm.Init(CFunctionGraph::type_function(this,&CCar::TorqueRpmFun),m_min_rpm,m_max_rpm,0,y_pos,500,y_w,1000);
@@ -104,9 +104,9 @@ void CCar::DBgClearPlots()
 
 void CCar::DbgUbdateCl()
 {
-	
+
 	if(m_pPhysicsShell&&OwnerActor()&&static_cast<CObject*>(Owner())==Level().CurrentViewEntity())
-	{	
+	{
 		if(ph_dbg_draw_mask.test(phDbgDrawCarDynamics))
 		{
 			Fvector v;
@@ -118,7 +118,7 @@ void CCar::DbgUbdateCl()
 			UI().Font().pFontStat->OutNext		(s)																				;
 			UI().Font().pFontStat->SetColor		(D3DCOLOR_XRGB(255,!b_transmission_switching*255,!b_transmission_switching*255));
 			UI().Font().pFontStat->OutNext		("Transmission num:      [%d]",m_current_transmission_num)						;
-			UI().Font().pFontStat->SetColor		(color_rgba(0xff,0xff,0xff,0xff))												;	
+			UI().Font().pFontStat->SetColor		(color_rgba(0xff,0xff,0xff,0xff))												;
 			UI().Font().pFontStat->OutNext		("gear ratio:			  [%3.2f]",m_current_gear_ratio)						;
 			UI().Font().pFontStat->OutNext		("Power:      [%3.2f]",m_current_engine_power/(0.8f*1000.f))					;
 			UI().Font().pFontStat->OutNext		("rpm:      [%3.2f]",m_current_rpm/(1.f/60.f*2.f*M_PI))							;
@@ -180,7 +180,7 @@ void CCar::DbgUbdateCl()
 			m_dbg_torque_rpm.UpdateMarker(2,engine_wheels_rpm)		;
 			m_dbg_torque_rpm.UpdateMarker(3,m_gear_ratious[m_current_transmission_num][2]);
 			m_dbg_torque_rpm.UpdateMarker(4,m_gear_ratious[m_current_transmission_num][1]);
-			
+
 		}
 	}
 }

@@ -760,7 +760,7 @@ BOOL CAI_Stalker::net_Spawn(CSE_Abstract* DC)
 
 #ifdef _DEBUG
 	if (ai().get_alife() && !Level().MapManager().HasMapLocation("debug_stalker",ID())) {
-		CMapLocation				*map_location = 
+		CMapLocation				*map_location =
 			Level().MapManager().AddMapLocation(
 				"debug_stalker",
 				ID()

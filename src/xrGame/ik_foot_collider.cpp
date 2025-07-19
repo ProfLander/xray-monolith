@@ -309,8 +309,8 @@ void ik_foot_collider::collide(SIKCollideData& cld, const ik_foot_geom& foot_geo
 				cld.m_collide_point = ik_foot_geom::heel;
 				cld.collided = true;
 				cld.m_pick_dir = heel_pick_v;
-				
-			} 
+
+			}
 		}
 	*/
 
@@ -383,13 +383,13 @@ void ik_foot_collider::collide(SIKCollideData& cld, const ik_foot_geom& foot_geo
 			  !( CDB::TestRayTri(pos_hill, pick_v, r_toe.triangle, u, v, d, true ) && d > 0.f ) ) &&
 			    Pick( r_hill, pos_hill, pick_v, pick_dist, O ) )
 		{
-	
+
 			if( !cld.collided || r_hill.position.y > r_toe.position.y )
 			{
 				cld.m_plane = r_hill.p;
 				cld.m_collide_point = SIKCollideData::heel;
-			} 
-			
+			}
+
 			//else
 			//{
 			//		ik_pick_result r_foot;
@@ -398,19 +398,19 @@ void ik_foot_collider::collide(SIKCollideData& cld, const ik_foot_geom& foot_geo
 			//		{
 			//			Fplane plane;
 			//			tri_plane( r_toe.position, r_hill.position , r_foot.position, plane );
-	
+
 			//			DBG_DrawTri(r_toe.position, r_hill.position, r_foot.position , D3DCOLOR_XRGB( 255, 255, 255 ), false  );
-			//		
+			//
 			//			if( plane.n.dotproduct( r_hill.p.n ) < 0.f )
 			//			{
 			//				plane.n.invert();
 			//				plane.d = -cld.m_plane.d;
-			//			
+			//
 			//			}
 			//			chose_best_plane( cld.m_plane, pick_v, plane, r_hill.p, r_toe.p   );
 			//		}
 			//}
-			
+
 			cld.collided = true;
 		}
 	*/

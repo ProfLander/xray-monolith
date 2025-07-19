@@ -1,10 +1,10 @@
 add_module(XRay.XMLParser
   TYPE STATIC
-  
+
   PRECOMPILES
   <xrCore.h>
   xrXMLParser.h
-  
+
   INCLUDES ${CMAKE_CURRENT_SOURCE_DIR}
 
   DEFINES
@@ -13,7 +13,7 @@ add_module(XRay.XMLParser
   LINKS
   TinyXML
   XRay.Core
-  
+
   SOURCES
   xrXMLParser.cpp
   xrXMLParser.h

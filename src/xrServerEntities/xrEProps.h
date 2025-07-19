@@ -151,7 +151,7 @@ public:
 	                                           RTextValue::TOnAfterEditEvent = 0) =0;
 
 	virtual GameTypeValue* __stdcall CreateGameType(PropItemVec& items, shared_str key, GameTypeChooser* val) =0;
-	// obsolette    
+	// obsolette
 	virtual CTextValue* __stdcall CreateCText(PropItemVec& items, shared_str key, LPSTR val, u32 sz) =0;
 	virtual CListValue* __stdcall CreateCList(PropItemVec& items, shared_str key, LPSTR val, u32 sz, xr_string* lst,
 	                                          u32 cnt) =0;

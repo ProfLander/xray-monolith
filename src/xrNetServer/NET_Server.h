@@ -181,7 +181,7 @@ protected:
 	xr_vector<IBannedClient*> BannedAddresses;
 	ip_filter m_ip_filter;
 
-	// 
+	//
 	xrCriticalSection csMessage;
 
 	void client_link_aborted(ClientID ID);

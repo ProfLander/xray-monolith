@@ -1,6 +1,6 @@
 add_module(XRay.Render.R3
   TYPE STATIC
-  
+
   PRECOMPILES stdafx.h
 
   INCLUDES ${CMAKE_CURRENT_SOURCE_DIR}
@@ -84,7 +84,7 @@ add_module(XRay.Render.R3.Core
   ../xrRender/r__dsgraph_types.h
 
   ../xrRender/r_sun_cascades.h
-  
+
   ../xrRender/tga.cpp
   ../xrRender/tga.h
 
@@ -359,7 +359,7 @@ add_module(XRay.Render.R3.Lights
 
   ../xrRender/Light_DB.cpp
   ../xrRender/Light_DB.h
-  
+
   light_GI.cpp
   light_gi.h
 
@@ -480,7 +480,7 @@ add_module(XRay.Render.R3.Refactored.Execution3D.Shaders.Blender
   SOURCES
   ../xrRender/blenders/Blender.cpp
   ../xrRender/blenders/Blender.h
-  
+
   ../xrRender/blenders/Blender_CLSID.h
   ../xrRender/blenders/Blender_Palette.cpp
 
@@ -573,10 +573,10 @@ add_module(XRay.Render.R3.Refactored.Execution3D.Visuals.Skeleton
   SOURCES
   ../xrRender/Animation.cpp
   ../xrRender/Animation.h
-  
+
   ../xrRender/Kinematics.h
   ../xrRender/KinematicsAnimated.h
-  
+
   ../xrRender/SkeletonAnimated.cpp
   ../xrRender/SkeletonAnimated.h
 
@@ -751,7 +751,7 @@ add_module(XRay.Render.R3.Visibility.HOM
   SOURCES
   ../xrRender/HOM.cpp
   ../xrRender/HOM.h
-  
+
   ../xrRender/occRasterizer.cpp
   ../xrRender/occRasterizer.h
 

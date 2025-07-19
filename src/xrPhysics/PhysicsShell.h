@@ -213,7 +213,7 @@ XRPHYSICS_API float NonElasticCollisionEnergy(CPhysicsElement* e1, CPhysicsEleme
 // norm - from 2 to 1
 
 //ABSTRACT:
-// Joint between two elements 
+// Joint between two elements
 
 class XRPHYSICS_API CPhysicsJoint :
 	public iphysics_scripted_class
@@ -223,12 +223,12 @@ public:
 
 	enum eVs
 	{
-		//coordinate system 
+		//coordinate system
 		vs_first,
 		//in first local
 		vs_second,
-		//in second local 
-		vs_global //in global		
+		//in second local
+		vs_global //in global
 	};
 
 	enum enumType
@@ -239,7 +239,7 @@ public:
 		hinge,
 		// standart hinge 1 - axis
 		hinge2,
-		// for car wheels 2-axes 
+		// for car wheels 2-axes
 		full_control,
 		// 3 - axes control (eiler - angles)
 		slider
@@ -312,7 +312,7 @@ public:
 //add_to_type_list(CPhysicsJoint)
 //#undef script_type_list
 //#define script_type_list save_type_list(CPhysicsJoint)
-// ABSTRACT: 
+// ABSTRACT:
 class CPHIsland;
 class CPhysicsShellAnimator;
 

@@ -23,7 +23,7 @@
 #include "RadioactiveZone.h"
 #include "ZoneCampfire.h"
 BOOL g_ai_die_in_anomaly = 0;
-//-Alundaio 
+//-Alundaio
 
 CSpaceRestrictor::~CSpaceRestrictor()
 {
@@ -249,7 +249,7 @@ void CSpaceRestrictor::OnRender	()
 	Fmatrix l_ball, l_box;
 	xr_vector<CCF_Shape::shape_def> &l_shapes = ((CCF_Shape*)CFORM())->Shapes();
 	xr_vector<CCF_Shape::shape_def>::iterator l_pShape;
-	
+
 	u32 Color = 0;
 	CCustomZone	*custom_zone = smart_cast<CCustomZone*>(this);
 	if (custom_zone && custom_zone->IsEnabled())
@@ -257,8 +257,8 @@ void CSpaceRestrictor::OnRender	()
 	else
 		Color = D3DCOLOR_XRGB(255,0,0);
 
-	
-	for(l_pShape = l_shapes.begin(); l_shapes.end() != l_pShape; ++l_pShape) 
+
+	for(l_pShape = l_shapes.begin(); l_shapes.end() != l_pShape; ++l_pShape)
 	{
 		switch(l_pShape->type)
 		{
@@ -284,7 +284,7 @@ void CSpaceRestrictor::OnRender	()
 	}
 
 	if( Level().CurrentViewEntity()->Position().distance_to(XFORM().c)<100.0f ){
-	
+
 //DRAW name
 
 		Fmatrix		res;

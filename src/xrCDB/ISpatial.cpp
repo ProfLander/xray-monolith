@@ -101,7 +101,7 @@ void ISpatial::spatial_move()
 	{
 		float spatial_sector_threshold_sqr = 1.0f;
 		float spatial_distance_sqr = last_sector_point.distance_to_sqr(spatial_sector_point());
-		
+
 		//*** somehow it was determined that object has been moved
 		if (spatial_distance_sqr > spatial_sector_threshold_sqr)
 			spatial.type |= STYPEFLAG_INVALIDSECTOR;
@@ -277,7 +277,7 @@ void ISpatial_DB::insert(ISpatial* S)
 	stat_insert.Begin	();
 
 	BOOL		bValid	= _valid(S->spatial.sphere.R) && _valid(S->spatial.sphere.P);
-	if (!bValid)	
+	if (!bValid)
 	{
 		CObject*	O	= dynamic_cast<CObject*>(S);
 		if	(O)			Debug.fatal(DEBUG_INFO,"Invalid OBJECT position or radius (%s)",O->cName().c_str());

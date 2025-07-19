@@ -5,7 +5,7 @@ add_module(XRay.Core.Memory.Shared
   xr_shared.cpp
   xrsharedmem.cpp
   xrstring.cpp
-  
+
   mezz_stringbuffer.h
   xr_resource.h
   xr_shared.h

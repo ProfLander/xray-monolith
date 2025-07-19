@@ -47,7 +47,7 @@ void xrServer::Process_event_destroy(NET_Packet& P, ClientID sender, u32 time, u
 	u16 parent_id = e_dest->ID_Parent;
 
 #ifdef MP_LOGGING
-	Msg("--- SV: Process destroy: parent [%d] item [%d][%s]", 
+	Msg("--- SV: Process destroy: parent [%d] item [%d][%s]",
 		parent_id, id_dest, e_dest->name());
 #endif //#ifdef MP_LOGGING
 
@@ -55,7 +55,7 @@ void xrServer::Process_event_destroy(NET_Packet& P, ClientID sender, u32 time, u
 	NET_Packet P2, *pEventPack = pEPack;
 	P2.w_begin(M_EVENT_PACK);
 	//---------------------------------------------
-	// check if we have children 
+	// check if we have children
 	if (!e_dest->children.empty())
 	{
 		if (!pEventPack) pEventPack = &P2;

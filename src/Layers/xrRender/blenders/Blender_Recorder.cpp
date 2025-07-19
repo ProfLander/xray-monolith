@@ -52,7 +52,7 @@ void CBlender_Compile::_cpp_Compile(ShaderElement* _SH)
 	LPCSTR base = NULL;
 	if (bDetail && BT->canBeDetailed())
 	{
-		// 
+		//
 		sh_list& lst = L_textures;
 		int id = ParseName(BT->oT_Name);
 		base = BT->oT_Name;
@@ -234,7 +234,7 @@ void CBlender_Compile::PassSET_ablend_mode(BOOL bABlend, u32 abSRC, u32 abDST)
 
 #if defined(USE_DX10) || defined(USE_DX11)
 	//	Since in our engine D3DRS_SEPARATEALPHABLENDENABLE state is
-	//	always set to false and in DirectX 10 blend functions for 
+	//	always set to false and in DirectX 10 blend functions for
 	//	color and alpha are always independent, assign blend options for
 	//	alpha in DX10 identical to color.
 	RS.SetRS(D3DRS_SRCBLENDALPHA, bABlend ? abSRC : D3DBLEND_ONE);

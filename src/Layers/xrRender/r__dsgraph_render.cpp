@@ -597,13 +597,13 @@ void R_dsgraph_structure::r_dsgraph_render_hud(bool NoPS)
 		mapHUD.clear();
 
 		rmNormal();
-		
-#if defined(USE_DX11) //  Redotix99: for 3D Shader Based Scopes 		
+
+#if defined(USE_DX11) //  Redotix99: for 3D Shader Based Scopes
 
 		if (scope_3D_fake_enabled)
 		{
 			RCache.set_RT(RImplementation.Target->rt_ssfx_temp->pRT, 3); // Render scope_3D to any buffer
-			
+
 			mapScopeHUD.traverseLR(sorted_L1);
 
 			if (!RImplementation.o.ssfx_motionvectors)
@@ -759,7 +759,7 @@ void R_dsgraph_structure::r_dsgraph_render_sorted()
 #if defined(USE_DX11)
 //////////////////////////////////////////////////////////////////////////
 // strict-sorted render
-void R_dsgraph_structure::r_dsgraph_render_ScopeSorted()  //  Redotix99: for 3D Shader Based Scopes 	
+void R_dsgraph_structure::r_dsgraph_render_ScopeSorted()  //  Redotix99: for 3D Shader Based Scopes
 {
 	// Change projection
 	Fmatrix FTold = Device.mFullTransform;
@@ -791,7 +791,7 @@ void R_dsgraph_structure::r_dsgraph_render_emissive(bool clear, bool renderHUD)
 
 	// Change projection
 	Fmatrix FTold = Device.mFullTransform;
-	
+
 	Device.mFullTransform = Device.mFullTransformHud;
 	RCache.set_xform_project(Device.mProjectHud);
 
@@ -799,7 +799,7 @@ void R_dsgraph_structure::r_dsgraph_render_emissive(bool clear, bool renderHUD)
 	rmNear();
 	// Sorted (back to front)
 	mapHUDEmissive.traverseLR(sorted_L1);
-	
+
 	if (clear)
 		mapHUDEmissive.clear();
 
@@ -1061,9 +1061,9 @@ void R_dsgraph_structure::r_dsgraph_render_landscape(u32 pass, bool _clear)
 {
 	RCache.set_xform_world(Fidentity);
 
-	if (pass == 0) 
+	if (pass == 0)
 		mapLandscape.traverseLR(pLandscape_0);
-	else 
+	else
 		mapLandscape.traverseLR(pLandscape_1);
 
 	if (_clear)

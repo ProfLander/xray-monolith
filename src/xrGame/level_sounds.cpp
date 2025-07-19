@@ -108,7 +108,7 @@ void SMusicTrack::Load(LPCSTR fn, LPCSTR params)
 
 BOOL SMusicTrack::in(u32 game_time)
 {
-	// game_time -ms 
+	// game_time -ms
 	if (m_ActiveTime.x == 0 && m_ActiveTime.y)
 		return TRUE;
 
@@ -242,7 +242,7 @@ void CLevelSoundManager::Update()
 					T.Stop();
 					// Msg("Stopping track %d", k);
 				}
-				if ((T.in(game_time) && m_PlayedMusicIndices.empty()) || 
+				if ((T.in(game_time) && m_PlayedMusicIndices.empty()) ||
 					(T.in(game_time) && !(std::find(m_PlayedMusicIndices.begin(), m_PlayedMusicIndices.end(), k) != m_PlayedMusicIndices.end()))) {
 					indices.push_back(k);
 					// Msg("Pushing track %d", k);
@@ -282,7 +282,7 @@ void CLevelSoundManager::Update()
 		{
 			SMusicTrack& T = m_MusicTracks[m_CurrentTrack];
 			if (!T.IsPlaying())
-			{	
+			{
 				m_CurrentTrack = -1;
 				m_NextTrackTime = engine_time;
 

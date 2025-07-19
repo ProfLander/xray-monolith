@@ -28,7 +28,7 @@ CTelekineticObject* CTeleWhirlwind::activate(CPhysicsShellHolder* obj, float str
 	if (inherited::activate(obj, strength, height, max_time_keep, rot))
 	{
 		CTelekineticObject* o = objects.back();
-		if (smart_cast<CTeleWhirlwindObject*>(o)) 
+		if (smart_cast<CTeleWhirlwindObject*>(o))
 		{
 			smart_cast<CTeleWhirlwindObject*>(o)->set_throw_power(m_fThrowPower);
 		}
@@ -166,7 +166,7 @@ void CTeleWhirlwindObject::release()
 	dir_inv.sub(object->Position(), m_pTelekinesis->GetCenter());
 	float magnitude = dir_inv.magnitude();
 
-	// включить гравитацию 
+	// включить гравитацию
 	object->m_pPhysicsShell->set_ApplyByGravity(TRUE);
 
 	float impulse = 0.f;
@@ -217,10 +217,10 @@ bool CTeleWhirlwindObject::destroy_object(const Fvector dir, float val)
 		{
 			CParticlesObject* pParticles = CParticlesObject::Create(
 				m_pTelekinesis->GetTearingParticles(), true, true);
-			
+
 			Fmatrix xform, m;
 			Fvector angles;
-			
+
 			xform.identity();
 			xform.k.normalize(Fvector().set(0, 1, 0));
 			Fvector::generate_orthonormal_basis(xform.k, xform.j, xform.i);
@@ -520,7 +520,7 @@ void CTeleTrampolinObject::raise(float step)
 	}
 	else
 	{
-	
+
 		//IRenderVisual* v = object->Visual();
 		//IKinematics* k = v->dcast_PKinematics();
 

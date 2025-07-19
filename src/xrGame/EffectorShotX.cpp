@@ -38,7 +38,7 @@ void CCameraShotEffectorX::Shot			(float angle)
 	float dAC = fAngleVert - fAC_Old;
 	float dAH = fAngleHorz - fAH_Old;
 
-	UpdateActorCamera(-dAC, -dAH);	
+	UpdateActorCamera(-dAC, -dAH);
 }
 
 void	CCameraShotEffectorX::Clear				()

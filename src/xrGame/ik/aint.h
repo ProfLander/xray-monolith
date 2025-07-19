@@ -68,7 +68,7 @@ inline int ge(float x, float y, const float eps = AINT_EPSILON)
 
 //
 // Puts an angle in the range 0..2*PI
-// 
+//
 //inline float angle_normalize(float psi)
 //{
 //    if (fabs(psi-2*M_PI) < AINT_EPSILON)
@@ -120,10 +120,10 @@ inline float angle_distance(float a1, float a2)
 //
 // Angle ranges are represented in counterclockwise notation so low does
 // not have to less than high
-// 
-// eg: low = 275 deg, high = 30 deg means that any angle in the range 275..360 or 0..30 
+//
+// eg: low = 275 deg, high = 30 deg means that any angle in the range 275..360 or 0..30
 //     is legal
-// By contrast  
+// By contrast
 //     low = 30, high = 275 means that any angle in the range 30..275 is legal
 //
 
@@ -212,7 +212,7 @@ public:
 
 //
 // Class for iterating through angles
-// 
+//
 class AngleIntIterator
 {
 	int count;
@@ -235,7 +235,7 @@ public:
 
 //
 // An AngleIntList is used to store a set of AngleInts
-// 
+//
 struct AngleIntListNode
 {
 	AngleInt D;

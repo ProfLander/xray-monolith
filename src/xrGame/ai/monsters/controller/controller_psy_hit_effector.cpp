@@ -18,7 +18,7 @@
 //bool CPsyHitEffectorPP::check_start_conditions()
 //{
 //	return (m_dist < m_radius * m_r_max_perc);
-//}	
+//}
 //
 //void CPsyHitEffectorPP::update_factor()
 //{

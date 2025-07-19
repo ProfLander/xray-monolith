@@ -1,7 +1,7 @@
 ////////////////////////////////////////////////////////////////////////////
 //	Module 		: xrServer_Objects_ALife_Smartcovers.cpp
 //	Created 	: 17.12.2008
-//  Modified 	: 
+//  Modified 	:
 //	Author		: Alexander Plichko
 //	Description : Server objects smartcovers for ALife simulator
 ////////////////////////////////////////////////////////////////////////////
@@ -45,7 +45,7 @@ BOOL is_combat_cover			(shared_str const &table_id)
 	xr_strcat					(temp, *table_id);
 
 	::luabind::object				table, value;
-	bool						result = 
+	bool						result =
 		ai().script_engine().function_object(
 		temp,
 		table,
@@ -201,7 +201,7 @@ void CSE_SmartCover::OnChangeLoopholes(PropValue* sender)
 }
 
 void CSE_SmartCover::OnChangeDescription(PropValue* sender)
-{	
+{
 	set_editor_flag	(flVisualChange);
 	load_draw_data	();
 }
@@ -314,7 +314,7 @@ void CSE_SmartCover::check_enterable_loopholes(shared_str const &description)
 	xr_strcat					(temp, ".transitions");
 
 	::luabind::object				transitions;
-	bool						result = 
+	bool						result =
 		ai().script_engine().function_object(
 		temp,
 		transitions,
@@ -415,10 +415,10 @@ void draw_frustum	(CDUInterface* du, float FOV, float _FAR, float A, Fvector &P,
 	ProjDirs[3].sub(sPts[3],COP);
 
 	Fvector _F[4];
-	_F[0].mad(COP, ProjDirs[0], _FAR); 
-	_F[1].mad(COP, ProjDirs[1], _FAR); 
-	_F[2].mad(COP, ProjDirs[2], _FAR); 
-	_F[3].mad(COP, ProjDirs[3], _FAR); 
+	_F[0].mad(COP, ProjDirs[0], _FAR);
+	_F[1].mad(COP, ProjDirs[1], _FAR);
+	_F[2].mad(COP, ProjDirs[2], _FAR);
+	_F[3].mad(COP, ProjDirs[3], _FAR);
 
 	du->DrawLine(COP,_F[0],CL);
 	du->DrawLine(COP,_F[1],CL);
@@ -457,7 +457,7 @@ void CSE_SmartCover::load_draw_data () {
 	m_draw_data.clear			();
 
 	::luabind::object				loopholes;
-	bool						result = 
+	bool						result =
 		ai().script_engine().function_object(
 		temp,
 		loopholes,
@@ -477,7 +477,7 @@ void CSE_SmartCover::load_draw_data () {
 		bool loophole_exist = true;
 		if (m_available_loopholes.is_valid()) {
 			::luabind::object::iterator	i = m_available_loopholes.begin( );
-			::luabind::object::iterator	e = m_available_loopholes.end( );			
+			::luabind::object::iterator	e = m_available_loopholes.end( );
 			for ( ; i != e; ++i ) {
 				LPCSTR const loophole_id= ::luabind::object_cast< LPCSTR >( i.key( ) );
 				shared_str descr_loophole_id = parse_string(*I,"id");
@@ -555,7 +555,7 @@ void CSE_SmartCover::load_draw_data () {
 void CSE_SmartCover::on_render	(CDUInterface* du, ISE_AbstractLEOwner* owner, bool bSelected, const Fmatrix& parent,int priority, bool strictB2F)
 {
 	inherited1::on_render	(du, owner, bSelected, parent, priority, strictB2F);
-	if ( !((1==priority)&&(false==strictB2F)) )	
+	if ( !((1==priority)&&(false==strictB2F)) )
 		return;
 
 	if( m_need_to_reparse_loopholes&&m_description.size() )

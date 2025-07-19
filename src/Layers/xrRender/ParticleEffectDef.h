@@ -126,7 +126,7 @@ namespace PS
 	public:
 		DEFINE_VECTOR(EParticleAction*, EPAVec, EPAVecIt);
 		EPAVec m_EActionList;
-#ifdef _EDITOR // DIRTY HACK TO MAKE PARTICLE IMPORT AND EXPORT WORK 
+#ifdef _EDITOR // DIRTY HACK TO MAKE PARTICLE IMPORT AND EXPORT WORK
 	public:
 		void __stdcall  	FindActionByName	(LPCSTR new_name, bool& res);
 		bool __stdcall  	NameOnAfterEdit					(PropValue* sender, shared_str& edit_val);
@@ -150,7 +150,7 @@ namespace PS
 		static PFunction*	FindCommandPrototype(LPCSTR src, LPCSTR& dest);
 		void __stdcall  	FillActionList		(ChooseItemVec& items, void* param);
         bool 				Validate 			(bool bMsg);
-#endif // DIRTY HACK TO MAKE PARTICLE IMPORT AND EXPORT WORK 
+#endif // DIRTY HACK TO MAKE PARTICLE IMPORT AND EXPORT WORK
 		void Compile(EPAVec& v);
 		// DIRTY HACK TO MAKE PARTICLE IMPORT AND EXPORT WORK #endif
 	};

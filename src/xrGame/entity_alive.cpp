@@ -24,7 +24,7 @@
 #define SMALL_ENTITY_RADIUS		0.6f
 #define BLOOD_MARKS_SECT		"bloody_marks"
 
-//отметки крови на стенах 
+//отметки крови на стенах
 FactoryPtr<IWallMarkArray>* CEntityAlive::m_pBloodMarksVector = NULL;
 float CEntityAlive::m_fBloodMarkSizeMin = 0.f;
 float CEntityAlive::m_fBloodMarkSizeMax = 0.f;

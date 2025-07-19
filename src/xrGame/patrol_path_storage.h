@@ -32,7 +32,7 @@ protected:
 public:
 	IC CPatrolPathStorage();
 	virtual ~CPatrolPathStorage();
-	virtual void load(IReader& stream); 
+	virtual void load(IReader& stream);
 	virtual void load_from_config();
 	virtual void save(IWriter& stream);
 

@@ -151,7 +151,7 @@ void dxDebugRender::SetDebugShader(dbgShaderHandle shdHandle)
 {
 	R_ASSERT(shdHandle<dbgShaderCount);
 
-	static const LPCSTR dbgShaderParams[][2] = 
+	static const LPCSTR dbgShaderParams[][2] =
 	{
 		{"hud\\default", "ui\\ui_pop_up_active_back"},
 	};
@@ -159,7 +159,7 @@ void dxDebugRender::SetDebugShader(dbgShaderHandle shdHandle)
 	if(!m_dbgShaders[shdHandle])
 		m_dbgShaders[shdHandle].create(
 			dbgShaderParams[shdHandle][0], dbgShaderParams[shdHandle][1]);
-	
+
 	RCache.set_Shader(m_dbgShaders[shdHandle]);
 }
 
@@ -198,4 +198,4 @@ public:
 	}
 } rdebug_render_impl;
 
-dxDebugRender *rdebug_render = &rdebug_render_impl; 
+dxDebugRender *rdebug_render = &rdebug_render_impl;

@@ -367,7 +367,7 @@ bool CStateBurerAttackTele<Object>::IsActiveObjects()
 template <typename Object>
 bool CStateBurerAttackTele<Object>::CheckTeleStart()
 {
-	// проверка на текущую активность 
+	// проверка на текущую активность
 	if (IsActiveObjects()) return false;
 
 	// проверить дистанцию до врага

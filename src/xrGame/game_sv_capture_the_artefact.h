@@ -170,7 +170,7 @@ private:
 	void OnObjectEnterTeamBase(u16 id, u16 zone_team);
 	void OnObjectLeaveTeamBase(u16 id, u16 zone_team);
 
-	/// Moves and prepears all player for new round (invokes 
+	/// Moves and prepears all player for new round (invokes
 	/// PrepareActorForNewRound, MoveActorToPoint.
 	void StartNewRound();
 	void ActorDeliverArtefactOnBase(CSE_ActorMP* actor, ETeam actorTeam, ETeam teamOfArtefact);

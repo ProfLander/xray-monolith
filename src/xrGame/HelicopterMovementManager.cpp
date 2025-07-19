@@ -470,7 +470,7 @@ void CHelicopter::OnRender()
 {
 /*
 	if(!bDebug) return;
-	
+
 	if(!m_movement.currPatrolPath) return;
 
 	CPatrolPath::const_vertex_iterator b = m_movement.currPatrolPath->vertices().begin();
@@ -488,7 +488,7 @@ void CHelicopter::OnRender()
 	float	td			= 2*PI*dist/round_len;
 	float	dir_h		= 0.0f;
 	xr_vector<Fvector>	round_points;
-	
+
 	while(dir_h+td<2*PI){
 		Fvector dir, new_pt;
 		dir.setHP(dir_h,0.0f);

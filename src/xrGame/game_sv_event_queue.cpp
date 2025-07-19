@@ -2,7 +2,7 @@
 #include "game_sv_event_queue.h"
 
 
-// 
+//
 GameEventQueue::GameEventQueue()
 #ifdef PROFILE_CRITICAL_SECTIONS
 	:cs(MUTEX_PROFILE_ID(GameEventQueue))
@@ -99,7 +99,7 @@ GameEvent* GameEventQueue::Retreive()
 	GameEvent* ge = 0;
 	cs.Enter();
 	if (!ready.empty()) ge = ready.front();
-		//---------------------------------------------	
+		//---------------------------------------------
 	else
 	{
 		u32 tmp_time = GetTickCount() - 60000;
@@ -113,7 +113,7 @@ GameEvent* GameEventQueue::Retreive()
 #endif
 		}
 	}
-	//---------------------------------------------	
+	//---------------------------------------------
 	cs.Leave();
 	return ge;
 }
@@ -134,7 +134,7 @@ void GameEventQueue::Release()
 	}
 	else
 		unused.push_back(ready.front());
-	//---------------------------------------------		
+	//---------------------------------------------
 	ready.pop_front();
 	cs.Leave();
 }

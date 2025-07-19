@@ -658,7 +658,7 @@ void CMainMenu::OnDownloadPatch(CUIWindow*, void*)
 	//	m_sPatchFileName = fname;
 	//}
 	//else
-	//	m_sPatchFileName.printf	("downloads\\%s", FileName);	
+	//	m_sPatchFileName.printf	("downloads\\%s", FileName);
 	//
 	//m_sPDProgress.IsInProgress	= true;
 	//m_sPDProgress.Progress		= 0;
@@ -809,7 +809,7 @@ bool CMainMenu::IsCDKeyIsValid()
 	//		m_pGameSpyFull->GetGameSpyHTTP()->xrGS_GetGameID(&GameID, i);
 	//		if (VerifyClientCheck(CDKey, unsigned short (GameID)) == 1)
 	//			return true;
-	//	};	
+	//	};
 	//	return false;
 }
 
@@ -857,7 +857,7 @@ LPCSTR CMainMenu::GetPlayerName()
 {
 	m_player_name = "Stalker";
 	//gamespy_gp::login_manager* l_mngr		= GetLoginMngr();
-	//gamespy_gp::profile const * tmp_prof	= l_mngr ? 
+	//gamespy_gp::profile const * tmp_prof	= l_mngr ?
 	//	l_mngr->get_current_profile() : NULL;
 
 	//if (tmp_prof)

@@ -1235,7 +1235,7 @@ void CActor::UpdateCL()
 			g_pGamePersistent->m_pGShaderConstants->m_blender_mode.set(0.f, 0.f, 0.f, 0.f);
 
 			// Turn off SecondVP
-			Device.m_SecondViewport.SetSVPActive(false);			
+			Device.m_SecondViewport.SetSVPActive(false);
 		}
 	}
 
@@ -1349,7 +1349,7 @@ void CActor::UpdateCL()
 			//Survival Mode
 			else if (ai().script_engine().functor("_g.IsSurvivalMode", game_mode) && game_mode())
 				snprintf(discord_gameinfo.gamemode, 128, xr_ToUTF8(*CStringTable().translate("st_cap_check_survival")));
-			
+
 			//Freeplay Mode
 			else
 				snprintf(discord_gameinfo.gamemode, 128, xr_ToUTF8(*CStringTable().translate("st_cap_check_freeplay")));
@@ -1409,7 +1409,7 @@ void CActor::RPC_UpdateFaction()
 
 void CActor::RPC_UpdateRank()
 {
-	//Rank		
+	//Rank
 	::luabind::functor<LPCSTR> actor_rank;
 	if (ai().script_engine().functor("ranks.get_player_rank_name", actor_rank))
 	{
@@ -1425,7 +1425,7 @@ void CActor::RPC_UpdateRank()
 
 void CActor::RPC_UpdateReputation()
 {
-	//Reputation		
+	//Reputation
 	::luabind::functor<int> actor_rep_val;
 	if (ai().script_engine().functor("ranks.get_player_reputation", actor_rep_val))
 	{
@@ -1964,12 +1964,12 @@ bool CActor::AllowActorShadow()
 void CActor::renderable_Render()
 {
 	VERIFY(_valid(XFORM()));
-	
+
 	if (cam_active == eacFirstEye)
 	{
 		if (::Render->active_phase() == 0) // can render first person body here
 		{
-			//if (fpBody) 
+			//if (fpBody)
 			//	inherited::renderable_Render();
 		}
 		else if (AllowActorShadow()) // render actor shadow
@@ -2107,7 +2107,7 @@ void CActor::RenderIndicator(Fvector dpos, float r1, float r2, const ui_shader& 
 	//pv->set         (a.x+pos.x,a.y+pos.y,a.z+pos.z, 0xffffffff, 0.f,0.f);        pv++;
 	//pv->set         (c.x+pos.x,c.y+pos.y,c.z+pos.z, 0xffffffff, 1.f,1.f);        pv++;
 	//pv->set         (b.x+pos.x,b.y+pos.y,b.z+pos.z, 0xffffffff, 1.f,0.f);        pv++;
-	// render	
+	// render
 	//dwCount 				= u32(pv-pv_start);
 	//RCache.Vertex.Unlock	(dwCount,hFriendlyIndicator->vb_stride);
 
@@ -2145,7 +2145,7 @@ void CActor::RenderText(LPCSTR Text, Fvector dpos, float* pdup, u32 color)
 	float size = v1r.distance_to(v0r);
 	CGameFont* pFont = UI().Font().pFontArial14;
 	if (!pFont) return;
-	//	float OldFontSize = pFont->GetHeight	();	
+	//	float OldFontSize = pFont->GetHeight	();
 	float delta_up = 0.0f;
 	if (size < mid_size) delta_up = upsize;
 	else delta_up = upsize * (mid_size / size);
@@ -2530,7 +2530,7 @@ bool CActor::can_attach(const CInventoryItem* inventory_item) const
 	                                              inventory_item->object().cNameSect()))
 		return false;
 
-	//åñëè óæå åñòü ïðèñîåäèííåíûé îáúåò òàêîãî òèïà 
+	//åñëè óæå åñòü ïðèñîåäèííåíûé îáúåò òàêîãî òèïà
 	if (attached(inventory_item->object().cNameSect()))
 		return false;
 
@@ -2783,7 +2783,7 @@ void CActor::initFPCam()
 	}
 }
 
-void CActor::removeFPCam() 
+void CActor::removeFPCam()
 {
 	if (m_FPCam) {
 		Cameras().RemoveCamEffector(m_FPCam);

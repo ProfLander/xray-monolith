@@ -432,11 +432,11 @@ void dx103DFluidManager::AdvectColorBFECC(float timestep, bool bTeperature)
 	//pShaderResourceVariables[RENDER_TARGET_TEMPVECTOR]->SetResource( NULL );
 	//TimeStepShaderVariable->SetFloat(timestep);
 	RCache.set_c(strTimeStep, timestep);
-	//ModulateShaderVariable->SetFloat(1.0f);  
+	//ModulateShaderVariable->SetFloat(1.0f);
 	RCache.set_c(strModulate, 1.0f);
 	//ForwardShaderVariable->SetFloat(1.0f);
 	RCache.set_c(strForward, 1.0f);
-	//SetRenderTarget( RENDER_TARGET_TEMPVECTOR );	
+	//SetRenderTarget( RENDER_TARGET_TEMPVECTOR );
 	//TechniqueAdvect->GetPassByIndex(0)->Apply(0);
 	m_pGrid->DrawSlices();
 	//m_pD3DDevice->OMSetRenderTargets(0, NULL, NULL);
@@ -465,7 +465,7 @@ void dx103DFluidManager::AdvectColorBFECC(float timestep, bool bTeperature)
 
 	//TimeStepShaderVariable->SetFloat(timestep);
 	RCache.set_c(strTimeStep, timestep);
-	//ModulateShaderVariable->SetFloat(1.0f);  
+	//ModulateShaderVariable->SetFloat(1.0f);
 	RCache.set_c(strModulate, 1.0f);
 	//ForwardShaderVariable->SetFloat(-1.0);
 	RCache.set_c(strForward, -1.0f);
@@ -480,7 +480,7 @@ void dx103DFluidManager::AdvectColorBFECC(float timestep, bool bTeperature)
 	//  uses both \phi and \bar{\phi} as source quantity
 	//  (specifically, (3/2)\phi^n - (1/2)\bar{\phi})
 	//if(ColorTextureNumber == 0)
-	//{   
+	//{
 	//	pShaderResourceVariables[RENDER_TARGET_COLOR1]->SetResource( pRenderTargetShaderViews[RENDER_TARGET_COLOR1] );
 	//	SetRenderTarget( RENDER_TARGET_COLOR0 );
 	//}
@@ -535,7 +535,7 @@ void dx103DFluidManager::AdvectColor(float timestep, bool bTeperature)
 
 	//TimeStepShaderVariable->SetFloat(timestep);
 	RCache.set_c(strTimeStep, timestep);
-	//ModulateShaderVariable->SetFloat(1.0f);  
+	//ModulateShaderVariable->SetFloat(1.0f);
 	RCache.set_c(strModulate, 1.0f);
 	//ForwardShaderVariable->SetFloat(1.0);
 	RCache.set_c(strForward, 1.0f);
@@ -670,7 +670,7 @@ void dx103DFluidManager::ComputePressure(float timestep)
 		std::pair<u32,ref_texture>&		loader	=	*_it;
 
 		//	Shadowmap texture always uses 0 texture unit
-		if (loader.second->cName==strPressureName)		
+		if (loader.second->cName==strPressureName)
 		{
 			//	Assign correct texture
 			dwTextureStage	= loader.first;
@@ -686,7 +686,7 @@ void dx103DFluidManager::ComputePressure(float timestep)
 	{
 		//pShaderResourceVariables[RENDER_TARGET_PRESSURE]->SetResource( pRenderTargetShaderViews[RENDER_TARGET_PRESSURE] );
 		//TechniqueJacobi->GetPassByIndex(0)->Apply(0);
-		//SetRenderTarget( RENDER_TARGET_TEMPSCALAR );		
+		//SetRenderTarget( RENDER_TARGET_TEMPSCALAR );
 		RCache.set_RT(pRenderTargetViews[RENDER_TARGET_TEMPSCALAR]);
 		pRTTextures[RENDER_TARGET_PRESSURE]->bind(dwTextureStage);
 		m_pGrid->DrawSlices();
@@ -763,9 +763,9 @@ void dx103DFluidManager::UpdateObstacles(const dx103DFluidData& FluidData, float
 	m_pObstaclesHandler->ProcessObstacles(FluidData, timestep);
 
 	//	Just reset render targets:
-	//	later only rt 0 will be reassigned so rt1 
+	//	later only rt 0 will be reassigned so rt1
 	//	would be bound all the time
-	//	Reset to avoid confusion. 
+	//	Reset to avoid confusion.
 	RCache.set_RT(0, 0);
 	RCache.set_RT(0, 1);
 }

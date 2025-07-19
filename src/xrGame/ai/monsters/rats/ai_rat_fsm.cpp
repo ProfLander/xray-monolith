@@ -583,7 +583,7 @@ void CAI_Rat::FreeRecoil()
 	//			m_tSpawnPosition = m_tGoalDir = m_tRecoilPosition;
 	//
 	//	m_fSafeSpeed = m_fSpeed = m_fMaxSpeed;
-	//	
+	//
 	//	vfUpdateTime(m_fTimeUpdateDelta);
 	//
 	//	if (m_dwLastUpdateTime > m_dwLostRecoilTime + 2000) {
@@ -606,7 +606,7 @@ void CAI_Rat::FreeRecoil()
 	//		vfUpdateTime			(m_fTimeUpdateDelta);
 	//		vfComputeNewPosition	(false);
 	//	}
-	//	else 
+	//	else
 	{
 		m_fSpeed = m_fSafeSpeed = m_fMaxSpeed;
 		vfComputeNewPosition(true, true);

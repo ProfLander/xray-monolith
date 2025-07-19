@@ -370,7 +370,7 @@ IC void CBackend::set_Scissor(Irect* R)
 {
 	if (R)
 	{
-		//CHK_DX		(HW.pDevice->SetRenderState(D3DRS_SCISSORTESTENABLE,TRUE));		
+		//CHK_DX		(HW.pDevice->SetRenderState(D3DRS_SCISSORTESTENABLE,TRUE));
 		StateManager.EnableScissoring();
 		RECT* clip = (RECT *)R;
 		HW.pContext->RSSetScissorRects(1, clip);
@@ -403,9 +403,9 @@ IC void CBackend::set_Z(u32 _enable)
 {
 	StateManager.SetDepthEnable(_enable);
 	//if (z_enable != _enable)
-	//{ 
+	//{
 	//	z_enable=_enable;
-	//	CHK_DX(HW.pDevice->SetRenderState	( D3DRS_ZENABLE, _enable )); 
+	//	CHK_DX(HW.pDevice->SetRenderState	( D3DRS_ZENABLE, _enable ));
 	//}
 }
 
@@ -424,7 +424,7 @@ IC void CBackend::set_AlphaRef(u32 _value)
 	//	TODO: DX10: Implement rasterizer state update to support alpha ref
 	VERIFY(!"Not implemented.");
 	//if (alpha_ref != _value)
-	//{ 
+	//{
 	//	alpha_ref = _value;
 	//	CHK_DX(HW.pDevice->SetRenderState(D3DRS_ALPHAREF,_value));
 	//}
@@ -433,12 +433,12 @@ IC void CBackend::set_AlphaRef(u32 _value)
 IC void CBackend::set_ColorWriteEnable(u32 _mask)
 {
 	StateManager.SetColorWriteEnable(_mask);
-	//if (colorwrite_mask		!= _mask)		{ 
-	//	colorwrite_mask=_mask;		
-	//	CHK_DX(HW.pDevice->SetRenderState	( D3DRS_COLORWRITEENABLE,	_mask	));	
-	//	CHK_DX(HW.pDevice->SetRenderState	( D3DRS_COLORWRITEENABLE1,	_mask	));	
-	//	CHK_DX(HW.pDevice->SetRenderState	( D3DRS_COLORWRITEENABLE2,	_mask	));	
-	//	CHK_DX(HW.pDevice->SetRenderState	( D3DRS_COLORWRITEENABLE3,	_mask	));	
+	//if (colorwrite_mask		!= _mask)		{
+	//	colorwrite_mask=_mask;
+	//	CHK_DX(HW.pDevice->SetRenderState	( D3DRS_COLORWRITEENABLE,	_mask	));
+	//	CHK_DX(HW.pDevice->SetRenderState	( D3DRS_COLORWRITEENABLE1,	_mask	));
+	//	CHK_DX(HW.pDevice->SetRenderState	( D3DRS_COLORWRITEENABLE2,	_mask	));
+	//	CHK_DX(HW.pDevice->SetRenderState	( D3DRS_COLORWRITEENABLE3,	_mask	));
 	//}
 }
 

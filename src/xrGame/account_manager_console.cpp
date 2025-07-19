@@ -141,7 +141,7 @@ void CCC_GameSpyPrintProfile::Execute(LPCSTR args)
 	//		Msg("! No profile store available");
 	//		return;
 	//	}
-	//	
+	//
 	//	Msg("- Player awards:");
 	//	gamespy_profile::all_awards_t const & tmp_awards = tmp_store->get_awards();
 	//	for (gamespy_profile::all_awards_t::const_iterator i = tmp_awards.begin(),
@@ -161,7 +161,7 @@ void CCC_GameSpyPrintProfile::Execute(LPCSTR args)
 	//	for (gamespy_profile::all_best_scores_t::const_iterator i = tmp_best_scores.begin(),
 	//		ie = tmp_best_scores.end(); i < ie; ++i)
 	//	{
-	//		Msg("- (score: %s), (score: %d)", 
+	//		Msg("- (score: %s), (score: %d)",
 	//			gamespy_profile::get_best_score_name(static_cast<gamespy_profile::enum_best_score_type>(i->first)),
 	//			i->second
 	//		);

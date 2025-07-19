@@ -63,9 +63,9 @@ void CStateAbstract::execute()
 				{
 					p_monster->add_debug_info(tree);
 				}
-				
+
 				debug::log_text_tree(tree);
-				VERIFY(current_substate != u32(-1)); 
+				VERIFY(current_substate != u32(-1));
 			}
 #endif
 	}
@@ -166,7 +166,7 @@ void   CStateAbstract::add_debug_info (debug::text_tree& root_s)
 	typedef debug::text_tree TextTree;
 	if ( !substates.size() )
 	{
-		root_s.add_line("Current");		
+		root_s.add_line("Current");
 	}
 	else
 	{

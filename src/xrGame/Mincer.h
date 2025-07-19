@@ -1,11 +1,11 @@
 /////////////////////////////////////////////////////
-// 
+//
 // Common class for gravity anomalies: Vortex and Whirlgig
 // When object gets caught it will be pulled towards the
 // center + additional tele_height, then ripped apart.
 // Zone recharges after blowout
 // (charges from 0 to m_fMaxPower in m_dwPeriod time)
-// 
+//
 /////////////////////////////////////////////////////
 #pragma once
 

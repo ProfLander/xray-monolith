@@ -37,7 +37,7 @@ void stats_manager::increment_stats(u32 size, enum_stats_buffer_type type, _D3DP
 	new_item.location	= location;
 	new_item.type		= type;
 	new_item.size		= size;
-	
+
 	m_buffers_list.push_back(new_item);
 #endif
 }
@@ -189,7 +189,7 @@ void stats_manager::decrement_stats(u32 size, enum_stats_buffer_type type, _D3DP
 			break;
 		}
 	}
-	R_ASSERT( find );	//  "Specified buffer not fount in the buffers list. 
+	R_ASSERT( find );	//  "Specified buffer not fount in the buffers list.
 	//	The buffer may not incremented to stats or it already was removed"
 #endif //DEBUG
 

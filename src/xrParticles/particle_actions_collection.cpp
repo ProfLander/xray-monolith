@@ -696,7 +696,7 @@ void PACopyVertexB::Execute(ParticleEffect* effect, const float dt, float& tm_ma
 			m.posB = m.pos;
 		}
 	}
-	/*	
+	/*
 		if(copy_vel)
 		{
 			for(i = 0; i < effect->p_count; i++)
@@ -1481,7 +1481,7 @@ void PASpeedLimit::Transform(const Fmatrix&) { ; }
 
 // Change color of all particles toward the specified color
 void PATargetColor::Execute(ParticleEffect* effect, const float dt, float& tm_max)
-{	
+{
 
 	float COEFF = STEP_DEFAULT / dt;
 	float scaleFac = scale * STEP_DEFAULT;
@@ -1698,7 +1698,7 @@ __forceinline void _mm_store_fvector(Fvector& v, const __m128 R1)
 
 	_mm_store_ss((float*)&v.x, R1);
 	R2 = _mm_unpacklo_ps(R1, R1); // R2 = v.y | v.y | v.x | v.x
-	R2 = _mm_movehl_ps(R2, R2); // R2 = v.y | v.y | v.y | v.y 
+	R2 = _mm_movehl_ps(R2, R2); // R2 = v.y | v.y | v.y | v.y
 	_mm_store_ss((float*)&v.y, R2);
 	R2 = _mm_movehl_ps(R1, R1); // R2 = 0 | v.z | 0 | v.z
 	_mm_store_ss((float*)&v.z, R2);
@@ -1765,20 +1765,20 @@ void PATurbulenceExecuteStream(LPVOID lpvParams)
 			_D = _mm_mul_ps(_D, _magnitude);
 
 			__m128 _vmo = _mm_mul_ps(_mvel, _mvel); // _vmo = 00 | zz | yy | xx
-			__m128 _tmp = _mm_movehl_ps(_vmo, _vmo); // _tmp = 00 | zz | 00 | zz 
+			__m128 _tmp = _mm_movehl_ps(_vmo, _vmo); // _tmp = 00 | zz | 00 | zz
 			_vmo = _mm_add_ss(_vmo, _tmp); // _vmo = 00 | zz | yy | xx + zz
 			_tmp = _mm_unpacklo_ps(_vmo, _vmo); // _tmp = yy | yy | xx + zz | xx + zz
-			_tmp = _mm_movehl_ps(_tmp, _tmp); // _tmp = yy | yy | yy | yy 
+			_tmp = _mm_movehl_ps(_tmp, _tmp); // _tmp = yy | yy | yy | yy
 			_vmo = _mm_add_ss(_vmo, _tmp); // _vmo = 00 | zz | yy | xx + yy + zz
 			_vmo = _mm_sqrt_ss(_vmo); // _vmo = 00 | zz | yy | vmo
 
 			_mvel = _mm_add_ps(_mvel, _D);
 
 			__m128 _vmn = _mm_mul_ps(_mvel, _mvel); // _vmn = 00 | zz | yy | xx
-			_tmp = _mm_movehl_ps(_vmn, _vmn); // _tmp = 00 | zz | 00 | zz 
+			_tmp = _mm_movehl_ps(_vmn, _vmn); // _tmp = 00 | zz | 00 | zz
 			_vmn = _mm_add_ss(_vmn, _tmp); // _vmn = 00 | zz | yy | xx + zz
 			_tmp = _mm_unpacklo_ps(_vmn, _vmn); // _tmp = yy | yy | xx + zz | xx + zz
-			_tmp = _mm_movehl_ps(_tmp, _tmp); // _tmp = yy | yy | yy | yy 
+			_tmp = _mm_movehl_ps(_tmp, _tmp); // _tmp = yy | yy | yy | yy
 			_vmn = _mm_add_ss(_vmn, _tmp); // _vmn = 00 | zz | yy | xx + yy + zz
 			_vmn = _mm_sqrt_ss(_vmn); // _vmn = 00 | zz | yy | vmn
 
@@ -1841,20 +1841,20 @@ void PATurbulence::Execute(ParticleEffect* effect, const float dt, float& tm_max
 		_D = _mm_mul_ps(_D, _magnitude);
 
 		__m128 _vmo = _mm_mul_ps(_mvel, _mvel); // _vmo = 00 | zz | yy | xx
-		__m128 _tmp = _mm_movehl_ps(_vmo, _vmo); // _tmp = 00 | zz | 00 | zz 
+		__m128 _tmp = _mm_movehl_ps(_vmo, _vmo); // _tmp = 00 | zz | 00 | zz
 		_vmo = _mm_add_ss(_vmo, _tmp); // _vmo = 00 | zz | yy | xx + zz
 		_tmp = _mm_unpacklo_ps(_vmo, _vmo); // _tmp = yy | yy | xx + zz | xx + zz
-		_tmp = _mm_movehl_ps(_tmp, _tmp); // _tmp = yy | yy | yy | yy 
+		_tmp = _mm_movehl_ps(_tmp, _tmp); // _tmp = yy | yy | yy | yy
 		_vmo = _mm_add_ss(_vmo, _tmp); // _vmo = 00 | zz | yy | xx + yy + zz
 		_vmo = _mm_sqrt_ss(_vmo); // _vmo = 00 | zz | yy | vmo
 
 		_mvel = _mm_add_ps(_mvel, _D);
 
 		__m128 _vmn = _mm_mul_ps(_mvel, _mvel); // _vmn = 00 | zz | yy | xx
-		_tmp = _mm_movehl_ps(_vmn, _vmn); // _tmp = 00 | zz | 00 | zz 
+		_tmp = _mm_movehl_ps(_vmn, _vmn); // _tmp = 00 | zz | 00 | zz
 		_vmn = _mm_add_ss(_vmn, _tmp); // _vmn = 00 | zz | yy | xx + zz
 		_tmp = _mm_unpacklo_ps(_vmn, _vmn); // _tmp = yy | yy | xx + zz | xx + zz
-		_tmp = _mm_movehl_ps(_tmp, _tmp); // _tmp = yy | yy | yy | yy 
+		_tmp = _mm_movehl_ps(_tmp, _tmp); // _tmp = yy | yy | yy | yy
 		_vmn = _mm_add_ss(_vmn, _tmp); // _vmn = 00 | zz | yy | xx + yy + zz
 		_vmn = _mm_sqrt_ss(_vmn); // _vmn = 00 | zz | yy | vmn
 

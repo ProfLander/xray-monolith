@@ -243,7 +243,7 @@ void xrServer::Process_event(NET_Packet& P, ClientID sender)
 			SendBroadcast(BroadcastCID, P, MODE);
 
 			//////////////////////////////////////////////////////////////////////////
-			// 
+			//
 			if (game->Type() == eGameIDSingle)
 			{
 				P.w_begin(M_EVENT);

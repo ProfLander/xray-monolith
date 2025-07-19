@@ -21,7 +21,7 @@ This can be used to check for typos or other key-entry mistakes
 It does not determine whether a key is actually valid (i.e. was generated as part of a valid
 key batch) - that will require checking against a valid key list on a backend server.
 Pass in the key (with or without dashes) and the "cskey" value that was used when generating
-the keys. 
+the keys.
 Returns 1 if the key appears to be valid, 0 otherwise
 */
 int VerifyClientCheck(const char* key, unsigned short cskey);

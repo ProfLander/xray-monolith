@@ -50,18 +50,18 @@ public:
 	LPCSTR GetScriptText(LPCSTR str_to_translate, const CGameObject* pSpeakerGO1, const CGameObject* pSpeakerGO2,
 	                     LPCSTR dialog_id, LPCSTR phrase_id);
 protected:
-	//загрузка содержания последовательности тагов в контейнер строк 
+	//загрузка содержания последовательности тагов в контейнер строк
 	template <class T>
 	void LoadSequence(CUIXml* ui_xml, XML_NODE* phrase_node, LPCSTR tag, T& str_vector);
 
-	//манипуляции с информацией во время вызовов Precondition и Action 
+	//манипуляции с информацией во время вызовов Precondition и Action
 	virtual bool CheckInfo(const CInventoryOwner* pOwner) const;
 	virtual void TransferInfo(const CInventoryOwner* pOwner) const;
 
 	//имя скриптовой функции, которая возвращает какой-то текст
 	shared_str m_sScriptTextFunc;
 
-	//скриптовые действия, которые активируется после того как 
+	//скриптовые действия, которые активируется после того как
 	//говорится фраза
 	DEFINE_VECTOR(shared_str, ACTION_NAME_VECTOR, ACTION_NAME_VECTOR_IT);
 	ACTION_NAME_VECTOR m_ScriptActions;

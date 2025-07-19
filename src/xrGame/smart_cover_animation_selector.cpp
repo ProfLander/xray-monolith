@@ -52,7 +52,7 @@ void animation_selector::initialize()
 	// and in case of RayQuery
 	// our bone callback could be called
 	// but UpdateCL is not called yet
-	// and we will have 
+	// and we will have
 	// VERIFY	(*parameter->m_blend);
 	m_callback_called = true;
 	m_object->animation().update();

@@ -35,8 +35,8 @@ void CRenderTarget::phase_scene_prepare()
 // begin
 void CRenderTarget::phase_scene_begin()
 {
-	SSManager.SetMaxAnisotropy(ps_r__tf_Anisotropic);	
-	
+	SSManager.SetMaxAnisotropy(ps_r__tf_Anisotropic);
+
 	ID3DDepthStencilView* pZB = HW.pBaseZB;
 
 	if (RImplementation.o.dx10_msaa)
@@ -46,7 +46,7 @@ void CRenderTarget::phase_scene_begin()
 	{
 		//--DSR-- HeatVision_start
 		if (RImplementation.o.albedo_wo) u_setrt(rt_Position, rt_Accumulator, rt_Heat, rt_ssfx_motion_vectors, pZB);
-		else u_setrt(rt_Position, rt_Color, rt_Heat, rt_ssfx_motion_vectors, pZB);		
+		else u_setrt(rt_Position, rt_Color, rt_Heat, rt_ssfx_motion_vectors, pZB);
 		//--DSR-- HeatVision_end
 	}
 

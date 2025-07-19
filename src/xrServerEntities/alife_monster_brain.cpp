@@ -157,7 +157,7 @@ void CALifeMonsterBrain::update()
 {
 #if 0//def DEBUG
 	if (!Level().MapManager().HasMapLocation("debug_stalker",object().ID)) {
-		CMapLocation				*map_location = 
+		CMapLocation				*map_location =
 			Level().MapManager().AddMapLocation(
 				"debug_stalker",
 				object().ID

@@ -102,7 +102,7 @@ bool CPhraseDialog::SayPhrase(DIALOG_SHARED_PTR& phrase_dialog, const shared_str
 
 	CPhrase* last_phrase = phrase_vertex->data();
 
-	//вызвать скриптовую присоединенную функцию 
+	//вызвать скриптовую присоединенную функцию
 	//активируется после сказанной фразы
 	//первый параметр - тот кто говорит фразу, второй - тот кто слушает
 	last_phrase->GetScriptHelper()->Action(pSpeakerGO1, pSpeakerGO2, *phrase_dialog->m_DialogId, phrase_id.c_str());
@@ -252,7 +252,7 @@ void CPhraseDialog::load_shared(LPCSTR)
 
 	SetPriority(pXML->ReadAttribInt(dialog_node, "priority", 0));
 
-	//заголовок 
+	//заголовок
 	SetCaption(pXML->Read(dialog_node, "caption", 0, NULL));
 
 	//предикаты начала диалога

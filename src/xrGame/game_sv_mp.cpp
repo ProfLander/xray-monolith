@@ -53,7 +53,7 @@ game_sv_mp::game_sv_mp() : inherited()
 	//------------------------------------------------------
 	//	g_pGamePersistent->Environment().SetWeather("mp_weather");
 	m_aRanks.clear();
-	//------------------------------------------------------	
+	//------------------------------------------------------
 	round_end_reason = eRoundEnd_Force; //unknown
 	m_async_stats_request_time = 0;
 	round_statistics_dump_fn[0] = 0;
@@ -242,7 +242,7 @@ void game_sv_mp::KillPlayer(ClientID id_who, u16 GameID)
 {
 	CObject* pObject = Level().Objects.net_Find(GameID);
 	if (!pObject || !smart_cast<CActor*>(pObject)) return;
-	// Remove everything	
+	// Remove everything
 	xrClientData* xrCData = m_server->ID_to_client(id_who);
 #ifdef DEBUG
 	if (xrCData && xrCData->ps && xrCData->ps->getName())
@@ -291,7 +291,7 @@ void game_sv_mp::KillPlayer(ClientID id_who, u16 GameID)
 
 	if (xrCData) SetPlayersDefItems(xrCData->ps);
 	signal_Syncronize();
-	//-------------------------------------------------------	
+	//-------------------------------------------------------
 };
 
 
@@ -319,7 +319,7 @@ void game_sv_mp::OnEvent(NET_Packet& P, u16 type, u32 time, ClientID sender)
 			OnPlayerHitted(P);
 		}
 		break;
-	case GAME_EVENT_PLAYER_READY: // cs & dm 
+	case GAME_EVENT_PLAYER_READY: // cs & dm
 		{
 			xrClientData* l_pC = m_server->ID_to_client(sender);
 			if (!l_pC) break;
@@ -469,7 +469,7 @@ void game_sv_mp::Create(shared_str& options)
 {
 	SetVotingActive(false);
 	inherited::Create(options);
-	//-------------------------------------------------------------------	
+	//-------------------------------------------------------------------
 	if (!g_bConsoleCommandsCreated)
 	{
 		g_bConsoleCommandsCreated = true;
@@ -529,7 +529,7 @@ void game_sv_mp::RespawnPlayer(ClientID id_who, bool NoSpectator)
 
 	if (pA)
 	{
-		//------------------------------------------------------------			
+		//------------------------------------------------------------
 		AllowDeadBodyRemove(id_who, xrCData->ps->GameID);
 		//------------------------------------------------------------
 		m_CorpseList.push_back(pOwner->ID);
@@ -1200,7 +1200,7 @@ void game_sv_mp::OnVoteStart(LPCSTR VoteCommand, ClientID sender)
 	P.w_stringZ(m_started_player);
 	P.w_u32(u32(g_sv_mp_fVoteTime * 60000));
 	u_EventSend(P);
-	//-----------------------------------------------------------------------------	
+	//-----------------------------------------------------------------------------
 };
 
 void game_sv_mp::SendActiveVotingTo(ClientID const& receiver)
@@ -1418,7 +1418,7 @@ void game_sv_mp::SetPlayersDefItems(game_PlayerState* ps)
 		//{
 		ps->pItemList.push_back(AmmoID);
 		ps->pItemList.push_back(AmmoID);
-		//}		
+		//}
 	};
 };
 
@@ -1781,7 +1781,7 @@ void game_sv_mp::Player_AddMoney(game_PlayerState* ps, s32 MoneyAmount)
 	ps->money_for_round = s32(TotalMoney);
 	//---------------------------------------
 	Game().m_WeaponUsageStatistic->OnPlayerAddMoney(ps, MoneyAmount);
-	//---------------------------------------	
+	//---------------------------------------
 };
 //---------------------------------------------------------------------
 extern u32 g_sv_dwMaxClientPing;

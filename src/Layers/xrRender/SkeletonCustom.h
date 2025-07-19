@@ -38,7 +38,7 @@ class CSkeletonWallmark : public intrusive_base // 4+4+4+12+4+16+16 = 60 + 4 = 6
 	float m_fTimeEnd; // 4
 public:
 #ifdef DEBUG
-	u32					used_in_render;	
+	u32					used_in_render;
 #endif
 	Fsphere m_LocalBounds; // 16		model space
 	struct WMFace
@@ -50,7 +50,7 @@ public:
 	};
 
 	DEFINE_VECTOR(WMFace, WMFacesVec, WMFacesVecIt);
-	WMFacesVec m_Faces; // 16 
+	WMFacesVec m_Faces; // 16
 public:
 	Fsphere m_Bounds; // 16		world space
 public:

@@ -24,10 +24,10 @@ CPHShellSplitterHolder::~CPHShellSplitterHolder()
 	m_geom_root_map.clear();
 }
 
-//the simpliest case - a joint to be destroied 
+//the simpliest case - a joint to be destroied
 shell_root CPHShellSplitterHolder::SplitJoint(u16 aspl)
 {
-	//create _new physics shell 
+	//create _new physics shell
 
 	CPhysicsShell* new_shell = P_create_Shell();
 	CPHShell* new_shell_desc = smart_cast<CPHShell*>(new_shell);
@@ -82,8 +82,8 @@ void CPHShellSplitterHolder::PassEndSplitters(const CShellSplitInfo& spl_inf, CP
 	          "wrong spl_inf");
 
 
-	for (; i_elem != e_elem; ++i_elem) //until start elem in both joint or elem split fractures 
-		//end elems have to be corrected 
+	for (; i_elem != e_elem; ++i_elem) //until start elem in both joint or elem split fractures
+		//end elems have to be corrected
 		//if grater then end elem in moving diapason
 	{
 		CPHFracturesHolder* fracturesHolder = (*i_elem)->FracturesHolder();

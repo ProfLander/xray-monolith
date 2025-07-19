@@ -10,15 +10,15 @@ add_module(XRay.Game.Core.Server
 
   xrClientsPool.cpp
   xrClientsPool.h
-  
+
   xrServer_balance.cpp
 
   xrServer_info.cpp
   xrServer_info.h
-  
+
   xrServer_updates_compressor.cpp
   xrServer_updates_compressor.h
-  
+
   xrServerMapSync.cpp
   xrServerMapSync.h
   xrServer_svclient_validation.h
@@ -120,10 +120,10 @@ add_module(XRay.Game.Core.Server.Games.Client.MP.AwardSystem
   SOURCES
   ammunition_groups.cpp
   ammunition_groups.h
-  
+
   bone_groups.cpp
   bone_groups.h
-  
+
   event_conditions_collection.cpp
   event_conditions_collection.h
 
@@ -136,7 +136,7 @@ add_module(XRay.Game.Core.Server.Games.Client.MP.AwardSystem
   reward_manager.h
 
   reward_snd_messages.h
-  
+
   rewarding_events_handlers.cpp
   rewarding_events_handlers.h
 
@@ -187,22 +187,22 @@ add_module(XRay.Game.Core.Server.Games.Client.MP.AwardSystem.PlayerState.StatePa
 
   double_shot_double_kill.cpp
   double_shot_double_kill.h
-  
+
   faster_than_bullets_time.cpp
   faster_than_bullets_time.h
 
   harvest_time.cpp
   harvest_time.h
-  
+
   invincible_fury.cpp
   invincible_fury.h
-  
+
   killer_victim_velocity_angle.cpp
   killer_victim_velocity_angle.h
 
   player_spot_params.cpp
   player_spot_params.h
-  
+
   player_state_achilles_heel.cpp
   player_state_achilles_heel.h
 
@@ -265,7 +265,7 @@ add_module(XRay.Game.Core.Server.Games.Client.MP.Screenshots
   SOURCES
   screenshot_manager.cpp
   screenshot_manager.h
-  
+
   screenshots_common.cpp
   screenshots_common.h
 
@@ -344,7 +344,7 @@ add_module(XRay.Game.Core.Server.Games.Server
 
   game_sv_base_console_vars.cpp
   game_sv_base_console_vars.h
-  
+
   game_sv_event_queue.cpp
   game_sv_event_queue.h
 

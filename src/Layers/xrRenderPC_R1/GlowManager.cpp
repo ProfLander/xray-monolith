@@ -273,7 +273,7 @@ void CGlowManager::render_hw()
 	// 2. Render selected
 	render_selected();
 
-	// 
+	//
 }
 
 void CGlowManager::render_selected()
@@ -301,7 +301,7 @@ void CGlowManager::render_selected()
 		FVF::LIT* pvs = pv = (FVF::LIT*)RCache.Vertex.Lock(count * 4, hGeom->vb_stride, vOffset);
 		for (; pos < end; pos++)
 		{
-			// Cull invisible 
+			// Cull invisible
 			CGlow& G = *((CGlow*)Selected[pos]._get());
 			if (G.fade <= 1.f) continue;
 

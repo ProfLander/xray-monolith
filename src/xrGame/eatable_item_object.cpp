@@ -30,10 +30,10 @@ void CEatableItemObject::Load(LPCSTR section)
 	CEatableItem::Load(section);
 }
 
-//void CEatableItemObject::Hit(float P, Fvector &dir,	
+//void CEatableItemObject::Hit(float P, Fvector &dir,
 //						 CObject* who, s16 element,
-//						 Fvector position_in_object_space, 
-//						 float impulse, 
+//						 Fvector position_in_object_space,
+//						 float impulse,
 //						 ALife::EHitType hit_type)
 void CEatableItemObject::Hit(SHit* pHDS)
 {
@@ -47,7 +47,7 @@ void CEatableItemObject::Hit(SHit* pHDS)
 		impulse,
 		hit_type
 	);
-	
+
 	CEatableItem::Hit			(
 		P,
 		dir,

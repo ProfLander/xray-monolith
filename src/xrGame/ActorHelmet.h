@@ -35,7 +35,7 @@ public:
 protected:
 	HitImmunity::HitTypeSVec m_HitTypeProtection;
 	SBoneProtections* m_boneProtection;
-	
+
 public:
 	float m_fPowerLoss;
 	float m_fHealthRestoreSpeed;
@@ -52,7 +52,7 @@ public:
 
 protected:
 	virtual bool install_upgrade_impl(LPCSTR section, bool test);
-	
+
 	DECLARE_SCRIPT_REGISTER_FUNCTION
 };
 

@@ -48,7 +48,7 @@ add_module(XRay.Game.Core.Common.DLLProcessDetach
 add_module(XRay.Game.Core.Common.NETShared
   SOURCES
   ../xrServerEntities/xrMessages.h
-  
+
   NET_Queue.h
   traffic_optimization.cpp
   traffic_optimization.h

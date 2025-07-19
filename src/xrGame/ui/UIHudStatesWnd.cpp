@@ -163,22 +163,22 @@ void CUIHudStatesWnd::InitFromXml(CUIXml& xml, LPCSTR path)
 	/*
 		m_bleeding_lev1 = UIHelper::CreateStatic( xml, "bleeding_level_1", this );
 		m_bleeding_lev1->Show( false );
-	
+
 		m_bleeding_lev2 = UIHelper::CreateStatic( xml, "bleeding_level_2", this );
 		m_bleeding_lev2->Show( false );
-	
+
 		m_bleeding_lev3 = UIHelper::CreateStatic( xml, "bleeding_level_3", this );
 		m_bleeding_lev3->Show( false );
-	
+
 		m_radiation_lev1 = UIHelper::CreateStatic( xml, "radiation_level_1", this );
 		m_radiation_lev1->Show( false );
-	
+
 		m_radiation_lev2 = UIHelper::CreateStatic( xml, "radiation_level_2", this );
 		m_radiation_lev2->Show( false );
-	
+
 		m_radiation_lev3 = UIHelper::CreateStatic( xml, "radiation_level_3", this );
 		m_radiation_lev3->Show( false );
-	
+
 		for ( int i = 0; i < it_max; ++i )
 		{
 			m_cur_state_LA[i] = true;
@@ -333,13 +333,13 @@ void CUIHudStatesWnd::UpdateHealth(CActor* actor)
 		m_bleeding_lev2->Show(true);
 	else
 		m_bleeding_lev2->Show(false);
-	
+
 	if(bleeding_speed > 0.7f)
 		m_bleeding_lev3->Show(true);
 	else
 		m_bleeding_lev3->Show(false);
-	
-	
+
+
 	if(m_radia_self > 0.01f)
 		m_radiation_lev1->Show(true);
 	else
@@ -349,7 +349,7 @@ void CUIHudStatesWnd::UpdateHealth(CActor* actor)
 		m_radiation_lev2->Show(true);
 	else
 		m_radiation_lev2->Show(false);
-	
+
 	if(m_radia_self > 0.7f)
 		m_radiation_lev3->Show(true);
 	else
@@ -643,7 +643,7 @@ void CUIHudStatesWnd::UpdateIndicatorType(CActor* actor, ALife::EInfluenceType t
 		return;
 	}
 
-	/*	
+	/*
 		u32 c_white  = color_rgba( 255, 255, 255, 255 );
 		u32 c_green  = color_rgba( 0, 255, 0, 255 );
 		u32 c_yellow = color_rgba( 255, 255, 0, 255 );

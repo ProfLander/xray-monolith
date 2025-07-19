@@ -61,7 +61,7 @@ bool CCustomDevice::CheckCompatibilityInt(CHudItem* itm, u16* slot_to_activate)
 			bres = bres &&
 			(W->GetState() != CHUDState::eBore) &&
 			(W->GetState() != CWeapon::eReload) &&
-			(W->GetState() != CWeapon::eSwitch) && 
+			(W->GetState() != CWeapon::eSwitch) &&
 			(m_bCanBeZoomed || !W->IsZoomed());
 	}
 	return bres;
@@ -150,7 +150,7 @@ void CCustomDevice::OnStateSwitch(u32 S, u32 oldState)
 			m_fZoomfactor = .51f;
 
 		m_bZoomed && HudAnimationExist("anm_zoom_show")
-			? PlayHUDMotion("anm_zoom_show", FALSE, this, GetState(), 1.f, 0.f, false) 
+			? PlayHUDMotion("anm_zoom_show", FALSE, this, GetState(), 1.f, 0.f, false)
 			: PlayHUDMotion(m_bFastAnimMode ? "anm_show_fast" : "anm_show", FALSE, this, GetState(), 1.f, 0.f, false);
 		SetPending(TRUE);
 	}
@@ -162,7 +162,7 @@ void CCustomDevice::OnStateSwitch(u32 S, u32 oldState)
 			m_sounds.PlaySound("sndHide", Fvector().set(0, 0, 0), this, true, false);
 
 			m_fZoomfactor > .5f && (oldState == eIdleZoom || oldState == eIdleZoomIn || oldState == eIdleZoomOut || oldState == eShowing) && HudAnimationExist(m_bFastAnimMode ? "anm_zoom_hide_fast" : "anm_zoom_hide")
-				? PlayHUDMotion(m_bFastAnimMode ? "anm_zoom_hide_fast" : "anm_zoom_hide", TRUE, this, GetState()) 
+				? PlayHUDMotion(m_bFastAnimMode ? "anm_zoom_hide_fast" : "anm_zoom_hide", TRUE, this, GetState())
 				: PlayHUDMotion(m_bFastAnimMode ? "anm_hide_fast" : "anm_hide", TRUE, this, GetState());
 			SetPending(TRUE);
 
@@ -212,7 +212,7 @@ void CCustomDevice::OnStateSwitch(u32 S, u32 oldState)
 			PlayHUDMotion("anm_throw_start", TRUE, this, GetState());
 			SetPending(TRUE);
 		}
-		else 
+		else
 			SwitchState(eIdleThrow);
 	}
 	break;
@@ -391,7 +391,7 @@ void CCustomDevice::UpdateVisibility()
 						SwitchState(eIdleZoomOut);
 					}
 					else if (m_bNeedActivation && !bClimb && CheckCompatibilityInt(i0->m_parent_hud_item, 0))
-					{ 
+					{
 						ShowDevice(true);
 					}
 				}
@@ -443,7 +443,7 @@ void CCustomDevice::UpdateWork()
 void CCustomDevice::TurnDeviceInternal(bool b)
 {
 	m_bWorking = b;
-	
+
 	if (ParentIsActor())
 	{
 		if (m_bWorking)

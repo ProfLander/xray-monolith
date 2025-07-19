@@ -720,7 +720,7 @@ CScriptGameObject* CScriptGameObject::get_talking_npc() {
 
 	auto* tp = pInvOwner->GetTalkPartner();
 	if (!tp) return nullptr;
-	
+
 	auto* g_obj = tp->cast_game_object();
 	if (!g_obj) return nullptr;
 
@@ -737,7 +737,7 @@ CScriptGameObject* CScriptGameObject::get_talking_npc() {
 										"CScriptGameObject : get_scope_ui works only with CWeapon object!");
 		return table;
 	}
-	
+
 	auto& zoomTextureWndList = weapon->ZoomTexture()->GetChildWndList();
 	if (zoomTextureWndList.empty()) {
 		ai().script_engine().script_log(ScriptStorage::eLuaMessageTypeError,
@@ -760,7 +760,7 @@ CScriptGameObject* CScriptGameObject::get_talking_npc() {
 	table["name"] = weapon->m_scope_tex_name.c_str();
 	table["uiWindow"] = weapon->ZoomTexture();
 	table["statics"] = staticChildren;
-	
+
 	return table;
 }
 

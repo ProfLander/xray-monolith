@@ -94,7 +94,7 @@ void CSoundRender_Source::i_decompress_fr(OggVorbis_File* ovf, char* _dest, u32 
 void CSoundRender_Source::i_decompress_fr(OggVorbis_File* ovf, char* _dest, u32 left)
 {
 
-	float **pcm; 
+	float **pcm;
     int val;
     long channels		= ov_info(ovf,-1)->channels;
     long bytespersample	= 2 / channels ;
@@ -104,17 +104,17 @@ void CSoundRender_Source::i_decompress_fr(OggVorbis_File* ovf, char* _dest, u32 
 	while (left){
 		int samples		= ov_read_float	(ovf,&pcm,left,&dummy);
         if (samples>0){
-			for(int i=0;i<channels;i++) 
+			for(int i=0;i<channels;i++)
 			{
             	float *src			= pcm[i];
                 short *dest			= ((short *)buffer)+i;
 
-                for(int j=0;j<samples;j++) 
+                for(int j=0;j<samples;j++)
 				{
                   	val				= iFloor(src[j]*32768.f);
                     if(val>32767)
 						val			= 32767;
-                    else 
+                    else
 					if(val<-32768)
 						val			= -32768;
 

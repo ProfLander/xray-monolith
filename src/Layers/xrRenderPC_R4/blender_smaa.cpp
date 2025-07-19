@@ -21,8 +21,8 @@ void CBlender_smaa::Compile(CBlender_Compile& C)
 		C.r_dx10Sampler("smp_rtlinear");
 		C.r_End();
 		break;
-	case 1:	//Weight 
-		C.r_Pass("pp_smaa_bc", "pp_smaa_bc", FALSE, FALSE, FALSE);	
+	case 1:	//Weight
+		C.r_Pass("pp_smaa_bc", "pp_smaa_bc", FALSE, FALSE, FALSE);
 		C.r_dx10Texture("s_image", r2_RT_generic0);
 		C.r_dx10Texture("s_edgetex", r2_RT_smaa_edgetex);
 
@@ -34,14 +34,14 @@ void CBlender_smaa::Compile(CBlender_Compile& C)
 		C.r_End();
 		break;
 	case 2:	//Blending
-		C.r_Pass("pp_smaa_nb", "pp_smaa_nb", FALSE, FALSE, FALSE);	
+		C.r_Pass("pp_smaa_nb", "pp_smaa_nb", FALSE, FALSE, FALSE);
 		C.r_dx10Texture("s_image", r2_RT_generic0);
 		C.r_dx10Texture("s_blendtex", r2_RT_smaa_blendtex);
 
 		C.r_dx10Sampler("smp_nofilter");
-		C.r_dx10Sampler("smp_rtlinear");	
+		C.r_dx10Sampler("smp_rtlinear");
 		C.r_End();
-		break;	
+		break;
 	}
 }
 
@@ -59,7 +59,7 @@ void CBlender_ssfx_taa::Compile(CBlender_Compile& C)
 	case 0: // Motion Vectors
 		C.r_Pass("stub_screen_space", "ssfx_taa_prepare", FALSE, FALSE, FALSE);
 
-		
+
 		C.r_dx10Texture("s_ssfx_taa", r2_RT_ssfx_taa); // rt_ssfx_taa
 		C.r_dx10Texture("s_position", r2_RT_P);
 

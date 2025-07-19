@@ -44,7 +44,7 @@ public:
 	bool hudEnabled = false;
 	unsigned int m_customSmoothing; // 0 - use FPDeath smoothing params, no custom smoothing
 	virtual void ema(Fvector& current, Fvector& target, unsigned int steps);
-	
+
 public:
 	CFPCamEffector();
 	virtual BOOL ProcessCam(SCamEffectorInfo& info);

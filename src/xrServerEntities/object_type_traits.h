@@ -269,8 +269,8 @@ namespace object_type_traits
 
 	//		template <typename _T>
 	//		struct is_tree_structure {
-	//			enum { 
-	//				value = 
+	//			enum {
+	//				value =
 	//					has_value_compare<_T>::value
 	//			};
 	//		};

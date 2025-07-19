@@ -103,7 +103,7 @@ void R_constants::flush_cache()
 		R_constant_array::t_f&	F	= a_pixel.c_f;
 		{
 			//if (F.r_lo() <= 32) //. hack
-			{		
+			{
 				void	*pBuffer;
 				const int iVectorElements = 4;
 				const int iVectorNumber = 256;
@@ -130,7 +130,7 @@ void R_constants::flush_cache()
 				}
 				PGO		(Msg("PGO:V_CONST:%d",count));
 #endif
-				{		
+				{
 					void	*pBuffer;
 					const int iVectorElements = 4;
 					const int iVectorNumber = 256;

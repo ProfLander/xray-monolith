@@ -1,12 +1,12 @@
 add_module(XRay.Game
   TYPE STATIC
-  
+
   INCLUDES
   ${CMAKE_CURRENT_SOURCE_DIR}
   ${CMAKE_SOURCE_DIR}/src/xrServerEntities
 
   PRECOMPILES stdafx.h
-  
+
   DEFINES XRGAME_EXPORTS
 
   LINKS

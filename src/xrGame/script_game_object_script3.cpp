@@ -264,7 +264,7 @@ class_<CScriptGameObject>& script_register_game_object2(class_<CScriptGameObject
 
 		.def("item_allow_trade", &CScriptGameObject::ItemAllowTrade)
 		.def("item_deny_trade", &CScriptGameObject::ItemDenyTrade)
-	
+
 		.def("switch_to_trade", &CScriptGameObject::SwitchToTrade)
 		.def("switch_to_upgrade", &CScriptGameObject::SwitchToUpgrade)
 		.def("switch_to_talk", &CScriptGameObject::SwitchToTalk)

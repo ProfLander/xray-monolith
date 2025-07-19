@@ -122,7 +122,7 @@ void CPseudoGigant::Load(LPCSTR section)
 	//anim().AddAnim(eAnimLookAround,		"stand_idle_",			-1, &velocity_none,		PS_STAND,	"fx_stand_f", "fx_stand_b", "fx_stand_l", "fx_stand_r");
 	//anim().AddAnim(eAnimSteal,			"stand_steal_",			-1, &velocity_steal,	PS_STAND,	"fx_stand_f", "fx_stand_b", "fx_stand_l", "fx_stand_r");
 	//anim().AddAnim(eAnimDie,			"stand_idle_",			-1, &velocity_none,		PS_STAND,	"fx_stand_f", "fx_stand_b", "fx_stand_l", "fx_stand_r");
-	//anim().AddAnim(eAnimStandLieDown,	"stand_lie_down_",		-1, &velocity_none,		PS_STAND,	"fx_stand_f", "fx_stand_b", "fx_stand_l", "fx_stand_r");	
+	//anim().AddAnim(eAnimStandLieDown,	"stand_lie_down_",		-1, &velocity_none,		PS_STAND,	"fx_stand_f", "fx_stand_b", "fx_stand_l", "fx_stand_r");
 	//anim().AddAnim(eAnimLieToSleep,		"lie_to_sleep_",		-1, &velocity_none,		PS_LIE,		"fx_stand_f", "fx_stand_b", "fx_stand_l", "fx_stand_r");
 	//anim().AddAnim(eAnimThreaten,		"stand_kick_",			-1, &velocity_none,		PS_STAND,	"fx_stand_f", "fx_stand_b", "fx_stand_l", "fx_stand_r");
 
@@ -143,7 +143,7 @@ void CPseudoGigant::Load(LPCSTR section)
 	anim().LinkAction(ACT_STEAL, eAnimSteal);
 	anim().LinkAction(ACT_LOOK_AROUND, eAnimStandIdle);
 
-	// define transitions																											
+	// define transitions
 	anim().AddTransition(eAnimStandLieDown, eAnimSleep, eAnimLieToSleep, false);
 	anim().AddTransition(PS_STAND, eAnimSleep, eAnimStandLieDown, true);
 	anim().AddTransition(PS_STAND, PS_LIE, eAnimStandLieDown, false);
@@ -305,12 +305,12 @@ void CPseudoGigant::on_threaten_execute()
 
 			SHit HS;
 
-			HS.GenHeader(GE_HIT, obj->ID()); 
-			HS.whoID = ID(); 
+			HS.GenHeader(GE_HIT, obj->ID());
+			HS.whoID = ID();
 			HS.who = this;
-			HS.weaponID = ID(); 
-			HS.dir = Fvector().set(0.f, 1.f, 0.f); 
-			HS.power = hit_value; 
+			HS.weaponID = ID();
+			HS.dir = Fvector().set(0.f, 1.f, 0.f);
+			HS.power = hit_value;
 			HS.boneID = smart_cast<IKinematics*>(obj->Visual())->LL_GetBoneRoot();
 			HS.p_in_bone_space = Fvector().set(0.f, 0.f, 0.f);
 
@@ -343,7 +343,7 @@ void CPseudoGigant::on_threaten_execute()
 				//NET_Packet l_P;
 				//HS.Write_Packet(l_P);
 				//u_EventSend(l_P);
-			}						
+			}
 		}
 
 		if (!obj || !obj->m_pPhysicsShell || (itm && itm->IsQuestItem())) continue;

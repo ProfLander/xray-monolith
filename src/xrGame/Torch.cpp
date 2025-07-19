@@ -215,9 +215,9 @@ void CTorch::LoadLightParams()
 			light_definition = *m_light_section;
 
 		// SSS23: Is a player torch
-		light_render->set_is_playerlight(true); 
+		light_render->set_is_playerlight(true);
 	}
-	
+
 	IKinematics* K = smart_cast<IKinematics*>(Visual());
 	/*CInifile* pUserData = K->LL_UserData();
 	R_ASSERT3(pUserData, "Empty Torch user data!", torch->get_visual());
@@ -408,7 +408,7 @@ void CTorch::UpdateCL()
 				offset.mad(M.k, m_omni_offset.z);
 				light_omni->set_position(M.c);
 				light_omni->set_rotation(M.k, M.i);
-			} //if (can_use_dynamic_lights()) 
+			} //if (can_use_dynamic_lights())
 
 			glow_render->set_position(M.c);
 			glow_render->set_direction(M.k);
@@ -424,7 +424,7 @@ void CTorch::UpdateCL()
 			light_render->set_active(false);
 			light_omni->set_active(false);
 			glow_render->set_active(false);
-		} //if (getVisible() && m_pPhysicsShell)  
+		} //if (getVisible() && m_pPhysicsShell)
 	}
 
 	if (!m_switched_on) return;

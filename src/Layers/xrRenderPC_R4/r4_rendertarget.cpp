@@ -421,7 +421,7 @@ CRenderTarget::CRenderTarget()
 	b_hdr10_bloom_downsample = xr_new<CBlender_hdr10_bloom_downsample>();
 	b_hdr10_bloom_blur 		 = xr_new<CBlender_hdr10_bloom_blur>();
 	b_hdr10_bloom_upsample   = xr_new<CBlender_hdr10_bloom_upsample>();
-	
+
 	b_hdr10_lens_flare_downsample = xr_new<CBlender_hdr10_lens_flare_downsample>();
 	b_hdr10_lens_flare_fgen 	  = xr_new<CBlender_hdr10_lens_flare_fgen>();
 	b_hdr10_lens_flare_blur       = xr_new<CBlender_hdr10_lens_flare_blur>();
@@ -594,7 +594,7 @@ CRenderTarget::CRenderTarget()
 			rt_ssfx_prev_frame.create(r2_RT_ssfx_prev_frame, w, h, D3DFMT_A8R8G8B8); // Temp RT
 
 		rt_ssfx_motion_vectors.create(r2_RT_ssfx_motion_vectors, w, h, D3DFMT_A16B16G16R16F, SampleCount); // HUD mask & Velocity buffer
-		
+
 		rt_ssfx.create(r2_RT_ssfx, w, h, D3DFMT_A8R8G8B8); // Temp RT
 		rt_ssfx_temp.create(r2_RT_ssfx_temp, w, h, D3DFMT_A8R8G8B8); // Temp RT
 		rt_ssfx_temp2.create(r2_RT_ssfx_temp2, w, h, D3DFMT_A8R8G8B8); // Temp RT
@@ -692,7 +692,7 @@ CRenderTarget::CRenderTarget()
 	s_ssfx_sss.create(b_ssfx_sss, "ssfx_sss"); // SSS
 	s_ssfx_ssr.create(b_ssfx_ssr, "ssfx_ssr"); // SSR
 	s_ssfx_volumetric_blur.create(b_ssfx_volumetric_blur, "ssfx_volumetric_blur"); // Volumetric Blur
-	
+
 	s_ssfx_water_ssr.create("ssfx_water_ssr"); // Water SSR
 	s_ssfx_water.create("ssfx_water"); // Water
 	s_ssfx_water_blur.create(b_ssfx_water_blur, "ssfx_water_blur"); // Water
@@ -1405,7 +1405,7 @@ CRenderTarget::~CRenderTarget()
 	xr_delete(b_hdr10_bloom_downsample);
 	xr_delete(b_hdr10_bloom_blur);
 	xr_delete(b_hdr10_bloom_upsample);
-	
+
 	xr_delete(b_hdr10_lens_flare_downsample);
 	xr_delete(b_hdr10_lens_flare_fgen);
 	xr_delete(b_hdr10_lens_flare_blur);

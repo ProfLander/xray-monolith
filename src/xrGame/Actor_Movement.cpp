@@ -390,22 +390,22 @@ void CActor::g_Orientate(u32 mstate_rl, float dt)
 	switch (mstate_rl & mcAnyMove)
 	{
 	case mcFwd + mcLStrafe:
-		calc_yaw = +fwd_l_strafe_yaw; //+PI_DIV_4; 
+		calc_yaw = +fwd_l_strafe_yaw; //+PI_DIV_4;
 		break;
 	case mcBack + mcRStrafe:
-		calc_yaw = +back_r_strafe_yaw; //+PI_DIV_4; 
+		calc_yaw = +back_r_strafe_yaw; //+PI_DIV_4;
 		break;
 	case mcFwd + mcRStrafe:
-		calc_yaw = -fwd_r_strafe_yaw; //-PI_DIV_4; 
+		calc_yaw = -fwd_r_strafe_yaw; //-PI_DIV_4;
 		break;
 	case mcBack + mcLStrafe:
-		calc_yaw = -back_l_strafe_yaw; //-PI_DIV_4; 
+		calc_yaw = -back_l_strafe_yaw; //-PI_DIV_4;
 		break;
 	case mcLStrafe:
-		calc_yaw = +l_strafe_yaw; //+PI_DIV_3-EPS_L; 
+		calc_yaw = +l_strafe_yaw; //+PI_DIV_3-EPS_L;
 		break;
 	case mcRStrafe:
-		calc_yaw = -r_strafe_yaw; //-PI_DIV_4+EPS_L; 
+		calc_yaw = -r_strafe_yaw; //-PI_DIV_4+EPS_L;
 		break;
 	}
 
@@ -538,7 +538,7 @@ void CActor::g_cl_Orientate(u32 mstate_rl, float dt)
 		if (_abs(r_model_yaw - ty) > PI_DIV_4 - 30)
 		{
 			r_model_yaw_dest = ty;
-			// 
+			//
 			mstate_real |= mcTurn;
 		}
 		if (_abs(r_model_yaw - r_model_yaw_dest) < EPS_L)

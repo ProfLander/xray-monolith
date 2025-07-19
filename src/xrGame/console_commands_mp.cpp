@@ -223,9 +223,9 @@ public:
 class CCC_Dbg_NumObjects : public IConsole_Command {
 public:
 						CCC_Dbg_NumObjects	(LPCSTR N) : IConsole_Command(N)  { bEmptyArgsHandled = true; };
-	virtual void		Execute				(LPCSTR args) 
+	virtual void		Execute				(LPCSTR args)
 	{
-		
+
 		u32 SVObjNum	= (OnServer()) ? Level().Server->GetEntitiesNum() : 0;
 		xr_vector<u16>	SObjID;
 		for (u32 i=0; i<SVObjNum; i++)
@@ -254,7 +254,7 @@ public:
 				CObject* pObj = Level().Objects.net_Find(CObjID[CO]);
 				char color = (pObj->ID() == pEntity->ID) ? '-' : '!';
 
-				Msg("%c%4d: Client - %20s[%5d] <===> Server - %s [%d]", color, CO+1, 
+				Msg("%c%4d: Client - %20s[%5d] <===> Server - %s [%d]", color, CO+1,
 					*(pObj->cNameSect()), pObj->ID(),
 					pEntity->s_name.c_str(), pEntity->ID);
 			}
@@ -263,13 +263,13 @@ public:
 				if (CO<CLObjNum)
 				{
 					CObject* pObj = Level().Objects.net_Find(CObjID[CO]);
-					Msg("! %2d: Client - %s [%d] <===> Server - -----------------", CO+1, 
+					Msg("! %2d: Client - %s [%d] <===> Server - -----------------", CO+1,
 						*(pObj->cNameSect()), pObj->ID());
 				}
 				else
 				{
 					CSE_Abstract* pEntity = Level().Server->ID_to_entity(SObjID[CO]);
-					Msg("! %2d: Client - ----- <===> Server - %s [%d]", CO+1, 
+					Msg("! %2d: Client - ----- <===> Server - %s [%d]", CO+1,
 						pEntity->s_name.c_str(), pEntity->ID);
 				}
 			}
@@ -333,7 +333,7 @@ public:
 	}
 };
 
-//most useful predicates 
+//most useful predicates
 struct SearcherClientByName
 {
 	string512 player_name;
@@ -1490,7 +1490,7 @@ public:
 	{
 		if (!OnServer()) return;
 
-		//string256			GameType;	
+		//string256			GameType;
 		//GameType[0]			=0;
 		//sscanf				(args,"%s", GameType);
 

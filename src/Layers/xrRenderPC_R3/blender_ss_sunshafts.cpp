@@ -20,7 +20,7 @@ void CBlender_sunshafts::Compile(CBlender_Compile& C)
 		C.r_dx10Texture("s_position", r2_RT_P);
 		C.r_dx10Texture("s_image", r2_RT_generic0);
 
-	
+
 		C.r_dx10Sampler("smp_base");
 		C.r_dx10Sampler("smp_nofilter");
 		C.r_dx10Sampler("smp_rtlinear");
@@ -29,7 +29,7 @@ void CBlender_sunshafts::Compile(CBlender_Compile& C)
 	case 1: // first pass
 		C.r_Pass("ssss_notransform", "ogse_sunshafts_blur", FALSE, FALSE, FALSE);
 		C.r_dx10Texture("s_sun_shafts", r2_RT_sunshafts0);
-	
+
 		C.r_dx10Sampler("smp_base");
 		C.r_dx10Sampler("smp_nofilter");
 		C.r_dx10Sampler("smp_rtlinear");
@@ -38,7 +38,7 @@ void CBlender_sunshafts::Compile(CBlender_Compile& C)
 	case 2: // second pass
 		C.r_Pass("ssss_notransform", "ogse_sunshafts_blur", FALSE, FALSE, FALSE);
 		C.r_dx10Texture("s_sun_shafts", r2_RT_sunshafts1);
-	
+
 		C.r_dx10Sampler("smp_base");
 		C.r_dx10Sampler("smp_nofilter");
 		C.r_dx10Sampler("smp_rtlinear");

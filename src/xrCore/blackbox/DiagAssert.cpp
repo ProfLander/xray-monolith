@@ -339,7 +339,7 @@ HANDLE  __stdcall
     return ( hRet ) ;
 }
 
-void 
+void
     DiagOutputA ( LPCSTR szFmt , ... )
 {
     // Never corrupt the last error value.
@@ -370,7 +370,7 @@ void
     SetLastError ( dwLastError ) ;
 }
 
-void 
+void
     DiagOutputW ( LPCWSTR szFmt , ... )
 {
     // Never corrupt the last error value.

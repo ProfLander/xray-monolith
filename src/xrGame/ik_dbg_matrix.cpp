@@ -19,7 +19,7 @@ void	dbg_matrises::next_state( SCalculateData &cd )
 			dbg_m.ref_bone = cd.m_limb->ref_bone();
 			if(cd.m_limb->ref_bone() == 2)
 			{
-				
+
 				dbg_m.b2goal_gl	= cd.state.goal;
 				dbg_m.b3goal_gl.mul_43( dbg_m.b2goal_gl, cd.m_limb->transform( m_dbg, 2, 3 ) );
 

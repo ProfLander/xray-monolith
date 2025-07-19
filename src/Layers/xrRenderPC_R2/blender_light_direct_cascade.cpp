@@ -32,7 +32,7 @@ void CBlender_accum_direct_cascade::Compile(CBlender_Compile& C)
 		C.r_Sampler_rtf("s_position", r2_RT_P);
 		C.r_Sampler_rtf("s_normal", r2_RT_N);
 		C.r_Sampler_rtf("s_diffuse", r2_RT_albedo);
-		
+
 		C.r_Sampler_clw("s_material", r2_material);
 		C.r_Sampler_rtf("s_accumulator", r2_RT_accum);
 		C.r_Sampler("s_lmap", r2_sunmask);
@@ -50,7 +50,7 @@ void CBlender_accum_direct_cascade::Compile(CBlender_Compile& C)
 		jitter(C);
 		// 		{
 		// 			u32 s = C.i_Sampler("s_smap");
-		// 			C.i_Address		(s, D3DTADDRESS_BORDER);	
+		// 			C.i_Address		(s, D3DTADDRESS_BORDER);
 		// 			C.i_BorderColor	(s, D3DCOLOR_ARGB(255, 255, 255, 255));
 		// 		}
 		C.r_End();
@@ -60,7 +60,7 @@ void CBlender_accum_direct_cascade::Compile(CBlender_Compile& C)
 		C.r_Sampler_rtf("s_position", r2_RT_P);
 		C.r_Sampler_rtf("s_normal", r2_RT_N);
 		C.r_Sampler_rtf("s_diffuse", r2_RT_albedo);
-		
+
 		C.r_Sampler_clw("s_material", r2_material);
 		C.r_Sampler_rtf("s_accumulator", r2_RT_accum);
 		C.r_Sampler("s_lmap", r2_sunmask);

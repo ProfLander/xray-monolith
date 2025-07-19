@@ -11,7 +11,7 @@ public:
 	virtual void InitDialog(CPhraseDialogManager* dialog_partner, DIALOG_SHARED_PTR& phrase_dialog);
 	virtual void AddDialog(DIALOG_SHARED_PTR& phrase_dialog);
 
-	//получение фразы, виртуальная функция, 
+	//получение фразы, виртуальная функция,
 	//должна быть переопределена для сталкеров и актера
 	virtual void ReceivePhrase(DIALOG_SHARED_PTR& phrase_dialog);
 	//ответить на сказанную фразу в диалоге

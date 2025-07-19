@@ -44,12 +44,12 @@ void CMaterialManager::Load(LPCSTR section)
 	{
 		CEntityAlive *entity_alive = smart_cast<CEntityAlive*>(m_object);
 		if (entity_alive)
-		{	
+		{
 			VERIFY(GAMEMTL_NONE_IDX != m_my_material_idx);
 			SGameMtl *m = GMLib.GetMaterialByIdx(m_my_material_idx);
 
 			VERIFY(m);
-			Msg("(CMaterialManager::Load(LPCSTR section)) material: %s loaded for %s, from section: %s ", m->m_Name.c_str(), entity_alive->cName().c_str(), section); 
+			Msg("(CMaterialManager::Load(LPCSTR section)) material: %s loaded for %s, from section: %s ", m->m_Name.c_str(), entity_alive->cName().c_str(), section);
 		}
 	}
 #endif
@@ -73,7 +73,7 @@ void CMaterialManager::reinit()
 			VERIFY(GAMEMTL_NONE_IDX != m_my_material_idx);
 			SGameMtl *m = GMLib.GetMaterialByIdx(m_my_material_idx);
 			VERIFY(m);
-			Msg("(CMaterialManager::reinit) material: %s loaded for %s ", m->m_Name.c_str(), entity_alive->cName().c_str()); 
+			Msg("(CMaterialManager::reinit) material: %s loaded for %s ", m->m_Name.c_str(), entity_alive->cName().c_str());
 		}
 #endif
 	}

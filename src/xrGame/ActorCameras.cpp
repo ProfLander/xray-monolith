@@ -327,7 +327,7 @@ IC bool test_point(const Fvector& pt, const Fmatrix33& mat, const Fvector& ext, 
 template<typename T>
 void	dbg_draw_viewport( const T &cam_info, float _viewport_near )
 {
-	
+
 	VERIFY( _viewport_near > 0.f );
 	const Fvector near_plane_center = Fvector().mad( cam_info.Position(), cam_info.Direction(), _viewport_near );
 	float h_w, h_h;
@@ -335,12 +335,12 @@ void	dbg_draw_viewport( const T &cam_info, float _viewport_near )
 	const Fvector right	= Fvector().mul( cam_info.Right(), h_w );
 	const Fvector up	= Fvector().mul( cam_info.Up(), h_h );
 
-	
+
 	const Fvector	top_left = Fvector().sub( near_plane_center,  right ).add( up );
 	const Fvector	top_right = Fvector().add( near_plane_center,  right ).add( up );
 	const Fvector	bottom_left = Fvector().sub( near_plane_center,  right ).sub( up );
 	const Fvector	bottom_right = Fvector().add( near_plane_center,  right ).sub( up );
-	
+
 	DBG_DrawLine( cam_info.Position(), top_left, D3DCOLOR_XRGB(255, 0, 0 ) );
 	DBG_DrawLine( cam_info.Position(), top_right, D3DCOLOR_XRGB(255, 0, 0 ) );
 	DBG_DrawLine( cam_info.Position(), bottom_left, D3DCOLOR_XRGB(255, 0, 0 ) );
@@ -421,7 +421,7 @@ void CActor::cam_Lookout(const Fmatrix& xform, float camera_height)
 		u32 tri_count		= xrc.r_count();
 
 		*/
-		//if (tri_count)		
+		//if (tri_count)
 		{
 			float da = 0.f;
 			BOOL bIntersect = FALSE;
@@ -508,7 +508,7 @@ void CActor::cam_Update(float dt, float fFOV)
 			cam_UnsetFreelook();
 		camUpdateLadder(dt);
 	}
-		
+
 	on_weapon_shot_update();
 	float y_shift = 0;
 
@@ -597,7 +597,7 @@ void CActor::cam_Update(float dt, float fFOV)
 	{
 		collide_camera(*cameras[eacFirstEye], _viewport_near, this);
 	}
-	
+
 	if (cam_active == eacFirstEye) {
 		if (firstPersonDeath && !g_Alive() && m_FPCam) {
 			IKinematics* k = Visual()->dcast_PKinematics();
@@ -737,7 +737,7 @@ void CActor::OnRender	()
 	if ((dbg_net_Draw_Flags.is_any(dbg_draw_actor_phys)))
 		character_physics_support()->movement()->dbg_Draw	();
 
-	
+
 
 	OnRender_Network();
 

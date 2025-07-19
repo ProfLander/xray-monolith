@@ -499,7 +499,7 @@ bool CAI_Rat::can_stand_here()
 {
 	xr_vector<CObject*> tpNearestList;
 	Level().ObjectSpace.GetNearest(tpNearestList, Position(), Radius(), this);
-	//xr_vector<CObject*>				&tpNearestList = Level().ObjectSpace.q_nearest; 
+	//xr_vector<CObject*>				&tpNearestList = Level().ObjectSpace.q_nearest;
 	if (tpNearestList.empty())
 		return (true);
 

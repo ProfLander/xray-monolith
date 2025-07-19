@@ -82,7 +82,7 @@ void CItemMgr::Dump() const
 	Msg("--CItemMgr::Dump");
 	for(;it!=it_e;++it)
 	{
-		const _i&		val		= it->second; 
+		const _i&		val		= it->second;
 		R_ASSERT3		(it->second.slot_idx!=0xff,"item has no record in [buy_menu_items_place] section ",it->first.c_str());
 		Msg				("[%s] slot=[%d] cost= %d,%d,%d,%d,%d",it->first.c_str(),val.slot_idx,val.cost[0],val.cost[1],val.cost[2],val.cost[3],val.cost[4]);
 	}

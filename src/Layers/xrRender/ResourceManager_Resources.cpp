@@ -48,7 +48,7 @@ BOOL reclaim(xr_vector<T*>& vec, const T* ptr)
 //--------------------------------------------------------------------------------------------------------------
 SState* CResourceManager::_CreateState(SimulatorStates& state_code)
 {
-	// Search equal state-code 
+	// Search equal state-code
 	for (u32 it = 0; it < v_states.size(); it++)
 	{
 		SState* C = v_states[it];;
@@ -371,7 +371,7 @@ void CResourceManager::_DeleteRT(const CRT* RT)
 	Msg("! ERROR: Failed to find render-target '%s'", *RT->cName);
 }
 
-//	DX10 cut 
+//	DX10 cut
 /*
 //--------------------------------------------------------------------------------------------------------------
 CRTC*	CResourceManager::_CreateRTC		(LPCSTR Name, u32 size,	D3DFORMAT f)
@@ -509,7 +509,7 @@ void	CResourceManager::DBG_VerifyTextures	()
 {
 	map_Texture::iterator I		= m_textures.begin	();
 	map_Texture::iterator E		= m_textures.end	();
-	for (; I!=E; I++) 
+	for (; I!=E; I++)
 	{
 		R_ASSERT(I->first);
 		R_ASSERT(I->second);
@@ -765,7 +765,7 @@ SVS*	CResourceManager::_CreateVS		(LPCSTR _name)
 
 		if (strstr(pfs, "main_vs_1_1"))			{ c_target = "vs_1_1"; c_entry = "main_vs_1_1";	}
 		if (strstr(pfs, "main_vs_2_0"))			{ c_target = "vs_2_0"; c_entry = "main_vs_2_0";	}
-		
+
 		xr_free(pfs);
 
 		// vertex
@@ -779,7 +779,7 @@ SVS*	CResourceManager::_CreateVS		(LPCSTR _name)
 			if (pShaderBuf)
 			{
 				_hr = HW.pDevice->CreateVertexShader	((DWORD*)pShaderBuf->GetBufferPointer(), &_vs->vs);
-				if (SUCCEEDED(_hr))	
+				if (SUCCEEDED(_hr))
 				{
 					LPCVOID			data		= NULL;
 					_hr	= D3DXFindShaderComment	((DWORD*)pShaderBuf->GetBufferPointer(),MAKEFOURCC('C','T','A','B'),&data,NULL);
@@ -787,7 +787,7 @@ SVS*	CResourceManager::_CreateVS		(LPCSTR _name)
 					{
 						pConstants				= LPD3DXSHADER_CONSTANTTABLE(data);
 						_vs->constants.parse	(pConstants,0x2);
-					} 
+					}
 					else
 					{
 						Log	("! VS: ", _name);

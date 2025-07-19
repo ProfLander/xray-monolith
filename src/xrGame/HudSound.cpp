@@ -303,11 +303,11 @@ void HUD_SOUND_COLLECTION_LAYERED::PlaySound(LPCSTR alias, const Fvector& positi
 				if (!section)
 				{
 					Msg("!_G.COnBeforePlayHudSound callback, HUD_SOUND_COLLECTION_LAYERED::PlaySound, failed to override sound item %s, no section specified", alias);
-				} 
+				}
 				else if (!line)
 				{
 					Msg("!_G.COnBeforePlayHudSound callback, HUD_SOUND_COLLECTION_LAYERED::PlaySound, failed to override sound item %s, no line specified", alias);
-				} 
+				}
 				else
 				{
 					xr_string new_alias = xr_string(section) + "|" + line;
@@ -326,7 +326,7 @@ void HUD_SOUND_COLLECTION_LAYERED::PlaySound(LPCSTR alias, const Fvector& positi
 						{
 							Msg("!_G.COnBeforePlayHudSound callback, HUD_SOUND_COLLECTION_LAYERED::PlaySound, failed to override sound item %s with %s, sound item by original alias %s not found", alias, new_alias.c_str(), alias);
 						}
-					} 
+					}
 					else
 					{
 						alias_to_play = new_alias.c_str();

@@ -12,7 +12,7 @@
 #ifdef USE_ARENA_ALLOCATOR
 //	extern doug_lea_allocator	g_collision_allocator;
 
-#	define CNEW(type)			new ( g_collision_allocator.alloc_impl<type>(1) ) type 
+#	define CNEW(type)			new ( g_collision_allocator.alloc_impl<type>(1) ) type
 #	define CDELETE(ptr)			cdelete(ptr)
 #	define CFREE(ptr)			g_collision_allocator.free_impl(ptr)
 #	define CMALLOC(size)		g_collision_allocator.malloc_impl(size)

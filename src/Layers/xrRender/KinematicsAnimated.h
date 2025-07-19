@@ -27,7 +27,7 @@ struct IUpdateTracksCallback
 
 struct SKeyTable
 {
-	CKey keys [MAX_CHANNELS][MAX_BLENDED]; //all keys 
+	CKey keys [MAX_CHANNELS][MAX_BLENDED]; //all keys
 	CBlend* blends [MAX_CHANNELS][MAX_BLENDED]; //blend pointers
 	int chanel_blend_conts [MAX_CHANNELS]; //channel counts
 	SKeyTable() { std::fill_n(chanel_blend_conts, MAX_CHANNELS, 0); }
@@ -60,7 +60,7 @@ public:
 	virtual CMotionDef* LL_GetMotionDef(MotionID id) = 0;
 	virtual CMotion* LL_GetRootMotion(MotionID id) = 0;
 	virtual CMotion* LL_GetMotion(MotionID id, u16 bone_id) = 0;
-	//interface for procedural animations :)	
+	//interface for procedural animations :)
 	virtual void LL_BuldBoneMatrixDequatize(const CBoneData* bd, u8 channel_mask, SKeyTable& keys) = 0;
 	virtual void LL_BoneMatrixBuild(u16 bone_id, CBoneInstance& bi, const Fmatrix* parent, const SKeyTable& keys) = 0;
 

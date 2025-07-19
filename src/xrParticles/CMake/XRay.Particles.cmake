@@ -1,6 +1,6 @@
 add_module(XRay.Particles
   TYPE STATIC
-  
+
   INCLUDES ${CMAKE_CURRENT_SOURCE_DIR}
 
   PRECOMPILES stdafx.h
@@ -21,7 +21,7 @@ add_module(XRay.Particles
   particle_core.cpp
   particle_effect.cpp
   particle_manager.cpp
-  
+
   noise.h
   particle_actions.h
   particle_actions_collection.h

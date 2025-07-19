@@ -44,7 +44,7 @@ void CBlender_combine::Compile(CBlender_Compile& C)
 
 		C.r_Sampler_clf("s_lens_dirt", "shaders\\lens_dirt");
 		C.r_Sampler_clf("s_noise_1", "shaders\\noise\\noise_tex");
-		
+
 		C.r_End();
 		break;
 	case 2: // non-AA
@@ -57,7 +57,7 @@ void CBlender_combine::Compile(CBlender_Compile& C)
 
 		C.r_Sampler_clf("s_lens_dirt", "shaders\\lens_dirt");
 		C.r_Sampler_clf("s_noise_1", "shaders\\noise\\noise_tex");
-		
+
 		C.r_End();
 		break;
 	case 3: // aa-edge-detection + AA :) + DISTORTION

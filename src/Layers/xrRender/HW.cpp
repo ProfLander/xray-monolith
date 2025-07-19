@@ -200,7 +200,7 @@ void CHW::DestroyDevice()
 }
 
 extern void GetMonitorResolution(u32& horizontal, u32& vertical);
-	
+
 void CHW::selectResolution(u32& dwWidth, u32& dwHeight, BOOL bWindowed)
 {
 	fill_vid_mode_list(this);
@@ -550,7 +550,7 @@ u32 CHW::selectRefresh(u32 dwWidth, u32 dwHeight, D3DFORMAT fmt)
 		refresh_rate = 1.f / 60.f;
 		return D3DPRESENT_RATE_DEFAULT;
 	}
-		
+
 	u32 selected = D3DPRESENT_RATE_DEFAULT;
 	u32 count = pD3D->GetAdapterModeCount(DevAdapter, fmt);
 	for (u32 I = 0; I < count; I++)

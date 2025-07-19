@@ -126,7 +126,7 @@ void CPhysicItem::activate_physic_shell()
 		K->CalculateBones_Invalidate();
 		K->CalculateBones(TRUE);
 	}
-	///m_pPhysicsShell->Update		();	
+	///m_pPhysicsShell->Update		();
 }
 
 void CPhysicItem::setup_physic_shell()

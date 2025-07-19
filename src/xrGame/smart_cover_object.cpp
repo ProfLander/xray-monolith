@@ -136,7 +136,7 @@ void object::OnRender		()
 
 	if (!m_cover)
 		return;
-	
+
 	typedef smart_cover::description::Loopholes::const_iterator const_iterator;
 	const_iterator					I = m_cover->loopholes().begin();
 	const_iterator					E = m_cover->loopholes().end();

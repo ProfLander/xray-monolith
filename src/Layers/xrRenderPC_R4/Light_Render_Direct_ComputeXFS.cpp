@@ -30,7 +30,7 @@ void CLight_Compute_XFORM_and_VIS::compute_xf_spot(light* L)
 	}
 	L_pos.set(L->position);
 
-	// 
+	//
 	int _cached_size = L->X.S.size;
 	L->X.S.posX = L->X.S.posY = 0;
 	L->X.S.size = SMAP_adapt_max;
@@ -55,7 +55,7 @@ void CLight_Compute_XFORM_and_VIS::compute_xf_spot(light* L)
 	float sizefactor = L->range / 8.f; // 4m = .5, 8m=1.f, 16m=2.f, 32m=4.f
 
 	// compute how wide the light frustum is - assume 90deg as being optimal
-	float widefactor = L->cone / deg2rad(90.f); // 
+	float widefactor = L->cone / deg2rad(90.f); //
 
 	// factors
 	float factor0 = powf(ssa, 1.f / 2.f); // ssa is quadratic
@@ -85,9 +85,9 @@ void CLight_Compute_XFORM_and_VIS::compute_xf_spot(light* L)
 	//float	g_beta		= 2*rad2deg		(atanf(tan_beta));
 	//Msg				("x(%f) : a(%f), b(%f)",x,g_alpha,g_beta);
 
-	// _min(L->cone + deg2rad(4.5f), PI*0.98f) - Here, it is needed to enlarge the shadow map frustum to include also 
+	// _min(L->cone + deg2rad(4.5f), PI*0.98f) - Here, it is needed to enlarge the shadow map frustum to include also
 	// displaced pixels and the pixels neighbor to the examining one.
-	
+
 	/* Ray Twitty */
 	float tan_shift;
 	if (L->flags.type == IRender_Light::OMNIPART) // [ SSS ] 0.3f fix almost all frustum problems... 0.5f was the old value ( SSS 19 ) but was causing issues?

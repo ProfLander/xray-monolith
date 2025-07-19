@@ -151,7 +151,7 @@ void CALifeMonsterDetailPathManager::actualize()
 			);
 			Msg						("! game_graph_mask -> [ %d, %d, %d, %d]", vertex->vertex_type()[0], vertex->vertex_type()[1], vertex->vertex_type()[2], vertex->vertex_type()[3]);
 		}
-		
+
 		{
 			const CGameGraph::CVertex	*vertex = ai().game_graph().vertex(m_destination.m_game_vertex_id);
 			Msg						(

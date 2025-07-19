@@ -117,7 +117,7 @@ void CLevelGraph::draw_edge			(const int &vertex_id0, const int &vertex_id1)
 {
 	const u8				*vt0 = ai().game_graph().vertex(vertex_id0)->vertex_type();
 	const u8				*vt1 = ai().game_graph().vertex(vertex_id1)->vertex_type();
-	
+
 	float				radius = 0.005f;
 	if (psAI_Flags.test(aiDrawGameGraphRealPos))
 		radius = 1.f;
@@ -128,7 +128,7 @@ void CLevelGraph::draw_edge			(const int &vertex_id0, const int &vertex_id1)
 	if (vt1[3] == 0)
 		vertex_color1 = D3DCOLOR_XRGB(255,0,255);
 	const u32				edge_color = D3DCOLOR_XRGB(0,255,0);
-	
+
 	const CGameGraph		&graph = ai().game_graph();
 	Fvector					position0;
 	Fvector					position1;
@@ -189,7 +189,7 @@ void CLevelGraph::draw_stalkers		(const int &vertex_id)
 		Device.mFullTransform.transform (temp,position);
 		font.OutSetI			(temp.x,-temp.y);
 		font.SetHeightI			(.05f/_sqrt(temp.w));
-		
+
 		if (temp.z < 0.f) {
 			show_text			= false;
 			break;
@@ -204,7 +204,7 @@ void CLevelGraph::draw_stalkers		(const int &vertex_id)
 			show_text			= false;
 			break;
 		}
-		
+
 		if (temp.x > 1.f) {
 			show_text			= false;
 			break;
@@ -214,7 +214,7 @@ void CLevelGraph::draw_stalkers		(const int &vertex_id)
 			show_text			= false;
 			break;
 		}
-		
+
 		if (temp.x > 1.f) {
 			show_text			= false;
 			break;
@@ -254,7 +254,7 @@ void CLevelGraph::draw_stalkers		(const int &vertex_id)
 				position = graph.vertex(stalker->m_tGraphID)->level_point();
 			else
 				position = convert_position(graph.vertex(stalker->m_tGraphID)->game_point());
-			
+
 			render.draw_aabb	(position,radius,radius,radius,color);
 			first_time			= false;
 			continue;
@@ -307,7 +307,7 @@ void CLevelGraph::draw_stalkers		(const int &vertex_id)
 
 		Fvector4				temp;
 		Device.mFullTransform.transform (temp,direction);
-		
+
 		if (temp.z < 0.f)
 			continue;
 
@@ -316,13 +316,13 @@ void CLevelGraph::draw_stalkers		(const int &vertex_id)
 
 		if (temp.x < -1.f)
 			continue;
-		
+
 		if (temp.x > 1.f)
 			continue;
 
 		if (temp.y < -1.f)
 			continue;
-		
+
 		if (temp.x > 1.f)
 			continue;
 
@@ -355,7 +355,7 @@ void CLevelGraph::draw_objects		(const int &vertex_id)
 		Device.mFullTransform.transform (temp,position);
 		font.OutSetI			(temp.x,-temp.y);
 		font.SetHeightI			(.05f/_sqrt(temp.w));
-		
+
 		if (temp.z < 0.f) {
 			show_text			= false;
 			break;
@@ -370,7 +370,7 @@ void CLevelGraph::draw_objects		(const int &vertex_id)
 			show_text			= false;
 			break;
 		}
-		
+
 		if (temp.x > 1.f) {
 			show_text			= false;
 			break;
@@ -380,7 +380,7 @@ void CLevelGraph::draw_objects		(const int &vertex_id)
 			show_text			= false;
 			break;
 		}
-		
+
 		if (temp.x > 1.f) {
 			show_text			= false;
 			break;
@@ -471,7 +471,7 @@ void CLevelGraph::draw_objects		(const int &vertex_id)
 
 		Fvector4				temp;
 		Device.mFullTransform.transform (temp,direction);
-		
+
 		if (temp.z < 0.f)
 			continue;
 
@@ -480,13 +480,13 @@ void CLevelGraph::draw_objects		(const int &vertex_id)
 
 		if (temp.x < -1.f)
 			continue;
-		
+
 		if (temp.x > 1.f)
 			continue;
 
 		if (temp.y < -1.f)
 			continue;
-		
+
 		if (temp.x > 1.f)
 			continue;
 
@@ -534,9 +534,9 @@ void CLevelGraph::draw_game_graph	()
 
 			found			= true;
 		}
-		
+
 		draw_vertex			(i);
-		
+
 		if (psAI_Flags.test(aiDrawGameGraphStalkers))
 			draw_stalkers	(i);
 

@@ -226,18 +226,18 @@ CLASS_ID game_GameState::getCLASS_ID(LPCSTR game_type_name, bool isServer)
 			FS.update_path	(S,"$game_config$","script.ltx");
 			CInifile		*l_tpIniFile = xr_new<CInifile>(S);
 			R_ASSERT		(l_tpIniFile);
-	
+
 			string256				I;
 			xr_strcpy(I,l_tpIniFile->r_string("common","game_type_clsid_factory"));
-	
+
 			::luabind::functor<LPCSTR>	result;
 			R_ASSERT					(ai().script_engine().functor(I,result));
 			shared_str clsid = result		(game_type_name, isServer);
-	
+
 			xr_delete			(l_tpIniFile);
 			if(clsid.size()==0)
 				Debug.fatal		(DEBUG_INFO,"Unknown game type: %s",game_type_name);
-	
+
 			return				(TEXT2CLSID(*clsid));
 		}*/
 

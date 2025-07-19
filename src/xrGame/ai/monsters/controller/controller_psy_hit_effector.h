@@ -8,7 +8,7 @@
 
 //class CPsyHitEffectorPP : public CPPEffectorController {
 //	typedef CPPEffectorController inherited;
-//	
+//
 //	float			m_attack_perc;
 //	float			m_release_perc;
 //
@@ -27,7 +27,7 @@
 ////////////////////////////////////////////////////////////////////////////////////
 
 //class CPsyHitEffectorCam : public CEffector {
-//	typedef CEffector inherited;	
+//	typedef CEffector inherited;
 //
 //	float	m_time_total;
 //	Fvector	dangle_target;

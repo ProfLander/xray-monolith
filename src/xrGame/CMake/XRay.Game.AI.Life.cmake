@@ -1,6 +1,6 @@
 add_module(XRay.Game.AI.Life
   TYPE STATIC
-  
+
   SOURCES
   ../xrServerEntities/alife_space.cpp
   ../xrServerEntities/alife_space.h
@@ -91,7 +91,7 @@ add_module(XRay.Game.AI.Life.ServerEntities
   alife_dynamic_object.cpp
   alife_group_abstract.cpp
   alife_object.cpp
-  
+
   alife_online_offline_group.cpp
   alife_online_offline_group_brain.cpp
   alife_online_offline_group_brain.h
@@ -125,7 +125,7 @@ add_module(XRay.Game.AI.Life.ServerEntities.Monster
   ../xrServerEntities/alife_monster_brain.cpp
   ../xrServerEntities/alife_monster_brain.h
   ../xrServerEntities/alife_monster_brain_inline.h
-  
+
   alife_monster_brain_script.cpp
 
   alife_monster_detail_path_manager.cpp
@@ -134,12 +134,12 @@ add_module(XRay.Game.AI.Life.ServerEntities.Monster
   alife_monster_detail_path_manager_inline.h
 
   ../xrServerEntities/alife_movement_manager_holder.h
-  
+
   alife_monster_patrol_path_manager.cpp
   alife_monster_patrol_path_manager_script.cpp
   alife_monster_patrol_path_manager.h
   alife_monster_patrol_path_manager_inline.h
-  
+
   alife_monster_movement_manager.cpp
   alife_monster_movement_manager_script.cpp
   alife_monster_movement_manager.h
@@ -257,7 +257,7 @@ add_module(XRay.Game.AI.Life.Simulator.RegistryContainer
   alife_registry_container_composition.h
   alife_registry_container_inline.h
   alife_registry_container_space.h
-  
+
   alife_registry_wrappers.h
 )
 

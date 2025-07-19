@@ -74,8 +74,8 @@ void R_dsgraph_structure::r_dsgraph_insert_dynamic(dxRender_Visual* pVisual, Fve
 	// NOTE: Invisible elements exist only in R1
 	_MatrixItem item = {SSA, RI.val_pObject, pVisual, *RI.val_pTransform};
 
-#if defined(USE_DX11) //  Redotix99: for 3D Shader Based Scopes 		
-	switch (sh->flags.iScopeLense) {	
+#if defined(USE_DX11) //  Redotix99: for 3D Shader Based Scopes
+	switch (sh->flags.iScopeLense) {
 		case 0:
 			break;
 

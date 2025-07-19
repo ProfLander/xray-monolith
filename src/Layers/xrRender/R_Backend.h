@@ -110,9 +110,9 @@ public:
 #	endif
 	D3D_PRIMITIVE_TOPOLOGY m_PrimitiveTopology;
 	ID3DInputLayout* m_pInputLayout;
-	DWORD dummy0; //	Padding to avoid warning	
-	DWORD dummy1; //	Padding to avoid warning	
-	DWORD dummy2; //	Padding to avoid warning	
+	DWORD dummy0; //	Padding to avoid warning
+	DWORD dummy1; //	Padding to avoid warning
+	DWORD dummy2; //	Padding to avoid warning
 #endif
 private:
 	// Render-targets

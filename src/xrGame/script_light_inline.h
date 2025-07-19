@@ -100,7 +100,7 @@ protected:
 	float fVolQuality;
 	float fVolIntensity;
 public:
-	ScriptLight() 
+	ScriptLight()
 	{
 		m_light = ::Render->light_create();
 
@@ -138,7 +138,7 @@ public:
 	IC const bool IsEnabled() const						{ return m_light->get_active(); }
 	IC void SetHudMode(bool b)							{ m_light->set_hud_mode(b); }
 	IC const bool GetHudMode() const					{ return m_light->get_hud_mode(); }
-	
+
 	IC void SetBrightness(float br)						{ fBrightness = br; }
 	IC const float GetBrightness() const				{ return fBrightness; }
 	IC const bool GetVolumetric() const					{ return bVolEnable; }
@@ -151,52 +151,52 @@ public:
 	IC const LPCSTR GetTexture() const					{ return texture; }
 	IC const int GetType() const						{ return iType; }
 
-	IC void SetShadow(bool state) 
-	{ 
-		m_light->set_shadow(state); 
+	IC void SetShadow(bool state)
+	{
+		m_light->set_shadow(state);
 		bShadow = state;
 	}
 
-	IC void SetRange(float range) 
+	IC void SetRange(float range)
 	{
-		m_light->set_range(range); 
+		m_light->set_range(range);
 		fRange = range;
 	}
 
-	IC void SetType(int type) 
+	IC void SetType(int type)
 	{
-		m_light->set_type((IRender_Light::LT) type); 
+		m_light->set_type((IRender_Light::LT) type);
 		iType = type;
 	}
 
-	IC void SetTexture(LPCSTR name) 
+	IC void SetTexture(LPCSTR name)
 	{
-		m_light->set_texture(name); 
+		m_light->set_texture(name);
 		texture = name;
 	}
 
-	IC void SetVolumetric(bool state) 
-	{ 
+	IC void SetVolumetric(bool state)
+	{
 		m_light->set_volumetric(state);
 		bVolEnable = state;
 
 		if (state) SetShadow(true);
 	}
 
-	IC void SetVolumetricDistance(float val) 
+	IC void SetVolumetricDistance(float val)
 	{
 		m_light->set_volumetric_distance(val);
-		fVolDistance = val; 
+		fVolDistance = val;
 	}
 
 	IC void SetVolumetricIntensity(float val)
-	{ 
-		m_light->set_volumetric_intensity(val); 
-		fVolIntensity = val; 
+	{
+		m_light->set_volumetric_intensity(val);
+		fVolIntensity = val;
 	}
 
-	IC void SetVolumetricQuality(float val) 
-	{ 
+	IC void SetVolumetricQuality(float val)
+	{
 		m_light->set_volumetric_quality(val);
 		fVolQuality = val;
 	}

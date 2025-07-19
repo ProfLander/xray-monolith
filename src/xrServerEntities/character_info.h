@@ -1,6 +1,6 @@
 //////////////////////////////////////////////////////////////////////////
 // character_info.h			шаблон, для представления абстрактного песонажа
-// 
+//
 //////////////////////////////////////////////////////////////////////////
 
 #pragma		once
@@ -69,7 +69,7 @@ public:
 	void save(NET_Packet&);
 
 	//инициализация профиля подразумевает
-	//загрузку соответствующего CSpecificCharacter, по 
+	//загрузку соответствующего CSpecificCharacter, по
 	//указанному индексу
 	void Init(CSE_ALifeTraderAbstract* trader);
 	void InitSpecificCharacter(shared_str new_id);

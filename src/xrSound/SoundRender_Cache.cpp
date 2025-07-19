@@ -27,7 +27,7 @@ void CSoundRender_Cache::move2top(cache_line* line)
 	// track end
 	if (line == c_end) c_end = c_end->prev;
 
-	// cut 
+	// cut
 	cache_line* prev = line->prev;
 	cache_line* next = line->next;
 	if (prev) prev->next = next;

@@ -80,7 +80,7 @@ namespace ACTOR_DEFS
 	{
 		easCanSleep			= 0,
 		easNotSolidGround,
-		easEnemies		
+		easEnemies
 	};
 	*/
 
@@ -151,4 +151,4 @@ namespace ACTOR_DEFS
 		float o_model; // model yaw
 		SRotation o_torso; // torso in world coords
 	};
-}; // namespace ACTOR_DEFS 
+}; // namespace ACTOR_DEFS

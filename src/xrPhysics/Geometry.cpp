@@ -794,7 +794,7 @@ void	CODEGeom::	dbg_draw			( float scale, u32 color, Flags32 flags )const
 void	CBoxGeom::	dbg_draw			( float scale, u32 color, Flags32 flags )const
 {
 	inherited::dbg_draw( scale, color, flags );
-	
+
 	dGeomID	g = geom();
 	VERIFY( g );
 
@@ -810,7 +810,7 @@ void	CBoxGeom::	dbg_draw			( float scale, u32 color, Flags32 flags )const
 void	CSphereGeom::	dbg_draw			( float scale, u32 color, Flags32 flags )const
 {
 	inherited::dbg_draw( scale, color, flags );
-	
+
 	Fmatrix m;
 	get_xform( m );
 
@@ -825,7 +825,7 @@ void	CSphereGeom::	dbg_draw			( float scale, u32 color, Flags32 flags )const
 void	CCylinderGeom::	dbg_draw			( float scale, u32 color, Flags32 flags )const
 {
 	inherited::dbg_draw( scale, color, flags );
-	
+
 	dGeomID	g = geom();
 	VERIFY( g );
 

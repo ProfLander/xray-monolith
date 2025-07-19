@@ -58,7 +58,7 @@ void CStateManagerFracture::execute()
 		if (can_eat()) state_id = eStateEat;
 		else
 		{
-			// Rest & Idle states here 
+			// Rest & Idle states here
 			state_id = eStateRest;
 		}
 	}

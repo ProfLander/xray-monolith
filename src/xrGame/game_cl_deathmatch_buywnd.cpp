@@ -118,10 +118,10 @@ void game_cl_Deathmatch::OnBuyMenu_DefaultItems()
 	//---------------------------------------------------------
 	/*	PRESET_ITEMS_it It = PlayerDefItems.begin();
 		PRESET_ITEMS_it Et = PlayerDefItems.end();
-		for ( ; It != Et; ++It) 
+		for ( ; It != Et; ++It)
 		{
 			s16	ItemID = (*It);
-	
+
 			pCurBuyMenu->SectionToSlot(u8((ItemID&0xff00)>>0x08), u8(ItemID&0x00ff), false);
 		};
 	*/ //---------------------------------------------------------
@@ -277,7 +277,7 @@ void game_cl_Deathmatch::CheckItem(PIItem pItem, PRESET_ITEMS* pPresetItems, BOO
 	{
 		if (pAmmo->m_boxCurr != pAmmo->m_boxSize) return;
 	}
-	//-----------------------------------------------------	
+	//-----------------------------------------------------
 	PRESET_ITEMS_it PresetItemIt = std::find(pPresetItems->begin(), pPresetItems->end(), BigID);
 	if (OnlyPreset)
 	{
@@ -291,7 +291,7 @@ void game_cl_Deathmatch::CheckItem(PIItem pItem, PRESET_ITEMS* pPresetItems, BOO
 	}
 
 	pCurBuyMenu->SectionToSlot(SlotID, ItemID, true);
-	//-----------------------------------------------------	
+	//-----------------------------------------------------
 	s16 DesiredAddons = 0;
 	if (PresetItemIt != pPresetItems->end())
 	{

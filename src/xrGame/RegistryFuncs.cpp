@@ -72,7 +72,7 @@ bool WriteRegistryValue(LPCSTR rKeyName, DWORD rKeyType, const void* value)
 
 	if (!hKey)
 	{
-		//Msg ("! Unable to find %s entry in registry", REGISTRY_PATH); 
+		//Msg ("! Unable to find %s entry in registry", REGISTRY_PATH);
 		return false;
 	}
 

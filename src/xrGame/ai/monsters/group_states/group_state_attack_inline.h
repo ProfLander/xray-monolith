@@ -330,7 +330,7 @@ void CStateGroupAttackAbstract::execute()
 
 	prev_substate = current_substate;
 
-	// Notify squad	
+	// Notify squad
 	if (squad)
 	{
 		SMemberGoal goal;
@@ -478,7 +478,7 @@ bool CStateGroupAttackAbstract::check_behinder()
 		// check if we can start behinder
 
 
-		// - check if we start checking 
+		// - check if we start checking
 		if (m_time_start_check_behinder == 0)
 		{
 			// - check if object is behind

@@ -254,7 +254,7 @@ void CControlAnimationBase::SetTurnAnimation()
 //////////////////////////////////////////////////////////////////////////
 // SelectVelocities
 // In:	path, target_yaw, анимация
-// Out:	установить linear и angular velocities, 
+// Out:	установить linear и angular velocities,
 //		по скорости движения выбрать финальную анимацию из Velocity_Chain
 //		установить скорость анимации в соответствие с физ скоростью
 void CControlAnimationBase::SelectVelocities()
@@ -303,7 +303,7 @@ void CControlAnimationBase::SelectVelocities()
 	//	R_ASSERT(fsimilar(path_vel.linear,	anim_vel.linear));
 	//	R_ASSERT(fsimilar(path_vel.angular,	anim_vel.angular));
 
-	// установка линейной скорости	
+	// установка линейной скорости
 	if (m_object->state_invisible)
 	{
 		// если невидимый, то установить скорость из пути
@@ -381,7 +381,7 @@ void CControlAnimationBase::CheckVelocityBounce()
 	float prev_speed = m_prev_character_velocity;
 	float cur_speed = temp_vec.magnitude();
 
-	// prepare 
+	// prepare
 	if (fis_zero(prev_speed)) prev_speed = 0.01f;
 	if (fis_zero(cur_speed)) cur_speed = 0.01f;
 

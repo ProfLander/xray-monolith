@@ -1,6 +1,6 @@
 add_module(XRay.Core
   TYPE STATIC
-  
+
   PRECOMPILES stdafx.h
 
   DEFINES
@@ -23,12 +23,12 @@ add_module(XRay.Core
   SOURCES
   FTimer.cpp
   xrCore.cpp
-  
+
   FTimer.h
   stdafx.h
   xrCore.h
   xrCore_platform.h
-  
+
   ../build_config_defines.h
   ChooseTypes.H
   client_id.h

@@ -22,13 +22,13 @@ UITeamState::UITeamState(ETeam teamId, UITeamPanels* teamPanels)
 	myTeam = teamId;
 	/*myScrollList = xr_new<CUIScrollView>();
 	myScrollList->SetAutoDelete(true);
-	
+
 	myScrollList->m_sort_function = fastdelegate::MakeDelegate
 		(this, &UITeamState::SortingLessFunction);
-	
+
 	myTeamHeader = xr_new<UITeamHeader>(this);
 	myTeamHeader->SetAutoDelete(true);
-	
+
 	AttachChild(myTeamHeader);
 	AttachChild(myScrollList);*/
 

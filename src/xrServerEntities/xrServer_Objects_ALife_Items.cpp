@@ -262,7 +262,7 @@ void CSE_ALifeInventoryItem::UPDATE_Read(NET_Packet& tNetPacket)
 		}*/
 	}
 	prev_freezed = freezed;
-	if (tNetPacket.r_eof()) // in case spawn + update 
+	if (tNetPacket.r_eof()) // in case spawn + update
 	{
 		freezed = false;
 		return;
@@ -599,11 +599,11 @@ void CSE_ALifeItemWeapon::OnEvent(NET_Packet& tNetPacket, u16 type, u32 time, Cl
 	case GE_WPN_STATE_CHANGE:
 		{
 			tNetPacket.r_u8(wpn_state);
-			//				u8 sub_state = 
+			//				u8 sub_state =
 			tNetPacket.r_u8();
-			//				u8 NewAmmoType = 
+			//				u8 NewAmmoType =
 			tNetPacket.r_u8();
-			//				u8 AmmoElapsed = 
+			//				u8 AmmoElapsed =
 			tNetPacket.r_u8();
 		}
 		break;
@@ -658,7 +658,7 @@ void CSE_ALifeItemWeapon::FillProps			(LPCSTR pref, PropItemVec& items)
 	inherited::FillProps			(pref, items);
 	PHelper().CreateU8			(items,PrepareKey(pref,*s_name,"Ammo type:"), &ammo_type,0,255,1);
 	PHelper().CreateU16			(items,PrepareKey(pref,*s_name,"Ammo: in magazine"),	&a_elapsed,0,30,1);
-	
+
 
 	if (m_scope_status == ALife::eAddonAttachable)
 	       PHelper().CreateFlag8(items,PrepareKey(pref,*s_name,"Addons\\Scope"), 	&m_addon_flags, eWeaponAddonScope);

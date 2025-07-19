@@ -93,8 +93,8 @@
  " ------------------------------------------------\n" \
  "| FIXME : " #x "\n" \
  " -------------------------------------------------\n" )
-#define todo( x ) message( __FILE__LINE__" TODO : " #x "\n" ) 
-#define fixme( x ) message( __FILE__LINE__" FIXME: " #x "\n" ) 
+#define todo( x ) message( __FILE__LINE__" TODO : " #x "\n" )
+#define fixme( x ) message( __FILE__LINE__" FIXME: " #x "\n" )
 
 //--------- static assertion
 template<bool> struct CompileTimeError;

@@ -102,7 +102,7 @@ void WeaponUsageStatistic::SaveData()
 void WeaponUsageStatistic::Write(FILE* pFile)
 {
 	if (!pFile) return;
-	//---------------------------------------------	
+	//---------------------------------------------
 	fwrite(m_dwTotalPlayersAliveTime, 4, 3, pFile);
 	fwrite(m_dwTotalPlayersMoneyRound, 4, 3, pFile);
 	fwrite(m_dwTotalNumRespawns, 4, 3, pFile);

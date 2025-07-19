@@ -23,24 +23,24 @@ class CALifeCommunicationManager : public virtual CALifeSimulatorBase
 	/**
 	protected:
 		typedef CALifeSimulatorBase inherited;
-	
+
 	private:
 		enum {
 			MAX_STACK_DEPTH					= u32(128),
 			SUM_COUNT_THRESHOLD				= u32(30),
 		};
-	
+
 		// temporary buffers for trading
 		ALife::ITEM_P_VECTOR				m_tpItems1;
 		ALife::ITEM_P_VECTOR				m_tpItems2;
 		ALife::OBJECT_VECTOR				m_tpBlockedItems1;
 		ALife::OBJECT_VECTOR				m_tpBlockedItems2;
-	
+
 		ALife::ITEM_P_VECTOR				m_tpTrader1;
 		ALife::ITEM_P_VECTOR				m_tpTrader2;
 		ALife::INT_VECTOR					m_tpSums1;
 		ALife::INT_VECTOR					m_tpSums2;
-	
+
 		ALife::SSumStackCell				m_tpStack1[MAX_STACK_DEPTH];
 		ALife::SSumStackCell				m_tpStack2[MAX_STACK_DEPTH];
 	protected:
@@ -60,7 +60,7 @@ class CALifeCommunicationManager : public virtual CALifeSimulatorBase
 				bool		bfCheckIfCanNullTradersBalance	(CSE_ALifeHumanAbstract		*tpALifeHumanAbstract1,		CSE_ALifeHumanAbstract	*tpALifeHumanAbstract2,			int				iItemCount1,				int						iItemCount2,			int						iBalance);
 				void		vfPerformTrading				(CSE_ALifeHumanAbstract		*tpALifeHumanAbstract1,		CSE_ALifeHumanAbstract	*tpALifeHumanAbstract2);
 				void		vfPerformCommunication			();
-	
+
 	#ifdef FAST_OWNERSHIP
 				void		vfAttachGatheredItems			(CSE_ALifeTraderAbstract	*tpALifeTraderAbstract1,	CSE_ALifeTraderAbstract			*tpALifeTraderAbstract2,		ALife::OBJECT_VECTOR	&tpObjectVector);
 	#else

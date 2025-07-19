@@ -106,9 +106,9 @@ public:
 inline HANDLE CreateMailSlotByName(LPSTR slotName)
 {
 	HANDLE hSlot = CreateMailslot(slotName,
-	                              0, // no maximum message size 
-	                              MAILSLOT_WAIT_FOREVER, // no time-out for operations 
-	                              (LPSECURITY_ATTRIBUTES)NULL); // no security attributes 
+	                              0, // no maximum message size
+	                              MAILSLOT_WAIT_FOREVER, // no time-out for operations
+	                              (LPSECURITY_ATTRIBUTES)NULL); // no security attributes
 
 	return hSlot;
 }
@@ -119,7 +119,7 @@ inline BOOL CheckExisting(LPSTR slotName)
 	BOOL res;
 	hFile = CreateFile(slotName,
 	                   GENERIC_WRITE,
-	                   FILE_SHARE_READ, // required to write to a mailslot 
+	                   FILE_SHARE_READ, // required to write to a mailslot
 	                   (LPSECURITY_ATTRIBUTES)NULL,
 	                   OPEN_EXISTING,
 	                   FILE_ATTRIBUTE_NORMAL,
@@ -141,7 +141,7 @@ inline BOOL SendMailslotMessage(LPSTR slotName, CMailSlotMsg& msg)
 
 	hFile = CreateFile(slotName,
 	                   GENERIC_WRITE,
-	                   FILE_SHARE_READ, // required to write to a mailslot 
+	                   FILE_SHARE_READ, // required to write to a mailslot
 	                   (LPSECURITY_ATTRIBUTES)NULL,
 	                   OPEN_EXISTING,
 	                   FILE_ATTRIBUTE_NORMAL,
@@ -182,11 +182,11 @@ inline BOOL CheckMailslotMessage(HANDLE hSlot, CMailSlotMsg& msg)
 	ov.hEvent = hEvent;
 
 
-	fResult = GetMailslotInfo(hSlot, // mailslot handle 
-	                          (LPDWORD)NULL, // no maximum message size 
-	                          &cbMessage, // size of next message 
-	                          &cMessage, // number of messages 
-	                          (LPDWORD)NULL); // no read time-out 
+	fResult = GetMailslotInfo(hSlot, // mailslot handle
+	                          (LPDWORD)NULL, // no maximum message size
+	                          &cbMessage, // size of next message
+	                          &cMessage, // number of messages
+	                          (LPDWORD)NULL); // no read time-out
 
 	R_ASSERT(fResult);
 

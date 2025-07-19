@@ -54,7 +54,7 @@ CSE_ALifeItemWeapon	*CSE_ALifeHumanAbstract::tpfGetBestWeapon(EHitType &tHitType
 
 		l_tpALifeItemWeapon->m_dwAmmoAvailable = get_available_ammo_count(l_tpALifeItemWeapon,children);
 		if (l_tpALifeItemWeapon->m_dwAmmoAvailable || (!l_tpALifeItemWeapon->m_dwSlot) || (3 == l_tpALifeItemWeapon->m_dwSlot)) {
-			u32					l_dwCurrentBestWeapon = l_tpALifeItemWeapon->ef_weapon_type(); 
+			u32					l_dwCurrentBestWeapon = l_tpALifeItemWeapon->ef_weapon_type();
 			if (l_dwCurrentBestWeapon > l_dwBestWeapon) {
 				l_dwBestWeapon = l_dwCurrentBestWeapon;
 				m_tpCurrentBestWeapon = l_tpALifeItemWeapon;
@@ -73,12 +73,12 @@ CSE_ALifeItemWeapon	*CSE_ALifeHumanAbstract::tpfGetBestWeapon(EHitType &tHitType
 void CSE_ALifeHumanAbstract::vfCollectAmmoBoxes()
 {
 	for (int i=0, n=children.size() ; i<n; ++i) {
-		
+
 		if (alife().m_temp_marks[i])
 			continue;
-		
+
 		alife().m_temp_marks[i]	= true;
-		
+
 		CSE_ALifeItemAmmo		*l_tpALifeItemAmmo = smart_cast<CSE_ALifeItemAmmo*>(ai().alife().objects().object(children[i]));
 		if (!l_tpALifeItemAmmo)
 			continue;
@@ -278,7 +278,7 @@ CSE_ALifeDynamicObject *CSE_ALifeHumanAbstract::tpfGetBestDetector()
 		}
 		return						(m_tpBestDetector);
 	}
-	
+
 	OBJECT_IT						I = children.begin();
 	OBJECT_IT						E = children.end();
 	for ( ; I != E; ++I) {
@@ -336,7 +336,7 @@ bool CSE_ALifeHumanAbstract::bfChooseFast()
 			alife().graph().attach	(*this,*I,smart_cast<CSE_ALifeDynamicObject*>(*I)->m_tGraphID);
 		return						(true);
 	}
-	
+
 	return							(false);
 }
 
@@ -432,16 +432,16 @@ int  CSE_ALifeHumanAbstract::ifChooseWeapon(EWeaponPriorityType tWeaponPriorityT
 	}
 	if (l_tpALifeItemBest) {
 		u32						l_dwCount = children.size();
-		
+
 		if (!tpObjectVector)
 			alife().graph().attach	(*this,l_tpALifeItemBest,smart_cast<CSE_ALifeDynamicObject*>(l_tpALifeItemBest)->m_tGraphID);
 		else
 			children.push_back	(l_tpALifeItemBest->base()->ID);
-		
+
 		m_dwTotalMoney			-= l_tpALifeItemBest->m_dwCost;
 		attach_available_ammo	(smart_cast<CSE_ALifeItemWeapon*>(l_tpALifeItemBest),alife().m_temp_item_vector,tpObjectVector);
 		m_dwTotalMoney			= l_dwSafeMoney;
-		
+
 		if (!tpObjectVector) {
 			ITEM_P_IT				I = remove_if(alife().m_temp_item_vector.begin(),alife().m_temp_item_vector.end(),CRemoveAttachedItemsPredicate());
 			alife().m_temp_item_vector.erase(I,alife().m_temp_item_vector.end());
@@ -576,7 +576,7 @@ int  CSE_ALifeHumanAbstract::ifChooseValuables()
 void CSE_ALifeHumanAbstract::vfAttachItems(ETakeType tTakeType)
 {
 	R_ASSERT2					(fHealth >= EPS_L,"Cannot graph().attach items to dead human");
-	
+
 	CSE_ALifeGroupAbstract		*l_tpALifeGroupAbstract = smart_cast<CSE_ALifeGroupAbstract*>(this);
 	if (l_tpALifeGroupAbstract) {
 		vfChooseGroup			(l_tpALifeGroupAbstract);
@@ -585,12 +585,12 @@ void CSE_ALifeHumanAbstract::vfAttachItems(ETakeType tTakeType)
 	else
 		if (bfChooseFast())
 			return;
-	
+
 	if (eTakeTypeAll == tTakeType) {
 		alife().append_item_vector	(children,alife().m_temp_item_vector);
 		vfDetachAll				();
 	}
-	
+
 	sort						(alife().m_temp_item_vector.begin(),alife().m_temp_item_vector.end(),CSortItemPredicate());
 
 	if ((eTakeTypeAll == tTakeType) || (eTakeTypeMin == tTakeType)) {

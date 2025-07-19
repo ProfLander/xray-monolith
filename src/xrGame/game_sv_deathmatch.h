@@ -41,7 +41,7 @@ protected:
 
 	shared_str m_sBaseWeaponCostSection;
 
-	xr_vector<game_TeamState> teams; //dm,tdm,ah	
+	xr_vector<game_TeamState> teams; //dm,tdm,ah
 
 	LPCSTR pWinnigPlayerName;
 

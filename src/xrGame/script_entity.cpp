@@ -125,7 +125,7 @@ void CScriptEntity::SetScriptControl(const bool bScriptControl, shared_str caSci
 
 	m_bScriptControl = bScriptControl;
 	m_caScriptName = caSciptName;
-	/* 
+	/*
 	#ifdef DEBUG
 		if (bScriptControl)
 			ai().script_engine().script_log			(ScriptStorage::eLuaMessageTypeInfo,"Script %s set object %s under its control",*caSciptName,*object().cName());
@@ -155,7 +155,7 @@ bool CScriptEntity::CheckObjectVisibility(const CGameObject* tpObject)
 	return (m_monster->memory().visual().visible_now(tpObject));
 }
 
-//определяет видимость определенного типа объектов, 
+//определяет видимость определенного типа объектов,
 //заданного через section_name
 bool CScriptEntity::CheckTypeVisibility(const char* section_name)
 {

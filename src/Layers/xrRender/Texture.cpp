@@ -293,7 +293,7 @@ IC u32 it_difference(u32 d, u32 orig, u32 ucomp)
 		128 + (int(color_get_R(orig)) - int(color_get_R(ucomp))) * 2, // R-error
 		128 + (int(color_get_G(orig)) - int(color_get_G(ucomp))) * 2, // G-error
 		128 + (int(color_get_B(orig)) - int(color_get_B(ucomp))) * 2, // B-error
-		128 + (int(color_get_A(orig)) - int(color_get_A(ucomp))) * 2); // A-error	
+		128 + (int(color_get_A(orig)) - int(color_get_A(ucomp))) * 2); // A-error
 }
 
 IC u32 it_height_rev(u32 d, u32 s)
@@ -516,7 +516,7 @@ _BUMP:
 		fmt								= D3DFMT_DXT5;
 		ID3DTexture2D*	T_normal_1C	= TW_LoadTextureFromTexture(T_normal_1,fmt,psTextureLOD,dwWidth,dwHeight);
 		//TW_Save						(T_normal_1C,fname,"debug-3","normal-G-C");
-		
+
 #if RENDER==R_R2
 		// Decompress (back)
 		fmt								= D3DFMT_A8R8G8B8;
@@ -540,7 +540,7 @@ _BUMP:
 		_RELEASE					(T_normal_1U	);
 		_RELEASE					(T_normal_1D	);
 
-		// 
+		//
 		string256			fnameB;
 		strconcat			(fnameB,"$user$",fname,"X");
 		ref_texture			t_temp		= dxRenderDeviceRender::Instance().Resources->_CreateTexture	(fnameB);
@@ -633,7 +633,7 @@ _BUMP_from_base:
 		_RELEASE(T_normal_1U);
 		_RELEASE(T_normal_1D);
 
-		// 
+		//
 		string256 fnameB;
 		strconcat(sizeof(fnameB), fnameB, "$user$", fname, "_bumpX");
 		ref_texture t_temp = dxRenderDeviceRender::Instance().Resources->_CreateTexture(fnameB);

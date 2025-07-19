@@ -25,7 +25,7 @@
 const int dm_max_decompress = 7;
 #endif
 //const int		dm_size				= 24;								//!
-const int dm_cache1_count = 4; // 
+const int dm_cache1_count = 4; //
 //const int 		dm_cache1_line		= dm_size*2/dm_cache1_count;		//! dm_size*2 must be div dm_cache1_count
 const int dm_max_objects = 64;
 const int dm_obj_in_slot = 4;
@@ -93,7 +93,7 @@ public:
 
 	struct SlotPart
 	{
-		// 
+		//
 		u32 id; // ID модельки
 		SlotItemVec items; // список кустиков
 		SlotItemVec r_items[3]; // список кустиков for render
@@ -120,8 +120,8 @@ public:
 		};
 
 		int sx, sz; // координаты слота X x Y
-		vis_data vis; // 
-		SlotPart G[dm_obj_in_slot]; // 
+		vis_data vis; //
+		SlotPart G[dm_obj_in_slot]; //
 		bool hidden;
 
 		Slot()
@@ -258,7 +258,7 @@ public:
 	// cache grid to world
 	int cg2w_X(int x) { return cache_cx - dm_size + x; }
 	int cg2w_Z(int z) { return cache_cz - dm_size + (dm_cache_line - 1 - z); }
-	// world to cache grid 
+	// world to cache grid
 	int w2cg_X(int x) { return x - cache_cx + dm_size; }
 	int w2cg_Z(int z) { return cache_cz - dm_size + (dm_cache_line - 1 - z); }
 

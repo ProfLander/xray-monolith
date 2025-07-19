@@ -403,7 +403,7 @@ void CIKLimb::Create(u16 id, IKinematicsAnimated* K, bool collide_)
 	set_limits(lmin[1], lmax[1], limits[1]);
 	set_limits(lmin[2], lmax[2], limits[1]);
 	//free_limits( lmin[0], lmax[0] );
-	//lmin[0] = M_PI * 3.f/4.f; 
+	//lmin[0] = M_PI * 3.f/4.f;
 	lmin[1] += 1.0f;
 	lmax[1] -= 0.f;
 	lmin[2] += 1.0f;
@@ -500,7 +500,7 @@ void get_diff_value( const Fmatrix & m0, const Fmatrix &m1, float &l, float &a )
 {
 	Fmatrix diff; diff.mul_43( Fmatrix( ).invert( m1 ), m0 );
 	l = diff.c.magnitude( );
-	Fvector ax; 
+	Fvector ax;
 	get_axis_angle( diff, ax, a );
 	a = _abs( a );
 }
@@ -639,10 +639,10 @@ bool	CIKLimb::blend_collide( ik_goal_matrix &m, const SCalculateData& cd,  const
 	Fvector l_toe; m_foot.ToePosition( l_toe );
 #endif
 
-	if(	m0.collide_state() == m1.collide_state() && 
-		(ik_goal_matrix::cl_free == m0.collide_state() || 
-		 ik_goal_matrix::cl_aligned == m0.collide_state() 
-		) 
+	if(	m0.collide_state() == m1.collide_state() &&
+		(ik_goal_matrix::cl_free == m0.collide_state() ||
+		 ik_goal_matrix::cl_aligned == m0.collide_state()
+		)
 	)
 	{
 		Fmatrix fm =  m1.get() ;
@@ -671,7 +671,7 @@ bool	CIKLimb::blend_collide( ik_goal_matrix &m, const SCalculateData& cd,  const
 			DBG_DrawPoint( v, 0.1, D3DCOLOR_XRGB( (!collided) * 255, 255 , 255 ) );
 #endif
 			return ret;
-		} 
+		}
 		else
 		{
 			//NR
@@ -691,7 +691,7 @@ bool	CIKLimb::blend_collide( ik_goal_matrix &m, const SCalculateData& cd,  const
 		ret = clamp_change( fm, m0.get(), cd.l, cd.a );//m1
 		ik_goal_matrix r;
 		//r.set( fm, m0.collide_state( ) );
-		m_foot.GetFootStepMatrix( r, fm, collide_data, true, true );	
+		m_foot.GetFootStepMatrix( r, fm, collide_data, true, true );
 		if( r.collide_state() == ik_goal_matrix::cl_free )
 		{
 #ifdef DEBUG
@@ -700,7 +700,7 @@ bool	CIKLimb::blend_collide( ik_goal_matrix &m, const SCalculateData& cd,  const
 #endif
 			m = r;
 			return ret;
-		} 
+		}
 		else
 		{
 #ifdef DEBUG
@@ -711,12 +711,12 @@ bool	CIKLimb::blend_collide( ik_goal_matrix &m, const SCalculateData& cd,  const
 			m = r;
 			return false;
 		}
-	
+
 	} else
 	{
 		Fmatrix fm =  m1.get() ;
  		ret = clamp_change( fm, m0.get(), cd.l, cd.a );
-		
+
 		ik_goal_matrix r;
 		r.set( fm, m0.collide_state( ) );
 		m_foot.GetFootStepMatrix( r, fm, collide_data, true, true );
@@ -871,7 +871,7 @@ void CIKLimb::DBGDrawSetNewGoal	( SCalculateData& cd, const SIKCollideData &cld 
 		{
 			if(cd.state.foot_step != sv_state.foot_step())
 					cd.state.count	= 50;
-			int c = 55 + 200/50 * cd.state.count; 
+			int c = 55 + 200/50 * cd.state.count;
 			if( cd.state.count>0 )
 				DBG_OpenCashedDraw( );
 			Fvector l_toe; m_foot.ToePosition( l_toe );
@@ -894,7 +894,7 @@ void CIKLimb::DBGDrawSetNewGoal	( SCalculateData& cd, const SIKCollideData &cld 
 			{
 				DBG_ClosedCashedDraw( 3000 );
 				--cd.state.count;
-			} 
+			}
 		}
 	}
 //	sv_state.get_state( sv_state_DBR );
@@ -968,13 +968,13 @@ IC void CIKLimb::GetPickDir(Fvector& v, SCalculateData& cd) const
 	//
 		Fvector dir;
 		ToeTimeDiff( dir, cd );
-	
+
 		Fvector lpick; sv_state.pick( lpick );
-	
+
 		pick_dir_update( v, lpick, dir );
-	
+
 		cd.state.pick =v;
-	
+
 	#ifdef DEBUG
 		if( ph_dbg_draw_mask.test( phDbgDrawIKGoal )  )
 		{
@@ -1017,7 +1017,7 @@ void CIKLimb::Update(CGameObject* O, const CBlend* b, const extrapolation::point
 	//current_foot = m_foot.Kinematics( )->LL_GetTransform( m_bones[m_foot.ref_bone()] );
 
 
-	//ik_goal_matrix m;	
+	//ik_goal_matrix m;
 	//Fmatrix foot = Fmatrix().mul_43( Fmatrix().invert( O->XFORM() ) ,sv_state.goal( m ).get() );
 	//m_foot.ref_bone_to_foot( foot )
 
@@ -1208,7 +1208,7 @@ Matrix& CIKLimb::Goal(Matrix& gl, const Fmatrix& xm, const SCalculateData& cd)
 		DBH.invert( );
 		DBGG.mul_43( obj, DBH );
 		DBG_DrawMatrix( DBGG, 0.2f );
-		
+
 	}
 #endif
 

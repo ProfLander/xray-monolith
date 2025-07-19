@@ -38,10 +38,10 @@ void object_shift::	dbg_draw			( const Fmatrix	&current_pos, const extrapolation
 
 		DBG_DrawLine(
 			v0,
-			v1, 
+			v1,
 			D3DCOLOR_XRGB( 0, 255, 0 ) );
 	}
-	
+
 	float	start_shift = current + delta_shift( time_passed );
 	float	end_shift = current + delta_shift( time_passed + time );
 	DBG_DrawLine(
@@ -98,10 +98,10 @@ bool square_equation(float a, float b, float c, float& x0, float& x1) // returns
 //	float x			= taget - current ;
 //	return x;
 //	float taget_speed = x/time;
-//	
+//
 //		//clamp(taget_speed,-max_possible_shift_speed, max_possible_shift_speed );
 //	save_min( taget_speed, max_possible_shift_speed_up );
-//	save_max( taget_speed, -max_possible_shift_speed_down ); 
+//	save_max( taget_speed, -max_possible_shift_speed_down );
 //
 //	float change_speed = taget_speed - speed;
 //	float avr_accel = change_speed/time;
@@ -113,10 +113,10 @@ bool square_equation(float a, float b, float c, float& x0, float& x1) // returns
 //
 //	//clamp(taget_speed,-max_possible_shift_speed, max_possible_shift_speed );
 //	save_min( taget_speed, max_possible_shift_speed_up );
-//	save_max( taget_speed, -max_possible_shift_speed_down ); 
+//	save_max( taget_speed, -max_possible_shift_speed_down );
 //	x = taget_speed * time;
-//	
-//	taget = x + current; 
+//
+//	taget = x + current;
 //
 //	return x;
 //

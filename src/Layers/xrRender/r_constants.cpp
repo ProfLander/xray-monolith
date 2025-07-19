@@ -20,7 +20,7 @@
 
 R_constant_table::~R_constant_table()
 {
-	//dxRenderDeviceRender::Instance().Resources->_DeleteConstantTable(this);	
+	//dxRenderDeviceRender::Instance().Resources->_DeleteConstantTable(this);
 	DEV->_DeleteConstantTable(this);
 }
 
@@ -275,7 +275,7 @@ void R_constant_table::clear()
 	table.clear();
 #if defined(USE_DX10) || defined(USE_DX11)
 	m_CBTable.clear();
-#endif	//	
+#endif	//
 }
 
 BOOL R_constant_table::equal(R_constant_table& C)

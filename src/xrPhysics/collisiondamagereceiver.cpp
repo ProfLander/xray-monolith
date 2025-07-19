@@ -83,7 +83,7 @@ void BreakableObjectCollisionCallback(bool&/**do_colide/**/, bool bo1, dContact&
 	VERIFY(damag_receiver);
 
 	/*
-	
+
 		CBreakableObject* this_object1	= 0;
 		CBreakableObject* this_object2	= 0;
 		VERIFY( usr_data_1 );
@@ -113,7 +113,7 @@ void BreakableObjectCollisionCallback(bool&/**do_colide/**/, bool bo1, dContact&
 				norm_sign=1.f;
 		}
 		else return;
-	
+
 		*/
 	//if(!this_object->m_pUnbrokenObject) return;
 

@@ -402,7 +402,7 @@ shared_str CSE_ALifeTraderAbstract::specific_character()
 			}
 			return m_SpecificCharacter;
 		}
-		
+
 #ifdef XRGAME_EXPORTS
 		if (m_CheckedCharacters.empty())
 			char_info.m_SpecificCharacterId = m_DefaultCharacters[Random.randI(m_DefaultCharacters.size())];
@@ -1386,7 +1386,7 @@ void CSE_ALifeMonsterAbstract::UPDATE_Read(NET_Packet& tNetPacket)
 void CSE_ALifeMonsterAbstract::FillProps		(LPCSTR pref, PropItemVec& items)
 {
   	inherited1::FillProps		(pref,items);
-	
+
 	PHelper().CreateFlag32		(items,	PrepareKey(pref,*s_name,"ALife\\No move in offline"),	&m_flags,			flOfflineNoMove);
 	PHelper().CreateFlag32		(items,	PrepareKey(pref,*s_name,"Use smart terrain tasks"),	&m_flags,			flUseSmartTerrains);
 
@@ -1858,7 +1858,7 @@ void CSE_ALifeMonsterRat::FillProps			(LPCSTR pref, PropItemVec& items)
    	PHelper().CreateFloat			(items, PrepareKey(pref,*s_name,"Personal",	"Attack speed" 			),&fAttackSpeed,					0,10,0.1f);
    	PHelper().CreateFloat			(items, PrepareKey(pref,*s_name,"Personal",	"Pursuit distance" 		),&fMaxPursuitRadius,				0,300,10);
    	PHelper().CreateFloat			(items, PrepareKey(pref,*s_name,"Personal",	"Home distance" 		),&fMaxHomeRadius,					0,300,10);
-	// morale																			
+	// morale
 	PHelper().CreateFloat			(items, PrepareKey(pref,*s_name,"Morale",		"Success attack quant" 	),&fMoraleSuccessAttackQuant,		-100,100,5);
 	PHelper().CreateFloat			(items, PrepareKey(pref,*s_name,"Morale",		"Death quant" 			),&fMoraleDeathQuant,				-100,100,5);
 	PHelper().CreateFloat			(items, PrepareKey(pref,*s_name,"Morale",		"Fear quant" 			),&fMoraleFearQuant,				-100,100,5);
@@ -1867,13 +1867,13 @@ void CSE_ALifeMonsterRat::FillProps			(LPCSTR pref, PropItemVec& items)
 	PHelper().CreateFloat			(items, PrepareKey(pref,*s_name,"Morale",		"Minimum value" 		),&fMoraleMinValue,					-100,100,5);
 	PHelper().CreateFloat			(items, PrepareKey(pref,*s_name,"Morale",		"Maximum value" 		),&fMoraleMaxValue,					-100,100,5);
 	PHelper().CreateFloat			(items, PrepareKey(pref,*s_name,"Morale",		"Normal value" 			),&fMoraleNormalValue,				-100,100,5);
-	// attack																			 	
+	// attack
 	PHelper().CreateFloat			(items, PrepareKey(pref,*s_name,"Attack",		"Hit power" 			),&fHitPower,						0,200,5);
 	PHelper().CreateU16  			(items, PrepareKey(pref,*s_name,"Attack",		"Hit interval" 			),&u16HitInterval,					0,65535,500);
 	PHelper().CreateFloat			(items, PrepareKey(pref,*s_name,"Attack",		"Distance" 				),&fAttackDistance,					0,300,10);
 	PHelper().CreateFloat			(items, PrepareKey(pref,*s_name,"Attack",		"Maximum angle" 		),&fAttackAngle,					0,180,10);
 	PHelper().CreateFloat			(items, PrepareKey(pref,*s_name,"Attack",		"Success probability" 	),&fAttackSuccessProbability,		0,100,1);
-}	
+}
 #endif // #ifndef XRGAME_EXPORTS
 
 bool CSE_ALifeMonsterRat::bfUseful()
@@ -1971,7 +1971,7 @@ void CSE_ALifeMonsterZombie::FillProps		(LPCSTR pref, PropItemVec& items)
    	PHelper().CreateFloat			(items, PrepareKey(pref,*s_name,"Personal",	"Attack speed" 			),&fAttackSpeed,					0,10,0.1f);
    	PHelper().CreateFloat			(items, PrepareKey(pref,*s_name,"Personal",	"Pursuit distance" 		),&fMaxPursuitRadius,				0,300,10);
    	PHelper().CreateFloat			(items, PrepareKey(pref,*s_name,"Personal",	"Home distance" 		),&fMaxHomeRadius,					0,300,10);
-	// attack																			 	
+	// attack
 	PHelper().CreateFloat			(items, PrepareKey(pref,*s_name,"Attack",		"Hit power" 			),&fHitPower,						0,200,5);
 	PHelper().CreateU16  			(items, PrepareKey(pref,*s_name,"Attack",		"Hit interval" 			),&u16HitInterval,					0,65535,500);
 	PHelper().CreateFloat			(items, PrepareKey(pref,*s_name,"Attack",		"Distance" 				),&fAttackDistance,					0,300,10);

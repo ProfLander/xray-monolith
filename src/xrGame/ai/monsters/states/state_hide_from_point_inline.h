@@ -46,7 +46,7 @@ bool CStateMonsterHideFromPointAbstract::check_completion()
 	}
 
 	//if (!fis_zero(data.distance)) {
-	//	if (object->Position().distance_to(data.point) > data.distance) 
+	//	if (object->Position().distance_to(data.point) > data.distance)
 	//		return true;
 	//}
 

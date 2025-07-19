@@ -247,8 +247,8 @@ void CPHShell::PhDataUpdate(dReal step)
 		ReanableObject();
 #if 0
     DBG_OpenCashedDraw();
-    dbg_draw_velocity   ( 0.1f, D3DCOLOR_XRGB( 255, 0, 0 ) ); 
-    dbg_draw_force      ( 0.1f, D3DCOLOR_XRGB( 0, 0, 255 ) ); 
+    dbg_draw_velocity   ( 0.1f, D3DCOLOR_XRGB( 255, 0, 0 ) );
+    dbg_draw_force      ( 0.1f, D3DCOLOR_XRGB( 0, 0, 255 ) );
     DBG_ClosedCashedDraw( 10000 );
     //dbg_draw_geometry
 #endif
@@ -953,11 +953,11 @@ void CPHShell::AddElementRecursive(CPhysicsElement* root_e, u16 id, Fmatrix glob
 #ifdef DEBUG
     bool bbb = lvis_check||(!breakable && root_e);
     if(!bbb)
-    {   
+    {
         IKinematics* K = m_pKinematics;
 
         Msg("all bones transform:--------");
-        
+
         for(u16 ii=0; ii<K->LL_BoneCount();++ii){
             Fmatrix tr;
 
@@ -1644,7 +1644,7 @@ void CPHShell::SetIgnoreRagDoll()
 }
 
 
-//Делает данный физический объек анимированным 
+//Делает данный физический объек анимированным
 void CPHShell::CreateShellAnimator(CInifile const* ini, LPCSTR section)
 {
 	//Для фильтра коллизий относим данный объект к классу анимированных

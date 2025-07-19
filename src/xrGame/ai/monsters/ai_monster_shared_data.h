@@ -23,7 +23,7 @@ struct SMonsterSettings
 	u32 m_dwDayTimeEnd;
 	float satiety_threshold;
 
-	// ----------------------------------------------------------- 
+	// -----------------------------------------------------------
 
 	float m_fSoundThreshold;
 

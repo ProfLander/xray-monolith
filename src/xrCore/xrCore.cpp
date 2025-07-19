@@ -112,7 +112,7 @@ void xrCore::_initialize(LPCSTR _ApplicationName, LogCallback cb, BOOL init_fs, 
 		strcpy(path_A, Core.ApplicationPath);
 		strcat(path_A, "\\..\\commandline.txt");
 		cmdlineTxt.open(path_A);
-		
+
 		if (!cmdlineTxt)
 		{
 			cmdlineTxt.close();

@@ -269,7 +269,7 @@ public:
 	{
    		inherited1::FillProps		(pref, items);
    		inherited2::FillProps		(pref, items);
-	};	
+	};
 #endif // #ifndef XRGAME_EXPORTS
 
 	virtual CSE_Abstract* cast_abstract()
@@ -505,11 +505,11 @@ SERVER_ENTITY_DECLARE_BEGIN2(CSE_ALifeObjectHangingLamp, CSE_ALifeDynamicObjectV
 	};
 
 	Flags16 flags;
-	// light color    
+	// light color
 	u32 color;
 	float brightness;
 	shared_str color_animator;
-	// light texture    
+	// light texture
 	shared_str light_texture;
 	// range
 	float range;
@@ -520,7 +520,7 @@ SERVER_ENTITY_DECLARE_BEGIN2(CSE_ALifeObjectHangingLamp, CSE_ALifeDynamicObjectV
 	shared_str fixed_bones;
 	// spot
 	float spot_cone_angle;
-	// ambient    
+	// ambient
 	float m_ambient_radius;
 	float m_ambient_power;
 	shared_str m_ambient_texture;
@@ -528,7 +528,7 @@ SERVER_ENTITY_DECLARE_BEGIN2(CSE_ALifeObjectHangingLamp, CSE_ALifeDynamicObjectV
 	float m_volumetric_quality;
 	float m_volumetric_intensity;
 	float m_volumetric_distance;
-	// glow    
+	// glow
 	shared_str glow_texture;
 	float glow_radius;
 	// game

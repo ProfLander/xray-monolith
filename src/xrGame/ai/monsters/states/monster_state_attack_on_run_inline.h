@@ -587,7 +587,7 @@ void ATTACK_ON_RUN_STATE::execute()
 	object->set_state_sound(MonsterSound::eMonsterSoundAggressive);
 	object->path().extrapolate_path(true);
 
-	// обработать squad инфо	
+	// обработать squad инфо
 	object->path().set_use_dest_orient(false);
 
 	// 	CMonsterSquad *squad	= monster_squad().get_squad(object);
@@ -644,7 +644,7 @@ bool ATTACK_ON_RUN_STATE::check_start_conditions()
 TEMPLATE_SIGNATURE
 bool ATTACK_ON_RUN_STATE::check_completion()
 {
-	//if (!object->control().path_builder().is_moving_on_path() || 
+	//if (!object->control().path_builder().is_moving_on_path() ||
 	//	(object->m_time_last_attack_success != 0)) return true;
 	return false;
 }

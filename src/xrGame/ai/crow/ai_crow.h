@@ -92,7 +92,7 @@ protected:
 	float fGoalChangeTime;
 	float fIdleSoundTime;
 
-	// 
+	//
 	bool bPlayDeathIdle;
 
 	void switch2_FlyUp();

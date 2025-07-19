@@ -310,7 +310,7 @@ void CLevel::SetDemoPlayPos(float const pos)
 		Msg("! demo play position must be greater than current position");
 		return;
 	}
-	
+
 	u32 old_file_pos = m_reader->tell();
 
 	u32				file_pos = u32(float(m_reader->length()) * pos);
@@ -322,7 +322,7 @@ void CLevel::SetDemoPlayPos(float const pos)
 
 	DemoPacket		tmp_hdr;
 	u32				time_shift = 0;
-	
+
 	while (m_reader->tell() < file_pos)
 	{
 		m_reader->r		(&tmp_hdr, sizeof(DemoPacket));

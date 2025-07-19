@@ -383,7 +383,7 @@ void CCameraManager::UpdateCamEffectors()
 		else
 		{
 			// Dereferencing reverse iterator returns previous element of the list, r_it.base() returns current element
-			// So, we should use base()-1 iterator to delete just processed element. 'Previous' element would be 
+			// So, we should use base()-1 iterator to delete just processed element. 'Previous' element would be
 			// automatically changed after deletion, so r_it would dereferencing to another value, no need to change it
 			OnEffectorReleased(*r_it);
 			auto r_to_del = r_it.base();

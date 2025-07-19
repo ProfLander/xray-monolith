@@ -19,36 +19,36 @@ void CWeaponAK74::script_register	(lua_State *L)
 	[
 		class_<CWeaponAK74,CGameObject>("CWeaponAK74")
 			.def(constructor<>()),
-			
+
 		class_<CWeapon,CGameObject>("CWeapon")
 			.def(constructor<>())
 			.def("can_kill", (bool (CWeapon::*)() const)&CWeapon::can_kill)
-			
+
 			.def("IsGrenadeLauncherAttached", &CWeapon::IsGrenadeLauncherAttached)
 			.def("GrenadeLauncherAttachable", &CWeapon::GrenadeLauncherAttachable)
 			.def("GetGrenadeLauncherName", &CWeapon::GetGrenadeLauncherNameScript)
-			
+
 			.def("IsScopeAttached", &CWeapon::IsScopeAttached)
 			.def("ScopeAttachable", &CWeapon::ScopeAttachable)
 			.def("GetScopeName", &CWeapon::GetScopeNameScript)
-			
+
 			.def("IsSilencerAttached", &CWeapon::IsSilencerAttached)
 			.def("SilencerAttachable", &CWeapon::SilencerAttachable)
 			.def("GetSilencerName", &CWeapon::GetSilencerNameScript)
-			
+
 			.def("IsZoomEnabled", &CWeapon::IsZoomEnabled)
 			.def("IsZoomed", &CWeapon::IsZoomed)
 			.def("GetZoomFactor", &CWeapon::GetZoomFactor)
 			.def("SetZoomFactor", &CWeapon::SetZoomFactor)
-			
+
 			.def("IsSingleHanded", &CWeapon::IsSingleHanded)
-			
+
 			.def("GetBaseDispersion", &CWeapon::GetBaseDispersion)
 			.def("GetFireDispersion", &CWeapon::GetFireDispersionScript)
-			
+
 			.def("GetMisfireStartCondition", &CWeapon::GetMisfireStartCondition)
 			.def("GetMisfireEndCondition", &CWeapon::GetMisfireEndCondition)
-			
+
 			.def("GetAmmoElapsed", &CWeapon::GetAmmoElapsed)
 			.def("GetAmmoMagSize", &CWeapon::GetAmmoMagSize)
 			.def("GetSuitableAmmoTotal", &CWeapon::GetSuitableAmmoTotal)
@@ -66,7 +66,7 @@ void CWeaponAK74::script_register	(lua_State *L)
 			.def("ModeRPM", &CWeapon::ModeRPMScript)
 			.def("ModeRealRPM", &CWeapon::ModeRealRPMScript)
 			.def("GetZoomType", &CWeapon::GetZoomType)
-			
+
 			.def("Get_PDM_Base", &CWeapon::Get_PDM_Base)
 			.def("Get_Silencer_PDM_Base", &CWeapon::Get_Silencer_PDM_Base)
 			.def("Get_Scope_PDM_Base", &CWeapon::Get_Scope_PDM_Base)
@@ -86,7 +86,7 @@ void CWeaponAK74::script_register	(lua_State *L)
 			.def("Get_Silencer_CrosshairInertion", &CWeapon::Get_Silencer_CrosshairInertion)
 			.def("Get_Scope_CrosshairInertion", &CWeapon::Get_Scope_CrosshairInertion)
 			.def("Get_Launcher_CrosshairInertion", &CWeapon::Get_Launcher_CrosshairInertion)
-			
+
 			.def("GetFirstBulletDisp", &CWeapon::GetFirstBulletDisp)
 			.def("GetHitPower", &CWeapon::GetHitPower)
 			.def("GetHitPowerCritical", &CWeapon::GetHitPowerCritical)
@@ -176,7 +176,7 @@ void CWeaponAK74::script_register	(lua_State *L)
 			.def("SetZoomCamMaxAngleVert", &CWeapon::SetZoomCamMaxAngleVert)
 			.def("SetZoomCamMaxAngleHorz", &CWeapon::SetZoomCamMaxAngleHorz)
 			.def("SetZoomCamStepAngleHorz", &CWeapon::SetZoomCamStepAngleHorz)
-			
+
 			.def("Cost", &CWeapon::Cost)
 			.def("Weight", &CWeapon::Weight)
 
@@ -201,11 +201,11 @@ void CWeaponAK74::script_register	(lua_State *L)
 				value("eSubstateReloadInProcess", int(EWeaponSubStates::eSubstateReloadInProcess)),
 				value("eSubstateReloadEnd", int(EWeaponSubStates::eSubstateReloadEnd))
 			],
-			
+
 		class_<CWeaponMagazined,CWeapon>("CWeaponMagazined")
 			.def(constructor<>())
 			.def("SetFireMode", &CWeaponMagazined::SetFireMode),
-			
+
 		class_<CWeaponMagazinedWGrenade,CWeaponMagazined>("CWeaponMagazinedWGrenade")
 			.def(constructor<>())
 			.def("GetGrenadeLauncherMode", &CWeaponMagazinedWGrenade::GetGrenadeLauncherMode)

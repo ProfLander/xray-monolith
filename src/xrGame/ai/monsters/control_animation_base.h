@@ -21,7 +21,7 @@ protected:
 
 	REPLACED_ANIM m_tReplacedAnims; // анимации подмены
 
-	// сохранённые анимации 
+	// сохранённые анимации
 	EMotionAnim prev_motion;
 
 	// исправления сосояния 'бега на месте'
@@ -209,7 +209,7 @@ public:
 	bool accel_check_braking(float before_interval, float nominal_speed);
 	bool braking_mode;
 
-	// --------------------------------------------------------------------------------	
+	// --------------------------------------------------------------------------------
 
 	void CheckVelocityBounce();
 

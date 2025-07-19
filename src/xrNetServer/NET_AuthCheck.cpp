@@ -20,7 +20,7 @@ void XRNETSERVER_API fill_auth_check_params(xr_auth_strings_t& ignore,
 	check.push_back(shared_str(FS.update_path(config, "$game_config$", "")));
 	check.push_back(shared_str(FS.update_path(config, "$game_scripts$", "")));
 	check.push_back(shared_str(FS.update_path(config, "$game_shaders$", "")));
-	//sounds 
+	//sounds
 	check.push_back(shared_str(FS.update_path(config, "$game_sounds$", "material")));
 	check.push_back(shared_str(FS.update_path(config, "$game_sounds$", "weapons")));
 

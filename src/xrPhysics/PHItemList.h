@@ -19,7 +19,7 @@
 												friend class CPHItemStack<class_name>;\
 												u16 stack_pos;
 
-//#define TPI(item)								((T::CPHListItem*)item)	
+//#define TPI(item)								((T::CPHListItem*)item)
 
 template <class T>
 class CPHItemList

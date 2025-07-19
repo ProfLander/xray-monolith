@@ -1,5 +1,5 @@
 #ifndef GEOMETRY_H
-#define GEOMETRY_H 
+#define GEOMETRY_H
 #include "PhysicsCommon.h"
 #include "ExtendedGeom.h"
 #include "mathutilsode.h"

@@ -28,7 +28,7 @@ public:
 
 	virtual void Update();
 	virtual void net_Export_State(NET_Packet& P, ClientID id_to); // full state
-	// Events	
+	// Events
 	virtual void OnPlayerConnect(ClientID id_who);
 	virtual void OnPlayerConnectFinished(ClientID id_who);
 

@@ -107,13 +107,13 @@ void CElevatorState::EvaluateState()
 
 #ifdef DEBUG
 const char*	dbg_state[] =	{
-		"clbNone"			,				
-		"clbNearUp"			,			
-		"clbNearDown"		,		
-		"clbClimbingUp"		,		
-		"clbClimbingDown"	,	
+		"clbNone"			,
+		"clbNearUp"			,
+		"clbNearDown"		,
+		"clbClimbingUp"		,
+		"clbClimbingDown"	,
 		"clbDepart"			,
-		"clbNoLadder"		
+		"clbNoLadder"
 };
 #endif
 void CElevatorState::SwitchState(Estate new_state)
@@ -234,7 +234,7 @@ void CElevatorState::UpdateStClimbingDown()
 	}
 	//if(to_ax-m_character->FootRadius()>out_dist)
 	//														SwitchState((clbNone));
-	//if(fis_zero(control_a)) 
+	//if(fis_zero(control_a))
 	//	m_character->ApplyForce(d,m_character->Mass());
 }
 
@@ -258,7 +258,7 @@ void CElevatorState::UpdateStClimbingUp()
 	UpdateClimbingCommon(d, to_ax, ca, control_a);
 	//if(to_ax-m_character->FootRadius()>out_dist)
 	//										SwitchState((clbNone));
-	//if(fis_zero(control_a)) 
+	//if(fis_zero(control_a))
 	//	m_character->ApplyForce(d,m_character->Mass());
 }
 
@@ -350,7 +350,7 @@ void CElevatorState::UpdateDepart()
 
 	//Fvector p;m_character->GetFootCenter(p);
 	//p.sub(m_start_position);
-	//if(	p.magnitude()>depart_dist || 
+	//if(	p.magnitude()>depart_dist ||
 	//	Device.dwTimeGlobal-m_start_time>depart_time)
 	SwitchState(clbNoLadder);
 }
@@ -408,13 +408,13 @@ void CElevatorState::Deactivate()
 CElevatorState::SEnertionState CElevatorState::m_etable[clbNoState][clbNoState] =
 {
 	//						clbNone			clbNearUp		clbNearDown		clbClimbingUp	clbClimbingDown	clbDepart	clbNoLadder
-	/*clbNone			*/ {{0, 0}, {0, 0}, {0, 0}, {0, 0}, {0, 0}, {0, 0}, {0, 0}}, //clbNone			
-	/*clbNearUp			*/ {{0, 0}, {0, 0}, {0, 0}, {0, 0}, {0, 0}, {0, 0}, {0, 0}}, //clbNearUp		
-	/*clbNearDown		*/ {{0, 0}, {0.0f, 0}, {0, 0}, {0, 0}, {0, 0}, {0, 0}, {0, 0}}, //clbNearDown		
-	/*clbClimbingUp		*/ {{0, 0}, {0, 0}, {0, 0}, {0, 0}, {0, 0}, {0, 0}, {0, 0}}, //clbClimbingUp	
-	/*clbClimbingDown	*/ {{0, 0}, {0, 0}, {0, 0}, {0, 0}, {0, 0}, {0, 0}, {0, 0}}, //clbClimbingDown	
-	/*clbDepart			*/ {{0, 0}, {0, 0}, {0, 0}, {0, 0}, {0, 0}, {0, 0}, {depart_dist, depart_time}}, //clbDepart		
-	/*clbNoLadder		*/ {{0, 0}, {0, 0}, {0, 0}, {0, 0}, {0, 0}, {0, 0}, {0, 0}} //clbNoLadder		
+	/*clbNone			*/ {{0, 0}, {0, 0}, {0, 0}, {0, 0}, {0, 0}, {0, 0}, {0, 0}}, //clbNone
+	/*clbNearUp			*/ {{0, 0}, {0, 0}, {0, 0}, {0, 0}, {0, 0}, {0, 0}, {0, 0}}, //clbNearUp
+	/*clbNearDown		*/ {{0, 0}, {0.0f, 0}, {0, 0}, {0, 0}, {0, 0}, {0, 0}, {0, 0}}, //clbNearDown
+	/*clbClimbingUp		*/ {{0, 0}, {0, 0}, {0, 0}, {0, 0}, {0, 0}, {0, 0}, {0, 0}}, //clbClimbingUp
+	/*clbClimbingDown	*/ {{0, 0}, {0, 0}, {0, 0}, {0, 0}, {0, 0}, {0, 0}, {0, 0}}, //clbClimbingDown
+	/*clbDepart			*/ {{0, 0}, {0, 0}, {0, 0}, {0, 0}, {0, 0}, {0, 0}, {depart_dist, depart_time}}, //clbDepart
+	/*clbNoLadder		*/ {{0, 0}, {0, 0}, {0, 0}, {0, 0}, {0, 0}, {0, 0}, {0, 0}} //clbNoLadder
 };
 
 bool CElevatorState::StateSwitchInertion(Estate new_state)

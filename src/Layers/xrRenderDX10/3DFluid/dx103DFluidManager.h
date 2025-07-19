@@ -39,7 +39,7 @@ public:
 	void Destroy();
 	void SetScreenSize(int width, int height) { if (m_bInited) m_pRenderer->SetScreenSize(width, height); }
 
-	//		Interface for fluid volume 
+	//		Interface for fluid volume
 	void Update(dx103DFluidData& FluidData, float timestep);
 	void RenderFluid(dx103DFluidData& FluidData);
 
@@ -118,7 +118,7 @@ private:
 
 	ref_selement m_SimulationTechnique[ SS_NumShaders ];
 
-	//	
+	//
 	dx103DFluidGrid* m_pGrid;
 	dx103DFluidRenderer* m_pRenderer;
 	dx103DFluidObstacles* m_pObstaclesHandler;

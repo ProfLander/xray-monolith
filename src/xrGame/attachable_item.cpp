@@ -152,7 +152,7 @@ void attach_adjust_mode_keyb(int dik)
 
 	bool b_move		= !!(pInput->iGetAsyncKeyState(DIK_LSHIFT));
 	bool b_rot		= !!(pInput->iGetAsyncKeyState(DIK_LMENU));
-	
+
 	int axis		= -1;
 	if(pInput->iGetAsyncKeyState(DIK_Z))
 		axis = 0;

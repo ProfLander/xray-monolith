@@ -35,7 +35,7 @@ private:
 	CUIScrollView* m_coc_ranking;
 	CUIScrollView* m_coc_ranking_actor_view;
 	CUIFrameWindow* m_coc_ranking_background;
-	//-Alundaio 
+	//-Alundaio
 
 	DEFINE_VECTOR(CUIAchievements*, ACHIEVES_VEC, ACHIEVES_VEC_IT);
 	ACHIEVES_VEC m_achieves_vec;

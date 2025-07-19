@@ -46,7 +46,7 @@ bool can_capture(CPHCharacter* a_character, IPhysicsShellHolder* a_taget_object,
 {
 	if (!can_capture(a_character, a_taget_object) ||
 		a_taget_element == BI_NONE ||
-		//!a_taget_object->ObjectVisual() 
+		//!a_taget_object->ObjectVisual()
 		!a_taget_object->ObjectKinematics()
 	)
 		return false;
@@ -219,7 +219,7 @@ void CPHCapture::Init()
 	float pool_force_factor = 4.f;
 	m_capture_distance = ini->r_float("capture", "distance"); //distance
 	m_capture_force = ini->r_float("capture", "capture_force"); //capture force
-	m_capture_time = ini->r_u32("capture", "time_limit") * 1000; //time;		
+	m_capture_time = ini->r_u32("capture", "time_limit") * 1000; //time;
 	m_time_start = inl_ph_world().Device().dwTimeGlobal;
 	float max_pull_force = ini->r_float("capture", "pull_force"); //pull force
 	m_pull_force = pool_force_factor * ph_world->Gravity() * m_taget_element->PhysicsShell()->getMass();

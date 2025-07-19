@@ -55,7 +55,7 @@ function(add_module NAME)
   if(ARG_SOURCES MATCHES "\\.cpp" OR ARG_SOURCES MATCHES "\\.c")
     set(HAS_SOURCES true)
   endif()
-  
+
   # If type has not been set explicitly, infer...
   if(NOT DEFINED ARG_TYPE)
     # If we have sources, this is a STATIC module, otherwise INTERFACE
@@ -122,7 +122,7 @@ function(add_module NAME)
 
   # If this is an interface with sources,
   # expose them separately to ensure IDEs don't elide the module
-  if(ARG_TYPE STREQUAL INTERFACE AND HAS_SOURCES)  
+  if(ARG_TYPE STREQUAL INTERFACE AND HAS_SOURCES)
     target_sources(${NAME}
       INTERFACE
       ${ARG_SOURCES}

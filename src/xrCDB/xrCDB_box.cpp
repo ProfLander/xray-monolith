@@ -123,7 +123,7 @@ public:
 	};
 	ICF bool _tri()
 	{
-		// move everything so that the boxcenter is in (0,0,0) 
+		// move everything so that the boxcenter is in (0,0,0)
 		Point v0, v1, v2;
 		v0.x = mLeafVerts[0].x - center.x;
 		v1.x = mLeafVerts[1].x - center.x;

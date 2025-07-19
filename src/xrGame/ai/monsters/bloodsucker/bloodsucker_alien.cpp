@@ -133,7 +133,7 @@ BOOL CAlienEffector::ProcessCam(SCamEffectorInfo& info)
 	Mdef.c.set(info.p);
 
 
-	// set angle 
+	// set angle
 	if (angle_lerp(dangle_current.x, dangle_target.x, ANGLE_SPEED, Device.fTimeDelta))
 	{
 		dangle_target.x = angle_normalize(Random.randFs(DELTA_ANGLE_X));

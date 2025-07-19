@@ -122,10 +122,10 @@ void CDetailManager::hw_Render()
 	//hw_Render_dump			(&*hwc_s_array,	0, 1, c_hdr );
 	hw_Render_dump(consts, wave.div(PI_MUL_2), dir2, prev_wave.div(PI_MUL_2), prev_dir2, 0, 1);
 
-	if (prev_frame != Device.dwFrame) 
+	if (prev_frame != Device.dwFrame)
 	{
 		prev_frame = Device.dwFrame;
-		
+
 		// Prev Frame swing time
 		prev_time = m_time_pos;
 
@@ -135,7 +135,7 @@ void CDetailManager::hw_Render()
 	}
 }
 
-void CDetailManager::hw_Render_dump(const Fvector4& consts, const Fvector4& wave, const Fvector4& wind, 
+void CDetailManager::hw_Render_dump(const Fvector4& consts, const Fvector4& wave, const Fvector4& wind,
 									const Fvector4& prev_wave, const Fvector4& prev_wind, u32 var_id, u32 lod_id)
 {
 	static shared_str strConsts("consts");

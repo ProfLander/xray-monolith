@@ -48,7 +48,7 @@ class CHM_Static
 		Fvector v[3];
 	};
 
-	Slot pool [dhm_matrix * dhm_matrix]; // pool 
+	Slot pool [dhm_matrix * dhm_matrix]; // pool
 	Slot* data [dhm_matrix][dhm_matrix]; // database
 	int c_x, c_z; // center of heighmap
 	svector<Slot*, dhm_total> task;

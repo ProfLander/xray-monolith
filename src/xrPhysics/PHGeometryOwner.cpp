@@ -174,7 +174,7 @@ dGeomID CPHGeometryOwner::dSpacedGeometry()
 {
 	if (!b_builded) return 0;
 	VERIFY(m_group);
-	//if(m_group) 
+	//if(m_group)
 	return (dGeomID)group_space(); //(dGeomID)m_group;
 	//else return (*m_geoms.begin())->geometry_transform();
 }

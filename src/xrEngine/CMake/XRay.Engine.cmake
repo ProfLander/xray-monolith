@@ -1,8 +1,8 @@
 add_module(XRay.Engine
   TYPE STATIC
-  
+
   PRECOMPILES stdafx.h
-  
+
   INCLUDES ${CMAKE_CURRENT_SOURCE_DIR}
 
   DEFINES ENGINE_BUILD
@@ -13,7 +13,7 @@ add_module(XRay.Engine
   imgui
   LuaJIT
   luabind
-  
+
   Vfw32
   XRay.Collision
   XRay.Core
@@ -51,7 +51,7 @@ add_module(XRay.Engine.Console
   XR_IOConsole_control.cpp
   XR_IOConsole_get.cpp
   XR_IOConsole.h
-  
+
   xr_ioc_cmd.cpp
   xr_ioc_cmd.h
 )
@@ -96,7 +96,7 @@ add_module(XRay.Engine.TextEditor
 
   line_editor.cpp
   line_editor.h
-  
+
   line_edit_control.cpp
   line_edit_control.h
 )

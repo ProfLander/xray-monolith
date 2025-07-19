@@ -11,7 +11,7 @@
 /***
 *
 * int _cpuid (_p_info *pinfo)
-* 
+*
 * Entry:
 *
 *   pinfo: pointer to _p_info, NULL is not allowed!

@@ -119,7 +119,7 @@ void CDamageManager::HitScale(const int element, float& hit_scale, float& wound_
 {
 	if (BI_NONE == u16(element))
 	{
-		//считаем что параметры для BI_NONE заданы как 1.f 
+		//считаем что параметры для BI_NONE заданы как 1.f
 		hit_scale = 1.f * m_default_hit_factor;
 		wound_scale = 1.f * m_default_wound_factor;
 		return;

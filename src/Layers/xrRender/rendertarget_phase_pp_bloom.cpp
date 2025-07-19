@@ -13,18 +13,18 @@ void CRenderTarget::phase_pp_bloom()
 
 	//Full resolution
 	float w = float(Device.dwWidth);
-	float h = float(Device.dwHeight);	
+	float h = float(Device.dwHeight);
 
 	Fvector2 p0, p1;
-#if defined(USE_DX10) || defined(USE_DX11)	
+#if defined(USE_DX10) || defined(USE_DX11)
 	p0.set(0.0f, 0.0f);
 	p1.set(1.0f, 1.0f);
 #else
 	p0.set(0.5f / w, 0.5f / h);
 	p1.set((w + 0.5f) / w, (h + 0.5f) / h);
 #endif
-	
-	
+
+
 ///////////////////////////////////////////////////////////////////////////////////
 ////Bloom pass
 ///////////////////////////////////////////////////////////////////////////////////

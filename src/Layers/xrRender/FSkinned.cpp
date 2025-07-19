@@ -48,7 +48,7 @@ s16 q_tc(float v)
 #ifdef _DEBUG
 float errN	(Fvector3 v, u8* qv)
 {
-	Fvector3	uv;	
+	Fvector3	uv;
 	uv.set		(float(qv[0]),float(qv[1]),float(qv[2])).div(255.f).mul(2.f).sub(1.f);
 	uv.normalize();
 	return		v.dotproduct(uv);
@@ -534,7 +534,7 @@ void CSkeletonX_ext::_Load_hw(Fvisual& V, void* _verts_)
 //vertHW_2W* dst		= (vertHW_2W*)bytes;
 //vertBoned2W* src	= (vertBoned2W*)_verts_;
 
-//for (u32 it=0; it<V.vCount; ++it)	
+//for (u32 it=0; it<V.vCount; ++it)
 //{
 //	Fvector2	uv; uv.set(src->u,src->v);
 //	dst->set	(src->P,src->N,src->T,src->B,uv,int(src->matrix0)*3,int(src->matrix1)*3,src->w);
@@ -580,11 +580,11 @@ void CSkeletonX_ext::_Load_hw(Fvisual& V, void* _verts_)
 //vertHW_3W* dst			= (vertHW_3W*)bytes;
 //vertBoned3W* src		= (vertBoned3W*)_verts_;
 
-//for (u32 it=0; it<V.vCount; ++it)	
+//for (u32 it=0; it<V.vCount; ++it)
 //{
 //	Fvector2	uv; uv.set(src->u,src->v);
 //	dst->set	(src->P,src->N,src->T,src->B,uv,int(src->m[0])*3,int(src->m[1])*3,int(src->m[2])*3,src->w[0],src->w[1]);
-//	dst++;		
+//	dst++;
 //	src++;
 //}
 //V.p_rm_Vertices->Unlock	();
@@ -632,7 +632,7 @@ void CSkeletonX_ext::_Load_hw(Fvisual& V, void* _verts_)
 //{
 //	Fvector2	uv; uv.set(src->u,src->v);
 //	dst->set	(src->P,src->N,src->T,src->B,uv,int(src->m[0])*3,int(src->m[1])*3,int(src->m[2])*3,int(src->m[3])*3,src->w[0],src->w[1],src->w[2]);
-//	dst++;		
+//	dst++;
 //	src++;
 //}
 //V.p_rm_Vertices->Unlock	();
@@ -1475,7 +1475,7 @@ void CSkeletonX_ext::TEnumBoneVertices	( Vertices1W &verteses, u16 bone_id, u16*
 		for (u32 k=0; k<3; k++){
 			vertBoned1W& vert		= Vertices1W[indices[idx+k]];
 		}}
-							
+
 }
 void CSkeletonX_ext::TEnumBoneVertices	( Vertices2W &verteses, u16 bone_id, u16* indices, CBoneData::FacesVec& faces, SEnumVerticesCallback &C ) const
 {
@@ -1486,7 +1486,7 @@ void CSkeletonX_ext::TEnumBoneVertices	( Vertices2W &verteses, u16 bone_id, u16*
 			Fvector		P0,P1;
 			vertBoned2W& vert		= Vertices2W[indices[idx+k]];
 		}}
-							
+
 }
 void CSkeletonX_ext::TEnumBoneVertices	( vertHW_1W &verteses, u16 bone_id, u16* indices, CBoneData::FacesVec& faces, SEnumVerticesCallback &C ) const
 {
@@ -1495,8 +1495,8 @@ void CSkeletonX_ext::TEnumBoneVertices	( vertHW_1W &verteses, u16 bone_id, u16* 
 		u32 idx			= (*it)*3;
 		CSkeletonWallmark::WMFace F;
 		for (u32 k=0; k<3; k++){
-			vertHW_1W& vert			= vertices[indices[idx+k]];	
-							
+			vertHW_1W& vert			= vertices[indices[idx+k]];
+
 }
 void CSkeletonX_ext::TEnumBoneVertices	( vertHW_2W &verteses, u16 bone_id, u16* indices, CBoneData::FacesVec& faces, SEnumVerticesCallback &C ) const
 {
@@ -1507,9 +1507,9 @@ void CSkeletonX_ext::TEnumBoneVertices	( vertHW_2W &verteses, u16 bone_id, u16* 
 		for (u32 k=0; k<3; k++){
 			Fvector		P0,P1;
 			vertHW_2W& vert			= vertices[indices[idx+k]];
-			
+
 		}}
-							
+
 }
 */
 

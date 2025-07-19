@@ -74,7 +74,7 @@ void item_respawn_manager::load_respawn_items(shared_str const section)
 		return;
 
 	CInifile::Sect resp_sect	= level_ini_file->r_section(section.c_str());
-	
+
 	typedef CInifile::Items::iterator sect_iter;
 	sect_iter ie				= resp_sect.Data.end();
 	u32 temp_int;
@@ -87,7 +87,7 @@ void item_respawn_manager::load_respawn_items(shared_str const section)
 
 void item_respawn_manager::check_to_spawn(CSE_Abstract* item)
 {
-	R_ASSERT(item);	
+	R_ASSERT(item);
 	respawn_iter temp_iter = m_respawns.find(shared_str(item->name_replace()));
 	if (temp_iter != m_respawns.end())
 	{

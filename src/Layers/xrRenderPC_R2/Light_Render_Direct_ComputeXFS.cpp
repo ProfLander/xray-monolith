@@ -30,7 +30,7 @@ void CLight_Compute_XFORM_and_VIS::compute_xf_spot(light* L)
 	}
 	L_pos.set(L->position);
 
-	// 
+	//
 	int _cached_size = L->X.S.size;
 	L->X.S.posX = L->X.S.posY = 0;
 	L->X.S.size = SMAP_adapt_max;
@@ -54,7 +54,7 @@ void CLight_Compute_XFORM_and_VIS::compute_xf_spot(light* L)
 	float sizefactor = L->range / 8.f; // 4m = .5, 8m=1.f, 16m=2.f, 32m=4.f
 
 	// compute how wide the light frustum is - assume 90deg as being optimal
-	float widefactor = L->cone / deg2rad(90.f); // 
+	float widefactor = L->cone / deg2rad(90.f); //
 
 	// factors
 	float factor0 = powf(ssa, 1.f / 2.f); // ssa is quadratic
@@ -84,11 +84,11 @@ void CLight_Compute_XFORM_and_VIS::compute_xf_spot(light* L)
 
 	/* Ray Twitty */
 	float tan_shift;
-	if (L->flags.type == IRender_Light::POINT)	
+	if (L->flags.type == IRender_Light::POINT)
 		tan_shift = deg2rad(11.5f);
-	else										
+	else
 		tan_shift = deg2rad(3.5f);
-	
+
 	/* Ray Twitty end */
 	L->X.S.project.build_projection(L->cone + tan_shift, 1.f, L->virtual_size, L->range + EPS_S);
 	L->X.S.combine.mul(L->X.S.project, L->X.S.view);

@@ -168,7 +168,7 @@ private:
 	void find_target_point_set();
 	void find_target_point_failed();
 
-	void select_target(); // выбрать 
+	void select_target(); // выбрать
 
 	void set_path_builder_params(); // set params to control
 

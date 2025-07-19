@@ -185,7 +185,7 @@ IC static int CollideIntoGroup(dGeomID o1, dGeomID o2, dJointGroupID jointGroup,
 			}
 			if (material_1->Flags.test(SGameMtl::flPassable))
 				do_collide = false;
-			//	if(material_2->Flags.is(SGameMtl::flClimable)) 
+			//	if(material_2->Flags.is(SGameMtl::flClimable))
 			//		do_collide=false;
 		}
 		if (is_tri_2)
@@ -330,7 +330,7 @@ dReal speed=dSqrt(dDOT(vel,vel));
 
 if(speed>linear_limit) //then we need to cut applied force
 {
-//solve the triangle - cutted velocity - current veocity - add velocity 
+//solve the triangle - cutted velocity - current veocity - add velocity
 //to find cutted adding velocity
 
 //add_vell magnitude
@@ -350,7 +350,7 @@ if(cosinus1_2==1.f)
 cutted_add_speed=linear_limit-start_speed;
 else
 {
-//sinus 
+//sinus
 dReal sinus1_2=1.f-cosinus1_2;
 
 
@@ -377,7 +377,7 @@ cutted_add_speed=linear_limit/sinus1*sinus3;
 dBodyAddForce(body,
 cutted_add_speed/add_speed/fixed_step*m.mass*add_vel[0]-force[0],
 cutted_add_speed/add_speed/fixed_step*m.mass*add_vel[1]-force[1],
-cutted_add_speed/add_speed/fixed_step*m.mass*add_vel[2]-force[2]	  
+cutted_add_speed/add_speed/fixed_step*m.mass*add_vel[2]-force[2]
 );
 }
 
@@ -456,7 +456,7 @@ void BodyCutForce(dBodyID body, float l_limit, float w_limit)
 
 	if (wa_mag > wa_limit)
 	{
-		//scale w 
+		//scale w
 		for (int i = 0; i < 3; ++i)wa[i] *= wa_limit / wa_mag;
 		dVector3 new_torqu;
 

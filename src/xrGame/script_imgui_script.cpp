@@ -306,7 +306,7 @@ void ScriptImGui::script_register(::lua_State* L)
 		def("GetClipboardText", &ImGui_GetClipboardText),
 		def("SetClipboardText", &ImGui::SetClipboardText)
 	],
-	
+
 	module(L)
 	[
 		class_<enum_exporter<ImGuiCond_>>("ImGuiCond")
@@ -907,7 +907,7 @@ void ScriptImGui::script_register(::lua_State* L)
 			value("NoPreview", (int)ImGuiComboFlags_NoPreview),
 			value("WidthFitPreview", (int)ImGuiComboFlags_WidthFitPreview)
 		],
-		
+
 		class_<enum_exporter<ImGuiHoveredFlags_>>("ImGuiHoveredFlags")
 		.enum_("ImGuiHoveredFlags")
 		[

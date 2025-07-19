@@ -257,7 +257,7 @@ void CUIRankingWnd::ResetAll()
 		(*be)->Reset();
 
 	m_coc_ranking_actor->Reset();
-	//-Alundaio 
+	//-Alundaio
 
 	inherited::ResetAll();
 }

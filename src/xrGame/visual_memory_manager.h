@@ -103,15 +103,15 @@ public:
 	CVisibleObject* visible_object(const CGameObject* game_object);
 
 public:
-	// this function returns true if and only if 
+	// this function returns true if and only if
 	// specified object is visible now
 	bool visible_right_now(const CGameObject* game_object) const;
 	// if current_params.m_still_visible_time == 0
-	// this function returns true if and only if 
+	// this function returns true if and only if
 	// specified object is visible now
 	// if current_params.m_still_visible_time > 0
-	// this function returns true if and only if 
-	// specified object is visible now or 
+	// this function returns true if and only if
+	// specified object is visible now or
 	// some time ago <= current_params.m_still_visible_time
 	bool visible_now(const CGameObject* game_object) const;
 

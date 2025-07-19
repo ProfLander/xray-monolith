@@ -111,7 +111,7 @@ struct ECORE_API STextureParams
 	// material
 	/*ETMaterial*/ u32 material;
 	float material_weight;
-	// bump	
+	// bump
 	float bump_virtual_height;
 	ETBumpMode bump_mode;
 	shared_str bump_name;
@@ -185,7 +185,7 @@ struct ECORE_API STextureParams
     LPCSTR 			FormatString	();
 	u32 			MemoryUsage		(LPCSTR base_name);
     BOOL			similar			(STextureParams& tp1, xr_vector<AnsiString>& sel_params);
-    
+
 #endif
 };
 #pragma pack( pop )

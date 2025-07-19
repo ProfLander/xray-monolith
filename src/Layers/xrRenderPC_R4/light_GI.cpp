@@ -3,15 +3,15 @@
 
 /*
 	LV:
-	
-	It's not clear to me how this GI works. 
+
+	It's not clear to me how this GI works.
 	Looks to be sort of "photon mapping" - yet, I don't understand why GSC
-	reflects anything. 
-	
-	I would just try to implement diffuse GI using GSC functions, with more 
+	reflects anything.
+
+	I would just try to implement diffuse GI using GSC functions, with more
 	agressive culling - Remember, we are raytracing lights, not emmisive surfaces
-	like in 90% of actual PT/SSPT implementations. 
-	Keeping this comment here for future updates. 
+	like in 90% of actual PT/SSPT implementations.
+	Keeping this comment here for future updates.
 */
 
 IC bool pred_LI(const light_indirect& A, const light_indirect& B)
@@ -25,7 +25,7 @@ void light::gi_generate()
 	indirect_photons = ps_r2_ls_flags.test(R2FLAG_GI) ? ps_r2_GI_photons : 0;
 
 	CRandom random;
-	random.seed(0x12071980); //Get random seed 
+	random.seed(0x12071980); //Get random seed
 
 	xrXRC& xrc = RImplementation.Sectors_xrc;
 	CDB::MODEL* model = g_pGameLevel->ObjectSpace.GetStaticModel();
@@ -47,14 +47,14 @@ void light::gi_generate()
 			break;
 		}
 		dir.normalize(); //Normalize it
-		
+
 		//Get ray data (?)
 		xrc.ray_query(model, position, dir, range);
-		
+
 		//Not too much rays? Nice, let's continue
-		if (!xrc.r_count()) 
+		if (!xrc.r_count())
 			continue;
-		
+
 		//Start actual raytracing
 		CDB::RESULT* R = RImplementation.Sectors_xrc.r_begin();
 		CDB::TRI& T = tris[R->id];
@@ -67,11 +67,11 @@ void light::gi_generate()
 		LI.P.mad(position, dir, R->range); //Position of the light
 		LI.D.reflect(dir, TN); //Cosine (?)
 		LI.E = dot * (1 - R->range / range); //Looks to be light attenuation or something
-		
+
 		//"Limiter"?
-		if (LI.E < ps_r2_GI_clip) 
+		if (LI.E < ps_r2_GI_clip)
 			continue;
-		
+
 		LI.S = spatial.sector; //. BUG
 
 		indirect.push_back(LI);

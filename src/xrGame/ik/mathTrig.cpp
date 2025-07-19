@@ -49,19 +49,19 @@
 //
 // Return the distance between two angles measured either
 // clockwise or anticlockwise depending on which gives
-// a lower magnitude. Assumes that angles are in the 
+// a lower magnitude. Assumes that angles are in the
 // range -Pi .. Pi
 //
 float angle_distance(float x, float y)
 {
     unsigned int signx = x > 0.0;
     unsigned int signy = y > 0.0;
-    float dist; 
+    float dist;
 
     dist = _abs(x-y);
 
     // If angles are of opposite signs check whether clockwise
-    // or anticlockwise distances are closer 
+    // or anticlockwise distances are closer
     if (signx != signy)
     {
         float temp = (2*M_PI) - dist;
@@ -118,7 +118,7 @@ int solve_trig1(float a, float b, float c, float theta[2])
 //      a*sin(theta) + b*cos(theta) = d
 //
 // There is at most one solution. The answer is returned in radians
-// 
+//
 
 float solve_trig2(float a, float b, float c, float d)
 {
@@ -126,8 +126,8 @@ float solve_trig2(float a, float b, float c, float d)
 }
 
 
-// 
-// arccos routine that returns up to two solutions. 
+//
+// arccos routine that returns up to two solutions.
 //
 int myacos(float x, float solns[2])
 {
@@ -144,8 +144,8 @@ int myacos(float x, float solns[2])
 	return 2;
 }
 
-// 
-// arcsin routine that returns up to two solutions. 
+//
+// arcsin routine that returns up to two solutions.
 //
 int myasin(float x, float solns[2])
 {

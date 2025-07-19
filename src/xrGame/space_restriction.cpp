@@ -225,7 +225,7 @@ void CSpaceRestriction::merge_free_in_retrictions	()
 	for (bool ok = false; !ok; ) {
 		ok							= true;
 		temp_restrictions.clear		();
-		
+
 		FREE_IN_RESTRICTIONS::iterator	I = m_free_in_restrictions.begin(), J;
 		FREE_IN_RESTRICTIONS::iterator	E = m_free_in_restrictions.end();
 		for ( ; I != E; ++I) {

@@ -57,7 +57,7 @@ void CRenderTarget::accum_point(light* L)
 	else			RCache.set_CullMode		(CULL_CCW);		// front
 	*/
 
-	// 2D texgens 
+	// 2D texgens
 	Fmatrix m_Texgen;
 	u_compute_texgen_screen(m_Texgen);
 	Fmatrix m_Texgen_J;

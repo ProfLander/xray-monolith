@@ -12,14 +12,14 @@ void CRenderTarget::phase_gasmask_drops()
 	float h = float(Device.dwHeight);
 
 	Fvector2 p0, p1;
-#if defined(USE_DX10) || defined(USE_DX11)	
+#if defined(USE_DX10) || defined(USE_DX11)
 	p0.set(0.0f, 0.0f);
 	p1.set(1.0f, 1.0f);
 #else
 	p0.set(0.5f / w, 0.5f / h);
 	p1.set((w + 0.5f) / w, (h + 0.5f) / h);
 #endif
-	
+
 	//////////////////////////////////////////////////////////////////////////
 	//Set MSAA/NonMSAA rendertarget
 #if defined(USE_DX10) || defined(USE_DX11)
@@ -27,7 +27,7 @@ void CRenderTarget::phase_gasmask_drops()
 	u_setrt(dest_rt, nullptr, nullptr, nullptr);
 #else
 	u_setrt(rt_Generic_0, nullptr, nullptr, nullptr);
-#endif		
+#endif
 
 	RCache.set_CullMode(CULL_NONE);
 	RCache.set_Stencil(FALSE);
@@ -42,15 +42,15 @@ void CRenderTarget::phase_gasmask_drops()
 
 	//Set pass
 	RCache.set_Element(s_gasmask_drops->E[0]);
-	
+
 	//Set parameters
 	RCache.set_c("drops_control", ps_r2_drops_control.x, ps_r2_drops_control.y, ps_r2_drops_control.z, 0);
-	RCache.set_c("mask_control", ps_r2_mask_control.x, ps_r2_mask_control.y, ps_r2_mask_control.z, ps_r2_mask_control.w);	
+	RCache.set_c("mask_control", ps_r2_mask_control.x, ps_r2_mask_control.y, ps_r2_mask_control.z, ps_r2_mask_control.w);
 
 	//Set geometry
 	RCache.set_Geometry(g_combine);
 	RCache.Render(D3DPT_TRIANGLELIST, Offset, 0, 4, 0, 2);
-	
+
 #if defined(USE_DX10) || defined(USE_DX11)
 	HW.pContext->CopyResource(rt_Generic_0->pTexture->surface_get(), dest_rt->pTexture->surface_get());
 #endif

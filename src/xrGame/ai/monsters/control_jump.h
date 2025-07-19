@@ -130,15 +130,15 @@ public:
 
 private:
 	void calculate_jump_time(Fvector const& target, bool check_force_factor);
-	// service routines		
-	// build path after jump 
+	// service routines
+	// build path after jump
 	void grounding();
 	// get target position according to object center point
 	Fvector get_target(CObject* obj);
 	// check for hit object
 	void hit_test();
 
-	// check current jump state		
+	// check current jump state
 	bool is_on_the_ground();
 
 	// position prediction

@@ -33,7 +33,7 @@
 
 //
 // A collection of routines for doing various trigonometric operations
-// and operations on angles. 
+// and operations on angles.
 //
 
 #ifndef _TRIGH

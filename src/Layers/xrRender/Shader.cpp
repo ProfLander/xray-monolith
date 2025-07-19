@@ -51,7 +51,7 @@ Shader::~Shader()
 #ifdef SPAWN_ANTIFREEZE
 xrCriticalSection shaderCreate_cs;
 #endif
-//////////////////////////////////////////////////////////////////////////					 
+//////////////////////////////////////////////////////////////////////////
 void resptrcode_shader::create(LPCSTR s_shader, LPCSTR s_textures, LPCSTR s_constants, LPCSTR s_matrices)
 {
 #ifdef SPAWN_ANTIFREEZE
@@ -114,15 +114,15 @@ ShaderElement::ShaderElement()
 	flags.bDistort = FALSE;
 	flags.bWmark = FALSE;
 	flags.bLandscape = FALSE;
-	
+
 	// SSS Custom rendering
 	flags.isLandscape = FALSE;
 	flags.isWater = FALSE;
 
 	flags.iScopeLense = 0; 	//  Redotix99: for 3D Shader Based Scopes
-	//	0 = eNoLense, 
-	//  1 = eBackLense, 
-	//  2 = eZwriteLense, 
+	//	0 = eNoLense,
+	//  1 = eBackLense,
+	//  2 = eZwriteLense,
 	//	3 = eReticleLense
 }
 

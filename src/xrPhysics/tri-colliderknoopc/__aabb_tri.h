@@ -166,7 +166,7 @@ public:
 
 //using namespace CDB;
 using namespace Opcode;
-//typedef float*	Point;	
+//typedef float*	Point;
 //typedef	dVector3 Point
 //! This macro quickly finds the min & max values among 3 variables
 #define FINDMINMAX(x0, x1, x2, min, max)	\
@@ -329,7 +329,7 @@ IC bool aabb_tri_aabb(Point center, Point extents, const Point* mLeafVerts)
 
 IC bool __aabb_tri(Point center, Point extents, const Point* mLeafVerts)
 {
-	// move everything so that the boxcenter is in (0,0,0) 
+	// move everything so that the boxcenter is in (0,0,0)
 	Point v0, v1, v2;
 	//Fvector v0,v1,v2;
 	v0.x = mLeafVerts[0].x - center.x;

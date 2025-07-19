@@ -138,7 +138,7 @@ void xrServer::SendConnectResult(IClient* CL, u8 res, u8 res1, char* ResultStr)
 
 	SendTo(CL->ID, P);
 
-	if (!res) //need disconnect 
+	if (!res) //need disconnect
 	{
 #ifdef MP_LOGGING
 		Msg("* Server disconnecting client, resaon: %s", ResultStr);
@@ -174,7 +174,7 @@ void xrServer::SendProfileCreationError(IClient* CL, char const* reason)
 }
 
 //this method response for client validation on connect state (CLevel::net_start_client2)
-//the first validation is CDKEY, then gamedata checksum (NeedToCheckClient_BuildVersion), then 
+//the first validation is CDKEY, then gamedata checksum (NeedToCheckClient_BuildVersion), then
 //banned or not...
 //WARNING ! if you will change this method see M_AUTH_CHALLENGE event handler
 void xrServer::Check_GameSpy_CDKey_Success(IClient* CL)
@@ -190,9 +190,9 @@ BOOL g_SV_Disable_Auth_Check = FALSE;
 bool xrServer::NeedToCheckClient_BuildVersion(IClient* CL)
 {
 	/*#ifdef DEBUG
-	
-		return false; 
-	
+
+		return false;
+
 	#endif*/
 	xrClientData* tmp_client = smart_cast<xrClientData*>(CL);
 	VERIFY(tmp_client);

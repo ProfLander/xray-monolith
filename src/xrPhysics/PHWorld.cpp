@@ -45,7 +45,7 @@ IPHWorld* __stdcall physics_world()
 }
 
 void __stdcall create_physics_world(bool mt, CObjectSpace* os, CObjectList* lo, CRenderDevice* dv)
-//IPHWorldUpdateCallbck &commander, 
+//IPHWorldUpdateCallbck &commander,
 {
 	ph_world = xr_new<CPHWorld>(); //&commander
 	VERIFY(os);
@@ -192,9 +192,9 @@ void CPHWorld::Create(bool mt, CObjectSpace* os, CObjectList* lo, CRenderDevice*
 	//if (psDeviceFlags.test(mtPhysics))	Device.seqFrameMT.Add	(this,REG_PRIORITY_HIGH);
 	//else								Device.seqFrame.Add		(this,REG_PRIORITY_LOW);
 
-	//if ( mt )	
+	//if ( mt )
 	//	Device().seqFrameMT.Add	(this,REG_PRIORITY_HIGH);
-	//else								
+	//else
 	//	Device().seqFrame.Add		(this,REG_PRIORITY_LOW);
 
 	Device().AddSeqFrame(this, mt);

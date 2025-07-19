@@ -69,10 +69,10 @@ CBaseMonster::SDebugInfo CBaseMonster::show_debug_info()
 
 	if (EnemyMan.get_enemy()) {
 		xr_sprintf(text, "Current Enemy = [%s]", *EnemyMan.get_enemy()->cName());
-	} else 
+	} else
 		xr_sprintf(text, "Current Enemy = [NONE]");
 	DBG().text(this).add_item(text,										 x, y+=delta_y, color);
-	
+
 	if (EnemyMan.get_enemy()) {
 		xr_sprintf(text, "SeeEnemy[%u] EnemySeeMe[%u] TimeLastSeen[%u]", EnemyMan.see_enemy_now(),EnemyMan.enemy_see_me_now(),EnemyMan.get_enemy_time_last_seen());
 		DBG().text(this).add_item(text,									x, y+=delta_y, color);
@@ -80,7 +80,7 @@ CBaseMonster::SDebugInfo CBaseMonster::show_debug_info()
 
 	if (CorpseMan.get_corpse()) {
 		xr_sprintf(text, "Current Corpse = [%s] Satiety = [%.2f]", *CorpseMan.get_corpse()->cName(), GetSatiety());
-	} else 
+	} else
 		xr_sprintf(text, "Current Corpse = [NONE] Satiety = [%.2f]", GetSatiety());
 
 	DBG().text(this).add_item(text,										 x, y+=delta_y, color);
@@ -120,11 +120,11 @@ CBaseMonster::SDebugInfo CBaseMonster::show_debug_info()
 
 		if (sound_elem.who)
 			xr_sprintf(text,"Sound: type[%s] time[%u] power[%.3f] val[%i] src[+]", s_type, sound_elem.time, sound_elem.power, sound_elem.value);
-		else 
+		else
 			xr_sprintf(text,"Sound: type[%s] time[%u] power[%.3f] val[%i] src[?]", s_type, sound_elem.time, sound_elem.power, sound_elem.value);
 
 
-	} else 
+	} else
 		xr_sprintf(text, "Sound: NONE");
 
 	DBG().text(this).add_item(text,										 x, y+=delta_y, color);
@@ -136,7 +136,7 @@ CBaseMonster::SDebugInfo CBaseMonster::show_debug_info()
 		} else {
 			xr_sprintf(text,"Hit Info: object=[NONE] time=[%u]", HitMemory.get_last_hit_time());
 		}
-	} else 
+	} else
 		xr_sprintf(text, "Hit Info: NONE");
 
 	DBG().text(this).add_item(text,										 x, y+=delta_y, color);
@@ -145,12 +145,12 @@ CBaseMonster::SDebugInfo CBaseMonster::show_debug_info()
 
 	xr_sprintf(text, "Actual = [%u] Enabled = [%u]",			 control().path_builder().actual(), control().path_builder().enabled());
 	DBG().text(this).add_item(text,										x, y+=delta_y, color);
-	
+
 	xr_sprintf(text, "Speed: Linear = [%.3f] Angular = [%.3f]", control().movement().velocity_current(), 0.f);
 	DBG().text(this).add_item(text,										x, y+=delta_y, color);
-	
+
 	DBG().text(this).add_item("------- Attack Distances -------------", x, y+=delta_y, delimiter_color);
-	xr_sprintf(text, "MinDist[%.3f] MaxDist[%.3f] As_Step[%.3f] As_MinDist[%.3f]", 
+	xr_sprintf(text, "MinDist[%.3f] MaxDist[%.3f] As_Step[%.3f] As_MinDist[%.3f]",
 		MeleeChecker.get_min_distance(),
 		MeleeChecker.get_max_distance(),
 		MeleeChecker.dbg_as_step(),
@@ -161,7 +161,7 @@ CBaseMonster::SDebugInfo CBaseMonster::show_debug_info()
 
 	if (EnemyMan.get_enemy()) {
 		xr_sprintf(text, "Current Enemy = [%s]", *EnemyMan.get_enemy()->cName());
-	} else 
+	} else
 		xr_sprintf(text, "Current Enemy = [NONE]");
 	DBG().text(this).add_item(text,										 x, y+=delta_y, color);
 
@@ -178,9 +178,9 @@ void CBaseMonster::debug_fsm()
 		DBG().object_info(this,this).clear ();
 		return;
 	}
-	
+
 	EMonsterState state = StateMan->get_state_type();
-	
+
 	string128 st;
 
 	switch (state) {
@@ -199,7 +199,7 @@ void CBaseMonster::debug_fsm()
 		case eStateEat_WalkAway:						xr_sprintf(st,"Eat :: Walk Away");				break;
 		case eStateEat_Rest:							xr_sprintf(st,"Eat :: Rest After Meal");		break;
 		case eStateEat_Drag:							xr_sprintf(st,"Eat :: Drag");					break;
-		
+
 		case eStateAttack_Run:							xr_sprintf(st,"Attack :: Run");				break;
 		case eStateAttack_Melee:						xr_sprintf(st,"Attack :: Melee");				break;
 		case eStateAttack_RunAttack:					xr_sprintf(st,"Attack :: Run Attack");			break;
@@ -207,7 +207,7 @@ void CBaseMonster::debug_fsm()
 		case eStateAttack_FindEnemy:					xr_sprintf(st,"Attack :: Find Enemy");			break;
 		case eStateAttack_Steal:						xr_sprintf(st,"Attack :: Steal");				break;
 		case eStateAttack_AttackHidden:					xr_sprintf(st,"Attack :: Attack Hidden");		break;
-		
+
 		case eStateAttackCamp_Hide:						xr_sprintf(st,"Attack Camp:: Hide");			break;
 		case eStateAttackCamp_Camp:						xr_sprintf(st,"Attack Camp:: Camp");			break;
 		case eStateAttackCamp_StealOut:					xr_sprintf(st,"Attack Camp:: Steal Out");		break;
@@ -221,7 +221,7 @@ void CBaseMonster::debug_fsm()
 		case eStateAttack_HomePoint_Hide:				xr_sprintf(st,"Attack :: Home Point :: Hide");	break;
 		case eStateAttack_HomePoint_Camp:				xr_sprintf(st,"Attack :: Home Point :: Camp");	break;
 		case eStateAttack_HomePoint_LookOpenPlace:		xr_sprintf(st,"Attack :: Home Point :: Look Open Place");	break;
-		
+
 		case eStatePanic_Run:							xr_sprintf(st,"Panic :: Run Away");				break;
 		case eStatePanic_FaceUnprotectedArea:			xr_sprintf(st,"Panic :: Face Unprotected Area");	break;
 		case eStatePanic_HomePoint_Hide:				xr_sprintf(st,"Panic :: Home Point :: Hide");		break;
@@ -239,7 +239,7 @@ void CBaseMonster::debug_fsm()
 
 		case eStateHearInterestingSound_MoveToDest:		xr_sprintf(st,"Interesting Snd :: MoveToDest");	break;
 		case eStateHearInterestingSound_LookAround:		xr_sprintf(st,"Interesting Snd :: LookAround");	break;
-		
+
 		case eStateHearHelpSound:						xr_sprintf(st,"Hear Help Sound");	break;
 		case eStateHearHelpSound_MoveToDest:			xr_sprintf(st,"Hear Help Sound :: MoveToDest");	break;
 		case eStateHearHelpSound_LookAround:			xr_sprintf(st,"Hear Help Sound :: LookAround");	break;
@@ -283,14 +283,14 @@ void CBaseMonster::debug_fsm()
 		case eStateUnknown:								xr_sprintf(st,"Unknown State :: ");			break;
 		default:										xr_sprintf(st,"Undefined State ::");			break;
 	}
-	
+
 	DBG().object_info(this,this).remove_item (u32(0));
 	DBG().object_info(this,this).remove_item (u32(1));
 	DBG().object_info(this,this).remove_item (u32(2));
 
 	DBG().object_info(this,this).add_item	 (*cName(), D3DCOLOR_XRGB(255,0,0), 0);
 	DBG().object_info(this,this).add_item	 (st, D3DCOLOR_XRGB(255,0,0), 1);
-	
+
 	xr_sprintf(st, "Team[%u]Squad[%u]Group[%u]", g_Team(), g_Squad(), g_Group());
 	DBG().object_info(this,this).add_item	 (st, D3DCOLOR_XRGB(255,0,0), 2);
 
@@ -341,12 +341,12 @@ xr_string   make_xrstr (EMemberGoalType value)
 {
 	switch ( value )
 	{
-		case MG_AttackEnemy: return "MG_Attack_Enemy";		
-		case MG_PanicFromEnemy: return "MG_Panic_FromEnemy";		
-		case MG_InterestingSound: return "MG_Interesting_Sound";	
-		case MG_DangerousSound: return "MG_Dangerous_Sound";		
-		case MG_WalkGraph: return "MG_Walk_Graph";			
-		case MG_Rest: return "MG_Rest";				
+		case MG_AttackEnemy: return "MG_Attack_Enemy";
+		case MG_PanicFromEnemy: return "MG_Panic_FromEnemy";
+		case MG_InterestingSound: return "MG_Interesting_Sound";
+		case MG_DangerousSound: return "MG_Dangerous_Sound";
+		case MG_WalkGraph: return "MG_Walk_Graph";
+		case MG_Rest: return "MG_Rest";
 		case MG_None: return "MG_None";
 		default: return "unknown";
 	}
@@ -356,12 +356,12 @@ xr_string   make_xrstr (ESquadCommandType value)
 {
 	switch ( value )
 	{
-		case SC_EXPLORE: return "SC_EXPLORE";		
-		case SC_ATTACK: return "SC_ATTACK";		
-		case SC_THREATEN: return "SC_THREATEN";	
-		case SC_COVER: return "SC_COVER";		
-		case SC_FOLLOW: return "SC_FOLLOW";			
-		case SC_FEEL_DANGER: return "SC_FEEL_DANGER";				
+		case SC_EXPLORE: return "SC_EXPLORE";
+		case SC_ATTACK: return "SC_ATTACK";
+		case SC_THREATEN: return "SC_THREATEN";
+		case SC_COVER: return "SC_COVER";
+		case SC_FOLLOW: return "SC_FOLLOW";
+		case SC_FEEL_DANGER: return "SC_FEEL_DANGER";
 		case SC_EXPLICIT_ACTION: return "SC_EXPLICIT_ACTION";
 		case SC_REST: return "SC_REST";
 		case SC_NONE: return "SC_NONE";
@@ -394,7 +394,7 @@ void   add_debug_info (debug::text_tree& root_s, SoundElem& sound_elem, bool dan
 
 	debug::text_tree& src_s = root_s.add_line("Src");
 	add_debug_info(src_s, smart_cast<const CEntity*>(sound_elem.who));
-	
+
 	root_s.add_line("Dangerous",  dangerous);
 }
 
@@ -402,7 +402,7 @@ void   add_debug_info_restrictions (debug::text_tree& root_s, const xr_string& r
 {
 	size_t cur_i = 0;
 
-	do 
+	do
 	{
 		size_t pos = restr.find(',', cur_i);
 		if ( pos == xr_string::npos )
@@ -426,10 +426,10 @@ void   add_enemy_debug_info (debug::text_tree& root_s, const CCustomMonster* pTh
 	root_s.add_line("I_See_Enemy", pThis->memory().visual().visible_right_now(pEnemy));
 
 	bool seen_now = false;
-	if ( Actor() == pEnemy ) 
+	if ( Actor() == pEnemy )
 	{
-		seen_now = Actor()->memory().visual().visible_right_now(pThis); 
-	} 
+		seen_now = Actor()->memory().visual().visible_right_now(pThis);
+	}
 	else if ( CCustomMonster* cm = const_cast<CEntityAlive*>(pEnemy)->cast_custom_monster() )
 	{
 		seen_now = cm->memory().visual().visible_right_now(pThis);
@@ -460,7 +460,7 @@ void   add_debug_info (debug::text_tree& root_s, CScriptEntityAction* p_action)
 	root_s.add_line("Monster_Action_Completed", p_action->CheckIfMonsterActionCompleted());
 	root_s.add_line("Object_Completed", p_action->CheckIfObjectCompleted());
 
-	TextTree& movement_action_s = root_s.add_line("Movement_Completed", 
+	TextTree& movement_action_s = root_s.add_line("Movement_Completed",
 	                                           	  p_action->CheckIfMovementCompleted());
 
 	CScriptMovementAction&	move_action		=	const_cast<CScriptMovementAction&>(p_action->move());
@@ -482,7 +482,7 @@ void   add_debug_info (debug::text_tree& root_s, CScriptEntityAction* p_action)
 		movement_action_s.add_line("Patrol_Path_Stop", (int)move_action.m_tPatrolPathStop);
 		movement_action_s.add_line("Path_Type", (int)move_action.m_tPathType);
 		movement_action_s.add_line("Body_State", (int)move_action.m_tBodyState);
-		movement_action_s.add_line("Movement_Type", (int)move_action.m_tMovementType);			
+		movement_action_s.add_line("Movement_Type", (int)move_action.m_tMovementType);
 	}
 }
 
@@ -541,7 +541,7 @@ void   CBaseMonster::add_debug_info (debug::text_tree& root_s)
 	visuals_s.add_line("FOV", rad2deg(object_fov));
 
 	CActor* actor = smart_cast<CActor*>(Level().Objects.net_Find(0));
-	if ( !actor ) 
+	if ( !actor )
 	{
 		actor = g_debug_actor;
 	}
@@ -585,23 +585,23 @@ void   CBaseMonster::add_debug_info (debug::text_tree& root_s)
 // Hits
 	//-----------------------------------------------
 	TextTree& hit_s = perceptors_s.add_line("Hits", HitMemory.get_num_hits());
-	
+
 	// Hit
-	if ( HitMemory.is_hit() ) 
+	if ( HitMemory.is_hit() )
 	{
 		TextTree& last_hit_object_s = hit_s.add_line("Object");
 		detail::add_debug_info(last_hit_object_s, smart_cast<CEntity*>(HitMemory.get_last_hit_object()));
 		hit_s.add_line("Time", HitMemory.get_last_hit_time());
 		hit_s.add_line("Pos", HitMemory.get_last_hit_position());
 		hit_s.add_line("Dir", HitMemory.get_last_hit_dir());
-	} 
+	}
 
 	//-----------------------------------------------
 // Corpses
 	//-----------------------------------------------
 	TextTree& corpse_s = general_s.find_or_add("Corpse_Man");
 
-	corpse_s.add_line("Current_Corpse",  CorpseMan.get_corpse() ? 
+	corpse_s.add_line("Current_Corpse",  CorpseMan.get_corpse() ?
 		                                *CorpseMan.get_corpse()->cName() : "none");
 	corpse_s.add_line("Satiety",  make_xrstr("%.2f", GetSatiety()));
 
@@ -684,7 +684,7 @@ void   CBaseMonster::add_debug_info (debug::text_tree& root_s)
 	map_home_s.add_line("min", Home->get_min_radius());
 	map_home_s.add_line("mid", Home->get_mid_radius());
 	map_home_s.add_line("max", Home->get_max_radius());
-	
+
 	if ( EnemyMan.get_enemy() )
 	{
 		map_home_s.add_line("Enemy_At_Min", Home->at_min_home( EnemyMan.get_enemy()->Position() ));
@@ -693,7 +693,7 @@ void   CBaseMonster::add_debug_info (debug::text_tree& root_s)
 
 		map_home_s.add_line("Dist_To_Enemy", Position().distance_to( EnemyMan.get_enemy()->Position() ));
 	}
-	
+
 	//-----------------------------------------------
 // Enemies
 	//-----------------------------------------------
@@ -727,7 +727,7 @@ void   CBaseMonster::add_debug_info (debug::text_tree& root_s)
 		{
 			TextTree& enemy_s = enemies_s.add_line(make_xrstr("Enemy %i", index++));
 			detail::add_enemy_debug_info(enemy_s, this, p_enemy);
-		}			
+		}
 	}
 
 	//-----------------------------------------------
@@ -738,13 +738,13 @@ void   CBaseMonster::add_debug_info (debug::text_tree& root_s)
 
 	TextTree& current_animation_s = animation_s.add_line(*anim().cur_anim_info().name);
 
-	
+
 	CBlend* p_blend = control().animation().current_blend();
 	if ( !p_blend )
 	{
 		p_blend = anim().cur_anim_info().blend;
 	}
-	
+
 	if ( p_blend )
 	{
 		detail::add_debug_info(current_animation_s, p_blend);
@@ -763,7 +763,7 @@ void   CBaseMonster::add_debug_info (debug::text_tree& root_s)
 	movement_s.add_line("Enabled",  control().path_builder().enabled());
 
 	CEntityAlive *entity = smart_cast<CEntityAlive *>(Level().CurrentEntity());
-	if ( entity && entity->character_physics_support()->movement() ) 
+	if ( entity && entity->character_physics_support()->movement() )
 	{
 		movement_s.add_line("Velocity",  entity->character_physics_support()->movement()->GetVelocityActual());
 	}
@@ -772,9 +772,9 @@ void   CBaseMonster::add_debug_info (debug::text_tree& root_s)
 	movement_s.add_line("Level_Vertex_ID", ai_location().level_vertex_id());
 	movement_s.add_line("Game_Vertex_ID", ai_location().game_vertex_id());
 
-	detail::add_debug_info(movement_s.add_line("Orientation_Current"), 
+	detail::add_debug_info(movement_s.add_line("Orientation_Current"),
 		                   movement().body_orientation().current);
-	detail::add_debug_info(movement_s.add_line("Orientation_Target"), 
+	detail::add_debug_info(movement_s.add_line("Orientation_Target"),
 		                   movement().body_orientation().target);
 	movement_s.add_line("Rotation_Speed", movement().body_orientation().speed);
 
@@ -787,13 +787,13 @@ void   CBaseMonster::add_debug_info (debug::text_tree& root_s)
 	}
 
 	movement_s.add_line("Path_Type", pc_path_type);
-	if ( movement().path_type() == MovementManager::ePathTypePatrolPath ) 
+	if ( movement().path_type() == MovementManager::ePathTypePatrolPath )
 	{
 		movement_s.add_line("Path_Name", *movement().patrol().path_name());
 		movement_s.add_line("Completed",  movement().patrol().completed());
 
 		movement_s.add_line("Current_Point", movement().patrol().get_current_point_index());
-		if	( movement().patrol().get_path() && 
+		if	( movement().patrol().get_path() &&
 			  movement().patrol().get_path()->vertex(movement().patrol().get_current_point_index()) )
 		{
 			movement_s.add_line("Extrapolate", movement().patrol().extrapolate_path());
@@ -804,7 +804,7 @@ void   CBaseMonster::add_debug_info (debug::text_tree& root_s)
 		}
 	}
 
-	if ( movement().path_type() == MovementManager::ePathTypeGamePath ) 
+	if ( movement().path_type() == MovementManager::ePathTypeGamePath )
 	{
 		movement_s.add_line("Completed", movement().game_path().completed());
 		movement_s.add_line("Path_Size", movement().game_path().path().size());
@@ -817,7 +817,7 @@ void   CBaseMonster::add_debug_info (debug::text_tree& root_s)
 	level_s.add_line("Start_Vertex", movement().level_path().path().empty() ? -1 : movement().level_path().path().front());
 	level_s.add_line("End_Vertex", movement().level_path().path().empty() ? -1 : movement().level_path().path().back());
 
-	if ( !movement().detail().path().empty() ) 
+	if ( !movement().detail().path().empty() )
 	{
 		TextTree& detail_s = movement_s.add_line("Detail");
 
@@ -831,7 +831,7 @@ void   CBaseMonster::add_debug_info (debug::text_tree& root_s)
 		current_point_s.add_line("Index", movement().detail().curr_travel_point_index());
 		current_point_s.add_line("Position").add_line(movement().detail().path()[movement().detail().curr_travel_point_index()].position);
 
-		CDetailPathManager::STravelParams current_velocity = 
+		CDetailPathManager::STravelParams current_velocity =
 			movement().detail().velocity(movement().detail().path()[movement().detail().curr_travel_point_index()].velocity);
 		detail_s.add_line("linear", current_velocity.linear_velocity);
 		detail_s.add_line("angular", rad2deg(current_velocity.real_angular_velocity));
@@ -847,7 +847,7 @@ void   CBaseMonster::add_debug_info (debug::text_tree& root_s)
 	{
 		movement_s.add_line("Orientation", "no");
 	}
-	
+
 	TextTree& atackdist_s = controller_s.find_or_add("Attack_Distance");
 	atackdist_s.add_line("Mind_Dist",  make_xrstr("%.3f", MeleeChecker.get_min_distance()));
 	atackdist_s.add_line("Max_Dist",  make_xrstr("%.3f", MeleeChecker.get_max_distance()));
@@ -894,7 +894,7 @@ void   CBaseMonster::add_debug_info (debug::text_tree& root_s)
 	typedef xr_vector<CSoundPlayer::CSoundSingle>::const_iterator SoundSingleIterator;
 
 	index = 1;
-	for ( SoundSingleIterator i=sound().playing_sounds().begin(), 
+	for ( SoundSingleIterator i=sound().playing_sounds().begin(),
 		                      e=sound().playing_sounds().end();
 		  i!=e; ++i )
 	{

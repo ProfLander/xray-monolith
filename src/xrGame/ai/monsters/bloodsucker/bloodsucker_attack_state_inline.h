@@ -90,9 +90,9 @@ void CBloodsuckerStateAttackAbstract::execute()
 			{
 				// check if enemy is behind me for a long time
 				// [TODO] make specific state and replace run_away state (to avoid ratation jumps)
-				//if (check_behinder()) 
+				//if (check_behinder())
 				//	select_state(eStateAttack_RunAway);
-				//else 
+				//else
 				select_state(eStateAttack_Melee);
 			}
 			else
@@ -114,7 +114,7 @@ void CBloodsuckerStateAttackAbstract::execute()
 	get_state_current()->execute();
 	prev_substate = current_substate;
 
-	// Notify squad	
+	// Notify squad
 	CMonsterSquad* squad = monster_squad().get_squad(object);
 	if (squad)
 	{
@@ -155,7 +155,7 @@ bool CBloodsuckerStateAttackAbstract::check_hiding()
 		return true;
 	}
 
-	// if we get here before 1 sec after last critical hit: 
+	// if we get here before 1 sec after last critical hit:
 	u32 last_critical_hit_tick = object->get_last_critical_hit_tick();
 	if (last_critical_hit_tick && time() < last_critical_hit_tick + 1000)
 	{

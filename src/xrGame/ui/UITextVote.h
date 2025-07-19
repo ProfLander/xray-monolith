@@ -7,7 +7,7 @@ class CUI3tButtonEx;
 class CUIEditBoxEx;
 class CUIXml;
 
-class CUITextVote : public CUIDialogWnd 
+class CUITextVote : public CUIDialogWnd
 {
 public:
 					CUITextVote		();

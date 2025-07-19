@@ -92,7 +92,7 @@ void CRT::destroy()
 	{
 		pTexture->surface_set(0);
 		pTexture.destroy();
-		pTexture = nullptr;	 
+		pTexture = nullptr;
 	}
 
 	_RELEASE(pRT);
@@ -118,7 +118,7 @@ void resptrcode_crt::create(LPCSTR Name, u32 w, u32 h, D3DFORMAT f, u32 SampleCo
 
 
 //////////////////////////////////////////////////////////////////////////
-//	DX10 cut 
+//	DX10 cut
 /*
 CRTC::CRTC			()
 {

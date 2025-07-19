@@ -90,7 +90,7 @@ void CObjectScript::script_register(lua_State* L)
 		//		class_<CObject,bases<DLL_Pure,ISheduled,ICollidable,IRenderable>,CObjectWrapper>("CObject")
 		//			.def(constructor<>())
 		//			.def("_construct",			&CObject::_construct,&CObjectWrapper::_construct_static)
-		/*			
+		/*
 					.def("spatial_register",	&CObject::spatial_register,	&CObjectWrapper::spatial_register_static)
 					.def("spatial_unregister",	&CObject::spatial_unregister,	&CObjectWrapper::spatial_unregister_static)
 					.def("spatial_move",		&CObject::spatial_move,		&CObjectWrapper::spatial_move_static)

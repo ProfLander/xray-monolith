@@ -25,7 +25,7 @@
 #include "mt_config.h"
 //#include "custommonster.h"
 
-// Lain: added 
+// Lain: added
 #include "steering_behaviour.h"
 
 using namespace MovementManager;

@@ -55,7 +55,7 @@ void CIKFoot::Create(IKinematics* K, LPCSTR section, u16 bones[4])
 	//	m_foot_normal.v			.set( 1, 0, 0 );//2
 	//	m_foot_normal.bone		= 2;
 
-	//load settings	
+	//load settings
 	if (section)
 	{
 		if (!!K->LL_UserData()->r_bool(section, "align_toe"))
@@ -209,7 +209,7 @@ Fmatrix& CIKFoot::ref_bone_to_foot(Fmatrix& foot, const Fmatrix& ref_bone) const
 		Fmatrix b2 = Kinematics()->LL_GetTransform( m_bones[2] );
 		Fmatrix b3 = Kinematics()->LL_GetTransform( m_bones[3] );
 		//m.mul_43( Fmatrix().invert( Kinematics()->LL_GetTransform(m_bones[2] ) ),Kinematics()->LL_GetTransform( m_bones[3] ) );
-	
+
 		Fmatrix ib3; ib3.invert( b3 );
 		Fmatrix ib2; ib2.invert( b2 );
 		m.mul_43( ib3, b2  );

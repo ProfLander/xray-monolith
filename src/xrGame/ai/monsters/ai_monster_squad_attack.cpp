@@ -10,7 +10,7 @@ void CMonsterSquad::ProcessAttack()
 	m_enemy_map.clear();
 	m_temp_entities.clear();
 
-	// Выделить элементы с общими врагами и состянием атаки 
+	// Выделить элементы с общими врагами и состянием атаки
 	for (MEMBER_GOAL_MAP_IT it_goal = m_goals.begin(); it_goal != m_goals.end(); it_goal++)
 	{
 		//		CEntity *member = it_goal->first;
@@ -44,7 +44,7 @@ void CMonsterSquad::ProcessAttack()
 
 		Attack_AssignTargetDir(it_enemy->second, it_enemy->first);
 
-		// a squad of CBaseMonster-s ? 
+		// a squad of CBaseMonster-s ?
 		// 		if ( smart_cast<CBaseMonster*>(*(monsters->begin())) )
 		// 		{
 		// 			assign_monsters_target_dirs(it_enemy->second, it_enemy->first);
@@ -52,7 +52,7 @@ void CMonsterSquad::ProcessAttack()
 		// 		else
 		// 		{
 		// 			Attack_AssignTargetDir(it_enemy->second, it_enemy->first);
-		// 		}		
+		// 		}
 	}
 }
 
@@ -174,7 +174,7 @@ void CMonsterSquad::Attack_AssignTargetDir(ENTITY_VEC& members, const CEntity* e
 
 	lines.clear();
 
-	// сортировать по убыванию расстояния от npc до врага 
+	// сортировать по убыванию расстояния от npc до врага
 	std::sort(members.begin(), members.end(), sort_predicate(enemy));
 	if (members.empty()) return;
 

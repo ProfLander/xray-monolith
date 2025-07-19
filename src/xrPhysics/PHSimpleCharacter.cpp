@@ -621,7 +621,7 @@ void CPHSimpleCharacter::PhTune(dReal step)
 	{
 		if(b_air_contact_state)
 			debug_output().DBG_DrawPoint(cast_fv(dBodyGetPosition(m_body)),m_radius,D3DCOLOR_XRGB(255,0,0));
-		
+
 	}
 #endif
 	bool b_good_graund = b_valide_ground_contact && m_ground_contact_normal[1] > M_SQRT1_2;
@@ -695,9 +695,9 @@ void CPHSimpleCharacter::PhTune(dReal step)
 		(
 			b_on_ground &&
 			m_ground_contact_normal[1] > M_SQRT1_2 / 2.f
-			//&& 
-			//			!b_external_impulse										
-			/*&& 
+			//&&
+			//			!b_external_impulse
+			/*&&
 			dSqrt(velocity[0]*velocity[0]+velocity[2]*velocity[2])<5.*/ ||
 			fis_zero(linear_vel_smag) ||
 			m_elevator_state.ClimbingState()
@@ -730,7 +730,7 @@ void CPHSimpleCharacter::PhTune(dReal step)
 
 	ValidateWalkOn();
 
-	//jump	
+	//jump
 	if (b_jump)
 	{
 		b_lose_control = true;
@@ -778,7 +778,7 @@ void CPHSimpleCharacter::PhTune(dReal step)
 			const Fvector dipsp = Fvector().set(0,0.02f,0);
 			debug_output().DBG_DrawLine(cast_fv(dBodyGetPosition(m_body)),Fvector().add(cast_fv(dBodyGetPosition(m_body)),Fvector().mul(cast_fv(sidedir),1.f)),D3DCOLOR_XRGB(0,0,255));
 			debug_output().DBG_DrawLine(cast_fv(dBodyGetPosition(m_body)),Fvector().add(cast_fv(dBodyGetPosition(m_body)),Fvector().mul(cast_fv(m_control_force),1.f/1000.f)),D3DCOLOR_XRGB(0,0,255));
-			debug_output().DBG_DrawLine(Fvector().add(cast_fv(dBodyGetPosition(m_body)),dipsp), 
+			debug_output().DBG_DrawLine(Fvector().add(cast_fv(dBodyGetPosition(m_body)),dipsp),
 				Fvector().add(Fvector().add(cast_fv(dBodyGetPosition(m_body)),dipsp),Fvector().mul(cast_fv(dBodyGetForce(m_body)),1.f/1000.f)),D3DCOLOR_XRGB(255,0,0));
 		}
 #endif
@@ -806,18 +806,18 @@ void CPHSimpleCharacter::PhTune(dReal step)
 			current_pos[2] - m_jump_depart_position[2]
 		};
 		dReal amag = _sqrt(m_acceleration.x * m_acceleration.x + m_acceleration.z * m_acceleration.z);
-		if (amag > 0.f) 
-		{	
-			if (dif[0] * m_acceleration.x / amag+dif[2] * m_acceleration.z / amag<0.3f) 
+		if (amag > 0.f)
+		{
+			if (dif[0] * m_acceleration.x / amag+dif[2] * m_acceleration.z / amag<0.3f)
 			{
 				Fvector jump_fv = m_acceleration;
 				jump_fv.mul(1000.f / amag * air_factor);
 				dBodyAddForce(m_body, jump_fv.x, 0, jump_fv.z);
 			}
-			if (proj < 0.f) 
+			if (proj < 0.f)
 			{
 				dReal vmag = chVel[0] * chVel[0] + chVel[2] * chVel[2];
-				if (fun_allowed || vmag > 0.f) 
+				if (fun_allowed || vmag > 0.f)
 				{
 					Fvector jump_fv = cast_fv(chVel);
 					jump_fv.mul(3000.f * air_factor / vmag / amag * proj);
@@ -834,7 +834,7 @@ void CPHSimpleCharacter::PhTune(dReal step)
 	//}
 
 	BodyCutForce(m_body, 5.f, 0.f);
-	//	
+	//
 
 
 	//
@@ -842,7 +842,7 @@ void CPHSimpleCharacter::PhTune(dReal step)
 	if(debug_output().ph_dbg_draw_mask().test(phDbgCharacterControl))
 	{
 		const Fvector dipsp = Fvector().set(0,0.02f,0);
-				debug_output().DBG_DrawLine(Fvector().add(cast_fv(dBodyGetPosition(m_body)),dipsp), 
+				debug_output().DBG_DrawLine(Fvector().add(cast_fv(dBodyGetPosition(m_body)),dipsp),
 				Fvector().add(Fvector().add(cast_fv(dBodyGetPosition(m_body)),dipsp),Fvector().mul(cast_fv(dBodyGetForce(m_body)),1.f/1000.f)),D3DCOLOR_XRGB(255,0,0));
 	}
 #endif
@@ -999,7 +999,7 @@ bool CPHSimpleCharacter::ValidateWalkOnMesh()
 			//dCROSS(norm,=,side0,side1);//optimize it !!!
 			//cast_fv(norm).normalize();
 
-			//if(dDOT(norm,(float*)&accel)<-CHWON_ANG_COS) 
+			//if(dDOT(norm,(float*)&accel)<-CHWON_ANG_COS)
 		}
 	}
 
@@ -1053,7 +1053,7 @@ void CPHSimpleCharacter::ApplyAcceleration()
 	dMass m;
 	dBodyGetMass(m_body, &m);
 
-	//if(b_jump) 
+	//if(b_jump)
 	//	m_control_force[1]=60.f*m.mass*2.f;
 
 	if (b_lose_control)
@@ -1082,7 +1082,7 @@ void CPHSimpleCharacter::ApplyAcceleration()
 	/////////////////////////////////////////////////////////////////////////
 	dVector3 fvdir, sidedir;
 	////////////////////////////////////////////////
-	//deside which force direction use  
+	//deside which force direction use
 	dVector3 y = {0.f, 1.f, 0.f};
 	dCROSS(sidedir, =, y, accel);
 	if (b_clamb_jump && b_valide_wall_contact)
@@ -1510,7 +1510,7 @@ u16 CPHSimpleCharacter::RetriveContactBone()
 		//for (int k=0; k<y; ++k)
 		//{
 		//	ICollisionForm::RayQuery::Result* R = result.r_begin()+k;
-		//	if(is_Door(R->element,i)) 
+		//	if(is_Door(R->element,i))
 		//	{
 		//		i->second.Use();
 		//		return false;
@@ -1721,7 +1721,7 @@ void CPHSimpleCharacter::FootProcess(dContact* c, bool& do_collide, bool bo)
 	float c_pos = pos[1] - dBodyGetPosition(m_body)[1];
 
 
-	/////////////////////////////////////////////////////////////////////////////////////	
+	/////////////////////////////////////////////////////////////////////////////////////
 
 
 	if (dXZDot(m_acceleration, cast_fv(normal)) * sign > 0.f)return;
@@ -1893,7 +1893,7 @@ void CPHSimpleCharacter::SCollisionDamageInfo::HitDir(Fvector& dir) const
 
 //u16 CPHSimpleCharacter::SCollisionDamageInfo::DamageInitiatorID() const
 //{
-//	//if(!m_object) 
+//	//if(!m_object)
 //				//return u16(-1);
 //	IPhysicsShellHolder* object =static_cast<IPhysicsShellHolder*>(Level().Objects.net_Find(m_obj_id));
 //	if(!object)return u16(-1);

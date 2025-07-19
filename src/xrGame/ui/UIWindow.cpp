@@ -67,7 +67,7 @@ void draw_rect(Frect& r, u32 color)
 
 //.	UIRender->FlushLineStrip();
 	UIRender->FlushPrimitive();
-	
+
 #endif // DEBUG
 }
 
@@ -287,7 +287,7 @@ void CUIWindow::GetAbsoluteRect(Frect& r)
 }
 
 //реакция на мышь
-//координаты курсора всегда, кроме начального вызова 
+//координаты курсора всегда, кроме начального вызова
 //задаются относительно текущего окна
 
 #define DOUBLE_CLICK_TIME 250
@@ -539,7 +539,7 @@ void CUIWindow::SetKeyboardCapture(CUIWindow* pChildWindow, bool capture_status)
 }
 
 
-//обработка сообщений 
+//обработка сообщений
 void CUIWindow::SendMessage(CUIWindow* pWnd, s16 msg, void* pData)
 {
 	//оповестить дочерние окна
@@ -777,13 +777,13 @@ void CUIWindow::RemoveHint()
 	m_pHint = NULL;
 }
 
-void CUIWindow::SetHintText(LPCSTR text)	
-{ 
+void CUIWindow::SetHintText(LPCSTR text)
+{
 	m_sHint = text;
 }
 
 LPCSTR CUIWindow::GetHintText()
-{ 
+{
 	return m_sHint;
 }
 */

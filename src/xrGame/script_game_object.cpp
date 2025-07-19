@@ -92,7 +92,7 @@ Fmatrix CScriptGameObject::Xform(bool bHud)
 }
 
 Fbox CScriptGameObject::bounding_box(bool bHud)
-{	
+{
 	if (bHud)
 	{
 		CHudItem* itm = smart_cast<CHudItem*>(&object());
@@ -1005,7 +1005,7 @@ bool CScriptGameObject::Use(CScriptGameObject* obj)
 	CUIGameSP* pGameSP = smart_cast<CUIGameSP*>(CurrentGameUI());
 	if (!pGameSP)
 		return ret;
-	
+
 	CInventoryBox* pBox = smart_cast<CInventoryBox*>(&object());
 	if (pBox)
 	{
@@ -1055,7 +1055,7 @@ void CScriptGameObject::StartUpgrade(CScriptGameObject* obj)
 	CInventoryOwner* pOtherOwner = smart_cast<CInventoryOwner*>(&object());
 	if (!pOtherOwner)
 		return;
-	
+
 	CUIGameSP* pGameSP = smart_cast<CUIGameSP*>(CurrentGameUI());
 	if (pGameSP)
 		pGameSP->StartUpgrade(pActorInv, pOtherOwner);

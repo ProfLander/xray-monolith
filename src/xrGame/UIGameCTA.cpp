@@ -313,7 +313,7 @@ void CUIGameCTA::ShowBuyMenu()
 /*
 void CUIGameCTA::BuyMenuItemIDInserter(u16 const & itemID)
 {
-	
+
 }*/
 
 void TryToDefuseWeapon(CWeapon const* weapon,

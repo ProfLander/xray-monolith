@@ -87,7 +87,7 @@ void script_attachment::script_register(lua_State* L)
 		.def("set_name", &script_attachment::SetName)
 		.def("get_name", &script_attachment::GetName)
 		.def("play_motion", &script_attachment::PlayMotion)
-		
+
 		//Script 3D UI
 		.def("set_ui", &script_attachment::SetScriptUI)
 		.def("get_ui", &script_attachment::GetScriptUI)

@@ -193,12 +193,12 @@ void game_cl_GameState::net_import_update(NET_Packet& P)
 
 	// Update
 	PLAYERS_MAP_IT I = players.find(ID);
-	/*VERIFY2(I != players.end(), 
+	/*VERIFY2(I != players.end(),
 		make_string("Player ClientID = %d not found in players map", ID.value()).c_str());*/
 	if (players.end() != I)
 	{
 		game_PlayerState* IP = I->second;
-		//		CopyMemory	(&IP,&PS,sizeof(PS));		
+		//		CopyMemory	(&IP,&PS,sizeof(PS));
 		//***********************************************
 		u16 OldFlags = IP->flags__;
 		u8 OldVote = IP->m_bCurrentVoteAgreed;

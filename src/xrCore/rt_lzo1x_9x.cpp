@@ -128,7 +128,7 @@ code_match(LZO_COMPRESS_T* c, lzo_bytep op, lzo_uint m_len, lzo_uint m_off)
 	    static lzo_uint prev_m_off[4];
 	    static int prev_m_off_ptr = 0;
 	    int i;
-	
+
 	    //if (m_len >= 3 && m_len <= M2_MAX_LEN && m_off <= M2_MAX_OFFSET)
 	    if (m_len >= 3 && m_len <= M2_MAX_LEN)
 	    {

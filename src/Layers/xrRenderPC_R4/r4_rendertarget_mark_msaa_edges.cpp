@@ -12,7 +12,7 @@
 
 	Anomaly:
 	Most likely this problem was fixed in df5de3b3e40135a39af3a4bc56d0dbe44a2c18a6 commit
-	Right now, let's set disable depth buffer at this stage. 
+	Right now, let's set disable depth buffer at this stage.
 */
 
 void CRenderTarget::mark_msaa_edges()

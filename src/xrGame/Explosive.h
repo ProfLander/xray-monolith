@@ -116,7 +116,7 @@ protected:
 	ALife::EHitType m_eHitTypeBlast;
 	ALife::EHitType m_eHitTypeFrag;
 
-	//фактор подпроса предмета вверх взрывной волной 
+	//фактор подпроса предмета вверх взрывной волной
 	float m_fUpThrowFactor;
 
 	//список пораженных объектов

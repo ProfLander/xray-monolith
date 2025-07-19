@@ -127,7 +127,7 @@ IC CLevelGraph::ELineIntersections CLevelGraph::intersect(
 	// Check for equality
 	if (fis_zero(r1 * r2) && fis_zero(r3 * r4)) return LevelGraph::eLineIntersectionEqual;
 
-	/* Line segments intersect: compute intersection point. 
+	/* Line segments intersect: compute intersection point.
 	*/
 
 	denom = a1 * b2 - a2 * b1;
@@ -196,7 +196,7 @@ IC CLevelGraph::ELineIntersections CLevelGraph::intersect_no_check(
 		return (LevelGraph::eLineIntersectionEqual);
 	}
 
-	/* Line segments intersect: compute intersection point. 
+	/* Line segments intersect: compute intersection point.
 	*/
 
 	denom = a1 * b2 - a2 * b1;

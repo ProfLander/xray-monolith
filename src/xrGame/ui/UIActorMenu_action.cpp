@@ -94,7 +94,7 @@ bool CUIActorMenu::OnItemDrop(CUICellItem* itm)
 
 	if (old_owner == new_owner)
 	{
-		//Alundaio: Here we export the action of dragging one inventory item ontop of another! 
+		//Alundaio: Here we export the action of dragging one inventory item ontop of another!
 		::luabind::functor<bool> funct1;
 		if (ai().script_engine().functor("actor_menu_inventory.CUIActorMenu_OnItemDropped", funct1))
 		{
@@ -191,7 +191,7 @@ bool CUIActorMenu::OnItemDrop(CUICellItem* itm)
 
 	OnItemDropped(CurrentIItem(), new_owner, old_owner);
 
-	//Alundaio: Here we export the action of dragging one inventory item ontop of another! 
+	//Alundaio: Here we export the action of dragging one inventory item ontop of another!
 	::luabind::functor<bool> funct1;
 	if (ai().script_engine().functor("actor_menu_inventory.CUIActorMenu_OnItemDropped", funct1))
 	{
@@ -317,7 +317,7 @@ bool CUIActorMenu::OnItemDbClick(CUICellItem* itm)
 			ToQuickSlot(itm);
 		}
 		break;
-	}; //switch 
+	}; //switch
 
 	UpdateConditionProgressBars();
 	UpdateItemsPlace();

@@ -8,7 +8,7 @@ add_module(XRay.Game.AI.Script
   ../xrServerEntities/script_export_macroses.h
   ../xrServerEntities/script_export_space.h
   ../xrServerEntities/script_space_forward.h
-  
+
   script_imgui_script.cpp
   script_attachment_script.cpp
 

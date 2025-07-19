@@ -151,7 +151,7 @@ void CDialogHolder::RemoveDialogToRender(CUIWindow* pDialog)
 		(*it).enabled = false;
 		return;
 	}
-	
+
 	it = std::find(m_dialogsToRender_new.begin(), m_dialogsToRender_new.end(), itm);
 
 	if (it != m_dialogsToRender_new.end())

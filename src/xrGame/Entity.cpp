@@ -178,7 +178,7 @@ BOOL CEntity::net_Spawn(CSE_Abstract* DC)
 			Msg("!server entity [%s][%d] has a killer [%d] and is not dead", E->name_replace(), E->ID, E->get_killer_id());
 			m_killer_id = ALife::_OBJECT_ID(-1);
 		}
-		
+
 		//if (m_killer_id == ID())
 		//	m_killer_id = ALife::_OBJECT_ID(-1);
 	}
@@ -407,13 +407,13 @@ void CEntity::ChangeTeam(int team, int squad, int group)
 }
 
 //--DSR-- HeatVision_start
-static u32 clampU(u32 x, u32 a, u32 b) 
+static u32 clampU(u32 x, u32 a, u32 b)
 {
 	return x < a ? a : (x > b ? b : x);
 }
 
 float CEntity::GetHotness() {
-	if (heat_vision_cooldown && (AlreadyDie() || !g_Alive())) 
+	if (heat_vision_cooldown && (AlreadyDie() || !g_Alive()))
 		return 1.0f - (float)clampU(Device.dwTimeGlobal - m_level_death_time, 0, heat_vision_cooldown_time) / heat_vision_cooldown_time;
 	return 1.0f;
 }
@@ -427,10 +427,10 @@ void CEntity::OnChangeVisual()
 //--DSR-- HeatVision_end
 
 //--DSR-- SilencerOverheat_start
-float CEntity::GetGlowing() 
+float CEntity::GetGlowing()
 {
 	auto invOwner = smart_cast<CInventoryOwner*>(this);
-	if (invOwner) 
+	if (invOwner)
 	{
 		auto weapon = smart_cast<CWeapon*>(invOwner->inventory().ActiveItem());
 		if (weapon)

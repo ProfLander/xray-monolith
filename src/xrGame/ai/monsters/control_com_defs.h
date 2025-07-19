@@ -21,7 +21,7 @@ namespace ControlCom
 		eControlTripleAnimation,
 		// capture: anim
 
-		//// 3rd level 
+		//// 3rd level
 		eControlJump,
 		// capture: path, movement, triple_anim     disable : fsm, dir
 		eControlRotationJump,

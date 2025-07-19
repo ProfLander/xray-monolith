@@ -104,7 +104,7 @@ IC CPhysicsJoint* BuildWheelJoint(const IBoneData& bone_data, CPhysicsElement* r
 
 	//if(joint_data.limits[0].limit.y-joint_data.limits[0].limit.x<M_PI*2.f)
 	//{
-	//	J->SetLimits(joint_data.limits[0].limit.x,joint_data.limits[0].limit.y,0);	
+	//	J->SetLimits(joint_data.limits[0].limit.x,joint_data.limits[0].limit.y,0);
 	//	J->SetAxisSDfactors(joint_data.limits[0].spring_factor,joint_data.limits[0].damping_factor,0);
 	//}
 	SetJointLimit(*J, bone_data, 0, 0);

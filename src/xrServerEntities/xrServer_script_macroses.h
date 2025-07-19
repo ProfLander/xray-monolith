@@ -252,7 +252,7 @@ struct CWrapperAbstractItem : public T, public ::luabind::wrap_base
 //#	define luabind_virtual_pure(a,b) \
 //		.def(	constructor<LPCSTR>()) \
 //		DEFINE_LUABIND_VIRTUAL_FUNCTION_EXPLICIT_1(a,b,save,void,NET_Packet&,NET_Packet*) \
-//		DEFINE_LUABIND_VIRTUAL_FUNCTION_EXPLICIT_1(a,b,load,void,NET_Packet&,NET_Packet*) 
+//		DEFINE_LUABIND_VIRTUAL_FUNCTION_EXPLICIT_1(a,b,load,void,NET_Packet&,NET_Packet*)
 //#else
 //#	define luabind_virtual_pure(a,b) \
 //		.def(	constructor<LPCSTR>()) \

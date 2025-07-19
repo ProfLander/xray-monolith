@@ -39,7 +39,7 @@ void CPGDef::Clone	(CPGDef* source)
     m_Flags			= source->m_Flags;
     m_fTimeLimit	= source->m_fTimeLimit;
 
-    m_Effects.resize(source->m_Effects.size(),0);		
+    m_Effects.resize(source->m_Effects.size(),0);
     for (EffectIt d_it=m_Effects.begin(),s_it=source->m_Effects.begin(); s_it!=source->m_Effects.end(); s_it++,d_it++)
     	*d_it		= xr_new<SEffect>(**s_it);
 }

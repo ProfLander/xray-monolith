@@ -5,7 +5,7 @@ set(XRAY_COMPILER_FLAGS
   -Wno-implicit-function-declaration
   -Wno-shift-negative-value
   -Wno-register
-  
+
   -DWIN32
 )
 

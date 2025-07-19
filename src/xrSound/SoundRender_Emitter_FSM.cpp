@@ -126,7 +126,7 @@ void CSoundRender_Emitter::update(float dt)
 	case stStarting:
 		if (iPaused) break;
 		fTimeStarted = fTime;
-		fTimeToStop = fTime + (get_length_sec() / psSpeedOfSound); 
+		fTimeToStop = fTime + (get_length_sec() / psSpeedOfSound);
 		fTimeToPropagade = fTime;
 		fade_volume = 1.f;
 		occluder_volume = SoundRender->get_occlusion(p_source.position, .2f, occluder);
@@ -229,10 +229,10 @@ void CSoundRender_Emitter::update(float dt)
 				// switch to: PLAY
 				m_current_state = stPlaying;
 				/*
-								u32 ptr						= calc_cursor(	fTimeStarted, 
-																			fTime, 
-																			get_length_sec(), 
-																			source()->m_wformat); 
+								u32 ptr						= calc_cursor(	fTimeStarted,
+																			fTime,
+																			get_length_sec(),
+																			source()->m_wformat);
 								set_cursor					(ptr);
 				*/
 				SoundRender->i_start(this);
@@ -309,7 +309,7 @@ void CSoundRender_Emitter::update(float dt)
 		owner_data->feedback = 0;
 		owner_data = 0;
 	}
-	
+
 #ifdef MEASURE_PROCESSING_TIME
 	float time3 = Timer.GetElapsed_ms_f();
 	const char* name = "?";

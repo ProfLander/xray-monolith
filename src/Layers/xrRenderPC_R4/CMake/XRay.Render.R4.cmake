@@ -1,6 +1,6 @@
 add_module(XRay.Render.R4
   TYPE STATIC
-  
+
   PRECOMPILES stdafx.h
 
   INCLUDES ${CMAKE_CURRENT_SOURCE_DIR}
@@ -29,7 +29,7 @@ add_module(XRay.Render.R4
   SOURCES
   ../xrRenderDX10/DXCommonTypes.h
   ../xrRender/xrD3DDefs.h
-  
+
   ../xrRender/xrRender_console.cpp
   ../xrRender/xrRender_console.h
 
@@ -487,7 +487,7 @@ add_module(XRay.Render.R4.Refactored.Execution3D.Shaders.Resources
 
   CSCompiler.cpp
   CSCompiler.h
-  
+
   ../xrRenderDX10/dx10ConstantBuffer.cpp
   ../xrRenderDX10/dx10ConstantBuffer.h
   ../xrRenderDX10/dx10ConstantBuffer_impl.h

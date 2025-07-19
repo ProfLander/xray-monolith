@@ -6,7 +6,7 @@
 #include "ui/UIDialogWnd.h"
 #include "ui/UISpawnWnd.h"
 
-// refs 
+// refs
 class CUIAHuntFragList;
 class CUIAHuntPlayerList;
 class game_cl_ArtefactHunt;

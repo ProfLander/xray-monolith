@@ -47,7 +47,7 @@ void CWeaponMagazinedWGrenade::switch2_StartAim()
 		inherited::switch2_StartAim();
 
 
-	
+
 }
 
 void CWeaponMagazinedWGrenade::switch2_EndAim()

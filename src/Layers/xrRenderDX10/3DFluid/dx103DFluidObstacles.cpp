@@ -52,12 +52,12 @@ namespace
 
 	Fvector4 UnitClipPlanes[] =
 	{
-		{-1.f, 0.0f, 0.0f, 0.5f}, //	
-		{1.f, 0.0f, 0.0f, 0.5f}, //	
+		{-1.f, 0.0f, 0.0f, 0.5f}, //
+		{1.f, 0.0f, 0.0f, 0.5f}, //
 		{0.0f, -1.f, 0.0f, 0.5f}, //	Top
 		{0.0f, 1.f, 0.0f, 0.5f}, //	Bottom
-		{0.0f, 0.0f, -1.f, 0.5f}, //	
-		{0.0f, 0.0f, 1.f, 0.5f}, //	
+		{0.0f, 0.0f, -1.f, 0.5f}, //
+		{0.0f, 0.0f, 1.f, 0.5f}, //
 	};
 }
 
@@ -375,7 +375,7 @@ void dx103DFluidObstacles::RenderDynamicOOBB( const IPhysicsElement &Element, co
 	TranslationVelocity.set( TranslationVelocity3.x, TranslationVelocity3.y, TranslationVelocity3.z, 0.0f);
 
 	float	fVelocityScale;
-	
+
 	VERIFY(timestep!=0);
 
 	fVelocityScale = 1/timestep;
@@ -387,7 +387,7 @@ void dx103DFluidObstacles::RenderDynamicOOBB( const IPhysicsElement &Element, co
 
 	RCache.set_c(strMassCenter, MassCenter);
 	RCache.set_c(strOOBBWorldAngularVelocity, AngularVelocity);
-	RCache.set_c(strOOBBWorldTranslationVelocity, TranslationVelocity);	
+	RCache.set_c(strOOBBWorldTranslationVelocity, TranslationVelocity);
 
 	m_pGrid->DrawSlices();
 }

@@ -134,12 +134,12 @@ float CPatternFunction::ffGetValue()
 	if (psAI_Flags.test(aiFuncs)) {
 		float value = ffEvaluate();
 		string256 caString;
-		
+
 		int j = xr_sprintf(caString,sizeof(caString),"%32s (",m_caName);
-		
+
 		for (u32 i=0; i<m_dwVariableCount; ++i)
 			j += xr_sprintf(caString + j, sizeof(caString)-j, " %3d",m_dwaVariableValues[i] + 1);
-		
+
 		xr_sprintf	(caString + j,sizeof(caString)-j, ") = %7.2f",value);
 		Msg			("- %s",caString);
 		return		(value);

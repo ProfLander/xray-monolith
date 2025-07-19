@@ -71,7 +71,7 @@ BOOL reclaim(xr_vector<T*>& vec, const T* ptr)
 //--------------------------------------------------------------------------------------------------------------
 SState* CResourceManager::_CreateState(SimulatorStates& state_code)
 {
-	// Search equal state-code 
+	// Search equal state-code
 	for (u32 it = 0; it < v_states.size(); it++)
 	{
 		SState* C = v_states[it];;
@@ -533,7 +533,7 @@ void CResourceManager::_DeleteRT(const CRT* RT)
 	Msg("! ERROR: Failed to find render-target '%s'", *RT->cName);
 }
 
-/*	//	DX10 cut 
+/*	//	DX10 cut
 //--------------------------------------------------------------------------------------------------------------
 CRTC*	CResourceManager::_CreateRTC		(LPCSTR Name, u32 size,	D3DFORMAT f)
 {
@@ -666,7 +666,7 @@ void	CResourceManager::DBG_VerifyTextures	()
 {
 	map_Texture::iterator I		= m_textures.begin	();
 	map_Texture::iterator E		= m_textures.end	();
-	for (; I!=E; I++) 
+	for (; I!=E; I++)
 	{
 		R_ASSERT(I->first);
 		R_ASSERT(I->second);

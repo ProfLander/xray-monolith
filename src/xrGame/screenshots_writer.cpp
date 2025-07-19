@@ -84,7 +84,7 @@ namespace screenshots
 		return m_buffer_info_pos + tmp_writer.size();
 	}
 
-	//signer 
+	//signer
 
 	signer::signer() : xr_dsa_signer(p_number, q_number, g_number)
 	{

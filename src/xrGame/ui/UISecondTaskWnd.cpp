@@ -291,7 +291,7 @@ void UITaskListWndItem::SendMessage(CUIWindow* pWnd, s16 msg, void* pData)
 			GetMessageTarget()->SendMessage(this, PDA_TASK_SET_TARGET_MAP, (void*)m_task);
 		}
 	}
-	/*	
+	/*
 		if ( pWnd == m_bt_view )
 		{
 			if ( m_bt_view->GetCheck() && msg == BUTTON_CLICKED )

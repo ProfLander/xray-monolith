@@ -89,7 +89,7 @@ void CLevelGraph::draw_nodes	()
 	max_position = min_position = Device.vCameraPosition;
 	min_position.sub(30.f);
 	max_position.add(30.f);
-	
+
 	CLevelGraph::const_vertex_iterator	 I, E;
 	if (valid_vertex_position(min_position))
 		I = std::lower_bound(begin(),end(),vertex_position(min_position).xz(),&vertex::predicate2);
@@ -117,9 +117,9 @@ void CLevelGraph::draw_nodes	()
 
 		float			sr	= header().cell_size();
 		if (::Render->ViewBase.testSphere_dirty(PC,sr)) {
-			
+
 			u32	LL = 255;
-			
+
 			u32	CC		= D3DCOLOR_XRGB(0,0,255);
 			u32	CT		= D3DCOLOR_XRGB(LL,LL,LL);
 			u32	CH		= D3DCOLOR_XRGB(0,128,0);

@@ -15,7 +15,7 @@ Requirements:
 		- radius completely determines	"level"
 		- position completely detemines "node"
 	* O(1) removal
-	* 
+	*
 1. Rendering
 	* Should live inside spatial DB
 	* Should have at least "bounding-sphere" or "bounding-box"
@@ -45,7 +45,7 @@ enum
 };
 
 //////////////////////////////////////////////////////////////////////////
-// Comment: 
+// Comment:
 //		ordinal objects			- renderable?, collideable?, visibleforAI?
 //		physical-decorations	- renderable, collideable
 //		lights					- lightsource

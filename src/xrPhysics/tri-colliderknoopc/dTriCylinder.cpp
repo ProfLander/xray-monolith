@@ -153,7 +153,7 @@ int dcTriListCollider::dSortedTriCyl(
 
 		dReal A1 = radius * C1; //cosinus
 		dReal A2 = hlz * Q2;
-		dReal A3 = radius * C3; //sinus 
+		dReal A3 = radius * C3; //sinus
 
 		if (factor > 0.f) centerDepth = outDepth - A1 * Q1 - A3 * Q3;
 		else centerDepth = outDepth;
@@ -665,7 +665,7 @@ depth##ox=sidePr-dFabs(dist##ox);\
 
 		dReal A1 = radius * C1; //cosinus
 		dReal A2 = hlz; //Q2
-		dReal A3 = radius * C3; //sinus 
+		dReal A3 = radius * C3; //sinus
 
 		if (factor > 0.f) centerDepth = outDepth - A1 * Q1 - A3 * Q3;
 		else centerDepth = outDepth;

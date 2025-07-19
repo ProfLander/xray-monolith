@@ -2573,7 +2573,7 @@ void CCC_RegisterCommands()
 
 	CMD3(CCC_Mask, "g_crosshair_show_always", &psCrosshair_Flags, CROSSHAIR_SHOW_ALWAYS);
 	CMD3(CCC_Mask, "g_crosshair_independent", &psCrosshair_Flags, CROSSHAIR_INDEPENDENT);
-	
+
 	CrosshairCameraNearCommands(g_crosshair_camera_near, "camera_near");
 	CrosshairCameraFarCommands(g_crosshair_camera_far, "camera_far");
 	CrosshairNearCommands(g_crosshair_weapon_near, "weapon_near");
@@ -2948,7 +2948,7 @@ void CCC_RegisterCommands()
 		CMD4(CCC_Float, "g_streff", &streff, -10.f, 10.f);
 	//No need for server commands in a singleplayer-only mod
 	//register_mp_console_commands();
-    
+
     zoomFlags.set(NEW_ZOOM, FALSE);
     zoomFlags.set(SDS_ZOOM, TRUE);
     zoomFlags.set(SDS_SPEED, TRUE);
@@ -2962,7 +2962,7 @@ void CCC_RegisterCommands()
     CMD4(CCC_Float, "zoom_step_count", &n_zoom_step_count, 1.0f, 10.0f);
 
 	// UBGL/Aim mode switch separation
-	// When switching to UBGL the weapon will remember what mode you switched from and will put you back in that mode. 
+	// When switching to UBGL the weapon will remember what mode you switched from and will put you back in that mode.
 	// For example: You were aiming down with a canted sight when you switched to UBGL. When you switch back it will put you back into Canted sight aim and not the scope.
 	CMD4(CCC_Integer, "use_separate_ubgl_keybind", &useSeparateUBGLKeybind, 0, 1);
 	CMD4(CCC_Integer, "aimmode_remember", &g_aimmode_remember, 0, 1);

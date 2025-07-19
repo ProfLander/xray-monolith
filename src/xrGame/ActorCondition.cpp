@@ -196,7 +196,7 @@ float CActorCondition::GetZoneMaxPower(ALife::EHitType hit_type) const
 void CActorCondition::UpdateCondition()
 {
 	float v_alcohol = IsSleeping() ? m_fV_AlcoholSleep : m_fV_Alcohol;
-	
+
 	if (psActorFlags.test(AF_GODMODE_RT))
 	{
 		UpdateSatiety();
@@ -424,7 +424,7 @@ void CActorCondition::AffectDamage_InjuriousMaterialAndMonstersInfluence()
 			if (damage > EPS)
 			{
 				SHit HDS = SHit(damage,
-				                //.								0.0f, 
+				                //.								0.0f,
 				                Fvector().set(0, 1, 0),
 				                NULL,
 				                BI_NONE,
@@ -484,7 +484,7 @@ void CActorCondition::UpdateRadiation()
 void CActorCondition::UpdateSatiety()
 {
 	float v_satiety_power = IsSleeping() ? m_fV_SatietyPowerSleep : m_fV_SatietyPower;
-	
+
 	if (!IsGameTypeSingle())
 	{
 		m_fDeltaPower += v_satiety_power * m_fDeltaTime;

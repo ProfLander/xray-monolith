@@ -229,7 +229,7 @@ public:
 	virtual bool isFullActive() const { return isActive() && !m_flags.test(flActivating); }
 	void SetNotActivating() { m_flags.set(flActivating,FALSE); }
 	IC void SetObjVsShellTransform(const Fmatrix& root_transform);
-	//CPHObject	 
+	//CPHObject
 	virtual void vis_update_activate();
 	virtual void vis_update_deactivate();
 	virtual void PureStep(float step);

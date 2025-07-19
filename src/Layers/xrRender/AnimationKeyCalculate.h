@@ -135,7 +135,7 @@ IC void Dequantize(CKey& K, const CBlend& BD, const CMotion& M)
 		T2.z		= float(K2t->z)*M._sizeT.z+M._initT.z;
 		*/
 		D->T.lerp(T1, T2, delta);
-		/*					
+		/*
 		if ((_abs(D->T.y)>10000) || (_abs(D->T.x)>10000) || (_abs(D->T.z)>10000))
 		{
 		Log("xxx");

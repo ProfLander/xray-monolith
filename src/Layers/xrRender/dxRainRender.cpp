@@ -125,7 +125,7 @@ void dxRainRender::Render(CEffect_Rain& owner)
 		// physics and time control
 		CEffect_Rain::Item& one = owner.items[I];
 
-		if (one.dwTime_Hit < Device.dwTimeGlobal) 
+		if (one.dwTime_Hit < Device.dwTimeGlobal)
 		{
 			owner.Hit(one.Phit);
 			if (current_items > desired_items) current_items--; // Hit something

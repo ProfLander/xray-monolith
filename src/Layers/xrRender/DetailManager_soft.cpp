@@ -150,11 +150,11 @@ void CDetailManager::soft_Render()
 /*
 //.
                 VERIFY(sizeof(CDetail::fvfVertexOut)==soft_Geom->vb_stride);
-                
+
                 CDetail::fvfVertexOut	*dstIt = vDest;
 
                 VERIFY(items->size()*Object.number_vertices==vCount_Lock);
-                
+
                 for	(u32 k=0; k<vCount_Lock; k++)
                 {
 					// Transfer vertices

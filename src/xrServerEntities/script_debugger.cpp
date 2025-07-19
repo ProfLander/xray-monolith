@@ -221,7 +221,7 @@ void CScriptDebugger::UnPrepareLua(lua_State* l, int idx)
 
 int CScriptDebugger::PrepareLua(lua_State* l)
 {
-	// call this function immediatly before calling lua_pcall. 
+	// call this function immediatly before calling lua_pcall.
 	//returns index in stack for errorFunc
 	if (!Active())return -1;
 

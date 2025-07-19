@@ -288,7 +288,7 @@ bool cover::loophole_path					(shared_str const &source_raw, shared_str const &t
 
 	typedef GraphEngineSpace::CBaseParameters	CBaseParameters;
 	CBaseParameters				parameters(u32(-1),u32(-1),u32(-1));
-	bool						result = 
+	bool						result =
 		ai().graph_engine().search(
 			m_description->transitions(),
 			source,

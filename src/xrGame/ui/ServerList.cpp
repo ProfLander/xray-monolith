@@ -250,7 +250,7 @@ void CServerList::FillUpDetailedServerInfo()
 	//			pItemAdv->AddTextField			(buf, m_header2[3].GetWidth());
 	//		}
 
-	//		
+	//
 	//		// TEAM 2
 	//		for (it = srvInfo.m_aPlayers.begin(); it != srvInfo.m_aPlayers.end(); it++)
 	//		{
@@ -277,7 +277,7 @@ void CServerList::FillUpDetailedServerInfo()
 	//			pItemAdv->SetFont				(m_list[LST_PLAYERS].GetFont());
 	//			pItemAdv->SetText				(pf.Name);
 	//			pItemAdv->GetTextItem()->SetWidth(m_header2[1].GetWidth());
-	//			
+	//
 	//			xr_sprintf						(buf,sizeof(buf),"%d",pf.Frags);
 	//			pItemAdv->AddTextField			(buf, m_header2[2].GetWidth());
 
@@ -472,7 +472,7 @@ void CServerList::ConnectToSelected()
 {
 	//gamespy_gp::login_manager const * lmngr = MainMenu()->GetLoginMngr();
 	//R_ASSERT(lmngr);
-	//gamespy_gp::profile const * tmp_profile = lmngr->get_current_profile(); 
+	//gamespy_gp::profile const * tmp_profile = lmngr->get_current_profile();
 	//R_ASSERT2(tmp_profile, "need first to log in");
 	//if (tmp_profile->online())
 	//{
@@ -709,7 +709,7 @@ void CServerList::SrvInfo2LstSrvInfo(const ServerInfo* pServerInfo)
 	//m_itemInfo.info.server			= pServerInfo->m_ServerName;
 	//xr_string address				= pServerInfo->m_HostName;
 	//char							port[8];
-	//address							+= "/port=";	
+	//address							+= "/port=";
 	//address							+= itoa(pServerInfo->m_Port, port, 10);
 	//m_itemInfo.info.address			= address.c_str();
 	//m_itemInfo.info.map				= pServerInfo->m_SessionName;
@@ -722,7 +722,7 @@ void CServerList::SrvInfo2LstSrvInfo(const ServerInfo* pServerInfo)
 	//m_itemInfo.info.icons.punkbuster= false;//	= pServerInfo->m_bPunkBuster;
 	//m_itemInfo.info.icons.user_pass	= pServerInfo->m_bUserPass;
 
-	//m_itemInfo.info.Index			= pServerInfo->Index;   
+	//m_itemInfo.info.Index			= pServerInfo->Index;
 }
 
 

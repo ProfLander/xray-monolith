@@ -153,7 +153,7 @@ bool CAttachmentOwner::can_attach(const CInventoryItem* inventory_item) const
 	                                              inventory_item->object().cNameSect()))
 		return false;
 
-	//если уже есть присоединненый объет такого типа 
+	//если уже есть присоединненый объет такого типа
 	if (attached(inventory_item->object().cNameSect()))
 		return false;
 

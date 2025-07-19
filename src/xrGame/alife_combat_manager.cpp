@@ -170,7 +170,7 @@ bool CALifeCombatManager::bfCheckForInteraction(CSE_ALifeSchedulable *tpALifeSch
 {
 	if (!tpALifeSchedulable1->bfActive() || !tpALifeSchedulable2->bfActive())
 		return(false);
-	
+
 	// determine combat type
 	CSE_ALifeMonsterAbstract	*l_tpALifeMonsterAbstract1	= smart_cast<CSE_ALifeMonsterAbstract*>(tpALifeSchedulable1);
 	CSE_ALifeMonsterAbstract	*l_tpALifeMonsterAbstract2	= smart_cast<CSE_ALifeMonsterAbstract*>(tpALifeSchedulable2);
@@ -210,7 +210,7 @@ bool CALifeCombatManager::bfCheckForInteraction(CSE_ALifeSchedulable *tpALifeSch
 			}
 		}
 	}
-	
+
 	// perform interaction
 #ifdef DEBUG
 	if (psAI_Flags.test(aiALife)) {
@@ -229,7 +229,7 @@ bool CALifeCombatManager::bfCheckForInteraction(CSE_ALifeSchedulable *tpALifeSch
 		);
 	}
 #endif
-	
+
 	bMutualDetection				= false;
 	iCombatGroupIndex				= -1;
 
@@ -319,7 +319,7 @@ void CALifeCombatManager::vfPerformAttackAction(int iCombatGroupIndex)
 			l_tHitType		= (*I)->m_tpCurrentBestWeapon->m_tHitType;
 			l_fHitPower		= (*I)->m_tpCurrentBestWeapon->m_fHitPower;
 		}
-		
+
 		ai().ef_storage().alife().member_item() = smart_cast<CSE_ALifeObject*>(*I);
 		ai().ef_storage().alife().member() = *I;
 #ifdef DEBUG
@@ -401,7 +401,7 @@ void CALifeCombatManager::vfFinishCombat(ECombatResult tCombatResult)
 			}
 		}
 	}
-	
+
 	if (m_temp_item_vector.empty() || (eCombatTypeMonsterMonster != combat_type())) {
 #ifdef DEBUG
 		if (psAI_Flags.test(aiALife)) {
@@ -427,7 +427,7 @@ void CALifeCombatManager::vfFinishCombat(ECombatResult tCombatResult)
 		}
 		default							: NODEFAULT;
 	}
-	
+
 	if (l_iGroupIndex >= 0) {
 #ifdef DEBUG
 		if (psAI_Flags.test(aiALife)) {

@@ -23,7 +23,7 @@ add_module(XRay.Engine.Interfaces.Input
   SOURCES
   IInputReceiver.cpp
   IInputReceiver.h
-  
+
   Xr_input.cpp
   xr_input_xinput.cpp
   xr_input.h
@@ -33,7 +33,7 @@ add_module(XRay.Engine.Interfaces.Input
 add_module(XRay.Engine.Interfaces.Physics
   SOURCES
   phdebug.cpp
-  
+
   IObjectPhysicsCollision.h
   IPHdebug.h
   IPhysicsGeometry.h

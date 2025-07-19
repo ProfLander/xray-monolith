@@ -250,7 +250,7 @@ namespace gamespy_gp
 		//if (tmp_res != GP_NO_ERROR)
 		//{
 		//	m_account_creation_cb(false, CGameSpy_GP::TryToTranslate(tmp_res).c_str());
-		//}	
+		//}
 	}
 
 	void account_manager::delete_profile(account_operation_cb dpcb)

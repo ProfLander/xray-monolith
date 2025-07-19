@@ -160,7 +160,7 @@ namespace gamespy_profile
 	//		}
 	//		return;
 	//	}
-	//	
+	//
 	//	for (int i = 0; i < out_fields_count; ++i)
 	//	{
 	//		enum_best_score_type bst	= get_best_score_type_by_sname(

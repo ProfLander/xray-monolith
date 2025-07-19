@@ -14,7 +14,7 @@ typedef struct tagSPdaMessage
 {
 	EPdaMsg msg;
 
-	//true если мы получали сообщение 
+	//true если мы получали сообщение
 	//и false если мы его посылали
 	bool receive;
 

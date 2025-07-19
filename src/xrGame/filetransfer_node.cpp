@@ -131,7 +131,7 @@ void buffers_vector_reader::read_from_current_buf(NET_Packet& dest, u32 read_siz
 {
 	u32 buffer_size = m_buffers.front().second;
 
-	//each buffer contains its size in header 
+	//each buffer contains its size in header
 	if (m_current_buf_offs == 0)
 	{
 		VERIFY(read_size > sizeof(u32));

@@ -47,7 +47,7 @@ CLightShadows::CLightShadows()
 	string128 RTtemp2;
 	strconcat(sizeof(RTtemp2), RTtemp2, RTtemp, ",", RTtemp);
 
-	// 
+	//
 	RT.create(RTname, S_rt_size, S_rt_size, S_rtf);
 	RT_temp.create(RTtemp, S_rt_size, S_rt_size, S_rtf);
 	sh_World.create("effects\\shadow_world", RTname);
@@ -104,7 +104,7 @@ void CLightShadows::set_object(IRenderable* O)
 		O->renderable.xform.transform_tiny(C, vis.sphere.P);
 		float R = vis.sphere.R;
 		float D = C.distance_to(Device.vCameraPosition) + R;
-		// D=0 -> P=0; 
+		// D=0 -> P=0;
 		// R<S_ideal_size -> P=max, R>S_ideal_size -> P=min
 		float _priority = (D / S_distance) * (S_ideal_size / (R + EPS));
 		if (_priority < 1.f) current = O;
@@ -123,7 +123,7 @@ void CLightShadows::set_object(IRenderable* O)
 				casters_pool.pop_back();
 			}
 
-			// 
+			//
 			casters.push_back(cs);
 			cs->O = current;
 			cs->C = C;
@@ -242,7 +242,7 @@ void CLightShadows::calculate()
 
 			mProject.build_projection_HAT(p_hat, p_asp, p_near, p_far);
 			//	Igor: strange bug with building projection_hat
-			//	building projection with the same parameters fails for the 
+			//	building projection with the same parameters fails for the
 			//	second time
 			//mProjectR.build_projection_HAT	(p_hat,p_asp,p_nearR,	p_far);
 			mProjectR = mProject;
@@ -397,9 +397,9 @@ void CLightShadows::render()
 	clamp(fLerpCoeff, 0.0f, 1.0f);
 	//	lerp
 	Device.mProject._43 -= fMinNearBias + (fMaxNearBias - fMinNearBias) * fLerpCoeff;
-	//Device.mProject._43			-=	0.0002f; 
+	//Device.mProject._43			-=	0.0002f;
 	Device.mProject._43 -= 0.002f;
-	//Device.mProject._43			-=	0.0008f; 
+	//Device.mProject._43			-=	0.0008f;
 	RCache.set_xform_world(Fidentity);
 	RCache.set_xform_project(Device.mProject);
 	Fvector View = Device.vCameraPosition;
@@ -475,7 +475,7 @@ void CLightShadows::render()
 			for (CDB::RESULT* p = xrc.r_begin(); p != xrc.r_end(); p++)
 			{
 				VERIFY((p->id>=0)&&(p->id<DB->get_tris_count()));
-				// 
+				//
 				CDB::TRI& t = TRIS[p->id];
 				if (t.suppress_shadows) continue;
 				sPoly A, B;
@@ -501,7 +501,7 @@ void CLightShadows::render()
 				sPoly* clip = F.ClipPoly(A, B);
 				if (0 == clip) continue;
 
-				// Triangulate poly 
+				// Triangulate poly
 				for (u32 v = 2; v < clip->size(); v++)
 				{
 					tess.push_back(tess_tri());

@@ -390,13 +390,13 @@ void updateDiscordPresence()
 		discordPresence.GetAssets().SetLargeText("");
 		discordPresence.GetAssets().SetSmallImage("");
 		discordPresence.GetAssets().SetSmallText("");
-			
+
 		// Pause Menu
 		if (discord_gameinfo.ingame)
 			snprintf(state_buffer, 128, discord_strings.paused);
 		else
 			discordPresence.SetDetails("");
-	}	
+	}
 
 	// Loading
 	else if (discord_gameinfo.loadscreen)
@@ -533,7 +533,7 @@ void updateDiscordPresence()
 void Init_Discord()
 {
 	auto result = discord::Core::Create(477910171964801060, DiscordCreateFlags_NoRequireDiscord, &discord_core);
-	
+
 	if (result != discord::Result::Ok)
 	{
 		Msg("[Discord RPC] Failed to create Discord RPC");

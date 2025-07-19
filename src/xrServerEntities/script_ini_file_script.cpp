@@ -133,7 +133,7 @@ int get_modded_exes_version() {
 	for (const auto& v : pData->m_StringTable) {
 		table[v.first.c_str()] = v.second.c_str();
 	}
-	
+
 	return table;
 }
 

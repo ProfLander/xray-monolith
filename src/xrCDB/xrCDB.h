@@ -31,10 +31,10 @@ namespace CDB
 			u32 dummy; // 4b
 			struct
 			{
-				u32 material:14; // 
-				u32 suppress_shadows:1; // 
-				u32 suppress_wm:1; // 
-				u32 sector:16; // 
+				u32 material:14; //
+				u32 suppress_shadows:1; //
+				u32 suppress_wm:1; //
+				u32 sector:16; //
 			};
 		};
 
@@ -105,10 +105,10 @@ namespace CDB
 			u32 dummy; // 4b
 			struct
 			{
-				u32 material:14; // 
-				u32 suppress_shadows:1; // 
-				u32 suppress_wm:1; // 
-				u32 sector:16; // 
+				u32 material:14; //
+				u32 suppress_shadows:1; //
+				u32 suppress_wm:1; //
+				u32 sector:16; //
 			};
 		};
 

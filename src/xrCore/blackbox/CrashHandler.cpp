@@ -135,7 +135,7 @@ BOOL __stdcall SetCrashHandlerFilter ( PFNCHFILTFN pFn )
             g_pfnOrigFilt = NULL ;
             if ( NULL != g_ahMod )
             {
-                VERIFY ( HeapFree ( GetProcessHeap ( ) , 0 , g_ahMod ) ) ;				
+                VERIFY ( HeapFree ( GetProcessHeap ( ) , 0 , g_ahMod ) ) ;
 				//free ( g_ahMod ) ;
                 g_ahMod = NULL ;
             }

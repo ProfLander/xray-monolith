@@ -57,7 +57,7 @@ void MK_Frustum(CFrustum& F, float FOV, float _FAR, float A, Fvector &P, Fvector
 void dbg_draw_frustum	(float FOV, float _FAR, float A, Fvector &P, Fvector &D, Fvector &U)
 {
 	//if (!bDebug)		return;
- 
+
 	float YFov	= deg2rad(FOV*A);
 	float XFov	= deg2rad(FOV);
 
@@ -98,13 +98,13 @@ void dbg_draw_frustum	(float FOV, float _FAR, float A, Fvector &P, Fvector &D, F
 	DRender->CacheSetCullMode(IDebugRender::cmNONE);
 	//CHK_DX(HW.pDevice->SetRenderState	(D3DRS_AMBIENT,		0xffffffff			));
 	DRender->SetAmbient(0xffffffff);
-	
+
 
 	Fvector _F[4];
-	_F[0].mad(COP, ProjDirs[0], _FAR); 
-	_F[1].mad(COP, ProjDirs[1], _FAR); 
-	_F[2].mad(COP, ProjDirs[2], _FAR); 
-	_F[3].mad(COP, ProjDirs[3], _FAR); 
+	_F[0].mad(COP, ProjDirs[0], _FAR);
+	_F[1].mad(COP, ProjDirs[1], _FAR);
+	_F[2].mad(COP, ProjDirs[2], _FAR);
+	_F[3].mad(COP, ProjDirs[3], _FAR);
 
 //	u32 CT	= color_rgba(255,255,255,64);
 	u32 CL	= color_rgba(0,255,255,255);

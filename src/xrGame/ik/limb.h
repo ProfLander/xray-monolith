@@ -55,19 +55,19 @@ private:
 
 	// Set by SetGoal or SetGoalPos
 	// For SetGoal:
-	// 
+	//
 	// PSI[0] = valid psi solns for (family1,family1) of R1 and R2
 	// PSI[1] = valid psi solns for (family1,family2) of R1 and R2
 	// PSI[2] = valid psi solns for (family2,family1) of R1 and R2
 	// PSI[3] = valid psi solns for (family2,family2) of R1 and R2
-	// 
+	//
 	// For SetGoalPos:
-	// PSI[0] = valid psi solns for family1 of R1 
-	// PSI[1] = valid psi solns for family2 of R1 
+	// PSI[0] = valid psi solns for family1 of R1
+	// PSI[1] = valid psi solns for family2 of R1
 
 	AngleIntList PSI[4];
 
-	// The euler convention fors the first and second S joints 
+	// The euler convention fors the first and second S joints
 public:
 	AngleInt jt_limits[7];
 private:

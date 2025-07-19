@@ -14,7 +14,7 @@ void CRenderTarget::phase_smaa()
 	float h = float(Device.dwHeight);
 
 	Fvector2 p0, p1;
-#if defined(USE_DX10) || defined(USE_DX11)	
+#if defined(USE_DX10) || defined(USE_DX11)
 	p0.set(0.0f, 0.0f);
 	p1.set(1.0f, 1.0f);
 #else
@@ -27,7 +27,7 @@ void CRenderTarget::phase_smaa()
 	u_setrt(rt_smaa_edgetex, nullptr, nullptr, nullptr);
 	RCache.set_CullMode(CULL_NONE);
 	RCache.set_Stencil(TRUE, D3DCMP_ALWAYS, 0x1, 0, 0, D3DSTENCILOP_KEEP, D3DSTENCILOP_REPLACE, D3DSTENCILOP_KEEP);
-#if defined(USE_DX10) || defined(USE_DX11)	
+#if defined(USE_DX10) || defined(USE_DX11)
 	HW.pContext->ClearRenderTargetView(rt_smaa_edgetex->pRT, ColorRGBA);
 #else
 	CHK_DX( HW.pDevice->Clear(0L, NULL, D3DCLEAR_TARGET, D3DCOLOR_ARGB(0, 0, 0, 0), 1.0f, 0L) );
@@ -51,10 +51,10 @@ void CRenderTarget::phase_smaa()
 	u_setrt(rt_smaa_blendtex, nullptr, nullptr, nullptr);
 	RCache.set_CullMode(CULL_NONE);
 	RCache.set_Stencil(TRUE, D3DCMP_EQUAL, 0x1, 0, 0, D3DSTENCILOP_KEEP, D3DSTENCILOP_REPLACE, D3DSTENCILOP_KEEP);
-#if defined(USE_DX10) || defined(USE_DX11)	
+#if defined(USE_DX10) || defined(USE_DX11)
 	HW.pContext->ClearRenderTargetView(rt_smaa_blendtex->pRT, ColorRGBA);
 #else
-	CHK_DX( HW.pDevice->Clear(0L, NULL, D3DCLEAR_TARGET, D3DCOLOR_ARGB(0, 0, 0, 0), 1.0f, 0L) );	
+	CHK_DX( HW.pDevice->Clear(0L, NULL, D3DCLEAR_TARGET, D3DCOLOR_ARGB(0, 0, 0, 0), 1.0f, 0L) );
 #endif
 
 	// Fill vertex buffer
@@ -77,7 +77,7 @@ void CRenderTarget::phase_smaa()
 	u_setrt(dest_rt, nullptr, nullptr, nullptr);
 #else
 	u_setrt(rt_Generic_0, nullptr, nullptr, nullptr);
-#endif	
+#endif
 
 	RCache.set_CullMode(CULL_NONE);
 	RCache.set_Stencil(FALSE);
@@ -133,7 +133,7 @@ void CRenderTarget::phase_ssfx_taa()
 
 	RCache.set_Geometry(g_combine);
 	RCache.Render(D3DPT_TRIANGLELIST, Offset, 0, 4, 0, 2);
-	
+
 	HW.pContext->CopyResource(rt_ssfx_taa->pTexture->surface_get(), rt_ssfx_accum->pTexture->surface_get());
 
 	// TAA
@@ -172,7 +172,7 @@ void CRenderTarget::phase_ssfx_taa()
 
 	// Draw COLOR
 	RCache.set_Element(s_ssfx_taa->E[2]);
-	
+
 	RCache.set_c("taa_setup", ps_ssfx_taa);
 
 	RCache.set_Geometry(g_combine);

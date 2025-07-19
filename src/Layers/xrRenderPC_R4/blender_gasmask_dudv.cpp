@@ -26,7 +26,7 @@ void CBlender_gasmask_dudv::Compile(CBlender_Compile& C)
 	C.r_dx10Texture("s_mask_nm_8", "shaders\\gasmasks\\mask_nm_8");
 	C.r_dx10Texture("s_mask_nm_9", "shaders\\gasmasks\\mask_nm_9");
 	C.r_dx10Texture("s_mask_nm_10", "shaders\\gasmasks\\mask_nm_10");
-	
+
 	C.r_dx10Sampler("smp_base");
 	C.r_dx10Sampler("smp_nofilter");
 	C.r_dx10Sampler("smp_rtlinear");

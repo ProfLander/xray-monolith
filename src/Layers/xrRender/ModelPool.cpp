@@ -117,7 +117,7 @@ dxRender_Visual* CModelPool::Instance_Load(const char* N, BOOL allow_register, b
 				Msg("!Can't find model file '%s'.",name);
                 return 0;
 #else
-				if (assert)	
+				if (assert)
 					Debug.fatal(DEBUG_INFO, "Can't find model file '%s'.", name);
 				else
 					return nullptr;
@@ -242,7 +242,7 @@ dxRender_Visual* CModelPool::Create(const char* name, IReader* data, bool assert
 	xr_strcpy(low_name, name);
 	strlwr(low_name);
 	if (strext(low_name)) *strext(low_name) = 0;
-	
+
 	// 0. Search POOL
 	POOL_IT it = Pool.find(low_name);
 	if (it != Pool.end())
@@ -555,7 +555,7 @@ void CModelPool::memory_stats(u32& vb_mem_video, u32& vb_mem_system, u32& ib_mem
 #ifdef _EDITOR
 IC bool	_IsBoxVisible(dxRender_Visual* visual, const Fmatrix& transform)
 {
-    Fbox 		bb; 
+    Fbox 		bb;
     bb.xform	(visual->vis.box,transform);
     return 		::Render->occ_visible(bb);
 }

@@ -961,7 +961,7 @@ void game_sv_ArtefactHunt::Assign_Artefact_RPoint(CSE_Abstract* E)
 				rpID.push_back(i);
 			}
 		};
-	
+
 		u8 ID = u8(::Random.randI((int)rpID.size()));
 		m_LastRespawnPointID = rpID[ID];
 		r	= rp[m_LastRespawnPointID];
@@ -1210,7 +1210,7 @@ void game_sv_ArtefactHunt::MoveAllAlivePlayers()
 			pActor->SetfHealth(pActor->GetMaxHealth());
 			pActor->MoveActor(Pos, Angle);
 			pActor->StopAnyMove();
-			//------------------------------------------------		
+			//------------------------------------------------
 			NET_Packet P;
 			m_owner->u_EventGen(P, GE_ACTOR_MAX_POWER, ps->GameID);
 			m_server->SendTo(l_pC->ID, P, net_flags(TRUE,TRUE));
@@ -1391,7 +1391,7 @@ void game_sv_ArtefactHunt::CheckForTeamWin()
 	m_phase = u16((WinTeam == 2) ? GAME_PHASE_TEAM2_SCORES : GAME_PHASE_TEAM1_SCORES);
 	switch_Phase(m_phase);
 
-	OnDelayedRoundEnd(eRoundEnd_ArtrefactLimit); //"Team Final Score" 
+	OnDelayedRoundEnd(eRoundEnd_ArtrefactLimit); //"Team Final Score"
 }
 
 void game_sv_ArtefactHunt::check_Player_for_Invincibility(game_PlayerState* ps)
@@ -1493,7 +1493,7 @@ void game_sv_ArtefactHunt::OnPlayerHitPlayer_Case(game_PlayerState* ps_hitter, g
 		pHitS->power = 0;
 		pHitS->impulse = 0;
 	}
-	//	}	
+	//	}
 	inherited::OnPlayerHitPlayer_Case(ps_hitter, ps_hitted, pHitS);
 };
 
@@ -1538,19 +1538,19 @@ void game_sv_ArtefactHunt::WriteGameState(CInifile& ini, LPCSTR sect, bool bRoun
 /*void game_sv_ArtefactHunt::DestroyAllPlayerItems(ClientID id_who)	//except rukzak
 {
 	xrClientData* xrCData = m_server->ID_to_client(id_who);
-	
-	VERIFY2(xrCData, 
+
+	VERIFY2(xrCData,
 		make_string("client (ClientID = 0x%08x) not found", id_who.value()).c_str());
 	VERIFY(xrCData->ps);
 	game_PlayerState*	ps	=	xrCData->ps;
 #ifndef MASTER_GOLD
 	Msg("---Destroying player [%s] items before spawning new bought items.", ps->getName());
 #endif // #ifndef MASTER_GOLD
-	
+
 	CActor* pActor = smart_cast<CActor*>(Level().Objects.net_Find(ps->GameID));
 	if (!pActor)
 		return;
-	
+
 	TIItemContainer::const_iterator iie = pActor->inventory().m_all.end();
 	for (TIItemContainer::const_iterator ii = pActor->inventory().m_all.begin();
 		ii != iie; ++ii)
@@ -1559,14 +1559,14 @@ void game_sv_ArtefactHunt::WriteGameState(CInifile& ini, LPCSTR sect, bool bRoun
 		u16 object_id = (*ii)->object().ID();
 		CSE_Abstract* tempEntity = m_server->ID_to_entity(object_id);
 		VERIFY(tempEntity);
-		
+
 		if (smart_cast<CMPPlayersBag*>(*ii))
 			continue;
-		
+
 		CArtefact*	temp_artefact = smart_cast<CArtefact*>(*ii);
 		if (temp_artefact)
 			continue;
-		
+
 		DestroyGameItem(tempEntity);
 	}
 }*/

@@ -203,7 +203,7 @@ void CArtefact::UpdateWorkload(u32 dt)
 	}
 	CParticlesPlayer::SetParentVel(vel);
 
-	// 
+	//
 	UpdateLights();
 	if (m_activationObj && m_activationObj->IsInProgress())
 	{
@@ -341,7 +341,7 @@ void CArtefact::MoveTo(Fvector const& position)
 	Fmatrix M = XFORM();
 	M.translate(position);
 	ForceTransform(M);
-	//m_bInInterpolation = false;	
+	//m_bInInterpolation = false;
 }
 
 

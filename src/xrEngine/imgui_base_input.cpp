@@ -15,7 +15,7 @@
 namespace xr_imgui
 {
     static bool xray_cursor_state = true;
-    
+
     struct ide_backend
     {
         char* clipboard_text_data;
@@ -214,7 +214,7 @@ namespace xr_imgui
         case DIK_RALT:      check(ImGuiMod_Alt,     DIK_LALT);      break;
         case DIK_LWIN:      check(ImGuiMod_Super,   DIK_RWIN);      break;
         case DIK_RWIN:      check(ImGuiMod_Super,   DIK_LWIN);      break;
-        }                                              
+        }
 
         const auto imkey = xr_key_to_imgui_key(key);
         if (imkey == ImGuiKey_None)

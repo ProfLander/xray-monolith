@@ -1251,7 +1251,7 @@ void game_cl_CaptureTheArtefact::PlayRankChangedSnd()
 	if (!local_player)
 		return;
 
-	if (local_player->rank >= 4) //need to add new sound 
+	if (local_player->rank >= 4) //need to add new sound
 		return;
 
 	ETeam my_team = static_cast<ETeam>(local_player->team);

@@ -114,7 +114,7 @@ void CUIMotionIcon::Update()
 	}
 	inherited::Update();
 
-	//m_luminosity_progress 
+	//m_luminosity_progress
 	if (cur_pos != m_luminosity)
 	{
 		float _diff = _abs(m_luminosity - cur_pos);

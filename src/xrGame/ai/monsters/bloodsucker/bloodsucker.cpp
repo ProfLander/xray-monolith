@@ -311,7 +311,7 @@ void CAI_Bloodsucker::reinit()
 	com_man().load_jump_data("boloto_jump_prepare", 0, "boloto_jump_fly", "boloto_jump_end", u32(-1),
 	                         MonsterMovement::eBloodsuckerVelocityParameterJumpGround, 0);
 
-	// save visual	
+	// save visual
 	m_visual_default = cNameVisual();
 
 	m_vampire_want_value = 0.f;
@@ -403,13 +403,13 @@ void CAI_Bloodsucker::LookDirection(Fvector to_dir, float bone_turn_speed)
 
 	//// установить параметры вращения по yaw
 	//float cur_yaw = -movement().m_body.current.yaw;						// текущий мировой угол монстра
-	//float bone_angle;											// угол для боны	
+	//float bone_angle;											// угол для боны
 
 	//float dy = _abs(angle_normalize_signed(yaw - cur_yaw));		// дельта, на которую нужно поворачиваться
 
 	//if (angle_difference(cur_yaw,yaw) <= MAX_BONE_ANGLE) {		// bone turn only
 	//	bone_angle = dy;
-	//} else {													// torso & bone turn 
+	//} else {													// torso & bone turn
 	//	if (movement().IsMoveAlongPathFinished() || !movement().enabled()) movement().m_body.target.yaw = angle_normalize(-yaw);
 	//	if (dy / 2 < MAX_BONE_ANGLE) bone_angle = dy / 2;
 	//	else bone_angle = MAX_BONE_ANGLE;
@@ -423,10 +423,10 @@ void CAI_Bloodsucker::LookDirection(Fvector to_dir, float bone_turn_speed)
 
 	//// установить параметры вращения по pitch
 	//clamp(pitch, -MAX_BONE_ANGLE, MAX_BONE_ANGLE);
-	//pitch /= 2; 
+	//pitch /= 2;
 
 	//Bones.SetMotion(bone_spine, AXIS_Y, pitch, bone_turn_speed, 100);
-	//Bones.SetMotion(bone_head,	AXIS_Y, pitch, bone_turn_speed, 100);	
+	//Bones.SetMotion(bone_head,	AXIS_Y, pitch, bone_turn_speed, 100);
 }
 
 void CAI_Bloodsucker::ActivateVampireEffector()
@@ -506,9 +506,9 @@ CAI_Bloodsucker::visibility_t CAI_Bloodsucker::get_visibility_state() const
 }
 
 //--DSR-- HeatVision_start
-float CAI_Bloodsucker::GetTransparency() 
+float CAI_Bloodsucker::GetTransparency()
 {
-	if (m_visibility_state == no_visibility) 
+	if (m_visibility_state == no_visibility)
 	{
 		return 1.0f;
 	}
@@ -658,8 +658,8 @@ void CAI_Bloodsucker::post_fsm_update()
 	//EMonsterState state = StateMan->get_state_type();
 	//
 	// установить агрессивность
-	//bool aggressive =	(is_state(state, eStateAttack)) || 
-	//					(is_state(state, eStatePanic))	|| 
+	//bool aggressive =	(is_state(state, eStateAttack)) ||
+	//					(is_state(state, eStatePanic))	||
 	//					(is_state(state, eStateHitted));
 }
 
@@ -882,10 +882,10 @@ extern int ps_r2_heatvision;
 void CAI_Bloodsucker::renderable_Render()
 {
 	//--DSR-- HeatVision_start
-	
+
 	//if (m_visibility_state != no_visibility)
 	//{
-	//	inherited::renderable_Render();  
+	//	inherited::renderable_Render();
 	//}
 
 	if (m_visibility_state != no_visibility || ps_r2_heatvision > 0)

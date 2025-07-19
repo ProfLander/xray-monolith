@@ -23,7 +23,7 @@ dx10StateCache<IDeviceState, StateDecs>
 
 /*
 template <class IDeviceState, class StateDecs>
-void 
+void
 dx10StateCache<IDeviceState, StateDecs>
 ::FlushStates()
 {
@@ -85,7 +85,7 @@ dx10StateCache<ID3DBlendState, D3D_BLEND_DESC>
 
 /*
 template <>
-void 
+void
 dx10StateCache<ID3DxxRasterizerState, D3D_RASTERIZER_DESC>
 ::ResetDescription( D3D_RASTERIZER_DESC &desc )
 {
@@ -103,7 +103,7 @@ dx10StateCache<ID3DxxRasterizerState, D3D_RASTERIZER_DESC>
 }
 
 template <>
-void 
+void
 dx10StateCache<ID3DxxDepthStencilState, D3D_DEPTH_STENCIL_DESC>
 ::ResetDescription( D3D_DEPTH_STENCIL_DESC &desc )
 {
@@ -127,7 +127,7 @@ dx10StateCache<ID3DxxDepthStencilState, D3D_DEPTH_STENCIL_DESC>
 }
 
 template <>
-void 
+void
 dx10StateCache< ID3DxxBlendState , D3D_BLEND_DESC >
 ::ResetDescription( D3D_BLEND_DESC &desc )
 {

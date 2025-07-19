@@ -3,7 +3,7 @@
 //	Created 	: 27.03.2007
 //  Modified 	: 14.05.2007
 //	Author		: Dmitriy Iassenev
-//	Description : moving objects with static objects, i.e stable dynamic objects  
+//	Description : moving objects with static objects, i.e stable dynamic objects
 ////////////////////////////////////////////////////////////////////////////
 
 #include "stdafx.h"

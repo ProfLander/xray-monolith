@@ -139,7 +139,7 @@ void CSpaceRestrictionShape::build_border()
 void CSpaceRestrictionShape::test_correctness	()
 {
 	m_correct					= true;
-	
+
 	if (m_test_storage.empty()) return;
 
 	// leave only unique nodes in m_test_storage
@@ -151,8 +151,8 @@ void CSpaceRestrictionShape::test_correctness	()
 		),
 		m_test_storage.end()
 	);
-	
-	
+
+
 	// flood
 	ai().level_graph().set_mask		(border());
 
@@ -160,10 +160,10 @@ void CSpaceRestrictionShape::test_correctness	()
 	ai().graph_engine().search		(ai().level_graph(), m_test_storage.back(), m_test_storage.back(), &nodes, GraphEngineSpace::CFlooder());
 
 	ai().level_graph().clear_mask	(border());
-	
+
 	// compare
 	m_correct						= (m_test_storage.size() == nodes.size());
-	
+
 
 
 	//////////////////////////////////////////////////////////////////////////
@@ -176,7 +176,7 @@ void CSpaceRestrictionShape::test_correctness	()
 //	Msg("NOT Correct restrictor: [%s], flood less = [%u] Dump unique nodes: ", *m_restrictor->cName(), flood_less);
 
 //	xr_vector<u32>::iterator src_b, src_e, tgt_b, tgt_e;
-//	
+//
 //	u32 index = 1;
 //	if (m_test_storage.size() > nodes.size()) {
 //		src_b = m_test_storage.begin();
@@ -189,7 +189,7 @@ void CSpaceRestrictionShape::test_correctness	()
 //		tgt_b = m_test_storage.begin();
 //		tgt_e = m_test_storage.end();
 //	}
-//	
+//
 //	xr_vector<u32>::iterator I = src_b;
 //	xr_vector<u32>::iterator E = src_e;
 
@@ -197,7 +197,7 @@ void CSpaceRestrictionShape::test_correctness	()
 //		xr_vector<u32>::iterator II = tgt_b;
 //		xr_vector<u32>::iterator EE = tgt_e;
 
-//		bool b_found = false;				
+//		bool b_found = false;
 //		for (; II != EE; ++II) {
 //			if ((*I) == (*II)) {
 //				b_found = true;

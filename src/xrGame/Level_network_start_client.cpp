@@ -41,7 +41,7 @@ bool CLevel::net_start_client1()
 		string256					temp;
 		xr_sprintf						(temp,"%s %s",
 									CStringTable().translate("st_client_connecting_to").c_str(), name_of_server);
-	
+
 		g_pGamePersistent->LoadTitle				(temp);
 	*/
 	g_pGamePersistent->LoadTitle();
@@ -179,18 +179,18 @@ bool CLevel::net_start_client4()
 		/*
 				if(psNET_direct_connect)
 				{
-					ClientReceive(); 
+					ClientReceive();
 					if(Server)
 							Server->Update()	;
 					Sleep(5);
 				}else
-		
-					while(!game_configured)			
-					{ 
-						ClientReceive(); 
+
+					while(!game_configured)
+					{
+						ClientReceive();
 						if(Server)
 							Server->Update()	;
-						Sleep(5); 
+						Sleep(5);
 					}
 		*/
 	}

@@ -267,7 +267,7 @@ class cl_eye_P : public R_constant_setup
 static cl_eye_P binder_eye_P;
 
 // interpolated eye position (crookr scope parallax)
-// We can improve this by clamping the magnitude of the travel here instead of in-shader. 
+// We can improve this by clamping the magnitude of the travel here instead of in-shader.
 // it would fix the issue with the fog "sticking" when moving too far off center
 extern float scope_fog_interp;
 extern float scope_fog_travel;
@@ -1164,7 +1164,7 @@ static class ssfx_jitter : public R_constant_setup
 #if defined(USE_DX11)
 		if (ps_ssfx_taa.x > 0 && RImplementation.o.ssfx_taa)
 		{
-			static Fvector2 TAA_Offset[4] = 
+			static Fvector2 TAA_Offset[4] =
 			{
 				{  0.0f, -1.0f },
 				{ -1.0f,  0.0f },
@@ -1429,7 +1429,7 @@ void CBlender_Compile::SetMapping()
 	r_Constant("m_hud_fov_params", &binder_hud_fov_params);
 	r_Constant("m_script_params", &binder_script_params); //--#SM+#--
 	r_Constant("m_blender_mode", &binder_blend_mode);	//--#SM+#--
-	
+
 	// Rain
 	r_Constant("rain_params", &binder_rain_params);
 	//Actor data
@@ -1438,7 +1438,7 @@ void CBlender_Compile::SetMapping()
 	r_Constant("pp_img_corrections", &pp_image_corrections);
 	//Image corrections
 	r_Constant("pp_img_cg", &pp_color_grading);
-	
+
 	// detail
 	//if (bDetail	&& detail_scaler)
 	//	Igor: bDetail can be overridden by no_detail_texture option.
@@ -1450,7 +1450,7 @@ void CBlender_Compile::SetMapping()
 	// PDA
 	r_Constant("pda_params", &binder_pda_params);
 
-	// Screen Space Shaders	
+	// Screen Space Shaders
 	r_Constant("ssfx_floravariation", &ssfx_floravariation);
 	r_Constant("ssfx_fog", &ssfx_fog);
 	r_Constant("ssfx_timedelta", &ssfx_fTimeDelta);
@@ -1504,7 +1504,7 @@ void CBlender_Compile::SetMapping()
 	r_Constant("shader_param_6", &dev_param_6);
 	r_Constant("shader_param_7", &dev_param_7);
 	r_Constant("shader_param_8", &dev_param_8);
-	
+
 	// Mark Switch
 	r_Constant("markswitch_current", &markswitch_current);
 	r_Constant("markswitch_count", &markswitch_count);

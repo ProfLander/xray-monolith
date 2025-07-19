@@ -56,7 +56,7 @@ void CStateBurerAttack<Object>::execute()
 {
 	CEntityAlive* enemy = const_cast<CEntityAlive*>(object->EnemyMan.get_enemy());
 
-	// Notify squad	
+	// Notify squad
 	CMonsterSquad* squad = monster_squad().get_squad(object);
 	if (squad)
 	{

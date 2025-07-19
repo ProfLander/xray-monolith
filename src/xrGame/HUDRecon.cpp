@@ -1,5 +1,5 @@
 // HUDRecon.cpp: Distance and identification readout
-// 
+//
 //////////////////////////////////////////////////////////////////////
 #include "stdafx.h"
 #include "HUDRecon.h"

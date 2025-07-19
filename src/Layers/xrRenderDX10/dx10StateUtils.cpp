@@ -199,7 +199,7 @@ namespace dx10StateUtils
 			ZeroMemory(&desc, sizeof(desc));
 		else
 			memset(&desc, 0, sizeof(desc));
-		
+
 		desc.DepthEnable = TRUE;
 		desc.DepthWriteMask = D3D_DEPTH_WRITE_MASK_ALL;
 		desc.DepthFunc = D3D_COMPARISON_LESS;

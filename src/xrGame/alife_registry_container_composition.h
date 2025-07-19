@@ -45,16 +45,16 @@ add_to_registry_type_list(CRelationRegistry)
 ////для актеров, список персонажей с которыми были разговоры
 //typedef CALifeAbstractRegistry<u16, TALK_CONTACT_VECTOR > CKnownContactsRegistry;
 //add_to_registry_type_list(CKnownContactsRegistry)
-//#define known_contacts define_constant(CKnownContactsRegistry) 
+//#define known_contacts define_constant(CKnownContactsRegistry)
 //#define registry_type_list save_registry_type_list(CKnownContactsRegistry)
 //
 ////список статей энциклопедии, которые знает актер
 //typedef CALifeAbstractRegistry<u16, ARTICLE_VECTOR > CEncyclopediaRegistry;
 //add_to_registry_type_list(CEncyclopediaRegistry)
-//#define encyclopedia_articles define_constant(CEncyclopediaRegistry) 
+//#define encyclopedia_articles define_constant(CEncyclopediaRegistry)
 //#define registry_type_list save_registry_type_list(CEncyclopediaRegistry)
 
-//список новостей полученных актером, состоит из новостей симуляции и сюжетных (скриптованых) новостей 
+//список новостей полученных актером, состоит из новостей симуляции и сюжетных (скриптованых) новостей
 typedef CALifeAbstractRegistry<u16, GAME_NEWS_VECTOR> CGameNewsRegistry;
 add_to_registry_type_list(CGameNewsRegistry)
 #define game_news define_constant(CGameNewsRegistry)

@@ -31,7 +31,7 @@ extern	CObject			*trace_object							;
 //extern CONTACT_VECTOR Contacts0;
 //extern CONTACT_VECTOR Contacts1;
 #endif
-///ph_dbg_draw_mask 
+///ph_dbg_draw_mask
 
 //DEFINE_VECTOR( SPHObjDBGDraw, PHOBJ_DBG_V, PHOBJ_DBG_I );
 //extern PHOBJ_DBG_V	dbg_draw_objects0;
@@ -49,7 +49,7 @@ extern PHABS_DBG_V	dbg_draw_abstruct0;
 extern PHABS_DBG_V	dbg_draw_abstruct1;
 void DBG_DrawStatBeforeFrameStep( );
 void DBG_DrawStatAfterFrameStep( );
-void DBG_RenderUpdate( ); 
+void DBG_RenderUpdate( );
 void DBG_OpenCashedDraw( );
 void DBG_ClosedCashedDraw( u32 remove_time );
 void DBG_DrawPHAbstruct( SPHDBGDrawAbsract* a );
@@ -102,10 +102,10 @@ public:
 	bool	IsActive					( )																																								;
 	void	AddMarker					( CStatGraph::EStyle Style, float pos, u32 Color )																												;
 	void	UpdateMarker				( u32 ID, float M1 )																																				;
-IC	float	ScaleX						( float x )																												{ VERIFY( IsActive( ) ); return( x-x_min )/s; }	
+IC	float	ScaleX						( float x )																												{ VERIFY( IsActive( ) ); return( x-x_min )/s; }
 	void	ScaleMarkerPos				( u32 ID, float &p )																																				;
 	void	ScaleMarkerPos				( CStatGraph::EStyle Style, float &p )																															;
-IC	float	ResolutionX					( ){ VERIFY( IsActive( ) ); return s; } 
+IC	float	ResolutionX					( ){ VERIFY( IsActive( ) ); return s; }
 };
 #endif
 #endif

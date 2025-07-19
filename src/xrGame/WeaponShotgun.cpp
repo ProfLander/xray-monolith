@@ -105,7 +105,7 @@ void CWeaponShotgun::OnAnimationEnd(u32 state)
 		}
 		break;
 	case eSubstateReloadInProcessEmptyEnd:
-		{	
+		{
 			m_sub_state = eSubstateReloadBegin;
 			SwitchState(eReload);
 		}

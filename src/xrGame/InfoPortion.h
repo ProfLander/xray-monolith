@@ -18,13 +18,13 @@ struct SInfoPortionData : CSharedResource
 	//из этого InfoPortion
 	DIALOG_ID_VECTOR	m_DialogNames;
 
-	//список статей в энциклопедии, которые становятся известными 
+	//список статей в энциклопедии, которые становятся известными
 	ARTICLE_ID_VECTOR	m_Articles;
 	//список статей в энциклопедии, которые становятся неизвестными (на тот случай если
 	//нужно заменить одну статью другой)
 	ARTICLE_ID_VECTOR	m_ArticlesDisable;
-    	
-	//скриптовые действия, которые активируется после того как 
+
+	//скриптовые действия, которые активируется после того как
 	//информацию получает персонаж
 	CDialogScriptHelper		m_InfoScriptHelper;
 
@@ -58,7 +58,7 @@ public:
 	const ARTICLE_ID_VECTOR&						ArticlesDisable	()	const {return info_data()->m_ArticlesDisable;}
 	const DIALOG_ID_VECTOR&							DialogNames	()	const {return info_data()->m_DialogNames;}
 	const SInfoPortionData::INFO_ID_VECTOR&			DisableInfos()	const {return info_data()->m_DisableInfo;}
-	
+
 			void									RunScriptActions		(const CGameObject* pOwner)	{info_data()->m_InfoScriptHelper.Action(pOwner, NULL, NULL);}
 
 	//текстовое представление информации

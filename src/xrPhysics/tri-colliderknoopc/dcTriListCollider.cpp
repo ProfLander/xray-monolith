@@ -103,7 +103,7 @@ int dcTriListCollider::CollideSphere(dxGeom* Sphere, int Flags, dContactGeom* Co
 	Fvector AABB;
 
 
-	// Make AABB 
+	// Make AABB
 	AABB.x = SphereRadius;
 	AABB.y = SphereRadius;
 	AABB.z = SphereRadius;

@@ -314,11 +314,11 @@ bool ActivateBoxDynamic(IPHMovementControl* mov_control, bool character_exist, D
 
 	//saved_callback=ObjectContactCallback();
 
-	/*	ObjectContactCallbackFun* CPHMovementControl::ObjectContactCallback()			
+	/*	ObjectContactCallbackFun* CPHMovementControl::ObjectContactCallback()
 	{
 		if(m_character)
 			return m_character->ObjectContactCallBack();
-		else return NULL; 
+		else return NULL;
 	}*/
 
 	saved_callback = mov_control->character()->ObjectContactCallBack();
@@ -393,7 +393,7 @@ bool ActivateBoxDynamic(IPHMovementControl* mov_control, bool character_exist, D
 		mov_control->actor_calculate(Fvector().set(0, 0, 0), Fvector().set(1, 0, 0), 0, 0, 0, 0);
 
 		//EnableCharacter();
-		//void		CPHMovementControl::EnableCharacter			()																	
+		//void		CPHMovementControl::EnableCharacter			()
 		//{
 		//	if( m_character && m_character->b_exist )
 		//		m_character->Enable();

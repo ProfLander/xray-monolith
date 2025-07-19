@@ -370,7 +370,7 @@ IC const CGameLevelCrossTable& CGameGraph::cross_table() const
 IC void CGameGraph::save								(IWriter &stream)
 {
 	m_header.save				(&stream);
-	
+
 	u8							*buffer = (u8*)m_nodes;
 	stream.w					(buffer,header().vertex_count()*sizeof(CVertex));
 	buffer						+= header().vertex_count()*sizeof(CVertex);

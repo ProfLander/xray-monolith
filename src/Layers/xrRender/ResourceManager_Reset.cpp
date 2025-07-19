@@ -51,7 +51,7 @@ void CResourceManager::reset_end()
 			if (_G->vb == RCache.Vertex.old_pVB)
 				_G->vb = RCache.Vertex.Buffer();
 
-			// Here we may recover the buffer using one of 
+			// Here we may recover the buffer using one of
 			// RCache's index buffers.
 			// Do not remove else.
 			if (_G->ib == RCache.Index.old_pIB)

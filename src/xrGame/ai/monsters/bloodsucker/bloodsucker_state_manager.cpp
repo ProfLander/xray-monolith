@@ -132,10 +132,10 @@ void CStateManagerBloodsucker::execute()
 	// 	if ( (prev_substate != eStateHearInterestingSound) && (state_id == eStateHearInterestingSound) )
 	// 	{
 	// 		object->start_invisible_predator();
-	// 	} 
+	// 	}
 	// 	else
 	// 	// check if stop interesting sound state
-	// 	if ( (prev_substate == eStateHearInterestingSound) && (state_id != eStateHearInterestingSound) ) 
+	// 	if ( (prev_substate == eStateHearInterestingSound) && (state_id != eStateHearInterestingSound) )
 	// 	{
 	// 		object->stop_invisible_predator();
 	// 	}

@@ -114,7 +114,7 @@ void CCat::CheckSpecParams(u32 spec_params)
 		//EMotionAnim anim = eAnimJumpLeft;
 		//if (from_right(yaw,movement().m_body.current.yaw)) {
 		//	anim = eAnimJumpRight;
-		//	yaw = angle_normalize(yaw + PI / 20);	
+		//	yaw = angle_normalize(yaw + PI / 20);
 		//} else yaw = angle_normalize(yaw - PI / 20);
 
 		//anim().Seq_Add(anim);
@@ -124,10 +124,10 @@ void CCat::CheckSpecParams(u32 spec_params)
 		//movement().m_body.target.yaw = yaw;
 
 		//// calculate angular speed
-		//float new_angular_velocity; 
+		//float new_angular_velocity;
 		//float delta_yaw = angle_difference(yaw,movement().m_body.current.yaw);
 		//float time = anim().GetCurAnimTime();
-		//new_angular_velocity = delta_yaw / time; 
+		//new_angular_velocity = delta_yaw / time;
 
 		//anim().ForceAngularSpeed(new_angular_velocity);
 

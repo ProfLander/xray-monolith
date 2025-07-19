@@ -60,7 +60,7 @@ void CStalkerAnimationManager::add_script_animation(LPCSTR animation, bool hand_
 	}
 
 	//	Msg("add_script_animation %f,%f,%f %f,%f,%f local=%s [%s]",
-	//		position.x,position.y,position.z, 
+	//		position.x,position.y,position.z,
 	//		rotation.x,rotation.y,rotation.z,
 	//		local_animation ? "true" : "false",
 	//		m_object->animation_movement() ? "true" : "false"

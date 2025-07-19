@@ -574,7 +574,7 @@ void CVisualMemoryManager::check_visibles	() const
 	for ( ; I != E; ++I) {
 		if (!(*I).visible(mask))
 			continue;
-		
+
 		xr_vector<Feel::Vision::feel_visible_Item>::iterator	i = m_object->feel_visible.begin();
 		xr_vector<Feel::Vision::feel_visible_Item>::iterator	e = m_object->feel_visible.end();
 		for (; i!=e; ++i)

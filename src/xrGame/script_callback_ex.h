@@ -44,13 +44,13 @@ private:
 public:
     CScriptCallbackEx() {}
     virtual ~CScriptCallbackEx() {}
-    
+
     CScriptCallbackEx(const CScriptCallbackEx& callback)
     {
         clear();
         *this = callback;
     }
-    
+
     CScriptCallbackEx& operator=(const CScriptCallbackEx& callback)
     {
         clear();

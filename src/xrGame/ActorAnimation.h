@@ -21,7 +21,7 @@
 #define _AFwdRStr		(mcAccel|mcFwd|mcRStrafe)
 #define _ABackLStr		(mcAccel|mcBack|mcLStrafe)
 #define _ABackRStr		(mcAccel|mcBack|mcRStrafe)
-// 
+//
 #define _Crch			(mcCrouch)
 #define _ACrch			(mcCrouch|mcAccel)
 #define _CrchFwd		(mcCrouch|mcFwd)

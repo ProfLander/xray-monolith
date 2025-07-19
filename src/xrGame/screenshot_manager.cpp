@@ -85,7 +85,7 @@ void screenshot_manager::realloc_jpeg_buffer(u32 new_size)
 
 #define RESULT_PIXEL_SIZE 3
 #define STRING_SIZE (RESULT_PIXEL_SIZE * RESULT_WIDTH)
-//method get the pixel 
+//method get the pixel
 void screenshot_manager::prepare_image()
 {
 #pragma pack(push, 1)

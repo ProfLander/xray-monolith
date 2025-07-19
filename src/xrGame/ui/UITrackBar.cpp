@@ -192,7 +192,7 @@ void CUITrackBar::SetFValue(float f)
 		m_f_val = f;
 	else
 		m_f_val = iFloor(f);
-	
+
 	UpdatePos();
 }
 
@@ -283,7 +283,7 @@ void CUITrackBar::UpdatePosRelativeToMouse()
 void CUITrackBar::UpdatePos()
 {
 #ifdef DEBUG
-	
+
 	if(m_b_is_float)
 		R_ASSERT2(m_f_val >= m_f_min && m_f_val <= m_f_max, "CUITrackBar::UpdatePos() - m_val >= m_min && m_val <= m_max" );
 	else

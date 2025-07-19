@@ -113,7 +113,7 @@ void CObject::cNameVisual_set(shared_str N)
 			if (new_k)
 				new_k->renderableParent = nullptr;
 		}
-		
+
 		::Render->model_Delete(renderable.visual);
 		NameVisual = 0;
 	}

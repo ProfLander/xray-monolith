@@ -282,13 +282,13 @@ void CControl_Manager::capture(CControl_Com* com, ControlCom::EControlType type)
 		if (capturer) capturer->cing()->on_stop_control(type);
 	}
 
-	// 3. 
+	// 3.
 	target->ced()->set_capturer(com);
 
 	// 4.
 	target->ced()->on_capture();
 
-	// 5. 
+	// 5.
 	com->cing()->on_start_control(type);
 }
 
@@ -476,7 +476,7 @@ void CControl_Manager::add_debug_info(debug::text_tree& root_s)
 		if ( !it->second->is_inited() ) continue;
 
 		debug::text_tree& con_s = root_s.add_line(make_xrstr(it->first), it->second->is_active());
-		
+
 		if ( it->second->ced() )
 		{
 			con_s.add_line("Capturer", it->second->ced()->capturer() ?

@@ -123,7 +123,7 @@ void CRenderTarget::draw_rain(light& RainSetup)
 		//float			fBias				= (SE_SUN_NEAR==sub_phase)?ps_r2_sun_depth_near_bias:ps_r2_sun_depth_far_bias;
 		//	TODO: DX10: Remove this when fix inverse culling for far region
 		float			fBias				= 0;
-		Fmatrix			m_TexelAdjust		= 
+		Fmatrix			m_TexelAdjust		=
 		{
 			0.5f,				0.0f,				0.0f,			0.0f,
 			0.0f,				-0.5f,				0.0f,			0.0f,
@@ -226,7 +226,7 @@ void CRenderTarget::draw_rain(light& RainSetup)
 		// Fetch4 : enable
 		//		if (RImplementation.o.HW_smap_FETCH4)	{
 		//. we hacked the shader to force smap on S0
-		//#			define FOURCC_GET4  MAKEFOURCC('G','E','T','4') 
+		//#			define FOURCC_GET4  MAKEFOURCC('G','E','T','4')
 		//			HW.pDevice->SetSamplerState	( 0, D3DSAMP_MIPMAPLODBIAS, FOURCC_GET4 );
 		//		}
 
@@ -237,7 +237,7 @@ void CRenderTarget::draw_rain(light& RainSetup)
 		// Fetch4 : disable
 		//		if (RImplementation.o.HW_smap_FETCH4)	{
 		//. we hacked the shader to force smap on S0
-		//#			define FOURCC_GET1  MAKEFOURCC('G','E','T','1') 
+		//#			define FOURCC_GET1  MAKEFOURCC('G','E','T','1')
 		//			HW.pDevice->SetSamplerState	( 0, D3DSAMP_MIPMAPLODBIAS, FOURCC_GET1 );
 		//		}
 
@@ -311,9 +311,9 @@ void CRenderTarget::draw_rain(light& RainSetup)
 			//	Do this in blender!
 			//StateManager.SetColorWriteEnable( D3Dxx_COLOR_WRITE_ENABLE_RED | D3Dxx_COLOR_WRITE_ENABLE_GREEN | D3Dxx_COLOR_WRITE_ENABLE_BLUE );
 			if( ! RImplementation.o.dx10_msaa )
-				u_setrt	(rt_Position,NULL,NULL,HW.pBaseZB); 
+				u_setrt	(rt_Position,NULL,NULL,HW.pBaseZB);
 			else
-				u_setrt	(rt_Position,NULL,NULL,rt_MSAADepth->pZRT); 
+				u_setrt	(rt_Position,NULL,NULL,rt_MSAADepth->pZRT);
 
 
 

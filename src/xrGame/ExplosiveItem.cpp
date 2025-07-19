@@ -1,5 +1,5 @@
 //////////////////////////////////////////////////////////////////////
-// ExplosiveItem.cpp:	класс для вещи которая взрывается под 
+// ExplosiveItem.cpp:	класс для вещи которая взрывается под
 //						действием различных хитов (канистры,
 //						балоны с газом и т.д.)
 ////////////////////////////////////////////////////////////////////////////
@@ -40,7 +40,7 @@ void CExplosiveItem::net_Destroy()
 }
 
 //void CExplosiveItem::Hit(float P, Fvector &dir,	CObject* who, s16 element,
-//						Fvector position_in_object_space, float impulse, 
+//						Fvector position_in_object_space, float impulse,
 //						ALife::EHitType hit_type)
 void CExplosiveItem::Hit(SHit* pHDS)
 {

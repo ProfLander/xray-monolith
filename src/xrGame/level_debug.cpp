@@ -16,17 +16,17 @@
 // Lain: added text_tree
 CLevelDebug::CLevelDebug() : m_p_texttree( xr_new<debug::text_tree>() ), m_texttree_offs(0)
 {
-	
+
 }
 
 CLevelDebug::~CLevelDebug()
-{	
+{
 	xr_delete(m_p_texttree);
 
 	free_mem();
 }
 
-// Lain: added 
+// Lain: added
 void   CLevelDebug::log_debug_info ()
 {
 	debug::log_text_tree(*m_p_texttree);
@@ -34,10 +34,10 @@ void   CLevelDebug::log_debug_info ()
 
 void   CLevelDebug::debug_info_up ()
 {
-	if ( m_texttree_offs ) 
+	if ( m_texttree_offs )
 	{
 		m_texttree_offs--;
-	}	
+	}
 }
 
 void   CLevelDebug::debug_info_down ()
@@ -61,8 +61,8 @@ void   CLevelDebug::draw_debug_text ()
 		debug::text_tree* actor_view	=	m_p_texttree->find_node("ActorView");
 		if ( debug_actor_view && actor_view )
 		{
-			debug::draw_text_tree	(*actor_view, 2, x_start, y_start, 
-									 m_texttree_offs, column_size, 80, 
+			debug::draw_text_tree	(*actor_view, 2, x_start, y_start,
+									 m_texttree_offs, column_size, 80,
 									 D3DCOLOR_XRGB(0,255,0), D3DCOLOR_XRGB(255,255,0));
 		}
 		return;
@@ -70,22 +70,22 @@ void   CLevelDebug::draw_debug_text ()
 
 	if ( m_p_texttree->find_node("General") )
 	{
-		debug::draw_text_tree(*m_p_texttree->find_node("General"), 2, x_start, y_start, 
-								 m_texttree_offs, column_size, 80, 
+		debug::draw_text_tree(*m_p_texttree->find_node("General"), 2, x_start, y_start,
+								 m_texttree_offs, column_size, 80,
 								 D3DCOLOR_XRGB(0,255,0), D3DCOLOR_XRGB(255,255,0));
 	}
 
 	if ( m_p_texttree->find_node("Brain") )
 	{
-		debug::draw_text_tree(*m_p_texttree->find_node("Brain"), 2, x_start*2+column_size, y_start, 
-								 m_texttree_offs, column_size, 80, 
+		debug::draw_text_tree(*m_p_texttree->find_node("Brain"), 2, x_start*2+column_size, y_start,
+								 m_texttree_offs, column_size, 80,
 								 D3DCOLOR_XRGB(0,255,0), D3DCOLOR_XRGB(255,255,0));
 	}
 
 	if ( m_p_texttree->find_node("Controllers") )
 	{
-		debug::draw_text_tree(*m_p_texttree->find_node("Controllers"), 2, x_start*3+column_size*2, y_start, 
-								 m_texttree_offs, column_size, 80, 
+		debug::draw_text_tree(*m_p_texttree->find_node("Controllers"), 2, x_start*3+column_size*2, y_start,
+								 m_texttree_offs, column_size, 80,
 								 D3DCOLOR_XRGB(0,255,0), D3DCOLOR_XRGB(255,255,0));
 	}
 }
@@ -158,12 +158,12 @@ void CLevelDebug::free_mem()
 		}
 	}
 
-	// free text info 
+	// free text info
 	for (TEXT_INFO_MAP_IT it = m_text_info.begin(); it != m_text_info.end(); ++it){
 		xr_delete(it->second);
 	}
 
-	// free text info 
+	// free text info
 	for (LEVEL_INFO_MAP_IT it = m_level_info.begin(); it != m_level_info.end(); ++it){
 		xr_delete(it->second);
 	}
@@ -237,7 +237,7 @@ void CLevelDebug::draw_level_info()
 //////////////////////////////////////////////////////////////////////////
 
 
-void CLevelDebug::CObjectInfo::add_item	(LPCSTR text, u32 color, u32 id) 
+void CLevelDebug::CObjectInfo::add_item	(LPCSTR text, u32 color, u32 id)
 {
 	inherited::add_item(SInfoItem(text, color, id));
 }
@@ -264,7 +264,7 @@ struct DrawInfoPredicate {
 void CLevelDebug::CObjectInfo::draw_info	(float x, float &y)
 {
 	DrawInfoPredicate	pred(x,y,m_delta_height);
-	process				(pred);	
+	process				(pred);
 	y					= pred.y;
 }
 
@@ -273,7 +273,7 @@ void CLevelDebug::CObjectInfo::draw_info	(float x, float &y)
 // CTextInfo
 //////////////////////////////////////////////////////////////////////////
 
-void CLevelDebug::CTextInfo::add_item	(LPCSTR text, float x, float y, u32 color, u32 id) 
+void CLevelDebug::CTextInfo::add_item	(LPCSTR text, float x, float y, u32 color, u32 id)
 {
 	inherited::add_item(STextItem(text, x, y, color, id));
 }
@@ -290,7 +290,7 @@ struct DrawTextPredicate {
 void CLevelDebug::CTextInfo::draw_text	()
 {
 	DrawTextPredicate	pred;
-	process				(pred);	
+	process				(pred);
 }
 
 //////////////////////////////////////////////////////////////////////////
@@ -325,7 +325,7 @@ struct DrawLevelPredicate {
 			Level().debug_renderer().draw_line(Fidentity,s.position1,upV,s.color);
 
 		} else if (s.ptype == CLevelDebug::SLevelItem::eLine) {
-			Level().debug_renderer().draw_line(Fidentity,s.position1,s.position2,s.color);			
+			Level().debug_renderer().draw_line(Fidentity,s.position1,s.position2,s.color);
 		} else if (s.ptype == CLevelDebug::SLevelItem::eBox) {
 			Level().debug_renderer().draw_aabb(s.position1,s.radius,s.radius,s.radius,s.color);
 		}
@@ -335,7 +335,7 @@ struct DrawLevelPredicate {
 void CLevelDebug::CLevelInfo::draw_info()
 {
 	DrawLevelPredicate	pred;
-	process				(pred);	
+	process				(pred);
 }
 
 void CLevelDebug::on_destroy_object(CObject *obj)

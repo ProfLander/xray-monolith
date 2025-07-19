@@ -100,7 +100,7 @@ void CWeaponRG6::FireStart()
 			{
 				//			collide::rq_result& RQ = HUD().GetCurrentRayQuery();
 				Fvector Transference;
-				//Transference.add(p1, Fvector().mul(d, RQ.range));				
+				//Transference.add(p1, Fvector().mul(d, RQ.range));
 				Transference.mul(d, RQ.range);
 				Fvector res[2];
 				/*#ifdef		DEBUG

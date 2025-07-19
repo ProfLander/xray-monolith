@@ -58,7 +58,7 @@
 // 43 - CSE_ALifeObjectHangingLamp		appended glow_texture and glow_radius
 // 44 - xrSE_ALifeObjectHangingLamp		appended with property 'fixed bones'
 // 45 - xrSE_ALifeObjectHangingLamp		appended with property 'health'
-// 46 - xrSE_ALifeObjectSearchLight		appended with property 'guid_bone', 
+// 46 - xrSE_ALifeObjectSearchLight		appended with property 'guid_bone',
 //										appended with property 'rotation_bone'
 // 47 - CSE_ALifeItemWeapon				appended with ammo type index
 // 48 - CSE_ALifeObjectSearchlight		appended with property 'cone_bone'
@@ -81,10 +81,10 @@
 // 65 - CSE_ALifeObjectPhysic			startup_anim moved to CSE_AlifePHSkeletonObject
 // 66 - CSE_ALifeObjectPhysic			CSE_ALifeCar - heritage changed
 // 67 - CSE_ALifeCustomZone				new class appended, heritage changed
-// 68 - CSE_ALifeHumanStalker,				
+// 68 - CSE_ALifeHumanStalker,
 //		CSE_ALifeMonsterBase			new class appended, heritage changed
 // 69 -	object broker changed from this version
-//		CSE_ALifeObjectHangingLamp,				
+//		CSE_ALifeObjectHangingLamp,
 //		CSE_ALifeHelicopter				heritage changed
 // 70 -	CSE_Abstract					appended with m_script_version, script version support
 // 71 -	CSE_Abstract					appended with m_client_data, ability to save/load client data

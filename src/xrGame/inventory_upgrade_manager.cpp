@@ -163,15 +163,15 @@ namespace inventory
 		{
 			/*
 			LPCSTR items_section = "upgraded_inventory";
-			
+
 			VERIFY2( pSettings->section_exist( items_section ), make_string( "Section [%s] does not exist !", items_section ) );
 			VERIFY2( pSettings->line_count( items_section ),    make_string( "Section [%s] is empty !",       items_section ) );
-		
+
 			if ( g_upgrades_log == 1 )
 			{
 				Msg( "# Inventory upgrade manager is loaded." );
 			}
-		
+
 			CInifile::Sect&		inv_section = pSettings->r_section( items_section );
 			CInifile::SectIt_	ib = inv_section.Data.begin();
 			CInifile::SectIt_	ie = inv_section.Data.end();
@@ -182,7 +182,7 @@ namespace inventory
 				item_upgrades_exist( root_id );
 				add_root( root_id );
 			}
-		
+
 			if ( g_upgrades_log == 1 )
 			{
 				Msg( "# Upgrades of inventory items loaded." );
@@ -288,14 +288,14 @@ void Manager::log_hierarchy()
 	}
 
 	Msg( "- ----- ----- ----- inventory upgrades hierarchy: begin ----- ----- -----" );
-	
+
 	Roots_type::iterator ib = m_roots.begin();
 	Roots_type::iterator ie = m_roots.end();
 	for ( ; ib != ie ; ++ib )
 	{
 		((*ib).second)->log_hierarchy( "" );
 	}
-	
+
 	Msg( "- ----- ----- ----- inventory upgrades hierarchy: end   ----- ----- -----" );
 }
 

@@ -175,7 +175,7 @@ Flags32 ps_r2_ls_flags = {
 	| R2FLAG_USE_NVSTENCIL | R2FLAG_EXP_SPLIT_SCENE
 	| R2FLAG_EXP_MT_CALC | R3FLAG_DYN_WET_SURF
 	| R3FLAG_VOLUMETRIC_SMOKE
-	//| R3FLAG_MSAA 
+	//| R3FLAG_MSAA
 	//| R3FLAG_MSAA_OPT
 
 	| R2FLAG_DETAIL_BUMP
@@ -227,7 +227,7 @@ float ps_r2_ls_depth_scale = 1.00001f; // 1.00001f
 float ps_r2_ls_depth_bias = -0.001f; // -0.0001f
 float ps_r2_ls_squality = 1.0f; // 1.00f
 float ps_r2_sun_tsm_projection = 0.3f; // 0.18f
-float ps_r2_sun_tsm_bias = -0.01f; // 
+float ps_r2_sun_tsm_bias = -0.01f; //
 float ps_r2_sun_near = 20.f; // 12.0f
 
 extern float OLES_SUN_LIMIT_27_01_07; //	actually sun_far
@@ -240,7 +240,7 @@ float ps_r2_sun_depth_near_bias = 0.00001f; // -0.00005f
 float ps_r2_sun_lumscale = 1.0f; // 1.0f
 float ps_r2_sun_lumscale_hemi = 1.0f; // 1.0f
 float ps_r2_sun_lumscale_amb = 1.0f;
-float ps_r2_gmaterial = 2.2f; // 
+float ps_r2_gmaterial = 2.2f; //
 float ps_r2_zfill = 0.25f; // .1f
 
 float ps_r2_dhemi_sky_scale = 0.08f; // 1.5f
@@ -1054,7 +1054,7 @@ class CCC_Fog_Reload : public IConsole_Command
 {
 public:
 	CCC_Fog_Reload(LPCSTR N) : IConsole_Command(N) { bEmptyArgsHandled = TRUE; };
-	virtual void Execute(LPCSTR args) 
+	virtual void Execute(LPCSTR args)
 	{
 		FluidManager.UpdateProfiles();
 	}
@@ -1300,7 +1300,7 @@ void xrRender_initconsole()
 
 	CMD4(CCC_Integer, "r__heatvision", &ps_r2_heatvision, 0, 1); //--DSR-- HeatVision
 	CMD3(CCC_Mask, "r2_terrain_z_prepass", &ps_r2_ls_flags, R2FLAG_TERRAIN_PREPASS); //Terrain Z Prepass @Zagolski
-	
+
 	//////////other
 	CMD3(CCC_Mask, "r2_water_reflections", &ps_r2_anomaly_flags, R2_AN_FLAG_WATER_REFLECTIONS);
 	CMD3(CCC_Mask, "r2_mblur_enabled", &ps_r2_anomaly_flags, R2_AN_FLAG_MBLUR);
@@ -1311,7 +1311,7 @@ void xrRender_initconsole()
 	CMD4(CCC_Integer,	"r2_gi_depth",			&ps_r2_GI_depth,			1,		5		);
 	CMD4(CCC_Integer,	"r2_gi_photons",		&ps_r2_GI_photons,			8,		256		);
 	CMD4(CCC_Float,		"r2_gi_refl",			&ps_r2_GI_refl,				EPS_L,	0.99f	);
-	
+
 	//Shader param stuff
 	Fvector4 tw2_min = { -100.f, -100.f, -100.f, -100.f };
 	Fvector4 tw2_max = { 100.f, 100.f, 100.f, 100.f };
@@ -1323,7 +1323,7 @@ void xrRender_initconsole()
 	CMD4(CCC_Vector4, "shader_param_6", &ps_dev_param_6, tw2_min, tw2_max);
 	CMD4(CCC_Vector4, "shader_param_7", &ps_dev_param_7, tw2_min, tw2_max);
 	CMD4(CCC_Vector4, "shader_param_8", &ps_dev_param_8, tw2_min, tw2_max);
-	
+
 	// Mark Switch
 	CMD4(CCC_Integer, "markswitch_current", &ps_markswitch_current, 0, 32);
 	CMD4(CCC_Integer, "markswitch_count", &ps_markswitch_count, 0, 32);
@@ -1336,7 +1336,7 @@ void xrRender_initconsole()
 	CMD4(CCC_Vector4, "s3ds_param_4", &ps_s3ds_param_4, tw2_min, tw2_max);
 
 	CMD4(CCC_Float, "hud_fov_aim_factor", &hud_fov_aim_factor, 0.0f, 1.0f);
-	
+
 	// Screen Space Shaders
 	CMD4(CCC_Vector4, "ssfx_floravariation", &ps_ssfx_floravariation, Fvector4().set(0, 0, 0, 0), Fvector4().set(10, 1, 10, 1));
 	CMD4(CCC_Vector4, "ssfx_taa", &ps_ssfx_taa, Fvector4().set(0, 0, 0, 0), Fvector4().set(1, 1, 2, 1));
@@ -1376,7 +1376,7 @@ void xrRender_initconsole()
 	CMD4(CCC_Integer, "ssfx_ssr_quality", &ps_ssfx_ssr_quality, 0, 5);
 	CMD4(CCC_Vector4, "ssfx_ssr", &ps_ssfx_ssr, Fvector4().set(1, 0, 0, 0), Fvector4().set(2, 1, 1, 1));
 	CMD4(CCC_Vector4, "ssfx_ssr_2", &ps_ssfx_ssr_2, Fvector4().set(0, 0, 0, 0), Fvector4().set(2, 2, 2, 2));
-	
+
 	CMD4(CCC_Vector4, "ssfx_terrain_quality", &ps_ssfx_terrain_quality, Fvector4().set(0, 0, 0, 0), Fvector4().set(40, 0, 0, 0));
 	CMD4(CCC_Vector4, "ssfx_terrain_offset", &ps_ssfx_terrain_offset, Fvector4().set(-1, -1, -1, -1), Fvector4().set(1, 1, 1, 1));
 
@@ -1415,11 +1415,11 @@ void xrRender_initconsole()
 
 	CMD4(CCC_Vector4, "ssfx_grass_shadows", &ps_ssfx_grass_shadows, Fvector4().set(0, 0, 0, 0), Fvector4().set(3, 1, 100, 100));
 	CMD4(CCC_ssfx_cascades, "ssfx_shadow_cascades", &ps_ssfx_shadow_cascades, Fvector3().set(1.0f, 1.0f, 1.0f), Fvector3().set(300, 300, 300));
-	
+
 	CMD4(CCC_Vector4, "ssfx_grass_interactive", &ps_ssfx_grass_interactive, Fvector4().set(0, 0, 0, 0), Fvector4().set(1, 15, 5000, 1));
 	CMD4(CCC_Vector4, "ssfx_int_grass_params_1", &ps_ssfx_int_grass_params_1, Fvector4().set(0, 0, 0, 0), Fvector4().set(5, 5, 5, 60));
 	CMD4(CCC_Vector4, "ssfx_int_grass_params_2", &ps_ssfx_int_grass_params_2, Fvector4().set(0, 0, 0, 0), Fvector4().set(5, 20, 1, 5));
-	
+
 	CMD4(CCC_Vector4, "ssfx_wpn_dof_1", &ps_ssfx_wpn_dof_1, tw2_min, tw2_max);
 	CMD4(CCC_Float, "ssfx_wpn_dof_2", &ps_ssfx_wpn_dof_2, 0, 1);
 
@@ -1468,7 +1468,7 @@ void xrRender_initconsole()
 #endif // DEBUG
 
 	CMD3(CCC_Mask,		"r2_shadow_cascede_old", &ps_r2_ls_flags_ext,		R2FLAGEXT_SUN_OLD);
-	
+
 	CMD4(CCC_Float, "r2_ls_depth_scale", &ps_r2_ls_depth_scale, 0.5, 1.5);
 	CMD4(CCC_Float, "r2_ls_depth_bias", &ps_r2_ls_depth_bias, -0.5, +0.5);
 

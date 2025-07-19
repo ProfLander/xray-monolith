@@ -5,7 +5,7 @@ class CEnergyHolder
 	// энергия
 	float m_value; // текущее значение энергии
 	float m_restore_vel; // скорость восстановления (ltx-param)
-	float m_decline_vel; // скорость уменьшения энергии в активном состоянии (ltx-param)	
+	float m_decline_vel; // скорость уменьшения энергии в активном состоянии (ltx-param)
 	float m_critical_value; // критическое значение энергии, меньше которого активность будет отключена (ltx-param)
 	float m_activate_value; // значение энергии, больше которого активность может быть восстановлена (ltx-param)
 	u32 m_time_last_update; // время последнего обновления энергии

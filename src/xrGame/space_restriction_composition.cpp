@@ -171,7 +171,7 @@ void CSpaceRestrictionComposition::test_correctness()
 	{
 		std::sort					(m_test_storage.begin(),m_test_storage.end());
 		m_test_storage.erase		(
-			std::unique(	
+			std::unique(
 				m_test_storage.begin(),
 				m_test_storage.end()
 			),
@@ -194,12 +194,12 @@ void CSpaceRestrictionComposition::test_correctness()
 			ai().level_graph().set_mask		(border());
 			ai().graph_engine().search		(ai().level_graph(), (*I)->object().m_test_storage.back(), (*I)->object().m_test_storage.back(), &nodes, GraphEngineSpace::CFlooder());
 			ai().level_graph().clear_mask	(border());
-			
-			if (nodes.size() == 65535)		
+
+			if (nodes.size() == 65535)
 				m_correct = true;
 			else
 				m_correct						= (m_test_storage.size() <= nodes.size());
-			
+
 			if (!m_correct)
 				break;
 		}

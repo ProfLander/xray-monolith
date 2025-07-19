@@ -20,14 +20,14 @@ CStateManagerPsyDog::CStateManagerPsyDog(CAI_PseudoDog* monster) : inherited(mon
 void CStateManagerPsyDog::execute()
 {
 	// 	const CEntityAlive* enemy	= object->EnemyMan.get_enemy();
-	// 
+	//
 	// 	if (enemy && smart_cast<const CActor*>(enemy) && smart_cast<CPsyDog*>(object)->must_hide()) {
-	// 		
-	// 		select_state(eStateAttack_Psy); 
-	// 	
+	//
+	// 		select_state(eStateAttack_Psy);
+	//
 	// 		// выполнить текущее состояние
 	// 		get_state_current()->execute();
-	// 
+	//
 	// 		prev_substate = current_substate;
 	// 	} else {
 	inherited::execute();

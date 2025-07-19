@@ -36,7 +36,7 @@ namespace PAPI
 		        float a6 = 0.0f, float a7 = 0.0f, float a8 = 0.0f);
 	};
 #pragma pack (pop)
-	// misc    
+	// misc
 	float NRand(float sigma = 1.0f);
 };
 

@@ -204,7 +204,7 @@ void CFlashlight::ResetLanim()
 		if (lanim->cName != def_lanim)
 			lanim = LALib.FindItem(def_lanim);
 	}
-	
+
 	if (can_use_dynamic_lights())
 	{
 		light_render->set_color(def_color);

@@ -69,7 +69,7 @@ void moving_bones_snd_player::update(float time_delta, CGameObject& object)
 	VERIFY(min_factor > 0.f);
 	VERIFY(max_factor > 0.f);
 
-	//	clamp( factor, min_factor, max_factor ); 
+	//	clamp( factor, min_factor, max_factor );
 	float frequency_factor = 1.f;
 	if (factor > max_factor)
 		frequency_factor = max_factor;

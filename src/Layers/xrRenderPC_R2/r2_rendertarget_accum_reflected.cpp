@@ -73,6 +73,6 @@ void CRenderTarget::accum_reflected(light* L)
 		draw_volume(L);
 	}
 
-	// 
+	//
 	u_DBT_disable();
 }

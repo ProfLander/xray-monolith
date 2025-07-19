@@ -93,8 +93,8 @@ void CControllerAnimation::update_frame()
 	//
 	//if (is_moving()) set_path_direction();
 	//
-	//select_legs_animation	();	
-	//select_torso_animation	();	
+	//select_legs_animation	();
+	//select_torso_animation	();
 	//
 	//select_velocity			();
 }
@@ -149,7 +149,7 @@ void CControllerAnimation::load()
 
 	// 1. link animation with action
 	// 2. link animation with velocities and path velocities
-	// 3. 
+	// 3.
 }
 
 void CControllerAnimation::add_path_rotation(ELegsActionType action, float angle, ELegsActionType type)
@@ -327,7 +327,7 @@ bool CControllerAnimation::is_moving()
 }
 
 // if we gonna build path in direction opposite which we look
-// then set negative speed 
+// then set negative speed
 void CControllerAnimation::set_path_params()
 {
 	bool moving_action = ((m_current_legs_action & eLegsTypeStealMotion) == eLegsTypeStealMotion) ||

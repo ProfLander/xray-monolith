@@ -130,7 +130,7 @@ void CControlAnimation::play_part(SAnimationPart& part, PlayCallback callback)
 
 
 	///////////////////////////////////////////////////////////////////////////////
-	//#ifdef _DEBUG	
+	//#ifdef _DEBUG
 	//	Msg("Monster[%s] Time[%u] Anim[%s]",*(m_object->cName()), Device.dwTimeGlobal,*(m_object->anim().GetAnimTranslation(part.motion)));
 	//#endif
 	///////////////////////////////////////////////////////////////////////////////
@@ -238,7 +238,7 @@ void CControlAnimation::restart(SAnimationPart& part, PlayCallback callback)
 	u16 bone_or_part = m_skeleton_animated->LL_GetMotionDef(part.get_motion())->bone_or_part;
 	if (bone_or_part == u16(-1)) bone_or_part = m_skeleton_animated->LL_PartID("default");
 
-	//save 
+	//save
 	float time_saved = part.blend->timeCurrent;
 
 	// start

@@ -12,7 +12,7 @@ void CRenderTarget::phase_disco_polo()
 	float h = float(Device.dwHeight);
 
 	Fvector2 p0, p1;
-#if defined(USE_DX10) || defined(USE_DX11)	
+#if defined(USE_DX10) || defined(USE_DX11)
 	p0.set(0.0f, 0.0f);
 	p1.set(1.0f, 1.0f);
 #else
@@ -27,7 +27,7 @@ void CRenderTarget::phase_disco_polo()
 	u_setrt(dest_rt, nullptr, nullptr, nullptr);
 #else
 	u_setrt(rt_Generic_0, nullptr, nullptr, nullptr);
-#endif	
+#endif
 
 	RCache.set_CullMode(CULL_NONE);
 	RCache.set_Stencil(FALSE);
@@ -44,7 +44,7 @@ void CRenderTarget::phase_disco_polo()
 	RCache.set_Element(s_disco_polo->E[0]);
 
 	//Set paramterers
-	RCache.set_c("disco_polo", disco_polo.x, disco_polo.y, disco_polo.z, disco_polo.w);	
+	RCache.set_c("disco_polo", disco_polo.x, disco_polo.y, disco_polo.z, disco_polo.w);
 
 	//Set geometry
 	RCache.set_Geometry(g_combine);

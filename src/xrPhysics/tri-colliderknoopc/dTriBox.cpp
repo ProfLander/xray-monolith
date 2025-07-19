@@ -95,7 +95,7 @@ int dcTriListCollider::dSortedTriBox(
 		// get the second and third contact points by starting from `p' and going
 		// along the two sides with the smallest projected length.
 
-		//(@slipch) it is not perfectly right for triangle collision 
+		//(@slipch) it is not perfectly right for triangle collision
 		//because it need to check if additional points are in the triangle but it seems cause no problem
 
 #define FOO(i,j,op) \
@@ -208,7 +208,7 @@ for( u8 i=0;i<3;++i){
 	dReal depth_ox=sidePr-dFabs(dist_ox);
 	if( depth_ax>depth_ox ){
 		if(depth_ax>0.f){
-			if(depth_ax*1.05f<outDepth) 
+			if(depth_ax*1.05f<outDepth)
 						{
 							dReal sgn=dist_ax<0.f ? -1.f : 1.f;
 							dReal sgn1=sgn*dDOT14(axis,R+ix1)<0.f ? -1.f : 1.f;
@@ -216,7 +216,7 @@ for( u8 i=0;i<3;++i){
 							dVector3 crpos;
 							for(int ii=0;ii<3;++ii)
 								crpos[ii]=p[ii]+R[ii*4+ix1]*hside[ix1]*sgn1+R[ii*4+ix2]*hside[ix2]*sgn2;
-						
+
 							if( dcTriListCollider::CrossProjLine14( vax, triSideAx, crpos,R+i, hside[i], pos ) )
 							{
 							outDepth=depth_ax;
@@ -472,7 +472,7 @@ depth##ox=sidePr-dFabs(dist##ox);\
 }
 
 	dVector3 crpos;
-	//#define TEST(ax,ox,c) 
+	//#define TEST(ax,ox,c)
 	//test_cross_side( dReal* outAx, dReal& outDepth, dReal *pos, dReal& outSignum, u8 &code, u8 c,  const dReal* R, const dReal* hside, const dReal* p,  const dReal* triSideAx, const dReal* vax,   const dReal* vox  )
 	//if( test_cross_side (outAx,outDepth,pos,signum,code,10,R,hside,p,triSideAx0,v0,v2) )
 	// return 0;
@@ -595,7 +595,7 @@ depth##ox=sidePr-dFabs(dist##ox);\
 			}
 		}
 		/*
-	  
+
 		if (B1 < B2) {
 		  if (B3 < B1) goto use_side_3; else {
 		    BAR(0,1,pos);	// use side 1
@@ -616,7 +616,7 @@ depth##ox=sidePr-dFabs(dist##ox);\
 		    if (B1 < B3) goto contact2_1; else goto contact2_3;
 		  }
 		}
-	  
+
 		contact2_1: BAR(0,1,pos); goto done;
 		contact2_2: BAR(1,2,pos); goto done;
 		contact2_3: BAR(2,3,pos); goto done;
@@ -697,7 +697,7 @@ depth##ox=sidePr-dFabs(dist##ox);\
 		  pos[0]=p[0];
 		  pos[1]=p[1];
 		  pos[2]=p[2];
-		
+
 		#define FOO(i,op) \
 		  pos[0] op hside[i] * R[0+i]; \
 		  pos[1] op hside[i] * R[4+i]; \
@@ -709,10 +709,10 @@ depth##ox=sidePr-dFabs(dist##ox);\
 		#undef FOO
 		#undef BAR
 		////////////////
-		
-		
+
+
 		switch((code-10)/3){
-		
+
 		case 0:
 					CrossProjLine1(v0,triSideAx0,pos,R+(code-10),pos);
 					if(pos[0]==dInfinity){
@@ -721,7 +721,7 @@ depth##ox=sidePr-dFabs(dist##ox);\
 											pos[2]=(v1[2]+v0[2])/2.f;
 										}
 		break;
-		
+
 		case 1:
 					CrossProjLine1(v1,triSideAx1,pos,R+(code-13),pos);
 					if(pos[0]==dInfinity){
@@ -730,7 +730,7 @@ depth##ox=sidePr-dFabs(dist##ox);\
 											pos[2]=(v2[2]+v1[2])/2.f;
 											}
 		break;
-		
+
 		case 2:
 					CrossProjLine1(v0,triSideAx2,pos,R+(code-16),pos);
 					if(pos[0]==dInfinity){
@@ -738,7 +738,7 @@ depth##ox=sidePr-dFabs(dist##ox);\
 											pos[1]=(v2[1]+v0[1])/2.f;
 											pos[2]=(v2[2]+v0[2])/2.f;
 										}
-		
+
 		}
 		*/
 	}

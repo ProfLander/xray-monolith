@@ -46,7 +46,7 @@ typedef struct tagSoundElement
 	float power;
 	TTime time; // время обнаружения звука
 
-	int value; // оценочное значение данного звука		
+	int value; // оценочное значение данного звука
 
 	tagSoundElement()
 	{

@@ -307,17 +307,17 @@ IPureServer::EConnect IPureServer::Connect(LPCSTR options, GameDescriptionData& 
 #ifdef DEBUG
 		const wchar_t* tmp = L"";
 #endif // DEBUG
-		//	HRESULT CoInitializeExRes = CoInitializeEx(NULL, 0);	
+		//	HRESULT CoInitializeExRes = CoInitializeEx(NULL, 0);
 		//	if (CoInitializeExRes != S_OK && CoInitializeExRes != S_FALSE)
 		//	{
 		//		DXTRACE_ERR(tmp, CoInitializeExRes);
 		//		CHK_DX(CoInitializeExRes);
-		//	};	
+		//	};
 		//---------------------------
 		// Create the IDirectPlay8Client object.
 		HRESULT CoCreateInstanceRes = CoCreateInstance(XR_GUID(CLSID_DirectPlay8Server), NULL, CLSCTX_INPROC_SERVER,
 		                                               XR_GUID(IID_IDirectPlay8Server), (LPVOID*)&NET);
-		//---------------------------	
+		//---------------------------
 		if (CoCreateInstanceRes != S_OK)
 		{
 			DXTRACE_ERR(tmp, CoCreateInstanceRes);

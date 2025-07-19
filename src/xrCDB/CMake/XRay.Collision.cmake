@@ -1,6 +1,6 @@
 add_module(XRay.Collision
   TYPE STATIC
-  
+
   SOURCES
   #cl_raypick.cpp
   Frustum.cpp

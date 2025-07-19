@@ -373,7 +373,7 @@ void CUIActorMenu::InitCallbacks()
 	AddCallback(m_trade_sell_button, BUTTON_CLICKED,
 	            CUIWndCallback::void_function(this, &CUIActorMenu::OnBtnPerformTradeSell));
 	AddCallback(m_takeall_button, BUTTON_CLICKED,
-	            CUIWndCallback::void_function(this, &CUIActorMenu::TakeAllFromPartner)); 
+	            CUIWndCallback::void_function(this, &CUIActorMenu::TakeAllFromPartner));
 	AddCallback(m_putall_button, BUTTON_CLICKED,
 				CUIWndCallback::void_function(this, &CUIActorMenu::PutAllToPartner));
 	AddCallback(m_exit_button, BUTTON_CLICKED, CUIWndCallback::void_function(this, &CUIActorMenu::OnBtnExitClicked));

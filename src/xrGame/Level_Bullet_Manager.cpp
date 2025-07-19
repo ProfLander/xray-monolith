@@ -106,7 +106,7 @@ void SBullet::Init(const Fvector& position,
 	if (!cartridge.param_s.tracer_silenced && g_allow_silencer_hide_tracer)		// momopate: Make it optional
 	{
 		CObject* g_obj = Level().Objects.net_Find(weapon_id);
-		if (g_obj) 
+		if (g_obj)
 		{
 			CWeapon* weapon = smart_cast<CWeapon*>(g_obj);
 			if (weapon && weapon->IsSilencerAttached())
@@ -913,7 +913,7 @@ bool CBulletManager::trajectory_check_error(
 		bullet.fly_dist += i->range;
 		break;
 	}
-	
+
 	return (false);
 }
 

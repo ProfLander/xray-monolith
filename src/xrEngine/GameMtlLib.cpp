@@ -243,7 +243,7 @@ void CGameMtlLibrary::Load()
 		auto materialsLtx = xr_new<CInifile>(materialPairsLtxName, TRUE);
 		for (const auto& sec : materialsLtx->sections()) {
 			SGameMtlPair* M;
-			
+
 			std::string secStr = sec->Name.c_str();
 			auto materials = splitStringMulti(secStr, "@", false, true);
 			if (materials.size() < 2) {

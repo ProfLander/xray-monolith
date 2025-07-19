@@ -67,7 +67,7 @@ void CRenderTarget::accum_reflected(light* L)
 		}
 		else // checked Holger
 		{
-			// per pixel 
+			// per pixel
 			RCache.set_Stencil(TRUE, D3DCMP_EQUAL, 0x01, 0x81, 0x00);
 			draw_volume(L);
 
@@ -139,6 +139,6 @@ void CRenderTarget::accum_reflected(light* L)
 		}
 	}
 
-	// 
+	//
 	u_DBT_disable();
 }

@@ -127,7 +127,7 @@ void CUIOutfitInfo::InitFromXml(CUIXml& xml_doc)
 	string128 buf;
 	//m_caption = xr_new<CUIStatic>();
 	//AttachChild( m_caption );
-	//m_caption->SetAutoDelete( true );	
+	//m_caption->SetAutoDelete( true );
 	//string128 buf;
 	//strconcat( sizeof(buf), buf, base_str, ":caption" );
 	//CUIXmlInit::InitStatic( xml_doc, buf, 0, m_caption );

@@ -8,7 +8,7 @@ class CFoodItem : public CEatableItemObject
 public:
 	CFoodItem();
 	virtual ~CFoodItem();
-	
+
 	DECLARE_SCRIPT_REGISTER_FUNCTION
 };
 

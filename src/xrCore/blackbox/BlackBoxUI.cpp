@@ -12,7 +12,7 @@ void BuildStackTrace	(struct _EXCEPTION_POINTERS *g_BlackBoxUIExPtrs)
 {
 	FillMemory			(g_stackTrace[0],MAX_STACK_TRACE*256, 0 );
 
-	const TCHAR* traceDump = 
+	const TCHAR* traceDump =
 		GetFirstStackTraceString( GSTSO_MODULE | GSTSO_SYMBOL | GSTSO_SRCLINE,
 									g_BlackBoxUIExPtrs );
 	g_stackTraceCount = 0;
@@ -30,7 +30,7 @@ void BuildStackTrace	(struct _EXCEPTION_POINTERS *g_BlackBoxUIExPtrs)
 			*i++		= '.';
 			*i			= 0;
 		}
-	
+
 		g_stackTraceCount++;
 
 		incr += 2;
@@ -100,7 +100,7 @@ __declspec(noinline)
 #endif // _EDITOR
 void OutputDebugStackTrace	(const char *header)
 {
-	BuildStackTrace			();		
+	BuildStackTrace			();
 
 	if (header) {
 		OutputDebugString	(header);

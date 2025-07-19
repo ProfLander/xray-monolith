@@ -22,7 +22,7 @@ void CBlender_Compile::r_Stencil(BOOL Enable, u32 Func, u32 Mask, u32 WriteMask,
 	RS.SetRS(D3DRS_STENCILPASS, Pass);
 	RS.SetRS(D3DRS_STENCILZFAIL, ZFail);
 	//	Since we never really support different options for
-	//	CW/CCW stencil use it to mimic DX9 behaviour for 
+	//	CW/CCW stencil use it to mimic DX9 behaviour for
 	//	single-sided stencil
 	RS.SetRS(D3DRS_CCW_STENCILFUNC, Func);
 	RS.SetRS(D3DRS_CCW_STENCILFAIL, Fail);
@@ -131,14 +131,14 @@ u32 CBlender_Compile::r_dx10Sampler(LPCSTR ResourceName)
 
 	//	init defaults here
 
-	//	Use D3DTADDRESS_CLAMP,	D3DTEXF_POINT,			D3DTEXF_NONE,	D3DTEXF_POINT 
+	//	Use D3DTADDRESS_CLAMP,	D3DTEXF_POINT,			D3DTEXF_NONE,	D3DTEXF_POINT
 	if (0 == xr_strcmp(ResourceName, "smp_nofilter"))
 	{
 		i_dx10Address(stage, D3DTADDRESS_CLAMP);
 		i_dx10Filter(stage, D3DTEXF_POINT, D3DTEXF_NONE, D3DTEXF_POINT);
 	}
 
-	//	Use D3DTADDRESS_CLAMP,	D3DTEXF_LINEAR,			D3DTEXF_NONE,	D3DTEXF_LINEAR 
+	//	Use D3DTADDRESS_CLAMP,	D3DTEXF_LINEAR,			D3DTEXF_NONE,	D3DTEXF_LINEAR
 	if (0 == xr_strcmp(ResourceName, "smp_rtlinear"))
 	{
 		i_dx10Address(stage, D3DTADDRESS_CLAMP);

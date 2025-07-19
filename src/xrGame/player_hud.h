@@ -87,7 +87,7 @@ struct movement_layer
 			active = true;
 			return;
 		}
-		
+
 		anm->Play(bLoop);
 		active = true;
 	}
@@ -416,7 +416,7 @@ public:
 			m_bone_callback_params[r_finger01]->m_current.set(0.f, 0.f, 0.f);
 			m_bone_callback_params[r_finger02]->m_current.set(0.f, 0.f, 0.f);
 		}
-		
+
 		m_bone_callback_params[r_finger0]->m_target.set(0.f, 0.f, 0.f);
 		m_bone_callback_params[r_finger01]->m_target.set(0.f, 0.f, 0.f);
 		m_bone_callback_params[r_finger02]->m_target.set(0.f, 0.f, 0.f);

@@ -21,7 +21,7 @@
 // STEP 0 - GLOBAL DEFINITIONS AND INCLUDES
 ///////////////////////////////////////////////////////
 
-//////// GLOBAL SETTINGS(ALL GENERATIONS)//////// 
+//////// GLOBAL SETTINGS(ALL GENERATIONS)////////
 
 // NVG POSITIONING OPTIONS: in (X, Y) format. If X is 0, it's L edge of screen, if 1, it's right edge of screen. Note that it's not linear across the screen.
 		#define nvg_gen_1_centered float2(0.5f,0.5f)		// Gen 1 monocular without offset
@@ -54,10 +54,10 @@
 		#define gen_3_dim_threshold float (0.7)					// Pixels brighter than this aren't dimmed, since they're likely light sources
 
 // LIGHT AMPLIFICATION VALUES
-	//	#define nvg_light_amplificiation float (8)			// How much brigher does the image get before NVG processing 
+	//	#define nvg_light_amplificiation float (8)			// How much brigher does the image get before NVG processing
 
 // LUMA SHARPEN VALUES
-	
+
 // NVG BLOOM OPTIONS (AKA WASHOUT EFFECT):
 		#define gen_1_bloom_threshold (0.11)						// Threshold from 0 to 1 of how bright the pixel should be for bloom (0 is black, 0.5 is middle gray, 1.0 is bright white - default about 0.9 looks good)
 		#define gen_1_bloom_multiplier float (2.5)				// How much transparency to apply to bloom effect (0.0 = full bloom, 0.5 = 50%, 1.0 = no bloom)
@@ -66,19 +66,19 @@
 		#define gen_3_bloom_threshold (0.29)						// Threshold from 0 to 1 of how bright the pixel should be for bloom (0 is black, 0.5 is middle gray, 1.0 is bright white - default about 0.9 looks good)
 		#define gen_3_bloom_multiplier float (2)				// How much transparency to apply to bloom effect (0.0 = full bloom, 0.5 = 50%, 1.0 = no bloom)
 // NVG CRT / NOISE VALUES
-		
+
 		#define gen_1_crt_effect_factor float(0.05)				// How much CRT effect to add to NVG image (0 = none, 1 = max) (CRT effect makes it look like an old school Cathode Ray Tube television)
 		#define gen_1_nvg_noise_factor float (0.15)				// How much noise to add to NVG image (0.04 is default, anything greater than 0.15 is insane)
 		#define gen_1_scintillation_constant float (0.999f) 		// The closer the number is to 1.00000, the less scintillation effect. 0.9995f is a good default value. 0.9990 is stronger.
-		
+
 		#define gen_2_crt_effect_factor float(0.2)				// How much CRT effect to add to NVG image (0 = none, 1 = max) (CRT effect makes it look like an old school Cathode Ray Tube television)
 		#define gen_2_nvg_noise_factor float (0.15)				// How much noise to add to NVG image (0.04 is default, anything greater than 0.15 is insane)
 		#define gen_2_scintillation_constant float (0.9993f) 		// The closer the number is to 1.00000, the less scintillation effect. 0.9995f is a good default value. 0.9990 is stronger.
-	
+
 		#define gen_3_crt_effect_factor float(0.4)				// How much CRT effect to add to NVG image (0 = none, 1 = max) (CRT effect makes it look like an old school Cathode Ray Tube television)
 		#define gen_3_nvg_noise_factor float (0.15)				// How much noise to add to NVG image (0.04 is default, anything greater than 0.15 is insane)
 		#define gen_3_scintillation_constant float (0.9995f) 		// The closer the number is to 1.00000, the less scintillation effect. 0.9995f is a good default value. 0.9990 is stronger.
-		
+
 // NVG COLOR OPTIONS:
 		#define gen_1_saturation_color float3 (0.4,1,0.1)	// Gen1 NVG color - it defines the max amount of color from 0 to 1 using (Red,Green,Blue)
 		#define gen_2_saturation_color float3 (0.3,1,0.3)	// Gen1 NVG color - it defines the max amount of color from 0 to 1 using (Red,Green,Blue)
@@ -90,7 +90,7 @@
 		#define gen_1_vignette_amount float (0.1f)
 		#define gen_2_vignette_amount float (0.08f)
 		#define gen_3_vignette_amount float	(0.05f)
-		
+
 ///////////////////////////////////////////////////////
 // DEFINE NVG MASK (Credit to LVutner for huge assistance in designing the functions)
 ///////////////////////////////////////////////////////
@@ -153,7 +153,7 @@ float2 aspect_ratio_correction (float2 tc)
 float2 curve_texturecoords(float2 curved_tc)
 {
 	curved_tc = (curved_tc - 0.5) * 2.0;
-	curved_tc *= 1.1;	
+	curved_tc *= 1.1;
 	curved_tc.x *= 1.0 + pow((abs(curved_tc.y) / 5.0), 2.0);
 	curved_tc.y *= 1.0 + pow((abs(curved_tc.x) / 4.0), 2.0);
 	curved_tc  = (curved_tc / 2.0) + 0.5;
@@ -186,7 +186,7 @@ float3 make_crt_ified(float3 fragColor, float2 tc )
 	col.r = fragColor.r;
 	col.g = fragColor.g;
 	col.b = fragColor.b;
-	
+
 	col.r += 0.08f * fragColor.r;
 	col.g += 0.05f * fragColor.g;
    	col.b += 0.08f * fragColor.b;
@@ -198,9 +198,9 @@ float3 make_crt_ified(float3 fragColor, float2 tc )
 
     col *= float3(0.95,1.05,0.95);
 	col *= 2.8;
-	
+
 	float scans = clamp( 0.35+0.35*sin(uv.y*screen_res.y*2.0), 0.0, 1.0);
-	
+
 	float s = pow(scans,1.7);
 	col = col*float( 0.4+0.7*s) ;
 
@@ -209,11 +209,11 @@ float3 make_crt_ified(float3 fragColor, float2 tc )
 		col *= 0.0;
 	if (uv.y < 0.0 || uv.y > 1.0)
 		col *= 0.0;
-	
+
 	col*=1.0-0.65*float(clamp(((tc.x % 2.0)-1.0)*2.0,0.0f,1.0f));
-	
+
     float comp = smoothstep( 0.1, 0.9, sin(timers.x) );
- 
+
     fragColor = col;
 	return fragColor;
 }
@@ -244,27 +244,27 @@ float extractLuma(float3 c)
 float3 luma_sharpen(float3 image, float2 uv)
 {
     float3 yuv = YUVFromRGB(image);
-    
+
     float2 imgSize = screen_res.xy;
-    
-    float accumY = 0.0; 
+
+    float accumY = 0.0;
     for(int i = -1; i <= 1; ++i) {
         for(int j = -1; j <= 1; ++j) {
             float2 offset = float2(i,j) / imgSize;
-            
+
             float s = extractLuma(s_image.SampleLevel(smp_rtlinear,uv + offset,0).rgb);
             float notCentre = min(float(i*i + j*j),1.0);
             accumY += s * (9.0 - notCentre*10.0);
         }
     }
-    
+
     accumY /= 9.0;
-    
+
     float gain = 0.9;
     accumY = (accumY + yuv.x)*gain;
-    
+
 		image = RGBFromYUV (float3(accumY,yuv.y,yuv.z)); // sharpened
-		return image;   
+		return image;
 }
 
 ///////////////////////////////////////////////////////
@@ -274,7 +274,7 @@ float calc_vignette (float night_vision_generation, float2 tc)
 {
 	float vignette;
 	float2 corrected_texturecoords = aspect_ratio_correction(tc);
-	
+
 	if (night_vision_generation == 1)
 	{
 		float gen1_vignette_right = pow(smoothstep(circle_radius,circle_radius-gen_1_vignette_amount, distance(corrected_texturecoords,nvg_gen_1_offset)),3);
@@ -305,7 +305,7 @@ float calc_vignette (float night_vision_generation, float2 tc)
 		vignette = 1.0 - ((1.0 - gen3_vignette_1) * (1.0 - gen3_vignette_2) * (1.0 - gen3_vignette_3) * (1.0 - gen3_vignette_4)); // apply vignette
 	}
 	return vignette;
-}			
+}
 
 ///////////////////////////////////////////////////////
 // DEPTH BLUR - LITERALLY BLURS THE DEPTH VALUE IN S_POSITION
@@ -313,7 +313,7 @@ float calc_vignette (float night_vision_generation, float2 tc)
 float blurred_depth (float2 tc, float fp_start, float fp_end)
 {
     float Pi = 6.28318530718; // Pi*2
-    
+
     float Directions = 12.0; // BLUR DIRECTIONS (Default 16.0 - More is better but slower)
     float Quality = 4.0; // BLUR QUALITY (Default 4.0 - More is better but slower)
 	float Size = 4;
@@ -332,7 +332,7 @@ float blurred_depth (float2 tc, float fp_start, float fp_end)
 	float weight = 0.0;
 	// where we store the total weighted
 	float total_weight = 0.0;
-	
+
 	// Blur calculations
 	for(float i=1.0; i<=Quality; i++) // how far away are we
     {
@@ -340,12 +340,12 @@ float blurred_depth (float2 tc, float fp_start, float fp_end)
 		{
 			// pull depth at our sample point
 			depth_sample = s_position.Load( int3( ((tc+float2(cos(d),sin(d))*Radius*i) * screen_res.xy), 0 ), 0 ).z;
-			
+
 			// if we hit the sky, give it a depth of 10k
 			if (depth_sample == 0) {depth_sample = 10000.0f; }
-			
+
 			// if the point we hit is closer than our (center? average), then that point should add blurring to our centerpoint
-			if (depth_sample < center_depth) 
+			if (depth_sample < center_depth)
 			{
 				weight = Quality - pow((i - 1),0.5);
 				depth_average += depth_sample * weight;

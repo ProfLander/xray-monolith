@@ -17,7 +17,7 @@ using namespace luabind;
 void CActor::script_register(lua_State *L)
 {
 	CActorCondition::script_register(L);
-	
+
 	module(L)
 	[
 		class_<CActor,CGameObject>("CActor")

@@ -27,7 +27,7 @@ CObjectSpace::CObjectSpace():
 #endif
 {
 #ifdef DEBUG
-	if( RenderFactory )	
+	if( RenderFactory )
 		m_pRender = CNEW(FactoryPtr<IObjectSpaceRender>)() ;
 
 	//sh_debug.create				("debug\\wireframe","$null");

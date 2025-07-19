@@ -3,7 +3,7 @@
 //	Created 	: 02.04.2008
 //  Modified 	: 03.04.2008
 //	Author		: Lain
-//	Description : Text tree for onscreen debugging 
+//	Description : Text tree for onscreen debugging
 ////////////////////////////////////////////////////////////////////////////
 
 #include "stdafx.h"

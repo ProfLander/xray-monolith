@@ -344,7 +344,7 @@ public:
 	{
 		m_flagsAddOnState = st;
 	} //dont use!!! for buy menu only!!!
-	
+
 protected:
 	//ñîñòîÿíèå ïîäêëþ÷åííûõ àääîíîâ
 	u8 m_flagsAddOnState;
@@ -907,92 +907,92 @@ public:
 	};
 
 	// Setters
-	virtual void Set_PDM_Base(float val) 
+	virtual void Set_PDM_Base(float val)
 	{
 		m_pdm.m_fPDM_disp_base = val;
 	};
 
-	virtual void Set_Silencer_PDM_Base(float val) 
+	virtual void Set_Silencer_PDM_Base(float val)
 	{
 		cur_silencer_koef.pdm_base = val;
 	};
 
-	virtual void Set_Scope_PDM_Base(float val) 
+	virtual void Set_Scope_PDM_Base(float val)
 	{
 		cur_scope_koef.pdm_base = val;
 	};
 
-	virtual void Set_Launcher_PDM_Base(float val) 
+	virtual void Set_Launcher_PDM_Base(float val)
 	{
 		cur_launcher_koef.pdm_base = val;
 	};
 
-	virtual void Set_PDM_BuckShot(float val) 
+	virtual void Set_PDM_BuckShot(float val)
 	{
 		m_pdm.m_fPDM_disp_buckShot = val;
 	};
 
-	virtual void Set_PDM_Vel_F(float val) 
+	virtual void Set_PDM_Vel_F(float val)
 	{
 		m_pdm.m_fPDM_disp_vel_factor = val;
 	};
 
-	virtual void Set_Silencer_PDM_Vel(float val) 
+	virtual void Set_Silencer_PDM_Vel(float val)
 	{
 		cur_silencer_koef.pdm_vel = val;
 	};
 
-	virtual void Set_Scope_PDM_Vel(float val) 
+	virtual void Set_Scope_PDM_Vel(float val)
 	{
 		cur_scope_koef.pdm_vel = val;
 	};
 
-	virtual void Set_Launcher_PDM_Vel(float val) 
+	virtual void Set_Launcher_PDM_Vel(float val)
 	{
 		cur_launcher_koef.pdm_vel = val;
 	};
 
-	virtual void Set_PDM_Accel_F(float val) 
+	virtual void Set_PDM_Accel_F(float val)
 	{
 		m_pdm.m_fPDM_disp_accel_factor = val;
 	};
 
-	virtual void Set_Silencer_PDM_Accel(float val) 
+	virtual void Set_Silencer_PDM_Accel(float val)
 	{
 		cur_silencer_koef.pdm_accel = val;
 	};
 
-	virtual void Set_Scope_PDM_Accel(float val) 
+	virtual void Set_Scope_PDM_Accel(float val)
 	{
 		cur_scope_koef.pdm_accel = val;
 	};
 
-	virtual void Set_Launcher_PDM_Accel(float val) 
+	virtual void Set_Launcher_PDM_Accel(float val)
 	{
 		cur_launcher_koef.pdm_accel = val;
 	};
 
-	virtual void Set_PDM_Crouch(float val) 
+	virtual void Set_PDM_Crouch(float val)
 	{
 		m_pdm.m_fPDM_disp_crouch = val;
 	};
 
-	virtual void Set_PDM_Crouch_NA(float val) 
+	virtual void Set_PDM_Crouch_NA(float val)
 	{
 		m_pdm.m_fPDM_disp_crouch_no_acc = val;
 	};
 
-	virtual void SetCrosshairInertion(float val) 
+	virtual void SetCrosshairInertion(float val)
 	{
 		m_crosshair_inertion = val;
 	};
 
-	virtual void Set_Silencer_CrosshairInertion(float val) 
+	virtual void Set_Silencer_CrosshairInertion(float val)
 	{
 		cur_silencer_koef.crosshair_inertion = val;
 	};
 
-	virtual void Set_Scope_CrosshairInertion(float val) 
+	virtual void Set_Scope_CrosshairInertion(float val)
 	{
 		cur_scope_koef.crosshair_inertion = val;
 	};
@@ -1073,12 +1073,12 @@ public:
 	};
 	virtual void SetHitImpulse(float val) { fHitImpulse = val; };
 	virtual void SetFireDistance(float val) { fireDistance = val; };
-	
+
 	IC u8 GetZoomType() const
 	{
 		return m_zoomtype;
 	}
-	
+
 protected:
 	u32 m_ef_main_weapon_type;
 	u32 m_ef_weapon_type;
@@ -1156,6 +1156,6 @@ public:
 	{
 		return cNameSect();
 	};
-    
+
     float SDS_Radius(bool alt = false);
 };

@@ -1,6 +1,6 @@
 add_module(XRay.Game.Physics
   TYPE STATIC
-  
+
   SOURCES
   ph_shell_interface.h
 
@@ -9,7 +9,7 @@ add_module(XRay.Game.Physics
 
   PHShellCreator.cpp
   PHShellCreator.h
-  
+
   physics_game.cpp
   physics_game.h
 

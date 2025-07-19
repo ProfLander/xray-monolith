@@ -28,7 +28,7 @@ void set_character_name_script(CSE_ALifeTraderAbstract* ta, LPCSTR str)
 {
 	ta->m_character_name_str = str;
 	ta->m_character_name = TranslateName(ta->m_character_name_str.c_str());
-	
+
 	if (g_pGameLevel)
 	{
 		CObject* obj = g_pGameLevel->Objects.net_Find(ta->object_id());

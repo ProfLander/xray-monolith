@@ -136,15 +136,15 @@ void CSnork::UpdateCL()
 	//////////////////////////////////////////////////////////////////////////
 
 #ifdef _DEBUG
-	// test 
+	// test
 	CObject *obj = Level().CurrentEntity();
 	if (!obj) return;
 	const CCoverPoint *point = CoverMan->find_cover(obj->Position(), 10.f, 30.f);
-	
+
 	DBG().level_info(this).clear();
 	if (point) {
 		DBG().level_info(this).add_item	(point->position(),COLOR_RED);
-		
+
 		Fvector pos;
 		pos.set(Position());
 		pos.y+=5.f;

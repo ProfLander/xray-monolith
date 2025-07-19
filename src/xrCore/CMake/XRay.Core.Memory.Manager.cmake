@@ -11,7 +11,7 @@ add_module(XRay.Core.Memory.Manager
   xrMemory_pso_Fill32.cpp
   xrMemory_subst_borland.cpp
   xrMemory_subst_msvc.cpp
-  
+
   xrMemory.h
   xrMemory_align.h
   xrMEMORY_POOL.h

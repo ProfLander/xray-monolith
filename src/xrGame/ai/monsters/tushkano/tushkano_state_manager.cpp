@@ -42,7 +42,7 @@ void CStateManagerTushkano::execute()
 	if (!object->is_under_control())
 	{
 		const CEntityAlive* enemy = object->EnemyMan.get_enemy();
-		//		const CEntityAlive* corpse	= 
+		//		const CEntityAlive* corpse	=
 		object->CorpseMan.get_corpse();
 
 		if (enemy)

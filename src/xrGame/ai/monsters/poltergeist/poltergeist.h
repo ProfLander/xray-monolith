@@ -106,7 +106,7 @@ public:
 
 	void UpdateHeight();
 
-	// Invisibility 
+	// Invisibility
 
 	void EnableHide() { m_disable_hide = false; }
 	void DisableHide() { m_disable_hide = true; }

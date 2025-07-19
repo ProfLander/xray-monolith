@@ -43,7 +43,7 @@ IC void mk_vertex					(CLightR_Vertex& D, Fvector& P, Fvector& N, Fvector& C, fl
 {
 	D.P.set	(P);
 	D.N.set	(P);
-	D.u0	= (P.x-C.x)/r2+.5f; 
+	D.u0	= (P.x-C.x)/r2+.5f;
 	D.v0	= (P.z-C.z)/r2+.5f;
 	D.u1	= (P.y-C.y)/r2+.5f;
 	D.v1	=.5f;
@@ -56,7 +56,7 @@ void CLightR_Manager::render_point	()
 
 	// World/View/Projection
 	float _43					 = Device.mProject._43;
-	Device.mProject._43			-= 0.001f; 
+	Device.mProject._43			-= 0.001f;
 	RCache.set_xform_world		(Fidentity);
 	RCache.set_xform_project	(Device.mProject);
 
@@ -83,7 +83,7 @@ void CLightR_Manager::render_point	()
 		{
 			// Build bbox
 			float				size_f	= PPL.range+EPS_L;
-			Fvector				size;	
+			Fvector				size;
 			size.set			(size_f,size_f,size_f);
 
 			// Query collision DB (Select polygons)

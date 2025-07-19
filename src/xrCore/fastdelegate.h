@@ -1,11 +1,11 @@
-//      FastDelegate.h 
+//      FastDelegate.h
 // Efficient delegates in C++ that generate only two lines of asm code!
 //  Documentation is found at http://www.codeproject.com/cpp/FastDelegate.asp
 //
 //      - Don Clugston, Mar 2004.
 //  Major contributions were made by Jody Hagins.
 // History:
-// 24-Apr-04 1.0  * Submitted to CodeProject. 
+// 24-Apr-04 1.0  * Submitted to CodeProject.
 // 28-Apr-04 1.1  * Prevent most unsafe uses of evil static function hack.
 //      * Improved syntax for horrible_cast (thanks Paul Bludov).
 //      * Tested on Metrowerks MWCC and Intel ICL (IA32)
@@ -13,7 +13,7 @@
 // 27-Jun-04 1.2 * Now works on Borland C++ Builder 5.5
 //      * Now works on /clr "managed C++" code on VC7, VC7.1
 //      * Comeau C++ now compiles without warnings.
-//      * Prevent the virtual inheritance case from being used on 
+//      * Prevent the virtual inheritance case from being used on
 //       VC6 and earlier, which generate incorrect code.
 //      * Improved warning and error messages. Non-standard hacks
 //      now have compile-time checks to make them safer.
@@ -37,7 +37,7 @@
 //      * Standardised all the compiler-specific workarounds.
 //                * MFP conversion now works for CodePlay (but not yet supported in the full code).
 //                * Now compiles without warnings on _any_ supported compiler, including BCC 5.5.1
-//      * New syntax: FastDelegate< int (char *, double) >. 
+//      * New syntax: FastDelegate< int (char *, double) >.
 // 14-Feb-05 1.4.1* Now treats =0 as equivalent to .clear(), ==0 as equivalent to .empty(). (Thanks elfric).
 //      * Now tested on Intel ICL for AMD64, VS2005 Beta for AMD64 and Itanium.
 // 30-Mar-05 1.5  * Safebool idiom: "if (dg)" is now equivalent to "if (!dg.empty())"
@@ -65,7 +65,7 @@
 // Uncomment the following #define for optimally-sized delegates.
 // In this case, the generated asm code is almost identical to the code you'd get
 // if the compiler had native support for delegates.
-// It will not work on systems where sizeof(dataptr) < sizeof(codeptr). 
+// It will not work on systems where sizeof(dataptr) < sizeof(codeptr).
 // Thus, it will not work for DOS compilers using the medium model.
 // It will also probably fail on some DSP systems.
 #define FASTDELEGATE_USESTATICFUNCTIONHACK
@@ -93,7 +93,7 @@
 
 // Does the compiler uses Microsoft's member function pointer structure?
 // If so, it needs special treatment.
-// Metrowerks CodeWarrior, Intel, and CodePlay fraudulently define Microsoft's 
+// Metrowerks CodeWarrior, Intel, and CodePlay fraudulently define Microsoft's
 // identifier, _MSC_VER. We need to filter Metrowerks out.
 #if defined(_MSC_VER) && !defined(__MWERKS__)
 #define FASTDLGT_MICROSOFT_MFP
@@ -119,7 +119,7 @@
 #define FASTDELEGATE_ALLOW_FUNCTION_TYPE_SYNTAX
 #endif
 
-#ifdef __GNUC__ // Workaround GCC bug #8271 
+#ifdef __GNUC__ // Workaround GCC bug #8271
  // At present, GCC doesn't recognize constness of MFPs in templates
 #define FASTDELEGATE_GCC_BUG_8271
 #endif
@@ -149,10 +149,10 @@ namespace fastdelegate
 		// we'll hide the implementation details in a nested namespace.
 
 		//  implicit_cast< >
-		// I believe this was originally going to be in the C++ standard but 
+		// I believe this was originally going to be in the C++ standard but
 		// was left out by accident. It's even milder than static_cast.
 		// I use it instead of static_cast<> to emphasize that I'm not doing
-		// anything nasty. 
+		// anything nasty.
 		// Usage is identical to static_cast<>
 		template <class OutputClass, class InputClass>
 		inline OutputClass implicit_cast(InputClass input)
@@ -161,11 +161,11 @@ namespace fastdelegate
 		}
 
 		//  horrible_cast< >
-		// This is truly evil. It completely subverts C++'s type system, allowing you 
-		// to cast from any class to any other class. Technically, using a union 
+		// This is truly evil. It completely subverts C++'s type system, allowing you
+		// to cast from any class to any other class. Technically, using a union
 		// to perform the cast is undefined behaviour (even in C). But we can see if
 		// it is OK by checking that the union is the same size as each of its members.
-		// horrible_cast<> should only be used for compiler-specific workarounds. 
+		// horrible_cast<> should only be used for compiler-specific workarounds.
 		// Usage is identical to reinterpret_cast<>.
 
 		// This union is declared outside the horrible_cast because BCC 5.5.1
@@ -217,9 +217,9 @@ namespace fastdelegate
 		// Workaround for (2): On VC6, the code for calling a void function is
 		//   identical to the code for calling a non-void function in which the
 		//   return value is never used, provided the return value is returned
-		//   in the EAX register, rather than on the stack. 
+		//   in the EAX register, rather than on the stack.
 		//   This is true for most fundamental types such as int, enum, void *.
-		//   Const void * is the safest option since it doesn't participate 
+		//   Const void * is the safest option since it doesn't participate
 		//   in any automatic conversions. But on a 16-bit compiler it might
 		//   cause extra code to be generated, so we disable it for all compilers
 		//   except for VC6 (and VC5).
@@ -276,15 +276,15 @@ typedef const void * DefaultVoid;
 #ifdef  FASTDLGT_MICROSOFT_MFP
 
 #ifdef FASTDLGT_HASINHERITANCE_KEYWORDS
-		// For Microsoft and Intel, we want to ensure that it's the most efficient type of MFP 
-		// (4 bytes), even when the /vmg option is used. Declaring an empty class 
+		// For Microsoft and Intel, we want to ensure that it's the most efficient type of MFP
+		// (4 bytes), even when the /vmg option is used. Declaring an empty class
 		// would give 16 byte pointers in this case....
 		class __single_inheritance GenericClass;
 #endif
 		// ...but for Codeplay, an empty class *always* gives 4 byte pointers.
 		// If compiled with the /clr option ("managed C++"), the JIT compiler thinks
 		// it needs to load GenericClass before it can call any of its functions,
-		// (compiles OK but crashes at runtime!), so we need to declare an 
+		// (compiles OK but crashes at runtime!), so we need to declare an
 		// empty class to make it happy.
 		// Codeplay and VC4 can't cope with the unknown_inheritance case either.
 		class GenericClass
@@ -299,13 +299,13 @@ typedef const void * DefaultVoid;
 
 		//      SimplifyMemFunc< >::Convert()
 		//
-		// A template function that converts an arbitrary member function pointer into the 
+		// A template function that converts an arbitrary member function pointer into the
 		// simplest possible form of member function pointer, using a supplied 'this' pointer.
 		//  According to the standard, this can be done legally with reinterpret_cast<>.
-		// For (non-standard) compilers which use member function pointers which vary in size 
-		//  depending on the class, we need to use knowledge of the internal structure of a 
+		// For (non-standard) compilers which use member function pointers which vary in size
+		//  depending on the class, we need to use knowledge of the internal structure of a
 		//  member function pointer, as used by the compiler. Template specialization is used
-		//  to distinguish between the sizes. Because some compilers don't support partial 
+		//  to distinguish between the sizes. Because some compilers don't support partial
 		// template specialisation, I use full specialisation of a wrapper struct.
 
 		// general case -- don't know how to convert it. Force a compile failure
@@ -333,7 +333,7 @@ typedef const void * DefaultVoid;
 			                                               GenericMemFuncType& bound_func)
 			{
 #if defined __DMC__
-				// Digital Mars doesn't allow you to cast between abitrary PMF's, 
+				// Digital Mars doesn't allow you to cast between abitrary PMF's,
 				// even though the standard says you can. The 32-bit compiler lets you
   // static_cast through an int, but the DOS compiler doesn't.
   bound_func = horrible_cast<GenericMemFuncType>(function_to_bind);
@@ -394,10 +394,10 @@ typedef const void * DefaultVoid;
 		// enable conversion to a closure pointer. Earlier versions of this code didn't
 		// work for all cases, and generated a compile-time error instead.
 		// But a very clever hack invented by John M. Dlugosz solves this problem.
-		// My code is somewhat different to his: I have no asm code, and I make no 
+		// My code is somewhat different to his: I have no asm code, and I make no
 		// assumptions about the calling convention that is used.
 
-		// In VC++ and ICL, a virtual_inheritance member pointer 
+		// In VC++ and ICL, a virtual_inheritance member pointer
 		// is internally defined as:
 		struct MicrosoftVirtualMFP
 		{
@@ -452,7 +452,7 @@ typedef const void * DefaultVoid;
 				                                       && sizeof(u2.virtfunc) == sizeof(u2.s)
 					                                       ? 1
 					                                       : -1];
-				// Unfortunately, taking the address of a MF prevents it from being inlined, so 
+				// Unfortunately, taking the address of a MF prevents it from being inlined, so
 				// this next line can't be completely optimised away by the compiler.
 				u2.virtfunc = &GenericVirtualClass::GetThis;
 				u.s.codeptr = u2.s.codeptr;
@@ -469,34 +469,34 @@ template <>
 struct SimplifyMemFunc<SINGLE_MEMFUNCPTR_SIZE + 3*sizeof(int) >
 {
  template <class X, class XFuncType, class GenericMemFuncType>
- inline static GenericClass * xr_stdcall Convert(X *pthis, XFuncType function_to_bind, 
+ inline static GenericClass * xr_stdcall Convert(X *pthis, XFuncType function_to_bind,
   GenericMemFuncType &bound_func) {
   // There is an apalling but obscure compiler bug in MSVC6 and earlier:
-		// vtable_index and 'vtordisp' are always set to 0 in the 
+		// vtable_index and 'vtordisp' are always set to 0 in the
 		// unknown_inheritance case!
 		// This means that an incorrect function could be called!!!
 		// Compiling with the /vmg option leads to potentially incorrect code.
 		// This is probably the reason that the IDE has a user interface for specifying
-		// the /vmg option, but it is disabled -  you can only specify /vmg on 
+		// the /vmg option, but it is disabled -  you can only specify /vmg on
 		// the command line. In VC1.5 and earlier, the compiler would ICE if it ever
 		// encountered this situation.
 		// It is OK to use the /vmg option if /vmm or /vms is specified.
 
 		// Fortunately, the wrong function is only called in very obscure cases.
-		// It only occurs when a derived class overrides a virtual function declared 
-		// in a virtual base class, and the member function 
+		// It only occurs when a derived class overrides a virtual function declared
+		// in a virtual base class, and the member function
 		// points to the *Derived* version of that function. The problem can be
-		// completely averted in 100% of cases by using the *Base class* for the 
+		// completely averted in 100% of cases by using the *Base class* for the
 		// member fpointer. Ie, if you use the base class as an interface, you'll
 		// stay out of trouble.
 		// Occasionally, you might want to point directly to a derived class function
-		// that isn't an override of a base class. In this case, both vtable_index 
+		// that isn't an override of a base class. In this case, both vtable_index
 		// and 'vtordisp' are zero, but a virtual_inheritance pointer will be generated.
 		// We can generate correct code in this case. To prevent an incorrect call from
-		// ever being made, on MSVC6 we generate a warning, and call a function to 
-  // make the program crash instantly. 
+		// ever being made, on MSVC6 we generate a warning, and call a function to
+  // make the program crash instantly.
   typedef char ERROR_VC6CompilerBug[-100];
-  return 0; 
+  return 0;
  }
 };
 
@@ -504,7 +504,7 @@ struct SimplifyMemFunc<SINGLE_MEMFUNCPTR_SIZE + 3*sizeof(int) >
 #else
 
 		// Nasty hack for Microsoft and Intel (IA32 and Itanium)
-		// unknown_inheritance classes go here 
+		// unknown_inheritance classes go here
 		// This is probably the ugliest bit of code I've ever written. Look at the casts!
 		// There is a compiler bug in MSVC6 which prevents it from using this code.
 		template <>
@@ -520,7 +520,7 @@ struct SimplifyMemFunc<SINGLE_MEMFUNCPTR_SIZE + 3*sizeof(int) >
 				{
 					XFuncType func;
 
-					// In VC++ and ICL, an unknown_inheritance member pointer 
+					// In VC++ and ICL, an unknown_inheritance member pointer
 					// is internally defined as:
 					struct
 					{
@@ -538,7 +538,7 @@ struct SimplifyMemFunc<SINGLE_MEMFUNCPTR_SIZE + 3*sizeof(int) >
 				if (u.s.vtable_index)
 				{
 					// Virtual inheritance is used
-					// First, get to the vtable. 
+					// First, get to the vtable.
 					// It is 'vtordisp' bytes from the start of the class.
 					const int* vtable = *reinterpret_cast<const int *const*>(
 						reinterpret_cast<const char *>(pthis) + u.s.vtordisp);
@@ -569,7 +569,7 @@ struct SimplifyMemFunc<SINGLE_MEMFUNCPTR_SIZE + 3*sizeof(int) >
 	// It knows nothing about the calling convention or number of arguments used by
 	// the function pointed to.
 	// It supplies comparison operators so that it can be stored in STL collections.
-	// It cannot be set to anything other than null, nor invoked directly: 
+	// It cannot be set to anything other than null, nor invoked directly:
 	//   it must be converted to a specific delegate.
 
 	// Implementation:
@@ -577,14 +577,14 @@ struct SimplifyMemFunc<SINGLE_MEMFUNCPTR_SIZE + 3*sizeof(int) >
 	//    DelegateMemento - Safe version
 	//
 	// This implementation is standard-compliant, but a bit tricky.
-	// A static function pointer is stored inside the class. 
+	// A static function pointer is stored inside the class.
 	// Here are the valid values:
 	// +-- Static pointer --+--pThis --+-- pMemFunc-+-- Meaning------+
 	// |   0    |  0       |   0        | Empty          |
 	// |   !=0              |(dontcare)|  Invoker   | Static function|
 	// |   0                |  !=0     |  !=0*      | Method call    |
 	// +--------------------+----------+------------+----------------+
-	//  * For Metrowerks, this can be 0. (first virtual function in a 
+	//  * For Metrowerks, this can be 0. (first virtual function in a
 	//       single_inheritance class).
 	// When stored stored inside a specific delegate, the 'dontcare' entries are replaced
 	// with a reference to the delegate itself. This complicates the = and == operators
@@ -592,16 +592,16 @@ struct SimplifyMemFunc<SINGLE_MEMFUNCPTR_SIZE + 3*sizeof(int) >
 
 	//    DelegateMemento - Evil version
 	//
-	// For compilers where data pointers are at least as big as code pointers, it is 
-	// possible to store the function pointer in the this pointer, using another 
+	// For compilers where data pointers are at least as big as code pointers, it is
+	// possible to store the function pointer in the this pointer, using another
 	// horrible_cast. In this case the DelegateMemento implementation is simple:
 	// +--pThis --+-- pMemFunc-+-- Meaning---------------------+
 	// |    0     |  0         | Empty                         |
 	// |  !=0     |  !=0*      | Static function or method call|
 	// +----------+------------+-------------------------------+
-	//  * For Metrowerks, this can be 0. (first virtual function in a 
+	//  * For Metrowerks, this can be 0. (first virtual function in a
 	//       single_inheritance class).
-	// Note that the Sun C++ and MSVC documentation explicitly state that they 
+	// Note that the Sun C++ and MSVC documentation explicitly state that they
 	// support static_cast between void * and function pointers.
 
 	class DelegateMemento
@@ -656,11 +656,11 @@ struct SimplifyMemFunc<SINGLE_MEMFUNCPTR_SIZE + 3*sizeof(int) >
 		{
 			// deal with static function pointers first
 #if !defined(FASTDELEGATE_USESTATICFUNCTIONHACK)
-  if (m_pStaticFunction !=0 || right.m_pStaticFunction!=0) 
+  if (m_pStaticFunction !=0 || right.m_pStaticFunction!=0)
     return m_pStaticFunction < right.m_pStaticFunction;
 #endif
 			if (m_pthis != right.m_pthis) return m_pthis < right.m_pthis;
-			// There are no ordering operators for member function pointers, 
+			// There are no ordering operators for member function pointers,
 			// but we can fake one by comparing each byte. The resulting ordering is
 			// arbitrary (and compiler-dependent), but it permits storage in ordered STL containers.
 			return memcmp(&m_pFunction, &right.m_pFunction, sizeof(m_pFunction)) < 0;
@@ -721,8 +721,8 @@ struct SimplifyMemFunc<SINGLE_MEMFUNCPTR_SIZE + 3*sizeof(int) >
 	// A private wrapper class that adds function signatures to DelegateMemento.
 	// It's the class that does most of the actual work.
 	// The signatures are specified by:
-	// GenericMemFunc: must be a type of GenericClass member function pointer. 
-	// StaticFuncPtr:  must be a type of function pointer with the same signature 
+	// GenericMemFunc: must be a type of GenericClass member function pointer.
+	// StaticFuncPtr:  must be a type of function pointer with the same signature
 	//                 as GenericMemFunc.
 	// UnvoidStaticFuncPtr: is the same as StaticFuncPtr, except on VC6
 	//                 where it never returns void (returns DefaultVoid instead).
@@ -739,8 +739,8 @@ struct SimplifyMemFunc<SINGLE_MEMFUNCPTR_SIZE + 3*sizeof(int) >
 		public:
 			// These functions are for setting the delegate to a member function.
 
-			// Here's the clever bit: we convert an arbitrary member function into a 
-			// standard form. XMemFunc should be a member function of class X, but I can't 
+			// Here's the clever bit: we convert an arbitrary member function into a
+			// standard form. XMemFunc should be a member function of class X, but I can't
 			// enforce that here. It needs to be enforced by the wrapper class.
 			template <class X, class XMemFunc>
 			inline void bindmemfunc(X* pthis, XMemFunc function_to_bind)
@@ -753,7 +753,7 @@ struct SimplifyMemFunc<SINGLE_MEMFUNCPTR_SIZE + 3*sizeof(int) >
 			}
 
 			// For const member functions, we only need a const class pointer.
-			// Since we know that the member function is const, it's safe to 
+			// Since we know that the member function is const, it's safe to
 			// remove the const qualifier from the 'this' pointer with a const_cast.
 			// VC6 has problems if we just overload 'bindmemfunc', so we give it a different name.
 			template <class X, class XMemFunc>
@@ -804,32 +804,32 @@ public:
    m_pthis=reinterpret_cast<GenericClass *>(pParent);
   }
  }
- // For static functions, the 'static_function_invoker' class in the parent 
-			// will be called. The parent then needs to call GetStaticFunction() to find out 
+ // For static functions, the 'static_function_invoker' class in the parent
+			// will be called. The parent then needs to call GetStaticFunction() to find out
  // the actual function to invoke.
  template < class DerivedClass, class ParentInvokerSig >
- inline void bindstaticfunc(DerivedClass *pParent, ParentInvokerSig static_function_invoker, 
+ inline void bindstaticfunc(DerivedClass *pParent, ParentInvokerSig static_function_invoker,
     StaticFuncPtr function_to_bind ) {
   if (function_to_bind==0) { // cope with assignment to 0
    m_pFunction=0;
-  } else { 
+  } else {
    bindmemfunc(pParent, static_function_invoker);
         }
   m_pStaticFunction=reinterpret_cast<GenericFuncPtr>(function_to_bind);
  }
- inline UnvoidStaticFuncPtr GetStaticFunction() const { 
-  return reinterpret_cast<UnvoidStaticFuncPtr>(m_pStaticFunction); 
+ inline UnvoidStaticFuncPtr GetStaticFunction() const {
+  return reinterpret_cast<UnvoidStaticFuncPtr>(m_pStaticFunction);
  }
 #else
 
 			//    ClosurePtr<> - Evil version
 			//
-			// For compilers where data pointers are at least as big as code pointers, it is 
-			// possible to store the function pointer in the this pointer, using another 
+			// For compilers where data pointers are at least as big as code pointers, it is
+			// possible to store the function pointer in the this pointer, using another
 			// horrible_cast. Invocation isn't any faster, but it saves 4 bytes, and
 			// speeds up comparison and assignment. If C++ provided direct language support
 			// for delegates, they would produce asm code that was almost identical to this.
-			// Note that the Sun C++ and MSVC documentation explicitly state that they 
+			// Note that the Sun C++ and MSVC documentation explicitly state that they
 			// support static_cast between void * and function pointers.
 
 			template <class DerivedClass>
@@ -838,8 +838,8 @@ public:
 				SetMementoFrom(right);
 			}
 
-			// For static functions, the 'static_function_invoker' class in the parent 
-			// will be called. The parent then needs to call GetStaticFunction() to find out 
+			// For static functions, the 'static_function_invoker' class in the parent
+			// will be called. The parent then needs to call GetStaticFunction() to find out
 			// the actual function to invoke.
 			// ******** EVIL, EVIL CODE! *******
 			template <class DerivedClass, class ParentInvokerSig>
@@ -859,7 +859,7 @@ public:
 				}
 
 				// WARNING! Evil hack. We store the function in the 'this' pointer!
-				// Ensure that there's a compilation failure if function pointers 
+				// Ensure that there's a compilation failure if function pointers
 				// and data pointers have different sizes.
 				// If you get this error, you need to #undef FASTDELEGATE_USESTATICFUNCTIONHACK.
 				typedef int ERROR_CantUseEvilMethod[sizeof(GenericClass *) == sizeof(function_to_bind) ? 1 : -1];
@@ -876,7 +876,7 @@ public:
 			// a function pointer!
 			inline UnvoidStaticFuncPtr GetStaticFunction() const
 			{
-				// Ensure that there's a compilation failure if function pointers 
+				// Ensure that there's a compilation failure if function pointers
 				// and data pointers have different sizes.
 				// If you get this error, you need to #undef FASTDELEGATE_USESTATICFUNCTIONHACK.
 				typedef int ERROR_CantUseEvilMethod[sizeof(UnvoidStaticFuncPtr) == sizeof(this) ? 1 : -1];
@@ -904,7 +904,7 @@ public:
 
 
 	// Once we have the member function conversion templates, it's easy to make the
-	// wrapper classes. So that they will work with as many compilers as possible, 
+	// wrapper classes. So that they will work with as many compilers as possible,
 	// the classes are of the form
 	//   FastDelegate3<int, char *, double>
 	// They can cope with any combination of parameters. The max number of parameters
@@ -915,7 +915,7 @@ public:
 
 	// Because of the weird rule about the class of derived member function pointers,
 	// you sometimes need to apply a downcast to the 'this' pointer.
-	// This is the reason for the use of "implicit_cast<X*>(pthis)" in the code below. 
+	// This is the reason for the use of "implicit_cast<X*>(pthis)" in the code below.
 	// If CDerivedClass is derived from CBaseClass, but doesn't override SimpleVirtualFunction,
 	// without this trick you'd need to write:
 	//  MyDelegate(static_cast<CBaseClass *>(&d), &CDerivedClass::SimpleVirtualFunction);
@@ -2342,7 +2342,7 @@ public:
 
 	////////////////////////////////////////////////////////////////////////////////
 	//      Fast Delegates, part 4:
-	// 
+	//
 	//    FastDelegate<> class (Original author: Jody Hagins)
 	// Allows boost::function style syntax like:
 	//   FastDelegate< double (int, long) >
@@ -2361,7 +2361,7 @@ public:
 	//N=0
 	// Specialization to allow use of
 	// FastDelegate< R (  ) >
-	// instead of 
+	// instead of
 	// FastDelegate0 < R >
 	template <typename R>
 	class FastDelegate<R ()>
@@ -2408,7 +2408,7 @@ public:
 	//N=1
 	// Specialization to allow use of
 	// FastDelegate< R ( Param1 ) >
-	// instead of 
+	// instead of
 	// FastDelegate1 < Param1, R >
 	template <typename R, class Param1>
 	class FastDelegate<R (Param1)>
@@ -2455,7 +2455,7 @@ public:
 	//N=2
 	// Specialization to allow use of
 	// FastDelegate< R ( Param1, Param2 ) >
-	// instead of 
+	// instead of
 	// FastDelegate2 < Param1, Param2, R >
 	template <typename R, class Param1, class Param2>
 	class FastDelegate<R (Param1, Param2)>
@@ -2502,7 +2502,7 @@ public:
 	//N=3
 	// Specialization to allow use of
 	// FastDelegate< R ( Param1, Param2, Param3 ) >
-	// instead of 
+	// instead of
 	// FastDelegate3 < Param1, Param2, Param3, R >
 	template <typename R, class Param1, class Param2, class Param3>
 	class FastDelegate<R (Param1, Param2, Param3)>
@@ -2549,7 +2549,7 @@ public:
 	//N=4
 	// Specialization to allow use of
 	// FastDelegate< R ( Param1, Param2, Param3, Param4 ) >
-	// instead of 
+	// instead of
 	// FastDelegate4 < Param1, Param2, Param3, Param4, R >
 	template <typename R, class Param1, class Param2, class Param3, class Param4>
 	class FastDelegate<R (Param1, Param2, Param3, Param4)>
@@ -2596,7 +2596,7 @@ public:
 	//N=5
 	// Specialization to allow use of
 	// FastDelegate< R ( Param1, Param2, Param3, Param4, Param5 ) >
-	// instead of 
+	// instead of
 	// FastDelegate5 < Param1, Param2, Param3, Param4, Param5, R >
 	template <typename R, class Param1, class Param2, class Param3, class Param4, class Param5>
 	class FastDelegate<R (Param1, Param2, Param3, Param4, Param5)>
@@ -2643,7 +2643,7 @@ public:
 	//N=6
 	// Specialization to allow use of
 	// FastDelegate< R ( Param1, Param2, Param3, Param4, Param5, Param6 ) >
-	// instead of 
+	// instead of
 	// FastDelegate6 < Param1, Param2, Param3, Param4, Param5, Param6, R >
 	template <typename R, class Param1, class Param2, class Param3, class Param4, class Param5, class Param6>
 	class FastDelegate<R (Param1, Param2, Param3, Param4, Param5, Param6)>
@@ -2692,7 +2692,7 @@ public:
 	//N=7
 	// Specialization to allow use of
 	// FastDelegate< R ( Param1, Param2, Param3, Param4, Param5, Param6, Param7 ) >
-	// instead of 
+	// instead of
 	// FastDelegate7 < Param1, Param2, Param3, Param4, Param5, Param6, Param7, R >
 	template <typename R, class Param1, class Param2, class Param3, class Param4, class Param5, class Param6, class
 	          Param7>
@@ -2743,7 +2743,7 @@ public:
 	//N=8
 	// Specialization to allow use of
 	// FastDelegate< R ( Param1, Param2, Param3, Param4, Param5, Param6, Param7, Param8 ) >
-	// instead of 
+	// instead of
 	// FastDelegate8 < Param1, Param2, Param3, Param4, Param5, Param6, Param7, Param8, R >
 	template <typename R, class Param1, class Param2, class Param3, class Param4, class Param5, class Param6, class
 	          Param7, class Param8>
@@ -2805,7 +2805,7 @@ public:
 	//
 	////////////////////////////////////////////////////////////////////////////////
 
-	// Also declare overloads of a MakeDelegate() global function to 
+	// Also declare overloads of a MakeDelegate() global function to
 	// reduce the need for typedefs.
 	// We need seperate overloads for const and non-const member functions.
 	// Also, because of the weird rule about the class of derived member function pointers,

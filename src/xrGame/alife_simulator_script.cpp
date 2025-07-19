@@ -55,13 +55,13 @@ bool valid_object_id(const CALifeSimulator* self, ALife::_OBJECT_ID object_id)
 CSE_ALifeDynamicObject *alife_object		(const CALifeSimulator *self, LPCSTR name)
 {
 	VERIFY			(self);
-	
+
 	for (CALifeObjectRegistry::OBJECT_REGISTRY::const_iterator it = self->objects().objects().begin(); it != self->objects().objects().end(); it++) {
 		CSE_ALifeDynamicObject	*obj = it->second;
 		if (xr_strcmp(obj->name_replace(),name) == 0)
 			return	(it->second);
 	}
-	
+
 	return			(0);
 }
 #endif // #ifdef DEBUG
@@ -547,7 +547,7 @@ ALife::_OBJECT_ID alife_max_id(const CALifeSimulator* self)
 ::luabind::object alife_objects(const CALifeSimulator *self, const bool keytable = false, const bool withActor = false)
 {
 	VERIFY(self);
-	
+
 	::luabind::object result = ::luabind::newtable(ai().script_engine().lua());
 	const CALifeObjectRegistry& objects = self->objects();
 	int i = 1;

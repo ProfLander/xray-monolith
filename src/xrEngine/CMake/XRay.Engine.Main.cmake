@@ -6,13 +6,13 @@ target_sources(XRay.Engine.Main
   INTERFACE
   x_ray.cpp
   x_ray.h
-  
+
   EngineAPI.cpp
   EngineAPI.h
 
   resource.h
   resource.rc
-  
+
   dpi-aware.manifest
 )
 

@@ -49,7 +49,7 @@ BOOL CRenderTarget::u_DBT_enable(float zMin, float zMax)
 	// enable cheat
 	//HW.pDevice->SetRenderState(D3DRS_ADAPTIVETESS_X,MAKEFOURCC('N','V','D','B'));
 	//HW.pDevice->SetRenderState(D3DRS_ADAPTIVETESS_Z,*(DWORD*)&zMin);
-	//HW.pDevice->SetRenderState(D3DRS_ADAPTIVETESS_W,*(DWORD*)&zMax); 
+	//HW.pDevice->SetRenderState(D3DRS_ADAPTIVETESS_W,*(DWORD*)&zMax);
 
 	//return TRUE;
 }
@@ -57,7 +57,7 @@ BOOL CRenderTarget::u_DBT_enable(float zMin, float zMax)
 void CRenderTarget::u_DBT_disable()
 {
 	//	TODO: DX10: Check if DX10 supports this feature
-	//if (RImplementation.o.nvdbt && ps_r2_ls_flags.test(R2FLAG_USE_NVDBT))	
+	//if (RImplementation.o.nvdbt && ps_r2_ls_flags.test(R2FLAG_USE_NVDBT))
 	//	HW.pDevice->SetRenderState(D3DRS_ADAPTIVETESS_X,0);
 }
 

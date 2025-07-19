@@ -3,7 +3,7 @@
 
 namespace award_system
 {
-	//float functions 
+	//float functions
 	template <typename T>
 	class binary_function
 	{

@@ -71,7 +71,7 @@ void CRenderTarget::accum_point(light* L)
 	else			RCache.set_CullMode		(CULL_CCW);		// front
 	*/
 
-	// 2D texgens 
+	// 2D texgens
 	Fmatrix m_Texgen;
 	u_compute_texgen_screen(m_Texgen);
 	Fmatrix m_Texgen_J;
@@ -108,7 +108,7 @@ void CRenderTarget::accum_point(light* L)
 		// Fetch4 : enable
 		//		if (RImplementation.o.HW_smap_FETCH4)	{
 		//. we hacked the shader to force smap on S0
-		//#			define FOURCC_GET4  MAKEFOURCC('G','E','T','4') 
+		//#			define FOURCC_GET4  MAKEFOURCC('G','E','T','4')
 		//			HW.pDevice->SetSamplerState	( 0, D3DSAMP_MIPMAPLODBIAS, FOURCC_GET4 );
 		//		}
 
@@ -151,7 +151,7 @@ void CRenderTarget::accum_point(light* L)
 		// Fetch4 : disable
 		//		if (RImplementation.o.HW_smap_FETCH4)	{
 		//. we hacked the shader to force smap on S0
-		//#			define FOURCC_GET1  MAKEFOURCC('G','E','T','1') 
+		//#			define FOURCC_GET1  MAKEFOURCC('G','E','T','1')
 		//			HW.pDevice->SetSamplerState	( 0, D3DSAMP_MIPMAPLODBIAS, FOURCC_GET1 );
 		//		}
 	}
@@ -184,7 +184,7 @@ void CRenderTarget::accum_point(light* L)
 				RCache.set_Stencil(TRUE, D3DCMP_EQUAL, dwLightMarkerID | 0x80, 0xff, 0x00);
 				draw_volume(L);
 			}
-			else // checked Holger	
+			else // checked Holger
 			{
 				for (u32 i = 0; i < RImplementation.o.dx10_msaa_samples; ++i)
 				{

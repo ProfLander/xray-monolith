@@ -204,7 +204,7 @@ bool CWeapon::install_upgrade_hit(LPCSTR section, bool test)
 	result |= process_if_exists(section, "hit_impulse", &CInifile::r_float, fHitImpulse, test);
 	result |= process_if_exists(section, "bullet_speed", &CInifile::r_float, m_fStartBulletSpeed, test);
 
-	/*	
+	/*
 	silencer_hit_power           = 0.55, 0.55, 0.55, 0.55
 	silencer_hit_impulse         = 120
 	silencer_fire_distance       = 600
@@ -217,7 +217,7 @@ bool CWeapon::install_upgrade_hit(LPCSTR section, bool test)
 		result |= process_if_exists(section, "time_to_aim", &CInifile::r_float, m_fTimeToAim, test);
 	}*/
 
-	//	LPCSTR weapon_section = cNameSect().c_str(); 
+	//	LPCSTR weapon_section = cNameSect().c_str();
 	float rpm = 60.0f / fOneShotTime; //pSettings->r_float( weapon_section, "rpm" ); // fOneShotTime * 60.0f;
 	result2 = process_if_exists(section, "rpm", &CInifile::r_float, rpm, test);
 	if (result2 && !test)
@@ -234,7 +234,7 @@ bool CWeapon::install_upgrade_hit(LPCSTR section, bool test)
 bool CWeapon::install_upgrade_addon(LPCSTR section, bool test)
 {
 	bool result = false;
-	//LPCSTR weapon_section = cNameSect().c_str(); 
+	//LPCSTR weapon_section = cNameSect().c_str();
 
 	// 0 - no addon // 1 - permanent // 2 - attachable
 	int temp_int = (int)m_eScopeStatus;

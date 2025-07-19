@@ -173,16 +173,16 @@ void CtaGameArtefact::PH_A_CrPr()
 		VERIFY( K );
 		K->CalculateBones_Invalidate();
 		K->CalculateBones(TRUE);
-		
+
 		object().PPhysicsShell()->GetGlobalTransformDynamic(&object().XFORM());
 		object().spatial_move();
 		m_just_after_spawn = false;
-		
+
 		VERIFY(!OnServer());
 		if (object().PPhysicsShell())
 		{
 			object().PPhysicsShell()->get_ElementByStoreOrder(0)->Fix();
-			object().PPhysicsShell()->SetIgnoreStatic	();	
+			object().PPhysicsShell()->SetIgnoreStatic	();
 		}
 		//object().PPhysicsShell()->SetIgnoreDynamic	();
 		//PPhysicsShell()->DisableCollision();
@@ -190,9 +190,9 @@ void CtaGameArtefact::PH_A_CrPr()
 }
 
 /*
-void CtaGameArtefact::net_Export(NET_Packet& P) 
-{	
-	if (H_Parent() || IsGameTypeSingle()) 
+void CtaGameArtefact::net_Export(NET_Packet& P)
+{
+	if (H_Parent() || IsGameTypeSingle())
 	{
 		P.w_u8				(0);
 		return;
@@ -201,9 +201,9 @@ void CtaGameArtefact::net_Export(NET_Packet& P)
 	SPHNetState						State;
 	pSyncObj = PHGetSyncItem		(0);
 
-	if (pSyncObj) 
+	if (pSyncObj)
 		pSyncObj->get_State					(State);
-	else 	
+	else
 		State.position.set					(Position());
 
 
@@ -229,7 +229,7 @@ void CtaGameArtefact::net_Export(NET_Packet& P)
 	}
 	else {
 		float				invert_magnitude = 1.f/magnitude;
-		
+
 		State.quaternion.x	*= invert_magnitude;
 		State.quaternion.y	*= invert_magnitude;
 		State.quaternion.z	*= invert_magnitude;
@@ -265,5 +265,5 @@ void CtaGameArtefact::net_Export(NET_Packet& P)
 		P.w_float_q8		(State.linear_vel.y,-32.f,32.f);
 		P.w_float_q8		(State.linear_vel.z,-32.f,32.f);
 	}
-	P.w_u8(1);		//always enabled... 
+	P.w_u8(1);		//always enabled...
 };*/

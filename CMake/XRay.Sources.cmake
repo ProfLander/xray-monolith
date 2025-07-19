@@ -10,7 +10,7 @@ function(target_sources_sandboxed TARGET)
     "DIRECTORY"
     "STRIP;SOURCES"
   )
-  
+
   foreach(SOURCE ${ARG_SOURCES})
     set(DEST ${SOURCE})
 

@@ -1,5 +1,5 @@
 //////////////////////////////////////////////////////////////////////////
-// specific_character.h:	игровая информация для о конкретном 
+// specific_character.h:	игровая информация для о конкретном
 //							персонажей в игре
 //////////////////////////////////////////////////////////////////////////
 
@@ -33,7 +33,7 @@ struct SSpecificCharacterData : CSharedResource
 	xr_string m_sGameName;
 	//текст с биографией персонажа (линк на string table)
 	shared_str m_sBioText;
-	//строка содержащая предметы, которые нужно проспавнить 
+	//строка содержащая предметы, которые нужно проспавнить
 	xr_string m_sSupplySpawn;
 	//имя секции конфигурации настроек NPC для персонажа
 	xr_string m_sNpcConfigSect;
@@ -60,7 +60,7 @@ struct SSpecificCharacterData : CSharedResource
 	DIALOG_ID_VECTOR m_ActorDialogs;
 
 	shared_str m_icon_name;
-	//команда 
+	//команда
 	CHARACTER_COMMUNITY m_Community;
 
 #endif

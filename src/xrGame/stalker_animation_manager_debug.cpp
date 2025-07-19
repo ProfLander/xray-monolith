@@ -173,7 +173,7 @@ void add_animation			(const shared_str &animation_id, const shared_str &animatio
 		++((*I).second.m_frame_count);
 		if (just_started)
 			++((*I).second.m_start_count);
-	
+
 		return;
 	}
 
@@ -194,7 +194,7 @@ void add_blend				(const shared_str &animation_id, const shared_str &animation_s
 	if (!blend_id)
 		return;
 
-	BLEND_ID					query = 
+	BLEND_ID					query =
 		std::make_pair(
 			std::make_pair(
 				animation_id,

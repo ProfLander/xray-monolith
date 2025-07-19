@@ -276,7 +276,7 @@ struct SAnimItem
 {
 	anim_string target_name; // "stand_idle_"
 	int spec_id; // (-1) - any,  (0 - ...) - идентификатор 3
-	u8 count; // количество анимаций : "idle_0", "idle_1", "idle_2" 
+	u8 count; // количество анимаций : "idle_0", "idle_1", "idle_2"
 
 	SVelocityParam velocity;
 
@@ -333,7 +333,7 @@ struct SReplacedAnim
 // Определение времени аттаки по анимации
 typedef struct
 {
-	EMotionAnim anim; // параметры конкретной анимации 
+	EMotionAnim anim; // параметры конкретной анимации
 	u32 anim_i3;
 
 	TTime time_from; // диапазон времени когда можно наносить hit (от)
@@ -348,7 +348,7 @@ typedef struct
 	Fvector hit_dir; // угол направления приложения силы к объекту
 
 	//-----------------------------------------
-	// temp 
+	// temp
 	float yaw_from;
 	float yaw_to;
 	float pitch_from;

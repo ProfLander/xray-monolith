@@ -167,7 +167,7 @@ bool CUIGameCustom::ShowActorMenu()
 	else
 	{
 		if (!psActorFlags.test(AF_3D_PDA)) HidePdaMenu();
-		
+
 		//---- before inventory mode ---------------------------
 		::luabind::functor<bool> funct1;
 		if (ai().script_engine().functor("actor_menu_inventory.CUIActorMenu_OnMode_Inventory", funct1))
@@ -176,7 +176,7 @@ bool CUIGameCustom::ShowActorMenu()
 				return true;
 		}
 		//---------------------------------------------------------
-	
+
 		auto actor = smart_cast<CInventoryOwner*>(Level().CurrentViewEntity());
 		VERIFY(actor);
 		ActorMenu->SetActor(actor);
@@ -190,7 +190,7 @@ void CUIGameCustom::HideActorMenu()
 {
 	if (ActorMenu->IsShown())
 		ActorMenu->HideDialog();
-	
+
 	//-------------------------------
 	::luabind::functor<void> funct1;
 	if (ai().script_engine().functor("actor_menu_inventory.CUIActorMenu_OnHideActorMenu", funct1))

@@ -12,7 +12,7 @@ virtual	const	Flags32		&ph_dbg_draw_mask						()const
 {
 	return m1;
 };
-virtual	const	Flags32		&ph_dbg_draw_mask1						()const 
+virtual	const	Flags32		&ph_dbg_draw_mask1						()const
 {
 	return m2;
 }
@@ -26,7 +26,7 @@ virtual	void DBG_DrawStatAfterFrameStep( )
 {
 
 }
-//virtual	void DBG_RenderUpdate( )												=0; 
+//virtual	void DBG_RenderUpdate( )												=0;
 virtual	void DBG_OpenCashedDraw( )
 {
 
@@ -116,7 +116,7 @@ virtual	u32				&dbg_saved_tries_for_active_objects		()
 u32 total_saved_tries;
 virtual	u32				&dbg_total_saved_tries					()
 {
-	return total_saved_tries; 
+	return total_saved_tries;
 }
 u32 reused_queries_per_step;
 virtual	u32 			&dbg_reused_queries_per_step			()
@@ -149,7 +149,7 @@ virtual	u32 			&dbg_contacts_num						()
 	return contacts_num;
 }
 float vel_collid_damage_to_display;
-virtual		float		dbg_vel_collid_damage_to_display()	
+virtual		float		dbg_vel_collid_damage_to_display()
 {
 	return vel_collid_damage_to_display;
 }
@@ -174,5 +174,5 @@ virtual		void DBG_ObjBeforeCollision		( CPHObject *obj ){}
 
 
 
-IDebugOutput	*ph_debug_output	= &dbg_output_empty; 
+IDebugOutput	*ph_debug_output	= &dbg_output_empty;
 #endif

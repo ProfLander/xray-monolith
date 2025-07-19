@@ -56,7 +56,7 @@ float IK_ALWAYS_CALC_DIST = 20.f;
 //	dBodyID body2=dGeomGetBody( c.geom.g2 );
 //	if( !body1 || !body2 || ( dGeomUserDataHasCallback( c.geom.g1,NodynamicsCollide )&& dGeomUserDataHasCallback( c.geom.g2, NodynamicsCollide ) ) )
 //		return;
-//	do_colide = false; 
+//	do_colide = false;
 //}
 
 
@@ -212,7 +212,7 @@ void CCharacterPhysicsSupport::in_NetSpawn(CSE_Abstract* e)
 	}
 	else if (!m_EntityAlife.animation_movement_controlled())
 		ka->PlayCycle("death_init"); ///непонятно зачем это вообще надо запускать
-									  ///этот хак нужен, потому что некоторым монстрам 
+									  ///этот хак нужен, потому что некоторым монстрам
 									  ///анимация после спона, может быть вообще не назначена
 	pK->CalculateBones_Invalidate();
 	pK->CalculateBones(TRUE);
@@ -481,7 +481,7 @@ void CCharacterPhysicsSupport::KillHit(SHit& H)
 	if (holder && (holder->wounded() || holder->movement().current_params().cover()))
 		m = MotionID();
 
-	if (m.valid()) //&& cmp( prev_pose, mXFORM ) 
+	if (m.valid()) //&& cmp( prev_pose, mXFORM )
 	{
 		destroy(m_interactive_motion);
 		if (false && b_death_anim_velocity)
@@ -642,7 +642,7 @@ void CCharacterPhysicsSupport::in_UpdateCL()
 		//{
 		//ActivateShell( NULL );
 		//m_PhysicMovementControl->DestroyCharacter( );
-		//} 
+		//}
 	else if (ik_controller())
 	{
 		CFrustum& view_frust = ::Render->ViewBase;
@@ -686,7 +686,7 @@ void CCharacterPhysicsSupport::in_UpdateCL()
 		float d = DET(mh);
 		if(Fvector().sub(mh.c,mp.c).magnitude() < 0.3f||d<0.7 )//|| Fvector().sub(me.c,mn.c) < 0.5
 		{
-			
+
 			K->CalculateBones_Invalidate();
 			K->CalculateBones();
 			;
@@ -817,7 +817,7 @@ void reset_root_bone_start_pose( CPhysicsShell& shell )
 
 	IKinematics * K = shell.PKinematics();
 	VERIFY( K );
-	
+
 	u16	animation_root_bone_id = K->LL_GetBoneRoot();
 
 	CODEGeom	*physics_root_bone_geom = physics_root_element->geometry( 0 );
@@ -840,8 +840,8 @@ void reset_root_bone_start_pose( CPhysicsShell& shell )
 	K->LL_GetBindTransform( anim_bones_bind_positions );
 
 
-	const Fmatrix physics_root_to_anim_root_bind_transformation 
-		= Fmatrix().mul_43( Fmatrix().invert( anim_bones_bind_positions[ physics_root_bone_id ] ), 
+	const Fmatrix physics_root_to_anim_root_bind_transformation
+		= Fmatrix().mul_43( Fmatrix().invert( anim_bones_bind_positions[ physics_root_bone_id ] ),
 											  anim_bones_bind_positions[ animation_root_bone_id ] );
 
 	const Fmatrix &physics_root_bone_anim_transform = K->LL_GetTransform( physics_root_bone_id );
@@ -1134,7 +1134,7 @@ void CCharacterPhysicsSupport::CreateShell(CObject* who, Fvector& dp, Fvector& v
 	for (u16 I = K->LL_BoneCount() - 1; I != u16(-1); --I)
 		K->LL_GetBoneInstance(I).reset_callback();
 	//
-	if (anim_mov_ctrl) //we do not whant to move by long animation in root 
+	if (anim_mov_ctrl) //we do not whant to move by long animation in root
 		BR.set_callback_overwrite(TRUE);
 	//
 	K->CalculateBones_Invalidate();
@@ -1164,7 +1164,7 @@ void CCharacterPhysicsSupport::CreateShell(CObject* who, Fvector& dp, Fvector& v
 	m_pPhysicsShell->SetCallbacks();
 	//
 
-	if (anim_mov_ctrl) //we do not whant to move by long animation in root 
+	if (anim_mov_ctrl) //we do not whant to move by long animation in root
 		BR.set_callback_overwrite(TRUE);
 
 	if (!DoCharacterShellCollide())
@@ -1263,7 +1263,7 @@ if( dbg_draw_ragdoll_spawn )
 	//if( root!=0 )
 	//{
 	//	K->LL_GetTransform( 0 ).set( Fidentity );
-	//	
+	//
 	//	K->LL_SetBoneVisible( 0, FALSE, FALSE );
 	//}
 
@@ -1416,7 +1416,7 @@ void CCharacterPhysicsSupport::FlyTo(const Fvector& disp)
 void CCharacterPhysicsSupport::on_create_anim_mov_ctrl()
 {
 	VERIFY(!anim_mov_state.active);
-	//anim_mov_state.character_exist = m_PhysicMovementControl->CharacterExist(); 
+	//anim_mov_state.character_exist = m_PhysicMovementControl->CharacterExist();
 	//if(anim_mov_state.character_exist)
 	//m_PhysicMovementControl->DestroyCharacter();
 	m_PhysicMovementControl->SetNonInteractive(true);

@@ -51,7 +51,7 @@ protected:
 	//имя этого партикла
 	shared_str m_sParticleName;
 
-	//список составляющих раны 
+	//список составляющих раны
 	HitImmunity::HitTypeSVec m_Wounds;
 
 	bool m_bToBeDestroy;

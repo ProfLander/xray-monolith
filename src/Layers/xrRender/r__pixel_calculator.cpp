@@ -40,7 +40,7 @@ r_aabb_ssa r_pixel_calculator::calculate(dxRender_Visual* V)
 	r_aabb_ssa result = {0};
 	float area = float(_sqr(rt_dimensions));
 
-	// 
+	//
 	u32 id [6];
 	for (u32 face = 0; face < 6; face++)
 	{
@@ -69,7 +69,7 @@ r_aabb_ssa r_pixel_calculator::calculate(dxRender_Visual* V)
 		RImplementation.HWOCC.occq_end(id[face]);
 	}
 
-	// 
+	//
 	for (u32 it = 0; it < 6; it++)
 	{
 		float pixels = (float)RImplementation.HWOCC.occq_get(id[it]);

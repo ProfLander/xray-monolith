@@ -3,7 +3,7 @@
 #include "EffectorShot.h"
 /*
 class CCameraShotEffectorX : public CCameraShotEffector
-{	
+{
 	typedef			CCameraShotEffector	inherited;
 public:
 	//-	CCameraShotEffectorX(float max_angle, float relax_time, float max_angle_horz, float step_angle_horz, float angle_frac = 0.7f);

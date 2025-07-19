@@ -14,15 +14,15 @@
 #include "script_engine.h"
 #include "ui\uixmlinit.h"
 
-void INFO_DATA::load (IReader& stream) 
+void INFO_DATA::load (IReader& stream)
 {
-	load_data(info_id, stream); 
+	load_data(info_id, stream);
 	load_data(receive_time, stream);
 }
 
-void INFO_DATA::save (IWriter& stream) 
+void INFO_DATA::save (IWriter& stream)
 {
-	save_data(info_id, stream); 
+	save_data(info_id, stream);
 	save_data(receive_time, stream);
 }
 
@@ -75,7 +75,7 @@ void CInfoPortion::load_shared	(LPCSTR)
 		info_data()->m_DialogNames.push_back(dialog_name);
 	}
 
-	
+
 	//список названий порций информации, которые деактивируются,
 	//после получения этой порции
 	int disable_num = pXML->GetNodesNum(pNode, "disable");

@@ -17,10 +17,10 @@ add_module(XRay.Game.Core.Client.Effectors.Actor
 
   CameraEffector.cpp
   CameraEffector.h
-  
+
   EffectorBobbing.cpp
   EffectorBobbing.h
-  
+
   EffectorFall.cpp
   EffectorFall.h
 )
@@ -172,10 +172,10 @@ add_module(XRay.Game.Core.Client.Level.NetworkDemo
 
   DemoInfo_Loader.cpp
   DemoInfo_Loader.h
-  
+
   DemoPLay_Control.cpp
   DemoPlay_Control.h
-  
+
   Message_Filter.cpp
   Message_Filter.h
 )
@@ -184,7 +184,7 @@ add_module(XRay.Game.Core.Client.Level.SeniorityHierarchyHolder
   SOURCES
   ../xrServerEntities/LevelGameDef.cpp
   ../xrServerEntities/LevelGameDef.h
-  
+
   seniority_hierarchy_holder.cpp
   seniority_hierarchy_holder.h
   seniority_hierarchy_holder_inline.h
@@ -254,7 +254,7 @@ add_module(XRay.Game.Core.Client.Objects.Actor.Base
   actor_defs.h
   Actor_Flags.h
   actor_input_handler.h
-  
+
   fire_disp_controller.cpp
   fire_disp_controller.h
 )
@@ -393,7 +393,7 @@ add_module(XRay.Game.Core.Client.Objects.HangingLamp
   SOURCES
   HangingLamp.cpp
   HangingLamp.h
-  
+
   script_light_script.cpp
   script_light_inline.h
   script_light.h
@@ -475,7 +475,7 @@ add_module(XRay.Game.Core.Client.Objects.Inventory.InventoryOwner.CharacterInfo
 
   character_community.cpp
   character_community.h
-  
+
   character_rank.cpp
   character_rank.h
 
@@ -557,7 +557,7 @@ add_module(XRay.Game.Core.Client.Objects.ItemsWeapons.Artefacts
   SOURCES
   Artefact.cpp
   Artefact.h
-  
+
   artefact_activation.cpp
   artefact_activation.h
 
@@ -658,7 +658,7 @@ add_module(XRay.Game.Core.Client.Objects.ItemsWeapons.Devices
 
   Dosimeter.cpp
   Dosimeter.h
-  
+
   Flashlight.cpp
   Flashlight.h
 )
@@ -667,7 +667,7 @@ add_module(XRay.Game.Core.Client.Objects.ItemsWeapons.Devices.Detectors
   SOURCES
   ui/ArtefactDetectorUI.cpp
   ui/ArtefactDetectorUI.h
-  
+
   CustomDetector.cpp
   CustomDetector.h
 )
@@ -719,7 +719,7 @@ add_module(XRay.Game.Core.Client.Objects.ItemsWeapons.Explosives
   ExplosiveItem.h
 
   ExplosiveScript.cpp
-  
+
   wallmark_manager.cpp
   wallmark_manager.h
 )
@@ -733,7 +733,7 @@ add_module(XRay.Game.Core.Client.Objects.ItemsWeapons.FoodDrugs
   BottleItem.cpp
   BottleItem_script.cpp
   BottleItem.h
-  
+
   FoodItem.cpp
   FoodItem_script.cpp
   FoodItem.h
@@ -787,7 +787,7 @@ add_module(XRay.Game.Core.Client.Objects.ItemsWeapons.Outfit
   CustomOutfit.cpp
   CustomOutfit_script.cpp
   CustomOutfit.h
-  
+
   ExoOutfit.cpp
   ExoOutfit.h
 
@@ -876,7 +876,7 @@ add_module(XRay.Game.Core.Client.Objects.ItemsWeapons.Weapons.Custom.RocketLaunc
   SOURCES
   CustomRocket.cpp
   CustomRocket.h
-  
+
   ExplosiveRocket.cpp
   ExplosiveRocket.h
 
@@ -1109,7 +1109,7 @@ add_module(XRay.Game.Core.Client.Objects.Physics.PhysicsObject
   SOURCES
   PhysicObject.cpp
   PhysicObject.h
-  
+
   PhysicObject_script.cpp
 
   animation_script_callback.cpp

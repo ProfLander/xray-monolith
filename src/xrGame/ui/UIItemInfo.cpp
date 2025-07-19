@@ -138,7 +138,7 @@ void CUIItemInfo::InitItemInfo(LPCSTR xml_name)
 		UIBoosterInfo->InitFromXml(uiXml);
 
 		//UIDesc_line						= xr_new<CUIStatic>();
-		//AttachChild						(UIDesc_line);	
+		//AttachChild						(UIDesc_line);
 		//UIDesc_line->SetAutoDelete		(true);
 		//xml_init.InitStatic				(uiXml, "description_line", 0, UIDesc_line);
 

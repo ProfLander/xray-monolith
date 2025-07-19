@@ -19,6 +19,6 @@ void CBlender_lut::Compile(CBlender_Compile& C)
 	C.r_dx10Sampler("smp_base");
 	C.r_dx10Sampler("smp_nofilter");
 	C.r_dx10Sampler("smp_rtlinear");
-	C.r_dx10Sampler("smp_linear");	
+	C.r_dx10Sampler("smp_linear");
 	C.r_End();
 }

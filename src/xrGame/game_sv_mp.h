@@ -81,7 +81,7 @@ protected:
 	//void				SpawnWeaponForActor		(u16 actorId,  LPCSTR N, bool isScope, bool isGrenadeLauncher, bool isSilencer);
 	void SetCanOpenBuyMenu(ClientID id);
 
-	// spawning weapons 	
+	// spawning weapons
 	typedef std::pair<shared_str, u16> ammo_diff_t;
 	virtual void SetAmmoForWeapon(CSE_ALifeItemWeapon* weapon, u8 Addons,
 	                              game_PlayerState::PLAYER_ITEMS_LIST& playerItems, ammo_diff_t& ammo_diff);
@@ -101,7 +101,7 @@ protected:
 	void SpectatorModes_UnPack(u8 SpectrModesPacked);
 
 	// [14.11.07] Alexander Maniluk: added this method for renewing health and power of all actors in game.
-	// This method sets the health of all CActor objects (on server site) to 1.0, after that server Update will 
+	// This method sets the health of all CActor objects (on server site) to 1.0, after that server Update will
 	// send to all clients new states of health.
 	void RenewAllActorsHealth();
 

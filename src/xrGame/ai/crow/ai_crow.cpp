@@ -88,7 +88,7 @@ CAI_Crow::CAI_Crow()
 
 CAI_Crow::~CAI_Crow()
 {
-	// removing all data no more being neded 
+	// removing all data no more being neded
 	m_Sounds.m_idle.Unload();
 }
 
@@ -317,7 +317,7 @@ void CAI_Crow::Die(CObject* who)
 {
 	inherited::Die(who);
 	processing_activate(); // enable UpdateCL for dead crows - especially for physics support
-	// and do it especially before Creating physics shell or it definitely throws processing enable/disable calls: underflow  
+	// and do it especially before Creating physics shell or it definitely throws processing enable/disable calls: underflow
 	CreateSkeleton();
 
 	const CGameObject* who_object = smart_cast<const CGameObject*>(who);
@@ -485,8 +485,8 @@ void CAI_Crow::net_Import(NET_Packet& P)
 //---------------------------------------------------------------------
 void CAI_Crow::HitSignal(float /**HitAmount/**/, Fvector& /**local_dir/**/, CObject* who, s16 /**element/**/)
 {
-	//bool				first_time = !!g_Alive(); 
-	//	bool				first_time = !PPhysicsShell(); 
+	//bool				first_time = !!g_Alive();
+	//	bool				first_time = !PPhysicsShell();
 	SetfHealth(0);
 	//set_death_time		()	;
 	if (eDeathDead != st_current)

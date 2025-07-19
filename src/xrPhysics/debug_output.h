@@ -50,7 +50,7 @@ enum
 	phDbgDrawIKBlending			=		1<<8
 };
 
-enum 
+enum
 {
 	dbg_track_obj_blends_bp_0			= 1<< 0,
 	dbg_track_obj_blends_bp_1			= 1<< 1,
@@ -75,7 +75,7 @@ virtual	const	Flags32		&ph_dbg_draw_mask1						()const = 0;
 
 virtual	void DBG_DrawStatBeforeFrameStep( )										=0;
 virtual	void DBG_DrawStatAfterFrameStep( )										=0;
-//virtual	void DBG_RenderUpdate( )												=0; 
+//virtual	void DBG_RenderUpdate( )												=0;
 virtual	void DBG_OpenCashedDraw( )												=0;
 virtual	void DBG_ClosedCashedDraw( u32 remove_time )							=0;
 //virtual	void DBG_DrawPHAbstruct( SPHDBGDrawAbsract*	a )							=0;
@@ -127,12 +127,12 @@ virtual		void DBG_ObjBeforeCollision		( CPHObject *obj )=0;
 
 };
 
-extern XRPHYSICS_API	IDebugOutput	*ph_debug_output; 
+extern XRPHYSICS_API	IDebugOutput	*ph_debug_output;
 
 IC	IDebugOutput	&debug_output()
 {
 	VERIFY(ph_debug_output);
 	return *ph_debug_output;
 }
- 
+
 #endif

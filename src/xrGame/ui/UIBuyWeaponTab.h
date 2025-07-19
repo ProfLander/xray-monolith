@@ -15,7 +15,7 @@ public:
 	// public:
 	// 				CUIBuyWeaponTab				();
 	// 	virtual		~CUIBuyWeaponTab			();
-	// 
+	//
 	// 	virtual void Init						(CUIXml* xml, char* path);
 	// 	virtual void OnTabChange				(const shared_str& sCur, const shared_str& sPrev);
 	// 			void SetActiveState				(bool bState = true);

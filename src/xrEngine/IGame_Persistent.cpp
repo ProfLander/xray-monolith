@@ -187,7 +187,7 @@ void IGame_Persistent::Prefetch()
 	Log("Loading models...");
 	Render->models_Prefetch();
 	Log("Loading textures...");
-	
+
 	const auto loadFileFolder = [&](LPCSTR _folder)
 	{
 		string_path folder;

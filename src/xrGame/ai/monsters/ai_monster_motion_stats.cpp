@@ -37,7 +37,7 @@ bool CMotionStats::is_good_motion(u32 elems_checked)
 
 	for (u32 i = from_index; i > to_index; i--)
 	{
-		// считать только, если все элементы содержат одинаковые скорости	
+		// считать только, если все элементы содержат одинаковые скорости
 		if (!fsimilar(test_speed, _data[i].speed)) break;
 
 		float cur_dist = _data[i].position.distance_to(_data[i - 1].position);

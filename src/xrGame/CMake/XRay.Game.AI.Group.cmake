@@ -24,7 +24,7 @@ add_module(XRay.Game.AI.Group.Agent.Enemy
   SOURCES
   member_enemy.h
   member_enemy_inline.h
-  
+
   agent_enemy_manager.cpp
   agent_enemy_manager.h
   agent_enemy_manager_inline.h
@@ -35,7 +35,7 @@ add_module(XRay.Game.AI.Group.Agent.Explosive
   danger_explosive.cpp
   danger_explosive.h
   danger_explosive_inline.h
-  
+
   agent_explosive_manager.cpp
   agent_explosive_manager.h
   agent_explosive_manager_inline.h
@@ -54,7 +54,7 @@ add_module(XRay.Game.AI.Group.Agent.Location
   danger_object_location.cpp
   danger_object_location.h
   danger_object_location_inline.h
-  
+
   agent_location_manager.cpp
   agent_location_manager.h
   agent_location_manager_inline.h
@@ -64,7 +64,7 @@ add_module(XRay.Game.AI.Group.Agent.Member
   SOURCES
   member_order.h
   member_order_inline.h
-  
+
   agent_member_manager.cpp
   agent_member_manager.h
   agent_member_manager_inline.h

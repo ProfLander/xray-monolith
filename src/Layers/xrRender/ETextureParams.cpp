@@ -162,10 +162,10 @@ void STextureParams::Save(IWriter& F)
 void STextureParams::OnTypeChange(PropValue* prop)
 {
 	switch (type){
-    case ttImage:	
-    case ttCubeMap:	
+    case ttImage:
+    case ttCubeMap:
     break;
-    case ttBumpMap:	
+    case ttBumpMap:
 	    flags.set			(flGenerateMipMaps,FALSE);
     break;
     case ttNormalMap:
@@ -187,16 +187,16 @@ void STextureParams::OnTypeChange(PropValue* prop)
 }
 
 void STextureParams::FillProp(LPCSTR base_name, PropItemVec& items, PropValue::TOnChange on_type_change)
-{                             
+{
 	OnTypeChangeEvent	            = on_type_change;
     PropValue* P		            = PHelper().CreateToken32	(items, "Type",		(u32*)&type,		ttype_token);
     P->OnChangeEvent.bind           (this,&STextureParams::OnTypeChange);
     PHelper().CreateCaption			(items, "Source\\Width",			shared_str().printf("%d",width));
     PHelper().CreateCaption			(items, "Source\\Height",			shared_str().printf("%d",height));
-    PHelper().CreateCaption			(items, "Source\\Alpha",			HasAlpha	()?"present":"absent"); 
+    PHelper().CreateCaption			(items, "Source\\Alpha",			HasAlpha	()?"present":"absent");
 	switch (type){
-    case ttImage:	
-    case ttCubeMap:	
+    case ttImage:
+    case ttCubeMap:
 	    PHelper().CreateToken32		(items, "Format",	   				(u32*)&fmt, 		tfmt_token);
 
 	    PHelper().CreateFlag32		(items, "MipMaps\\Enabled",			&flags,				flGenerateMipMaps);
@@ -210,7 +210,7 @@ void STextureParams::FillProp(LPCSTR base_name, PropItemVec& items, PropValue::T
             path = base_name;
         	PHelper().CreateChoose	(items, "Bump\\Texture",			&bump_name,			smTexture, path.c_str());
         }
-        
+
         PHelper().CreateFlag32		(items, "Details\\Use As Diffuse",	&flags,				flDiffuseDetail);
         PHelper().CreateFlag32		(items, "Details\\Use As Bump (R2)",&flags,				flBumpDetail);
         PHelper().CreateChoose		(items, "Details\\Texture",			&detail_name,		smTexture);
@@ -218,7 +218,7 @@ void STextureParams::FillProp(LPCSTR base_name, PropItemVec& items, PropValue::T
 
         PHelper().CreateToken32		(items, "Material\\Base",			(u32*)&material,	tmtl_token);
         PHelper().CreateFloat	   	(items, "Material\\Weight",			&material_weight	);
-        
+
 //		PHelper().CreateFlag32		(items, "Flags\\Binary Alpha",		&flags,				flBinaryAlpha);
         PHelper().CreateFlag32		(items, "Flags\\Dither",			&flags,				flDitherColor);
         PHelper().CreateFlag32		(items, "Flags\\Dither Each MIP",	&flags,				flDitherEachMIPLevel);
@@ -235,17 +235,17 @@ void STextureParams::FillProp(LPCSTR base_name, PropItemVec& items, PropValue::T
         PHelper().CreateFlag32		(items, "Border\\Enabled Alpha",	&flags,				flAlphaBorder);
         PHelper().CreateColor	   	(items, "Border\\Color",			&border_color		);
     break;
-    case ttBumpMap:	
+    case ttBumpMap:
         PHelper().CreateChoose		(items, "Bump\\Special NormalMap",	&ext_normal_map_name,smTexture,base_name);
         PHelper().CreateFloat	   	(items, "Bump\\Virtual Height (m)",	&bump_virtual_height, 0.f, 0.1f, 0.001f, 3);
     break;
-    case ttNormalMap:	
+    case ttNormalMap:
 	    P = PHelper().CreateToken32	(items, "Format",	   				(u32*)&fmt, 		tfmt_token); P->Owner()->Enable(false);
 
 	    PHelper().CreateFlag32		(items, "MipMaps\\Enabled",			&flags,				flGenerateMipMaps);
     	PHelper().CreateToken32		(items, "MipMaps\\Filter",			(u32*)&mip_filter,	tparam_token);
     break;
-    case ttTerrain:	
+    case ttTerrain:
 	    P = PHelper().CreateToken32	(items, "Format",	   				(u32*)&fmt, 		tfmt_token); P->Owner()->Enable(false);
 
         PHelper().CreateFlag32		(items, "Details\\Use As Diffuse",	&flags,				flDiffuseDetail);
@@ -264,7 +264,7 @@ void STextureParams::FillProp(LPCSTR base_name, PropItemVec& items, PropValue::T
 BOOL STextureParams::similar(STextureParams& tp1, xr_vector<AnsiString>& sel_params)
 {
 	BOOL res 				= TRUE;
-    
+
     xr_vector<AnsiString>::iterator it = sel_params.begin();
     xr_vector<AnsiString>::iterator it_e = sel_params.end();
 
@@ -308,7 +308,7 @@ BOOL STextureParams::similar(STextureParams& tp1, xr_vector<AnsiString>& sel_par
         	res = (bump_name==tp1.bump_name);
         }else
         if(par_name=="Details\\Use As Diffuse")
-        {           
+        {
      		res = (flags.test(flDiffuseDetail)==tp1.flags.test(flDiffuseDetail));
         }else
         if(par_name=="Details\\Use As Bump (R2)")
@@ -332,7 +332,7 @@ BOOL STextureParams::similar(STextureParams& tp1, xr_vector<AnsiString>& sel_par
         	res = (fsimilar(material_weight,tp1.material_weight) );
         }else
         if(par_name=="Flags\\Binary Alpha")
-        {                  
+        {
      		res = (flags.test(flBinaryAlpha)==tp1.flags.test(flBinaryAlpha));
         }else
         if(par_name=="Flags\\Dither")

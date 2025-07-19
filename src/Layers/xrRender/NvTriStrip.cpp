@@ -230,7 +230,7 @@ void GenerateStrips(const u16* in_indices, const s32 in_numIndices, xr_vector<Pr
 //  of acceptable values for indices in your primitive groups.
 // remappedGroups: array of remapped PrimitiveGroups
 //
-// Note that, according to the remapping handed back to you, you must reorder your 
+// Note that, according to the remapping handed back to you, you must reorder your
 //  vertex buffer.
 //
 void RemapIndices(const xr_vector<PrimitiveGroup>& in_primGroups, const u16 numVerts,

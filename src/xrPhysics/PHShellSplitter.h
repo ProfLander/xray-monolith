@@ -45,7 +45,7 @@ class CPHShellSplitterHolder : public CPHUpdateObject //call all Fractures and B
 	virtual void PhDataUpdate(dReal step);
 	//call fractures PhDataUpdate for element splitters m_pShell->m_elements[m_splitters[i]->m_element]->m_pFracturesHolder->PhDataUpdate()
 	bool CheckSplitter(u16 aspl); //
-	shell_root SplitJoint(u16 aspl); //create new shell moving into it departed elements and joints 
+	shell_root SplitJoint(u16 aspl); //create new shell moving into it departed elements and joints
 	shell_root ElementSingleSplit(const element_fracture& split_elem, const CPHElement* source_element);
 	void SplitElement(u16 aspl, PHSHELL_PAIR_VECTOR& out_shels); //
 	void PassEndSplitters(const CShellSplitInfo& spl_inf, CPHShell* dest, u16 jt_add_shift, u16 el_add_shift);

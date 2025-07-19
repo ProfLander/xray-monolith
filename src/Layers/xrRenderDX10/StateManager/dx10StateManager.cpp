@@ -309,9 +309,9 @@ void dx10StateManager::SetDepthEnable(u32 Enable)
 	ValidateDSDesc();
 
 	//if (z_enable != _enable)
-	//{ 
+	//{
 	//	z_enable=_enable;
-	//	CHK_DX(HW.pDevice->SetRenderState	( D3DRS_ZENABLE, _enable )); 
+	//	CHK_DX(HW.pDevice->SetRenderState	( D3DRS_ZENABLE, _enable ));
 	//}
 
 	BOOL BEnable = (BOOL)Enable;
@@ -326,12 +326,12 @@ void dx10StateManager::SetColorWriteEnable(u32 WriteMask)
 {
 	ValidateBDesc();
 
-	//if (colorwrite_mask		!= _mask)		{ 
-	//	colorwrite_mask=_mask;		
-	//	CHK_DX(HW.pDevice->SetRenderState	( D3DRS_COLORWRITEENABLE,	_mask	));	
-	//	CHK_DX(HW.pDevice->SetRenderState	( D3DRS_COLORWRITEENABLE1,	_mask	));	
-	//	CHK_DX(HW.pDevice->SetRenderState	( D3DRS_COLORWRITEENABLE2,	_mask	));	
-	//	CHK_DX(HW.pDevice->SetRenderState	( D3DRS_COLORWRITEENABLE3,	_mask	));	
+	//if (colorwrite_mask		!= _mask)		{
+	//	colorwrite_mask=_mask;
+	//	CHK_DX(HW.pDevice->SetRenderState	( D3DRS_COLORWRITEENABLE,	_mask	));
+	//	CHK_DX(HW.pDevice->SetRenderState	( D3DRS_COLORWRITEENABLE1,	_mask	));
+	//	CHK_DX(HW.pDevice->SetRenderState	( D3DRS_COLORWRITEENABLE2,	_mask	));
+	//	CHK_DX(HW.pDevice->SetRenderState	( D3DRS_COLORWRITEENABLE3,	_mask	));
 	//}
 
 	UINT8 WMask = (UINT8)WriteMask;

@@ -22,10 +22,10 @@ void CSoundRender_Emitter::fill_data(u8* _dest, u32 offset, u32 size)
 		char* dest		= (char*)_dest;
 		u32	left		= size;
 		while (left)
-		{                     
+		{
 			int ret		= ov_read(source->ovf,dest,left,0,2,1,&dummy);
 	//		Msg			("Part: %d - %d",left,ret);
-			if (ret==0){	
+			if (ret==0){
 		        ret=0;
 		        break;
 	        }if (ret>0){

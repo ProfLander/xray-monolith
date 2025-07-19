@@ -82,7 +82,7 @@ void game_cl_mp::PlaySndMessage(u32 ID)
 		}
 	}
 #ifdef DEBUG
-	if (MaxDelay>0) 
+	if (MaxDelay>0)
 	{
 		Msg("- SndMsgDelay - %d", MaxDelay);
 	};

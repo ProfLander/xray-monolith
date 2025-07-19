@@ -80,7 +80,7 @@ public:
 		aTransform.translate_over(Translate1);
 		aTransform.mulA_43(Transform);
 
-		//	Translate.add(Translate1);	
+		//	Translate.add(Translate1);
 		//transform.translate_over(Translate1);
 
 		//transform.translate_add

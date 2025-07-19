@@ -314,7 +314,7 @@ void stalker_movement_manager_smart_cover::build_exit_path()
 
 		Fvector exit_position;
 		u32 exit_vertex_id;
-		//		transition_action const&	action = 
+		//		transition_action const&	action =
 		nearest_action(cur_cover, exitable_loophole_id, smart_cover::transform_vertex("", false), target_position,
 		               exit_position, exit_vertex_id, &m_target.m_body_state);
 

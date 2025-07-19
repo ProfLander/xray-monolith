@@ -8,7 +8,7 @@ void CMonsterSquad::ProcessIdle()
 	m_temp_entities.clear();
 	VERIFY(leader && !leader->getDestroy());
 
-	// Выделить элементы с общими врагами и состянием атаки 
+	// Выделить элементы с общими врагами и состянием атаки
 	for (MEMBER_GOAL_MAP_IT it_goal = m_goals.begin(); it_goal != m_goals.end(); it_goal++)
 	{
 		SMemberGoal goal = it_goal->second;

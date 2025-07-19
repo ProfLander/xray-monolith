@@ -80,7 +80,7 @@ void CPHSimpleCharacter::UpdateDynamicDamage(dContact* c, u16 obj_material_idx, 
 		float dbg_obj_effective_e=Kobj*object_damage_factor;
 		float dbg_free_energy=KK;
 		LPCSTR name= PhysicsRefObject()->ObjectName();
-		
+
 		Msg("-----------------------------------------------------------------------------------------");
 		Msg("cd %s -effective vell %f",		name,				c_vel);
 		Msg("cd %s -my_norm_vell %f",		name,				dbg_my_norm_vell);

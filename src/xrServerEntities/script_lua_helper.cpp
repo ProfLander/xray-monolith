@@ -23,7 +23,7 @@ void CDbgLuaHelper::UnPrepareLua(lua_State* l, int idx)
 
 int CDbgLuaHelper::PrepareLua(lua_State* l)
 {
-	// call this function immediatly before calling lua_pcall. 
+	// call this function immediatly before calling lua_pcall.
 	//returns index in stack for errorFunc
 	//	return 0;
 	lua_register(l, "DEBUGGER_ERRORMESSAGE", errormessageLua);

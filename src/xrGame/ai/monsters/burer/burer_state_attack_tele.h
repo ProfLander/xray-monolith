@@ -37,7 +37,7 @@ public:
 
 
 private:
-	// Поиск объектов для телекинеза	
+	// Поиск объектов для телекинеза
 	void FindObjects();
 
 	void HandleGrenades();

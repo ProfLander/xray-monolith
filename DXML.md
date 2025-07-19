@@ -57,7 +57,7 @@ function on_xml_read()
         -- Check if its the file i want to change
         if xml_file_name == xml_to_change then
             -- Here is my code to change XML
-            local my_new_scope = 
+            local my_new_scope =
 [[
 <wpn_crosshair_bino x="0" y="0" width="2048" height="1536">
     <auto_static x="0" y="0" width="1024" height="768" stretch="1">
@@ -99,7 +99,7 @@ The path argument should be a path to the file WITH EXTENSION (example: `[[plugi
 
 The base folder for xml files to read is gamedata/configs, for example if the path provided is `plugins\new_dialog.xml`, then the file should exist in `gamedata/configs/plugins/new_dialog.xml`.
 
-If the file has failed to read, the game will crash with the error message displaying what happened. 
+If the file has failed to read, the game will crash with the error message displaying what happened.
 
 ```lua
 function on_xml_read()
@@ -276,10 +276,10 @@ For now, it is impossible to use xml_obj from DXML to process `gameplay\characte
 ```lua
 function on_game_start()
     RegisterScriptCallback("on_specific_character_init", function(character_id, data)
-  
+
         --character_id is the id attribute of <specific_character> tag (ie. "sim_default_csky_0_default_0")
         if character_id == "sim_default_csky_0_default_0" then
-  
+
             -- change appearance of this npc to Beard
             data.visual = "actors\stalker_neutral\stalker_neutral_3_face_1"
         end

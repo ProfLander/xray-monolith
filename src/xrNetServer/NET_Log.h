@@ -33,12 +33,12 @@ public:
 };
 
 /*
-// Singleton template definition 
+// Singleton template definition
 template <class T> class CSingleton {
 private:
 	static T*	_self;
 	static int	_refcount;
-public:	
+public:
 	//whether singleton will delete itself on FreeInst
 	//when _refcount = 0
 	//otherwise user should call DestroySingleton() manually
@@ -50,13 +50,13 @@ public:
 	static			void DestroySingleton	()	{
 		if(!_self) return;
 		Log			("DestroySingleton::RefCounter:",_refcount);
-		VERIFY(_on_self_delete == false); 
+		VERIFY(_on_self_delete == false);
 		VERIFY(_refcount == 0);
 		xr_delete(_self);
 	};
 public:
 	static	T*		Instance	() {
-		if(!_self) _self=xr_new<T>(); 
+		if(!_self) _self=xr_new<T>();
 		++_refcount;
 		return _self;
 	}
@@ -66,7 +66,7 @@ public:
 				CSingleton<T> *ptr = this;
 				xr_delete(ptr);
 			}
-		} 
+		}
 	}
 };
 

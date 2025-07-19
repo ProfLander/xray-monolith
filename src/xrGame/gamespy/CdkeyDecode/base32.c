@@ -182,7 +182,7 @@ ConvertFromBase32(char* pcOut, const char* pcIn, int nInBytes)
 // Given a buffer, convert it to a base-32 string.
 //
 // Returns the number of bytes it wrote out.
-// 
+//
 // This is the platform-neutral version, which uses arrays of characters
 // to simulate a little-endian environment's integers.  Thus, ac[0] is
 // the least significant byte in our 5-byte integer, and ac[4] is the

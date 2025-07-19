@@ -31,7 +31,7 @@ void CControlPathBuilderBase::prepare_builder()
 
 //////////////////////////////////////////////////////////////////////////
 // Method: set_target_point
-// Desc: just set desirable position and update actuality 
+// Desc: just set desirable position and update actuality
 // all checkings will be made on update stage
 //////////////////////////////////////////////////////////////////////////
 void CControlPathBuilderBase::set_target_point(const Fvector& position, u32 node)

@@ -129,7 +129,7 @@ void TargetCrosshair::IntegratePosition(const SPickParam& pp, float dist, bool i
 {
 	// Transform ray start and direction into camera space
 	Fvector p, d;
-	
+
 	Fmatrix mat = pp.barrel_matrix;
 	CActor* actor = Actor();
 	if (actor && actor->HUDview())

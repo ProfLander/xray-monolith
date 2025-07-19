@@ -65,7 +65,7 @@ void UIGameMP::ShowMapDesc()
 {
 	if (Level().IsDemoPlay())
 		return;
-	
+
 	VERIFY(m_pMapDesc);
 	if (!m_pMapDesc->IsShown())
 	{

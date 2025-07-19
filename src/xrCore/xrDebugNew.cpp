@@ -91,7 +91,7 @@ public:
         | StackWalker::StackWalkOptions::RetrieveLine
         | StackWalker::StackWalkOptions::SymBuildPath
     ) {}
-protected:    
+protected:
     virtual void OnOutput(LPCSTR szText) {
         std::string s = szText;
         std::string sLowered = s;
@@ -250,7 +250,7 @@ void xrDebug::backend(const char* expression, const char* description, const cha
 {
     // we save first
     crash_saving::save();
-    
+
 	static xrCriticalSection CS
 #ifdef PROFILE_CRITICAL_SECTIONS
         (MUTEX_PROFILE_ID(xrDebug::backend))

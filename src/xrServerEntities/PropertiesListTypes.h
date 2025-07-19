@@ -280,7 +280,7 @@ public:
 				(*it)->OnChangeEvent(*it);
 	}
 
-	/*    
+	/*
 	    template <class T1, class T2>
 		IC void				OnBeforeEdit	()
 	    {

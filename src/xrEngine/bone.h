@@ -603,7 +603,7 @@ IC void CBoneInstance::construct()
 	Callback_Param = nullptr;
 	Callback_overwrite = false;
 	Callback_type = 0;
-	ZeroMemory(&param, sizeof(param));		  
+	ZeroMemory(&param, sizeof(param));
 }
 
 #endif

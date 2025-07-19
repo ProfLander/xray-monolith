@@ -140,7 +140,7 @@ private:
 //{
 //	virtual bool			compare							(const	CPHReqComparerV* v)					const	{return v->compare(this);}
 //	virtual bool			compare							(const	CPHOnesConditionSelfCmpTrue* v)		const	{return true;}
-//	
+//
 //};
 
 class CPHWallMarksCall :
@@ -243,7 +243,7 @@ void TContactShotMark(CDB::TRI* T, dContactGeom* c)
 	//dBodyID b=dGeomGetBody(c->g1);
 	//dxGeomUserData* data =0;
 	//bool b_invert_normal=false;
-	//if(!b) 
+	//if(!b)
 	//{
 	//	b=dGeomGetBody(c->g2);
 	//	data=dGeomGetUserData(c->g2);
@@ -253,7 +253,7 @@ void TContactShotMark(CDB::TRI* T, dContactGeom* c)
 	//{
 	//	data=dGeomGetUserData(c->g1);
 	//}
-	//if(!b) 
+	//if(!b)
 	//	return;
 
 	//dVector3 vel;

@@ -38,9 +38,9 @@
 
 
 //
-// Constructor stores the T and S matrices and the 
+// Constructor stores the T and S matrices and the
 // lengths of the upper and lower links
-// 
+//
 void SRS::init(const Matrix T1, const Matrix T2, const float a[3], const float p[3])
 {
 	cpmatrix(T, T1);
@@ -61,16 +61,16 @@ void SRS::init(const Matrix T1, const Matrix T2, const float a[3], const float p
 }
 
 //
-// Given the goal position and the position vectors s and t of 
-// the S and T matrices, solve for the angle of the R joint 
+// Given the goal position and the position vectors s and t of
+// the S and T matrices, solve for the angle of the R joint
 // according to the formula (here g and s are row vectors)
 //
 // ([s,1]*Ry*T*R1)*([s,1]*Ry*T*R1)' = g*g'
-// 
+//
 // which says the distance from R1 to the tip of the last link
 // is equal to the distance to the goal.
 //
-// This equation simplifies to 
+// This equation simplifies to
 //      s*Rot(Ry)*(Rot(T))*t' = g'*g - s'*s - t'*t
 // where Rot(M) is the 3x3 rotation matrix of M
 // and this equation is of the form
@@ -219,7 +219,7 @@ float get_circle_equation(const float ee[3],
 }
 
 //
-// Check if the goal is longer than the combined two 
+// Check if the goal is longer than the combined two
 // link lengths. If it is then scale it within some
 // epsilon so that it lies within the boundary of the
 // outer workspace.
@@ -263,11 +263,11 @@ int scale_goal(const float l1[3],
 // swivel.
 //
 // E is a matrix that relates the R pos to the end effector
-// site according to the product E*S 
+// site according to the product E*S
 //
 // Subsequent calls to SolveR1 will solve the position equation
 //
-//     g = [0,0,0,1]*E*S*Ry*T*R1 
+//     g = [0,0,0,1]*E*S*Ry*T*R1
 //
 
 int SRS::SetGoalPos(const float eee[3], const Matrix E, float& rangle)
@@ -276,7 +276,7 @@ int SRS::SetGoalPos(const float eee[3], const Matrix E, float& rangle)
 	float s[3];
 
 
-	// Find RY, and store the positions of the R jt and 
+	// Find RY, and store the positions of the R jt and
 	// the ee in the R1 frame as p_r1 and ee_r1
 
 
@@ -288,7 +288,7 @@ int SRS::SetGoalPos(const float eee[3], const Matrix E, float& rangle)
 	if (project_to_workspace)
 		scale_goal(p_r1, s, ee);
 
-	// 
+	//
 	// Note instead of using the length of the lower limb
 	// we use the length of the lower limb extended by E
 	//
@@ -323,7 +323,7 @@ void SRS::EvaluateCircle(const float p[3])
 //
 // Given the goal matrix and the projection axis, find the position
 // of the end effector and the equation of the circle that defines
-// how the R joint can swivel. 
+// how the R joint can swivel.
 //
 // Also compute the matrix S*RY*T and save it for future computations
 //
@@ -341,7 +341,7 @@ int SRS::SetGoal(const Matrix GG, float& rangle)
 		set_translation(G, ee);
 
 	EvaluateCircle(ee);
-	//radius = get_circle_equation(ee, proj_axis, pos_axis, 
+	//radius = get_circle_equation(ee, proj_axis, pos_axis,
 	//			 upper_len, lower_len, c, u, v, n);
 
 	//
@@ -353,9 +353,9 @@ int SRS::SetGoal(const Matrix GG, float& rangle)
 	r_angle = -r_angle;
 	rangle = r_angle;
 
-	// Find RY, and store the positions of the R jt and 
+	// Find RY, and store the positions of the R jt and
 	// the ee in the R1 frame as p_r1 and ee_r1
-	// Also save matrix product S*RY*T 
+	// Also save matrix product S*RY*T
 
 	rotation_principal_axis_to_matrix('y', -r_angle, RY);
 
@@ -390,7 +390,7 @@ inline void evalcircle(const float c[3],
 }
 
 //
-// Evaluate a point on the circle given the swivel angle 
+// Evaluate a point on the circle given the swivel angle
 //
 void SRS::evaluate_circle(float angle, float p[3])
 {
@@ -427,7 +427,7 @@ inline void make_frame(const float p[3],
 	// x vector is unit vector from origin to p
 	vecscalarmult(x, (float *)p, p_scale);
 
-	// y vector is unit perpendicular projection of q onto x 
+	// y vector is unit perpendicular projection of q onto x
 	vecscalarmult(t, x, DOT(q, x));
 	vecsub(y, (float *)q, t);
 	unitize(y);
@@ -486,7 +486,7 @@ static void solve_R1(float p[3], float q[3],
 // R1 is the rotation matrix that takes the position of the
 // R jt and the last S jt in the R1 frame to their locations
 // in the global frame
-//  
+//
 void SRS::SolveR1(float angle, Matrix R1)
 {
 	float p[3];
@@ -499,11 +499,11 @@ void SRS::SolveR1(float angle, Matrix R1)
     vecsub(t1, p_r1, ee_r1);
     vecsub(t2, p, ee);
 
-    printf("Elbow distance error is %lf\n", 
+    printf("Elbow distance error is %lf\n",
 	   DOT(p_r1, p_r1) - DOT(p,p));
-    printf("EE distance error is %lf\n", 
+    printf("EE distance error is %lf\n",
 	   DOT(ee,ee) - DOT(ee_r1,ee_r1));
-    printf("Distance between elbow and wrist error is %lf\n", 
+    printf("Distance between elbow and wrist error is %lf\n",
 	   DOT(t1,t1) - DOT(t2,t2));
 #endif
 }
@@ -520,9 +520,9 @@ void SRS::SolveR1R2(float angle, Matrix R1, Matrix R2)
 
 #ifdef SRSDEBUG
     Matrix G2;
-    
+
     hmatmult(G2, R2, SRT);
-    hmatmult(G2, G2, R1); 
+    hmatmult(G2, G2, R1);
     printf("Displaying the error matrix\n");
     for (int i = 0; i < 4; i++)
     {
@@ -565,10 +565,10 @@ void SRS::SolveR1R2(const float pos[3], Matrix R1, Matrix R2)
 
 //
 // Given an axis of rotation n, construct an arbitrary rotation matrix R(n,psi)
-// that represents a rotation about n by psi deccomposed into its cos,sin, 
-// and constant componets. 
+// that represents a rotation about n by psi deccomposed into its cos,sin,
+// and constant componets.
 // ie: R(n,psi) = cos(psi) * c + sin(psi) + s + o
-//  
+//
 static void rotation_matrix(const float n[3], Matrix c, Matrix s, Matrix o)
 {
 	cpmatrix(c, idmat);
@@ -624,10 +624,10 @@ int SRS::R1Psi(Matrix C, Matrix s, Matrix o)
 
 	SolveR1((float)0, R0);
 
-	// 
-	// R1(psi)  = R0*R(n,psi) 
+	//
+	// R1(psi)  = R0*R(n,psi)
 	// R(n,psi) = cos(psi)*C + sin(psi)*s + o
-	// 
+	//
 
 	rotation_matrix(n, C, s, o);
 	rmatmult(C, R0, C);
@@ -645,10 +645,10 @@ int SRS::R1R2Psi(Matrix C, Matrix s, Matrix o,
 
 	SolveR1((float)0, R0);
 
-	// 
-	// R1(psi)  = R0*R(n,psi) 
+	//
+	// R1(psi)  = R0*R(n,psi)
 	// R(n,psi) = cos(psi)*C + sin(psi)*s + o
-	// 
+	//
 
 	rotation_matrix(n, C, s, o);
 	rmatmult(C, R0, C);
@@ -656,8 +656,8 @@ int SRS::R1R2Psi(Matrix C, Matrix s, Matrix o,
 	rmatmult(o, R0, o);
 
 	//
-	// 
-	// R2 = G*transpose(SRT*R1) 
+	//
+	// R2 = G*transpose(SRT*R1)
 	// where R1 = (cos(phi)*c + sin(phi)*s + o)
 	//
 
@@ -678,7 +678,7 @@ int SRS::R1R2Psi(Matrix C, Matrix s, Matrix o,
 
 
 //
-// Rewrite all this stuff 
+// Rewrite all this stuff
 //
 
 static void get_aim_circle_equation(const float g[3],
@@ -699,7 +699,7 @@ static void get_aim_circle_equation(const float g[3],
 	rotation_principal_axis_to_matrix('y', theta4, Ry);
 	invertrmatrix(Ryt, Ry);
 
-	// Compute distance of hand to shoulder 
+	// Compute distance of hand to shoulder
 
 	float t1[3], t2[3];
 
@@ -716,7 +716,7 @@ static void get_aim_circle_equation(const float g[3],
 	// not depend on the shoulder joints
 	//
 	// h = Ry*tb + ta
-	// a = Ry*a 
+	// a = Ry*a
 
 	vecadd(t2, t1, (float *)ta);
 	unitize(t2);
@@ -775,7 +775,7 @@ void SRS::SolveAim(float psi_angle, Matrix R1)
 	float h1[3], N[3], angle;
 	Matrix S0, S1;
 
-	// Get the final hand position 
+	// Get the final hand position
 	evalcircle(c, u, v, radius, psi_angle, h1);
 
 	// Rotate ee_r1 to h1

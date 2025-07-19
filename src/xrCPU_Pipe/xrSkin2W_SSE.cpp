@@ -14,11 +14,11 @@ __asm	mulps		T1, XMMWORD PTR [edx][eax][80]							\
 __asm	addps		res, T1													\
 __asm	movaps		T1, SZ													\
 __asm	mulps		T1, XMMWORD PTR [edx][eax][96]							\
-__asm	addps		res, T1													
+__asm	addps		res, T1
 
 #define transform_tiny(idx,res,SX,SY,SZ,T1)									\
 transform_dir(idx,res,SX,SY,SZ,T1)											\
-__asm	addps		res, XMMWORD PTR [edx][eax][112]	
+__asm	addps		res, XMMWORD PTR [edx][eax][112]
 
 #define shuffle_vec(VEC,SX,SY,SZ)											\
 __asm	movss		SX, DWORD PTR [esi]VEC.x								\
@@ -39,13 +39,13 @@ __asm	movss		SW2, DWORD PTR [esi][2*(TYPE float)]S.w					\
 __asm	shufps		SW1, SW1, _MM_SHUFFLE(1,0,0,0)							\
 __asm	subss		SW3, SW2												\
 __asm	shufps		SW2, SW2, _MM_SHUFFLE(1,0,0,0)							\
-__asm	shufps		SW3, SW3, _MM_SHUFFLE(1,0,0,0)							
+__asm	shufps		SW3, SW3, _MM_SHUFFLE(1,0,0,0)
 
 // ==================================================================
 void __stdcall xrSkin4W_SSE(vertRender*		D,
 							vertBoned4W*	S,
 							u32				vCount,
-							CBoneInstance*	Bones) 
+							CBoneInstance*	Bones)
 {
 __m128 P0,P1,P2,P3; DWORD One;
 __asm{
@@ -87,7 +87,7 @@ __asm{
 	mulps		xmm3, xmm7					; xmm3 = N3
 
 	mulps		xmm4, XMMWORD PTR [P0]		; xmm4 = P0
-	mulps		xmm5, XMMWORD PTR [P1]		; xmm5 = P1 
+	mulps		xmm5, XMMWORD PTR [P1]		; xmm5 = P1
 	mulps		xmm6, XMMWORD PTR [P2]		; xmm6 = P2
 	addps		xmm4, xmm5					; xmm4 = P0 + P1
 	mulps		xmm7, XMMWORD PTR [P3]		; xmm7 = P3
@@ -111,8 +111,8 @@ __asm{
 // ------------------------------------------------------------------
 //	writing data
 // ------------------------------------------------------------------
-	movntps		XMMWORD PTR [edi-(TYPE vertRender)],xmm4		; 
-	movntps		XMMWORD PTR [edi+16-(TYPE vertRender)],xmm0		; 
+	movntps		XMMWORD PTR [edi-(TYPE vertRender)],xmm4		;
+	movntps		XMMWORD PTR [edi+16-(TYPE vertRender)],xmm0		;
 // ------------------------------------------------------------------
 	jnz			new_vert						;	// vCount == 0 ? exit : goto new_vert
 // ------------------------------------------------------------------
@@ -129,14 +129,14 @@ __asm	subss		SW2, SW0												\
 __asm	shufps		SW0, SW0, _MM_SHUFFLE(1,0,0,0)							\
 __asm	subss		SW2, SW1												\
 __asm	shufps		SW1, SW1, _MM_SHUFFLE(1,0,0,0)							\
-__asm	shufps		SW2, SW2, _MM_SHUFFLE(1,0,0,0)							
+__asm	shufps		SW2, SW2, _MM_SHUFFLE(1,0,0,0)
 
 
 // ==================================================================
 void __stdcall xrSkin3W_SSE(vertRender*		D,
 							vertBoned3W*	S,
 							u32				vCount,
-							CBoneInstance*	Bones) 
+							CBoneInstance*	Bones)
 {
 __m128 P0,P1; DWORD One;
 __asm{
@@ -170,11 +170,11 @@ __asm{
 	mulps		xmm0, xmm4					; xmm0 = N0
 	mulps		xmm1, xmm5					; xmm1 = N1
 	mulps		xmm3, xmm6					; xmm2 = N2
-	
+
 	addps		xmm0, xmm1					; xmm0 = N0 + N1
 
 	mulps		xmm4, XMMWORD PTR [P0]		; xmm4 = P0
-	mulps		xmm5, XMMWORD PTR [P1]		; xmm5 = P1 
+	mulps		xmm5, XMMWORD PTR [P1]		; xmm5 = P1
 	mulps		xmm6, xmm2					; xmm6 = P2
 
 	addps		xmm4, xmm5					; xmm4 = P0 + P1
@@ -196,8 +196,8 @@ __asm{
 // ------------------------------------------------------------------
 //	writing data
 // ------------------------------------------------------------------
-	movntps		XMMWORD PTR [edi-(TYPE vertRender)],xmm4		; 
-	movntps		XMMWORD PTR [edi+16-(TYPE vertRender)],xmm0		; 
+	movntps		XMMWORD PTR [edi-(TYPE vertRender)],xmm4		;
+	movntps		XMMWORD PTR [edi+16-(TYPE vertRender)],xmm0		;
 // ------------------------------------------------------------------
 	jnz			new_vert						;	// vCount == 0 ? exit : goto new_vert
 // ------------------------------------------------------------------
@@ -228,7 +228,7 @@ __asm	addps		res, XMMWORD PTR [edx][eax][112]
 void __stdcall xrSkin2W_SSE(vertRender*		D,
 							vertBoned2W*	S,
 							u32				vCount,
-							CBoneInstance*	Bones) 
+							CBoneInstance*	Bones)
 {__asm{
 // ------------------------------------------------------------------
 	mov			edi, DWORD PTR [D]			; edi = D
@@ -275,8 +275,8 @@ void __stdcall xrSkin2W_SSE(vertRender*		D,
 // ------------------------------------------------------------------
 //	writing data
 // ------------------------------------------------------------------
-	movntps		XMMWORD PTR [edi-(TYPE vertRender)],xmm0		; 
-	movntps		XMMWORD PTR [edi+16-(TYPE vertRender)],xmm2		; 
+	movntps		XMMWORD PTR [edi-(TYPE vertRender)],xmm0		;
+	movntps		XMMWORD PTR [edi+16-(TYPE vertRender)],xmm2		;
 // ------------------------------------------------------------------
 	jnz			new_vert						;	// vCount == 0 ? exit : goto new_vert
 // ------------------------------------------------------------------
@@ -289,7 +289,7 @@ void __stdcall xrSkin2W_SSE(vertRender*		D,
 void __stdcall xrSkin1W_SSE(vertRender*		D,
 							vertBoned1W*	S,
 							u32				vCount,
-							CBoneInstance*	Bones) 
+							CBoneInstance*	Bones)
 {__asm{
 // ------------------------------------------------------------------
 	mov			edi, DWORD PTR [D]			; edi = D
@@ -348,8 +348,8 @@ void __stdcall xrSkin1W_SSE(vertRender*		D,
 // ------------------------------------------------------------------
 //	writing data
 // ------------------------------------------------------------------
-	movntps		XMMWORD PTR [edi-(TYPE vertRender)],xmm0		; 
-	movntps		XMMWORD PTR [edi+16-(TYPE vertRender)],xmm3		; 
+	movntps		XMMWORD PTR [edi-(TYPE vertRender)],xmm0		;
+	movntps		XMMWORD PTR [edi+16-(TYPE vertRender)],xmm3		;
 // ------------------------------------------------------------------
 	jnz			new_vert						;	// vCount == 0 ? exit : goto new_vert
 // ------------------------------------------------------------------

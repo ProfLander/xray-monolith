@@ -165,7 +165,7 @@ void script_attachment::Update()
 		{
 			script_attachment_bone_cb* cb = pair.second;
 			if (!cb) continue;
-			
+
 			if (cb->m_func)
 			{
 				cb->m_mat.set((*(cb->m_func))(
@@ -174,7 +174,7 @@ void script_attachment::Update()
 
 				continue;
 			}
-			
+
 			Fmatrix& target = cb->m_mat;
 			u16 bone = cb->m_bone_id;
 
@@ -255,7 +255,7 @@ void script_attachment::RenderUI()
 		LM.mulB_43(m_script_ui_mat);
 		UIRender->CacheSetXformWorld(LM);
 		m_script_ui->Draw();
-		
+
 		UIRender->CacheSetCullMode(IUIRender::cmCCW);
 		UI().m_currentPointType = bk;
 	}
@@ -270,7 +270,7 @@ void script_attachment::RenderUI()
 }
 
 void script_attachment::AttachLight(AttachmentScriptLight* light)
-{ 
+{
 	R_ASSERT(light);
 	m_script_light = light;
 }
@@ -373,7 +373,7 @@ void script_attachment::SetParent(CGameObject* obj)
 
 		m_parent_object->remove_child(GetName());
 	}
-		
+
 
 	m_parent_object = obj;
 	m_parent_attachment = nullptr;
@@ -632,7 +632,7 @@ void script_attachment::LoadModel(LPCSTR model_name, bool keep_bc)
 		count_prev = m_kinematics->LL_BoneCount();
 		::Render->model_Delete(m_model);
 	}
-	
+
 	m_model = ::Render->model_Create(*m_model_name);
 	R_ASSERT(m_model);
 	m_kinematics = m_model->dcast_PKinematics();

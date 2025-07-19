@@ -37,12 +37,12 @@
 #include "jtlimits.h"
 
 //
-// Encodes various euler angle conventions. Upper case means a 
-// positive rotation, lower case means a negative rotation. 
+// Encodes various euler angle conventions. Upper case means a
+// positive rotation, lower case means a negative rotation.
 //
-// For example, xYZ means R(-x)*R(Y)*R(Z). 
+// For example, xYZ means R(-x)*R(Y)*R(Z).
 //
-// Note that only a small subset of the 6*4*6 possible euler 
+// Note that only a small subset of the 6*4*6 possible euler
 // rotations are encoded.
 //
 // Do not renumber these entries as they are used to index
@@ -95,7 +95,7 @@ public:
 	{
 	}
 
-	// Solve for psi ranges that lie in joint limits. Return each 
+	// Solve for psi ranges that lie in joint limits. Return each
 	// family for each joint in psi1[0..2] and psi2[0..2]
 	void SolvePsiRanges(AngleIntList psi1[3],
 	                    AngleIntList psi2[3]) const;

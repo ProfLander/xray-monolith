@@ -195,8 +195,8 @@ void SimulatorStates::UpdateDesc(D3D_RASTERIZER_DESC& desc) const
 			}
 		}
 
-		//case 1: 
-//	
+		//case 1:
+//
 //CHK_DX(HW.pDevice->SetTextureStageState	(S.v1,(D3DTEXTURESTAGESTATETYPE)S.v2,S.v3));
 //	TODO: DX10: Enable
 //	VERIFY(!"DirectX 10 doesn't support texture stage states. Implement shader instead!");
@@ -503,7 +503,7 @@ void SimulatorStates::UpdateDesc(D3D_SAMPLER_DESC descArray[D3D_COMMONSHADER_SAM
 					//desc.Filter |= FilterComparison;
 				else
 					desc.Filter = (D3D_FILTER)(desc.Filter & (~FilterComparison));
-				//desc.Filter &= ~FilterComparison;	
+				//desc.Filter &= ~FilterComparison;
 				break;
 
 				//D3Dxx_TEXTURE_ADDRESS_MODE AddressU;

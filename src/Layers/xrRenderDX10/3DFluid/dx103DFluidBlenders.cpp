@@ -84,7 +84,7 @@ namespace
 
 	/*
 	//  decay simulation option
-	class cl_decay		: public R_constant_setup 
+	class cl_decay		: public R_constant_setup
 	{
 		virtual void setup(R_constant* C)
 		{
@@ -93,9 +93,9 @@ namespace
 		}
 	};
 	static cl_decay		binder_decay;
-	
+
 	//  decay simulation ImpulseSize
-	class cl_impulseSize		: public R_constant_setup 
+	class cl_impulseSize		: public R_constant_setup
 	{
 		virtual void setup(R_constant* C)
 		{
@@ -131,15 +131,15 @@ namespace
 		// For project, advect
 		//ModulateShaderVariable = pEffect->GetVariableByName( "modulate")->AsScalar();
 		//C.r_Constant( "modulate",		&binder_decay);
-	
+
 		// For gaussian
 		// Used to apply external impulse
 		//ImpulseSizeShaderVariable = pEffect->GetVariableByName( "size")->AsScalar();
 		//C.r_Constant( "size",		&binder_impulseSize);
 		//	Setup manually by technique
 		//ImpulseCenterShaderVariable = pEffect->GetVariableByName( "center")->AsVector();
-		//SplatColorShaderVariable = pEffect->GetVariableByName( "splatColor")->AsVector();	
-	
+		//SplatColorShaderVariable = pEffect->GetVariableByName( "splatColor")->AsVector();
+
 		// For confinement
 		EpsilonShaderVariable = pEffect->GetVariableByName( "epsilon")->AsScalar();
 		// For confinement, advect
@@ -147,8 +147,8 @@ namespace
 		// For advect BFECC
 		ForwardShaderVariable = pEffect->GetVariableByName( "forward")->AsScalar();
 		HalfVolumeDimShaderVariable = pEffect->GetVariableByName( "halfVolumeDim")->AsVector();
-	
-	
+
+
 		// For render call
 		//DrawTextureShaderVariable = pEffect->GetVariableByName( "textureNumber")->AsScalar();
 		*/

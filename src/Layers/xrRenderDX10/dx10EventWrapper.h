@@ -7,4 +7,4 @@ class dxPixEventWrapper
 public:
     dxPixEventWrapper(LPCWSTR wszName);
     ~dxPixEventWrapper();
-}; 
+};

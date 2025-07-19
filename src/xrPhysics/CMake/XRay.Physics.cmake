@@ -1,6 +1,6 @@
 add_module(XRay.Physics
   TYPE STATIC
-  
+
   PRECOMPILES stdafx.h
 
   INCLUDES ${CMAKE_CURRENT_SOURCE_DIR}
@@ -201,7 +201,7 @@ add_module(XRay.Physics.Objects.PhyMove.Character.Simple
 
   ElevatorState.cpp
   ElevatorState.h
-  
+
   iclimableobject.h
 
   PHSimpleCharacter.cpp
@@ -244,7 +244,7 @@ add_module(XRay.Physics.Objects.StaticShell
 add_module(XRay.Physics.Objects.Utils
   SOURCES
   ph_valid_ode.h
-  
+
   PHValideValues.h
 
   phvalide.cpp

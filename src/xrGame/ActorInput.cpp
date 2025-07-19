@@ -198,12 +198,12 @@ void CActor::IR_OnKeyboardPress(int cmd)
 						fl->DropFlare		();
 						return				;
 					}
-		
+
 					PIItem fli = inventory().Get(CLSID_DEVICE_FLARE, true);
 					if(!fli)			return;
-		
+
 					CFlare* fl			= smart_cast<CFlare*>(fli);
-					
+
 					if(inventory().Slot(fl))
 						fl->ActivateFlare	();
 				}break;
@@ -351,7 +351,7 @@ void CActor::IR_OnKeyboardHold(int cmd)
 	}
 
 #ifdef DEBUG
-	if(psActorFlags.test(AF_NO_CLIP) && (cmd==kFWD || cmd==kBACK || cmd==kL_STRAFE || cmd==kR_STRAFE 
+	if(psActorFlags.test(AF_NO_CLIP) && (cmd==kFWD || cmd==kBACK || cmd==kL_STRAFE || cmd==kR_STRAFE
 		|| cmd==kJUMP || cmd==kCROUCH))
 	{
 		NoClipFly(cmd);
@@ -785,13 +785,13 @@ void CActor::NoClipFly(int cmd)
 
 	switch(cmd)
 	{
-	case kJUMP:		
+	case kJUMP:
 		cur_pos.y += 0.1f;
 		break;
-	case kCROUCH:	
+	case kCROUCH:
 		cur_pos.y -= 0.1f;
 		break;
-	case kFWD:	
+	case kFWD:
 		cur_pos.z += 0.1f;
 		break;
 	case kBACK:
@@ -803,13 +803,13 @@ void CActor::NoClipFly(int cmd)
 	case kR_STRAFE:
 		cur_pos.x += 0.1f;
 		break;
-	case kCAM_1:	
-		cam_Set(eacFirstEye);				
+	case kCAM_1:
+		cam_Set(eacFirstEye);
 		break;
-	case kCAM_2:	
-		cam_Set(eacLookAt);				
+	case kCAM_2:
+		cam_Set(eacLookAt);
 		break;
-	case kCAM_3:	
+	case kCAM_3:
 		cam_Set(eacFreeLook);
 		break;
 	case kNIGHT_VISION:

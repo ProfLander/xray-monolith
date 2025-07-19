@@ -63,7 +63,7 @@ public:
 #endif
 	R_dsgraph::mapSorted_T										mapHUDDistort;
 
-	// Runtime structures 
+	// Runtime structures
 	xr_vector<R_dsgraph::mapNormalVS::TNode*,render_alloc<R_dsgraph::mapNormalVS::TNode*>> nrmVS;
 #if defined(USE_DX10) || defined(USE_DX11)
 	xr_vector<R_dsgraph::mapNormalGS::TNode*,render_alloc<R_dsgraph::mapNormalGS::TNode*> >				nrmGS;

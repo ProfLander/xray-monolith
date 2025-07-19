@@ -193,7 +193,7 @@ void CWeaponMagazined::Load(LPCSTR section)
 		} else if (WeaponSoundExist(section, "snd_silncer_shoot_indoor")) {
 			m_sounds.LoadSound(section, "snd_silncer_shoot_indoor", "sndSilencerShotIndoor", false, m_eSoundShot);
 		} // Change section name from "shoot" to "shot" for consistency while keeping the old one for compatibility
-		
+
 		if (WeaponSoundExist(section, "snd_silncer_shot_actor_indoor"))
 			m_sounds.LoadSound(section, "snd_silncer_shot_actor_indoor", "sndSilencerShotActorIndoor", false, m_eSoundShot);
 		if (WeaponSoundExist(section, "snd_silncer_shoot_actor_first_indoor"))
@@ -726,7 +726,7 @@ void CWeaponMagazined::UpdateSounds()
 
 	// New Sounds
 	if (m_sounds.FindSoundItem("sndReloadEmpty", false))
-		m_sounds.SetPosition("sndReloadEmpty", P); 
+		m_sounds.SetPosition("sndReloadEmpty", P);
 	if (m_sounds.FindSoundItem("sndReloadMisfire", false))
 		m_sounds.SetPosition("sndReloadMisfire", P);
 	if (m_sounds.FindSoundItem("sndReloadActor", false))
@@ -738,7 +738,7 @@ void CWeaponMagazined::UpdateSounds()
 	if (m_sounds.FindSoundItem("sndEmptyClickActor", false))
 		m_sounds.SetPosition("sndEmptyClickActor", P);
 	if (m_sounds.FindSoundItem("sndShowActor", false))
-		m_sounds.SetPosition("sndShowActor", P); 
+		m_sounds.SetPosition("sndShowActor", P);
 	if (m_sounds.FindSoundItem("sndHideActor", false))
 		m_sounds.SetPosition("sndHideActor", P);
 	if (m_sounds.FindSoundItem("sndClickMisfire", false))
@@ -893,7 +893,7 @@ void CWeaponMagazined::PlaySoundShot()
 	{
 		// INDOOR
 		if (g_gunsnd_indoor>0.f)
-		{	
+		{
 			if (bMisfire)
 			{
 				string128 sndNameMisfireActorIndoor;
@@ -923,7 +923,7 @@ void CWeaponMagazined::PlaySoundShot()
 			string128 sndNameActorIndoor;
 			strconcat(sizeof(sndNameActorIndoor), sndNameActorIndoor, m_sSndShotCurrent.c_str(), "ActorIndoor");
 			if (m_sounds.FindSoundItem(sndNameActorIndoor, false))
-			{	
+			{
 				m_sounds.PlaySound(sndNameActorIndoor, get_LastFP(), H_Root(), !!GetHUDmode(), false, (u8)-1, g_gunsnd_indoor * g_gunsnd_indoor_volume);
 
 				string128 sndName;
@@ -1061,7 +1061,7 @@ void CWeaponMagazined::OnAnimationEnd(u32 state)
 		break; // End of Show
 	case eIdle: switch2_Idle();
 		break; // Keep showing idle
-	case eFire: 
+	case eFire:
 		if (!bWorking || 0 == iAmmoElapsed)
 			SwitchState(eIdle);
 		break; // Switch to idle if we stopped shooting
@@ -1319,7 +1319,7 @@ bool CWeaponMagazined::TryPlayAnimBore()
 		PlayHUDMotion("anm_bore_empty", TRUE, this, GetState());
 		return true;
 	}
-	
+
 	return inherited::TryPlayAnimBore();
 }
 
@@ -1814,7 +1814,7 @@ void CWeaponMagazined::PlayAnimShoot()
 		else
 			PlayHUDMotion("anm_shots_aim", TRUE, this, GetState(), 1.f, 0.f, false);
 	}
-	else 
+	else
 	{
 		if (!IsZoomed() || !HudAnimationExist("anm_shots_aim_l"))
 			PlayHUDMotion("anm_shot_l", TRUE, this, GetState(), 1.f, 0.f, false);
@@ -1835,7 +1835,7 @@ void CWeaponMagazined::OnMotionMark(u32 state, const motion_marks& M)
 			bClearJamOnly = false;
 			return;
 		}
-		
+
 		if (bHasBulletsToHide && xr_strcmp(M.name.c_str(),"lmg_reload")==0)
 		{
 			u8 ammo_type = m_ammoType;

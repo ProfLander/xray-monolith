@@ -1209,7 +1209,7 @@ void CStalkerActionSuddenAttack::execute()
 
 	inherited::execute();
 
-	//Alundaio: Removed check to allow stalkers to sneak up on enemy even if they are in a group. 
+	//Alundaio: Removed check to allow stalkers to sneak up on enemy even if they are in a group.
 	//if (object().agent_manager().member().combat_members().size() > 1)
 	//	m_storage->set_property	(eWorldPropertyUseSuddenness,false);
 	//Alundaio: END
@@ -1248,7 +1248,7 @@ void CStalkerActionSuddenAttack::execute()
 		else
 			object().sight().setup(CSightAction(SightManager::eSightTypePosition, mem_object.m_object_params.m_position,
 			                                    true));
-		//-Alundaio		
+		//-Alundaio
 	}
 
 	if (object().movement().accessible(mem_object.m_object_params.m_level_vertex_id))
@@ -1258,7 +1258,7 @@ void CStalkerActionSuddenAttack::execute()
 			ai().level_graph().vertex_position(mem_object.m_object_params.m_level_vertex_id),
 			mem_object.m_object_params.m_level_vertex_id);
 
-	/* 	if (!visible_now) 
+	/* 	if (!visible_now)
 		{
 			u32 target_vertex_id = object().movement().level_path().dest_vertex_id();
 			if (object().ai_location().level_vertex_id() == target_vertex_id) {

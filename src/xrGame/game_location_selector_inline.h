@@ -132,7 +132,7 @@ IC void CGameLocationSelector::select_random_location(const _vertex_id_type star
 			if ((m_graph->vertex((*i).vertex_id())->level_id() != ai().level_graph().level_id()))
 				continue;
 
-			// * accessible 
+			// * accessible
 			if (!accessible((*i).vertex_id()))
 				continue;
 

@@ -543,7 +543,7 @@ LPCSTR InventoryUtilities::GetGoodwillAsText(CHARACTER_GOODWILL goodwill)
 
 
 //////////////////////////////////////////////////////////////////////////
-// специальная функция для передачи info_portions при нажатии кнопок UI 
+// специальная функция для передачи info_portions при нажатии кнопок UI
 // (для tutorial)
 void InventoryUtilities::SendInfoToActor(LPCSTR info_id)
 {

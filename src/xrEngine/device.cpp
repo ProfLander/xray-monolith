@@ -372,7 +372,7 @@ void CRenderDevice::on_idle()
 	mFullTransformHud.mul(mProjectHud, mView);
 	m_pRender->SetCacheXform(mView, mProject);
 
-	// Previous frame data -- 
+	// Previous frame data --
 	mView_prev = mView_saved;
 	mProject_prev = mProject_saved;
 	//mFullTransform_prev = mFullTransform_saved; // Unused?

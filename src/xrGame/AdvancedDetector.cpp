@@ -147,13 +147,13 @@ void CUIArtefactDetectorAdv::update()
 		m_cur_y_rot						= angle_normalize_signed(m_cur_y_rot);
 		float diff						= angle_difference_signed(m_cur_y_rot, dest_y_rot);
 		float a							= (diff>0.0f)?-1.0f:1.0f;
-	
+
 		a								*= 2.0f;
-	
+
 		m_curr_ang_speed				= m_curr_ang_speed + a*Device.fTimeDelta;
 		clamp							(m_curr_ang_speed,-2.0f,2.0f);
 		float _add						= m_curr_ang_speed*Device.fTimeDelta;
-	
+
 		m_cur_y_rot						+= _add;
 	*/
 	m_cur_y_rot = angle_inertion_var(m_cur_y_rot,

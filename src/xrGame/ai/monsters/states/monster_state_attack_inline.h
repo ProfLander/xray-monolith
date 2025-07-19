@@ -35,7 +35,7 @@ CStateMonsterAttackAbstract::CStateMonsterAttack(_Object* obj) : inherited(obj)
 	add_state(eStateAttack_MoveToHomePoint, xr_new<CStateMonsterAttackMoveToHomePoint<_Object>>(obj));
 }
 
-// Lain: added 
+// Lain: added
 TEMPLATE_SPECIALIZATION
 CStateMonsterAttackAbstract::CStateMonsterAttack(_Object* obj, state_ptr state_move2home) : inherited(obj)
 {
@@ -121,7 +121,7 @@ void CStateMonsterAttackAbstract::execute()
 
 	prev_substate = current_substate;
 
-	// Notify squad	
+	// Notify squad
 	CMonsterSquad* squad = monster_squad().get_squad(object);
 	if (squad)
 	{

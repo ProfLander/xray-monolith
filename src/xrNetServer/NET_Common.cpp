@@ -6,7 +6,7 @@
 void PrintParsedPacket(const char* message, u16 message_type, const void* packet_data, u32 packet_size)
 {
 	NET_Packet			tNetPacket;
-	tNetPacket.construct		( packet_data, packet_size );	
+	tNetPacket.construct		( packet_data, packet_size );
 	u16 msg_type;
 	tNetPacket.r_begin			(msg_type);
 	if (msg_type == message_type)
@@ -15,7 +15,7 @@ void PrintParsedPacket(const char* message, u16 message_type, const void* packet
 		{
 			shared_str			s_name;
 			tNetPacket.r_stringZ		(s_name			);
-			
+
 			string256					temp;
 			tNetPacket.r_stringZ		(temp);
 			u8							temp_gt;
@@ -28,7 +28,7 @@ void PrintParsedPacket(const char* message, u16 message_type, const void* packet
 			u16							RespawnTime, ID;
 			tNetPacket.r_u16			(RespawnTime	);
 			tNetPacket.r_u16			(ID				);
-			
+
 			Msg("%s M_SPAWN for [%s]-[%d]", message, s_name.c_str(), ID);
 		} else
 		{
@@ -158,9 +158,9 @@ MultipacketSender::_FlushSendBuffer(u32 timeout, Buffer* buf)
 		// dump/log if needed
 
 #if NET_LOG_PACKETS
-        Msg( "#send %smulti-packet %u    flags= %08X", 
+        Msg( "#send %smulti-packet %u    flags= %08X",
              (buf->last_flags & DPNSEND_IMMEDIATELLY)?"IMMEDIATE ":"",
-             buf->buffer.B.count, buf->last_flags 
+             buf->buffer.B.count, buf->last_flags
            );
 #endif // NET_LOG_PACKETS
 

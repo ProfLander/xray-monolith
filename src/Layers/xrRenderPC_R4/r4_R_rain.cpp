@@ -57,7 +57,7 @@ void CRender::render_rain()
 	// calculate view-frustum bounds in world space
 	Fmatrix ex_project, ex_full, ex_full_inverse;
 	{
-		//	
+		//
 		const float fRainFar = ps_r3_dyn_wet_surf_far;
 		ex_project.build_projection(deg2rad(Device.fFOV/* *Device.fASPECT*/), Device.fASPECT,VIEWPORT_NEAR, fRainFar);
 		ex_full.mul(ex_project, Device.mView);
@@ -256,7 +256,7 @@ void CRender::render_rain()
 			RCache.set_xform_view(Fidentity);
 			RCache.set_xform_project(RainLight.X.D.combine);
 			r_dsgraph_render_graph(0);
-			//if (ps_r2_ls_flags.test(R2FLAG_SUN_DETAILS))	
+			//if (ps_r2_ls_flags.test(R2FLAG_SUN_DETAILS))
 			//	Details->Render					()	;
 		}
 	}

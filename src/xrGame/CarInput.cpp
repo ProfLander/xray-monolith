@@ -170,7 +170,7 @@ void CCar::OnKeyboardPress(int cmd)
 	case kDETECTOR: SwitchEngine();
 		break;
 	case kWPN_FUNC:
-		if (HasWeapon())			
+		if (HasWeapon())
 			m_car_weapon->Action(CCarWeapon::eWpnActivate, !m_car_weapon->IsActive()); break;
 		break;
 	case kTORCH: m_lights.SwitchHeadLights();
@@ -217,19 +217,19 @@ void CCar::OnKeyboardHold(int cmd)
 	case kRIGHT: active_camera->Move(cmd);
 		break;
 		/*
-			case kFWD:		
+			case kFWD:
 				if (ectFree==active_camera->tag)	active_camera->Move(kUP);
 				else								m_vCamDeltaHP.y += active_camera->rot_speed.y*Device.fTimeDelta;
 				break;
-			case kBACK:		
+			case kBACK:
 				if (ectFree==active_camera->tag)	active_camera->Move(kDOWN);
 				else								m_vCamDeltaHP.y -= active_camera->rot_speed.y*Device.fTimeDelta;
 				break;
-			case kL_STRAFE: 
+			case kL_STRAFE:
 				if (ectFree==active_camera->tag)	active_camera->Move(kLEFT);
 				else								m_vCamDeltaHP.x -= active_camera->rot_speed.x*Device.fTimeDelta;
 				break;
-			case kR_STRAFE: 
+			case kR_STRAFE:
 				if (ectFree==active_camera->tag)	active_camera->Move(kRIGHT);
 				else								m_vCamDeltaHP.x += active_camera->rot_speed.x*Device.fTimeDelta;
 				break;

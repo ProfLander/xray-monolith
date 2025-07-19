@@ -170,7 +170,7 @@ public:
 	float m_barrel_dir_tolerance;
 
 	HUD_SOUND_COLLECTION_LAYERED m_layered_sounds;
-	
+
 	Fvector m_fire_dir, m_fire_pos;
 
 	u16 m_left_rocket_bone, m_right_rocket_bone, m_fire_bone, m_rotate_x_bone, m_rotate_y_bone;

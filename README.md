@@ -5,7 +5,7 @@ Here is list of exe files for Anomaly 1.5.3 that contains all engine patches by 
 # Read the instructions PLEASE!!!
 ![изображение](https://github.com/user-attachments/assets/1b792ffc-127f-400f-8a2d-1f701803837d)
 
-* **Windows 10 1903 Update at least is required!!!** 
+* **Windows 10 1903 Update at least is required!!!**
 * Install the latest Visual C++ Redistributables: https://www.techpowerup.com/download/visual-c-redistributable-runtime-package-all-in-one/
 * Download STALKER-Anomaly-modded-exes_`<version>`.zip archive.
 * Unpack all directories directly into your Anomaly game folder, overwrite files if requested.
@@ -15,7 +15,7 @@ Here is list of exe files for Anomaly 1.5.3 that contains all engine patches by 
 * **If you are updating from version older than 2025.04.21 and use Reshade, you need to update Reshade as well**
 
 * Q: How to reinstall modded exes from scratch?
-* A: 
+* A:
   * Delete everything in `db/mods` folders
   * Delete everything in `gamedata/configs` folder except `localization.ltx`, `axr_options.ltx` and `cache_dbg.ltx"` files
   * Delete these folders if you have them:
@@ -54,24 +54,24 @@ The original engine is used in S.T.A.L.K.E.R. Call of Pripyat game released by G
 
   @[newsection]
   override = true
-  
+
   ```
 
-  * DLTX received possibility to add items to parameter's list if the parameter has structure like 
-  
+  * DLTX received possibility to add items to parameter's list if the parameter has structure like
+
   ```name = item1, item2, item3```
-  
+
     * `>name = item4, item5` will add item4 and item5 to list, the result would be `name = item1, item2, item3, item4, item5`
     * `<name = item3` will remove item3 from the list, the result would be `name = item1, item2`
-    * example for mod_system_...ltx: 
-    
+    * example for mod_system_...ltx:
+
     ```
       ![info_portions]
       >files                                    = ah_info, info_hidden_threat
 
       ![dialogs]
       >files                                    = AH_dialogs, dialogs_hidden_threat
-      
+
       ![profiles]
       >files                                    = npc_profile_ah, npc_profile_hidden_threat
       >specific_characters_files                = character_desc_ah, character_desc_hidden_threat
@@ -189,7 +189,7 @@ The original engine is used in S.T.A.L.K.E.R. Call of Pripyat game released by G
 * All settings can be edited from the game options in "Modded Exes" tab
 ![image](http://puu.sh/JC40Y/9315119150.jpg)
 
-## Below are the edits that are supplemental to the mods, the mods themselves **are not included**, download the mods by the links. If mods in the links provide their own exes, you can ignore them, all necessary edits are already included on this page. 
+## Below are the edits that are supplemental to the mods, the mods themselves **are not included**, download the mods by the links. If mods in the links provide their own exes, you can ignore them, all necessary edits are already included on this page.
 
 * BaS engine edits by Mortan (https://www.moddb.com/mods/stalker-anomaly/addons/boomsticks-and-sharpsticks)
 
@@ -481,7 +481,7 @@ This behaviour can be customized by setting the following variables in your fork
 
 **2025.05.01**
 * `g_draw_pickup_item_names` cvar for disabling item names on holding key (https://github.com/themrdemonized/xray-monolith/issues/191)
-* ProfLander: 
+* ProfLander:
   * Fix logspam in CWeapon::GetNearWallOffset (https://github.com/themrdemonized/xray-monolith/pull/192)
   * Fix option defaults for firepos settings (https://github.com/themrdemonized/xray-monolith/pull/193)
   * Fix crosshair readout jitter (https://github.com/themrdemonized/xray-monolith/pull/194)
@@ -493,7 +493,7 @@ This behaviour can be customized by setting the following variables in your fork
 * VodoXleb:  Callback to force set NPC body_state (https://github.com/themrdemonized/xray-monolith/pull/202)
 
 **2025.04.28**
-* Possibility to set multiple objects to ignore for `ray_pick` via multiple `set_ignore_object` calls: 
+* Possibility to set multiple objects to ignore for `ray_pick` via multiple `set_ignore_object` calls:
   ```lua
     ray:set_ignore_object(obj_1)
     ray:set_ignore_object(obj_2)
@@ -706,7 +706,7 @@ This behaviour can be customized by setting the following variables in your fork
 * Possibility to define `scope_texture` and `scope_texture_alt` in weapon upgrades
 
 **2024.11.01**
-* Poltergeists will always spawn visible corpse upon death. Previously flame ones and pseudogeists would spawn only collision mesh without visible mesh. To restore old behaviour, type `poltergeist_spawn_corpse_on_death 0` in console  
+* Poltergeists will always spawn visible corpse upon death. Previously flame ones and pseudogeists would spawn only collision mesh without visible mesh. To restore old behaviour, type `poltergeist_spawn_corpse_on_death 0` in console
 
 **2024.10.28**
 * VodoXleb: Add explosive_item_on_explode callback (https://github.com/themrdemonized/xray-monolith/pull/97/files)
@@ -776,7 +776,7 @@ This behaviour can be customized by setting the following variables in your fork
 * deggua: Fix HDR10 rendering (https://github.com/themrdemonized/xray-monolith/pull/71)
 
 **2024.09.12**
-* GhenTuong: 
+* GhenTuong:
   * Fix particles flicking by using single threading update.
   * Objects can use "ignore_collision" in section configs to ignore collision with another objects. Can be map geometry, other physic objects, and creatures.
   `ignore_collision = map,obj,npc`
@@ -812,7 +812,7 @@ This behaviour can be customized by setting the following variables in your fork
   * `r4_hdr_colorspace` to set HDR colorspace
   * All options are available in Modded Exes options menu
   * Included shaders works with vanilla Anomaly. For compatibility with SSS and GAMMA, download GAMMA shaders from here https://github.com/deggua/xray-hdr10-shaders/releases/tag/v3
-  
+
 **2024.08.25**
 * Redotix: 3D Shader scopes (3DSS) rendering adjustments (https://github.com/themrdemonized/xray-monolith/pull/62):
   * custom shader flags for 3DSS lenses with a custom render order
@@ -947,7 +947,7 @@ This behaviour can be customized by setting the following variables in your fork
   * Poltergeists and Burers can throw corpses, to enable it check modded exes options menu or type in console `telekinetic_objects_include_corpses 1`
 
 **2024.04.12**
-* Script hit `.bone` field can be assigned `s_hit.bone = "bip01_spine"`, as well as called `s_hit.bone("bip01_spine")`. This will potentially change behaviour of some vanilla scripts and mods to the authors' intended way.   
+* Script hit `.bone` field can be assigned `s_hit.bone = "bip01_spine"`, as well as called `s_hit.bone("bip01_spine")`. This will potentially change behaviour of some vanilla scripts and mods to the authors' intended way.
 * vegeta1k95:
   * Added new optional telekinesis type for gravitational anomalies behavior: CTeleTrampolin
   * Can be used by mods, which set `tele_type 1` inside anomalies config sections.
@@ -1026,7 +1026,7 @@ This behaviour can be customized by setting the following variables in your fork
 
 **2024.02.05**
 * Xr_ini.cpp fixes
-* Fixed incorrect bullet speed in `bullet_on_init` callback 
+* Fixed incorrect bullet speed in `bullet_on_init` callback
 
 **2024.02.01**
 * Raise limits of `mouse_sens_aim` console command to 0.01-5.0
@@ -1048,7 +1048,7 @@ This behaviour can be customized by setting the following variables in your fork
 * MagielBruntink: Print missing `.ogg` comments only in debug mode
 
 **2024.01.18**
-* MagielBruntink: Increased lua_gcstep default to 400 and allow console editing via `lua_gcstep` command 
+* MagielBruntink: Increased lua_gcstep default to 400 and allow console editing via `lua_gcstep` command
 
 **2024.01.13**
 * Fixed typo in GameMtlLib.cpp
@@ -1101,7 +1101,7 @@ This behaviour can be customized by setting the following variables in your fork
 
 **2023.12.23**
 * DLTX: simplified possibility to delete whole section, now its just enough to write `!![section]` to completely delete it
-* Longreed: added possibility for minimap frame to have a custom rectangular shape 
+* Longreed: added possibility for minimap frame to have a custom rectangular shape
 
 **2023.12.17**
 * Fixed getting wrong values in ini cache due to robin_hood hashing, reenabled the library
@@ -1177,7 +1177,7 @@ actor_on_hud_animation_play` callbacks
 
 **2023.10.27**
 * Reverted change to mouse wheel, its not inverted now
-* Toggle inverted mouse wheel with console command `mouse_wheel_invert_zoom 1` 
+* Toggle inverted mouse wheel with console command `mouse_wheel_invert_zoom 1`
 
 **2023.10.20**
 * Removed monster stuck fix due to big fps loses it causes. You can turn it back via console command `monster_stuck_fix 1`
@@ -1185,7 +1185,7 @@ actor_on_hud_animation_play` callbacks
 **2023.10.17**
 * SSS 18 update
 * Lucy: specifying a custom UI bone for Svarog/Veles in the hud sections of detectors via `detector_ui_bone` property
-* `string_table_error_msg` console command to print missing translation strings 
+* `string_table_error_msg` console command to print missing translation strings
 
 **2023.10.05**
 * Fixed occasional crash when right click on PDA map
@@ -1197,7 +1197,7 @@ actor_on_hud_animation_play` callbacks
 * `db.actor:set_actor_direction` supports pitch as a second argument
 * Minor fixes of right click PDA callback
 * Added print of stack when incorrect bone id provided for bone functions
-* Moved LuaJIT to VS2022 toolchain and applied optimization flags for build 
+* Moved LuaJIT to VS2022 toolchain and applied optimization flags for build
 
 **2023.09.22**
 * Added `on_map_right_click` callback, which allows to right click anywhere on the map and fire user functions at projected real world position. Refer to `callbacks_gameobject.script`
@@ -1207,7 +1207,7 @@ actor_on_hud_animation_play` callbacks
 * Added `player_hud` functions documentation in `lua_help_ex.script`
 * Added global functions
   * `nextTick(f, n)` will execute function f on the next n-th game tick. Your function should return true if you want to fire it once, just like with time events
-  * `print_tip(s)` will print information in news feed as well as in console 
+  * `print_tip(s)` will print information in news feed as well as in console
 
 **2023.09.06**
 * Moved build procedure to Github Actions in https://github.com/themrdemonized/xray-monolith
@@ -1241,7 +1241,7 @@ actor_on_hud_animation_play` callbacks
   * https://github.com/themrdemonized/xray-monolith/pull/11
   * https://github.com/themrdemonized/xray-monolith/pull/12
   * https://github.com/themrdemonized/xray-monolith/pull/13
-  
+
 **2023.08.09**
 * Reduced size of exes
 * Changes to build procedure to solve not starting game with certain CPU configurations
@@ -1287,7 +1287,7 @@ actor_on_hud_animation_play` callbacks
   * fix for two handed detector/device animations (swaying is now applied to both arms instead of only the left one)
   * it's now possible to play script particle effects in hud_mode with :play(true) / :play_at_pos(pos, true)
   * the game will now display a crash message when crashing due to empty translation string
-  * Scripted Debug Render functions, drawing debug boxes, spheres and lines 
+  * Scripted Debug Render functions, drawing debug boxes, spheres and lines
   * Debug renderer works on DX10/11
     * Many thanks to OpenXRay and OGSR authors:
     * https://github.com/OpenXRay/xray-16/commit/752cfddc09989b1f6545f420a5c76a3baf3004d7
@@ -1361,7 +1361,7 @@ actor_on_hud_animation_play` callbacks
     * function Set_mStrapOffset(Fvector position, Fvector orientation)
     * function Set_mFirePoint(Fvector position)
     * function Set_mFirePoint2(Fvector position)
-    * function Set_mShellPoint(Fvector position) 
+    * function Set_mShellPoint(Fvector position)
 
 **2023.04.27**
 * SSS update
@@ -1415,7 +1415,7 @@ actor_on_hud_animation_play` callbacks
 * DXML 3.0 update:
   * DXML now uses own storage for callbacks to ensure they are fired accordingly to registering order
   * Added `insertFromXMLFile` function to read contents of xml file to insert into xml_obj
-  * Added optional parameter useRootNode to `insertFromXMLString` and `insertFromXMLFile` functions that will hint DXML to insert contents from a root node of parsed XML instead of the whole file (default: false) 
+  * Added optional parameter useRootNode to `insertFromXMLString` and `insertFromXMLFile` functions that will hint DXML to insert contents from a root node of parsed XML instead of the whole file (default: false)
 
 **2023.03.11**:
 
@@ -1437,7 +1437,7 @@ actor_on_hud_animation_play` callbacks
   * `scope_texture_alt = <path to texture>` will allow to specify what crosshair to use for alt. sight
 * Correct zoom_factor calculation for adjustable scopes with shader scopes enabled, you wont get any extra zoom from shader on top of engine FOV
 * `scope_factor` console command that changes zoom by shader scopes now works in real time
-* Lowered chromatic abberation and scope blur effect, increasing the quality of image  
+* Lowered chromatic abberation and scope blur effect, increasing the quality of image
 
 **2023.02.20**:
 
@@ -1446,7 +1446,7 @@ actor_on_hud_animation_play` callbacks
 
   * New console commands:
     * `demo_record_blocked_input 1` will start demo_record but you won't be available to move it or stop it, its intended for manipulation via scripts executing console commands below. The console and Esc key are available
-    * `demo_record_stop` will stop all launched `demo_record` commands, including with blocked input ones 
+    * `demo_record_stop` will stop all launched `demo_record` commands, including with blocked input ones
     * `demo_set_cam_direction <head, pitch, roll>` will set the direction the camera is facing and its roll. The parameters are in RADIANS, beware. Use this with `demo_set_cam_position <x, y, z>` to manipulate camera via scripts
 
 **2023.02.18**:
@@ -1515,21 +1515,21 @@ override = true
   db.actor:get_actor_walk_back_coef()
   db.actor:set_actor_walk_back_coef(float)
   ```
-  * DLTX received possibility to add items to parameter's list if the parameter has structure like 
-  
+  * DLTX received possibility to add items to parameter's list if the parameter has structure like
+
   ```name = item1, item2, item3```
-  
+
     * `>name = item4, item5` will add item4 and item5 to list, the result would be `name = item1, item2, item3, item4, item5`
     * `<name = item3` will remove item3 from the list, the result would be `name = item1, item2`
-    * example for mod_system_...ltx: 
-    
+    * example for mod_system_...ltx:
+
     ```
       ![info_portions]
       >files                                    = ah_info, info_hidden_threat
 
       ![dialogs]
       >files                                    = AH_dialogs, dialogs_hidden_threat
-      
+
       ![profiles]
       >files                                    = npc_profile_ah, npc_profile_hidden_threat
       >specific_characters_files                = character_desc_ah, character_desc_hidden_threat

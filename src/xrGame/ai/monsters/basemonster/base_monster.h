@@ -212,7 +212,7 @@ public:
 
 	virtual void SetTurnAnimation(bool turn_left);
 
-	// установка специфических анимаций 
+	// установка специфических анимаций
 	virtual void CheckSpecParams(u32 /**spec_params/**/)
 	{
 	}
@@ -224,7 +224,7 @@ public:
 	virtual void LookPosition(Fvector to_point, float angular_speed = PI_DIV_3);
 	// каждый монстр может по-разному реализвать эту функ (e.g. кровосос с поворотом головы и т.п.)
 
-	// Team	
+	// Team
 	virtual void ChangeTeam(int team, int squad, int group);
 
 	// ---------------------------------------------------------------------------------
@@ -275,7 +275,7 @@ public:
 	bool get_force_anti_aim() const { return m_force_anti_aim; }
 
 	// --------------------------------------------------------------------------------------
-	// Monster Settings 
+	// Monster Settings
 	ref_smem<SMonsterSettings> m_base_settings;
 	ref_smem<SMonsterSettings> m_current_settings;
 
@@ -507,7 +507,7 @@ public:
 		SDebugInfo() : active(false) {}
 		SDebugInfo(float px, float py, float dy, u32 c, u32 dc) : active(true), x(px), y(py), delta_y(dy), color (c), delimiter_color(dc) {}
 	};
-	
+
 	u8						m_show_debug_info;	// 0 - none, 1 - first column, 2 - second column
 	void					set_show_debug_info	(u8 show = 1){m_show_debug_info = show;}
 	virtual	SDebugInfo		show_debug_info		();
@@ -676,7 +676,7 @@ template <class Type>
 Type CBaseMonster::override_if_debug(pcstr var_name, Type value)
 {
 #ifdef DEBUG
-		Type		debug_value;	
+		Type		debug_value;
 		return		get_debug_var(var_name, debug_value) ? debug_value : value;
 #else // DEBUG
 	return value;

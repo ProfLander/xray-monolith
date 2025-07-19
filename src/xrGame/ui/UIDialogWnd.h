@@ -32,7 +32,7 @@ public:
 	virtual bool NeedCursor() const { return m_bNeedCursor; }
 	virtual bool NeedCenterCursor() const { return m_bNeedCenterCursor; }
 	virtual bool WorkInPause() const { return m_bWorkInPause; }
-	
+
 	virtual bool Dispatch(int cmd, int param) { return true; }
 	void ShowDialog(bool bDoHideIndicators);
 	void HideDialog();

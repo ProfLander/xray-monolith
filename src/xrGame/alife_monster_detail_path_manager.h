@@ -38,13 +38,13 @@ private:
 
 private:
 	PATH m_path;
-	// this is INVERTED path, i.e. 
+	// this is INVERTED path, i.e.
 	// start vertex is the last one
 	// destination vertex is the first one.
 	// this is useful, since iterating back
 	// on this vector during path following
-	// we just repeatedly remove the last 
-	// vertex, and this operation is 
+	// we just repeatedly remove the last
+	// vertex, and this operation is
 	// efficiently implemented in std::vector
 
 private:

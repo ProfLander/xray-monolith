@@ -67,12 +67,12 @@ CBlend(  ):
 	timeCurrent(0)			,
 	timeTotal(0)			,
 	motionID()				,
-	bone_or_part(0)			,	
+	bone_or_part(0)			,
 	channel(0)				,
 	blend(eFREE_SLOT)		,
-	blendAccrue(0)			,	
-	blendFalloff(0)			,	
-	blendPower(0)			,			
+	blendAccrue(0)			,
+	blendFalloff(0)			,
+	blendPower(0)			,
 	speed(0)				,
 	playing(0)				,
 	stop_at_end_callback(0)	,
@@ -91,7 +91,7 @@ CBlend( const CBlend& r )
 }
 
 const CBlend& operator=( const CBlend& r )
-{ 
+{
 	VERIFY( r.blend_state()!=eFREE_SLOT );
 	blendAmount			=	r.blendAmount			;
 	timeCurrent			=	r.timeCurrent			;
@@ -111,7 +111,7 @@ const CBlend& operator=( const CBlend& r )
 	Callback			=	r.Callback				;
 	CallbackParam		=	r.CallbackParam			;
 	dwFrame				=	r.dwFrame				;
-	return *this; 
+	return *this;
 }
 
 #endif
@@ -137,7 +137,7 @@ IC void CBlend::update_play(float dt, PlayCallback _Callback)
 	clamp(blendAmount, 0.f, blendPower);
 
 
-	if (!update_time(dt)) //reached end 
+	if (!update_time(dt)) //reached end
 		return;
 
 	if (_Callback && stop_at_end_callback)

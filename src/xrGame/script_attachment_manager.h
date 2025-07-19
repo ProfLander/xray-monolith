@@ -176,7 +176,7 @@ public:
 
 	u32 PlayMotion(LPCSTR name, bool mixin = true, float speed = 1.f);
 	u32 motion_length(const MotionID& M, const CMotionDef*& md, float speed);
-	
+
 	u16 bone_id(LPCSTR bone_name);
 	LPCSTR bone_name(u16 bone_id);
 
@@ -199,7 +199,7 @@ public:
 	u16 bone_parent(LPCSTR bone_name) { return bone_parent(bone_id(bone_name)); }
 
 	::luabind::object list_bones();
-	
+
 	Fmatrix& BoneTransform(IKinematics* model);
 
 	static void _BCL ScriptAttachmentBoneCallback(CBoneInstance* B);

@@ -88,7 +88,7 @@ public:
 	u32 m_dwLastUpdateTime;
 	//	Fmatrix				m_tServerTransform;
 
-	u32 m_dwCurrentTime; // time updated in UpdateCL 
+	u32 m_dwCurrentTime; // time updated in UpdateCL
 
 	struct net_update
 	{

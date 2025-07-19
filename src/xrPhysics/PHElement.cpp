@@ -433,7 +433,7 @@ void CPHElement::PhDataUpdate(dReal step)
 
 	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	///////////////scale velocity///////////////////////////////////////////////////////////////////////////////////////
-	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////	
+	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	VERIFY(dV_valid(linear_velocity));
 #ifdef DEBUG
 	if(!dV_valid(angular_velocity))
@@ -618,7 +618,7 @@ void CPHElement::applyImpulseVsMC(const Fvector& pos, const Fvector& dir, float 
 #ifdef DEBUG
 	if( dbg_draw_ph_force_apply )
 	{
-		Fvector draw_pos; draw_pos.add( cast_fv( dBodyGetPosition( m_body ) ), pos ); 
+		Fvector draw_pos; draw_pos.add( cast_fv( dBodyGetPosition( m_body ) ), pos );
 		debug_output().DBG_OpenCashedDraw();
 		debug_output().DBG_DrawLine( draw_pos, Fvector().add( draw_pos, dir ), D3DCOLOR_XRGB(255,0,0) );
 		debug_output().DBG_ClosedCashedDraw( 50000 );
@@ -1294,7 +1294,7 @@ void CPHElement::add_Mass(const SBoneShape& shape, const Fmatrix& offset, const 
 
 	Fvector mc;
 	offset.transform_tiny(mc, mass_center);
-	//calculate _new mass_center 
+	//calculate _new mass_center
 	//new_mc=(m_mass_center*m_mass.mass+mc*mass)/(mass+m_mass.mass)
 	Fvector tmp1;
 	tmp1.set(m_mass_center);

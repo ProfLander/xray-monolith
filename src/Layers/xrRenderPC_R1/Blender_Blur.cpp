@@ -53,7 +53,7 @@ void CBlender_Blur::Compile(CBlender_Compile& C)
 		C.Stage_Constant("$null");
 		C.StageEnd();
 
-		// 
+		//
 		C.R().SetRS(D3DRS_TEXTUREFACTOR, color_rgba(127, 127, 127, 127));
 	}
 	C.PassEnd();

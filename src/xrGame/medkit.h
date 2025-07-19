@@ -14,7 +14,7 @@ class CMedkit : public CEatableItemObject
 public:
 	CMedkit();
 	virtual ~CMedkit();
-	
+
 	DECLARE_SCRIPT_REGISTER_FUNCTION
 };
 

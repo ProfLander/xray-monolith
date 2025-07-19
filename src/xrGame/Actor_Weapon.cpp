@@ -33,7 +33,7 @@ BOOL g_smooth_ads_transition = 0;
 float CActor::GetWeaponAccuracy() const
 {
 	CWeapon* W = smart_cast<CWeapon*>(inventory().ActiveItem());
-	
+
 	// momopate: optionally make pdm values affect ads, have a smoother transition in and out of the aiming bonus
 	float disp_aim;
 	bool is_zooming = (W && ((g_smooth_ads_transition && GetWeaponParam(W, GetInertionAimFactor(), 1.0f) < 1.0f) || (!g_smooth_ads_transition && IsZoomAimingMode() && !GetWeaponParam(W, IsRotatingToZoom(), false))));
@@ -354,7 +354,7 @@ void CActor::SpawnAmmoForWeapon(CInventoryItem* pIItem)
 	if (!pWM || !pWM->AutoSpawnAmmo()) return;
 
 	///	CWeaponAmmo* pAmmo = smart_cast<CWeaponAmmo*>(inventory().GetAny( (pWM->m_ammoTypes[0].c_str()) ));
-	//	if (!pAmmo) 
+	//	if (!pAmmo)
 	pWM->SpawnAmmo(0xffffffff, NULL, ID());
 };
 
@@ -368,7 +368,7 @@ void CActor::RemoveAmmoForWeapon(CInventoryItem* pIItem)
 
 	CWeaponAmmo* pAmmo = smart_cast<CWeaponAmmo*>(inventory().GetAny(pWM->m_ammoTypes[0].c_str()));
 	if (!pAmmo) return;
-	//--- мы нашли патроны к текущему оружию	
+	//--- мы нашли патроны к текущему оружию
 	/*
 	//--- проверяем не подходят ли они к чему-то еще
 	bool CanRemove = true;

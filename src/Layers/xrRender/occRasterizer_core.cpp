@@ -142,7 +142,7 @@ void i_scan(int curY, float leftX, float lhx, float rightX, float rhx, float sta
 	float Zend = startZ + (maxT - startR) / lenR * Zlen; // interpolate Z to the end
 	float dZ = (Zend - Z) / (maxT - minT); // increment in Z / pixel wrt dX
 
-	// Move to far my dz/5 to place the pixel at the center of face that it covers. 
+	// Move to far my dz/5 to place the pixel at the center of face that it covers.
 	// This will make sure that objects will not be clipped for just standing next to the home from outside.
 	Z += 0.5f * _abs(dZ);
 
@@ -168,7 +168,7 @@ void i_scan(int curY, float leftX, float lhx, float rightX, float rhx, float sta
 		}
 	}
 
-	// compute the scanline 
+	// compute the scanline
 	limit = i_base + maxX;
 	for (; i < limit; i++, Z += dZ)
 	{
@@ -278,8 +278,8 @@ void i_edge(int x1, int y1, int x2, int y2)
 }
 
 
-/* 
-Rasterises 1 section of the triangle a 'section' of a triangle is the portion of a triangle between 
+/*
+Rasterises 1 section of the triangle a 'section' of a triangle is the portion of a triangle between
 2 horizontal scan lines corresponding to 2 vertices of a triangle
 p2.y >= p1.y, p1, p2 are start/end vertices
 E1 E2 are the triangle edge differences of the 2 bounding edges for this section
@@ -299,7 +299,7 @@ IC void i_section(int Sect, BOOL bMiddle)
 		startp1 = startp2 = currentA;
 		if (bMiddle) endY ++;
 
-		// check 'endY' for out-of-triangle 
+		// check 'endY' for out-of-triangle
 		int test = iFloor(currentC[1]);
 		if (endY >= test) endY --;
 
@@ -319,7 +319,7 @@ IC void i_section(int Sect, BOOL bMiddle)
 		startp2 = currentB;
 		if (bMiddle) startY --;
 
-		// check 'startY' for out-of-triangle 
+		// check 'startY' for out-of-triangle
 		int test = iCeil(currentA[1]);
 		if (startY < test) startY ++;
 

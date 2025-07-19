@@ -105,7 +105,7 @@ bool CPhraseDialogManager::AddAvailableDialog(shared_str dialog_id, CPhraseDialo
 	DIALOG_SHARED_PTR phrase_dialog(xr_new<CPhraseDialog>());
 	phrase_dialog->Load(dialog_id);
 
-	//вызвать скриптовую присоединенную функцию 
+	//вызвать скриптовую присоединенную функцию
 	//активируется после сказанной фразы
 	const CGameObject* pSpeakerGO1 = smart_cast<const CGameObject*>(this);
 	VERIFY(pSpeakerGO1);

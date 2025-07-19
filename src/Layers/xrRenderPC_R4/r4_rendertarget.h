@@ -55,7 +55,7 @@ public:
 	IBlender* b_hdr10_bloom_downsample;
 	IBlender* b_hdr10_bloom_blur;
 	IBlender* b_hdr10_bloom_upsample;
-	
+
 	IBlender* b_hdr10_lens_flare_downsample;
 	IBlender* b_hdr10_lens_flare_fgen;
 	IBlender* b_hdr10_lens_flare_blur;
@@ -339,7 +339,7 @@ private:
 	ref_shader s_hdr10_bloom_downsample;
 	ref_shader s_hdr10_bloom_blur;
 	ref_shader s_hdr10_bloom_upsample;
-	
+
 	ref_shader s_hdr10_lens_flare_downsample;
 	ref_shader s_hdr10_lens_flare_fgen;
 	ref_shader s_hdr10_lens_flare_blur;

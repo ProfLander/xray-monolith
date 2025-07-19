@@ -150,7 +150,7 @@ void CChimera::CheckSpecParams(u32 spec_params)
 	// 	{
 	// 		anim().SetCurAnim(eAnimThreaten);
 	// 	}
-	// 	if ( (spec_params & ASP_ATTACK_RUN) == ASP_ATTACK_RUN ) 
+	// 	if ( (spec_params & ASP_ATTACK_RUN) == ASP_ATTACK_RUN )
 	// 	{
 	// 		anim().SetCurAnim(eAnimAttackRun);
 	// 	}

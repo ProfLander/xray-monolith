@@ -36,7 +36,7 @@ static	const float dynamic_erp				= 1.f / 1000.f;//static_erp;//
 #define	CHECK_POS(pos,msg,br)			if (!valid_pos(pos,phBoundaries)){Msg("pos:%f,%f,%f",pos.x,pos.y,pos.z);Msg(msg);VERIFY(!br);}
 
 #else
-#define	CHECK_POS(pos,msg,br)				
+#define	CHECK_POS(pos,msg,br)
 #endif
 extern int dTriListClass;
 
@@ -56,14 +56,14 @@ static void ActivateTestDepthCallback(bool& do_colide, bool bo1, dContact& c, SG
 	c.surface.soft_cfm = cfm;
 	c.surface.soft_erp = erp;
 	/*
-	
-	
+
+
 		VERIFY(dTriListClass != dGeomGetClass(c.geom.g2));
 		bool cl_statics = (dTriListClass == dGeomGetClass(c.geom.g1));
 		VERIFY( bo1 || cl_statics );
 		CPHObject* self = static_cast<CPHObject*> ( ( (CPHActivationShape*)(PHRetrieveGeomUserData( bo1 ? c.geom.g1 : c.geom.g2 )->callback_data) ) );
 		VERIFY( self );
-		
+
 		if( cl_statics )
 		{
 			c.surface.soft_cfm=static_cfm;
@@ -74,15 +74,15 @@ static void ActivateTestDepthCallback(bool& do_colide, bool bo1, dContact& c, SG
 			do_colide = false;
 			return;
 		}
-	
+
 		c.surface.soft_cfm=dynamic_cfm;
 		c.surface.soft_erp=dynamic_erp;
-		
+
 		dxGeomUserData* data_oposite =  retrieveGeomUserData( bo1 ? c.geom.g2 : c.geom.g1 );
-		
+
 		if( !data_oposite || !data_oposite->ph_object )
 			return;
-		
+
 		CPHObject* obj1 = 0, *obj2 = 0;
 		if(bo1)
 		{
@@ -93,21 +93,21 @@ static void ActivateTestDepthCallback(bool& do_colide, bool bo1, dContact& c, SG
 			obj2 = self;
 			obj1 = data_oposite->ph_object;
 		}
-		
+
 		do_colide = false;
-	
+
 		VERIFY( obj1 && obj2 );
-	
+
 		int max_contacts;
-		if( !obj1->DActiveIsland()->CanMerge(obj2->DActiveIsland(),max_contacts ) ) 
+		if( !obj1->DActiveIsland()->CanMerge(obj2->DActiveIsland(),max_contacts ) )
 			return;
 		if( max_contacts < 1 )
 			return;
-		
+
 		dJointID contact_joint	= dJointCreateContactSpecial( 0, ContactGroup, &c );
 		obj1->DActiveIsland()->ConnectJoint(contact_joint);
 		dJointAttach			(contact_joint, dGeomGetBody(c.geom.g1), dGeomGetBody(c.geom.g2));
-	
+
 		obj1->DActiveIsland()->Merge( obj2->DActiveIsland() );
 		obj2->EnableObject( obj1 );
 		*/

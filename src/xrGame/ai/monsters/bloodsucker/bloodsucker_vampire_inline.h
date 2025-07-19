@@ -50,7 +50,7 @@ void CStateBloodsuckerVampireAbstract::reselect_state()
 		if (get_state(eStateVampire_Execute)->check_start_conditions()) state_id = eStateVampire_Execute;
 	}
 
-	// check if we executed 
+	// check if we executed
 	if (prev_substate == eStateVampire_Execute)
 		state_id = eStateVampire_Hide;
 
@@ -62,7 +62,7 @@ void CStateBloodsuckerVampireAbstract::reselect_state()
 	if (prev_substate == eStateVampire_Hide)
 		state_id = eStateVampire_Hide;
 
-	// else just 
+	// else just
 	if (state_id == u32(-1)) state_id = eStateVampire_ApproachEnemy;
 
 	select_state(state_id);

@@ -538,7 +538,7 @@ void CLevel::ProcessPrefetchEvents(void* args)
 	auto spawn_events = events->spawn_events;
 	auto prefetch_events = events->prefetch_events;
 	auto prefetched_models = events->prefetched_models;
-	auto closeSignal = events->closeSignal;	
+	auto closeSignal = events->closeSignal;
 
 	while (true)
 	{
@@ -757,7 +757,7 @@ void CLevel::ProcessGameEvents()
 							it = game_events->queue.erase(it); // remove current event
 							continue;
 						}
-					}					
+					}
 				}
 			}
 #endif
@@ -930,7 +930,7 @@ void CLevel::OnFrame()
 		ClientReceive();
 		Device.Statistic->netClient1.End();
 	}
-	
+
 	ProcessGameEvents();
 #ifdef SPAWN_ANTIFREEZE
 	{
@@ -1309,7 +1309,7 @@ void CLevel::ScriptDebugRender()
 		}
 	}
 
-	// demonized: fix of showing console window when there are no visible gizmos 
+	// demonized: fix of showing console window when there are no visible gizmos
 	if (hasVisibleObj)
 		DRender->OnFrameEnd();
 }

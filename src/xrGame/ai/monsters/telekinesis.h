@@ -28,7 +28,7 @@ public:
 
 	//clear objects (does not call release, but call switch to TS_None)
 	void clear_deactivate();
-	// clear 
+	// clear
 	virtual void clear();
 	virtual void clear_notrelevant();
 	// деактивировать объект
@@ -38,17 +38,17 @@ public:
 	// бросить все объекты в позицию 'target'
 	void fire_all(const Fvector& target);
 
-	// бросить объект 'obj' в позицию 'target' с учетом коэф силы 
+	// бросить объект 'obj' в позицию 'target' с учетом коэф силы
 	void fire(CPhysicsShellHolder* obj, const Fvector& target, float power);
 
-	// бросить объект 'obj' в позицию 'target' с учетом коэф силы 
+	// бросить объект 'obj' в позицию 'target' с учетом коэф силы
 	void fire_t(CPhysicsShellHolder* obj, const Fvector& target, float time);
 
 
 	// вернуть активность телекинеза
 	bool is_active() { return active; }
 
-	// вернуть активность объекта		
+	// вернуть активность объекта
 	bool is_active_object(CPhysicsShellHolder* obj);
 
 	// вернуть количество контролируемых объектов (в состоянии TS_Raise & TS_Keep)
@@ -66,7 +66,7 @@ public:
 		return *objects[index];
 	}
 
-	// обновить состоняие на shedule_Update			
+	// обновить состоняие на shedule_Update
 	void schedule_update();
 
 	// объект был удален - удалить все связи на объект

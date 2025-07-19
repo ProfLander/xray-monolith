@@ -60,12 +60,12 @@ public:
 
 #ifdef DEBUG // debug & mixed
 	//проверка того, что аттрибуты у тегов уникальны
-	//(если не NULL, то уникальность нарушена и возврашается имя 
+	//(если не NULL, то уникальность нарушена и возврашается имя
 	//повторяющегося атрибута)
 	LPCSTR				CheckUniqueAttrib		(XML_NODE* start_node, LPCSTR tag_name, LPCSTR attrib_name);
 #endif
 
-	//переместиться по XML дереву 
+	//переместиться по XML дереву
 	//путь задается в форме PARENT:CHILD:CHIDLS_CHILD
 	//node_index - номер, если узлов с одним именем несколько
 	XML_NODE* NavigateToNode(LPCSTR path, int node_index = 0);

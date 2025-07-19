@@ -131,10 +131,10 @@ public:
 
 		u32 forcegloss : 1;
 		u32 forceskinw : 1;
-		
+
 		// HDR10
 		u32 dx11_hdr10 : 1;
-		
+
 		float forcegloss_v;
 	} o;
 
@@ -260,13 +260,13 @@ public:
 		//--DSR-- HeatVision_start
 		RCache.hemi.set_hotness(O->GetHotness(), O->GetTransparency(), 0.f, 0.f);			//--DSR-- HeatVision
 		RCache.hemi.set_glowing(															//--DSR-- SilencerOverheat
-			sil_glow_color.x, 
+			sil_glow_color.x,
 			sil_glow_color.y,
 			sil_glow_color.z, O->GetGlowing());
 		//--DSR-- HeatVision_end
 		CopyMemory(o_hemi_cube, LT.get_hemi_cube(), CROS_impl::NUM_FACES*sizeof(float));
 	}
-	
+
 	IC void apply_lmaterial()
 	{
 		R_constant* C = &*RCache.get_c(c_sbase); // get sampler
@@ -328,7 +328,7 @@ public:
 	virtual IRender_Sector* detectSector(const Fvector& P);
 	virtual IRender_Target* getTarget();
 
-	// Main 
+	// Main
 	virtual void flush();
 	virtual void set_Object(IRenderable* O);
 	virtual void add_Occluder(Fbox2& bb_screenspace); // mask screen region as oclluded

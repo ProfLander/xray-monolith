@@ -177,7 +177,7 @@ void CUIGameSP::StartTrade(CInventoryOwner* pActorInv, CInventoryOwner* pOtherOw
 			return;
 	}
 	//---------------------------------------------------------
-	
+
 	ActorMenu->SetActor(pActorInv);
 	ActorMenu->SetPartner(pOtherOwner);
 
@@ -188,7 +188,7 @@ void CUIGameSP::StartTrade(CInventoryOwner* pActorInv, CInventoryOwner* pOtherOw
 void CUIGameSP::StartUpgrade(CInventoryOwner* pActorInv, CInventoryOwner* pMech)
 {
 	//.	if( MainInputReceiver() )	return;
-	
+
 	//---- before upgrade mode ---------------------------
 	::luabind::functor<bool> funct1;
 	if (ai().script_engine().functor("actor_menu_inventory.CUIActorMenu_OnMode_Upgrade", funct1))
@@ -198,7 +198,7 @@ void CUIGameSP::StartUpgrade(CInventoryOwner* pActorInv, CInventoryOwner* pMech)
 			return;
 	}
 	//---------------------------------------------------------
-	
+
 	ActorMenu->SetActor(pActorInv);
 	ActorMenu->SetPartner(pMech);
 
@@ -219,7 +219,7 @@ void CUIGameSP::StartTalk(bool disable_break)
 void CUIGameSP::StartCarBody(CInventoryOwner* pActorInv, CInventoryOwner* pOtherOwner) //Deadbody search
 {
 	if (TopInputReceiver()) return;
-	
+
 	//---- before Loot mode ---------------------------
 	::luabind::functor<bool> funct1;
 	if (ai().script_engine().functor("actor_menu_inventory.CUIActorMenu_OnMode_DeadBodySearch", funct1))
@@ -229,7 +229,7 @@ void CUIGameSP::StartCarBody(CInventoryOwner* pActorInv, CInventoryOwner* pOther
 			return;
 	}
 	//---------------------------------------------------------
-		
+
 	ActorMenu->SetActor(pActorInv);
 	ActorMenu->SetPartner(pOtherOwner);
 
@@ -240,7 +240,7 @@ void CUIGameSP::StartCarBody(CInventoryOwner* pActorInv, CInventoryOwner* pOther
 void CUIGameSP::StartCarBody(CInventoryOwner* pActorInv, CInventoryBox* pBox) //Deadbody search
 {
 	if (TopInputReceiver()) return;
-	
+
 	//---- before Loot mode ---------------------------
 	::luabind::functor<bool> funct1;
 	if (ai().script_engine().functor("actor_menu_inventory.CUIActorMenu_OnMode_DeadBodySearch", funct1))
@@ -250,7 +250,7 @@ void CUIGameSP::StartCarBody(CInventoryOwner* pActorInv, CInventoryBox* pBox) //
 			return;
 	}
 	//---------------------------------------------------------
-	
+
 	ActorMenu->SetActor(pActorInv);
 	ActorMenu->SetInvBox(pBox);
 	VERIFY(pBox);

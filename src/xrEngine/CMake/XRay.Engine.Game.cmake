@@ -19,7 +19,7 @@ add_module(XRay.Engine.Game.Objects
 
   xr_object.cpp
   xr_object.h
-  
+
   xr_object_list.cpp
   xr_object_list.h
 

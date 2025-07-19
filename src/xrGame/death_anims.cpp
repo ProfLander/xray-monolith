@@ -106,7 +106,7 @@ type_motion* type_motion::setup(IKinematicsAnimated* k, CInifile const* ini, LPC
 #ifdef	DEBUG
 	else if( death_anim_debug )
 		Msg("death anims: load: no setings in section %s for %s", section, type );
-	
+
 #endif
 	return this;
 }

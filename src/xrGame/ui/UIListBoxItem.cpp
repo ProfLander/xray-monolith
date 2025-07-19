@@ -86,7 +86,7 @@ float CUIListBoxItem::FieldsLength() const
 	/*
 		WINDOW_LIST::const_iterator it		= m_ChildWndList.begin();
 		WINDOW_LIST::const_iterator it_e	= m_ChildWndList.end();
-	
+
 		for(;it!=it_e;++it)
 		{
 			CUIWindow* w	= *it;

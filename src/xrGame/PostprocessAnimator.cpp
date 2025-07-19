@@ -418,7 +418,7 @@ void CPostProcessColor::update_value(float time, float value, int index)
     if (0 == index) i = m_Red.FindKey (time, 0.01f);
     else if (1 == index) i = m_Green.FindKey (time, 0.01f);
          else i = m_Blue.FindKey (time, 0.01f);
-         
+
     (*i)->value 		= value;
     (*i)->tension 		= 0;
     (*i)->continuity 	= 0;

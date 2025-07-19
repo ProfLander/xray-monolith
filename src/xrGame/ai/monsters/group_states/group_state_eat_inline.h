@@ -112,18 +112,18 @@ void CStateGroupEatAbstract::reselect_state()
 		return;
 	}
 
-	/*	
+	/*
 		if (prev_substate == eStateEat_CorpseApproachRun) { select_state(eStateEat_CheckCorpse); return; }
-	
-		if (prev_substate == eStateEat_CheckCorpse) { 
+
+		if (prev_substate == eStateEat_CheckCorpse) {
 			if (object->ability_can_drag()) select_state(eStateEat_Drag);
-			else {							
+			else {
 				if (get_state(eStateEat_Eat)->check_start_conditions())
-					select_state(eStateEat_Eat);					
-				else 
+					select_state(eStateEat_Eat);
+				else
 					select_state(eStateEat_CorpseApproachWalk);
 			}
-			return; 
+			return;
 		}*/
 
 	if (prev_substate == u32(-1))

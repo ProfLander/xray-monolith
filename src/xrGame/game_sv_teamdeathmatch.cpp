@@ -309,7 +309,7 @@ void game_sv_TeamDeathmatch::OnPlayerChangeTeam(ClientID id_who, s16 team)
 			team = AutoTeam();
 		}
 	};
-	//-----------------------------------------------------	
+	//-----------------------------------------------------
 	NET_Packet Px;
 	GenerateGameMessage(Px);
 	Px.w_u32(GAME_EVENT_PLAYER_GAME_MENU_RESPOND);
@@ -320,7 +320,7 @@ void game_sv_TeamDeathmatch::OnPlayerChangeTeam(ClientID id_who, s16 team)
 	if (ps_who->team == team) return;
 	//-----------------------------------------------------
 	KillPlayer(id_who, ps_who->GameID);
-	//-----------------------------------------------------	
+	//-----------------------------------------------------
 	ps_who->setFlag(GAME_PLAYER_FLAG_SPECTATOR);
 	//-----------------------------------------------------
 	s16 OldTeam = ps_who->team;
@@ -375,7 +375,7 @@ void game_sv_TeamDeathmatch::OnPlayerKillPlayer(game_PlayerState* ps_killer, gam
 		UpdateTeamScore(ps_killed, OldKillsVictim);
 
 
-	//-------------------------------------------------------------------	
+	//-------------------------------------------------------------------
 	if (ps_killed && ps_killer)
 	{
 		if (ps_killed != ps_killer && ps_killer->team == ps_killed->team)
@@ -504,7 +504,7 @@ void game_sv_TeamDeathmatch::OnPlayerHitPlayer_Case(game_PlayerState* ps_hitter,
 			pHitS->impulse *= (GetFriendlyFire() > 1.0f) ? GetFriendlyFire() : 1.0f;
 		}
 	}
-	//	}	
+	//	}
 	inherited::OnPlayerHitPlayer_Case(ps_hitter, ps_hitted, pHitS);
 };
 
@@ -539,7 +539,7 @@ void game_sv_TeamDeathmatch::Update()
 		{
 			if (m_delayedRoundEnd && m_roundEndDelay < Device.TimerAsync())
 			{
-				OnRoundEnd(); // eRoundEnd_Finish 
+				OnRoundEnd(); // eRoundEnd_Finish
 			}
 		}
 		break;

@@ -315,17 +315,17 @@ if(
 (distance-BxExPr/2.f)>0.f
 &&
 (currentDistance+BxExPr/2.f)*
-(distance+BxExPr/2.f)>0.f	
+(distance+BxExPr/2.f)>0.f
 ) return -1.f;
 
 if(depth<0.f&&currentDepth>=0.f) {
 depth=currentDepth;
 distance=currentDistance;
 }
-else 
+else
 dVector3 crossAx0;
 dCROSS114(crossAx0,=,fragmentonAx,R+0);
-accurate_normalize(crossAx0);	
+accurate_normalize(crossAx0);
 BxExPr=
 dFabs(dDOT14(crossAx0,R+0)*BxEx[0])+
 dFabs(dDOT14(crossAx0,R+1)*BxEx[1])+
@@ -378,7 +378,7 @@ return depth2;
 
 else{
 
-if(depth1<depth2)						{ 
+if(depth1<depth2)						{
 norm[0]=distance1*crossAx1[0];
 norm[1]=distance1*crossAx1[1];
 norm[2]=distance1*crossAx1[2];

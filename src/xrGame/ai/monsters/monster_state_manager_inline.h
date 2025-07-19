@@ -87,9 +87,9 @@ EMonsterState CMonsterStateManagerAbstract::get_state_type()
 #ifdef DEBUG
 
 TEMPLATE_SPECIALIZATION
-void   CMonsterStateManagerAbstract::add_debug_info (debug::text_tree& root_s) 
-{ 
-	CState<_Object>::add_debug_info(root_s); 
+void   CMonsterStateManagerAbstract::add_debug_info (debug::text_tree& root_s)
+{
+	CState<_Object>::add_debug_info(root_s);
 }
 
 #endif

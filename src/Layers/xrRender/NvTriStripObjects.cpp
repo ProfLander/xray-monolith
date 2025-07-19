@@ -104,7 +104,7 @@ void NvStripifier::BuildStripifyInfo(NvFaceInfoVec& faceInfos, NvEdgeInfoVec& ed
 		int v1 = indices[index++];
 		int v2 = indices[index++];
 
-		// create the face info and add it to the list of faces, but only if this exact face doesn't already 
+		// create the face info and add it to the list of faces, but only if this exact face doesn't already
 		//  exist in the list
 		NvFaceInfo* faceInfo = xr_new<NvFaceInfo>(v0, v1, v2);
 		if (!AlreadyExists(faceInfo, faceInfos))
@@ -118,7 +118,7 @@ void NvStripifier::BuildStripifyInfo(NvFaceInfoVec& faceInfos, NvEdgeInfoVec& ed
 				// create the info
 				edgeInfo01 = xr_new<NvEdgeInfo>(v0, v1);
 
-				// update the linked list on both 
+				// update the linked list on both
 				edgeInfo01->m_nextV0 = edgeInfos[v0];
 				edgeInfo01->m_nextV1 = edgeInfos[v1];
 				edgeInfos[v0] = edgeInfo01;
@@ -142,7 +142,7 @@ void NvStripifier::BuildStripifyInfo(NvFaceInfoVec& faceInfos, NvEdgeInfoVec& ed
 				// create the info
 				edgeInfo12 = xr_new<NvEdgeInfo>(v1, v2);
 
-				// update the linked list on both 
+				// update the linked list on both
 				edgeInfo12->m_nextV0 = edgeInfos[v1];
 				edgeInfo12->m_nextV1 = edgeInfos[v2];
 				edgeInfos[v1] = edgeInfo12;
@@ -166,7 +166,7 @@ void NvStripifier::BuildStripifyInfo(NvFaceInfoVec& faceInfos, NvEdgeInfoVec& ed
 				// create the info
 				edgeInfo20 = xr_new<NvEdgeInfo>(v2, v0);
 
-				// update the linked list on both 
+				// update the linked list on both
 				edgeInfo20->m_nextV0 = edgeInfos[v2];
 				edgeInfo20->m_nextV1 = edgeInfos[v0];
 				edgeInfos[v2] = edgeInfo20;
@@ -212,7 +212,7 @@ int NvStripifier::FindStartPoint(NvFaceInfoVec& faceInfos, NvEdgeInfoVec& edgeIn
 
 ///////////////////////////////////////////////////////////////////////////////////////////
 // FindGoodResetPoint()
-//  
+//
 // A good reset point is one near other commited areas so that
 // we know that when we've made the longest strips its because
 // we're stripifying in the same general orientation.
@@ -902,7 +902,7 @@ void NvStripifier::CreateStrips(const NvStripInfoVec& allStrips, IntVec& stripIn
 //
 //
 // in_indices are the input indices of the mesh to stripify
-// in_cacheSize is the target cache size 
+// in_cacheSize is the target cache size
 //
 void NvStripifier::Stripify(const WordVec& in_indices, const int in_cacheSize,
                             const int in_minStripLength, NvStripInfoVec& outStrips, NvFaceInfoVec& outFaceList)

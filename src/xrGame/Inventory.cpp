@@ -153,7 +153,7 @@ void CInventory::Take(CGameObject* pObj, bool bNotActivate, bool strict_placemen
 		if (!result)
 			pIItem->m_ItemCurrPlace.type = eItemPlaceUndefined;
 #ifdef DEBUG
-		if(!result) 
+		if(!result)
 			Msg("cant put in belt item %s", *pIItem->object().cName());
 #endif
 
@@ -163,7 +163,7 @@ void CInventory::Take(CGameObject* pObj, bool bNotActivate, bool strict_placemen
 		if (!result)
 			pIItem->m_ItemCurrPlace.type = eItemPlaceUndefined;
 #ifdef DEBUG
-		if(!result) 
+		if(!result)
 			Msg("cant put in ruck item %s", *pIItem->object().cName());
 #endif
 
@@ -173,7 +173,7 @@ void CInventory::Take(CGameObject* pObj, bool bNotActivate, bool strict_placemen
 		if (!result)
 			pIItem->m_ItemCurrPlace.type = eItemPlaceUndefined;
 #ifdef DEBUG
-		if(!result) 
+		if(!result)
 			Msg("cant slot in slot item %s", *pIItem->object().cName());
 #endif
 		break;
@@ -363,8 +363,8 @@ bool CInventory::Slot(u16 slot_id, PIItem pIItem, bool bNotActivate, bool strict
 	if (!strict_placement && !CanPutInSlot(pIItem, slot_id))
 	{
 #ifdef _DEBUG
-		Msg("there is item %s[%d,%x] in slot %d[%d,%x]", 
-				ItemFromSlot(pIItem->CurrSlot())->object().cName().c_str(), 
+		Msg("there is item %s[%d,%x] in slot %d[%d,%x]",
+				ItemFromSlot(pIItem->CurrSlot())->object().cName().c_str(),
 				ItemFromSlot(pIItem->CurrSlot())->object().ID(),
 				ItemFromSlot(pIItem->CurrSlot()),
 				pIItem->CurrSlot(),
@@ -943,7 +943,7 @@ PIItem CInventory::Same(const PIItem pIItem, bool bSearchRuck) const
 	return NULL;
 }
 
-//ищем на поясе вещь для слота 
+//ищем на поясе вещь для слота
 
 PIItem CInventory::SameSlot(const u16 slot, PIItem pIItem, bool bSearchRuck) const
 {
@@ -1095,7 +1095,7 @@ CInventoryItem* CInventory::get_object_by_id(ALife::_OBJECT_ID tObjectID)
 	return (0);
 }
 
-//скушать предмет 
+//скушать предмет
 #include "game_object_space.h"
 #include "script_callback_ex.h"
 #include "script_game_object.h"

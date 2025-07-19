@@ -58,7 +58,7 @@ void CBottleItem::BreakToPieces()
 		pStaticPG->play_at_pos(Position());
 	}
 
-	//ликвидировать сам объект 
+	//ликвидировать сам объект
 	if (Local())
 	{
 		DestroyObject();

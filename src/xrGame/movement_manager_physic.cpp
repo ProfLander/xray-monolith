@@ -16,7 +16,7 @@
 
 #include "profiler.h"
 
-// Lain: added 
+// Lain: added
 #include "steering_behaviour.h"
 
 #ifdef DEBUG
@@ -24,7 +24,7 @@
 
 #	define	DBG_PH_MOVE_CONDITIONS(c)				c
 #else // DEBUG
-#	define	DBG_PH_MOVE_CONDITIONS(c)					
+#	define	DBG_PH_MOVE_CONDITIONS(c)
 #endif // DEBUG
 
 #define DISTANCE_PHISICS_ENABLE_CHARACTERS 2.f
@@ -54,7 +54,7 @@ void dump_collision_hit(CPHMovementControl *movement_control)
 	VERIFY( iobj );
 	VERIFY( smart_cast<CPhysicsShellHolder*>(iobj) );
 	CPhysicsShellHolder	*obj = static_cast<CPhysicsShellHolder	*>(iobj);
-	Msg( "ai unit: %s hited by collision; power: %f, spawn frame %d, current frame %d ", obj->cName().c_str(), movement_control->gcontact_HealthLost, obj->spawn_time(), Device.dwFrame ); 
+	Msg( "ai unit: %s hited by collision; power: %f, spawn frame %d, current frame %d ", obj->cName().c_str(), movement_control->gcontact_HealthLost, obj->spawn_time(), Device.dwFrame );
 	//CPhysicsShellHolder* object =static_cast<CPhysicsShellHolder*>(Level().Objects.net_Find(m_collision_damage_info.m_obj_id));
 //const ICollisionDamageInfo * di=movement_control->CollisionDamageInfo();
 //VERIFY( di );
@@ -121,11 +121,11 @@ Fvector CMovementManager::path_position(const float& velocity, const Fvector& po
 
 	Fvector dest_position = position;
 
-	// Вычислить пройденную дистанцию, определить целевую позицию на маршруте, 
+	// Вычислить пройденную дистанцию, определить целевую позицию на маршруте,
 	//			 изменить detail().m_current_travel_point
 
 	float desirable_speed = velocity; // желаемая скорость объекта
-	dist = desirable_speed * time_delta; // пройденное расстояние в соостветствие с желаемой скоростью 
+	dist = desirable_speed * time_delta; // пройденное расстояние в соостветствие с желаемой скоростью
 
 	// определить целевую точку
 	Fvector target;
@@ -259,7 +259,7 @@ void CMovementManager::move_along_path(CPHMovementControl* movement_control, Fve
 		                              dist, dist_to_target, dir_to_target);
 
 		// Lain: added steering behaviour
-		// 	Fvector target; 
+		// 	Fvector target;
 		// 	target.add(dest_position, dir_to_target);
 		// 	Fvector steer_offs = m_steer_manager->calc_acceleration();
 		// 	steer_offs.mul(time_delta*10.f);
@@ -350,10 +350,10 @@ void CMovementManager::move_along_path(CPHMovementControl* movement_control, Fve
 		}
 		/*
 		} else { // есть физ. объекты
-	
+
 			movement_control->Calculate				(detail().path(), desirable_speed, detail().m_current_travel_point, precision);
 			movement_control->GetPosition			(dest_position);
-			
+
 			// проверка на хит
 			apply_collision_hit						(movement_control);
 		}
@@ -366,7 +366,7 @@ void CMovementManager::move_along_path(CPHMovementControl* movement_control, Fve
 		m_speed = 0.5f * desirable_speed + 0.5f * real_speed;
 
 
-		// Физика устанавливает позицию в соответствии с нулевой скоростью 
+		// Физика устанавливает позицию в соответствии с нулевой скоростью
 		if (detail().completed(dest_position, true))
 		{
 			if (!movement_control->PhysicsOnlyMode())

@@ -123,7 +123,7 @@ struct pred_remove_nonactual_sounds
 
 	bool operator()(const SoundElem& x)
 	{
-		// удалить звуки от объектов, перешедших в оффлайн	
+		// удалить звуки от объектов, перешедших в оффлайн
 		if (x.who && x.who->getDestroy()) return true;
 
 		// удалить 'старые' звуки

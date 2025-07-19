@@ -13,4 +13,4 @@ dxPixEventWrapper::~dxPixEventWrapper()
 {
     if (HW.pAnnotation)
         HW.pAnnotation->EndEvent();
-} 
+}

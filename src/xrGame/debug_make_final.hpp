@@ -26,7 +26,7 @@ namespace debug
 	} // namespace detail
 
 	template <typename T>
-	struct make_final : 
+	struct make_final :
 		private virtual
 			detail::make_final<
 				T,

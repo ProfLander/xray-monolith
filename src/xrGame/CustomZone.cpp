@@ -19,7 +19,7 @@
 #include "GamePersistent.h"
 #include "script_game_object.h"
 
-#define WIND_RADIUS (4*Radius())	//расстояние до актера, когда появляется ветер 
+#define WIND_RADIUS (4*Radius())	//расстояние до актера, когда появляется ветер
 #define FASTMODE_DISTANCE (100.f)	//distance to camera from sphere, when zone switches to fast update sequence
 
 extern Fvector4 ps_ssfx_int_grass_params_1;
@@ -1222,7 +1222,7 @@ void CCustomZone::UpdateBlowout()
 		m_dwBlowoutExplosionTime < (u32)m_iStateTime)
 	{
 		AffectObjects();
-		
+
 		if (m_BendGrass_Blowout)
 			g_pGamePersistent->GrassBendersAddExplosion(ID(), Position(), Fvector().set(0, -99, 0), 1.33f, m_BendGrass_Blowout_speed, 1.0f, m_BendGrass_Blowout_radius);
 	}
@@ -1549,7 +1549,7 @@ void CCustomZone::UpdateOnOffState()
 
 void CCustomZone::GoDisabledState()
 {
-	//switch to disable	
+	//switch to disable
 	NET_Packet P;
 	u_EventGen(P, GE_ZONE_STATE_CHANGE, ID());
 	P.w_u8(u8(eZoneStateDisabled));
@@ -1567,7 +1567,7 @@ void CCustomZone::GoDisabledState()
 
 void CCustomZone::GoEnabledState()
 {
-	//switch to idle	
+	//switch to idle
 	NET_Packet P;
 	u_EventGen(P, GE_ZONE_STATE_CHANGE, ID());
 	P.w_u8(u8(eZoneStateIdle));

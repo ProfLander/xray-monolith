@@ -26,7 +26,7 @@ public:
 	//
 	//virtual	void			DSideToAxis			(CPHCharacter	*actor,Fvector	&dir)const=0;
 	//virtual	float			DDSideToAxis		(CPHCharacter	*actor,Fvector	&dir)const=0;
-	//	
+	//
 	virtual void DToPlain(CPHCharacter* actor, Fvector& dist) const =0;
 	virtual float DDToPlain(CPHCharacter* actor, Fvector& dir) const =0;
 	//virtual	bool			InRange				(CPHCharacter	*actor)const=0;

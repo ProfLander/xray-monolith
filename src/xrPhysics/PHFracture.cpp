@@ -175,7 +175,7 @@ void CPHFracturesHolder::PhTune(dBodyID body)
 {
 	//iterate through all body's joints and set joints feedbacks where is not already set
 	//contact feedbacks stored in global storage - ContactFeedBacks wich cleared on each step
-	//breacable joints already has their feedbacks, 
+	//breacable joints already has their feedbacks,
 	//feedbacks for rest noncontact joints stored in m_feedbacks in runtime in this function and
 	//and killed by destructor
 
@@ -299,7 +299,7 @@ CPHFracture::CPHFracture()
 //#define DBG_BREAK
 bool CPHFracture::Update(CPHElement* element)
 {
-	////itterate through impacts & calculate 
+	////itterate through impacts & calculate
 	dBodyID body = element->get_body();
 	//const Fvector& v_bodyvel=*((Fvector*)dBodyGetLinearVel(body));
 	CPHFracturesHolder* holder = element->FracturesHolder();

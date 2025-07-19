@@ -476,8 +476,8 @@ void CAI_Stalker::update_best_item_info_impl()
 			m_best_item_to_kill &&
 			m_best_item_to_kill->can_kill()
 		) {
-		
-		if (!memory().enemy().selected()) 
+
+		if (!memory().enemy().selected())
 			return;
 
 		ai().ef_storage().non_alife().member()	= this;

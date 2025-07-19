@@ -49,7 +49,7 @@ namespace PS
 		DEFINE_VECTOR(SEffect*, EffectVec, EffectIt);
 		EffectVec m_Effects;
 #ifdef _EDITOR
-// change Equal if variables changed 
+// change Equal if variables changed
 		void __stdcall  	OnEffectsEditClick	(ButtonValue* sender, bool& bDataModified, bool& bSafe);
 		void __stdcall  	OnEffectTypeChange	(PropValue* sender);
 		void __stdcall  	OnEffectEditClick	(ButtonValue* sender, bool& bDataModified, bool& bSafe);

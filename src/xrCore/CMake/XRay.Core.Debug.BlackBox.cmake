@@ -8,7 +8,7 @@ add_module(XRay.Core.Debug.BlackBox
   blackbox/IsNT.cpp
   blackbox/NT4ProcessInfo.cpp
   blackbox/TLHELPProcessInfo.cpp
-  
+
   blackbox/BugslayerUtil.h
   blackbox/CrashHandler.h
   blackbox/DiagAssert.h

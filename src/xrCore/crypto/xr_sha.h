@@ -19,7 +19,7 @@ public:
 
 	void	start_calculate		(u8 const * data, u32 data_size);
 	bool	continue_calculate	();
-	
+
 	u8 const *	pointer			()	const { return m_result; };
 private:
 	static u32 const calc_chunk_size = 512;

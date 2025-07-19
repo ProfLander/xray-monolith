@@ -39,7 +39,7 @@ namespace steering_behaviour
 	} // namespace detail
 
 	//----------------------------------------------------------
-	// base 
+	// base
 	//----------------------------------------------------------
 
 	float base::calc_dist_factor(float dist) const
@@ -57,7 +57,7 @@ namespace steering_behaviour
 	}
 
 	//----------------------------------------------------------
-	// evade 
+	// evade
 	//----------------------------------------------------------
 
 	vec evade::calc_acceleration()
@@ -82,7 +82,7 @@ namespace steering_behaviour
 	}
 
 	//----------------------------------------------------------
-	// pursue 
+	// pursue
 	//----------------------------------------------------------
 
 	vec pursue::calc_acceleration()

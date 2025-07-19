@@ -190,7 +190,7 @@ IC void dMatrixSmallDeviationAdd(const float* matrix33_from, const float* matrix
 
 IC void twoq_2w(const Fquaternion& q1, const Fquaternion& q2, float dt, Fvector& w)
 {
-	//	
+	//
 	//	w=	2/dt*arccos(q1.w*q2.w+ q1.v.dotproduct(q2.v))
 	//		*1/sqr(1-(q1.w*q2.w+ q1.v.dotproduct(q2.v))^2)
 	//		[q1.w*q2.v-q2.w*q1.v-q1.v.crossproduct(q2.v)]
@@ -316,7 +316,7 @@ IC float ThrowMinVelTime(const Fvector& transference, float gravity_accel)
 	return _sqrt(2.f * transference.magnitude() / gravity_accel);
 }
 
-//returns num result, tgA result tangents of throw angle 
+//returns num result, tgA result tangents of throw angle
 IC u8 TransferenceAndThrowVelToTgA(const Fvector& transference, float throw_vel, float gravity_accel, Fvector2& tgA,
                                    float& s)
 {
@@ -462,6 +462,6 @@ const float				DET_CHECK_FATAL_EPS =0.8f					;//scale -35%  !? ;)
 		VERIFY(fsimilar(d,1.f,DET_CHECK_FATAL_EPS));\
 	}};
 #else
-#define	VERIFY_RMATRIX(M)	
+#define	VERIFY_RMATRIX(M)
 #endif
 #endif

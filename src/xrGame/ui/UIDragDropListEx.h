@@ -193,7 +193,7 @@ public:
 	CUICellContainer(CUIDragDropListEx* parent);
 	virtual ~CUICellContainer();
 	Ivector2 PickCell(const Fvector2& abs_pos); //Alundaio made public
-	bool ValidCell(const Ivector2& pos) const; //Alundaio made public 
+	bool ValidCell(const Ivector2& pos) const; //Alundaio made public
 	CUICell& GetCellAt(const Ivector2& pos);
 
 protected:

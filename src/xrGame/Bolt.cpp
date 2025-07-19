@@ -40,7 +40,7 @@ void CBolt::Throw()
 				l_pBolt->SetCanTake(FALSE);
 		}
 	}
-	
+
 	l_pBolt->set_destroy_time(u32(m_dwDestroyTimeMax / phTimefactor));
 	inherited::Throw();
 	spawn_fake_missile();
@@ -58,21 +58,21 @@ bool CBolt::Action(u16 cmd, u32 flags)
 {
 	if (inherited::Action(cmd, flags)) return true;
 	/*
-		switch(cmd) 
+		switch(cmd)
 		{
 		case kDROP:
 			{
-				if(flags&CMD_START) 
+				if(flags&CMD_START)
 				{
 					m_throw = false;
 					if(State() == MS_IDLE) State(MS_THREATEN);
-				} 
-				else if(State() == MS_READY || State() == MS_THREATEN) 
+				}
+				else if(State() == MS_READY || State() == MS_THREATEN)
 				{
-					m_throw = true; 
+					m_throw = true;
 					if(State() == MS_READY) State(MS_THROW);
 				}
-			} 
+			}
 			return true;
 		}
 	*/
@@ -160,7 +160,7 @@ void CBolt::State(u32 state, u32 old_state)
 				//m_dwDestroyTime			= 0xffffffff;
 
 				::luabind::functor<bool> funct;
-				if (m_pInventory && smart_cast<CInventoryOwner*>(H_Parent()) && 
+				if (m_pInventory && smart_cast<CInventoryOwner*>(H_Parent()) &&
 					ai().script_engine().functor("_G.CBolt__State", funct))
 				{
 					CActor* pActor = smart_cast<CActor*>(m_pInventory->GetOwner());

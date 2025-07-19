@@ -76,10 +76,10 @@ void CBackend::Invalidate()
 	state = NULL;
 	ps = NULL;
 	vs = NULL;
-#if defined(USE_DX10) || defined(USE_DX11)	
+#if defined(USE_DX10) || defined(USE_DX11)
 	gs = NULL;
 #endif
-	
+
 #ifdef USE_DX11
 	hs = 0;
 	ds = 0;
@@ -258,7 +258,7 @@ void CBackend::set_Textures(STextureList* _T)
 			//	Set up pixel shader resources
 			VERIFY(load_id < CTexture::rstVertex+mtMaxVertexShaderTextures);
 
-			// vertex only //d-map or vertex	
+			// vertex only //d-map or vertex
 			u32 load_id_remapped = load_id - CTexture::rstVertex;
 			if ((int)load_id_remapped > _last_vs) _last_vs = load_id_remapped;
 			if (textures_vs[load_id_remapped] != load_surf)
@@ -281,7 +281,7 @@ void CBackend::set_Textures(STextureList* _T)
 				//	Set up pixel shader resources
 				VERIFY(load_id < CTexture::rstGeometry+mtMaxGeometryShaderTextures);
 
-				// vertex only //d-map or vertex	
+				// vertex only //d-map or vertex
 				u32 load_id_remapped = load_id - CTexture::rstGeometry;
 				if ((int)load_id_remapped > _last_gs) _last_gs = load_id_remapped;
 				if (textures_gs[load_id_remapped] != load_surf)
@@ -304,7 +304,7 @@ void CBackend::set_Textures(STextureList* _T)
 				//	Set up pixel shader resources
 				VERIFY(load_id < CTexture::rstHull+mtMaxHullShaderTextures);
 
-				// vertex only //d-map or vertex	
+				// vertex only //d-map or vertex
 				u32 load_id_remapped = load_id - CTexture::rstHull;
 				if ((int)load_id_remapped > _last_hs) _last_hs = load_id_remapped;
 				if (textures_hs[load_id_remapped] != load_surf)
@@ -326,7 +326,7 @@ void CBackend::set_Textures(STextureList* _T)
 				//	Set up pixel shader resources
 				VERIFY(load_id < CTexture::rstDomain+mtMaxDomainShaderTextures);
 
-				// vertex only //d-map or vertex	
+				// vertex only //d-map or vertex
 				u32 load_id_remapped = load_id - CTexture::rstDomain;
 				if ((int)load_id_remapped > _last_ds) _last_ds = load_id_remapped;
 				if (textures_ds[load_id_remapped] != load_surf)
@@ -348,7 +348,7 @@ void CBackend::set_Textures(STextureList* _T)
 				//	Set up pixel shader resources
 				VERIFY(load_id < CTexture::rstCompute+mtMaxComputeShaderTextures);
 
-				// vertex only //d-map or vertex	
+				// vertex only //d-map or vertex
 				u32 load_id_remapped = load_id - CTexture::rstCompute;
 				if ((int)load_id_remapped > _last_cs) _last_cs = load_id_remapped;
 				if (textures_cs[load_id_remapped] != load_surf)

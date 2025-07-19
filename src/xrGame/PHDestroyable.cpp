@@ -24,20 +24,20 @@
 
 /*
 [impulse_transition_to_parts]
-random_min              =1       ; х массу объекта = величина случайно направленного импульса 
+random_min              =1       ; х массу объекта = величина случайно направленного импульса
 ; с случайн				о выбранной точкой приложения в пределах нового обекта
 random_hit_imp         =0.1     ; х величена хит - импульса =............
 
 ;ref_bone                       ; кость из по которой определяется скорость для частей у который связь не задана по умолчанию рут
-imp_transition_factor  =0.1     ; фактор с которым прикладывается хит по исходному объекту ко всем частям 
+imp_transition_factor  =0.1     ; фактор с которым прикладывается хит по исходному объекту ко всем частям
 lv_transition_factor   =1       ; коэффициент передачи линейной скорости
 av_transition_factor   =1       ; коэффициент передачи угловой скорости
 
 
 [impulse_transition_from_source_bone]
 source_bone            =0       ; ref_bone
-imp_transition_factor  =1       ; коэффициент передачи импульса     
-lv_transition_factor   =1       ; коэффициент передачи линейной скорости 
+imp_transition_factor  =1       ; коэффициент передачи импульса
+lv_transition_factor   =1       ; коэффициент передачи линейной скорости
 av_transition_factor   =1       ; коэффициент передачи угловой скорости
 
 */
@@ -221,7 +221,7 @@ void CPHDestroyable::NotificatePart(CPHDestroyableNotificate* dn)
 	VERIFY(own_K&&new_K&&own_shell&&new_shell) ;
 	CInifile* own_ini = own_K->LL_UserData();
 	CInifile* new_ini = new_K->LL_UserData();
-	//////////////////////////////////////////////////////////////////////////////////	
+	//////////////////////////////////////////////////////////////////////////////////
 	Fmatrix own_transform;
 	own_shell->GetGlobalTransformDynamic(&own_transform);
 	new_shell->SetGlTransformDynamic(own_transform);
@@ -341,7 +341,7 @@ void CPHDestroyable::NotificatePart(CPHDestroyableNotificate* dn)
 void CPHDestroyable::NotificateDestroy(CPHDestroyableNotificate* dn)
 {
 	CPhysicsShellHolder	*obj = PPhysicsShellHolder();
-	obj->setVisible(false);		
+	obj->setVisible(false);
 	VERIFY(m_depended_objects);
 #ifdef DEBUG
 	VERIFY(!physics_world()->Processing());

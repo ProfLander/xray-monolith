@@ -21,7 +21,7 @@ namespace Opcode
 using namespace CDB;
 using namespace Opcode;
 
-//BOOL APIENTRY DllMain( HANDLE hModule, 
+//BOOL APIENTRY DllMain( HANDLE hModule,
 BOOL DllMainIgnore1(HANDLE hModule,
                     u32 ul_reason_for_call,
                     LPVOID lpReserved

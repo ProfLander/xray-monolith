@@ -86,7 +86,7 @@ static LPCSTR name_bool( BOOL v )
 
 static LPCSTR name_blend_type( CBlend::ECurvature blend )
 {
-	static xr_token token_blend[] = 
+	static xr_token token_blend[] =
 	{
 		{"eFREE_SLOT"		, CBlend::eFREE_SLOT	},
 		{"eAccrue"			, CBlend::eAccrue		},
@@ -103,13 +103,13 @@ static void dump_blend( CKinematicsAnimated* K, CBlend &B, u32 index )
 	Msg( "blend index: %d, poiter: %p ", index, &B );
 	Msg( "time total: %f, speed: %f , power: %f ", B.timeTotal, B.speed, B.blendPower   );
 	Msg( "ammount: %f, time current: %f, frame %d ", B.blendAmount, B.timeCurrent,B.dwFrame );
-	Msg( "accrue: %f, fallof: %f ", B.blendAccrue, B.blendFalloff ); 
+	Msg( "accrue: %f, fallof: %f ", B.blendAccrue, B.blendFalloff );
 
 	Msg( "bonepart: %d, channel: %d, stop_at_end: %s, fall_at_end: %s "
 		, B.bone_or_part, B.channel, name_bool( B.stop_at_end ), name_bool( B.fall_at_end ) );
 	Msg( "state: %s, playing: %s, stop_at_end_callback: %s ", name_blend_type( B.blend_state() ), name_bool( B.playing ), name_bool( B.stop_at_end_callback ));
 	Msg( "callback: %p callback param: %p", B.Callback, B.CallbackParam );
-	
+
 	if( B.blend_state() != CBlend::eFREE_SLOT )
 	{
 		Msg( "motion : name %s, set: %s ", K->LL_MotionDefName_dbg( B.motionID ).first, K->LL_MotionDefName_dbg( B.motionID ).second );
@@ -152,12 +152,12 @@ LPCSTR CKinematicsAnimated::LL_MotionDefName_dbg	(LPVOID ptr)
 //.
 	// cycles
 	mdef::const_iterator I,E;
-	I = motions.cycle()->begin(); 
-	E = motions.cycle()->end(); 
+	I = motions.cycle()->begin();
+	E = motions.cycle()->end();
 	for ( ; I != E; ++I) if (&(*I).second == ptr) return *(*I).first;
 	// fxs
-	I = motions.fx()->begin(); 
-	E = motions.fx()->end(); 
+	I = motions.fx()->begin();
+	E = motions.fx()->end();
 	for ( ; I != E; ++I) if (&(*I).second == ptr) return *(*I).first;
 	return 0;
 }
@@ -930,7 +930,7 @@ void CKinematicsAnimated::LL_BuldBoneMatrixDequatize(const CBoneData* bd, u8 cha
 			keys_substruct(keys.keys[j], BK[j], keys.chanel_blend_conts[j]);
 }
 
-// calculate single bone with key blending 
+// calculate single bone with key blending
 void CKinematicsAnimated::LL_BoneMatrixBuild(u16 bone_id, CBoneInstance& bi, const Fmatrix* parent, const SKeyTable& keys)
 {
 	// Blend them together
@@ -954,7 +954,7 @@ void CKinematicsAnimated::LL_BoneMatrixBuild(u16 bone_id, CBoneInstance& bi, con
 
 	Fmatrix RES;
 	RES.mk_xform(Result.Q, Result.T);
-	
+
 	if (LL_GetBoneVisible(bone_id))
 	{
 		bi.mTransform.mul_43(*parent, RES);
@@ -991,7 +991,7 @@ void CKinematicsAnimated::LL_BoneMatrixBuild(u16 bone_id, CBoneInstance& bi, con
 void CKinematicsAnimated::BuildBoneMatrix(const CBoneData* bd, CBoneInstance& bi, const Fmatrix* parent,
                                           u8 channel_mask /*= (1<<0)*/)
 {
-	//CKey				R						[MAX_CHANNELS][MAX_BLENDED];	//all keys 
+	//CKey				R						[MAX_CHANNELS][MAX_BLENDED];	//all keys
 	//float				BA						[MAX_CHANNELS][MAX_BLENDED];	//all factors
 	//int				b_counts				[MAX_CHANNELS]	= {0,0,0,0}; //channel counts
 	SKeyTable keys;

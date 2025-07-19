@@ -140,8 +140,8 @@ void CCar::cb_Steer(CBoneInstance* B)
 	B->mTransform.mulB_43(m);
 #ifdef DEBUG
 	if( !fsimilar(DET(B->mTransform),1.f,DET_CHECK_EPS) ){
-	
-		Log("RotatingZ angle=",C->m_steer_angle);	
+
+		Log("RotatingZ angle=",C->m_steer_angle);
 		VERIFY2(0,"Bones callback returns BAD!!! matrix");
 	}
 #endif
@@ -169,7 +169,7 @@ BOOL CCar::net_Spawn(CSE_Abstract* DC)
 	CSE_ALifeCar *car = smart_cast<CSE_ALifeCar*>(e);
 
 	CPHSkeleton::Spawn(e);
-	
+
 	IKinematics* K = smart_cast<IKinematics*>(Visual());
 	IKinematicsAnimated	*A = smart_cast<IKinematicsAnimated*>(Visual());
 	if (A) {
@@ -205,7 +205,7 @@ BOOL CCar::net_Spawn(CSE_Abstract* DC)
 		m_memory = xr_new<car_memory>(this);
 		m_memory->reload(pUserData->r_string("visual_memory_definition", "section"));
 	}
-	
+
 	renderable.visual->flags.set(IRenderVisualFlags::eIgnoreOptimization, TRUE);
 
 	xr_vector<IRenderVisual*>* children = renderable.visual->get_children();
@@ -368,12 +368,12 @@ void CCar::RestoreNetState(CSE_PHSkeleton* po)
 		replace.mul(sof,inv);
 	////////////////////////////////////////////////////////////////////
 		{
-			
+
 			PKinematics(Visual())->CalculateBones_Invalidate();
 			PKinematics(Visual())->CalculateBones();
 			PPhysicsShell()->DisableCollision();
 			CPHActivationShape activation_shape;//Fvector start_box;m_PhysicMovementControl.Box().getsize(start_box);
-	
+
 			Fvector center;Center(center);
 			Fvector obj_size;BoundingBox().getsize(obj_size);
 			get_box(PPhysicsShell(),restored_form,obj_size,center);
@@ -484,14 +484,14 @@ void CCar::VisualUpdate(float fov)
 		{
 			Owner()->XFORM().mul_43(XFORM(), m_sits_transforms[0]);
 		}
-		// 
-		// 		if(OwnerActor() && OwnerActor()->IsMyCamera()) 
+		//
+		// 		if(OwnerActor() && OwnerActor()->IsMyCamera())
 		// 		{
 		// 			cam_Update(Device.fTimeDelta, fov);
 		// 			OwnerActor()->Cameras().Update(Camera());
 		// 			OwnerActor()->Cameras().ApplyDevice();
 		// 		}
-		// 
+		//
 		/*
 		if(CurrentGameUI())
 		{
@@ -1744,7 +1744,7 @@ void CCar::OnEvent(NET_Packet& P, u16 type)
 			bool just_before_destroy = !P.r_eof() && P.r_u8();
 			O->SetTmpPreDestroy(just_before_destroy);
 			GetInventory()->DropItem(smart_cast<CGameObject*>(O), just_before_destroy, just_before_destroy);
-			//if(GetInventory()->DropItem(smart_cast<CGameObject*>(O), just_before_destroy)) 
+			//if(GetInventory()->DropItem(smart_cast<CGameObject*>(O), just_before_destroy))
 			//{
 			//	O->H_SetParent(0, just_before_destroy);
 			//}
@@ -2086,7 +2086,7 @@ void CCar::SetfFuel(float fuel)
 	m_fuel = fuel;
 }
 
-// получить и задать размер топливного бака 
+// получить и задать размер топливного бака
 float CCar::GetfFuelTank()
 {
 	return m_fuel_tank;

@@ -128,7 +128,7 @@ inline void vecadd(float t[], float u[], float v[])
 #endif
 
 //
-// Some miscellaneous useful routines 
+// Some miscellaneous useful routines
 //
 
 float norm(float v[3]);
@@ -191,12 +191,12 @@ inline void get_row(Matrix M, int row,  float v[3])
 
 //
 // p = projection(u) onto v
-// 
+//
 void project(float p[3], const float u[3], const float v[3]);
 
 //
 // p = projection(u) onto plane whose normal is n
-// 
+//
 void project_plane(float p[3], float u[3], float n[3]);
 
 

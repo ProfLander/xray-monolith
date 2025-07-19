@@ -13,7 +13,7 @@ void CBlender_lut::Compile(CBlender_Compile& C)
 	IBlender::Compile(C);
 
 	C.r_Pass("stub_screen_space", "pp_lut", FALSE, FALSE, FALSE);
-	
+
 	C.r_dx10Texture("s_image", r2_RT_generic0);//  r2_RT_generic0
 	//C.r_dx10Texture("debug_image", r2_RT_ssfx_hud);//  r2_RT_generic0
 	C.r_dx10Texture("debug_noise", "fx\\blue_noise");//  r2_RT_generic0
@@ -23,6 +23,6 @@ void CBlender_lut::Compile(CBlender_Compile& C)
 	C.r_dx10Sampler("smp_base");
 	C.r_dx10Sampler("smp_nofilter");
 	C.r_dx10Sampler("smp_rtlinear");
-	C.r_dx10Sampler("smp_linear");	
+	C.r_dx10Sampler("smp_linear");
 	C.r_End();
 }

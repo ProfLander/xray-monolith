@@ -144,7 +144,7 @@ private:
 	typedef
 	CID_Generator<
 		u32, // time identifier type
-		u8, // compressed id type 
+		u8, // compressed id type
 		u16, // id type
 		u8, // block id type
 		u16, // chunk id type
@@ -308,16 +308,16 @@ public:
 		enum e_dbg_net_Draw_Flags
 		{
 
-			dbg_draw_actor_alive			=(1<<0),	
-			dbg_draw_actor_dead				=(1<<1),	
-			dbg_draw_customzone				=(1<<2),	
-			dbg_draw_teamzone				=(1<<3),	
-			dbg_draw_invitem				=(1<<4),	
-			dbg_draw_actor_phys				=(1<<5),	
-			dbg_draw_customdetector			=(1<<6),	
-			dbg_destroy						=(1<<7),	
-			dbg_draw_autopickupbox			=(1<<8),	
-			dbg_draw_rp						=(1<<9),	
+			dbg_draw_actor_alive			=(1<<0),
+			dbg_draw_actor_dead				=(1<<1),
+			dbg_draw_customzone				=(1<<2),
+			dbg_draw_teamzone				=(1<<3),
+			dbg_draw_invitem				=(1<<4),
+			dbg_draw_actor_phys				=(1<<5),
+			dbg_draw_customdetector			=(1<<6),
+			dbg_destroy						=(1<<7),
+			dbg_draw_autopickupbox			=(1<<8),
+			dbg_draw_rp						=(1<<9),
 			dbg_draw_climbable				=(1<<10),
 			dbg_draw_skeleton				=(1<<11)
 		};

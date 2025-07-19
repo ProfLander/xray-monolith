@@ -379,10 +379,10 @@ void CSoundMemoryManager::remove_links(CObject* object)
 #ifdef USE_SELECTED_SOUND
 	if (!m_selected_sound)
 		return;
-	
+
 	if (!m_selected_sound->m_object)
 		return;
-	
+
 	if (m_selected_sound->m_object->ID() != object->ID())
 		return;
 

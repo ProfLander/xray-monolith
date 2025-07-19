@@ -456,7 +456,7 @@ void CScriptGameObject::SetHealthEx(float hp)
 //-AVO
 
 // AVO: Credits: KD
-// functions for testing object class 
+// functions for testing object class
 #define TEST_OBJECT_CLASS(A,B)\
 bool A () const\
 {\

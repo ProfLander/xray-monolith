@@ -250,7 +250,7 @@ protected:
 	s32 m_ShotRndSeed;
 
 	bool m_bOutBorder;
-	//сохраняет счетчик объектов в feel_touch, для которых необходимо обновлять размер колижена с актером 
+	//сохраняет счетчик объектов в feel_touch, для которых необходимо обновлять размер колижена с актером
 	u32 m_feel_touch_characters;
 private:
 	void SwitchOutBorder(bool new_border_state);
@@ -322,7 +322,7 @@ public:
 	virtual void OnHUDDraw(CCustomHUD* hud);
 	BOOL HUDview() const;
 
-	//visiblity 
+	//visiblity
 	virtual float ffGetFov() const { return 90.f; }
 	virtual float ffGetRange() const { return 500.f; }
 
@@ -514,7 +514,7 @@ protected:
 	float m_fDispBase;
 	float m_fDispAim;
 	//коэффициенты на сколько процентов увеличится базовая дисперсия
-	//учитывает скорость актера 
+	//учитывает скорость актера
 	float m_fDispVelFactor;
 	//если актер бежит
 	float m_fDispAccelFactor;
@@ -583,7 +583,7 @@ protected:
 	xr_deque<net_update_A> NET_A;
 
 	//---------------------------------------------
-	//	bool					m_bHasUpdate;	
+	//	bool					m_bHasUpdate;
 	/// spline coeff /////////////////////
 	float SCoeff[3][4]; //коэффициэнты для сплайна Бизье
 	float HCoeff[3][4]; //коэффициэнты для сплайна Эрмита

@@ -32,7 +32,7 @@ add_module(XRay.Engine.Render.Fonts
   SOURCES
   GameFont.cpp
   GameFont.h
-  
+
   MbHelpers.cpp
   MbHelpers.h
 )

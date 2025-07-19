@@ -120,7 +120,7 @@ BOOL R_constant_table::parseConstants(ID3DShaderReflectionConstantBuffer* pTable
 						{
 						case 2:	r_type	=	RC_2x4;	break;
 						case 3: r_type	=	RC_3x4;	break;
-						default:	
+						default:
 						fatal		("MATRIX_ROWS: unsupported number of RegisterCount");
 						break;
 						}
@@ -128,7 +128,7 @@ BOOL R_constant_table::parseConstants(ID3DShaderReflectionConstantBuffer* pTable
 						*/
 					case 4:
 						r_type = RC_4x4;
-						//VERIFY(4 == it->RegisterCount); 
+						//VERIFY(4 == it->RegisterCount);
 						break;
 					default:
 						fatal("MATRIX_ROWS: unsupported number of Rows");
@@ -149,7 +149,7 @@ BOOL R_constant_table::parseConstants(ID3DShaderReflectionConstantBuffer* pTable
 			break;
 		case D3D10_SVC_OBJECT:
 			{
-				//	TODO: DX10: 
+				//	TODO: DX10:
 				VERIFY(!"Implement shader object parsing.");
 				/*
 				switch (T->Type)
@@ -387,7 +387,7 @@ BOOL R_constant_table::parse(void* _desc, u32 destination)
 
 				//	Encode bind dest (pixel/vertex buffer) and bind point index
 				u32 uiBufferIndex = iBuf;
-				uiBufferIndex |= dest_to_cbuf_type(destination); /*(destination&RC_dest_pixel) 
+				uiBufferIndex |= dest_to_cbuf_type(destination); /*(destination&RC_dest_pixel)
 					? CB_BufferPixelShader : (destination&RC_dest_vertex)
 					? CB_BufferVertexShader : CB_BufferGeometryShader;*/
 

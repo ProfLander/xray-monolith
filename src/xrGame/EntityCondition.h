@@ -165,7 +165,7 @@ public:
 	IC void SetConditionDeltaTime(float DeltaTime) { m_fDeltaTime = DeltaTime; };
 
 
-	//скорость потери крови из всех открытых ран 
+	//скорость потери крови из всех открытых ран
 	float BleedingSpeed();
 
 	CObject* GetWhoHitLastTime() { return m_pWho; }
@@ -207,7 +207,7 @@ protected:
 	//очистка массива ран
 
 
-	//все величины от 0 до 1			
+	//все величины от 0 до 1
 	float m_fPower; //сила
 	float m_fRadiation; //доза радиактивного облучения
 	float m_fPsyHealth; //здоровье
@@ -274,7 +274,7 @@ protected:
 	float m_fLastChanceHealth;
 	float m_fInvulnerableTime;
 	float m_fInvulnerableTimeDelta;
-	//для отслеживания времени 
+	//для отслеживания времени
 	u64 m_iLastTimeCalled;
 	float m_fDeltaTime;
 	//кто нанес последний хит

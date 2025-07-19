@@ -897,7 +897,7 @@ void CRenderTarget::phase_ssfx_fog_scattering()
 	FVF::TL* pv;
 
 	ref_rt* rt_Blur[2] = {&rt_blur_4, &rt_blur_2};
-	
+
 	for (int blurp = 0; blurp < 2; blurp++)
 	{
 		int SampleScale = 1 << (2 - blurp); // 0 = 4 -> 1 = 2

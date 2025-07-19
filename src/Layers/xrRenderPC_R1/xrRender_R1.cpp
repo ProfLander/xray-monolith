@@ -6,7 +6,7 @@
 #include "../xrRender/dxUIRender.h"
 #include "../xrRender/dxDebugRender.h"
 
-//BOOL APIENTRY DllMain( HANDLE hModule, 
+//BOOL APIENTRY DllMain( HANDLE hModule,
 BOOL DllMainXrRenderR1(HANDLE hModule, DWORD ul_reason_for_call, LPVOID lpReserved)
 {
 	switch (ul_reason_for_call)

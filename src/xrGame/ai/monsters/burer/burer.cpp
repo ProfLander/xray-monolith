@@ -86,7 +86,7 @@ void CBurer::Load(LPCSTR section)
 {
 	inherited::Load(section);
 
-	//anim().AddReplacedAnim		(&m_bDamaged, eAnimStandIdle,	eAnimStandDamaged);	
+	//anim().AddReplacedAnim		(&m_bDamaged, eAnimStandIdle,	eAnimStandDamaged);
 	//anim().AddReplacedAnim		(&m_bDamaged, eAnimRun,			eAnimRunDamaged);
 	//anim().AddReplacedAnim		(&m_bDamaged, eAnimWalkFwd,		eAnimWalkDamaged);
 
@@ -190,11 +190,11 @@ void CBurer::Load(LPCSTR section)
 
 	// 	anim().AddAnim(eAnimScared,			"stand_scared_",		-1, &velocity_none,		PS_STAND); //, 	"fx_stand_f", "fx_stand_b", "fx_stand_l", "fx_stand_r");
 	// 	anim().AddAnim(eAnimSteal,			"stand_steal_",			-1, &velocity_steal,	PS_STAND); //, 	"fx_stand_f", "fx_stand_b", "fx_stand_l", "fx_stand_r");
-	// 	anim().AddAnim(eAnimEat,			"sit_eat_",				-1, &velocity_none,		PS_SIT); //, 	"fx_stand_f", "fx_stand_b", "fx_stand_l", "fx_stand_r");	
-	// 
+	// 	anim().AddAnim(eAnimEat,			"sit_eat_",				-1, &velocity_none,		PS_SIT); //, 	"fx_stand_f", "fx_stand_b", "fx_stand_l", "fx_stand_r");
+	//
 	// 	anim().AddAnim(eAnimSitIdle,		"sit_idle_",			-1, &velocity_none,		PS_SIT); //, 	"fx_stand_f", "fx_stand_b", "fx_stand_l", "fx_stand_r");
 	// 	anim().AddAnim(eAnimCheckCorpse,	"sit_check_corpse_",	-1, &velocity_none,		PS_SIT); //, 	"fx_stand_f", "fx_stand_b", "fx_stand_l", "fx_stand_r");
-	// 	anim().AddAnim(eAnimSitStandUp,		"sit_stand_up_",		-1, &velocity_none,		PS_SIT); //, 	"fx_stand_f", "fx_stand_b", "fx_stand_l", "fx_stand_r");	
+	// 	anim().AddAnim(eAnimSitStandUp,		"sit_stand_up_",		-1, &velocity_none,		PS_SIT); //, 	"fx_stand_f", "fx_stand_b", "fx_stand_l", "fx_stand_r");
 	// 	anim().AddAnim(eAnimStandSitDown,	"stand_sit_down_",		-1, &velocity_none,		PS_STAND); //, 	"fx_stand_f", "fx_stand_b", "fx_stand_l", "fx_stand_r");
 
 	//	anim().AddTransition(PS_SIT,		PS_STAND,		eAnimSitStandUp,	false);
@@ -316,7 +316,7 @@ void CBurer::UpdateGraviObject()
 
 	new_pos.mad(m_gravi_object.cur_pos, dir, dist);
 
-	// Trace to enemy 
+	// Trace to enemy
 	Fvector enemy_center;
 	m_gravi_object.enemy->Center(enemy_center);
 	dir.sub(enemy_center, new_pos);
@@ -412,7 +412,7 @@ void CBurer::UpdateCL()
 	inherited::UpdateCL();
 
 	UpdateGraviObject();
-	//if (m_fast_gravi->check_start_conditions()) 
+	//if (m_fast_gravi->check_start_conditions())
 	//	control().activate(ControlCom::eComCustom1);
 }
 

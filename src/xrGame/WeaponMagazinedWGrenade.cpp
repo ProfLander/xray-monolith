@@ -226,7 +226,7 @@ void CWeaponMagazinedWGrenade::PerformSwitchGL()
 		SetZoomType(m_bGrenadeMode ? 2 : newzoomtype);
 	} else {
 		SetZoomType(m_bGrenadeMode ? 2 : 0);
-	}	
+	}
 
 	UpdateUIScope();
 
@@ -925,7 +925,7 @@ void CWeaponMagazinedWGrenade::PlayAnimShoot()
 				PlayHUDMotion("anm_shot_g_l", TRUE, this, GetState(), 1.f, 0.f, false);
 			else
 				PlayHUDMotion("anm_shot_g_l_aim", TRUE, this, GetState(), 1.f, 0.f, false);
-		}		
+		}
 	}
 	else
 	{

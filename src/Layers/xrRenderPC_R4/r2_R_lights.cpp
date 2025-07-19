@@ -258,7 +258,7 @@ void CRender::render_lights(light_Package& LP)
 				{
 					Target->accum_volumetric(L_spot_s[it]);
 				}
-				
+
 				// Restore resolution
 				if (RImplementation.o.ssfx_volumetric)
 					Target->set_viewport_size(HW.pContext, w, h);

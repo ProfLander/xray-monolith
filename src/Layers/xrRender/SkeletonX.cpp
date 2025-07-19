@@ -138,7 +138,7 @@ void CSkeletonX::_Render(ref_geom& hGeom, u32 vCount, u32 iOffset, u32 pCount)
 				RCache.set_ca(&*array, id + 2, M._13, M._23, M._33, M._43);
 
 #ifdef USE_DX11
-				if (RImplementation.o.ssfx_motionvectors) 
+				if (RImplementation.o.ssfx_motionvectors)
 				{
 					// Save previous transform
 					Fmatrix& Mprev = Parent->LL_GetBoneInstance(u16(mid)).mRenderTransform_prev;
@@ -407,7 +407,7 @@ void CSkeletonX::_Load(const char* N, IReader* data, u32& dwVertCount)
 		break;
 	}
 #ifdef _EDITOR
-	if (bids.size()>0)	
+	if (bids.size()>0)
 #else
 	if (bids.size()>0)		//--DSR-- SilencerOverheat (1 -> 0). Why was 1 tho?
 #endif

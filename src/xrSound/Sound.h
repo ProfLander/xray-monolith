@@ -130,7 +130,7 @@ typedef resptr_core<ref_sound_data, resptr_base<ref_sound_data>> ref_sound_data_
 \brief Sound source + control
 
 The main class respresenting source/emitter interface
-This class infact just hides internals and redirect calls to 
+This class infact just hides internals and redirect calls to
 specific sub-systems
 */
 struct ref_sound

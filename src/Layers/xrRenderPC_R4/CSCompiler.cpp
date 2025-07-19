@@ -26,7 +26,7 @@ CSCompiler& CSCompiler::defSampler(LPCSTR ResourceName)
 	D3D11_SAMPLER_DESC desc;
 	ZeroMemory(&desc, sizeof(desc));
 
-	//	Use D3DTADDRESS_CLAMP,	D3DTEXF_POINT,			D3DTEXF_NONE,	D3DTEXF_POINT 
+	//	Use D3DTADDRESS_CLAMP,	D3DTEXF_POINT,			D3DTEXF_NONE,	D3DTEXF_POINT
 	if (0 == xr_strcmp(ResourceName, "smp_nofilter"))
 	{
 		//i_dx10Address( stage, D3DTADDRESS_CLAMP);
@@ -36,7 +36,7 @@ CSCompiler& CSCompiler::defSampler(LPCSTR ResourceName)
 		return defSampler(ResourceName, desc);
 	}
 
-	//	Use D3DTADDRESS_CLAMP,	D3DTEXF_LINEAR,			D3DTEXF_NONE,	D3DTEXF_LINEAR 
+	//	Use D3DTADDRESS_CLAMP,	D3DTEXF_LINEAR,			D3DTEXF_NONE,	D3DTEXF_LINEAR
 	if (0 == xr_strcmp(ResourceName, "smp_rtlinear"))
 	{
 		//i_dx10Address( stage, D3DTADDRESS_CLAMP);

@@ -179,10 +179,10 @@ IC bool RAYvsCYLINDER(const Fcylinder& c_cylinder, const Fvector& S, const Fvect
 	float cp2 = tc + c_diff;
 
 
-	//cp1<cp2 
+	//cp1<cp2
 	if (cp1 > h)
 	{
-		//sphere 
+		//sphere
 		float tc_h = tc - h; //!! hi					(=)/;
 		float sq_sphere_dist = sq_sin * tc_h * tc_h;
 		if (sq_sphere_dist > sq_horde)return false;
@@ -423,7 +423,7 @@ IC bool RAYvsCYLINDER(const Fcylinder& c_cylinder, const Fvector& S, const Fvect
 					if (bCull)return false;
 					else
 					{
-						//mixed//lo 
+						//mixed//lo
 						float tc_h = tc + h;
 						float tr_c = tr - tc_h * cs;
 						diff = _sqrt(sq_horde - sq_sin * tc_h * tc_h);

@@ -409,7 +409,7 @@ void CUIMpTradeWnd::UpdateCorrespondingItemsForList(CUIDragDropListEx* _list)
 		}
 		if (!bNecessary)
 		{
-			//sell 
+			//sell
 			SBuyItemInfo* res_info = NULL;
 			TryToSellItem(bi, true, res_info);
 			xr_list<SBuyItemInfo*>::iterator tmp_it = find(_tmp_list.begin(), _tmp_list.end(), res_info);
@@ -539,8 +539,8 @@ const preset_items& CUIMpTradeWnd::GetPreset(ETradePreset idx)
 };
 
 u32 _list_prio[] = {
-	6, //	e_pistol	
-	4, //	e_pistol_ammo	
+	6, //	e_pistol
+	4, //	e_pistol_ammo
 	7, //	e_rifle
 	5, //	e_rifle_ammo
 	10, //	e_outfit

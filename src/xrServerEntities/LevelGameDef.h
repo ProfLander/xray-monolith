@@ -71,7 +71,7 @@ extern ECORE_API xr_token rpoint_game_type[];
         u16		(reserved)
     ...
     - chunk #n
-    
+
 - chunk WAY_PATH_CHUNK
 	- chunk #0
     	chunk WAYOBJECT_CHUNK_VERSION

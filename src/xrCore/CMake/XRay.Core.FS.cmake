@@ -1,14 +1,14 @@
 add_module(XRay.Core.FS
   SOURCES
   file_stream_reader.cpp
-  
+
   file_stream_reader.h
-  
+
   stream_reader.cpp
-  
+
   stream_reader.h
   stream_reader_inline.h
-  
+
   FileSystem.cpp
   FileSystem_borland.cpp
   FS.cpp
@@ -19,7 +19,7 @@ add_module(XRay.Core.FS
   log.cpp
   NET_utils.cpp
   Xr_ini.cpp
-  
+
   FileSystem.h
   FS.h
   FS_impl.h

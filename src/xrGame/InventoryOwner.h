@@ -110,7 +110,7 @@ public:
 	virtual void NewPdaContact(CInventoryOwner*);
 	virtual void LostPdaContact(CInventoryOwner*);
 
-	//игровое имя 
+	//игровое имя
 	virtual LPCSTR Name() const;
 	LPCSTR IconName() const;
 	DIALOG_ID_VECTOR Dialogs() const;
@@ -154,7 +154,7 @@ public:
 	CInfoPortionWrapper* m_known_info_registry;
 
 	//////////////////////////////////////////////////////////////////////////
-	// инвентарь 
+	// инвентарь
 public:
 	const CInventory& inventory() const
 	{

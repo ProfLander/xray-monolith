@@ -167,7 +167,7 @@ void CProjector::UpdateCL()
 		glow_render->set_direction(M.k);
 	}
 
-	// Update searchlight 
+	// Update searchlight
 	angle_lerp(_current.yaw, _target.yaw, bone_x.velocity, Device.fTimeDelta);
 	angle_lerp(_current.pitch, _target.pitch, bone_y.velocity, Device.fTimeDelta);
 }

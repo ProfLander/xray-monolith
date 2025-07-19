@@ -86,9 +86,9 @@ class_<CScriptGameObject>& script_register_game_object1(class_<CScriptGameObject
 		.def("change_satiety", &CScriptGameObject::ChangeSatiety)
 		.def("change_radiation", &CScriptGameObject::ChangeRadiation)
 		.def("change_morale", &CScriptGameObject::ChangeMorale)
-	
+
 		//		.def("get_bleeding",				&CScriptGameObject::GetBleeding)
-		
+
 		// demonized: exports
 		.def("xform", &CScriptGameObject::Xform)
 		.def("bounding_box", &CScriptGameObject::bounding_box)
@@ -346,7 +346,7 @@ class_<CScriptGameObject>& script_register_game_object1(class_<CScriptGameObject
 		.def("force_hide_detector", &CScriptGameObject::force_hide_device)
 		.def("show_detector", &CScriptGameObject::show_device)
 		.def("active_slot", &CScriptGameObject::active_slot)
-		.def("activate_slot", &CScriptGameObject::activate_slot)	
+		.def("activate_slot", &CScriptGameObject::activate_slot)
 
 #ifdef DEBUG
 		.def("debug_planner",				&CScriptGameObject::debug_planner)

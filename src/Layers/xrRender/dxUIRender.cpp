@@ -47,7 +47,7 @@ void dxUIRender::FlushTriList()
 	VERIFY(PrimitiveType==ptTriList);
 	VERIFY(u32(pv-start_pv)<=m_iMaxVerts);
 
-	std::ptrdiff_t p_cnt		= (pv-start_pv)/3;							
+	std::ptrdiff_t p_cnt		= (pv-start_pv)/3;
 	RCache.Vertex.Unlock		(u32(pv-start_pv),hGeom_fan.stride());
 	RCache.set_Geometry			(hGeom_fan);
 	if (p_cnt!=0)RCache.Render	(D3DPT_TRIANGLELIST,vOffset,u32(p_cnt));

@@ -824,7 +824,7 @@ void CCar::SDoor::SDoorway::Init(SDoor* adoor)
 		}
 	}
 	/*
-	switch(door->door_plane_axes.y) 
+	switch(door->door_plane_axes.y)
 	{
 	case 0:
 		door_dir.set(door_dir_sign,0.f,0.f);

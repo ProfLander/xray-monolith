@@ -7,7 +7,7 @@ add_module(XRay.Core.Compression.LZO
   rt_lzo1x_d2.cpp
   rt_lzo1x_d3.cpp
   rt_lzo_init.cpp
-  
+
   lzo_compressor.h
   rt_config1x.h
   rt_lzo1x.h

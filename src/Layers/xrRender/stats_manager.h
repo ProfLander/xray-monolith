@@ -41,7 +41,7 @@ private:
 	struct stats_item
 	{
 		void*					buff_ptr;
-		u32						size; 
+		u32						size;
 		enum_stats_buffer_type	type;
 		_D3DPOOL				location;
 	}; // stats_item

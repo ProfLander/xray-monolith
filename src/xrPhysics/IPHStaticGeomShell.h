@@ -8,7 +8,7 @@ protected:
 	{
 	}
 
-	//	virtual void						set_ObjectContactCallback	(ObjectContactCallbackFun* callback);											
+	//	virtual void						set_ObjectContactCallback	(ObjectContactCallbackFun* callback);
 };
 
 class IPhysicsShellHolder;

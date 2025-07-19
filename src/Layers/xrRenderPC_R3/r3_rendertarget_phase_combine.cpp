@@ -51,7 +51,7 @@ void CRenderTarget::phase_combine()
 	if (Device.m_SecondViewport.IsSVPActive()) //--#SM+#-- +SecondVP+ Fix for screen flickering
 	{
 		// clang-format off
-		gpu_id = (Device.dwFrame - 1) % HW.Caps.iGPUNum;	// Фeen "ia?цaнey" tonemapping (HDR) iоnлa вueл?чaнey двойноaо ?aндa?a. 
+		gpu_id = (Device.dwFrame - 1) % HW.Caps.iGPUNum;	// Фeen "ia?цaнey" tonemapping (HDR) iоnлa вueл?чaнey двойноaо ?aндa?a.
 															// Iобочнuй эффaeo - i?e ?aбоoa двойноaо ?aндa?a neо?оnoь eзiaнaнey tonemapping (HDR) iaдaao в двa ?aзa
 															// Ia?цaнea nвyзaно n oai, чoо HDR длy nвоaй ?aбоou o?aнeo уiaньoaннea eоiee "i?оoлuo eaд?ов"
 															// Эoe eaд?u оoноneoaльно iоoоae д?уa нa д?уaa, однaeо i?e вeл?чaнноi двойноi ?aндa?a
@@ -114,7 +114,7 @@ void CRenderTarget::phase_combine()
 		//RCache.set_Z(TRUE);
 	}
 
-	// 
+	//
 	//if (RImplementation.o.bug)	{
 	RCache.set_Stencil(TRUE, D3DCMP_LESSEQUAL, 0x01, 0xff, 0x00); // stencil should be >= 1
 	if (RImplementation.o.nvstencil)
@@ -380,20 +380,20 @@ void CRenderTarget::phase_combine()
 
 	//Compute bloom (new)
 	phase_pp_bloom();
-	
+
 	if (ps_r2_ls_flags.test(R2FLAG_DOF))
 	{
 		phase_dof();
 	}
 
 	phase_lut();
-	
+
 	if(ps_r2_mask_control.x > 0)
 	{
 		phase_gasmask_dudv();
 		phase_gasmask_drops();
 	}
-	
+
 	if(ps_r2_nightvision > 0)
 		phase_nightvision();
 
@@ -406,15 +406,15 @@ void CRenderTarget::phase_combine()
 	{
 		phase_fakescope(); //crookr
 	}
-	
+
     //SMAA
 	if (ps_smaa_quality)
 	{
         //PIX_EVENT(SMAA);
         phase_smaa();
         RCache.set_Stencil(FALSE);
-    }   
-	
+    }
+
 	// PP enabled ?
 	//	Render to RT texture to be able to copy RT even in windowed mode.
 	BOOL PP_Complex = u_need_PP() | (BOOL)RImplementation.m_bMakeAsyncSS;
@@ -442,7 +442,7 @@ void CRenderTarget::phase_combine()
 	if (1)
 	{
 		PIX_EVENT(combine_2);
-		// 
+		//
 		struct v_aa
 		{
 			Fvector4 p;
@@ -524,7 +524,7 @@ void CRenderTarget::phase_combine()
 		RCache.set_c("m_current", m_current);
 		RCache.set_c("m_previous", m_previous);
 		RCache.set_c("m_blur", m_blur_scale.x, m_blur_scale.y, 0, 0);
-		//lvutner		
+		//lvutner
 		RCache.set_c("mask_control", ps_r2_mask_control.x, ps_r2_mask_control.y, ps_r2_mask_control.z, ps_r2_mask_control.w);
 
 		RCache.set_c("tnmp_a", ps_r2_tnmp_a, ps_r2_tnmp_a, ps_r2_tnmp_a, 0);
@@ -578,7 +578,7 @@ void CRenderTarget::phase_combine()
 		Fplane&		P	=	dbg_planes[it];
 		Fvector		zero	;
 		zero.mul	(P.n,P.d);
-		
+
 		Fvector             L_dir,L_up=P.n,L_right;
 		L_dir.set           (0,0,1);                if (_abs(L_up.dotproduct(L_dir))>.99f)  L_dir.set(1,0,0);
 		L_right.crossproduct(L_up,L_dir);           L_right.normalize       ();
@@ -615,7 +615,7 @@ void CRenderTarget::phase_combine()
 		if (0) for (u32 it=0; it<dbg_spheres.size(); it++)
 		{
 			Fsphere				S	= dbg_spheres[it].first;
-			Fmatrix				M;	
+			Fmatrix				M;
 			u32				ccc		= dbg_spheres[it].second.get();
 			M.scale					(S.R,S.R,S.R);
 			M.translate_over		(S.P);
@@ -624,7 +624,7 @@ void CRenderTarget::phase_combine()
 		}
 #endif
 		// Draw quater-screen quad textured with our direct-shadow-map-image
-		if (1) 
+		if (1)
 		{
 			u32							IX=0,IY=1;
 			p0.set						(.5f/_w, .5f/_h);

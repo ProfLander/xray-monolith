@@ -96,7 +96,7 @@ struct CrosshairPair {
 
 	CrosshairPair(CrosshairSettings& settings_near, CrosshairSettings& settings_far) :
 		crosshair_near(settings_near),
-		crosshair_far(settings_far) 
+		crosshair_far(settings_far)
 	{
 		shaderWire->create("hud\\crosshair");
 	};

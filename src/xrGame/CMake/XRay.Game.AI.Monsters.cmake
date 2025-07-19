@@ -280,7 +280,7 @@ add_module(XRay.Game.AI.Monsters.Common.Components.Squad
   ai/monsters/ai_monster_squad_manager.cpp
   ai/monsters/ai_monster_squad_manager.h
   ai/monsters/ai_monster_squad_manager_inline.h
-  
+
   ai/monsters/ai_monster_squad.cpp
   ai/monsters/ai_monster_squad_attack.cpp
   ai/monsters/ai_monster_squad_rest.cpp
@@ -712,7 +712,7 @@ add_module(XRay.Game.AI.Monsters.Human.Stalker.DecisionMaker.Actions.Combat.Kill
   SOURCES
   stalker_kill_wounded_actions.cpp
   stalker_kill_wounded_actions.h
-  
+
   stalker_kill_wounded_planner.cpp
   stalker_kill_wounded_planner.h
 )

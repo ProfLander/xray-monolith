@@ -201,7 +201,7 @@ void CAI_Trader::OnEvent(NET_Packet& P, u16 type)
 
 			Obj->SetTmpPreDestroy(just_before_destroy);
 			inventory().DropItem(smart_cast<CGameObject*>(Obj), just_before_destroy, dont_create_shell);
-			//if(inventory().DropItem(smart_cast<CGameObject*>(Obj), just_before_destroy)) 
+			//if(inventory().DropItem(smart_cast<CGameObject*>(Obj), just_before_destroy))
 			//	Obj->H_SetParent(0, just_before_destroy); //moved to DropItem
 		}
 		break;

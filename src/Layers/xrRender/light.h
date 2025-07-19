@@ -52,9 +52,9 @@ public:
 
 #if (RENDER==R_R2) || (RENDER==R_R3) || (RENDER==R_R4)
 	float			falloff;			// precalc to make light equal to zero at light range
-	float	        attenuation0;		// Constant attenuation		
-	float	        attenuation1;		// Linear attenuation		
-	float	        attenuation2;		// Quadratic attenuation	
+	float	        attenuation0;		// Constant attenuation
+	float	        attenuation1;		// Linear attenuation
+	float	        attenuation2;		// Quadratic attenuation
 
 	light*						omnipart	[6]	;
 	xr_vector<light_indirect>	indirect		;
@@ -138,8 +138,8 @@ public:
 	virtual void set_range(float R);
 
 	virtual void set_virtual_size(float R)
-	{ 
-		virtual_size = R; 
+	{
+		virtual_size = R;
 	};
 
 	virtual void set_color(const Fcolor& C) { color.set(C); }

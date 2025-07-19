@@ -90,7 +90,7 @@ xrServer::~xrServer()
 
 CSE_Abstract* xrServer::ID_to_entity(u16 ID)
 {
-	// #pragma todo("??? to all : ID_to_entity - must be replaced to 'game->entity_from_eid()'")	
+	// #pragma todo("??? to all : ID_to_entity - must be replaced to 'game->entity_from_eid()'")
 	if (0xffff == ID) return 0;
 	xrS_entities::iterator I = entities.find(ID);
 	if (entities.end() != I) return I->second;
@@ -183,7 +183,7 @@ void xrServer::client_Destroy(IClient* C)
 
 		//.		if (!alife_client->flags.bVerified)
 		xrClientData* xr_client = static_cast<xrClientData*>(alife_client);
-		m_disconnected_clients.Add(xr_client); //xr_delete(alife_client);				
+		m_disconnected_clients.Add(xr_client); //xr_delete(alife_client);
 	}
 }
 
@@ -232,7 +232,7 @@ void xrServer::Update()
 		svs_respawn R = *q_respawn.begin();
 		q_respawn.erase(q_respawn.begin());
 
-		// 
+		//
 		CSE_Abstract* E = ID_to_entity(R.phantom);
 		E->Spawn_Write(Packet,FALSE);
 		u16 ID;
@@ -352,7 +352,7 @@ void xrServer::SendUpdatesToAll()
 	KickCheaters();
 
 
-	//sending game_update 
+	//sending game_update
 	fastdelegate::FastDelegate1<IClient*, void> sendtofd;
 	sendtofd.bind(this, &xrServer::SendGameUpdateTo);
 	ForEachClientDoSender(sendtofd);

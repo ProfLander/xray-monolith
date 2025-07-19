@@ -690,7 +690,7 @@ void imotion_position::init_bones()
 			VERIFY(!bi.callback());
 			VERIFY(!bi.callback_param());
 			if(bi.callback_overwrite())
-				bi.set_callback( bctCustom, 0, (void*)1, TRUE ); 
+				bi.set_callback( bctCustom, 0, (void*)1, TRUE );
 		}
 	*/
 }

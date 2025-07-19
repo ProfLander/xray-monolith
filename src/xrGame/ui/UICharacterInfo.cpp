@@ -59,10 +59,10 @@ void CUICharacterInfo::InitCharacterInfo(Fvector2 pos, Fvector2 size, CUIXml* xm
 
 	/*	Init_IconInfoItem( *xml_doc, "rank_icon",           eRankIcon     );
 		Init_IconInfoItem( *xml_doc, "rank_icon_over",      eRankIconOver );
-	
+
 		Init_IconInfoItem( *xml_doc, "commumity_icon",      eCommunityIcon     );
 		Init_IconInfoItem( *xml_doc, "commumity_icon_over", eCommunityIconOver );
-	
+
 		Init_IconInfoItem( *xml_doc, "commumity_big_icon",      eCommunityBigIcon     );
 		Init_IconInfoItem( *xml_doc, "commumity_big_icon_over", eCommunityBigIconOver );
 	*/
@@ -206,7 +206,7 @@ void CUICharacterInfo::InitCharacter(u16 id)
 			if ( m_icons[eCommunityBigIcon] ) { m_icons[eCommunityBigIcon]->InitTexture( community2 ); }
 			return;
 		}
-	
+
 		shared_str our_comm, enemy;
 		if ( CUICharacterInfo::get_actor_community( &our_comm, &enemy ) )
 		{
@@ -214,16 +214,16 @@ void CUICharacterInfo::InitCharacter(u16 id)
 			{
 				xr_strcpy( community1, sizeof(community1), our_comm.c_str() );
 				xr_strcat( community1, sizeof(community1), "_icon" );
-	
+
 				xr_strcpy( community2, sizeof(community2), our_comm.c_str() );
 				xr_strcat( community2, sizeof(community2), "_wide" );
-	
+
 				if ( m_icons[eCommunityIcon   ] ) { m_icons[eCommunityIcon   ]->InitTexture( community1 ); }
 				if ( m_icons[eCommunityBigIcon] ) { m_icons[eCommunityBigIcon]->InitTexture( community2 ); }
 				return;
 			}
 		}
-	
+
 		if ( m_icons[eCommunityIcon   ]     ) { m_icons[eCommunityIcon]->Show( false ); }
 		if ( m_icons[eCommunityBigIcon]     ) { m_icons[eCommunityBigIcon]->Show( false ); }
 		if ( m_icons[eCommunityIconOver   ] ) { m_icons[eCommunityIconOver]->Show( false ); }

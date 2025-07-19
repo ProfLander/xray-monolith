@@ -162,7 +162,7 @@ void CSpectator::UpdateCL()
 			}
 			// не найден объект с таким индексом - сбросим на первый объект
 			look_idx = 0;
-			// никого нет за кем смотреть - переключимся на 
+			// никого нет за кем смотреть - переключимся на
 			if (0 == idx) cam_Set(eacFreeFly);
 		}
 		// по умолчанию eacFreeFly
@@ -366,7 +366,7 @@ void CSpectator::FirstEye_ToPlayer(CObject* pObject)
 			pActor->inventory().Items_SetCurrentEntityHud(true);
 
 			/*			CHudItem* pHudItem = smart_cast<CHudItem*>(pActor->inventory().ActiveItem());
-						if (pHudItem) 
+						if (pHudItem)
 						{
 							pHudItem->OnStateSwitch(pHudItem->GetState());
 						}*/

@@ -479,7 +479,7 @@ public:
 	CScriptGameObject * GetObjectById(u16 id) const;
 
 
-	// Callbacks			
+	// Callbacks
 	void SetCallback(GameObject::ECallbackType type, const ::luabind::functor<void>& functor);
 	void SetCallback(GameObject::ECallbackType type, const ::luabind::functor<void>& functor,
 	                 const ::luabind::object& object);
@@ -1028,8 +1028,8 @@ public:
 
 	::luabind::object list_bones(bool bHud = false);
 
-	bool IsBoneVisible(LPCSTR bone_name, bool bHud = false);	
-	void SetBoneVisible(LPCSTR bone_name, bool bVisibility, bool bRecursive = true, bool bHud = false);	
+	bool IsBoneVisible(LPCSTR bone_name, bool bHud = false);
+	void SetBoneVisible(LPCSTR bone_name, bool bVisibility, bool bRecursive = true, bool bHud = false);
 	//CAI_Stalker
 	void ResetBoneProtections(LPCSTR imm_sect, LPCSTR bone_sect);
 	//Anything with PPhysicShell (ie. car, actor, stalker, monster, heli)

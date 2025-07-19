@@ -572,7 +572,7 @@ void CEnvironment::OnFrame()
 
 	float WindDir = -CurrentEnv->wind_direction + PI_DIV_2;
 	Fvector2 WDir = { _cos(WindDir), _sin(WindDir) };
-	
+
 	wind_anim.x += WindVel * WDir.x * Device.fTimeDelta;
 	wind_anim.y += WindVel * WDir.y * Device.fTimeDelta;
 	wind_anim.z += clampr(WindVel * 1.33f, 0.0f, 1.0f) * Device.fTimeDelta;

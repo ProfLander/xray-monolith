@@ -110,13 +110,13 @@ namespace PAPI
 		Rotation rot; // 4
 		pVector pos; // 12
 		pVector posB; // 12
-		pVector vel; // 12  	
+		pVector vel; // 12
 		pVector size; // 12
 		float colorR; // 4
 		float colorG; // 4
 		float colorB; // 4
 		float colorA; // 4
-		float age; // 4       
+		float age; // 4
 		u16 frame; // 2
 		Flags16 flags; // 2
 	}; // = 76
@@ -162,7 +162,7 @@ namespace PAPI
 		PABounceID,
 		// Bounce particles off a domain of space.
 		PACallActionListID_obsolette,
-		// 
+		//
 		PACopyVertexBID,
 		// Set the secondary position from current position.
 		PADampingID,
@@ -176,47 +176,47 @@ namespace PAPI
 		PAGravityID,
 		// Acceleration in the given direction.
 		PAJetID,
-		// 
+		//
 		PAKillOldID,
-		// 
+		//
 		PAMatchVelocityID,
-		// 
+		//
 		PAMoveID,
-		// 
+		//
 		PAOrbitLineID,
-		// 
+		//
 		PAOrbitPointID,
-		// 
+		//
 		PARandomAccelID,
-		// 
+		//
 		PARandomDisplaceID,
-		// 
+		//
 		PARandomVelocityID,
-		// 
+		//
 		PARestoreID,
-		// 
+		//
 		PASinkID,
-		// 
+		//
 		PASinkVelocityID,
-		// 
+		//
 		PASourceID,
-		// 
+		//
 		PASpeedLimitID,
-		// 
+		//
 		PATargetColorID,
-		// 
+		//
 		PATargetSizeID,
-		// 
+		//
 		PATargetRotateID,
-		// 
+		//
 		PATargetRotateDID,
-		// 
+		//
 		PATargetVelocityID,
-		// 
+		//
 		PATargetVelocityDID,
-		// 
+		//
 		PAVortexID,
-		// 
+		//
 		PATurbulenceID,
 		//
 		PAScatterID,

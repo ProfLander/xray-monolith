@@ -20,11 +20,11 @@ class CALifeInteractionManager :
 		friend class CCheckForInteractionPredicate;
 	protected:
 		u32								m_inventory_slot_count;
-	
+
 	public:
 		BOOL_VECTOR						m_temp_marks;
-		ALife::WEAPON_P_VECTOR			m_temp_weapons;	
-	
+		ALife::WEAPON_P_VECTOR			m_temp_weapons;
+
 	/**/
 public:
 	CALifeInteractionManager(xrServer* server, LPCSTR section);

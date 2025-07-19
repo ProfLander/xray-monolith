@@ -61,7 +61,7 @@ CActor* Actor()
 {
 	R_ASSERT2(GameID() == eGameIDSingle, "Actor() method invokation must be only in Single Player game!");
 	VERIFY(g_actor);
-	/*if (GameID() != eGameIDSingle) 
+	/*if (GameID() != eGameIDSingle)
 		VERIFY	(g_actor == Level().CurrentControlEntity());*/
 	return (g_actor);
 };
@@ -543,7 +543,7 @@ BOOL CActor::net_Spawn(CSE_Abstract* DC)
 	m_current_torso.invalidate();
 	m_current_head.invalidate();
 	//-------------------------------------
-	//  ,  
+	//  ,
 	game_news_registry->registry().init(ID());
 
 
@@ -598,7 +598,7 @@ BOOL CActor::net_Spawn(CSE_Abstract* DC)
 	m_bJumpKeyPressed = FALSE;
 	//
 	//	m_bJumpKeyPressed = ((mstate_wishful&mcJump)!=0);
-	//		
+	//
 	NET_SavedAccel.set(0, 0, 0);
 	NET_WasInterpolating = TRUE;
 
@@ -634,7 +634,7 @@ BOOL CActor::net_Spawn(CSE_Abstract* DC)
 	//*
 
 	//	if (OnServer())// && E->s_flags.is(M_SPAWN_OBJECT_LOCAL))
-	/*	
+	/*
 		if (OnClient())
 		{
 			if (!pStatGraph)
@@ -671,7 +671,7 @@ BOOL CActor::net_Spawn(CSE_Abstract* DC)
 		K->PlayCycle("death_init");
 
 
-		//   
+		//
 		m_HeavyBreathSnd.stop();
 	}
 
@@ -909,7 +909,7 @@ void CActor::ChangeVisual(shared_str NewVisual)
 void ACTOR_DEFS::net_update::lerp(ACTOR_DEFS::net_update& A, ACTOR_DEFS::net_update& B, float f)
 {
 	//	float invf		= 1.f-f;
-	//	// 
+	//	//
 	//	o_model			= angle_lerp	(A.o_model,B.o_model,		f);
 	//	o_torso.yaw		= angle_lerp	(A.o_torso.yaw,B.o_torso.yaw,f);
 	//	o_torso.pitch	= angle_lerp	(A.o_torso.pitch,B.o_torso.pitch,f);
@@ -931,7 +931,7 @@ InterpData IEndT;
 void CActor::PH_B_CrPr() // actions & operations before physic correction-prediction steps
 {
 	//just set last update data for now
-	//	if (!m_bHasUpdate) return;	
+	//	if (!m_bHasUpdate) return;
 	if (CrPr_IsActivated()) return;
 	if (CrPr_GetActivationStep() > physics_world()->StepsNum()) return;
 
@@ -1028,13 +1028,13 @@ void CActor::PH_I_CrPr() // actions & operations between two phisic prediction s
 		if (!pSyncObj) return;
 		////////////////////////////////////
 		pSyncObj->get_State(RecalculatedState);
-		////////////////////////////////////		
+		////////////////////////////////////
 	};
 };
 
 void CActor::PH_A_CrPr()
 {
-	//restore recalculated data and get data for interpolation	
+	//restore recalculated data and get data for interpolation
 	//	if (!m_bHasUpdate) return;
 	//	m_bHasUpdate = false;
 	if (!CrPr_IsActivated()) return;
@@ -1259,7 +1259,7 @@ void CActor::make_Interpolation()
 
 			VERIFY2(_valid(renderable.xform), *cName());
 
-			//			r_model_yaw		= angle_lerp	(IStart.o_model,IEnd.o_model,		factor);	
+			//			r_model_yaw		= angle_lerp	(IStart.o_model,IEnd.o_model,		factor);
 			unaffected_r_torso.yaw = angle_lerp(IStart.o_torso.yaw, IEnd.o_torso.yaw, factor);
 			unaffected_r_torso.pitch = angle_lerp(IStart.o_torso.pitch, IEnd.o_torso.pitch, factor);
 			unaffected_r_torso.roll = angle_lerp(IStart.o_torso.roll, IEnd.o_torso.roll, factor);
@@ -1315,7 +1315,7 @@ void CActor::make_Interpolation()
 	};
 
 #ifdef DEBUG
-	if (getVisible() && g_Alive() && mstate_real) 
+	if (getVisible() && g_Alive() && mstate_real)
 	{
 		LastPosS.push_back(IPosS);	while (LastPosS.size()>g_cl_InterpolationMaxPoints) LastPosS.pop_front();
 		LastPosH.push_back(IPosH);	while (LastPosH.size()>g_cl_InterpolationMaxPoints) LastPosH.pop_front();
@@ -1340,13 +1340,13 @@ void		CActor::UpdatePosStack	( u32 Time0, u32 Time1 )
 		xr_deque<SMemoryPos>::iterator B = SMemoryPosStack.begin();
 		xr_deque<SMemoryPos>::iterator E = SMemoryPosStack.end();
 		xr_deque<SMemoryPos>::iterator I = std::lower_bound(B,E,u64(ph_world->m_steps_num-1));
-		if (I != E) 
+		if (I != E)
 		{
 			I->SState = State;
 			I->u64WorldStep = ph_world->m_steps_num;
 		};
 	}
-	else		
+	else
 	{
 		SMemoryPosStack.push_back(SMemoryPos(Time0, Time1, ph_world->m_steps_num, State));
 		if (SMemoryPosStack.front().dwTime0 < (Level().timeServer() - 2000)) SMemoryPosStack.pop_front();
@@ -1358,7 +1358,7 @@ ACTOR_DEFS::SMemoryPos*				CActor::FindMemoryPos (u32 Time)
 	if (SMemoryPosStack.empty()) return NULL;
 
 	if (Time > SMemoryPosStack.back().dwTime1) return NULL;
-	
+
 	xr_deque<SMemoryPos>::iterator B = SMemoryPosStack.begin();
 	xr_deque<SMemoryPos>::iterator E = SMemoryPosStack.end();
 	xr_deque<SMemoryPos>::iterator I = std::lower_bound(B,E,Time);
@@ -1409,24 +1409,24 @@ void CActor::load(IReader& input_packet)
 extern	Flags32	dbg_net_Draw_Flags;
 void dbg_draw_piramid (Fvector pos, Fvector dir, float size, float xdir, u32 color)
 {
-	
+
 	Fvector p0, p1, p2, p3, p4;
 	p0.set(size, size, 0.0f);
 	p1.set(-size, size, 0.0f);
 	p2.set(-size, -size, 0.0f);
 	p3.set(size, -size, 0.0f);
 	p4.set(0, 0, size*4);
-	
+
 	bool Double = false;
 	Fmatrix t; t.identity();
 	if (_valid(dir) && dir.square_magnitude()>0.01f)
-	{		
+	{
 		t.k.normalize	(dir);
-		Fvector::generate_orthonormal_basis(t.k, t.j, t.i);		
+		Fvector::generate_orthonormal_basis(t.k, t.j, t.i);
 	}
 	else
 	{
-		t.rotateY(xdir);		
+		t.rotateY(xdir);
 		Double = true;
 	}
 	t.c.set(pos);
@@ -1440,7 +1440,7 @@ void dbg_draw_piramid (Fvector pos, Fvector dir, float size, float xdir, u32 col
 //	Level().debug_renderer().draw_line(t, p1, p4, color);
 //	Level().debug_renderer().draw_line(t, p2, p4, color);
 //	Level().debug_renderer().draw_line(t, p3, p4, color);
-	
+
 	if (!Double)
 	{
 		DRender->dbg_DrawTRI(t, p0, p1, p4, color);
@@ -1468,7 +1468,7 @@ void dbg_draw_piramid (Fvector pos, Fvector dir, float size, float xdir, u32 col
 		Level().debug_renderer().draw_line(t, p1, p4, color);
 		Level().debug_renderer().draw_line(t, p2, p4, color);
 		Level().debug_renderer().draw_line(t, p3, p4, color);
-	};	
+	};
 };
 
 void	CActor::OnRender_Network()
@@ -1478,7 +1478,7 @@ void	CActor::OnRender_Network()
 
 	//-----------------------------------------------------------------------------------------------------
 	float size = 0.2f;
-	
+
 //	dbg_draw_piramid(Position(), m_PhysicMovementControl->GetVelocity(), size/2, -r_model_yaw, color_rgba(255, 255, 255, 255));
 	//-----------------------------------------------------------------------------------------------------
 	if (g_Alive())
@@ -1490,7 +1490,7 @@ void	CActor::OnRender_Network()
 
 			Level().debug_renderer().draw_aabb			(bc, bd.x, bd.y, bd.z, color_rgba(0, 255, 0, 255));
 		};
-		
+
 		IKinematics* V		= smart_cast<IKinematics*>(Visual());
 		if (dbg_net_Draw_Flags.test(dbg_draw_actor_alive) && V)
 		{
@@ -1537,13 +1537,13 @@ void	CActor::OnRender_Network()
 								Level().debug_renderer().draw_ellipse(l_ball, color_rgba(0, 255, 0, 255));
 							}break;
 						};
-					};					
+					};
 				}
 			};
 		};
 
 		if (!(dbg_net_Draw_Flags.is_any(dbg_draw_actor_dead))) return;
-		
+
 		dbg_draw_piramid(Position(), character_physics_support()->movement()->GetVelocity(), size, -r_model_yaw, color_rgba(128, 255, 128, 255));
 		dbg_draw_piramid(IStart.Pos, IStart.Vel, size, -IStart.o_model, color_rgba(255, 0, 0, 255));
 //		Fvector tmp, tmp1; tmp1.set(0, .1f, 0);
@@ -1553,7 +1553,7 @@ void	CActor::OnRender_Network()
 		dbg_draw_piramid(IEnd.Pos, IEnd.Vel, size, -IEnd.o_model, color_rgba(0, 255, 0, 255));
 //		dbg_draw_piramid(tmp.add(IEndT.Pos, tmp1), IEndT.Vel, size, -IEndT.o_model, color_rgba(0, 155, 0, 155));
 		dbg_draw_piramid(NET_Last.p_pos, NET_Last.p_velocity, size*3/4, -NET_Last.o_model, color_rgba(255, 255, 255, 255));
-		
+
 		Fmatrix MS, MH, ML, *pM = NULL;
 		ML.translate(0, 0.2f, 0);
 		MS.translate(0, 0.2f, 0);
@@ -1601,7 +1601,7 @@ void	CActor::OnRender_Network()
 				point1H[k] = c*(c*(c*HCoeff[k][0]+HCoeff[k][1])+HCoeff[k][2])+HCoeff[k][3];
 
 				tS[k] = (c*c*SCoeff[k][0]*3+c*SCoeff[k][1]*2+SCoeff[k][2])/3; //     3       !!!!
-				tH[k] = (c*c*HCoeff[k][0]*3+c*HCoeff[k][1]*2+HCoeff[k][2]); 
+				tH[k] = (c*c*HCoeff[k][0]*3+c*HCoeff[k][1]*2+HCoeff[k][2]);
 			};
 
 			point0S.add(tS, point1S);
@@ -1659,7 +1659,7 @@ void	CActor::OnRender_Network()
 			u32 NumBones = m_States.size();
 			for (u32 i=0; i<NumBones; i++)
 			{
-				SPHNetState state = m_States[i];			
+				SPHNetState state = m_States[i];
 
 				Fvector half_dim;
 				half_dim.x = 0.2f;
@@ -1669,7 +1669,7 @@ void	CActor::OnRender_Network()
 				u32 Color = color_rgba(255, 0, 0, 255);
 
 				Fmatrix M;
-				
+
 				M = Fidentity;
 				M.rotation(state.quaternion);
 				M.translate_add(state.position);
@@ -1756,7 +1756,7 @@ void	CActor::OnRender_Network()
 
 					u32 Color = color_rgba(255, 0, 0, 255);
 					Level().debug_renderer().draw_obb				(M, half_dim, Color);
-				};	
+				};
 				Fvector LC, LS;
 				LC.add(min, max); LC.div(2.0f);
 				LS.sub(max, min); LS.div(2.0f);
@@ -1775,7 +1775,7 @@ void CActor::net_Save(NET_Packet& P)
 #ifdef DEBUG
 	u32					pos;
 	Msg					("Actor net_Save");
-	
+
 	pos					= P.w_tell();
 	inherited::net_Save	(P);
 	Msg					("inherited::net_Save() : %d",P.w_tell() - pos);
@@ -1839,9 +1839,9 @@ void CActor::OnCriticalHitHealthLoss()
 	CObject* pLastHittingWeapon = Level().Objects.net_Find(m_iLastHittingWeaponID);
 
 #ifdef DEBUG
-	Msg("%s killed by hit from %s %s", 
+	Msg("%s killed by hit from %s %s",
 		*cName(),
-		(pLastHitter ? *(pLastHitter->cName()) : ""), 
+		(pLastHitter ? *(pLastHitter->cName()) : ""),
 		((pLastHittingWeapon && pLastHittingWeapon != pLastHitter) ? *(pLastHittingWeapon->cName()) : ""));
 #endif
 	//-------------------------------------------------------------------

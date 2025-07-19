@@ -114,7 +114,7 @@ struct CRayPick
 	IC void set_direction(Fvector& D) { direction = D; };
 	IC void set_range(float R) { range = R; };
 	IC void set_flags(collide::rq_target F) { flags = F; };
-	void set_ignore_object(CScriptGameObject* I) { 
+	void set_ignore_object(CScriptGameObject* I) {
 		if (I) {
 			CObject* obj = smart_cast<CObject*>(&(I->object()));
 			if (obj && std::find(ignore.begin(), ignore.end(), obj) == ignore.end()) {

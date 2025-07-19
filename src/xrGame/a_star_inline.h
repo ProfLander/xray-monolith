@@ -144,7 +144,7 @@ IC bool CSAStar::step(_PathManager& path_manager)
 		// check if neighbour is accessible
 		if (!path_manager.is_accessible(neighbour_index))
 			continue;
-		// check if neighbour is visited, i.e. is in the opened or 
+		// check if neighbour is visited, i.e. is in the opened or
 		// closed lists
 		if (data_storage().is_visited(neighbour_index))
 		{
@@ -177,21 +177,21 @@ IC bool CSAStar::step(_PathManager& path_manager)
 				continue;
 			}
 			// so, our node is in the closed list
-			// here is a _nuance_ : if we don't use any heuristics, 
-			// i.e. it is not A*, but Dijkstra algorithm, or we use 
-			// a heuristics which _guarantees_ that found path is 
-			// the best among the others (if we have a path_manager with 
-			// euclidian metrics and use distance between current 
-			// and goal points as an estimation value), then it is 
-			// impossible that we can find a better path for a node 
+			// here is a _nuance_ : if we don't use any heuristics,
+			// i.e. it is not A*, but Dijkstra algorithm, or we use
+			// a heuristics which _guarantees_ that found path is
+			// the best among the others (if we have a path_manager with
+			// euclidian metrics and use distance between current
+			// and goal points as an estimation value), then it is
+			// impossible that we can find a better path for a node
 			// which is in the closed list and therefore we have to do
-			// nothing here. 
+			// nothing here.
 			if (!path_manager.is_metric_euclidian())
 			{
-				// so, we use a heurictics which doesn't gurantee that 
-				// found path is the best, then we have to update all 
-				// of the our node successors but we still can't be sure 
-				// that when the condition 'is_goal_reached' is true, 
+				// so, we use a heurictics which doesn't gurantee that
+				// found path is the best, then we have to update all
+				// of the our node successors but we still can't be sure
+				// that when the condition 'is_goal_reached' is true,
 				// then we found the _best_ path
 
 				// check if new path is better than the older one
@@ -223,7 +223,7 @@ IC bool CSAStar::step(_PathManager& path_manager)
 			// so, this neighbour node is not in the opened or closed lists
 			// put neighbour node to the opened list
 			CGraphVertex& neighbour = data_storage().create_vertex(neighbour_index);
-			// fill the corresponding node parameters 
+			// fill the corresponding node parameters
 			neighbour.g() = best.g() + path_manager.evaluate(best.index(), neighbour_index, i);
 			neighbour.h() = path_manager.estimate(neighbour.index());
 			neighbour.f() = neighbour.g() + neighbour.h();

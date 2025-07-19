@@ -125,7 +125,7 @@ void attachable_hud_item::tune(Ivector values)
 			if(values.x)	diff.x = (values.x>0)?_delta_pos:-_delta_pos;
 			if(values.y)	diff.y = (values.y>0)?_delta_pos:-_delta_pos;
 			if(values.z)	diff.z = (values.z>0)?_delta_pos:-_delta_pos;
-			
+
 			Fvector							d;
 			Fmatrix							ancor_m;
 			m_parent->calc_transform		(m_attach_place_idx, Fidentity, ancor_m);
@@ -196,7 +196,7 @@ void attachable_hud_item::debug_draw_firedeps()
 
 		firedeps			fd;
 		setup_firedeps		(fd);
-		
+
 		if(hud_adj_mode==5||bForce)
 			render.draw_aabb(fd.vLastFP,0.005f,0.005f,0.005f,D3DCOLOR_XRGB(255,0,0), true);
 
@@ -222,7 +222,7 @@ void player_hud::tune(Ivector _values)
 	{
 		Fvector			diff;
 		diff.set		(0,0,0);
-		
+
 		float _curr_dr	= _delta_rot;
 
 		u8 idx			= m_attached_items[hud_adj_item_idx]->m_parent_hud_item->GetCurrentHudOffsetIdx();
@@ -278,7 +278,7 @@ void player_hud::tune(Ivector _values)
 	{
 		if(hud_adj_mode==8 && (values.z) )
 			_delta_pos	+= (values.z>0)?0.001f:-0.001f;
-		
+
 		if(hud_adj_mode==9 && (values.z) )
 			 _delta_rot += (values.z>0)?0.1f:-0.1f;
 	}else

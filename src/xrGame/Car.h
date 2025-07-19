@@ -66,7 +66,7 @@ private:
 	void 					DbgCreatePlots		()				;
 	void 					DBgClearPlots		()				;
 #endif
-	////////////////////////////////////////////////////////////////////	
+	////////////////////////////////////////////////////////////////////
 	Flags16 async_calls;
 	static const u16 cAsCallsnum = 3;
 
@@ -179,7 +179,7 @@ public:
 		static void WheellCollisionCallback(bool& do_colide, bool bo1, dContact& c, SGameMtl* material_1,
 		                                    SGameMtl* material_2);
 
-		void Init(); //asumptions: bone_map is 1. ini parsed 2. filled in 3. bone_id is set 
+		void Init(); //asumptions: bone_map is 1. ini parsed 2. filled in 3. bone_id is set
 		void Load(LPCSTR section);
 		void RestoreNetState(const CSE_ALifeCar::SWheelState& a_state);
 		void SaveNetState(NET_Packet& P);
@@ -496,7 +496,7 @@ private:
 	float EngineDriveSpeed();
 	float DriveWheelsMeanAngleRate();
 	IC float EngineRpmFromWheels() { return _abs(DriveWheelsMeanAngleRate() * m_current_gear_ratio); }
-	/////////////////////////////////////////////////////////////////////////	
+	/////////////////////////////////////////////////////////////////////////
 	void SteerRight();
 	void SteerLeft();
 	void SteerIdle();
@@ -666,7 +666,7 @@ public:
 	CCameraBase* Camera() { return active_camera; }
 	void SetExplodeTime(u32 et);
 	u32 ExplodeTime();
-	// Inventory for the car	
+	// Inventory for the car
 	CInventory* GetInventory() { return inventory; }
 	void VisualUpdate(float fov = 90.0f);
 

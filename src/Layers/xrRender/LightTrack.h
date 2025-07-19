@@ -27,7 +27,7 @@ public:
 	struct Item
 	{
 		u32 frame_touched; // to track creation & removal
-		light* source; // 
+		light* source; //
 		collide::ray_cache cache; //
 		float test; // note range: (-1[no]..1[yes])
 		float energy; //
@@ -46,9 +46,9 @@ public:
 	u32 dwFrame;
 	u32 dwFrameSmooth;
 
-	// 
+	//
 	xr_vector<Item> track; // everything what touches
-	xr_vector<Light> lights; // 
+	xr_vector<Light> lights; //
 
 	bool result [lt_hemisamples];
 	collide::ray_cache cache [lt_hemisamples];

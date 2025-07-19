@@ -52,7 +52,7 @@ game_cl_ArtefactHunt::game_cl_ArtefactHunt()
 
 void game_cl_ArtefactHunt::Init()
 {
-	//	pInventoryMenu	= xr_new<CUIInventoryWnd>();	
+	//	pInventoryMenu	= xr_new<CUIInventoryWnd>();
 	//	pPdaMenu = xr_new<CUIPdaWnd>();
 	//	pMapDesc = xr_new<CUIMapDesc>();
 
@@ -64,32 +64,32 @@ void game_cl_ArtefactHunt::Init()
 	old_teamInPossession = 0;
 	//---------------------------------------------------
 	/*	string_path	fn_game;
-		if (FS.exist(fn_game, "$level$", "level.game")) 
+		if (FS.exist(fn_game, "$level$", "level.game"))
 		{
 			IReader *F = FS.r_open	(fn_game);
 			IReader *O = 0;
-	
+
 			// Load RPoints
 			if (0!=(O = F->open_chunk	(RPOINT_CHUNK)))
-			{ 
+			{
 				for (int id=0; O->find_chunk(id); ++id)
 				{
 					RPoint					R;
 					u8						RP_team;
 					u8						RP_type;
 					u16						RP_GameType;
-	
+
 					O->r_fvector3			(R.P);
 					O->r_fvector3			(R.A);
 					RP_team					= O->r_u8	();	VERIFY(RP_team>=0 && RP_team<4);
 					RP_type					= O->r_u8	();
 					RP_GameType				= O->r_u16	();
-					//u16 res					= 
+					//u16 res					=
 					//O->r_u8	();
-	
+
 					if (RP_GameType != GAME_ANY && RP_GameType != GAME_ARTEFACTHUNT)
 					{
-						continue;					
+						continue;
 					};
 					switch (RP_type)
 					{
@@ -113,7 +113,7 @@ void game_cl_ArtefactHunt::Init()
 				};
 				O->close();
 			}
-	
+
 			FS.r_close	(F);
 		}*/
 	//-------------------------------------------------------
@@ -660,7 +660,7 @@ void game_cl_ArtefactHunt::UpdateMapLocations()
 							{
 								if (Level().MapManager().HasMapLocation(ARTEFACT_ENEMY, artefactID))
 								{
-									Level().MapManager().RemoveMapLocationByObjectID(artefactID);									
+									Level().MapManager().RemoveMapLocationByObjectID(artefactID);
 								}
 								OutfitWorkDown = true;
 							}

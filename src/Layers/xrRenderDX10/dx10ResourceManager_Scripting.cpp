@@ -88,7 +88,7 @@ public:
 
 #pragma warning( push )
 #pragma warning( disable : 4512)
-// wrapper																																					
+// wrapper
 class adopt_compiler
 {
 	CBlender_Compile* C;
@@ -312,7 +312,7 @@ static void *lua_alloc		(void *ud, void *ptr, size_t osize, size_t nsize) {
 	}
 
 	if ( !ptr ) {
-		void* const result			= 
+		void* const result			=
 			g_render_lua_allocator.malloc_impl((u32)nsize);
 		memory_monitor::monitor_alloc (result,nsize,"render:LUA");
 		return						result;
@@ -343,7 +343,7 @@ void CResourceManager::LS_Load()
 		return;
 	}
 
-	// initialize lua standard library functions 
+	// initialize lua standard library functions
 	luaopen_base(LSVM);
 	luaopen_table(LSVM);
 	luaopen_string(LSVM);
@@ -419,7 +419,7 @@ void CResourceManager::LS_Load()
 		.def("dx10zfunc", &adopt_compiler::_dx10ZFunc, return_reference_to(_1))
 
 		.def("dx10sampler", &adopt_compiler::_dx10sampler) // returns sampler-object
-		.def("dx10Options", &adopt_compiler::_dx10Options), // returns options-object	
+		.def("dx10Options", &adopt_compiler::_dx10Options), // returns options-object
 
 
 		class_<adopt_blend>("blend")

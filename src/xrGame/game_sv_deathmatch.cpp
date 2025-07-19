@@ -494,7 +494,7 @@ void game_sv_Deathmatch::Update()
 		{
 			if (m_delayedRoundEnd && m_roundEndDelay < Device.TimerAsync())
 			{
-				OnRoundEnd(); //eRoundEnd_Finish 
+				OnRoundEnd(); //eRoundEnd_Finish
 			}
 		}
 		break;
@@ -659,7 +659,7 @@ void game_sv_Deathmatch::SM_SwitchOnPlayer(CObject* pNewObject)
 		pActor->inventory().Items_SetCurrentEntityHud(true);
 		/*
 				CHudItem* pHudItem = smart_cast<CHudItem*>(pActor->inventory().ActiveItem());
-				if (pHudItem) 
+				if (pHudItem)
 				{
 					pHudItem->OnStateSwitch(pHudItem->GetState());
 				};
@@ -767,7 +767,7 @@ void game_sv_Deathmatch::OnPlayerReady(ClientID id)
 					//					return;
 				}
 			}
-			//------------------------------------------------------------			
+			//------------------------------------------------------------
 			RespawnPlayer(id, false);
 			pOwner = xrCData->owner;
 			CSE_ALifeCreatureActor* pA = smart_cast<CSE_ALifeCreatureActor*>(pOwner);
@@ -996,9 +996,9 @@ void game_sv_Deathmatch::OnPlayerBuyFinished(ClientID id_who, NET_Packet& P)
 	SetCanOpenBuyMenu(id_who);
 
 	/*game_PlayerState*	ps		= get_id	(id_who);
-	if (!ps || ps->IsSkip())		return;	
-	
-	P.r_s32(ps->LastBuyAcount);	
+	if (!ps || ps->IsSkip())		return;
+
+	P.r_s32(ps->LastBuyAcount);
 	if (ps->LastBuyAcount != 0) ps->m_bClearRun = false;
 
 	xr_vector<s16>		ItemsDesired;
@@ -1025,7 +1025,7 @@ void game_sv_Deathmatch::OnPlayerBuyFinished(ClientID id_who, NET_Packet& P)
 		TIItemContainer::const_iterator	IBelt = pActor->inventory().m_belt.begin();
 		TIItemContainer::const_iterator	EBelt = pActor->inventory().m_belt.end();
 
-		for ( ; IBelt != EBelt; ++IBelt) 
+		for ( ; IBelt != EBelt; ++IBelt)
 		{
 			pItem = (*IBelt);
 			CheckItem(ps, pItem, &ItemsDesired, &ItemsToDelete, ExactMatch);
@@ -1035,9 +1035,9 @@ void game_sv_Deathmatch::OnPlayerBuyFinished(ClientID id_who, NET_Packet& P)
 		TIItemContainer::const_iterator	IRuck = pActor->inventory().m_ruck.begin();
 		TIItemContainer::const_iterator	ERuck = pActor->inventory().m_ruck.end();
 
-		for ( ; IRuck != ERuck; ++IRuck) 
+		for ( ; IRuck != ERuck; ++IRuck)
 		{
-			pItem = (*IRuck);			
+			pItem = (*IRuck);
 			if (!pItem) continue;
 			CheckItem(ps, pItem, &ItemsDesired, &ItemsToDelete, ExactMatch);
 		};
@@ -1046,15 +1046,15 @@ void game_sv_Deathmatch::OnPlayerBuyFinished(ClientID id_who, NET_Packet& P)
 		TISlotArr::const_iterator	ISlot = pActor->inventory().m_slots.begin();
 		TISlotArr::const_iterator	ESlot = pActor->inventory().m_slots.end();
 
-		for ( ; ISlot != ESlot; ++ISlot) 
+		for ( ; ISlot != ESlot; ++ISlot)
 		{
 			pItem = (*ISlot).m_pIItem;
 			CheckItem(ps, pItem, &ItemsDesired, &ItemsToDelete, ExactMatch);
 		};
-		
+
 		xr_vector<u16>::iterator	IDI = ItemsToDelete.begin();
 		xr_vector<u16>::iterator	EDI = ItemsToDelete.end();
-		for ( ; IDI != EDI; ++IDI) 
+		for ( ; IDI != EDI; ++IDI)
 		{
 			NET_Packet			P;
 			u_EventGen			(P,GE_DESTROY,*IDI);
@@ -1208,7 +1208,7 @@ void game_sv_Deathmatch::OnPlayerHitPlayer_Case(game_PlayerState* ps_hitter, gam
 		pHitS->power = 0;
 		pHitS->impulse = 0;
 	}
-	//	}	
+	//	}
 };
 
 void game_sv_Deathmatch::OnPlayerHitPlayer(u16 id_hitter, u16 id_hitted, NET_Packet& P)
@@ -1644,7 +1644,7 @@ BOOL game_sv_Deathmatch::OnTouch(u16 eid_who, u16 eid_what, BOOL bForced)
 						u_EventGen(P, GE_OWNERSHIP_TAKE, eid_who);
 						P.w_u16(eid_what);
 						Level().Send(P, net_flags(TRUE,TRUE));
-						//-----------------------------------------------------						
+						//-----------------------------------------------------
 					}
 					return FALSE;
 				}
@@ -1736,9 +1736,9 @@ BOOL game_sv_Deathmatch::OnTouch(u16 eid_who, u16 eid_what, BOOL bForced)
 		};
 		//---------------------------------------------------------------
 		if (IsBuyableItem(*e_what->s_name)) return TRUE;
-		//---------------------------------------------------------------		
+		//---------------------------------------------------------------
 	};
-	// We don't know what the hell is it, so disallow ownership just for safety 
+	// We don't know what the hell is it, so disallow ownership just for safety
 	return FALSE;
 }
 
@@ -2023,7 +2023,7 @@ BOOL game_sv_Deathmatch::Is_Anomaly_InLists(CSE_Abstract* E)
 	{
 		if (pCustomZone->m_owner_id != 0xffffffff) return TRUE;
 	}
-	
+
 	ANOMALIES_it It = std::find(m_AnomaliesPermanent.begin(), m_AnomaliesPermanent.end(),E->name_replace());
 	if (It != m_AnomaliesPermanent.end())
 	{
@@ -2088,7 +2088,7 @@ void game_sv_Deathmatch::OnPostCreate(u16 eid_who)
 			return;
 		};
 	};
-	/*	
+	/*
 	ANOMALIES_it It = std::find(m_AnomaliesPermanent.begin(), m_AnomaliesPermanent.end(),pCustomZone->name_replace());
 	if (It == m_AnomaliesPermanent.end())
 	{
@@ -2225,7 +2225,7 @@ void game_sv_Deathmatch::OnRender				()
 				{
 					Fvector p0 = m_level_graph->vertex_position(*I);
 					Fvector p1 = m_level_graph->vertex_position(*(I+1));
-					Level().debug_renderer().draw_line(Fidentity, 
+					Level().debug_renderer().draw_line(Fidentity,
 						p0,
 						p1,
 						0xff00ff00);

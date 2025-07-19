@@ -114,7 +114,7 @@ private:
 	virtual bool install_upgrade_ammo_class(LPCSTR section, bool test);
 
 public:
-	//дополнительные параметры патронов 
+	//дополнительные параметры патронов
 	//для подствольника
 	//-	CWeaponAmmo*			m_pAmmo2;
 	xr_vector<shared_str> m_ammoTypes2;

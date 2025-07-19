@@ -17,50 +17,50 @@ void CBlender_blur::Compile(CBlender_Compile& C)
 	case 0:	//Fullres Horizontal
 		C.r_Pass("null", "pp_blur", FALSE, FALSE, FALSE);
 		C.r_Sampler_clf("s_image", r2_RT_generic0);
-		C.r_Sampler_rtf("s_position", r2_RT_P);		
+		C.r_Sampler_rtf("s_position", r2_RT_P);
 		C.r_Sampler_clf("s_lut_atlas", "shaders\\lut_atlas");
-	
+
 		C.r_End();
 		break;
 	case 1:	//Fullres Vertical
 		C.r_Pass("null", "pp_blur", FALSE, FALSE, FALSE);
 		C.r_Sampler_clf("s_image", r2_RT_blur_h_2);
-		C.r_Sampler_rtf("s_position", r2_RT_P);		
+		C.r_Sampler_rtf("s_position", r2_RT_P);
 		C.r_Sampler_clf("s_lut_atlas", "shaders\\lut_atlas");
-	
+
 		C.r_End();
 		break;
 	case 2: //Halfres Horizontal
 		C.r_Pass("null", "pp_blur", FALSE, FALSE, FALSE);
 		C.r_Sampler_clf("s_image", r2_RT_generic0);
-		C.r_Sampler_rtf("s_position", r2_RT_P);		
+		C.r_Sampler_rtf("s_position", r2_RT_P);
 		C.r_Sampler_clf("s_lut_atlas", "shaders\\lut_atlas");
-	
+
 		C.r_End();
 		break;
 	case 3: //Halfres Vertical
 		C.r_Pass("null", "pp_blur", FALSE, FALSE, FALSE);
 		C.r_Sampler_clf("s_image", r2_RT_blur_h_4);
-		C.r_Sampler_rtf("s_position", r2_RT_P);	
+		C.r_Sampler_rtf("s_position", r2_RT_P);
 		C.r_Sampler_clf("s_lut_atlas", "shaders\\lut_atlas");
-	
+
 		C.r_End();
-		break;		
+		break;
 	case 4: //Quarterres Horizontal
 		C.r_Pass("null", "pp_blur", FALSE, FALSE, FALSE);
 		C.r_Sampler_clf("s_image", r2_RT_generic0);
-		C.r_Sampler_rtf("s_position", r2_RT_P);		
+		C.r_Sampler_rtf("s_position", r2_RT_P);
 		C.r_Sampler_clf("s_lut_atlas", "shaders\\lut_atlas");
-	
+
 		C.r_End();
 		break;
 	case 5: //Quarterres Vertical
 		C.r_Pass("null", "pp_blur", FALSE, FALSE, FALSE);
 		C.r_Sampler_clf("s_image", r2_RT_blur_h_8);
-		C.r_Sampler_rtf("s_position", r2_RT_P);		
+		C.r_Sampler_rtf("s_position", r2_RT_P);
 		C.r_Sampler_clf("s_lut_atlas", "shaders\\lut_atlas");
-	
+
 		C.r_End();
-		break;				
+		break;
 	}
 }

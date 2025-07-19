@@ -72,7 +72,7 @@ void CPortal::Setup(Fvector* V, int vcnt, CSector* face, CSector* back)
 		BB.modify(V[v]);
 	BB.getsphere(S.P, S.R);
 
-	// 
+	//
 	poly.assign(V, vcnt);
 	pFace = face;
 	pBack = back;

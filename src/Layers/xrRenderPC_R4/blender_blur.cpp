@@ -580,7 +580,7 @@ void CBlender_ssfx_motion_blur::Compile(CBlender_Compile& C)
 
 		C.r_dx10Texture("s_position", r2_RT_P);
 		C.r_dx10Texture("s_image", r2_RT_generic0);
-		
+
 		C.r_dx10Texture("ssfx_motion_vectors", r2_RT_ssfx_motion_vectors);
 
 		C.r_dx10Sampler("smp_nofilter");
@@ -593,7 +593,7 @@ void CBlender_ssfx_motion_blur::Compile(CBlender_Compile& C)
 
 		C.r_dx10Texture("s_position", r2_RT_P);
 		C.r_dx10Texture("s_image", r2_RT_ssfx_temp);
-		
+
 		C.r_dx10Texture("ssfx_motion_vectors", r2_RT_ssfx_motion_vectors);
 
 		C.r_dx10Sampler("smp_nofilter");
@@ -629,7 +629,7 @@ void CBlender_ssfx_fog_scattering::Compile(CBlender_Compile& C)
 		C.r_dx10Sampler("smp_linear");
 		C.r_End();
 		break;
-	
+
 
 	case 2:
 		C.r_Pass("stub_screen_space", "ssfx_fog_scattering_blur", FALSE, FALSE, FALSE);

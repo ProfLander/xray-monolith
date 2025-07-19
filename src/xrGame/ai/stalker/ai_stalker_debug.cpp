@@ -82,7 +82,7 @@ void try_change_current_entity()
 		if (!current)					continue;
 		if (Level().CurrentEntity()==current) continue;
 
-		Fvector							A, B, tmp; 
+		Fvector							A, B, tmp;
 		current->Center					(A);
 
 		tmp.sub							(A, actor->cam_Active()->vPosition);
@@ -108,10 +108,10 @@ void try_change_current_entity()
 
 	Level().SetEntity		(nearest_agent);
 	actor->inventory().Items_SetCurrentEntityHud(false);
-	
+
 	Engine.Sheduler.Unregister	(actor);
 	Engine.Sheduler.Register	(actor);
-	
+
 	Engine.Sheduler.Unregister	(nearest_agent);
 	Engine.Sheduler.Register	(nearest_agent, TRUE);
 }
@@ -132,7 +132,7 @@ void restore_actor()
 	g_debug_actor->inventory().Items_SetCurrentEntityHud(true);
 
 	CHudItem* pHudItem = smart_cast<CHudItem*>(g_debug_actor->inventory().ActiveItem());
-	if (pHudItem) 
+	if (pHudItem)
 	{
 		pHudItem->OnStateSwitch(pHudItem->GetState(), pHudItem->GetState());
 	}
@@ -267,7 +267,7 @@ void CAI_Stalker::debug_text			()
 	DBG_OutText	("%swounded       : %c",indent,wounded() ? '+' : '-');
 	// visual
 	DBG_OutText	("%svisual",indent);
-	
+
 	float								object_range, object_fov;
 	update_range_fov					(object_range,object_fov,eye_range,deg2rad(eye_fov));
 	DBG_OutText	("%s%seye range   : %f",indent,indent,object_range);
@@ -336,7 +336,7 @@ void CAI_Stalker::debug_text			()
 
 	if (memory().enemy().selected()) {
 		DBG_OutText	("%s%sselected",indent,indent);
-		
+
 		float								fuzzy = 0.f;
 		xr_vector<feel_visible_Item>::iterator I=feel_visible.begin(),E=feel_visible.end();
 		for (; I!=E; I++)
@@ -470,7 +470,7 @@ void CAI_Stalker::debug_text			()
 	DBG_OutText	("%s%sinfinite ammo       : %s",indent,indent,m_infinite_ammo ? "+" : "-");
 	DBG_OutText	("%s%sitem to spawn       : %s",indent,indent,item_to_spawn().size() ? *item_to_spawn() : "no item to spawn");
 	DBG_OutText	("%s%sammo in box to spawn: %d",indent,indent,item_to_spawn().size() ? ammo_in_box_to_spawn() : 0);
-	
+
 	CWeaponMagazined					*weapon = smart_cast<CWeaponMagazined*>(inventory().ActiveItem());
 	if (weapon) {
 		CObjectHandlerPlanner			&planner = CObjectHandler::planner();
@@ -486,7 +486,7 @@ void CAI_Stalker::debug_text			()
 			).inertia_time()
 		);
 	}
-	
+
 	if (inventory().ActiveItem()) {
 		DBG_OutText	("%s%sactive item",indent,indent);
 		DBG_OutText	("%s%s%sobject         : %s",indent,indent,indent,inventory().ActiveItem() ? *inventory().ActiveItem()->object().cName() : "");
@@ -507,10 +507,10 @@ void CAI_Stalker::debug_text			()
 	draw_planner						(objects,temp,indent,"root");
 
 	DBG_TextOutSet		(330,up_indent);
-	
+
 	// brain
 	DBG_OutText	("brain");
-	
+
 	// actions
 	draw_planner						(this->brain(),indent,indent,"root");
 	draw_planner						(movement().animation_selector().planner(), indent, indent, "smart cover planner");
@@ -518,7 +518,7 @@ void CAI_Stalker::debug_text			()
 	// debug planner
 	if (m_debug_planner)
 		draw_planner					(*m_debug_planner,indent,indent,"debug_planner");
-	
+
 	DBG_TextOutSet	(640,up_indent);
 	// brain
 	DBG_OutText	("controls");
@@ -611,7 +611,7 @@ void CAI_Stalker::debug_text			()
 	DBG_OutText	("%s%sposition        : [%f][%f][%f]",indent,indent,VPUSH(Position()));
 	DBG_OutText	("%s%slevel vertex id : %d",indent,indent,ai_location().level_vertex_id());
 	DBG_OutText	("%s%sgame vertex id  : %d",indent,indent,ai_location().game_vertex_id());
-	
+
 	if (movement().path_type() == MovementManager::ePathTypePatrolPath) {
 		DBG_OutText("%s%spatrol",indent,indent);
 		DBG_OutText("%s%s%spath          : %s",indent,indent,indent,*movement().patrol().path_name());
@@ -633,7 +633,7 @@ void CAI_Stalker::debug_text			()
 		DBG_OutText("%s%s%spath size     : %d",indent,indent,indent,movement().game_path().path().size());
 		DBG_OutText("%s%s%scurrent point : %d",indent,indent,indent,movement().game_path().intermediate_index());
 	}
-	
+
 	DBG_OutText	("%s%slevel",indent,indent);
 	DBG_OutText	("%s%s%spath size     : %d",indent,indent,indent,movement().level_path().path().size());
 	DBG_OutText	("%s%s%sstart vertex  : %d",indent,indent,indent,movement().level_path().path().empty() ? -1 : movement().level_path().path().front());
@@ -675,7 +675,7 @@ void CAI_Stalker::debug_text			()
 	DBG_OutText	("%s%s%slookout max time    : %.2f",indent,indent,indent,movement().lookout_max_time());
 
 	DBG_OutText	("%s%s%sapply loophole direction distance : %.2f",indent,indent,indent,movement().apply_loophole_direction_distance());
-	
+
 	DBG_OutText	("%s%s%suse smart covers only : %c",indent,indent,indent,use_smart_covers_only() ? '+' : '-');
 	DBG_OutText	("%s%s%sin smart cover      : %c",indent,indent,indent,lua_game_object()->in_smart_cover() ? '+' : '-');
 
@@ -750,7 +750,7 @@ void CAI_Stalker::debug_text			()
 			}
 		}
 	}
-	
+
 	if (movement().current_params().cover_fire_position()) {
 		Fvector							position = *movement().current_params().cover_fire_position();
 		DBG_OutText	("%s%s%sfire position current : [%f][%f][%f]",indent,indent,indent,VPUSH(position));
@@ -789,7 +789,7 @@ void CAI_Stalker::debug_text			()
 	DBG_OutText	(" ");
 	DBG_OutText	("%ssounds",indent);
 	DBG_OutText	("%s%scollections : %d",indent,indent,sound().objects().size());
-	
+
 	{
 		u32			object_count = 0;
 		CSoundPlayer::SOUND_COLLECTIONS::const_iterator	I = sound().objects().begin();
@@ -882,7 +882,7 @@ void CAI_Stalker::debug_text			()
 	DBG_OutText	("%s%shead target     : [%f][%f]",indent,indent,movement().head_orientation().target.yaw,movement().head_orientation().target.pitch);
 	DBG_OutText	("%s%sbody current    : [%f][%f]",indent,indent,movement().body_orientation().current.yaw,movement().body_orientation().current.pitch);
 	DBG_OutText	("%s%sbody target     : [%f][%f]",indent,indent,movement().body_orientation().target.yaw,movement().body_orientation().target.pitch);
-	
+
 	switch (sight().current_action().sight_type()) {
 		case SightManager::eSightTypeCurrentDirection : {
 			break;
@@ -1006,7 +1006,7 @@ BOOL _ray_query_callback	(collide::rq_result& result, LPVOID params)
 			result.range
 		)
 	);
-	
+
 	float								power = param->m_holder->feel_vision_mtl_transp(result.O,result.element);
 	param->m_power						*= power;
 	if (param->m_power > param->m_power_threshold)
@@ -1022,7 +1022,7 @@ void fill_points			(CCustomMonster *self, const Fvector &position, const Fvector
 
 	collide::ray_defs				ray_defs(position,direction,distance,CDB::OPT_CULL,collide::rqtBoth);
 	VERIFY							(!fis_zero(ray_defs.dir.square_magnitude()));
-	
+
 	ray_query_param					params(self,self->memory().visual().transparency_threshold(),distance,position,direction,points);
 
 	Level().ObjectSpace.RayQuery	(rq_storage,ray_defs,_ray_query_callback,&params,NULL,self);
@@ -1046,7 +1046,7 @@ void draw_visiblity_rays	(CCustomMonster *self, const CObject *object, collide::
 			}
 		}
 	}
-	
+
 	if (!item)
 		return;
 
@@ -1073,7 +1073,7 @@ void draw_visiblity_rays	(CCustomMonster *self, const CObject *object, collide::
 		points.push_back	(dest_position);
 
 	VERIFY					(points.size() > 1);
-	
+
 	Fvector					size = Fvector().set(.05f,.05f,.05f);
 	Level().debug_renderer().draw_aabb	(points.front(),size.x,size.y,size.z,D3DCOLOR_XRGB(0,0,255));
 
@@ -1122,7 +1122,7 @@ static Fmatrix aim_on_actor		(
 #ifdef DEBUG_RENDER
 	CDebugRenderer&						renderer = Level().debug_renderer();
 	Fmatrix								temp;
-	
+
 	if (debug_draw)
 	{
 		temp.scale						(.01f, .01f, .01f);
@@ -1361,19 +1361,19 @@ static void draw_animation_bones	(CAI_Stalker& self, Fmatrix const& transform, I
 {
 	IKinematics* kinematics				= smart_cast<IKinematics*>(kinematics_animated);
 
-	u16									spine_bone_id = 
+	u16									spine_bone_id =
 		(u16)kinematics->LL_BoneID(
 			pSettings->r_string(self.cNameSect().c_str(),"bone_spin")
 		);
-	u16									shoulder_bone_id = 
+	u16									shoulder_bone_id =
 		(u16)kinematics->LL_BoneID(
 			pSettings->r_string(self.cNameSect().c_str(),"bone_shoulder")
 		);
-	u16									weapon_bone_id0 = 
+	u16									weapon_bone_id0 =
 		(u16)kinematics->LL_BoneID(
 			pSettings->r_string(self.cNameSect().c_str(),"weapon_bone0")
 		);
-	u16									weapon_bone_id1 = 
+	u16									weapon_bone_id1 =
 		(u16)kinematics->LL_BoneID(
 			pSettings->r_string(self.cNameSect().c_str(),"weapon_bone2")
 		);
@@ -1384,7 +1384,7 @@ static void draw_animation_bones	(CAI_Stalker& self, Fmatrix const& transform, I
 	Fmatrix mR						= g_stalker_skeleton[weapon_bone_id0];
 
 	Fvector							D;
-	D.sub							(mL.c,mR.c);	
+	D.sub							(mL.c,mR.c);
 	D.normalize						();
 
 	bool forward_blend_callbacks	= self.animation().forward_blend_callbacks();
@@ -1426,7 +1426,7 @@ static void draw_animation_bones	(CAI_Stalker& self, Fmatrix const& transform, I
 
 	CWeapon* weapon					= smart_cast<CWeapon*>(self.best_weapon());
 	VERIFY							(weapon);
-	
+
 	Fvector							pos,ypr;
 	pos								= pSettings->r_fvector3		(weapon->cNameSect(),"position");
 	ypr								= pSettings->r_fvector3		(weapon->cNameSect(),"orientation");
@@ -1441,18 +1441,18 @@ static void draw_animation_bones	(CAI_Stalker& self, Fmatrix const& transform, I
 
 	Fmatrix							mRes;
 	Fvector							R,N;
-	D.sub							(mL.c,mR.c);	
+	D.sub							(mL.c,mR.c);
 	D.normalize						();
 	R.crossproduct					(mR.j,D);
 
-	N.crossproduct					(D,R);			
+	N.crossproduct					(D,R);
 	N.normalize						();
 
 	mRes.set						(R,N,D,mR.c);
 	mRes.mulA_43					(transform);
 
 	weapon_bone_0.mul				(mRes, offset);
-	
+
 	Fvector	const vLoadedFirePoint	= pSettings->r_fvector3		( weapon->cNameSect(), "fire_point" );
 	Fvector weapon_bone_position;
 	weapon_bone_0.transform_tiny	( weapon_bone_position, vLoadedFirePoint );
@@ -1460,7 +1460,7 @@ static void draw_animation_bones	(CAI_Stalker& self, Fmatrix const& transform, I
 	Fvector weapon_bone_direction;
 	weapon_bone_0.transform_dir		( weapon_bone_direction, Fvector().set( 0.f, 0.f, 1.f ) );
 
-	spine_offset						= 
+	spine_offset						=
 		aim_on_actor(
 			spine_bone.c,
 			weapon_bone_position,
@@ -1490,11 +1490,11 @@ static void draw_animation_bones	(CAI_Stalker& self, Fmatrix const& transform, I
 	mL								= g_stalker_skeleton[weapon_bone_id1];
 	mR								= g_stalker_skeleton[weapon_bone_id0];
 
-	D.sub							(mL.c,mR.c);	
+	D.sub							(mL.c,mR.c);
 	D.normalize						();
 	R.crossproduct					(mR.j,D);
 
-	N.crossproduct					(D,R);			
+	N.crossproduct					(D,R);
 	N.normalize						();
 
 	mRes.set						(R,N,D,mR.c);
@@ -1504,7 +1504,7 @@ static void draw_animation_bones	(CAI_Stalker& self, Fmatrix const& transform, I
 	weapon_bone_0.transform_tiny	(weapon_bone_position, vLoadedFirePoint);
 	weapon_bone_0.transform_dir		(weapon_bone_direction, Fvector().set( 0.f, 0.f, 1.f ));
 
-	shoulder_offset						= 
+	shoulder_offset						=
 		aim_on_actor(
 			shoulder_bone.c,
 			weapon_bone_position,
@@ -1537,20 +1537,20 @@ static void draw_animation_bones	(CAI_Stalker& self, Fmatrix const& transform, I
 	mL.mulA_43						(m_start_transform);
 	mR.mulA_43						(m_start_transform);
 
-	D.sub							(mL.c,mR.c);	
+	D.sub							(mL.c,mR.c);
 	D.normalize						();
 	R.crossproduct					(mR.j,D);
 
-	N.crossproduct					(D,R);			
+	N.crossproduct					(D,R);
 	N.normalize						();
 
 	mRes.set						(R,N,D,mR.c);
 	mRes.mulA_43					(transform);
 
 	weapon_bone_0.mul				(mRes, offset);
-		
+
 	weapon_bone_0.transform_tiny	(weapon_bone_position, vLoadedFirePoint);
-		
+
 	weapon_bone_direction			= Fvector().set(0.f, 0.f, 1.f);
 	weapon_bone_0.transform_dir		( weapon_bone_direction );
 
@@ -1709,10 +1709,10 @@ void CAI_Stalker::OnRender				()
 		current_direction.add(eye_matrix.c);
 		target_direction.setHP(-movement().m_head.target.yaw, -movement().m_head.target.pitch);
 		target_direction.normalize();
-		target_direction.mul(4.f);			
+		target_direction.mul(4.f);
 		target_direction.add(eye_matrix.c);
 		target_direction.y = eye_matrix.c.y + 0.4f;
-		
+
 		Level().debug_renderer().draw_line(Fidentity, eye_matrix.c, current_direction, D3DCOLOR_XRGB(255,0,255));
 		Level().debug_renderer().draw_line(Fidentity, eye_matrix.c, target_direction, D3DCOLOR_XRGB(255,255,0));
 	}
@@ -1723,7 +1723,7 @@ void CAI_Stalker::OnRender				()
 		c1.setHP				(-movement().m_body.current.yaw,-movement().m_body.current.pitch);
 		c1.add					(c0);
 		Level().debug_renderer().draw_line		(Fidentity,c0,c1,D3DCOLOR_XRGB(0,255,0));
-		
+
 		t0.y					+= 2.f;
 		t1.setHP				(-movement().m_body.target.yaw,-movement().m_body.target.pitch);
 		t1.add					(t0);

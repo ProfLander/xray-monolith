@@ -169,7 +169,7 @@ namespace gamespy_profile
 	//		stats_submitter::operation_timeout_value,
 	//		my_inst
 	//	);
-	//	
+	//
 	//	if (tmp_result != SCResult_NO_ERROR)
 	//	{
 	//		my_inst->m_last_operation_cb(false, CGameSpy_ATLAS::TryToTranslate(tmp_result).c_str());
@@ -207,7 +207,7 @@ namespace gamespy_profile
 	//		sizeof(my_inst->m_atlas_connection_id),
 	//		tmp_connection_id
 	//	);
-	//	
+	//
 	//	if (!my_inst->prepare_report())
 	//	{
 	//		my_inst->m_last_operation_cb	(false, "mp_failed_to_create_report");
@@ -215,7 +215,7 @@ namespace gamespy_profile
 	//		Engine.Sheduler.Unregister		(my_inst);
 	//		return;
 	//	}
-	//	
+	//
 	//	SCResult tmp_result = my_inst->m_atlas_obj->SubmitReport(
 	//		my_inst->m_atlas_report,
 	//		gsi_true,
@@ -255,7 +255,7 @@ namespace gamespy_profile
 	//		Engine.Sheduler.Unregister		(my_inst);
 	//		return;
 	//	}
-	//	
+	//
 	//	my_inst->m_last_operation_cb	(true, "");
 	//	my_inst->terminate_session		();
 	//	Engine.Sheduler.Unregister		(my_inst);
@@ -297,7 +297,7 @@ namespace gamespy_profile
 		//if (tmp_res != SCResult_NO_ERROR)
 		//	return false;
 
-		//bool	report_creation_result = false;	
+		//bool	report_creation_result = false;
 		//switch (m_report_type)
 		//{
 		//case ert_set_award:
@@ -455,7 +455,7 @@ namespace gamespy_profile
 		//	all_best_scores_t::const_iterator tmp_iter = scores->find(i->first);
 		//	if (tmp_iter == scores->end())
 		//		continue;
-		//	i->second = std::max(i->second, tmp_iter->second);				
+		//	i->second = std::max(i->second, tmp_iter->second);
 		//}
 		//save_file(profile);
 	}

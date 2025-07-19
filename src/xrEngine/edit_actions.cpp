@@ -90,9 +90,9 @@ namespace text_editor
 
 			/*
 			//setlocale( LC_ALL, "" ); // User-default
-	
+
 			// The following 3 lines looks useless
-	
+
 			LPSTR loc;
 			STRCONCAT ( loc, ".", itoa( GetACP(), code_page, 10 ) );
 			setlocale ( LC_ALL, loc );*/

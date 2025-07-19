@@ -416,7 +416,7 @@ void CCustomMonster::shedule_Update(u32 DT)
 
 void CCustomMonster::net_update::lerp(CCustomMonster::net_update& A, CCustomMonster::net_update& B, float f)
 {
-	// 
+	//
 	o_model = angle_lerp(A.o_model, B.o_model, f);
 	o_torso.yaw = angle_lerp(A.o_torso.yaw, B.o_torso.yaw, f);
 	o_torso.pitch = angle_lerp(A.o_torso.pitch, B.o_torso.pitch, f);
@@ -1167,18 +1167,18 @@ void CCustomMonster::OnRender()
 					Level().debug_renderer().draw_line			(Fidentity,P1,P2,color0);
 				if ((path.size() - 1) == I) // песледний box?
 					Level().debug_renderer().draw_aabb			(P1,radius0,radius0,radius0,color1);
-				else 
+				else
 					Level().debug_renderer().draw_aabb			(P1,radius0,radius0,radius0,color2);
 			}
 
 			for (u32 I=1; I<keys.size(); ++I) {
 				CDetailPathManager::STravelPoint	temp;
-				temp		= keys[I - 1]; 
+				temp		= keys[I - 1];
 				Fvector		P1;
 				P1.set		(temp.position.x,ai().level_graph().vertex_plane_y(temp.vertex_id),temp.position.y);
 				P1.y		+= 0.1f;
 
-				temp		= keys[I]; 
+				temp		= keys[I];
 				Fvector		P2;
 				P2.set		(temp.position.x,ai().level_graph().vertex_plane_y(temp.vertex_id),temp.position.y);
 				P2.y		+= 0.1f;
@@ -1213,17 +1213,17 @@ void CCustomMonster::OnRender()
 
 	if (psAI_Flags.test(aiFrustum)) {
 		float					new_range = eye_range, new_fov = eye_fov;
-		
+
 		if (g_Alive())
 			update_range_fov	(new_range, new_fov, memory().visual().current_state().m_max_view_distance*eye_range, eye_fov);
 
 		dbg_draw_frustum		(new_fov,new_range,1,eye_matrix.c,eye_matrix.k,eye_matrix.j);
 	}
 
-	if (psAI_Flags.test(aiMotion)) 
+	if (psAI_Flags.test(aiMotion))
 		if (character_physics_support())
 			character_physics_support()->movement()->dbg_Draw();
-	
+
 	if (bDebug)
 		smart_cast<IKinematics*>(Visual())->DebugRender(XFORM());
 
@@ -1254,7 +1254,7 @@ void CCustomMonster::OnRender()
 		float const jump_time	=	0.3f;
 		TransferenceToThrowVel	(velocity,jump_time,physics_world()->Gravity());
 
-		bool const result	=	trajectory_intersects_geometry	(jump_time, 
+		bool const result	=	trajectory_intersects_geometry	(jump_time,
 																 start,
 																 end,
 																 velocity,
@@ -1277,7 +1277,7 @@ void CCustomMonster::OnRender()
 	xr_vector<trajectory_pick>::const_iterator	E = m_jump_picks.end();
 	for ( ; I != E; ++I )
 	{
-		trajectory_pick pick				=	*I;	
+		trajectory_pick pick				=	*I;
 
 		float const inv_nx			=	(pick.invert_x & 1) ? -1.f : 1.f;
 		float const inv_ny			=	(pick.invert_y & 1) ? -1.f : 1.f;
@@ -1290,9 +1290,9 @@ void CCustomMonster::OnRender()
 		Fvector const traj_start	=	pick.center	- pick.z_axis * pick.sizes.z * 0.5f * inv_z;
 		Fvector const traj_end		=	pick.center	+ pick.z_axis * pick.sizes.z * 0.5f * inv_z;
 
-		Fvector const z_offs[]		=	{ (  pick.x_axis * pick.sizes.x * 0.5f) + (pick.y_axis * pick.sizes.y * 0.5f), 
+		Fvector const z_offs[]		=	{ (  pick.x_axis * pick.sizes.x * 0.5f) + (pick.y_axis * pick.sizes.y * 0.5f),
 										  (- pick.x_axis * pick.sizes.x * 0.5f) + (pick.y_axis * pick.sizes.y * 0.5f),
-										  (  pick.x_axis * pick.sizes.x * 0.5f) - (pick.y_axis * pick.sizes.y * 0.5f), 
+										  (  pick.x_axis * pick.sizes.x * 0.5f) - (pick.y_axis * pick.sizes.y * 0.5f),
 										  (- pick.x_axis * pick.sizes.x * 0.5f) - (pick.y_axis * pick.sizes.y * 0.5f), };
 
 		Fvector const z_normal		=	- pick.z_axis * 0.1 * inv_nz;
@@ -1305,9 +1305,9 @@ void CCustomMonster::OnRender()
 		Fvector const hor_start		=	pick.center	- pick.x_axis * pick.sizes.x * 0.5f * inv_x;
 		Fvector const hor_end		=	pick.center	+ pick.x_axis * pick.sizes.x * 0.5f * inv_x;
 
-		Fvector const x_offs[]		=	{ (  pick.y_axis * pick.sizes.y * 0.5f) + (pick.z_axis * pick.sizes.z * 0.5f), 
+		Fvector const x_offs[]		=	{ (  pick.y_axis * pick.sizes.y * 0.5f) + (pick.z_axis * pick.sizes.z * 0.5f),
 										  (- pick.y_axis * pick.sizes.y * 0.5f) + (pick.z_axis * pick.sizes.z * 0.5f),
-										  (  pick.y_axis * pick.sizes.y * 0.5f) - (pick.z_axis * pick.sizes.z * 0.5f), 
+										  (  pick.y_axis * pick.sizes.y * 0.5f) - (pick.z_axis * pick.sizes.z * 0.5f),
 										  (- pick.y_axis * pick.sizes.y * 0.5f) - (pick.z_axis * pick.sizes.z * 0.5f), };
 
 		Fvector const x_normal		=	- pick.x_axis * 0.1 * inv_nx;
@@ -1320,9 +1320,9 @@ void CCustomMonster::OnRender()
 		Fvector const ver_start		=	pick.center	- pick.y_axis * pick.sizes.y * 0.5f * inv_y;
 		Fvector const ver_end		=	pick.center	+ pick.y_axis * pick.sizes.y * 0.5f * inv_y;
 
-		Fvector const y_offs[]		=	{ (  pick.x_axis * pick.sizes.x * 0.5f) + (pick.z_axis * pick.sizes.z * 0.5f), 
+		Fvector const y_offs[]		=	{ (  pick.x_axis * pick.sizes.x * 0.5f) + (pick.z_axis * pick.sizes.z * 0.5f),
 										  (- pick.x_axis * pick.sizes.x * 0.5f) + (pick.z_axis * pick.sizes.z * 0.5f),
-										  (  pick.x_axis * pick.sizes.x * 0.5f) - (pick.z_axis * pick.sizes.z * 0.5f), 
+										  (  pick.x_axis * pick.sizes.x * 0.5f) - (pick.z_axis * pick.sizes.z * 0.5f),
 										  (- pick.x_axis * pick.sizes.x * 0.5f) - (pick.z_axis * pick.sizes.z * 0.5f), };
 
 		Fvector const y_normal		=	- pick.y_axis * 0.1 * inv_ny;

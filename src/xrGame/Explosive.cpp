@@ -183,7 +183,7 @@ struct SExpQParams
 		source_p				.set(ec)	;
 		l_dir					.set(d)		;
 	}
-	Fvector		source_p			;					
+	Fvector		source_p			;
 	Fvector 	l_dir				;
 #else
 	SExpQParams()
@@ -358,11 +358,11 @@ void CExplosive::Explode()
 		DBG_DrawPoint(pos,0.3f,D3DCOLOR_XRGB(255,0,0));
 	}
 #endif
-	
+
 	// Interactive Grass FX
 	extern Fvector4 ps_ssfx_int_grass_params_2;
 	g_pGamePersistent->GrassBendersAddExplosion(cast_game_object()->ID(), pos, Fvector().set(0, -99, 0), 1.33f, ps_ssfx_int_grass_params_2.y, ps_ssfx_int_grass_params_2.x, m_fBlastRadius * 2.0f);
-	
+
 	//	Msg("---------CExplosive Explode [%d] frame[%d]",cast_game_object()->ID(), Device.dwFrame);
 	OnBeforeExplosion();
 	//играем звук взрыва
@@ -458,7 +458,7 @@ void CExplosive::Explode()
 	if(ph_dbg_draw_mask.test(phDbgDrawExplosions))
 	{
 		DBG_ClosedCashedDraw(100000);
-		
+
 	}
 #endif
 	//////////////////////////////////////////////////////////////////////////
@@ -566,7 +566,7 @@ void CExplosive::OnAfterExplosion()
 		CParticlesObject::Destroy(m_pExpParticle);
 		m_pExpParticle = NULL;
 	}
-	//ликвидировать сам объект 
+	//ликвидировать сам объект
 	if (cast_game_object()->Local()) cast_game_object()->DestroyObject();
 
 	//	NET_Packet			P;
@@ -646,7 +646,7 @@ void CExplosive::GenExplodeEvent(const Fvector& pos, const Fvector& normal)
 {
 	if (OnClient() || cast_game_object()->Remote()) return;
 
-	//	if( m_bExplodeEventSent ) 
+	//	if( m_bExplodeEventSent )
 	//		return;
 	VERIFY(!m_explosion_flags.test(flExplodEventSent)); //!m_bExplodeEventSent
 	VERIFY(0xffff != Initiator());
@@ -737,7 +737,7 @@ void CExplosive::ExplodeWaveProcessObject(collide::rq_results& storage, CPhysics
 	if(ph_dbg_draw_mask.test(phDbgDrawExplosions))
 	{
 		DBG_OpenCashedDraw();
-		
+
 	}
 #endif
 

@@ -130,7 +130,7 @@ public:
 		u32 isLandscape : 1;
 		u32 isWater : 1;
 
-		u32 iScopeLense : 2; //  Redotix99: for 3D Shader Based Scopes 		
+		u32 iScopeLense : 2; //  Redotix99: for 3D Shader Based Scopes
 	};
 
 public:
@@ -149,7 +149,7 @@ typedef resptr_core<ShaderElement, resptr_base<ShaderElement>> ref_selement;
 struct ECORE_API Shader : public xr_resource_flagged
 {
 public:
-	ref_selement E [6]; // R1 - 0=norm_lod0(det),	1=norm_lod1(normal),	2=L_point,		3=L_spot,	4=L_for_models,	
+	ref_selement E [6]; // R1 - 0=norm_lod0(det),	1=norm_lod1(normal),	2=L_point,		3=L_spot,	4=L_for_models,
 	// R2 - 0=deffer,			1=norm_lod1(normal),	2=psm,			3=ssm,		4=dsm
 	~Shader();
 	BOOL equal(Shader& S);
@@ -182,9 +182,9 @@ enum SE_R1
 //#define		SE_R2_NORMAL_HQ		0	// high quality/detail
 //#define		SE_R2_NORMAL_LQ		1	// low quality
 //#define		SE_R2_SHADOW		2	// shadow generation
-//	E[3] - can use for night vision but need to extend SE_R1. Will need 
+//	E[3] - can use for night vision but need to extend SE_R1. Will need
 //	Extra shader element.
-//	E[4] - distortion or self illumination(self emission). 
+//	E[4] - distortion or self illumination(self emission).
 //	E[4] Can use for lightmap capturing.
 
 #pragma pack(pop)

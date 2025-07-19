@@ -122,7 +122,7 @@ void CMonsterEnemyMemory::update()
 	// удалить устаревших врагов
 	remove_non_actual();
 
-	// обновить опасность 
+	// обновить опасность
 	for (ENEMIES_MAP_IT it = m_objects.begin(); it != m_objects.end(); it++)
 	{
 		u8 relation_value = u8(monster->tfGetRelationType(it->first));

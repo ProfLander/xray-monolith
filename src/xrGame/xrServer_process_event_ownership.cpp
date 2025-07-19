@@ -22,7 +22,7 @@ void xrServer::Process_event_ownership(NET_Packet& P, ClientID sender, u32 time,
 
 
 #ifdef MP_LOGGING
-	Msg( "--- SV: Process ownership take: parent [%d][%s], item [%d][%s]", 
+	Msg( "--- SV: Process ownership take: parent [%d][%s], item [%d][%s]",
 		id_parent, e_parent ? e_parent->name_replace() : "null_parent",
 		id_entity, e_entity ? e_entity->name() : "null_entity");
 #endif // MP_LOGGING

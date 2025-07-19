@@ -293,14 +293,14 @@ bool CBaseMonster::bfAssignObject(CScriptEntityAction* tpEntityAction)
 	//	if (!l_tpEntity) return	(false == (l_tObjectAction.m_bCompleted = true));
 	//
 	//	switch (l_tObjectAction.m_tGoalType) {
-	//		case eObjectActionTake: 
+	//		case eObjectActionTake:
 	//			m_PhysicMovementControl->PHCaptureObject(l_tpEntity);
 	//			break;
-	//		case eObjectActionDrop: 
+	//		case eObjectActionDrop:
 	//			m_PhysicMovementControl->PHReleaseObject();
 	//			break;
 	//	}
-	//	
+	//
 	//	l_tObjectAction.m_bCompleted = true;
 	return (true);
 }

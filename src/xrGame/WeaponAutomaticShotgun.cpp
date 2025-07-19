@@ -30,7 +30,7 @@ void CWeaponAutomaticShotgun::Load(LPCSTR section)
 	{
 		IsCustomReloadAvaible = !!pSettings->r_bool(section, "bas_state_reload");
 	}
-	
+
 	if (m_bTriStateReload)
 	{
 		m_sounds.LoadSound(section, "snd_open_weapon", "sndOpen", false, m_eSoundOpen);
@@ -57,7 +57,7 @@ bool CWeaponAutomaticShotgun::Action(u16 cmd, u32 flags)
 	if (m_bTriStateReload && GetState() == eReload &&
 		cmd == kWPN_FIRE && flags & CMD_START &&
 		m_sub_state == eSubstateReloadInProcess || m_sub_state == eSubstateReloadInProcessEmptyEnd) //постановить перезагрузку
-	{	
+	{
 		AddCartridge(1);
 		m_sub_state = eSubstateReloadEnd;
 		if(IsCustomReloadAvaible) SwitchState(eReload);
@@ -89,7 +89,7 @@ void CWeaponAutomaticShotgun::OnAnimationEnd(u32 state)
 			else if (BeginReloadWasEmpty && IsCustomReloadAvaible)
 			{
 				m_sub_state = eSubstateReloadInProcessEmptyEnd;
-				
+
 			}
 			SwitchState(eReload);
 		}

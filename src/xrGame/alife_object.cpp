@@ -140,7 +140,7 @@ void CSE_ALifeObject::spawn_supplies(LPCSTR ini_string)
 		string32 buf;
 		loadout_section = strconcat(sizeof(buf), buf, "spawn_loadout", std::to_string(iItr).c_str());
 	}
-	//-Alundaio 
+	//-Alundaio
 
 	if (ini.section_exist("spawn"))
 	{

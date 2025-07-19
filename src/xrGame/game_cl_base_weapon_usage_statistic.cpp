@@ -95,7 +95,7 @@ void Weapon_Statistic::net_save(NET_Packet* P, victims_table const& vt, bone_tab
 		victims_table const& vtable;
 		bone_table const& btable;
 
-		CompleteFilter& operator=(CompleteFilter& copy) { return *this; }; //C4512 
+		CompleteFilter& operator=(CompleteFilter& copy) { return *this; }; //C4512
 	public:
 
 
@@ -153,7 +153,7 @@ void Weapon_Statistic::net_load(NET_Packet* P, victims_table const& vt, bone_tab
 	m_dwKillsScored += P->r_u32();
 	u32 HitsSize = P->r_u32();
 	//P->r_u16(m_explosion_kills); //server sets this parameter ..
-	//P->r_u16(m_bleed_kills);	
+	//P->r_u16(m_bleed_kills);
 	for (u32 i = 0; i < HitsSize; i++)
 	{
 		HitData NewHit;
@@ -601,7 +601,7 @@ void WeaponUsageStatistic::OnBullet_Hit(SBullet* pBullet, u16 TargetID, s16 elem
 		//---------------------------
 		BulletData& BD = *BulletIt;
 		HitData NewHit;
-		//---------------------------		
+		//---------------------------
 		NewHit.Completed = false;
 		NewHit.Deadly = false;
 		NewHit.BoneID = element;
@@ -864,7 +864,7 @@ void WeaponUsageStatistic::OnExplosionKill(game_PlayerState* ps, const SHit& hit
 	++WeaponIt->m_explosion_kills;
 
 	HitData NewHit;
-	//---------------------------		
+	//---------------------------
 	NewHit.Completed = true;
 	NewHit.Deadly = true;
 	NewHit.BoneID = hit.boneID;
@@ -896,7 +896,7 @@ void WeaponUsageStatistic::OnBleedKill(game_PlayerState* killer_ps, game_PlayerS
 	++WeaponIt->m_bleed_kills;
 
 	HitData NewHit;
-	//---------------------------		
+	//---------------------------
 	NewHit.Completed = true;
 	NewHit.Deadly = true;
 	NewHit.BoneID = 0;

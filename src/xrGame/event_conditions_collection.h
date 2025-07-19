@@ -108,7 +108,7 @@ namespace award_system
 		event_conditions_t m_all_conditions;
 		event_root_conditions_t m_root_conditions;
 
-		// operation implementations 
+		// operation implementations
 		bool logical_and(arguments_t& arguments);
 		bool logical_or(arguments_t& arguments);
 

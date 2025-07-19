@@ -20,7 +20,7 @@ CAviPlayerCustom::CAviPlayerCustom()
 	m_fRate = 0.0f;
 	m_fCurrentRate = 0.0f;
 
-	m_dwFrameTotal = 0;	   
+	m_dwFrameTotal = 0;
 	m_dwFrameCurrent = 0xfffffffd; // страхуемся от 0xffffffff + 1 == 0
 	m_dwFirstFrameOffset = 0;
 	m_dwWidth = 0;

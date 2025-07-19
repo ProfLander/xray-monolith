@@ -98,7 +98,7 @@ BOOL CHangingLamp::net_Spawn(CSE_Abstract* DC)
 	Fcolor clr;
 
 	// set bone id
-	//	CInifile* pUserData		= K->LL_UserData(); 
+	//	CInifile* pUserData		= K->LL_UserData();
 	//	R_ASSERT3				(pUserData,"Empty HangingLamp user data!",lamp->get_visual());
 	xr_delete(collidable.model);
 	if (Visual())
@@ -391,7 +391,7 @@ void CHangingLamp::TurnOn()
 		K->LL_SetBoneVisible(light_bone, TRUE, TRUE);
 		K->CalculateBones_Invalidate();
 		K->CalculateBones(TRUE);
-		K->LL_SetBoneVisible(light_bone, TRUE, TRUE); //hack		
+		K->LL_SetBoneVisible(light_bone, TRUE, TRUE); //hack
 	}
 
 	// update T&R from light (main) bone

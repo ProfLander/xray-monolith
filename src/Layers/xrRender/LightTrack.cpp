@@ -74,7 +74,7 @@ IC bool pred_energy(const CROS_impl::Light& L1, const CROS_impl::Light& L2) { re
 #pragma warning(push)
 #pragma warning(disable:4305)
 
-// const float		hdir		[lt_hemisamples][3] = 
+// const float		hdir		[lt_hemisamples][3] =
 // {
 // 	{0.00000,	1.00000,	0.00000	},
 // 	{0.52573,	0.85065,	0.00000	},
@@ -343,7 +343,7 @@ void CROS_impl::smart_update(IRenderable* O)
 	}
 }
 
-#endif	//	#if RENDER!=R_R1		
+#endif	//	#if RENDER!=R_R1
 
 extern float ps_r2_lt_smooth;
 
@@ -518,7 +518,7 @@ void CROS_impl::prepare_lights(Fvector& position, IRenderable* O)
 			clamp(I->test, -.5f, 1.f);
 			I->energy = .9f * I->energy + .1f * I->test;
 
-			// 
+			//
 			float E = I->energy * xrL->color.intensity();
 			if (E > EPS)
 			{

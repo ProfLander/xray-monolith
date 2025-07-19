@@ -269,7 +269,7 @@ void CWallmarksEngine::AddWallmark_internal(CDB::TRI* pTri, const Fvector* pVert
 		bb.getsphere(W->bounds.P, W->bounds.R);
 	}
 
-	//	if (W->bounds.R < 1.f)	
+	//	if (W->bounds.R < 1.f)
 	{
 		// search if similar wallmark exists
 		wm_slot* slot = FindSlot(hShader);
@@ -472,7 +472,7 @@ void CWallmarksEngine::Render()
 			}
 
 #ifdef DEBUG
-			if(W->used_in_render != Device.dwFrame)			
+			if(W->used_in_render != Device.dwFrame)
 			{
 				Log("W->used_in_render",W->used_in_render);
 				Log("Device.dwFrame",Device.dwFrame);

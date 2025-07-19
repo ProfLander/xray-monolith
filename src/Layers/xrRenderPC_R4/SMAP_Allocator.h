@@ -36,7 +36,7 @@ struct SMAP_Rect
 class SMAP_Allocator
 {
 	u32 psize; // pool size
-	xr_vector<SMAP_Rect> stack; // 
+	xr_vector<SMAP_Rect> stack; //
 	xr_vector<Ivector2> cpoint; // critical points
 private:
 	void _add(SMAP_Rect& R)

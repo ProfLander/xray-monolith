@@ -12,7 +12,7 @@ void CRenderTarget::phase_dof()
 	float h = float(Device.dwHeight);
 
 	Fvector2 p0, p1;
-#if defined(USE_DX10) || defined(USE_DX11)	
+#if defined(USE_DX10) || defined(USE_DX11)
 	p0.set(0.0f, 0.0f);
 	p1.set(1.0f, 1.0f);
 #else
@@ -47,9 +47,9 @@ void CRenderTarget::phase_dof()
 
 	//Set paramterers
 	//RCache.set_c("taa_params", ps_taa_params.x, ps_taa_params.y, 0, 0);
-	RCache.set_c("dof_params", dof.x, dof.y, dof.z, ps_r2_dof_sky);	
+	RCache.set_c("dof_params", dof.x, dof.y, dof.z, ps_r2_dof_sky);
 	RCache.set_c("dof_kernel", vDofKernel.x, vDofKernel.y, ps_r2_dof_kernel_size, 0);
-	
+
 	//Set geometry
 	RCache.set_Geometry(g_combine);
 	RCache.Render(D3DPT_TRIANGLELIST, Offset, 0, 4, 0, 2);
@@ -59,7 +59,7 @@ void CRenderTarget::phase_dof()
 	u_setrt(dest_rt, nullptr, nullptr, nullptr);
 #else
 	u_setrt(rt_Generic_0, nullptr, nullptr, nullptr);
-#endif		
+#endif
 
 	RCache.set_CullMode(CULL_NONE);
 	RCache.set_Stencil(FALSE);

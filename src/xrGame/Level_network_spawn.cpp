@@ -91,7 +91,7 @@ void CLevel::g_sv_Spawn(CSE_Abstract* E)
 	if (g_bMEMO)	{
 		lua_gc					(ai().script_engine().lua(),LUA_GCCOLLECT,0);
 		lua_gc					(ai().script_engine().lua(),LUA_GCCOLLECT,0);
-		E_mem					= Memory.mem_usage();	
+		E_mem					= Memory.mem_usage();
 		Memory.stat_calls		= 0;
 	}
 #endif // DEBUG_MEMORY_MANAGER

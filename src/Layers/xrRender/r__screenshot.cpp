@@ -382,7 +382,7 @@ void CRender::ScreenshotImpl(ScreenshotMode mode, LPCSTR name, CMemoryWriter* me
 			TGAdesc p;
 			p.format = IMG_24B;
 
-			//	TODO: DX10: This is totally incorrect but mimics 
+			//	TODO: DX10: This is totally incorrect but mimics
 			//	original behavior. Fix later.
 			hr = pFB->LockRect(&D, 0,D3DLOCK_NOSYSLOCK);
 			if (hr != D3D_OK) return;

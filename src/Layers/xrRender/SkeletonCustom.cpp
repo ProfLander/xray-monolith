@@ -796,7 +796,7 @@ void CKinematics::CalculateWallmarks()
 			}
 			else
 			{
-				// remove wallmark				
+				// remove wallmark
 				need_remove = true;
 			}
 		}

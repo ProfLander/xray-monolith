@@ -112,9 +112,9 @@ void CStateZombieAttackRunAbstract::choose_action()
 	//if ((action == ACT_RUN) && (m_time_action_change + CHANGE_ACTION_FROM_RUN > time())) return;
 
 	//// установка параметров функциональных блоков
-	//if (object->HitMemory.is_hit() && (object->conditions().GetHealth() < 0.5f)) 
+	//if (object->HitMemory.is_hit() && (object->conditions().GetHealth() < 0.5f))
 	//	action = ACT_RUN;
-	//else 
+	//else
 	//	action = ACT_WALK_FWD;
 
 	//m_time_action_change = time();

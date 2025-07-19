@@ -320,7 +320,7 @@ shared_str ui_core::get_xml_name(LPCSTR fn)
 				{
 					return str;
 				}
-					
+
 			}
 			xr_sprintf(str, "%s", fn);
 			if (NULL == strext(fn)) xr_strcat(str, ".xml");

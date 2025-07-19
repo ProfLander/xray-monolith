@@ -102,7 +102,7 @@ std::pair<u32, float> CPatrolPath::parse_point_link(LPCSTR patrol_name, std::str
 
 	bool matched = std::regex_search(link, matches, pattern);
 	R_ASSERT4(matched, "Bad format for patrol path link", patrol_name, link.c_str());
-	
+
 	std::string target = matches[1].str();
 	float prob = std::stof(matches[2].str());
 

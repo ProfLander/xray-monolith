@@ -73,7 +73,7 @@ void CSE_ALifeAnomalousZone::spawn_artefacts				()
 	u32						n = _GetItemCount(artefacts);
 	VERIFY2					(!(n % 2),"Invalid parameters count in line artefacts for anomalous zone");
 	n						>>= 1;
-	
+
 	typedef std::pair<shared_str,float>	Weight;
 	typedef buffer_vector<Weight>		Weights;
 	Weights weights			(

@@ -12,7 +12,7 @@ using namespace PAPI;
 CParticleManager PM;
 PARTICLES_API IParticleManager* PAPI::ParticleManager() { return &PM; }
 
-// 
+//
 CParticleManager::CParticleManager()
 {
 }

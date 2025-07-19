@@ -37,7 +37,7 @@ public:
 	Fvector m_tWatchVector;
 	shared_str m_bone_to_watch;
 
-	// Searchlight 
+	// Searchlight
 	Fvector m_tTargetPoint;
 	float vel_bone_x;
 	float vel_bone_y;

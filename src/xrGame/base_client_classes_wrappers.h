@@ -66,7 +66,7 @@ public:
 
 typedef DLL_PureWrapper<DLL_Pure, ::luabind::wrap_base> CDLL_PureWrapper;
 
-/*	
+/*
 template <typename base, typename luabind_base = Loki::EmptyType>
 class ISpatialWrapper : public heritage<base,luabind_base>::result {
 public:
@@ -86,7 +86,7 @@ public:
 	{
 		call_member<void>(this,"spatial_unregister");
 	}
-	
+
 	static	void			spatial_unregister_static	(base *self)
 	{
 		self->base::spatial_unregister();
@@ -111,7 +111,7 @@ public:
 	{
 		return	(self->base::spatial_sector_point());
 	}
-	
+
 	virtual	CObject*		dcast_CObject				()
 	{
 		return	(call_member<CObject*>(this,"dcast_CObject"));
@@ -202,27 +202,27 @@ public:
 		{
 			call_member<void>(this,"renderable_Render");
 		}
-	
+
 		static	void	renderable_Render_static		(IRenderable *self)
 		{
 			ai().script_engine().script_log(eLuaMessageTypeError,"You are trying to call a pure virtual function IRenderable::renderable_Render!");
 		}
-	
+
 		virtual	BOOL	renderable_ShadowGenerate		()
 		{
 			return		((BOOL)call_member<bool>(this,"renderable_ShadowGenerate"));
 		}
-	
+
 		static	bool	renderable_ShadowGenerate_static(IRenderable *self)
 		{
 			return		(!!	self->IRenderable::renderable_ShadowGenerate());
 		}
-		
+
 		virtual	BOOL	renderable_ShadowReceive		()
 		{
 			return		((BOOL)call_member<bool>(this,"renderable_ShadowReceive"));
 		}
-	
+
 		static	bool	renderable_ShadowReceive_static	(IRenderable *self)
 		{
 			return		(!!	self->IRenderable::renderable_ShadowReceive());

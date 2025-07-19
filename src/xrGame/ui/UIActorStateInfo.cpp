@@ -215,7 +215,7 @@ void ui_actor_state_wnd::UpdateActorInfo(CInventoryOwner* owner)
 	{
 		tele_value += actor->GetProtection_ArtefactsOnBelt(ALife::eHitTypeTelepatic);
 		float max_power = actor->conditions().GetZoneMaxPower(ALife::eHitTypeTelepatic);
-		tele_value = floor(tele_value / max_power * 31) / 31; // number of sticks in progress bar  
+		tele_value = floor(tele_value / max_power * 31) / 31; // number of sticks in progress bar
 		m_state[stt_psi]->set_progress(tele_value); //0..1
 	}
 	//wound protection progress bar
@@ -228,7 +228,7 @@ void ui_actor_state_wnd::UpdateActorInfo(CInventoryOwner* owner)
 	{
 		shoc_value += actor->GetProtection_ArtefactsOnBelt(ALife::eHitTypeShock);
 		float max_power = actor->conditions().GetZoneMaxPower(ALife::eHitTypeShock);
-		shoc_value = floor(shoc_value / max_power * 31) / 31; // number of sticks in progress bar  
+		shoc_value = floor(shoc_value / max_power * 31) / 31; // number of sticks in progress bar
 		m_state[stt_shock]->set_progress(shoc_value); //0..1
 	}
 	//fire wound protection progress bar
@@ -240,7 +240,7 @@ void ui_actor_state_wnd::UpdateActorInfo(CInventoryOwner* owner)
 	//power restore speed progress bar
 	{
 		value = actor->GetRestoreSpeed(ALife::ePowerRestoreSpeed) / actor->conditions().GetMaxPowerRestoreSpeed();;
-		value = floor(value * 31) / 31; // number of sticks in progress bar  
+		value = floor(value * 31) / 31; // number of sticks in progress bar
 		m_state[stt_power]->set_progress(value); //0..1
 	}
 	// -----------------------------------------------------------------------------------

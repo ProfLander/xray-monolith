@@ -179,13 +179,13 @@ public:
 	}; //вызывается если entity теряет здоровье
 	virtual void OnCriticalHitHealthLoss()
 	{
-	}; //вызывается если entity умрет от хита 
+	}; //вызывается если entity умрет от хита
 	virtual void OnCriticalWoundHealthLoss()
 	{
-	}; //вызывается если entity умрет от потери крови 
+	}; //вызывается если entity умрет от потери крови
 	virtual void OnCriticalRadiationHealthLoss()
 	{
-	}; //вызывается если entity умрет от радиации 
+	}; //вызывается если entity умрет от радиации
 
 	virtual CVisualMemoryManager* visual_memory() const { return (0); }
 	virtual void net_Relcase(CObject* O);

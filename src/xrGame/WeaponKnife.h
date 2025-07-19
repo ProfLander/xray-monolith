@@ -82,7 +82,7 @@ private:
 		typedef xr_vector<Fobb>							obbes_t;
 		typedef xr_vector<std::pair<Fvector, Fvector> >	lines_t;
 		typedef xr_vector<Fvector>						targets_t;
-		
+
 		spheres_t					m_spheres;
 		lines_t						m_pick_vectors;
 		targets_t					m_targets_vectors;

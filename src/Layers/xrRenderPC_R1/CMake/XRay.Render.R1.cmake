@@ -1,6 +1,6 @@
 add_module(XRay.Render.R1
   TYPE STATIC
-  
+
   PRECOMPILES stdafx.h
 
   INCLUDES ${CMAKE_CURRENT_SOURCE_DIR}
@@ -24,7 +24,7 @@ add_module(XRay.Render.R1
   XRay.CPUPipe
   XRay.Engine
   XRay.Render.API
-  
+
   SOURCES
   ../xrRender/xrRender_console.cpp
   ../xrRender/xrRender_console.h
@@ -33,7 +33,7 @@ add_module(XRay.Render.R1
   ../xrRender/xrD3DDefs.h
 
   stdafx.h
-  
+
   xrRender_R1.cpp
 )
 
@@ -267,7 +267,7 @@ add_module(XRay.Render.R1.Lights
 
   ../xrRender/Light_Package.cpp
   ../xrRender/Light_Package.h
-  
+
   ../xrRender/LightTrack.cpp
   ../xrRender/LightTrack.h
 
@@ -314,7 +314,7 @@ add_module(XRay.Render.R1.Models.Visuals
 
   ../xrRender/ParticleEffectDef.cpp
   ../xrRender/ParticleEffectDef.h
-  
+
   ../xrRender/ParticleGroup.cpp
   ../xrRender/ParticleGroup.h
 )
@@ -326,7 +326,7 @@ add_module(XRay.Render.R1.Refactored.Backend
 
   ../xrRender/R_Backend.cpp
   ../xrRender/R_Backend.h
-  
+
   ../xrRender/R_Backend_DBG.cpp
 
   ../xrRender/R_Backend_hemi.cpp
@@ -422,7 +422,7 @@ add_module(XRay.Render.R1.Refactored.Execution3D.Shaders.Resources.DX9RShader
   SOURCES
   ../xrRenderDX9/dx9r_constants_cache.cpp
   ../xrRenderDX9/dx9r_constants_cache.h
-  
+
   ../xrRender/r_constants_cache.h
 )
 
@@ -484,7 +484,7 @@ add_module(XRay.Render.R1.Refactored.Execution3D.Visuals.Skeleton
 
   ../xrRender/SkeletonX.cpp
   ../xrRender/SkeletonX.h
-  
+
   ../xrRender/SkeletonXVertRender.h
 )
 
@@ -522,7 +522,7 @@ add_module(XRay.Render.R1.ShadingTemplates
 
   ../xrRender/Blender_Editor_Wire.cpp
   ../xrRender/Blender_Editor_Wire.h
-  
+
   "../xrRender/Blender_Lm(EbB).cpp"
   "../xrRender/Blender_Lm(EbB).h"
 
@@ -555,7 +555,7 @@ add_module(XRay.Render.R1.ShadingTemplates
 
   Blender_Screen_GRAY.cpp
   Blender_Screen_GRAY.h
-  
+
   Blender_Shadow_World.cpp
   Blender_Shadow_World.h
 
@@ -573,7 +573,7 @@ add_module(XRay.Render.R1.Stripifier
 
   ../xrRender/NvTriStripObjects.cpp
   ../xrRender/NvTriStripObjects.h
-  
+
   ../xrRender/VertexCache.cpp
   ../xrRender/VertexCache.h
 

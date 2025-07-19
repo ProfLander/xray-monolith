@@ -89,7 +89,7 @@ BOOL CPhysicObject::net_Spawn(CSE_Abstract* DC)
 if(dbg_draw_doors)
 {
 	DBG_OpenCashedDraw( );
-	Fvector closed, open; 
+	Fvector closed, open;
 	get_door_vectors( closed, open );
 	DBG_ClosedCashedDraw( 50000000 );
 }
@@ -132,13 +132,13 @@ void CPhysicObject::create_collision_model()
 
 	/*
 	switch(m_type) {
-		case epotBox:			
+		case epotBox:
 		case epotFixedChain:
 		case epotFreeChain :
 		case epotSkeleton  :	collidable.model = xr_new<CCF_Skeleton>(this);	break;
 
-		default: NODEFAULT; 
-		
+		default: NODEFAULT;
+
 	}
 	*/
 }
@@ -387,7 +387,7 @@ void CPhysicObject::UpdateCL()
 {
 	inherited::UpdateCL();
 
-	//Если наш физический объект анимированный, то 
+	//Если наш физический объект анимированный, то
 	//двигаем объект за анимацией
 	if (m_pPhysicsShell->PPhysicsShellAnimator())
 	{
@@ -719,7 +719,7 @@ void CPhysicObject::net_Import(NET_Packet& P)
 
 	/*if (num_items.mask & CSE_ALifeObjectPhysic::animated)
 	{
-		net_Import_Anim_Params(P);	
+		net_Import_Anim_Params(P);
 	}*/
 
 	net_update_PItem N;
@@ -756,7 +756,7 @@ void CPhysicObject::net_Import(NET_Packet& P)
 	if (!m_activated)
 	{
 #ifdef DEBUG
-		Msg("Activating object [%d] before interpolation starts", ID());		
+		Msg("Activating object [%d] before interpolation starts", ID());
 #endif // #ifdef DEBUG
 		processing_activate();
 		m_activated = true;

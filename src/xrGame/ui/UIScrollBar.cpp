@@ -310,7 +310,7 @@ void CUIScrollBar::ClampByViewRect()
 	}
 	else
 	{
-		// limit vertical position (TOP) by position of button	
+		// limit vertical position (TOP) by position of button
 		if (m_ScrollBox->GetWndRect().top <= m_DecButton->GetHeight())
 			m_ScrollBox->SetWndPos(Fvector2().set(m_ScrollBox->GetWndRect().left,
 			                                      m_DecButton->GetHeight()));

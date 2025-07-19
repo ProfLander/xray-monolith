@@ -1005,13 +1005,13 @@ float CPHJoint::GetAxisAngle(int axis_num)
 						case ball:					ret= dInfinity;break;
 						case hinge:					ret= dJointGetHingeAngle(m_joint);break;
 						case full_control:			ret= dJointGetAMotorAngle(m_joint1,axis_num);break;
-						case slider:				
+						case slider:
 							switch (axis_num){
 								case 0:	ret= dJointGetSliderPosition(m_joint);break;
 								case 1: ret= dJointGetAMotorAngle(m_joint1,0);break;
 							};break;
 						default: R_ASSERT2( false, "type not supported" ); break;
-	
+
 					}
 }
 */

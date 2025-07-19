@@ -222,7 +222,7 @@ void CHudItem::OnAnimationEnd(u32 state)
 	}
 }
 
-bool CHudItem::TryPlayAnimBore() 
+bool CHudItem::TryPlayAnimBore()
 {
 	if (HudAnimationExist("anm_bore"))
 	{
@@ -696,7 +696,7 @@ u32 CHudItem::PlayHUDMotion(shared_str M, BOOL bMixIn, CHudItem* W, u32 state, f
 		::luabind::functor<::luabind::object> funct;
 		if (ai().script_engine().functor("_G.CHudItem__PlayHUDMotion", funct))
 		{
-			
+
 			::luabind::object table = ::luabind::newtable(ai().script_engine().lua());
 			table["anm_name"] = *M;
 			table["anm_mixin"] = !!bMixIn;
@@ -900,7 +900,7 @@ bool CHudItem::PlayAnimCrouchIdleMoving()
 
 //-AVO
 
-bool CHudItem::NeedBlendAnm() 
+bool CHudItem::NeedBlendAnm()
 {
 	u32 state = GetState();
 	return (state != eIdle && state != eHidden);
@@ -955,7 +955,7 @@ bool CHudItem::IsAttachedToHUD()
 		return false;
 
 	attachable_hud_item* hi = nullptr;
-	
+
 	hi = g_player_hud->attached_item(0);
 	if (hi && hi->m_parent_hud_item == this)
 		return true;

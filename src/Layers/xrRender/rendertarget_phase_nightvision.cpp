@@ -12,14 +12,14 @@ void CRenderTarget::phase_nightvision()
 	float h = float(Device.dwHeight);
 
 	Fvector2 p0, p1;
-#if defined(USE_DX10) || defined(USE_DX11)	
+#if defined(USE_DX10) || defined(USE_DX11)
 	p0.set(0.0f, 0.0f);
 	p1.set(1.0f, 1.0f);
 #else
 	p0.set(0.5f / w, 0.5f / h);
 	p1.set((w + 0.5f) / w, (h + 0.5f) / h);
 #endif
-	
+
 	//////////////////////////////////////////////////////////////////////////
 	//Set MSAA/NonMSAA rendertarget
 #if defined(USE_DX10) || defined(USE_DX11)
@@ -27,7 +27,7 @@ void CRenderTarget::phase_nightvision()
 	u_setrt(dest_rt, nullptr, nullptr, nullptr);
 #else
 	u_setrt(rt_Generic_0, nullptr, nullptr, nullptr);
-#endif		
+#endif
 
 	RCache.set_CullMode(CULL_NONE);
 	RCache.set_Stencil(FALSE);
@@ -46,7 +46,7 @@ void CRenderTarget::phase_nightvision()
 	//Set geometry
 	RCache.set_Geometry(g_combine);
 	RCache.Render(D3DPT_TRIANGLELIST, Offset, 0, 4, 0, 2);
-	
+
 #if defined(USE_DX10) || defined(USE_DX11)
 	HW.pContext->CopyResource(rt_Generic_0->pTexture->surface_get(), dest_rt->pTexture->surface_get());
 #endif
@@ -66,7 +66,7 @@ void CRenderTarget::phase_fakescope()
 	float h = float(Device.dwHeight);
 
 	Fvector2 p0, p1;
-#if defined(USE_DX10) || defined(USE_DX11)	
+#if defined(USE_DX10) || defined(USE_DX11)
 	p0.set(0.0f, 0.0f);
 	p1.set(1.0f, 1.0f);
 #else
@@ -157,7 +157,7 @@ void CRenderTarget::phase_heatvision()
 	float h = float(Device.dwHeight);
 
 	Fvector2 p0, p1;
-#if defined(USE_DX10) || defined(USE_DX11)	
+#if defined(USE_DX10) || defined(USE_DX11)
 	p0.set(0.0f, 0.0f);
 	p1.set(1.0f, 1.0f);
 #else
@@ -172,7 +172,7 @@ void CRenderTarget::phase_heatvision()
 	u_setrt(dest_rt, nullptr, nullptr, nullptr);
 #else
 	u_setrt(rt_Generic_0, nullptr, nullptr, nullptr);
-#endif		
+#endif
 
 	RCache.set_CullMode(CULL_NONE);
 	RCache.set_Stencil(FALSE);

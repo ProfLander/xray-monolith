@@ -99,7 +99,7 @@ void RELATION_REGISTRY::Action(CEntityAlive* from, CEntityAlive* to, ERelationAc
 	CAI_Stalker* stalker_from = smart_cast<CAI_Stalker*>(from);
 	CAI_Stalker* stalker = smart_cast<CAI_Stalker*>(to);
 
-	//вычисление изменения репутации и рейтинга пока ведется 
+	//вычисление изменения репутации и рейтинга пока ведется
 	//только для актера
 	if (!inv_owner_from || from->cast_base_monster()) return;
 
@@ -117,14 +117,14 @@ void RELATION_REGISTRY::Action(CEntityAlive* from, CEntityAlive* to, ERelationAc
 			if (actor)
 			{
 				//учитывать ATTACK и FIGHT_HELP, только если прошло время
-				//min_attack_delta_time 
+				//min_attack_delta_time
 				FIGHT_DATA* fight_data_from = FindFight(from->ID(), true);
 				if (Device.dwTimeGlobal - fight_data_from->attack_time < min_attack_delta_time)
 					break;
 
 				fight_data_from->attack_time = Device.dwTimeGlobal;
 
-				//если мы атаковали персонажа или монстра, который 
+				//если мы атаковали персонажа или монстра, который
 				//кого-то атаковал, то мы помогли тому, кто защищался
 				FIGHT_DATA* fight_data = FindFight(to->ID(), true);
 				if (fight_data)
@@ -219,7 +219,7 @@ void RELATION_REGISTRY::Action(CEntityAlive* from, CEntityAlive* to, ERelationAc
 		{
 			if (stalker)
 			{
-				//FIGHT_DATA* fight_data_from = FindFight (from->ID(), true);	
+				//FIGHT_DATA* fight_data_from = FindFight (from->ID(), true);
 
 				//мы помним то, какое отношение обороняющегося к атакующему
 				//было перед началом драки

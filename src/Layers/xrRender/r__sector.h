@@ -98,10 +98,10 @@ public:
 	u32 i_options; // input:	culling options
 	Fvector i_vBase; // input:	"view" point
 	Fmatrix i_mXFORM; // input:	4x4 xform
-	Fmatrix i_mXFORM_01; // 
+	Fmatrix i_mXFORM_01; //
 	CSector* i_start; // input:	starting point
 	xr_vector<IRender_Sector*> r_sectors; // result
-	xr_vector<std::pair<CPortal*, float>> f_portals; // 
+	xr_vector<std::pair<CPortal*, float>> f_portals; //
 	ref_shader f_shader;
 	ref_geom f_geom;
 public:

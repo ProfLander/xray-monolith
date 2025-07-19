@@ -158,7 +158,7 @@ namespace xr_imgui
             OnScreenResolutionChanged();
             ImGui::NewFrame();
         }
-        
+
         if (is_shown())
         {
             ShowMain();

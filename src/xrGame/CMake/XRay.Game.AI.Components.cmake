@@ -239,11 +239,11 @@ add_module(XRay.Game.AI.Components.Movement
   patrol_path_manager.h
   patrol_path_manager_inline.h
   patrol_path_manager_space.h
-  
+
   restricted_object.cpp
   restricted_object.h
   restricted_object_inline.h
-  
+
   movement_manager.cpp
   movement_manager_game.cpp
   movement_manager_level.cpp

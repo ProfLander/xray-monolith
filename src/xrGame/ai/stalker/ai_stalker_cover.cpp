@@ -3,7 +3,7 @@
 //	Created 	: 25.04.2006
 //  Modified 	: 25.04.2006
 //	Author		: Dmitriy Iassenev
-//	Description : 
+//	Description :
 ////////////////////////////////////////////////////////////////////////////
 
 #include "pch_script.h"

@@ -36,25 +36,25 @@
 #include "math3d.h"
 
 //
-// Given matrices G, S, T solve the equation 
+// Given matrices G, S, T solve the equation
 //
 // G = R2*S*Ry*T*R1
-//	for R1,Ry,R2 
+//	for R1,Ry,R2
 // where
 //	R1 and R2 represent general rotation matrices
 //      Ry represents a rotation about the y axis
 // and
 //      G is the desired goal matrix
-//      S, T are constant matrices 
-// 
+//      S, T are constant matrices
+//
 
 //
 // In the case of the arm:
-//	 R2 : Wrist joints 
+//	 R2 : Wrist joints
 //	 S  : Wrist to Elbow transformation
 //       Ry : Elbow joint
 //       T  : Elbow to Shoulder transformation
-//       R1 : Shoulder joints 
+//       R1 : Shoulder joints
 //
 
 class SRS
@@ -71,7 +71,7 @@ private:
 	float radius;
 
 	//
-	// Stores projection axis for determining u and the positive 
+	// Stores projection axis for determining u and the positive
 	// direction axis for determining positive direction of angle
 	float proj_axis[3];
 	float pos_axis[3];
@@ -83,7 +83,7 @@ private:
 	float ee_r1[3];
 	//
 	// Stores position of middle revolute joint in R1 frame
-	// 
+	//
 	float p_r1[3];
 
 	//
@@ -95,14 +95,14 @@ private:
 
 	float r_angle;
 
-	// 
+	//
 	// Stores goal transformation
 	//
 	Matrix G;
 
 	//
 	// Stores constant matrices and rotation of revolute joint
-	// and their product S*Ry*T. 
+	// and their product S*Ry*T.
 
 	Matrix T, S, SRT;
 
@@ -126,39 +126,39 @@ public:
 	}
 
 	//
-	// Given the position of the R joint find the corresponding 
+	// Given the position of the R joint find the corresponding
 	// swivel angle. Must call SetGoal or SetGoalPos first.
-	// 
+	//
 	float Length() const { return get_translation(T) + get_translation(S); }
 	float PosToAngle(const float p[3]);
 
 	//
-	// Given the swivel angle calculate the pos of the R joint. 
+	// Given the swivel angle calculate the pos of the R joint.
 	// Must call SetGoal or SetGoalPos first.
-	// 
+	//
 	void AngleToPos(float psi, float p[3]);
 
-	// Sets the goal matrix, the projection axis, and the 
+	// Sets the goal matrix, the projection axis, and the
 	// positive direction axis
 	// Returns 1 if the goal is feasible
 	int SetGoal(const Matrix G, float& rangle);
 	void EvaluateCircle(const float p[3]);
 	// Solve for both R1 and R2 given the pos or angle of the R joint
-	// returns the angle of the R joint 
+	// returns the angle of the R joint
 
 	void SolveR1R2(const float pos[3], Matrix R1, Matrix R2);
 	void SolveR1R2(float angle, Matrix R1, Matrix R2);
 
 
-	// Must call SetGoal first 
+	// Must call SetGoal first
 	// Returns the psi equations of the rotation matrix R1
-	// ie: alpha[i][j]*cos(phi) + 
-	//     beta[i][j]*sin(phi) + 
-	//     xi[i][j] = R1[i][j] 
+	// ie: alpha[i][j]*cos(phi) +
+	//     beta[i][j]*sin(phi) +
+	//     xi[i][j] = R1[i][j]
 
 	int R1Psi(Matrix alpha, Matrix beta, Matrix xi);
 
-	// Must call SetGoal first 
+	// Must call SetGoal first
 	// Returns the psi equations of the rotation matrix R1 and R2 analogous
 	// to R1Psi
 	//
@@ -173,9 +173,9 @@ public:
 	//
 	// Returns 1 if the goal is feasible
 	//
-	// Thus the problem to solve is to find R1 and Ry st 
+	// Thus the problem to solve is to find R1 and Ry st
 	//
-	// g = [0,0,0,1]*EE*S*Ry*T*R1 
+	// g = [0,0,0,1]*EE*S*Ry*T*R1
 
 	int SetGoalPos(const float g[3], const Matrix EE, float& rangle);
 
@@ -222,9 +222,9 @@ public:
 	}
 
 	// Sets the goal for an aiming problem
-	// goal is the point we want to point to 
+	// goal is the point we want to point to
 	// axis is the pointing axis in the hand frame
-	// flex_angle is the amount of flexion in the elbow 
+	// flex_angle is the amount of flexion in the elbow
 	/*
 	    void SRS::SetAimGoal(const float goal[3],
 	*/

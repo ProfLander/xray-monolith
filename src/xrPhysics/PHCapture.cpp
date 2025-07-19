@@ -224,11 +224,11 @@ void CPHCapture::PullingUpdate()
 		}
 		//float hi=-M_PI/2.f,lo=-hi;
 		//dJointSetAMotorParam(m_ajoint,dParamLoStop ,lo);
-		//dJointSetAMotorParam(m_ajoint,dParamHiStop ,hi);	
+		//dJointSetAMotorParam(m_ajoint,dParamHiStop ,hi);
 		//dJointSetAMotorParam(m_ajoint,dParamLoStop2 ,lo);
-		//dJointSetAMotorParam(m_ajoint,dParamHiStop2 ,hi);	
+		//dJointSetAMotorParam(m_ajoint,dParamHiStop2 ,hi);
 		//dJointSetAMotorParam(m_ajoint,dParamLoStop3 ,lo);
-		//dJointSetAMotorParam(m_ajoint,dParamHiStop3 ,hi);	
+		//dJointSetAMotorParam(m_ajoint,dParamHiStop3 ,hi);
 
 
 		dJointSetAMotorParam(m_ajoint, dParamFMax, m_capture_force * 0.2f);
@@ -270,7 +270,7 @@ void CPHCapture::PullingUpdate()
 		///////////////////////////
 
 		//dJointSetAMotorParam(m_ajoint,dParamLoStop ,0.f);
-		//dJointSetAMotorParam(m_ajoint,dParamHiStop ,0.f);	
+		//dJointSetAMotorParam(m_ajoint,dParamHiStop ,0.f);
 		m_taget_element->set_LinearVel(Fvector().set(0, 0, 0));
 		m_taget_element->set_AngularVel(Fvector().set(0, 0, 0));
 

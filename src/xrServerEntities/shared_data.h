@@ -1,6 +1,6 @@
 #pragma once
 
-// Singleton template definition 
+// Singleton template definition
 template <class T>
 class CSingleton
 {
@@ -168,14 +168,14 @@ public:
 ////2. define custom class inherited CSharedClass
 //class CClass : public CSharedClass<shared_struc, CLASS_ID> {
 //	typedef  CSharedClass<shared_struc, CLASS_ID> inherited_shared;
-//	
+//
 //public:
 //
 //	//3. call shared load on Load
 //	virtual void Load			(LPCSTR section) {
 //		inherited_shared::load_shared(class_id(), section);
 //	}
-//	
+//
 //	//4. load shared data
 //	virtual void load_shared	(LPCSTR section) {
 //		a = pSettings->r_u8(section, "smth1");

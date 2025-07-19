@@ -176,7 +176,7 @@ void CController::Load(LPCSTR section)
 	//anim().AddAnim(eAnimSteal,			"new_torso_steal_",			-1, &velocity_steal,	PS_STAND);
 	//anim().AddAnim(eAnimCheckCorpse,	"stand_check_corpse_",	-1,	&velocity_none,		PS_STAND);
 	//anim().AddAnim(eAnimDie,			"stand_die_",			-1, &velocity_none,		PS_STAND);
-	//anim().AddAnim(eAnimStandSitDown,	"stand_sit_down_",		-1, &velocity_none,		PS_STAND);	
+	//anim().AddAnim(eAnimStandSitDown,	"stand_sit_down_",		-1, &velocity_none,		PS_STAND);
 	//anim().AddAnim(eAnimSitStandUp,		"sit_stand_up_",		-1, &velocity_none,		PS_SIT);
 	//anim().AddAnim(eAnimSleep,			"sit_sleep_",			-1, &velocity_none,		PS_SIT);
 
@@ -195,7 +195,7 @@ void CController::Load(LPCSTR section)
 	//anim().AddAnim(eAnimSteal,			"stand_steal_",			-1, &velocity_steal,	PS_STAND);
 	//anim().AddAnim(eAnimCheckCorpse,	"stand_check_corpse_",	-1,	&velocity_none,		PS_STAND);
 	//anim().AddAnim(eAnimDie,			"stand_die_",			-1, &velocity_none,		PS_STAND);
-	//anim().AddAnim(eAnimStandSitDown,	"stand_sit_down_",		-1, &velocity_none,		PS_STAND);	
+	//anim().AddAnim(eAnimStandSitDown,	"stand_sit_down_",		-1, &velocity_none,		PS_STAND);
 	//anim().AddAnim(eAnimSitStandUp,		"sit_stand_up_",		-1, &velocity_none,		PS_SIT);
 	//anim().AddAnim(eAnimSleep,			"sit_sleep_",			-1, &velocity_none,		PS_SIT);
 
@@ -589,7 +589,7 @@ void CController::psy_fire()
 	if (!EnemyMan.get_enemy()) return;
 
 	draw_fire_particles();
-	/*	
+	/*
 		active_control_fx			= true;
 		time_control_hit_started	= Device.dwTimeGlobal;
 	*/
@@ -775,18 +775,18 @@ CBaseMonster::SDebugInfo CController::show_debug_info()
 	CBaseMonster::SDebugInfo info = inherited::show_debug_info();
 	if (!info.active) return CBaseMonster::SDebugInfo();
 
-	
+
 	// Draw Controlled Lines
 	DBG().level_info(this).clear();
-	
+
 	Fvector my_pos = Position();
 	my_pos.y += 1.5f;
-		
-	
-	for (u32 i=0; i < m_controlled_objects.size(); i++) 
+
+
+	for (u32 i=0; i < m_controlled_objects.size(); i++)
 	{
 		Fvector enemy_pos = m_controlled_objects[i]->Position();
-		
+
 		Fvector dir;
 		dir.sub(enemy_pos, Position());
 		dir.div(2.f);
@@ -795,7 +795,7 @@ CBaseMonster::SDebugInfo CController::show_debug_info()
 		new_pos.y += 10.f;
 
 		enemy_pos.y += 1.0f;
-	
+
 		DBG().level_info(this).add_item(my_pos,	new_pos, D3DCOLOR_XRGB(0,255,255));
 		DBG().level_info(this).add_item(enemy_pos, new_pos, D3DCOLOR_XRGB(0,255,255));
 	}
@@ -811,17 +811,17 @@ void CController::debug_on_key(int key)
 	case DIK_MINUS:
 		//m_sound_aura_left_channel.play_at_pos(Level().CurrentEntity(), Fvector().set(-1.f, 0.f, 1.f), sm_2D);
 		//m_sound_aura_right_channel.play_at_pos(Level().CurrentEntity(), Fvector().set(1.f, 0.f, 1.f), sm_2D);
-		
+
 		if (m_psy_hit->check_start_conditions()) {
 			control().activate(ControlCom::eComCustom1);
 		}
-		//P1.set		(Actor()->Position());		
+		//P1.set		(Actor()->Position());
 //
 //DBG().level_info(this).remove_item	(u32(0));
 //DBG().level_info(this).add_item(P1,0.5f,COLOR_BLUE,0);
 
 
-//if (!fsimilar(P1.square_magnitude(),0.f) && 
+//if (!fsimilar(P1.square_magnitude(),0.f) &&
 //	!fsimilar(P2.square_magnitude(),0.f)) {
 //	const CCoverPoint *cover = CoverMan->find_cover(P1,P2,10.f,40.f);
 //	if (cover) {
@@ -837,7 +837,7 @@ void CController::debug_on_key(int key)
 		DBG().level_info(this).remove_item	(1);
 		DBG().level_info(this).add_item(P2,0.5f,COLOR_GREEN,1);
 
-		if (!fsimilar(P1.square_magnitude(),0.f) && 
+		if (!fsimilar(P1.square_magnitude(),0.f) &&
 			!fsimilar(P2.square_magnitude(),0.f)) {
 			const CCoverPoint *cover = CoverMan->find_cover(P1,P2,10.f,40.f);
 			if (cover) {
@@ -845,7 +845,7 @@ void CController::debug_on_key(int key)
 				DBG().level_info(this).add_item		(cover->position(),0.8f,COLOR_RED,3);
 			}
 		}
-		
+
 		//m_sound_aura_hit_left_channel.play_at_pos(Level().CurrentEntity(), Fvector().set(-1.f, 0.f, 1.f), sm_2D);
 		//m_sound_aura_hit_right_channel.play_at_pos(Level().CurrentEntity(), Fvector().set(1.f, 0.f, 1.f), sm_2D);
 		break;

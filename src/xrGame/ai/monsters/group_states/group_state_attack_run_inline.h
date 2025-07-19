@@ -186,13 +186,13 @@ void CStateGroupAttackRunAbstract::execute()
 // 	object->path().set_cover_params			(0.1f, 30.f, 1.f, 30.f);
 // 	object->path().set_try_min_time			(false);
 // 	object->set_state_sound					(MonsterSound::eMonsterSoundAggressive);
-// 
+//
 // 	object->path().extrapolate_path			(true);
-// 
-// 	// обработать squad инфо	
+//
+// 	// обработать squad инфо
 // 	object->path().set_use_dest_orient		(false);
-// 
-// 
+//
+//
 // 	//	if ( g_bDogsDirMode )
 // 	if ( Device.dwTimeGlobal-time_state_started < m_max_encircle_time )
 // 	{
@@ -201,12 +201,12 @@ void CStateGroupAttackRunAbstract::execute()
 //  			// Получить команду
 //  			SSquadCommand command;
 //  			squad->GetCommand(object, command);
-//  			
+//
 //  			if (command.type == SC_ATTACK) {
 //   				object->path().set_use_dest_orient	(true);
 //   				//object->path().set_dest_direction	(command.direction);
-//  				object->path().set_dest_direction	(m_dir_to_enemy);				
-//  			} 
+//  				object->path().set_dest_direction	(m_dir_to_enemy);
+//  			}
 //  		}
 // 	}
 //}

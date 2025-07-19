@@ -43,7 +43,7 @@ IC Fvector& CIKFoot::get_local_vector(u16 bone, Fvector& v, const local_vector& 
 
 	//switch( 1 + ref_bone() - lv.bone )
 	//{
-	//	case 0:	 
-	//	case 1:	
+	//	case 0:
+	//	case 1:
 	//}
 }

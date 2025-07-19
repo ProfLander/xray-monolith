@@ -21,7 +21,7 @@ public:
 	//	void	update_frame		();
 	//	void	try_to_jump			(u32 velocity_mask);
 	//
-	//private:	
+	//private:
 	//	void	init_jump_normal	();
 	//	void	init_jump_specific	();
 	//	void	try_jump_normal		();

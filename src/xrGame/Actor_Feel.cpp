@@ -139,7 +139,7 @@ CActor::pickup_result_t CActor::PickupModeUpdate()
 			if (!allow_pickup)
 				return {false, callback_handled};
 		}
-		
+
 		m_pUsableObject->use(this);
 		Game().SendPickUpEvent(ID(), m_pObjectWeLookingAt->ID());
 	}
@@ -246,7 +246,7 @@ void CActor::PickupModeUpdate_COD(pickup_result_t pickup_result)
 			func(pNearestItem && pNearestItem->cast_game_object() ? pNearestItem->cast_game_object()->lua_game_object() : nullptr);
 		}
 	}
-	
+
 	if (pNearestItem && m_bPickupMode)
 	{
 		//Tronex: ability to prevent item picking up if the export returns false

@@ -98,7 +98,7 @@ void CRT::create(LPCSTR Name, u32 w, u32 h, D3DFORMAT f, u32 SampleCount)
 	//_hr = HW.pDevice->CheckFormatSupport( dx10FMT, &FormatSupport);
 	//if (FAILED(_hr)) return;
 	//if (!(
-	//(FormatSupport&D3Dxx_FORMAT_SUPPORT_TEXTURE2D) 
+	//(FormatSupport&D3Dxx_FORMAT_SUPPORT_TEXTURE2D)
 	//&&	(FormatSupport&(bUseAsDepth?D3Dxx_FORMAT_SUPPORT_DEPTH_STENCIL:D3Dxx_FORMAT_SUPPORT_RENDER_TARGET))
 	//))
 	//return;
@@ -195,7 +195,7 @@ void CRT::destroy()
 	{
 		pTexture->surface_set(0);
 		pTexture.destroy();
-		pTexture = nullptr;		 
+		pTexture = nullptr;
 	}
 	_RELEASE(pRT);
 	_RELEASE(pZRT);

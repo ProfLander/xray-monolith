@@ -39,7 +39,7 @@ class CSoundRender_Cache
 {
 	u8* data; // just memory
 	cache_line* c_storage; // just memory
-	cache_line* c_begin; // >>> 
+	cache_line* c_begin; // >>>
 	cache_line* c_end; // <<<
 	u32 _total; // bytes total (heap)
 	u32 _line; // line size (bytes)

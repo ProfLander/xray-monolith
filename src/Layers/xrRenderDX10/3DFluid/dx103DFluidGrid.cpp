@@ -42,7 +42,7 @@ dx103DFluidGrid::~dx103DFluidGrid()
     _RELEASE(m_pRenderQuadBuffer);
     _RELEASE(m_pSlicesBuffer);
     _RELEASE(m_pBoundarySlicesBuffer);
-    _RELEASE(m_pBoundaryLinesBuffer);						 
+    _RELEASE(m_pBoundaryLinesBuffer);
 }
 
 void dx103DFluidGrid::Initialize(int gridWidth, int gridHeight, int gridDepth)
@@ -61,10 +61,10 @@ void dx103DFluidGrid::Initialize(int gridWidth, int gridHeight, int gridDepth)
 void dx103DFluidGrid::CreateVertexBuffers()
 {
 	// Create layout
-	//D3Dxx_INPUT_ELEMENT_DESC layoutDesc[] = 
+	//D3Dxx_INPUT_ELEMENT_DESC layoutDesc[] =
 	//{
 	//	{ "POSITION", 0, DXGI_FORMAT_R32G32B32_FLOAT,       0, 0, D3Dxx_INPUT_PER_VERTEX_DATA, 0 },
-	//	{ "TEXCOORD", 0, DXGI_FORMAT_R32G32B32_FLOAT,       0,12, D3Dxx_INPUT_PER_VERTEX_DATA, 0 }, 
+	//	{ "TEXCOORD", 0, DXGI_FORMAT_R32G32B32_FLOAT,       0,12, D3Dxx_INPUT_PER_VERTEX_DATA, 0 },
 	//};
 
 	static D3DVERTEXELEMENT9 layoutDesc[] =
@@ -303,7 +303,7 @@ void dx103DFluidGrid::DrawBoundaryLines(void)
 {
 	//	UINT stride[1] = { sizeof(VS_INPUT_FLUIDSIM_STRUCT) };
 	//	UINT offset[1] = { 0 };
-	//	DrawPrimitive( D3Dxx_PRIMITIVE_TOPOLOGY_LINELIST, layout, &boundaryLinesBuffer, 
+	//	DrawPrimitive( D3Dxx_PRIMITIVE_TOPOLOGY_LINELIST, layout, &boundaryLinesBuffer,
 	//		stride, offset, 0, numVerticesBoundaryLines  );
 
 	RCache.set_Geometry(m_GeomBoundaryLines);

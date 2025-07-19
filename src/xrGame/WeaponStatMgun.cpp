@@ -186,8 +186,8 @@ void CWeaponStatMgun::UpdateCL()
 	}
 }
 
-//void CWeaponStatMgun::Hit(	float P, Fvector &dir,	CObject* who, 
-//							s16 element,Fvector p_in_object_space, 
+//void CWeaponStatMgun::Hit(	float P, Fvector &dir,	CObject* who,
+//							s16 element,Fvector p_in_object_space,
 //							float impulse, ALife::EHitType hit_type)
 void CWeaponStatMgun::Hit(SHit* pHDS)
 {

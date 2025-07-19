@@ -472,7 +472,7 @@ void CWeaponKnife::OnRender()
 		sphere.c					= m_dbg_data.m_pos;
 		renderer.draw_ellipse		(sphere, D3DCOLOR_XRGB(255, 0, 0));
 		renderer.draw_line			(Fidentity, m_dbg_data.m_pos, m_dbg_data.m_endpos, D3DCOLOR_XRGB(255, 255, 0));
-		
+
 		sphere.c					= m_dbg_data.m_endpos;
 		renderer.draw_ellipse		(sphere, D3DCOLOR_XRGB(100, 255, 0));*/
 //Fvector victim_end			(m_dbg_data.m_pos);
@@ -489,7 +489,7 @@ void CWeaponKnife::OnRender()
 		hit_power		*= m_NextHitDivideFactor;
 		renderer.draw_ellipse(sphere, D3DCOLOR_XRGB(hit_color, 50, 0));
 	}
-	
+
 	for (dbg_draw_data::obbes_t::const_iterator i = m_dbg_data.m_target_boxes.begin(),
 		ie = m_dbg_data.m_target_boxes.end(); i != ie; ++i)
 	{
@@ -574,7 +574,7 @@ void CWeaponKnife::GetVictimPos(CEntityAlive* victim, Fvector& pos_dest)
 		tmp_box.get_CD(pos_dest, tmp_fake_vec);
 		pos_dest.add(victim->Position());
 	}
-	
+
 	CBoneData& tmp_bone_data	= tmp_kinem->LL_GetData(hit_bone_id);
 	Fmatrix	& tmp_xform			= victim->XFORM();
 	CBoneInstance &bi			= tmp_kinem->LL_GetBoneInstance();

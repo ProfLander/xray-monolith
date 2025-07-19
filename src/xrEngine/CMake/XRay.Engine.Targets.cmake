@@ -15,7 +15,7 @@ function(add_engine_target NAME)
     PROPERTIES OUTPUT_NAME
     ${${NAME}_NAME_OUTPUT}
   )
-  
+
   # Apply artifact output directories
   set_target_properties(${NAME}
     PROPERTIES

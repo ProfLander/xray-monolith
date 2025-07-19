@@ -80,7 +80,7 @@ void type_motion_diagnostic(LPCSTR message, type_motion::edirection dr, const CE
 
 	if(! death_anim_debug )
 		return;
-	
+
 	IKinematicsAnimated *KA = smart_cast<IKinematicsAnimated*>( ea.Visual() );
 	VERIFY( KA );
 	IKinematics *K  = smart_cast<IKinematics*>( ea.Visual() );
@@ -100,7 +100,7 @@ void type_motion_diagnostic(LPCSTR message, type_motion::edirection dr, const CE
 }
 
 
-//1.	Инерционное движение вперед от попадания в голову 
+//1.	Инерционное движение вперед от попадания в голову
 class type_motion0 : public type_motion
 {
 	bool predicate(CEntityAlive& ea, const SHit& H, MotionID& m, float& angle) const
@@ -156,7 +156,7 @@ class type_motion1 : public type_motion
 	bool predicate(CEntityAlive& ea, const SHit& H, MotionID& m, float& angle) const
 	{
 		m = MotionID();
-		//#ifdef DEBUG		
+		//#ifdef DEBUG
 		//		if( death_anim_debug )
 		//			Msg( " type_motion1: 2.	Изрешетить пулями  " );
 		//#endif
@@ -164,7 +164,7 @@ class type_motion1 : public type_motion
 	}
 };
 
-//3.	Шотган 
+//3.	Шотган
 class type_motion2 : public type_motion
 {
 	bool predicate(CEntityAlive& ea, const SHit& H, MotionID& m, float& angle) const
@@ -182,7 +182,7 @@ class type_motion2 : public type_motion
 			CWeaponAutomaticShotgun* s = smart_cast<CWeaponAutomaticShotgun*>(static_cast<CGameObject*>(O));
 			if (!s)
 				return false;
-		}		
+		}
 		Fvector p;
 		const float max_distance = 20.f;
 		if (Fvector().sub(H.initiator()->Position(), global_hit_position(p, ea, H)).magnitude() > max_distance)
@@ -194,7 +194,7 @@ class type_motion2 : public type_motion
 	}
 };
 
-//4.	Хедшот (по вероятности), кроме 5 (4) 
+//4.	Хедшот (по вероятности), кроме 5 (4)
 class type_motion3 : public type_motion
 {
 	bool predicate(CEntityAlive& ea, const SHit& H, MotionID& m, float& angle) const
@@ -234,7 +234,7 @@ bool is_snipper(u16 weaponID)
 	return true;
 }
 
-//5.	Снайперка в голову. 
+//5.	Снайперка в голову.
 class type_motion4 : public type_motion
 {
 	bool predicate(CEntityAlive& ea, const SHit& H, MotionID& m, float& angle) const
@@ -259,7 +259,7 @@ class type_motion4 : public type_motion
 	}
 };
 
-//6.	Снайперка в тело. 
+//6.	Снайперка в тело.
 class type_motion5 : public type_motion
 {
 	bool predicate(CEntityAlive& ea, const SHit& H, MotionID& m, float& angle) const
@@ -282,7 +282,7 @@ class type_motion5 : public type_motion
 	}
 };
 
-//7.	Гранта 
+//7.	Гранта
 class type_motion6 : public type_motion
 {
 	bool predicate(CEntityAlive& ea, const SHit& H, MotionID& m, float& angle) const
@@ -328,15 +328,15 @@ void death_anims::setup(IKinematicsAnimated* k, LPCSTR section, CInifile const* 
 	VERIFY(anims.empty());
 	anims.resize(types_number);
 	anims[0] = xr_new<type_motion0>()->setup(k, ini, section, "kill_enertion");
-	//1.	Инерционное движение вперед от попадания в голову 
+	//1.	Инерционное движение вперед от попадания в голову
 	anims[1] = xr_new<type_motion1>()->setup(k, ini, section, "kill_burst"); //2.	Изрешетить пулями
-	anims[2] = xr_new<type_motion2>()->setup(k, ini, section, "kill_shortgun"); //3.	Шотган 
+	anims[2] = xr_new<type_motion2>()->setup(k, ini, section, "kill_shortgun"); //3.	Шотган
 
 	anims[6] = xr_new<type_motion3>()->setup(k, ini, section, "kill_headshot");
-	//4.	Хедшот (по вероятности), кроме 5 (4) 
-	anims[4] = xr_new<type_motion4>()->setup(k, ini, section, "kill_sniper_headshot"); //5.	Снайперка в голову. 
-	anims[5] = xr_new<type_motion5>()->setup(k, ini, section, "kill_sniper_body"); //6.	Снайперка в тело. 
-	anims[3] = xr_new<type_motion6>()->setup(k, ini, section, "kill_grenade"); //7.	Гранта 
+	//4.	Хедшот (по вероятности), кроме 5 (4)
+	anims[4] = xr_new<type_motion4>()->setup(k, ini, section, "kill_sniper_headshot"); //5.	Снайперка в голову.
+	anims[5] = xr_new<type_motion5>()->setup(k, ini, section, "kill_sniper_body"); //6.	Снайперка в тело.
+	anims[3] = xr_new<type_motion6>()->setup(k, ini, section, "kill_grenade"); //7.	Гранта
 	if (ini->line_exist(section, "random_death_animations"))
 		rnd_anims.setup(k, ini->r_string(section, "random_death_animations"));
 }

@@ -93,7 +93,7 @@ public:
 
 	float GetPsyBar() { return m_fPsyBar; }
 	void SetPsyBar(float psybar) { m_fPsyBar = psybar; }
-	
+
 	float xr_stdcall GetAlcohol() { return m_fAlcohol; }
 	float xr_stdcall GetPsy() { return 1.0f - GetPsyHealth(); }
 	virtual float GetSatiety() { return m_fSatiety; }
@@ -135,7 +135,7 @@ public:
 
 protected:
 	SConditionChangeV m_change_v_sleep;
-	
+
 	SMedicineInfluenceValues m_curr_medicine_influence;
 	float m_fPsyBar;
 
@@ -196,7 +196,7 @@ protected:
 	//typedef xr_vector<SMedicineInfluenceValues>::iterator BOOSTS_VECTOR_ITER;
 	//BOOSTS_VECTOR m_vecBoosts;
 	ref_sound m_use_sound;
-	
+
 	DECLARE_SCRIPT_REGISTER_FUNCTION
 };
 

@@ -3,7 +3,7 @@
 //	Created 	: 25.03.2004
 //  Modified 	: 12.01.2007
 //	Author		: Dmitriy Iassenev
-//	Description : Stalker base combat action 
+//	Description : Stalker base combat action
 ////////////////////////////////////////////////////////////////////////////
 
 #pragma once

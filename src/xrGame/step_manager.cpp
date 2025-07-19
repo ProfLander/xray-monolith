@@ -83,7 +83,7 @@ void CStepManager::reload(LPCSTR section)
 
 			IKinematicsAnimated *KA = smart_cast<IKinematicsAnimated*>(m_object->Visual());
 			VERIFY( KA );
-			
+
 			Msg( "! (CStepManager::reload) no anim :%s object:%s, visual: %s, step_params section: %s ", anim_name, m_object->cName().c_str(), m_object->cNameVisual().c_str(), anim_section );
 
 #endif
@@ -217,7 +217,7 @@ void CStepManager::update(bool b_hud_view)
 					{
 						m_step_sound.play_next(mtl_pair, m_object, m_step_info.params.step[i].power, b_hud_view);
 						object->FootStepCallback(m_step_info.params.step[i].power, b_play, is_on_ground(), b_hud_view);
-					}	
+					}
 				}
 
 				// Играть партиклы

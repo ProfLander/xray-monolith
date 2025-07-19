@@ -66,7 +66,7 @@ void anim_script_callback::anim_callback(CBlend* B)
 	//if( at_end )
 	//{
 	//	timeCurrent	= timeTotal-END_EPS;		// stop@end - time frozen at the end
-	//	if( timeCurrent<0.f ) timeCurrent =0.f; 
+	//	if( timeCurrent<0.f ) timeCurrent =0.f;
 	//}
 	//else
 	//	timeCurrent	= 0.f;

@@ -97,7 +97,7 @@ CScriptGameObject *tpfGetActor()
 	if (first_time)
 		ai().script_engine().script_log(eLuaMessageTypeError,"Do not use level.actor function!");
 	first_time = false;
-	
+
 	CActor *l_tpActor = smart_cast<CActor*>(Level().CurrentEntity());
 	if (l_tpActor)
 		return	(smart_cast<CGameObject*>(l_tpActor)->lua_game_object());
@@ -111,7 +111,7 @@ CScriptGameObject *get_object_by_name(LPCSTR caObjectName)
 	if (first_time)
 		ai().script_engine().script_log(eLuaMessageTypeError,"Do not use level.object function!");
 	first_time = false;
-	
+
 	CGameObject		*l_tpGameObject	= smart_cast<CGameObject*>(Level().Objects.FindObjectByName(caObjectName));
 	if (l_tpGameObject)
 		return		(l_tpGameObject->lua_game_object());
@@ -242,7 +242,7 @@ void change_game_time(u32 days, u32 hours, u32 mins)
 	{
 		u32 value = days * 86400 + hours * 3600 + mins * 60;
 		float fValue = static_cast<float>(value);
-		value *= 1000; //msec		
+		value *= 1000; //msec
 		g_pGamePersistent->Environment().ChangeGameTime(fValue);
 		tpGame->alife().time_manager().change_game_time(value);
 	}
@@ -509,7 +509,7 @@ void remove_call(const ::luabind::functor<bool>& condition, const ::luabind::fun
 
 void add_call(const ::luabind::object& lua_object, LPCSTR condition, LPCSTR action)
 {
-	//	try{	
+	//	try{
 	//		CPHScriptObjectCondition	*c=xr_new<CPHScriptObjectCondition>(lua_object,condition);
 	//		CPHScriptObjectAction		*a=xr_new<CPHScriptObjectAction>(lua_object,action);
 	::luabind::functor<bool> _condition = object_cast<::luabind::functor<bool>>(lua_object[condition]);
@@ -787,7 +787,7 @@ void set_cam_position_direction(Fvector& position, Fvector& direction, unsigned 
 	set_cam_position_direction(position, direction, smoothing, hudEnabled, false);
 }
 
-void remove_cam_position_direction() 
+void remove_cam_position_direction()
 {
 	CActor* actor = Actor();
 	actor->removeFPCam();
@@ -1518,7 +1518,7 @@ void remove_hud_model(LPCSTR section)
 		g_player_hud->attach_item(itm);
 		itm->PlayAnimIdle();
 	}
-	
+
 	if (itm1 && itm1->m_parent_hud_item->object().cNameSect().equal(section))
 	{
 		CHudItem* itm = itm1->m_parent_hud_item;
@@ -1583,7 +1583,7 @@ const Fvector2 world2ui(Fvector pos, bool hud = false, bool allow_offscreen = fa
 		res.mul(Device.mFullTransformHud, world);
 	else
 		res.mul(Device.mFullTransform, world);
-	
+
 	Fvector4 v_res;
 
 	v_res.w = res._44;
@@ -1658,7 +1658,7 @@ void ui2world(Fvector2 pos, bool allow_offscreen, Fvector& res, u16& obj_id)
 		mProjectAdjugate.mul(mProjectDet);
 		mProject.set(mProjectAdjugate);
 	}
-		
+
 	// get position at arbitrary depth
 	res.set(pos.x, pos.y, 1);
 	{
@@ -1913,7 +1913,7 @@ void prefetch_model(LPCSTR name)
 #endif
 //-Alundaio
 
-// KD: raypick	
+// KD: raypick
 bool ray_pick(const Fvector& start, const Fvector& dir, float range, collide::rq_target tgt, script_rq_result& script_R,
               CScriptGameObject* ignore_object)
 {
@@ -2210,7 +2210,7 @@ void CLevel::script_register(lua_State* L)
 
 			def("get_target_element", ((u32 (*)()) & g_get_target_element)), //Can get bone cursor is targetting
 			def("get_target_element", ((u32 (*)(ETraceTarget)) & g_get_target_element)), //Can get bone cursor is targetting
-			
+
 			// demonized: get world position under crosshair
 			def("get_target_pos", ((Fvector(*)()) & g_get_target_pos)),
 			def("get_target_pos", ((Fvector (*)(ETraceTarget)) & g_get_target_pos)),
@@ -2530,7 +2530,7 @@ void CLevel::script_register(lua_State* L)
 		def("ui2world", (void (*)(Fvector&, Fvector&, u16&))&ui2world, pure_out_value(_2) + pure_out_value(_3)),
 		def("ui2world_offscreen", (void (*)(Fvector2, Fvector&, u16&))& ui2world_offscreen, pure_out_value(_2) + pure_out_value(_3)),
 		def("ui2world_offscreen", (void (*)(Fvector&, Fvector&, u16&))& ui2world_offscreen, pure_out_value(_2) + pure_out_value(_3)),
-		
+
 		// demonized: adjust game news time
 		def("change_game_news_show_time", &change_game_news_show_time),
 		def("update_pda_news_from_uiwindow", &update_pda_news_from_uiwindow)

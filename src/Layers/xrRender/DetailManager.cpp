@@ -376,7 +376,7 @@ void CDetailManager::UpdateVisibleM()
 							if (ssa > r_ssaCHEAP) vis_id = Item.vis_ID;
 
 							sp.r_items[vis_id].push_back(*siIT);
-							
+
 							if (S.hidden)
 							{
 								Item.alpha = 0;
@@ -438,8 +438,8 @@ void CDetailManager::Render()
 	else soft_Render();
 	RCache.set_CullMode(CULL_CCW);
 
-	g_pGamePersistent->m_pGShaderConstants->m_blender_mode.w = 0.0f; //--#SM+#-- Флaa eонцa ?aндa?a o?aвu [end of grass render]	
-	
+	g_pGamePersistent->m_pGShaderConstants->m_blender_mode.w = 0.0f; //--#SM+#-- Флaa eонцa ?aндa?a o?aвu [end of grass render]
+
 	RDEVICE.Statistic->RenderDUMP_DT_Render.End();
 	m_frame_rendered = RDEVICE.dwFrame;
 }

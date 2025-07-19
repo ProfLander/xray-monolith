@@ -226,7 +226,7 @@ public:
 	virtual void PH_B_CrPr(); // actions & operations before physic correction-prediction steps
 	virtual void PH_I_CrPr(); // actions & operations after correction before prediction steps
 #ifdef DEBUG
-	virtual void				PH_Ch_CrPr			(); // 
+	virtual void				PH_Ch_CrPr			(); //
 #endif
 	virtual void PH_A_CrPr(); // actions & operations after phisic correction-prediction steps
 

@@ -44,7 +44,7 @@ void CUIStatsIcon::InitTexInfo()
 	}
 	else
 		m_tex_info[ARTEFACT][0].sh = InventoryUtilities::GetEquipmentIconsShader();
-	
+
 	m_tex_info[ARTEFACT][0].rect.set(
 		fXPos * INV_GRID_WIDTH,
 		fYPos * INV_GRID_HEIGHT,

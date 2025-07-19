@@ -86,7 +86,7 @@ void CUIFrameLineWnd::DrawElements()
 	UI().ClientToScreenScaled(rect.rb);
 
 	float back_len = 0.0f;
-	u32 prim_count = 6 * 2; //first&second 
+	u32 prim_count = 6 * 2; //first&second
 	if (bHorizontal)
 	{
 		back_len = rect.width() - m_tex_rect[flFirst].width() - m_tex_rect[flSecond].width();

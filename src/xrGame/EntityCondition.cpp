@@ -412,7 +412,7 @@ CWound* CEntityCondition::AddWound(float hit_power, ALife::EHitType hit_type, u1
 		pWound->AddHit(hit_power * ::Random.randF(0.5f, 1.5f), hit_type);
 		m_WoundVector.push_back(pWound);
 	}
-		//старая 
+		//старая
 	else
 	{
 		pWound = *it;

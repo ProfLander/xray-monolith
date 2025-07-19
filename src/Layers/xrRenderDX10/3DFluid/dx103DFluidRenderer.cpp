@@ -88,8 +88,8 @@ void dx103DFluidRenderer::Initialize(int gridWidth, int gridHeight, int gridDept
 
 	// Initialize the grid offset matrix
 	{
-		// Make a scale matrix to scale the unit-sided box to be unit-length on the 
-		//  side/s with maximum dimension 
+		// Make a scale matrix to scale the unit-sided box to be unit-length on the
+		//  side/s with maximum dimension
 		D3DXMATRIX scaleM;
 		D3DXMatrixIdentity(&scaleM);
 		D3DXMatrixScaling(&scaleM, m_vGridDim[0] / m_fMaxDim, m_vGridDim[1] / m_fMaxDim, m_vGridDim[2] / m_fMaxDim);
@@ -437,12 +437,12 @@ void dx103DFluidRenderer::Draw(const dx103DFluidData& FluidData)
     ComputeRayData(FluidData);
 
 
-	// Do edge detection on this image to find any 
+	// Do edge detection on this image to find any
 	//  problematic areas where we need to raycast at higher resolution
     ComputeEdgeTexture(FluidData);
 
 
-	// Raycast into the temporary render target: 
+	// Raycast into the temporary render target:
 	//  raycasting is done at the smaller resolution, using a fullscreen quad
     FLOAT ColorRGBA[4] = { 0.0f, 0.0f, 0.0f, 0.0f };
     HW.pContext->ClearRenderTargetView(RT[RRT_RayCastTex]->pRT, ColorRGBA);
@@ -513,7 +513,7 @@ void dx103DFluidRenderer::ComputeRayData(const dx103DFluidData &FluidData)
 	//  unless the pixel is occluded by the scene, in which case we output xyzw=(1,0,0,0)
 
     pTarget->u_setrt(RT[RRT_RayDataTex], nullptr, nullptr, nullptr); // LDR RT
-	
+
 	RCache.set_Element(m_RendererTechnique[RS_CompRayData_Front]);
 
     PrepareCBuffer(FluidData, Device.dwWidth, Device.dwHeight);
@@ -528,7 +528,7 @@ void dx103DFluidRenderer::ComputeEdgeTexture(const dx103DFluidData &FluidData)
 	RCache.set_Element(m_RendererTechnique[RS_QuadDownSampleRayDataTexture]);
 
 	// First setup viewport to match the size of the destination low-res texture
-	
+
     PrepareCBuffer(FluidData, m_iRenderTextureWidth, m_iRenderTextureHeight);
 
 	// Downsample the rayDataTexture to a new small texture, simply using point sample (no filtering)
@@ -653,8 +653,8 @@ void dx103DFluidRenderer::PrepareCBuffer(const dx103DFluidData &FluidData, u32 R
     RCache.set_c(strGridScaleFactor, worldScale);
 
     // We prepend the current world matrix with this other matrix which adds an offset (-0.5, -0.5, -0.5)
-    //  and scale factors to account for unequal number of voxels on different sides of the volume box. 
-    // This is because we want to preserve the aspect ratio of the original simulation grid when 
+    //  and scale factors to account for unequal number of voxels on different sides of the volume box.
+    // This is because we want to preserve the aspect ratio of the original simulation grid when
     //  raytracing through it.
     WorldView = m_gridMatrix * WorldView;
 
@@ -670,7 +670,7 @@ void dx103DFluidRenderer::PrepareCBuffer(const dx103DFluidData &FluidData, u32 R
     D3DXMatrixInverse((D3DXMATRIX*)&InvWorldViewProjection, nullptr, (D3DXMATRIX*)&WorldViewProjection);
     RCache.set_c(strInvWorldViewProjection, *(Fmatrix*)&InvWorldViewProjection);
 
-    // Compute the inverse of the worldView matrix 
+    // Compute the inverse of the worldView matrix
     D3DXMATRIX WorldViewInv;
     D3DXMatrixInverse((D3DXMATRIX*)&WorldViewInv, nullptr, (D3DXMATRIX*)&WorldView);
     // Compute the eye's position in "grid space" (the 0-1 texture coordinate cube)

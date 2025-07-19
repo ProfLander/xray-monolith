@@ -350,7 +350,7 @@ void CRender::render_sun()
 	Fmatrix ex_project, ex_full, ex_full_inverse;
 	{
 		float _far_ = min(OLES_SUN_LIMIT_27_01_07, g_pGamePersistent->Environment().CurrentEnv->far_plane);
-		//ex_project.build_projection	(deg2rad(Device.fFOV/* *Device.fASPECT*/),Device.fASPECT,ps_r2_sun_near,_far_);	
+		//ex_project.build_projection	(deg2rad(Device.fFOV/* *Device.fASPECT*/),Device.fASPECT,ps_r2_sun_near,_far_);
 		ex_project.build_projection(deg2rad(Device.fFOV/* *Device.fASPECT*/), Device.fASPECT,VIEWPORT_NEAR, _far_);
 		//VIEWPORT_NEAR
 		ex_full.mul(ex_project, Device.mView);
@@ -711,7 +711,7 @@ void CRender::render_sun()
 			view_clipper.planes.push_back(D3DXPLANE(P.n.x, P.n.y, P.n.z, P.d));
 		}
 
-		// 
+		//
 		Fbox3 b_casters, b_receivers;
 		Fvector3 pt;
 
@@ -932,7 +932,7 @@ void CRender::render_sun_near()
 		float	k0					= 2.f*c0*_sin(a0);
 		float	k1					= 2.f*c1*_sin(a1);
 		float	borderalpha			= (Device.fFOV-10) / (90-10);
-		                            
+
 		float	nearborder			= 1*borderalpha + 1.136363636364f*(1-borderalpha);
 		float	spherical_range		= ps_r2_sun_near_border * nearborder * _max(_max(c0,c1), _max(k0,k1)*1.414213562373f );
 		Fbox	frustum_bb;			frustum_bb.invalidate	();

@@ -114,7 +114,7 @@ void CUIMainIngameWnd::Init()
 	/*	UIWeaponBack.AttachChild	(&UIWeaponSignAmmo);
 		xml_init.InitStatic			(uiXml, "static_ammo", 0, &UIWeaponSignAmmo);
 		UIWeaponSignAmmo.SetEllipsis	(CUIStatic::eepEnd, 2);
-	
+
 		UIWeaponBack.AttachChild	(&UIWeaponIcon);
 		xml_init.InitStatic			(uiXml, "static_wpn_icon", 0, &UIWeaponIcon);
 		UIWeaponIcon.SetShader		(GetEquipmentIconsShader());
@@ -129,7 +129,7 @@ void CUIMainIngameWnd::Init()
 	m_iPickUpItemIconY = UIPickUpItemIcon->GetWndRect().top;
 	//---------------------------------------------------------
 
-	//индикаторы 
+	//индикаторы
 	UIZoneMap->Init();
 
 	// Подсказки, которые возникают при наведении прицела на объект
@@ -167,12 +167,12 @@ void CUIMainIngameWnd::Init()
 	m_ind_boost_power->Show(false);
 	m_ind_boost_rad->Show(false);
 
-	// Загружаем иконки 
+	// Загружаем иконки
 	/*	if ( IsGameTypeSingle() )
 		{
 			xml_init.InitStatic		(uiXml, "starvation_static", 0, &UIStarvationIcon);
 			UIStarvationIcon.Show	(false);
-	
+
 	//		xml_init.InitStatic		(uiXml, "psy_health_static", 0, &UIPsyHealthIcon);
 	//		UIPsyHealthIcon.Show	(false);
 		}
@@ -477,10 +477,10 @@ void CUIMainIngameWnd::SetWarningIconColor(EWarningIcons icon, const u32 cl)
 			case ewiWound:
 				SetWarningIconColorUI	(&UIWoundIcon, cl);
 				if (bMagicFlag) break;
-		
+
 			case ewiStarvation:
 				SetWarningIconColorUI	(&UIStarvationIcon, cl);
-				if (bMagicFlag) break;	
+				if (bMagicFlag) break;
 			case ewiPsyHealth:
 				SetWarningIconColorUI	(&UIPsyHealthIcon, cl);
 				if (bMagicFlag) break;

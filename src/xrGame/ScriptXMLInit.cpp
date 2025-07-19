@@ -361,7 +361,7 @@ void CScriptXmlInit::script_register(lua_State* L)
 		.def(constructor<>())
 		.def("ParseFile", &CScriptXmlInit::ParseFile)
 		.def("ParseDirFile", &CScriptXmlInit::ParseDirFile)
-		
+
 		.def("NodeExist", &CScriptXmlInit::NodeExist)
 		.def("GetNodesNum", &CScriptXmlInit::GetNodesNum)
 		.def("NavigateToNode", &CScriptXmlInit::NavigateToNode)
@@ -370,7 +370,7 @@ void CScriptXmlInit::script_register(lua_State* L)
 		.def("NavigateToRoot", &CScriptXmlInit::NavigateToRoot)
 		.def("ReadValue", &CScriptXmlInit::ReadValue)
 		.def("ReadAttribute", &CScriptXmlInit::ReadAttribute)
-		
+
 		.def("InitWindow", &CScriptXmlInit::InitWindow)
 		.def("InitHint", &CScriptXmlInit::InitHint)
 		.def("InitFrame", &CScriptXmlInit::InitFrame)

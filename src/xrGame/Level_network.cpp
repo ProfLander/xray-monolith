@@ -182,7 +182,7 @@ void CLevel::ClientSend()
 	NET_Packet P;
 	u32 start = 0;
 	//----------- for E3 -----------------------------
-	//	if () 
+	//	if ()
 	{
 		//		if (!(Game().local_player) || Game().local_player->testFlag(GAME_PLAYER_FLAG_VERY_VERY_DEAD)) return;
 		if (CurrentControlEntity())
@@ -257,7 +257,7 @@ u32 CLevel::Objects_net_Save(NET_Packet* _Packet, u32 start, u32 max_object_size
 			}
 #endif
 			Packet.w_chunk_close16(position);
-			//			if (0==(--count))		
+			//			if (0==(--count))
 			//				break;
 			if (max_object_size >= (NET_PacketSizeLimit - Packet.w_tell()))
 				break;
@@ -539,7 +539,7 @@ void CLevel::ClearAllObjects()
 			//-----------------------------------------------------------
 			NET_Packet GEN;
 			GEN.w_begin(M_EVENT);
-			//---------------------------------------------		
+			//---------------------------------------------
 			GEN.w_u32(Level().timeServer());
 			GEN.w_u16(GE_OWNERSHIP_REJECT);
 			GEN.w_u16(pObj->H_Parent()->ID());
@@ -576,7 +576,7 @@ void CLevel::ClearAllObjects()
 		//-----------------------------------------------------------
 		NET_Packet GEN;
 		GEN.w_begin(M_EVENT);
-		//---------------------------------------------		
+		//---------------------------------------------
 		GEN.w_u32(Level().timeServer());
 		GEN.w_u16(GE_DESTROY);
 		GEN.w_u16(u16(pObj->ID()));

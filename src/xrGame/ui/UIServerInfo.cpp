@@ -146,7 +146,7 @@ void CUIServerInfo::SetServerRules(u8 const* data_ptr, u32 const data_size)
 		tmp_iter = strstr(tmp_iter, "\r\n");
 	}
 
-	m_text_body->SetText(tmp_string); //will create shared_str 
+	m_text_body->SetText(tmp_string); //will create shared_str
 	m_text_body->AdjustHeightToText();
 }
 

@@ -89,30 +89,30 @@ private:
 
 public:
 	CTeleWhirlwind();
-	
+
 	void AddImpact(const Fvector& dir, float val);
 	void DrawOutImpact(Fvector& dir, float& val);
 	void ClearImpacts();
-	
+
 	virtual void clear();
 	virtual void clear_notrelevant();
 
 	virtual CTelekineticObject* activate(CPhysicsShellHolder* obj, float strength, float height, u32 max_time_keep, bool rot = true);
 	virtual CTelekineticObject* alloc_tele_object()
 	{
-		if (m_iTelekinesisType == 1) 
+		if (m_iTelekinesisType == 1)
 		{
 			return static_cast<CTelekineticObject*>(xr_new<CTeleTrampolinObject>());
 		}
-		else 
+		else
 		{
 			return static_cast<CTelekineticObject*>(xr_new<CTeleWhirlwindObject>());
 		}
 	}
 
-	void PlayTearingSound(CObject* object) 
-	{ 
-		m_pTearingSound.play_at_pos(object, m_vCenter); 
+	void PlayTearingSound(CObject* object)
+	{
+		m_pTearingSound.play_at_pos(object, m_vCenter);
 	}
 
 	void Load(LPCSTR section);
@@ -128,7 +128,7 @@ public: // Getters
 	boolean			GetHeightFixed() const { return m_bHeightFixed; }
 	const Fvector&	GetCenter() const { return m_vCenter; }
 	LPCSTR			GetTearingParticles() const { return *m_sTearingParticles; }
-	
+
 public: // Setters
 
 	void SetCenter(const Fvector& center) { m_vCenter.set(center); }

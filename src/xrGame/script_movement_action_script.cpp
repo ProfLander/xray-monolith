@@ -90,7 +90,7 @@ void CScriptMovementAction::script_register(lua_State* L)
 		                 Fvector*, float>())
 		.def(constructor<Fvector *, float>())
 
-		// Monsters 
+		// Monsters
 		.def(constructor<MonsterSpace::EScriptMonsterMoveAction, Fvector *>())
 		.def(constructor<MonsterSpace::EScriptMonsterMoveAction, CPatrolPathParams *>())
 		.def(constructor<MonsterSpace::EScriptMonsterMoveAction, CScriptGameObject*>())

@@ -39,7 +39,7 @@
 
 //
 // Evaluate alpha*cos(x) + beta*sin(x) efficiently
-// 
+//
 
 inline float sin_and_cos(float x, float alpha, float beta)
 {
@@ -58,7 +58,7 @@ inline float sin_and_cos(float x, float alpha, float beta)
 // where alpha,beta,xi are such that
 //	-1 <= alpha*cos(psi) + beta*sin(psi) + xi <= 1
 // and
-//      -Pi <= psi <= Pi 
+//      -Pi <= psi <= Pi
 //
 
 
@@ -105,29 +105,29 @@ struct PsiEquation
 	float deriv(float psi) const
 	{
 		return sin_and_cos(psi, beta, -alpha);
-		// return -alpha*sin(psi) + beta*cos(psi); 
+		// return -alpha*sin(psi) + beta*cos(psi);
 	}
 
 
 	//
-	// Returns the critical points of the equation (1 or 2) 
+	// Returns the critical points of the equation (1 or 2)
 	//
 	int crit_points(float* c) const;
 
 	//
 	// Return the roots of the equation (1 or 2)
-	// 
+	//
 	int roots(float* c) const;
 
 	//
 	// Returns the solns of alpha*cos(v) + beta*sin(v) + xi = v
-	// where -1 <= v <= 1 
+	// where -1 <= v <= 1
 	//
 	int solve(float v, float* c) const;
 
 	//
-	// Calculates the set of intersections of psi such that 
-	//		
+	// Calculates the set of intersections of psi such that
+	//
 	//  -1 <= low <=  alpha*cos(psi) + beta*sin(psi) + xi <=  high <= 1
 	//
 	// Returns the number of these regions between 0..3
@@ -140,7 +140,7 @@ struct PsiEquation
 	//
 	// Calculates the range of psi above and below the specified value y
 	//
-	// returns the number of times the curve intersects y from 0 to 2  
+	// returns the number of times the curve intersects y from 0 to 2
 	//
 	// int partition(float y, AngleIntList &above,  AngleIntList &below) const;
 };

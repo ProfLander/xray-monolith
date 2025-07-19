@@ -162,7 +162,7 @@ void CAI_Space::validate			(const u32 level_id) const
 {
 	VERIFY					(level_graph().header().vertex_count() == cross_table().header().level_vertex_count());
 	for (GameGraph::_GRAPH_ID i=0, n = game_graph().header().vertex_count(); i<n; ++i)
-		if ((level_id == game_graph().vertex(i)->level_id()) && 
+		if ((level_id == game_graph().vertex(i)->level_id()) &&
 			(!level_graph().valid_vertex_id(game_graph().vertex(i)->level_vertex_id()) ||
 			(cross_table().vertex(game_graph().vertex(i)->level_vertex_id()).game_vertex_id() != i) ||
 			!level_graph().inside(game_graph().vertex(i)->level_vertex_id(),game_graph().vertex(i)->level_point()))) {
@@ -183,7 +183,7 @@ void CAI_Space::validate			(const u32 level_id) const
 			VERIFY							(cross_table().vertex((*I).level_vertex_id()).game_vertex_id() == i);
 		}
 	}
-	
+
 
 //	Msg						("* Graph corresponds to the cross table");
 }

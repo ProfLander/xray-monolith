@@ -124,7 +124,7 @@ float CControlMovementBase::get_velocity_from_path()
 	}
 
 	return velocity;
-	//m_accel		= ((m_man->movement().velocity_current() > velocity) ? 
+	//m_accel		= ((m_man->movement().velocity_current() > velocity) ?
 	//	m_object->anim().accel_get(eAV_Braking) :
 	//m_object->anim().accel_get(eAV_Accel));
 }

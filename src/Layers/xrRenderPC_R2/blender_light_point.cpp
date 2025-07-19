@@ -29,7 +29,7 @@ void CBlender_accum_point::Compile(CBlender_Compile& C)
 		C.r_Sampler_rtf("s_position", r2_RT_P);
 		C.r_Sampler_rtf("s_normal", r2_RT_N);
 		C.r_Sampler_rtf("s_diffuse", r2_RT_albedo);
-		
+
 		C.r_Sampler_clw("s_material", r2_material);
 		C.r_Sampler_clf("s_lmap", *C.L_textures[0]);
 		C.r_Sampler_rtf("s_accumulator", r2_RT_accum);
@@ -40,7 +40,7 @@ void CBlender_accum_point::Compile(CBlender_Compile& C)
 		C.r_Sampler_rtf("s_position", r2_RT_P);
 		C.r_Sampler_rtf("s_normal", r2_RT_N);
 		C.r_Sampler_rtf("s_diffuse", r2_RT_albedo);
-		
+
 		C.r_Sampler_clw("s_material", r2_material);
 		C.r_Sampler("s_lmap", C.L_textures[0]);
 		if (b_HW_smap)
@@ -58,7 +58,7 @@ void CBlender_accum_point::Compile(CBlender_Compile& C)
 		C.r_Sampler_rtf("s_position", r2_RT_P);
 		C.r_Sampler_rtf("s_normal", r2_RT_N);
 		C.r_Sampler_rtf("s_diffuse", r2_RT_albedo);
-		
+
 		C.r_Sampler_clw("s_material", r2_material);
 		C.r_Sampler("s_lmap", C.L_textures[0]);
 		if (b_HW_smap)
@@ -76,7 +76,7 @@ void CBlender_accum_point::Compile(CBlender_Compile& C)
 		C.r_Sampler_rtf("s_position", r2_RT_P);
 		C.r_Sampler_rtf("s_normal", r2_RT_N);
 		C.r_Sampler_rtf("s_diffuse", r2_RT_albedo);
-		
+
 		C.r_Sampler_clw("s_material", r2_material);
 		C.r_Sampler_clf("s_lmap", r2_RT_smap_surf); // diff here
 		if (b_HW_smap)

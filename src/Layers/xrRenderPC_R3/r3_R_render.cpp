@@ -513,7 +513,7 @@ void CRender::Render()
 		// Render emissive geometry, stencil - write 0x0 at pixel pos
 		RCache.set_xform_project(Device.mProject);
 		RCache.set_xform_view(Device.mView);
-		// Stencil - write 0x1 at pixel pos - 
+		// Stencil - write 0x1 at pixel pos -
 		if (!RImplementation.o.dx10_msaa)
 			RCache.set_Stencil(TRUE, D3DCMP_ALWAYS, 0x01, 0xff, 0xff, D3DSTENCILOP_KEEP, D3DSTENCILOP_REPLACE,
 			                   D3DSTENCILOP_KEEP);

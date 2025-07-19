@@ -117,7 +117,7 @@ CRenderTarget::~CRenderTarget()
 	RT_distort.destroy();
 	RT_color_map.destroy();
 	RT.destroy();
-	rt_secondVP.destroy(); //--#SM+#-- +SecondVP+s	
+	rt_secondVP.destroy(); //--#SM+#-- +SecondVP+s
 }
 
 void CRenderTarget::calc_tc_noise(Fvector2& p0, Fvector2& p1)
@@ -232,7 +232,7 @@ BOOL CRenderTarget::Perform()
 void CRenderTarget::Begin()
 {
 	/*
-	if (g_pGameLevel->IR_GetKeyState(DIK_LSHIFT))	
+	if (g_pGameLevel->IR_GetKeyState(DIK_LSHIFT))
 	{
 		Msg					("[%5d]------------------------",Device.dwFrame);
 		SHOW				(param_blur)
@@ -259,7 +259,7 @@ void CRenderTarget::Begin()
 	}
 	else
 	{
-		// Our 
+		// Our
 		RCache.set_RT(RT->pRT);
 		RCache.set_ZB(ZB);
 		curWidth = rtWidth;

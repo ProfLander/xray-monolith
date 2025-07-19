@@ -155,7 +155,7 @@ public:
 	int translateSector(IRender_Sector* pSector);
 	virtual IRender_Target* getTarget();
 
-	// Main 
+	// Main
 	virtual void flush();
 	virtual void set_Object(IRenderable* O);
 	virtual void add_Occluder(Fbox2& bb_screenspace); // mask screen region as oclluded

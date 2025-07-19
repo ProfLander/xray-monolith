@@ -203,7 +203,7 @@ public:
 	{
 	}; // actions & operations after correction before prediction steps
 #ifdef DEBUG
-	virtual void			PH_Ch_CrPr			() {}; // 
+	virtual void			PH_Ch_CrPr			() {}; //
 	virtual	void			dbg_DrawSkeleton	();
 #endif
 	virtual void PH_A_CrPr()

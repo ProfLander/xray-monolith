@@ -188,7 +188,7 @@ void CEffect_Rain::OnFrame()
 	float rain_density = g_pGamePersistent->Environment().CurrentEnv->rain_density;
 	float wind_velocity = g_pGamePersistent->Environment().CurrentEnv->wind_velocity * 0.001f;
 	clamp(wind_velocity, 0.0f, 1.0f);
-	
+
 	wind_velocity *= (rain_density > 0.0f ? 1.0f : 0.0f); // Only when raining
 
 	// 50% of the volume is by rain_density and 50% wind_velocity;

@@ -196,7 +196,7 @@ void CMissile::OnH_A_Chield()
 {
 	inherited::OnH_A_Chield();
 
-	//	if(!m_fake_missile && !smart_cast<CMissile*>(H_Parent())) 
+	//	if(!m_fake_missile && !smart_cast<CMissile*>(H_Parent()))
 	//		spawn_fake_missile	();
 }
 
@@ -685,7 +685,7 @@ void CMissile::UpdateFireDependencies_internal()
 						CKinematics* V			= smart_cast<CKinematics*>(GetHUD()->Visual());
 						VERIFY					(V);
 						V->CalculateBones		();
-			
+
 						// fire point&direction
 						Fmatrix& parent			= GetHUD()->Transform	();
 						m_throw_direction.set	(parent.k);
@@ -783,7 +783,7 @@ void CMissile::setup_physic_shell()
 {
 	R_ASSERT(!m_pPhysicsShell);
 	create_physic_shell();
-	m_pPhysicsShell->Activate(XFORM(), 0, XFORM()); //,true 
+	m_pPhysicsShell->Activate(XFORM(), 0, XFORM()); //,true
 	IKinematics* kinematics = smart_cast<IKinematics*>(Visual());
 	R_ASSERT(kinematics);
 	kinematics->CalculateBones_Invalidate();

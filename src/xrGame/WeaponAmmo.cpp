@@ -184,7 +184,7 @@ bool CWeaponAmmo::Useful() const
 }
 
 /*
-s32 CWeaponAmmo::Sort(PIItem pIItem) 
+s32 CWeaponAmmo::Sort(PIItem pIItem)
 {
 	// Если нужно разместить IItem после this - вернуть 1, если
 	// перед - -1. Если пофиг то 0.

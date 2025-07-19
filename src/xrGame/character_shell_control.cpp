@@ -128,7 +128,7 @@ void character_shell_control::TestForWounded(const Fmatrix& xform, IKinematics* 
 		if( death_anim_debug )
 		{
 			Msg( "death anim: test for wounded %s ", m_was_wounded ? "true" : "false" );
-			
+
 		}
 #endif
 };
@@ -148,7 +148,7 @@ void character_shell_control::CalculateTimeDelta()
 
 void character_shell_control::UpdateFrictionAndJointResistanse(CPhysicsShell* sh)
 {
-	//Преобразование skel_ddelay из кадров в секунды и линейное нарастание сопротивления в джоинтах со временем от момента смерти 
+	//Преобразование skel_ddelay из кадров в секунды и линейное нарастание сопротивления в джоинтах со временем от момента смерти
 
 	if (skel_remain_time != 0)
 	{

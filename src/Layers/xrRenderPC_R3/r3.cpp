@@ -201,7 +201,7 @@ void CRender::create()
 
 		//.	    _tzset			();
 		//.		??? _strdate	( date, 128 );	???
-		//.		??? if (date < 22-march-07)		
+		//.		??? if (date < 22-march-07)
 		if (0)
 		{
 			u32 device_id = HW.Caps.id_device;
@@ -1469,7 +1469,7 @@ HRESULT CRender::shader_compile(
 		++len;
 	}
 
-	//////////////////////////////////lvutner	
+	//////////////////////////////////lvutner
 
 
 	if (ps_r2_anomaly_flags.test(R2_AN_FLAG_WATER_REFLECTIONS))
@@ -1501,7 +1501,7 @@ HRESULT CRender::shader_compile(
 		++len;
 	}
 
-	//Useful shit. 
+	//Useful shit.
 	if (HW.Caps.id_vendor == 0x1002) //AMD hardware
 	{
 		defines[def_it].Name = "INT_RENDER_AMD";
@@ -1514,7 +1514,7 @@ HRESULT CRender::shader_compile(
 		defines[def_it].Name = "INT_RENDER_NVIDIA";
 		defines[def_it].Definition = "1";
 		def_it++;
-	}	
+	}
 
 	/////////////////////////////////////////////
 
@@ -1646,7 +1646,7 @@ HRESULT CRender::shader_compile(
 	defines[def_it].Definition = 0;
 	def_it ++;
 
-	// 
+	//
 	if (0 == xr_strcmp(pFunctionName, "main"))
 	{
 		if ('v' == pTarget[0])

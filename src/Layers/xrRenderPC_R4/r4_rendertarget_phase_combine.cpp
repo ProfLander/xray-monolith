@@ -40,7 +40,7 @@ float hclip(float v, float dim) { return 2.f * v / dim - 1.f; }
 void CRenderTarget::phase_combine()
 {
 	PIX_EVENT(phase_combine);
-	
+
 	bool ssfx_PrevPos_Requiered = false;
 
 	//	TODO: DX10: Remove half poxel offset
@@ -158,7 +158,7 @@ void CRenderTarget::phase_combine()
 		//RCache.set_Z(TRUE);
 	}
 
-	// 
+	//
 	//if (RImplementation.o.bug)	{
 	RCache.set_Stencil(TRUE, D3DCMP_LESSEQUAL, 0x01, 0xff, 0x00); // stencil should be >= 1
 	if (RImplementation.o.nvstencil)
@@ -377,7 +377,7 @@ void CRenderTarget::phase_combine()
 	// Final water rendering ( All the code above can be omitted if the Water module isn't installed )
 	RCache.set_xform_world(Fidentity);
 	RImplementation.r_dsgraph_render_water();
-	
+
 	{
 		if (RImplementation.o.ssfx_rain)
 		{
@@ -537,20 +537,20 @@ void CRenderTarget::phase_combine()
 	{
 		phase_pp_bloom();
 	}
-	
+
 	if (ps_r2_ls_flags.test(R2FLAG_DOF))
-	{	
+	{
 		phase_dof();
 	}
 
-	phase_lut();	
+	phase_lut();
 
 	if(ps_r2_mask_control.x > 0)
 	{
 		phase_gasmask_dudv();
 		phase_gasmask_drops();
 	}
-	
+
 	if(ps_r2_nightvision > 0)
 		phase_nightvision();
 
@@ -570,8 +570,8 @@ void CRenderTarget::phase_combine()
         //PIX_EVENT(SMAA);
         phase_smaa();
         RCache.set_Stencil(FALSE);
-    }    
-	
+    }
+
 	if (RImplementation.o.ssfx_taa && ps_ssfx_taa.x > 0)
 	{
 		phase_ssfx_taa();
@@ -607,7 +607,7 @@ void CRenderTarget::phase_combine()
 	if (1)
 	{
 		PIX_EVENT(combine_2);
-		// 
+		//
 		struct v_aa
 		{
 			Fvector4 p;
@@ -689,7 +689,7 @@ void CRenderTarget::phase_combine()
 		RCache.set_c("m_current", Matrix_current);
 		RCache.set_c("m_previous", Matrix_previous);
 		RCache.set_c("m_blur", m_blur_scale.x, m_blur_scale.y, 0, 0);
-		/////lvutner		
+		/////lvutner
 		RCache.set_c("mask_control", ps_r2_mask_control.x, ps_r2_mask_control.y, ps_r2_mask_control.z, ps_r2_mask_control.w);
 
 		RCache.set_c("tnmp_a", ps_r2_tnmp_a);
@@ -755,7 +755,7 @@ void CRenderTarget::phase_combine()
 		Fplane&		P	=	dbg_planes[it];
 		Fvector		zero	;
 		zero.mul	(P.n,P.d);
-		
+
 		Fvector             L_dir,L_up=P.n,L_right;
 		L_dir.set           (0,0,1);                if (_abs(L_up.dotproduct(L_dir))>.99f)  L_dir.set(1,0,0);
 		L_right.crossproduct(L_up,L_dir);           L_right.normalize       ();
@@ -792,7 +792,7 @@ void CRenderTarget::phase_combine()
 		if (0) for (u32 it=0; it<dbg_spheres.size(); it++)
 		{
 			Fsphere				S	= dbg_spheres[it].first;
-			Fmatrix				M;	
+			Fmatrix				M;
 			u32				ccc		= dbg_spheres[it].second.get();
 			M.scale					(S.R,S.R,S.R);
 			M.translate_over		(S.P);
@@ -801,7 +801,7 @@ void CRenderTarget::phase_combine()
 		}
 #endif
 		// Draw quater-screen quad textured with our direct-shadow-map-image
-		if (1) 
+		if (1)
 		{
 			u32							IX=0,IY=1;
 			p0.set						(.5f/_w, .5f/_h);

@@ -28,24 +28,24 @@ void CBlender_nightvision::Compile(CBlender_Compile& C)
 		C.r_Sampler_clf("s_base", r2_RT_generic0);
 		C.r_End();
 		break;
-	case 1:	
-		C.r_Pass("null", "nightvision_gen_1", FALSE, FALSE, FALSE);	
+	case 1:
+		C.r_Pass("null", "nightvision_gen_1", FALSE, FALSE, FALSE);
 		C.r_Sampler_rtf("s_position", r2_RT_P);
-		C.r_Sampler_clf("s_image", r2_RT_generic0);	
+		C.r_Sampler_clf("s_image", r2_RT_generic0);
 		C.r_End();
 		break;
-	case 2:	
-		C.r_Pass("null", "nightvision_gen_2", FALSE, FALSE, FALSE);	
+	case 2:
+		C.r_Pass("null", "nightvision_gen_2", FALSE, FALSE, FALSE);
 		C.r_Sampler_rtf("s_position", r2_RT_P);
-		C.r_Sampler_clf("s_image", r2_RT_generic0);	
+		C.r_Sampler_clf("s_image", r2_RT_generic0);
 		C.r_End();
 		break;
-	case 3:	
-		C.r_Pass("null", "nightvision_gen_3", FALSE, FALSE, FALSE);	
+	case 3:
+		C.r_Pass("null", "nightvision_gen_3", FALSE, FALSE, FALSE);
 		C.r_Sampler_rtf("s_position", r2_RT_P);
-		C.r_Sampler_clf("s_image", r2_RT_generic0);	
+		C.r_Sampler_clf("s_image", r2_RT_generic0);
 		C.r_End();
-		break;	
+		break;
 	}
 }
 
@@ -65,8 +65,8 @@ void CBlender_fakescope::Compile(CBlender_Compile& C) //crookr
 		C.r_End();
 		break;
 	case 1: //Copy to rt_Generic_2
-		C.r_Pass("null", "copy", FALSE, FALSE, FALSE);	
-		C.r_Sampler_clf("s_base", "$user$generic_pingpong");	
+		C.r_Pass("null", "copy", FALSE, FALSE, FALSE);
+		C.r_Sampler_clf("s_base", "$user$generic_pingpong");
 		C.r_End();
 		break;
 	}
@@ -79,6 +79,6 @@ void CBlender_heatvision::Compile(CBlender_Compile& C)
 	C.r_Pass("null", "heatvision", FALSE, FALSE, FALSE);
 	C.r_Sampler_rtf("s_position", r2_RT_P);
 	C.r_Sampler_clf("s_image", r2_RT_generic0);
-	C.r_End();	
+	C.r_End();
 }
 //--DSR-- HeatVision_end

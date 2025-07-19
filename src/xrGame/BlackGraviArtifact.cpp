@@ -1,6 +1,6 @@
 ///////////////////////////////////////////////////////////////
 // BlackGraviArtifact.cpp
-// BlackGraviArtefact - гравитационный артефакт, 
+// BlackGraviArtefact - гравитационный артефакт,
 // такой же как и обычный, но при получении хита
 ///////////////////////////////////////////////////////////////
 
@@ -109,7 +109,7 @@ void CBlackGraviArtefact::UpdateCLChild()
 			Fmatrix pos;
 			pos.set(XFORM());
 			Fvector vel;
-			//vel.sub(Position(),ps_Element(0).vPosition); 
+			//vel.sub(Position(),ps_Element(0).vPosition);
 			//vel.div((Level().timeServer()-ps_Element(0).dwTime)/1000.f);
 			vel.set(0, 0, 0);
 			pStaticPG->UpdateParent(pos, vel);
@@ -228,7 +228,7 @@ void CBlackGraviArtefact::GraviStrike()
 
 				NET_Packet P;
 				SHit HS;
-				HS.GenHeader(GE_HIT, pGameObject->ID()); //				u_EventGen		(P,GE_HIT, pGameObject->ID());				
+				HS.GenHeader(GE_HIT, pGameObject->ID()); //				u_EventGen		(P,GE_HIT, pGameObject->ID());
 				HS.whoID = ID(); //				P.w_u16			(ID());
 				HS.weaponID = ID(); //				P.w_u16			(ID());
 				HS.dir = strike_dir; //				P.w_dir			(strike_dir);

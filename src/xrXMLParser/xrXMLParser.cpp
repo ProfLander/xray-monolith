@@ -185,7 +185,7 @@ XML_NODE* CXml::NavigateToNode(XML_NODE* start_node, LPCSTR path, int node_index
 
 	while (token != NULL)
 	{
-		// Get next token: 
+		// Get next token:
 		token = strtok(NULL, seps);
 
 		if (token != NULL)
@@ -333,7 +333,7 @@ LPCSTR CXml::ReadAttrib(XML_NODE* node, LPCSTR attrib, LPCSTR default_str_val)
 	else
 	{
 		/*
-				//обязательно делаем ref_str, а то 
+				//обязательно делаем ref_str, а то
 				//не сможем запомнить строку и return вернет левый указатель
 				shared_str result_str;
 		*/
@@ -509,12 +509,12 @@ LPCSTR CXml::CheckUniqueAttrib (XML_NODE* start_node, LPCSTR tag_name, LPCSTR at
 	for(int i=0; i<tags_num; i++)
 	{
 		LPCSTR attrib				= ReadAttrib(start_node, tag_name, i, attrib_name, NULL);
-		
+
 		xr_vector<shared_str>::iterator it = std::find(m_AttribValues.begin(), m_AttribValues.end(), attrib);
 
-		 if(m_AttribValues.end() != it) 
+		 if(m_AttribValues.end() != it)
 			 return	attrib;
-		 
+
 		 m_AttribValues.push_back	(attrib);
 	}
 	return NULL;

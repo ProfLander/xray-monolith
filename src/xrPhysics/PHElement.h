@@ -282,7 +282,7 @@ public: //
 	void SetBoneCallback();
 	void ClearBoneCallback();
 	void CreateSimulBase(); //create body & cpace																//aux
-	void ReInitDynamics(const Fmatrix& shift_pivot, float density); //set body & geom positions					
+	void ReInitDynamics(const Fmatrix& shift_pivot, float density); //set body & geom positions
 	void PresetActive(); //
 	void build(); //aux
 	void build(bool disable); //aux

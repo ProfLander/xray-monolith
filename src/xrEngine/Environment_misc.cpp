@@ -539,7 +539,7 @@ void CEnvDescriptorMixer::boost(CEnvironment* env)
 		sky_color.add(env->env_boost.sky_color);
 		sky_color.clamp({0.f, 0.f, 0.f}, {1.f, 1.f, 1.f});
 	}
-	
+
 	//Clouds color brightness adjustment
 	if (env->env_boost.clouds_color != 0.f)
 	{
@@ -585,7 +585,7 @@ void CEnvDescriptorMixer::boost(CEnvironment* env)
 		fog_color.add(env->env_boost.fog_color);
 		fog_color.clamp({0.f, 0.f, 0.f}, {1.f, 1.f, 1.f});
 	}
-	
+
 }
 
 //-----------------------------------------------------------------------------

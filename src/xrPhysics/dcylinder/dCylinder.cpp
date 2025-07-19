@@ -58,8 +58,8 @@ inline bool circleIntersection(const dReal* n1, const dReal* cp1, dReal r1, cons
 	D = B_A_2 - C;
 	if (D < 0.f)
 	{
-		//somewhat strange solution 
-		//- it is needed to set some 
+		//somewhat strange solution
+		//- it is needed to set some
 		//axis to sepparate cylinders
 		//when their edges approach
 		t1 = -B_A + dSqrt(-D);
@@ -279,8 +279,8 @@ extern "C" int dCylBox(const dVector3 p1, const dMatrix3 R1,
 
 	// separating axis = box axis v1,v2,v3
 	//used when cylinder edge touches box face
-	//there is two ways to compute sQ: sQ21=dSqrt(1.f-Q21*Q21); or sQ21=dSqrt(Q23*Q23+Q22*Q22); 
-	//if we did not need Q23 and Q22 the first way might be used to quiken the routine but then it need to 
+	//there is two ways to compute sQ: sQ21=dSqrt(1.f-Q21*Q21); or sQ21=dSqrt(Q23*Q23+Q22*Q22);
+	//if we did not need Q23 and Q22 the first way might be used to quiken the routine but then it need to
 	//check if Q21<=1.f, becouse it may slightly exeed 1.f.
 
 
@@ -366,7 +366,7 @@ extern "C" int dCylBox(const dVector3 p1, const dMatrix3 R1,
 	tAx[2] = R1[10] * _cos - R1[8] * _sin;
 
 
-	//use cross between tAx and first ax of the box as separating axix 
+	//use cross between tAx and first ax of the box as separating axix
 
 	dCROSS114(Ax, =, tAx, R2+0);
 	dNormalize3(Ax);
@@ -520,7 +520,7 @@ extern "C" int dCylBox(const dVector3 p1, const dMatrix3 R1,
 
 		for (i = 0; i < 3; ++i) pa[i] += cos3 * radius * R1[i * 4 + 2];
 
-		// find vertex of the box  deepest along normal 
+		// find vertex of the box  deepest along normal
 		dVector3 pb;
 		for (i = 0; i < 3; ++i) pb[i] = p2[i];
 		sign = (dDOT14(normal, R2 + 0) > 0) ? REAL(-1.0) : REAL(1.0);
@@ -807,7 +807,7 @@ extern "C" int dCylCyl(const dVector3 p1, const dMatrix3 R1,
 	//@ this needed to set right normal when cylinders edges intersect
 	//@ the most precise axis for this test may be found as a line between nearest points of two
 	//@ circles. But it needs comparatively a lot of computation.
-	//@ I use a trick which lets not to solve quadric equation. 
+	//@ I use a trick which lets not to solve quadric equation.
 	//@ In the case when cylinder eidges touches the test below rather accurate.
 	//@ I still not sure about problems with sepparation but they have not been revealed during testing.
 	dVector3 point;
@@ -1128,11 +1128,11 @@ int dCollideCylS(dxGeom* o1, dxGeom* o2, int flags,
 	invert_normal = 0;
 	code = 0;
 
-	// separating axis cyl ax 
+	// separating axis cyl ax
 
 	TEST(dDOT14(p,R+1), sphereRadius+hl, R+1, 2);
 	// note: cross product axes need to be scaled when s is computed.
-	// normal (n1,n2,n3) is relative to 
+	// normal (n1,n2,n3) is relative to
 #undef TEST
 #define TEST(expr1,expr2,n1,n2,n3,cc) \
   s2 = dFabs(expr1) - (expr2); \

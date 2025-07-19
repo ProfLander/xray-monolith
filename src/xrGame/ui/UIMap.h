@@ -13,7 +13,7 @@ protected:
 	Frect m_BoundRect_; // real map size (meters)
 	Flags16 m_flags;
 
-	enum EFlags 
+	enum EFlags
 	{
 		eLocked = (1 << 0),
 		eRounded = (1 << 1),

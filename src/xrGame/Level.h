@@ -52,9 +52,9 @@ namespace file_transfer
 }
 
 using models_set = xr_unordered_set<xr_string>;
-struct prefetch_event  
-{  
-    NET_Packet p;  
+struct prefetch_event
+{
+    NET_Packet p;
 	models_set models;
 };
 using prefetch_event_queue = xr_vector<prefetch_event>;
@@ -255,7 +255,7 @@ private:
 	bool PostponedSpawnFind(u16 id, const NET_Event& E) const;
 	bool PostponedSpawnFind(u16 id, NET_Packet& P) const;
 	bool SpawnEventCompare(const NET_Event& a, const NET_Event& b) const;
-#endif	
+#endif
 
 public:
 	//-AVO

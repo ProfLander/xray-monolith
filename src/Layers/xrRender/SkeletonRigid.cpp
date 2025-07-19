@@ -170,9 +170,9 @@ void check_kinematics(CKinematics* _k, LPCSTR s)
 	CKinematics* K = _k;
 	Fmatrix&	MrootBone		= K->LL_GetBoneInstance(K->LL_GetBoneRoot()).mTransform;
 	if(MrootBone.c.y >10000)
-	{	
+	{
 		Msg("all bones transform:--------[%s]",s);
-		
+
 		for(u16 ii=0; ii<K->LL_BoneCount();++ii){
 			Fmatrix tr;
 
@@ -248,7 +248,7 @@ void CKinematics::BoneChain_Calculate(const CBoneData* bd, CBoneInstance& bi, u8
 	if (SelfID == LL_GetBoneRoot())
 	{
 		CLBone(bd, bi, &Fidentity, mask_channel);
-		//restore callback	
+		//restore callback
 		bi.set_callback(bi.callback_type(), bc, bi.callback_param(), ow);
 		return;
 	}

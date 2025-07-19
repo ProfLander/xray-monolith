@@ -94,7 +94,7 @@ inline bool operator==(const uialloc<_Ty>&, const uialloc<_Other>&) { return (tr
 template <class _Ty, class _Other>
 inline bool operator!=(const uialloc<_Ty>&, const uialloc<_Other>&) { return (false); }
 
-//. template<typename T>	
+//. template<typename T>
 //. class	ui_list 		: public std::list<T,uialloc<T> >{ public: u32 size() const {return (u32)__super::size(); } };
 
 
@@ -153,7 +153,7 @@ public:
 
 	//Alundaio
 	/*
-	void			DisableHint			(); 
+	void			DisableHint			();
 	void			EnableHint			();
 	void			SetHintDelay		(u32 val);
 	u32				GetHintDelay		();

@@ -186,7 +186,7 @@ bool CControllerPsyHit::see_enemy()
 	// 	Actor()->Center(actor_center);
 	// 	Fvector self_center;
 	// 	m_object->Center(self_center);
-	// 
+	//
 	// 	if ( check_actor_visibility(self_head, get_head_position(Actor()), m_object) &&
 	// 		 check_actor_visibility(self_head, actor_center, m_object) &&
 	// 		 check_actor_visibility(self_center, get_head_position(Actor()), m_object) &&
@@ -194,7 +194,7 @@ bool CControllerPsyHit::see_enemy()
 	// 	{
 	// 		return true;
 	// 	}
-	// 
+	//
 	// 	return false;
 }
 
@@ -206,7 +206,7 @@ bool CControllerPsyHit::check_conditions_final()
 	if (!g_actor)
 		return false;
 
-	// 	if (m_object->EnemyMan.get_enemy() != Actor())	
+	// 	if (m_object->EnemyMan.get_enemy() != Actor())
 	// 		return false;
 
 	if (!m_object->EnemyMan.is_enemy(Actor()))

@@ -72,7 +72,7 @@ void CUISpawnWnd::Init()
 	CUIXmlInit::InitScrollView(xml_doc, "team_selector:text_desc", 0, m_pTextDesc);
 
 	CUIXmlInit::InitStatic(xml_doc, "team_selector:image_0", 0, m_pImage1);
-	//m_pImage1->SetStretchTexture(true);	
+	//m_pImage1->SetStretchTexture(true);
 	CUIXmlInit::InitStatic(xml_doc, "team_selector:image_1", 0, m_pImage2);
 	//m_pImage2->SetStretchTexture(true);
 	//InitTeamLogo();

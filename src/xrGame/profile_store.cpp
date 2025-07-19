@@ -188,7 +188,7 @@ namespace gamespy_profile
 			++i;
 		}
 		VERIFY(i == merged_fields_count);
-		//m_get_records_input.mNumFields	= i; 
+		//m_get_records_input.mNumFields	= i;
 		//m_get_records_input.mFieldNames = m_field_names_store;
 		//m_get_records_input.mTableId	= profile_table_name;
 	}

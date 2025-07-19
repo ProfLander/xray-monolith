@@ -16,7 +16,7 @@ public:
 	template <typename T>
 	class CItemBase {
 
-		xr_vector<T>		m_data;	
+		xr_vector<T>		m_data;
 		typedef typename xr_vector<T>::iterator		ITEM_STORAGE_VEC_IT;
 
 		struct remove_text_pred {
@@ -40,10 +40,10 @@ public:
 				return (item1.id < item2.id);
 			}
 		};
-	
+
 	public:
 		IC	void	add_item		(T data) {
-			m_data.push_back	(data);	
+			m_data.push_back	(data);
 			std::sort			(m_data.begin(), m_data.end(), sort_id_pred());
 		}
 
@@ -78,23 +78,23 @@ public:
 
 		SInfoItem	(LPCSTR str, u32 col, u32 i) : text(str), color(col), id(i) {}
 	};
-	
+
 	class CObjectInfo : public CItemBase<SInfoItem> {
 
 		typedef CItemBase<SInfoItem> inherited;
-		
+
 		#define	DELTA_HEIGHT_DEFAULT	16.f
 		#define	SHIFT_POS_DEFAULT		Fvector().set(0.f,2.f,0.f)
 
 		Fvector			m_shift_pos;
 		float			m_delta_height;
 
-	public: 
+	public:
 
 					CObjectInfo		() {setup();}
 
 			void	add_item		(LPCSTR text, u32 color, u32 id = u32(-1));
-			
+
 			void	draw_info		(float x, float &y);
 		IC	void	setup			(const Fvector &shift = SHIFT_POS_DEFAULT, float delta = DELTA_HEIGHT_DEFAULT) {m_shift_pos.set(shift); m_delta_height = delta;}
 
@@ -105,7 +105,7 @@ public:
 
 	struct STextItem {
 		shared_str	text;
-		
+
 		float		x;
 		float		y;
 
@@ -118,7 +118,7 @@ public:
 	class CTextInfo : public CItemBase<STextItem> {
 		typedef CItemBase<STextItem> inherited;
 
-	public: 
+	public:
 			void	add_item		(LPCSTR text, float x, float y, u32 color, u32 id = u32(-1));
 			void	draw_text		();
 	};
@@ -143,7 +143,7 @@ public:
 			set			(p, col, i);
 			ptype		= ePoint;
 		}
-		
+
 		SLevelItem		(const Fvector &p, const Fvector &p2, u32 col, u32 i) {
 			set			(p, col, i);
 			ptype		= eLine;
@@ -179,22 +179,22 @@ public:
 
 	template<class T>
 	CObjectInfo &object_info		(CObject *obj, T typed_class) {
-		return object_info(obj, typeid((*typed_class)).name());	
+		return object_info(obj, typeid((*typed_class)).name());
 	}
 
 	template<class T>
 	CObjectInfo &object_info		(T typed_class) {
-		return object_info(typed_class, typeid((*typed_class)).name());	
+		return object_info(typed_class, typeid((*typed_class)).name());
 	}
 
 	template<class T>
 	CTextInfo &text(T typed_class) {
-		return text(typed_class, typeid((*typed_class)).name());	
+		return text(typed_class, typeid((*typed_class)).name());
 	}
 
 	template<class T>
 	CLevelInfo &level_info(T typed_class) {
-		return level_info(typed_class, typeid((*typed_class)).name());	
+		return level_info(typed_class, typeid((*typed_class)).name());
 	}
 
 
@@ -214,13 +214,13 @@ public:
 
 private:
 	void		free_mem			();
-	
+
 	CObjectInfo &object_info		(CObject *obj, LPCSTR class_name);
 	CTextInfo	&text				(void *class_ptr, LPCSTR class_name);
 	CLevelInfo	&level_info			(void *class_ptr, LPCSTR class_name);
 
 private:
-	
+
 	struct SKey {
 		void	*class_ptr;
 		LPCSTR	class_name;
@@ -233,11 +233,11 @@ private:
 
 	};
 
-	DEFINE_MAP			(LPCSTR,	CObjectInfo*,	CLASS_INFO_MAP,		CLASS_INFO_MAP_IT);	
+	DEFINE_MAP			(LPCSTR,	CObjectInfo*,	CLASS_INFO_MAP,		CLASS_INFO_MAP_IT);
 	DEFINE_MAP			(CObject*,	CLASS_INFO_MAP,	OBJECT_INFO_MAP,	OBJECT_INFO_MAP_IT);
 	DEFINE_MAP			(SKey,		CTextInfo*,		TEXT_INFO_MAP,		TEXT_INFO_MAP_IT);
 	DEFINE_MAP			(SKey,		CLevelInfo*,	LEVEL_INFO_MAP,		LEVEL_INFO_MAP_IT);
-	
+
 	OBJECT_INFO_MAP		m_objects_info;
 	TEXT_INFO_MAP		m_text_info;
 	LEVEL_INFO_MAP		m_level_info;

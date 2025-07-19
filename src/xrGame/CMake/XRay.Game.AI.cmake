@@ -1,14 +1,14 @@
 add_module(XRay.Game.AI
   TYPE STATIC
-  
+
   INCLUDES
   ${CMAKE_CURRENT_SOURCE_DIR}
   ${CMAKE_SOURCE_DIR}/src/xrServerEntities
-  
+
   SOURCES
   ai/trader/trader_animation.cpp
   ai/trader/trader_animation.h
-  
+
   mt_config.h
 )
 

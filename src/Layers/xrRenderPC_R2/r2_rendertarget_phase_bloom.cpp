@@ -29,7 +29,7 @@ struct v_filter
 
 // Gauss filtering coeffs
 // Samples:			0-central, -1, -2,..., -7, 1, 2,... 7
-// 
+//
 void CalcGauss_k7(
 	Fvector4& w0, // weight
 	Fvector4& w1, // weight

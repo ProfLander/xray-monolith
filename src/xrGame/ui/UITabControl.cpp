@@ -199,7 +199,7 @@ CUITabButton* CUITabControl::GetButtonById(const shared_str& id)
 
 /*
 const shared_str CUITabControl::GetCommandName(const shared_str& id)
-{ 
+{
 	CUITabButton* tb			= GetButtonById(id);
 	R_ASSERT2					(tb, id.c_str());
 

@@ -57,7 +57,7 @@ void CTrade::RemovePartner()
 }
 
 //// предложение торговли
-//void CTrade::Communicate() 
+//void CTrade::Communicate()
 //{
 //	// Вывести приветствие
 ////	Msg("--TRADE::----------------------------------------------");
@@ -66,7 +66,7 @@ void CTrade::RemovePartner()
 ////	Msg("--TRADE:: - Hello, my name is [%s]", *pThis.base->cName());
 ////	Msg("--TRADE::   Wanna trade with me?" );
 //
-//	if (pPartner.inv_owner->GetTrade()->OfferTrade(pThis)) { 
+//	if (pPartner.inv_owner->GetTrade()->OfferTrade(pThis)) {
 //		StartTrade();
 //	}
 //
@@ -98,24 +98,24 @@ bool CTrade::SetPartner(CEntity* p)
 }
 
 
-//// Man предлагает торговать 
+//// Man предлагает торговать
 //// возвращает true, если данный trader готов торговать с man
 //// т.е. принятие торговли
 //bool CTrade::OfferTrade(SInventoryOwner man)
 //{
 //	StartTrade();
-//	pPartner.Set(man.type,man.base,man.inv_owner); 
-//	
+//	pPartner.Set(man.type,man.base,man.inv_owner);
+//
 //	string64	s;
-//	switch (pPartner.type) 
+//	switch (pPartner.type)
 //	{
 //		case TT_TRADER: xr_strcpy(s, "trader"); break;
-//		case TT_STALKER: 
+//		case TT_STALKER:
 //		case TT_ACTOR: xr_strcpy(s, "stalker"); break;
 //	}
-//	
-//	
-//	switch (pPartner.inv_owner->m_tRank) 
+//
+//
+//	switch (pPartner.inv_owner->m_tRank)
 //	{
 //		case ALife::eStalkerRankNone: xr_strcpy(s,"NO_RANK"); break;
 //		case ALife::eStalkerRankNovice: xr_strcpy(s,"NOVICE"); break;

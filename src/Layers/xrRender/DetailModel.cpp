@@ -95,7 +95,7 @@ void CDetail::Load(IReader* S)
 	number_indices = S->r_u32();
 	R_ASSERT(0==(number_indices%3));
 
-	// Vertices                             
+	// Vertices
 	u32 size_vertices = number_vertices * sizeof(fvfVertexIn);
 	vertices = xr_alloc<CDetail::fvfVertexIn>(number_vertices);
 	S->r(vertices, size_vertices);

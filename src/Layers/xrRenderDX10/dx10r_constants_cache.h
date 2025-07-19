@@ -71,7 +71,7 @@ public:
 
 	// scalars, non-array versions
 	//ICF	void				set		(R_constant* C, float A)
-	//{ 
+	//{
 	//	if (C->destination&RC_dest_pixel)	{ set	(C,C->ps,A, BT_PixelBuffer); }	//  a_pixel.b_dirty=TRUE;		}
 	//	if (C->destination&RC_dest_vertex)	{ set	(C,C->vs,A, BT_VertexBuffer); }	//  a_vertex.b_dirty=TRUE;		}
 	//	if (C->destination&RC_dest_geometry){ set	(C,C->gs,A, BT_GeometryBuffer); }	//  a_vertex.b_dirty=TRUE;		}

@@ -46,16 +46,16 @@ void dx103DFluidVolume::Load(LPCSTR N, IReader* data, u32 dwFlags)
 		Fmatrix		Transform;
 		data->r( &Transform, sizeof(Transform) );
 		m_FluidData.SetTransform(Transform);
-	
+
 		//	Update visibility data
 		vis.box.min = Fvector3().set(-0.5f, -0.5f, -0.5f);
 		vis.box.max = Fvector3().set( 0.5f,  0.5f,  0.5f);
-	
+
 		vis.box.xform(Transform);
-	
+
 		vis.box.getcenter(vis.sphere.P);
 		vis.sphere.R = vis.box.getradius();
-	
+
 		//	Read obstacles
 		u32 uiObstCnt = data->r_u32();
 		for(u32 i=0; i<uiObstCnt; ++i)

@@ -8,7 +8,7 @@ void CRenderTarget::phase_sunshafts()
 	u32 Offset;
 	Fvector2 p0, p1;
 
-	// common 
+	// common
 	struct v_aa
 	{
 		Fvector4 p;
@@ -169,8 +169,8 @@ void CRenderTarget::phase_sunshafts()
 	u_setrt(rt_Generic, 0, 0, HW.pBaseZB);
 #else
 	u_setrt(rt_Generic_0, 0, 0, HW.pBaseZB);
-#endif	
-	
+#endif
+
 	RCache.set_CullMode(CULL_NONE);
 	RCache.set_Stencil(FALSE);
 

@@ -112,7 +112,7 @@ bool CPHAICharacter::TryPosition(Fvector pos, bool exact_state)
 }
 
 /*
-void CPHAICharacter::		SetPosition	(const Fvector &pos)	
+void CPHAICharacter::		SetPosition	(const Fvector &pos)
 {
 	//m_vDesiredPosition.set(pos);
 	inherited::SetPosition(pos);
@@ -149,7 +149,7 @@ void CPHAICharacter::BringToDesired(float time,float velocity,float force)
 	if(vel>velocity)//&&velocity>EPS_L
 		vel=velocity;
 
-	if(velocity<EPS_L/fixed_step) 
+	if(velocity<EPS_L/fixed_step)
 	{
 		vel=0.f;
 		move.set(0,0,0);
@@ -172,7 +172,7 @@ void CPHAICharacter::ValidateWalkOn()
 {
 	//if(b_on_object)
 	//	ValidateWalkOnObject();
-	// else 
+	// else
 	//	 b_clamb_jump=true;
 	inherited::ValidateWalkOn();
 }
@@ -212,7 +212,7 @@ EEnvironment CPHAICharacter::CheckInvironment()
 }
 */
 #ifdef DEBUG
-void	CPHAICharacter::OnRender()	
+void	CPHAICharacter::OnRender()
 {
 	inherited::OnRender();
 #if	0

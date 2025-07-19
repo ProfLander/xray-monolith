@@ -46,7 +46,7 @@ void CTelekinesis::deactivate()
 	active = false;
 
 	// отпустить все объекты
-	// 
+	//
 	for (TELE_OBJECTS_IT it = objects.begin(); it != objects.end(); ++it)
 	{
 		(*it)->release();
@@ -62,7 +62,7 @@ void CTelekinesis::clear_deactivate()
 	active = false;
 
 	// отпустить все объекты
-	// 
+	//
 	for (u32 i = 0; i < objects.size(); i++)
 	{
 		objects[i]->switch_state(TS_None);
@@ -132,7 +132,7 @@ void CTelekinesis::fire_all(const Fvector& target)
 	deactivate();
 }
 
-// бросить объект 'obj' в позицию 'target' с учетом коэф силы 
+// бросить объект 'obj' в позицию 'target' с учетом коэф силы
 void CTelekinesis::fire(CPhysicsShellHolder* obj, const Fvector& target, float power)
 {
 	// найти объект

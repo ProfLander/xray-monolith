@@ -70,7 +70,7 @@ void CWeapon::FireTrace(const Fvector& P, const Fvector& D)
 	CCartridge& l_cartridge = m_magazine.back();
 	//	Msg("ammo - %s", l_cartridge.m_ammoSect.c_str());
 	VERIFY(u16(-1) != l_cartridge.bullet_material_idx);
-	//-------------------------------------------------------------	
+	//-------------------------------------------------------------
 	bool is_tracer = m_bHasTracers && !!l_cartridge.m_flags.test(CCartridge::cfTracer);
 	if (is_tracer && !IsGameTypeSingle())
 		is_tracer = is_tracer /*&& (m_magazine.size() % 3 == 0)*/ && !IsSilencerAttached();
@@ -174,7 +174,7 @@ void CWeapon::FireBullet(const Fvector& pos,
 	bool send_hit, int iShotNum)
 {
 	CShootingObject::FireBullet(pos, shot_dir, fire_disp, cartridge, parent_id, weapon_id, send_hit, iShotNum);
-	
+
 	temperature += sil_glow_shot_temp;
 	if (temperature > sil_glow_max_temp)
 		temperature = sil_glow_max_temp;

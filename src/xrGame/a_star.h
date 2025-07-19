@@ -119,7 +119,7 @@ protected:
 		_data_storage_constructor,
 		_iteration_type
 	> inherited;
-	
+
 public:
 	typedef typename inherited::CDataStorage CDataStorage;
 protected:

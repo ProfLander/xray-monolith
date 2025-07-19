@@ -79,7 +79,7 @@ void CRenderTarget::accum_spot(light* L)
 	RCache.set_ColorWriteEnable();
 	RCache.set_CullMode(CULL_CW); // back
 
-	// 2D texgens 
+	// 2D texgens
 	Fmatrix m_Texgen;
 	u_compute_texgen_screen(m_Texgen);
 	Fmatrix m_Texgen_J;
@@ -170,7 +170,7 @@ void CRenderTarget::accum_spot(light* L)
 		// Fetch4 : enable
 		//		if (RImplementation.o.HW_smap_FETCH4)	{
 		//. we hacked the shader to force smap on S0
-		//#			define FOURCC_GET4  MAKEFOURCC('G','E','T','4') 
+		//#			define FOURCC_GET4  MAKEFOURCC('G','E','T','4')
 		//			HW.pDevice->SetSamplerState	( 0, D3DSAMP_MIPMAPLODBIAS, FOURCC_GET4 );
 		//		}
 
@@ -186,7 +186,7 @@ void CRenderTarget::accum_spot(light* L)
 			RCache.set_Stencil(TRUE, D3DCMP_EQUAL, dwLightMarkerID, 0xff, 0x00);
 			RCache.set_CullMode(D3DCULL_CW);
 			draw_volume(L);
-			// per sample		
+			// per sample
 			if (RImplementation.o.dx10_msaa_opt)
 			{
 				RCache.set_Element(shader_msaa[0]->E[_id]);
@@ -212,7 +212,7 @@ void CRenderTarget::accum_spot(light* L)
 		// Fetch4 : disable
 		//		if (RImplementation.o.HW_smap_FETCH4)	{
 		//. we hacked the shader to force smap on S0
-		//#			define FOURCC_GET1  MAKEFOURCC('G','E','T','1') 
+		//#			define FOURCC_GET1  MAKEFOURCC('G','E','T','1')
 		//			HW.pDevice->SetSamplerState	( 0, D3DSAMP_MIPMAPLODBIAS, FOURCC_GET1 );
 		//		}
 	}
@@ -303,7 +303,7 @@ void CRenderTarget::accum_volumetric(light* L)
 	RCache.set_ColorWriteEnable();
 	RCache.set_CullMode(CULL_NONE); // back
 
-	// 2D texgens 
+	// 2D texgens
 	Fmatrix m_Texgen;
 	u_compute_texgen_screen(m_Texgen);
 	Fmatrix m_Texgen_J;
@@ -395,19 +395,19 @@ void CRenderTarget::accum_volumetric(light* L)
 	//Fvector pt = L->spatial.sphere.P;
 	Device.mView.transform(pt);
 	aabb.setb(pt, rr);
-	/*	
+	/*
 		//	Calculate presise AABB assuming we are drawing for the spot light
 		{
 			aabb.invalidate();
 			Fmatrix	transform;
-			transform.mul( Device.mView, L->m_xform);		 
+			transform.mul( Device.mView, L->m_xform);
 			for (u32 i=0; i<DU_CONE_NUMVERTEX; ++i)
 			{
 				Fvector		pt = du_cone_vertices[i];
 				transform.transform(pt);
 				aabb.modify(pt);
 			}
-			
+
 		}
 	*/
 	// Common constants
@@ -544,8 +544,8 @@ void CRenderTarget::accum_volumetric(light* L)
 		/*
 		float	clip[4];
 		clip[0] = 1;
-		clip[1] = 
-		clip[2] = 
+		clip[1] =
+		clip[2] =
 		clip[3] = 0;
 		HW.pDevice->SetClipPlane( 0, clip);
 		*/
@@ -554,7 +554,7 @@ void CRenderTarget::accum_volumetric(light* L)
 		// Fetch4 : enable
 		//		if (RImplementation.o.HW_smap_FETCH4)	{
 		//. we hacked the shader to force smap on S0
-		//#			define FOURCC_GET4  MAKEFOURCC('G','E','T','4') 
+		//#			define FOURCC_GET4  MAKEFOURCC('G','E','T','4')
 		//			HW.pDevice->SetSamplerState	( 0, D3DSAMP_MIPMAPLODBIAS, FOURCC_GET4 );
 		//		}
 
@@ -568,10 +568,10 @@ void CRenderTarget::accum_volumetric(light* L)
 		if( !RImplementation.o.dx10_msaa )
 			RCache.Render(D3DPT_TRIANGLELIST,0,0,iNumSlises*4,0,iNumSlises*2);
 		else
-		{  
+		{
 			// per pixel
 			RCache.set_Element(shader->E[0]);
-			RCache.set_Stencil(TRUE,D3DCMP_EQUAL,dwLightMarkerID,0xff,0x00);	
+			RCache.set_Stencil(TRUE,D3DCMP_EQUAL,dwLightMarkerID,0xff,0x00);
 			RCache.Render(D3DPT_TRIANGLELIST,0,0,iNumSlises*4,0,iNumSlises*2);
 
 			// per sample
@@ -579,7 +579,7 @@ void CRenderTarget::accum_volumetric(light* L)
 			{
 				// per sample
 				RCache.set_Element	(shader_msaa[0]->E[0]);
-				RCache.set_Stencil(TRUE,D3DCMP_EQUAL,dwLightMarkerID|0x80,0xff,0x00);		
+				RCache.set_Stencil(TRUE,D3DCMP_EQUAL,dwLightMarkerID|0x80,0xff,0x00);
 				RCache.Render(D3DPT_TRIANGLELIST,0,0,iNumSlises*4,0,iNumSlises*2);
 			}
 			else
@@ -588,7 +588,7 @@ void CRenderTarget::accum_volumetric(light* L)
 				{
 					RCache.set_Element	      (shader_msaa[i]->E[0]);
 					StateManager.SetSampleMask ( u32(1) << i );
-					RCache.set_Stencil         (TRUE,D3DCMP_EQUAL,dwLightMarkerID|0x80,0xff,0x00);		
+					RCache.set_Stencil         (TRUE,D3DCMP_EQUAL,dwLightMarkerID|0x80,0xff,0x00);
 					RCache.Render(D3DPT_TRIANGLELIST,0,0,iNumSlises*4,0,iNumSlises*2);
 				}
 				StateManager.SetSampleMask( 0xffffffff );
@@ -600,7 +600,7 @@ void CRenderTarget::accum_volumetric(light* L)
 		// Fetch4 : disable
 		//		if (RImplementation.o.HW_smap_FETCH4)	{
 		//. we hacked the shader to force smap on S0
-		//#			define FOURCC_GET1  MAKEFOURCC('G','E','T','1') 
+		//#			define FOURCC_GET1  MAKEFOURCC('G','E','T','1')
 		//			HW.pDevice->SetSamplerState	( 0, D3DSAMP_MIPMAPLODBIAS, FOURCC_GET1 );
 		//		}
 

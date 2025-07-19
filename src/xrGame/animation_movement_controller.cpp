@@ -160,8 +160,8 @@ void animation_movement_controller::InitalPositionBlending(const Fmatrix& to)
 		Fmatrix res = to;
 		blend_linear_speed  += blend_linear_accel *Device.fTimeDelta ;
 		blend_angular_speed += blend_angular_accel *Device.fTimeDelta ;
-		
-		inital_position_blending = !clamp_change( res, m_pObjXForm, blend_linear_speed*Device.fTimeDelta, blend_angular_speed*Device.fTimeDelta, 0.00001, 0.000001 ); 
+
+		inital_position_blending = !clamp_change( res, m_pObjXForm, blend_linear_speed*Device.fTimeDelta, blend_angular_speed*Device.fTimeDelta, 0.00001, 0.000001 );
 		m_pObjXForm.set( res );
 	*/
 	if (!m_poses_blending.target_reached(m_control_blend->timeCurrent))
@@ -233,7 +233,7 @@ void animation_movement_controller::OnFrame()
 #endif
 
 
-	//m_pKinematicsC->Bone_GetAnimPos( root_pos, m_pKinematicsC->LL_GetBoneRoot( ), u8(-1), true ); 
+	//m_pKinematicsC->Bone_GetAnimPos( root_pos, m_pKinematicsC->LL_GetBoneRoot( ), u8(-1), true );
 	Fmatrix root_pos;
 	animation_root_position(root_pos);
 
@@ -253,7 +253,7 @@ void animation_movement_controller::OnFrame()
 		if( IsActive() && IsBlending() )
 		{
 			m_control_blend->timeCurrent = 0;
-	
+
 			struct scb : public IterateBlendsCallback, private boost::noncopyable
 			{
 				const CBlend &m_control_blend;
@@ -264,7 +264,7 @@ void animation_movement_controller::OnFrame()
 						B.timeCurrent  = m_control_blend.timeCurrent;
 				}
 			} cb( *m_control_blend );
-	
+
 			m_pKinematicsA->LL_IterateBlends(cb);
 		}
 	*/
@@ -282,17 +282,17 @@ void animation_movement_controller::NewBlend(CBlend* B, const Fmatrix& new_matri
 	LPCSTR old_anim_set		= m_pKinematicsC->dcast_PKinematicsAnimated( )->LL_MotionDefName_dbg( ControlBlend( )->motionID ).second;
 	LPCSTR new_anim_name	= m_pKinematicsC->dcast_PKinematicsAnimated( )->LL_MotionDefName_dbg( B->motionID ).first;
 	LPCSTR new_anim_set		= m_pKinematicsC->dcast_PKinematicsAnimated( )->LL_MotionDefName_dbg( B->motionID ).second;
-	
+
 	if( ControlBlend( )->playing )
-		Msg( " ! obj movement anim not yet ended anim: %s anim set: %s \n and already another started anim: %s anim set: %s", 	
+		Msg( " ! obj movement anim not yet ended anim: %s anim set: %s \n and already another started anim: %s anim set: %s",
 			new_anim_name,new_anim_set,old_anim_name,old_anim_set
 			);
 	if( !ControlBlend( )->stop_at_end )
-		Msg( " ! obj movement anim  : %s anim set: %s  is not stop-at-end but fallowed in chain by another obj movement anim: %s anim set: %s", 	
+		Msg( " ! obj movement anim  : %s anim set: %s  is not stop-at-end but fallowed in chain by another obj movement anim: %s anim set: %s",
 			old_anim_name,old_anim_set,new_anim_name,new_anim_set
 			);
 	if( !B->stop_at_end )
-		Msg( " ! obj movement anim  : %s anim set: %s  is not stop-at-end but fallowing after another obj movement anim: %s anim set: %s", 	
+		Msg( " ! obj movement anim  : %s anim set: %s  is not stop-at-end but fallowing after another obj movement anim: %s anim set: %s",
 			new_anim_name,new_anim_set,old_anim_name,old_anim_set
 			);
 #endif
@@ -433,6 +433,6 @@ float change_pos_delta = 0.02f;
 //		m_update_vis_pos = m_pObjXForm.c;
 //		m_pKinematicsC->LL_VisBoxInvalidate();
 //		m_pKinematicsC->CalculateBones_Invalidate( );
-//		m_pKinematicsC->CalculateBones(TRUE);// TRUE 
+//		m_pKinematicsC->CalculateBones(TRUE);// TRUE
 //	}
 //}

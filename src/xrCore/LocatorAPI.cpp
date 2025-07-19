@@ -775,7 +775,7 @@ void CLocatorAPI::_initialize(u32 flags, LPCSTR target_folder, LPCSTR fs_name)
 	else
 	{
 		IReader* pFSltx = setup_fs_ltx(fs_name);
-		// append all pathes    
+		// append all pathes
 		string_path id, root, add, def, capt;
 		const char *lp_add, *lp_def, *lp_capt;
 		string16 b_v;

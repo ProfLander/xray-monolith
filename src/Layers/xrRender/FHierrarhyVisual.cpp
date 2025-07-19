@@ -91,7 +91,7 @@ void FHierrarhyVisual::Load(const char* N, IReader* data, u32 dwFlags)
 }
 
 //--DSR-- HeatVision_start
-void FHierrarhyVisual::MarkAsHot(bool is_hot) 
+void FHierrarhyVisual::MarkAsHot(bool is_hot)
 {
 	dxRender_Visual::MarkAsHot(is_hot);
 	for (u32 i = 0; i < children.size(); i++)

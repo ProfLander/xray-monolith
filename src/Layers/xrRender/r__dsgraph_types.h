@@ -21,7 +21,7 @@
 		typedef T			value_type;
 
 	public:
-		template<class _Other>	
+		template<class _Other>
 		struct rebind			{	typedef doug_lea_alloc<_Other> other;	};
 	public:
 								pointer					address			(reference _Val) const					{	return (&_Val);	}

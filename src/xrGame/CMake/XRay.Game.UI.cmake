@@ -10,10 +10,10 @@ add_module(XRay.Game.UI
 
   UIDosimeter.cpp
   UIDosimeter.h
-  
+
   ui_base.cpp
   ui_base.h
-  
+
   ui_defs.h
 )
 
@@ -51,7 +51,7 @@ add_module(XRay.Game.UI.Common.Inventory.Utilities
   SOURCES
   ui/UIHelper.cpp
   ui/UIHelper.h
-  
+
   ui/UIInventoryUtilities.cpp
   ui/UIInventoryUtilities.h
 )
@@ -219,7 +219,7 @@ add_module(XRay.Game.UI.ItemInfo
 
   ui/UIItemInfo.cpp
   ui/UIItemInfo.h
-  
+
   ui/UIOutfitInfo.cpp
   ui/UIOutfitInfo.h
 
@@ -298,7 +298,7 @@ add_module(XRay.Game.UI.HUD
   SOURCES
   HitMarker.cpp
   HitMarker.h
-  
+
   HUDManager.cpp
   HUDManager.h
 )
@@ -425,7 +425,7 @@ add_module(XRay.Game.UI.Multiplayer.HUD.Stats.TeamStates
 
   UITeamPanels.cpp
   UITeamPanels.h
-  
+
   UITeamState.cpp
   UITeamState.h
 )
@@ -451,7 +451,7 @@ add_module(XRay.Game.UI.Multiplayer.MM-MP.ServerList
   ui/ServerList.h
 
   ui/ServerList_GameSpy_func.cpp
-  
+
   ui/UIListItemServer.cpp
   ui/UIListItemServer.h
 )
@@ -624,7 +624,7 @@ add_module(XRay.Game.UI.Windows.Lines
   SOURCES
   ui/UILine.cpp
   ui/UILine.h
-  
+
   ui/UILines.cpp
   ui/UILines.h
 
@@ -758,7 +758,7 @@ add_module(XRay.Game.UI.Windows.Windows
   ui/UIWindow_script.cpp
   ui/UIWindow.cpp
   ui/UIWindow.h
-  
+
   ui/UIDialogWnd.cpp
   ui/UIDialogWnd.h
 

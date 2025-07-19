@@ -74,7 +74,7 @@ public:
 		BENDER_ANIM_SUCK = 3,
 		BENDER_ANIM_BLOW = 4,
 		BENDER_ANIM_PULSE = 5,
-	}; 
+	};
 
 	void GrassBendersUpdateAnimations();
 	void GrassBendersAddExplosion(u16 id, Fvector position, Fvector3 dir, float fade, float speed, float intensity, float radius);

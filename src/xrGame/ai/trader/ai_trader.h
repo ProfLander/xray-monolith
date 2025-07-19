@@ -98,7 +98,7 @@ public:
 	void OnStartTrade();
 	void OnStopTrade();
 
-	//игровое имя 
+	//игровое имя
 	virtual LPCSTR Name() const { return CInventoryOwner::Name(); }
 
 	virtual bool can_attach(const CInventoryItem* inventory_item) const;

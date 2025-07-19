@@ -109,7 +109,7 @@ bool CLevel::synchronize_client()
 		ClientReceive();
 		Server->Update();
 	} // if OnClient ClientReceive method called in upper invokation
-	//Sleep(5); 
+	//Sleep(5);
 	return !!game_configured;
 }
 

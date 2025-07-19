@@ -144,7 +144,7 @@ void	SFillPropData::load			()
 		}else
 			Msg("! invalid record format in [graph_points_draw_color_palette] %s=%s",N,V);
 	}
-    
+
 	// level names/ids
     VERIFY					(level_ids.empty());
     for (k = 0; Ini->r_line("levels",k,&N,&V); ++k)
@@ -238,10 +238,10 @@ void CSE_ALifeTraderAbstract::FillProps	(LPCSTR pref, PropItemVec& items)
 #	ifdef XRSE_FACTORY_EXPORTS
 	PHelper().CreateU32			(items, PrepareKey(pref,*base()->s_name,"Money"), 	&m_dwMoney,	0, u32(-1));
 	PHelper().CreateFlag32		(items,	PrepareKey(pref,*base()->s_name,"Trader\\Infinite ammo"),&m_trader_flags, eTraderFlagInfiniteAmmo);
-	RListValue *value		= PHelper().CreateRList	(items,	PrepareKey(pref,*base()->s_name,"npc profile"),	 
-		&m_sCharacterProfile, 
+	RListValue *value		= PHelper().CreateRList	(items,	PrepareKey(pref,*base()->s_name,"npc profile"),
+		&m_sCharacterProfile,
 		&*fp_data.character_profiles.begin(), fp_data.character_profiles.size());
-	
+
 	value->OnChangeEvent.bind	(this,&CSE_ALifeTraderAbstract::OnChangeProfile);
 #	endif // #ifdef XRSE_FACTORY_EXPORTS
 }
@@ -348,7 +348,7 @@ static Fvector PT [5] = {
 	du->DrawIndexedPrimitive(2/*D3DPT_LINELIST*/, 8, parent.c, PT, 6, IL, 16, C.get());
 	C.mul_rgba(0.75f);
 	du->DrawIndexedPrimitive(4/*D3DPT_TRIANGLELIST*/, 4, parent.c, PT, 6, IT, 12, C.get());
-	
+
 	if(bSelected)
 		du->DrawSelectionBox(parent.c, Fvector().set(0.5f,1.0f,0.5f),NULL);
 #	endif // #ifdef XRSE_FACTORY_EXPORTS
@@ -521,7 +521,7 @@ void CSE_ALifeObject::FillProps				(LPCSTR pref, PropItemVec& items)
 	if (m_flags.is(flUseSwitches)) {
 		PHelper().CreateFlag32	(items,	PrepareKey(pref,*s_name,"ALife\\Can switch online"),	&m_flags,			flSwitchOnline);
 		PHelper().CreateFlag32	(items,	PrepareKey(pref,*s_name,"ALife\\Can switch offline"),	&m_flags,			flSwitchOffline);
-	}                            
+	}
 	PHelper().CreateFlag32		(items,	PrepareKey(pref,*s_name,"ALife\\Interactive"),			&m_flags,			flInteractive);
 	PHelper().CreateFlag32		(items,	PrepareKey(pref,*s_name,"ALife\\Used AI locations"),	&m_flags,			flUsedAI_Locations);
 	PHelper().CreateRToken32	(items,	PrepareKey(pref,*s_name,"ALife\\Story ID"),				&m_story_id,		&*fp_data.story_names.begin(), fp_data.story_names.size());
@@ -667,7 +667,7 @@ void CSE_ALifeGroupAbstract::UPDATE_Write(NET_Packet& tNetPacket)
 void CSE_ALifeGroupAbstract::FillProps		(LPCSTR pref, PropItemVec& items)
 {
 	PHelper().CreateU16			(items,	PrepareKey(pref, "ALife\\Count"),			&m_wCount,			0,0xff);
-};	
+};
 #endif // #ifndef XRGAME_EXPORTS
 
 ////////////////////////////////////////////////////////////////////////////
@@ -977,7 +977,7 @@ void CSE_ALifeLevelChanger::FillProps		(LPCSTR pref, PropItemVec& items)
 {
 #	ifdef XRSE_FACTORY_EXPORTS
 	inherited::FillProps		(pref,items);
-	
+
 	PHelper().CreateRList		(items,PrepareKey(pref,*s_name,"Level to change"),		&m_caLevelToChange,		&*fp_data.level_ids.begin(), fp_data.level_ids.size());
 	PHelper().CreateRText		(items,PrepareKey(pref,*s_name,"Level point to change"),	&m_caLevelPointToChange);
 
@@ -1053,7 +1053,7 @@ void CSE_ALifeObjectPhysic::STATE_Read(NET_Packet& tNetPacket, u16 size)
 
 	if (m_wVersion < 64)
 	{
-		if (m_wVersion > 39) // > 39 		
+		if (m_wVersion > 39) // > 39
 			tNetPacket.r_u8(_flags.flags);
 
 		if (m_wVersion > 56)
@@ -1189,7 +1189,7 @@ void CSE_ALifeObjectPhysic::UPDATE_Read(NET_Packet& tNetPacket)
 		}*/
 	}
 	prev_freezed = freezed;
-	if (tNetPacket.r_eof()) // in case spawn + update 
+	if (tNetPacket.r_eof()) // in case spawn + update
 	{
 		freezed = false;
 		return;
@@ -1294,7 +1294,7 @@ xr_token po_types[] = {
 };
 
 #ifndef XRGAME_EXPORTS
-void CSE_ALifeObjectPhysic::FillProps		(LPCSTR pref, PropItemVec& values) 
+void CSE_ALifeObjectPhysic::FillProps		(LPCSTR pref, PropItemVec& values)
 {
 	inherited1::FillProps		(pref,	 values);
 	inherited2::FillProps		(pref,	 values);
@@ -1505,7 +1505,7 @@ void CSE_ALifeObjectHangingLamp::FillProps	(LPCSTR pref, PropItemVec& values)
 	PHelper().CreateFlag16		(values, PrepareKey(pref,*s_name,"Flags\\Allow R2"),	&flags,			flR2);
 	P=PHelper().CreateFlag16	(values, PrepareKey(pref,*s_name,"Flags\\Allow Ambient"),&flags,			flPointAmbient);
     P->OnChangeEvent.bind		(this,&CSE_ALifeObjectHangingLamp::OnChangeFlag);
-	// 
+	//
 	P=PHelper().CreateFlag16	(values, PrepareKey(pref,*s_name,"Light\\Type"), 		&flags,				flTypeSpot, "Point", "Spot");
     P->OnChangeEvent.bind		(this,&CSE_ALifeObjectHangingLamp::OnChangeFlag);
 	PHelper().CreateColor		(values, PrepareKey(pref,*s_name,"Light\\Main\\Color"),			&color);

@@ -58,16 +58,16 @@ void CWalmarkManager::AddWallmark(const Fvector& dir, const Fvector& start_pos,
 }
 
 /*
-void CWalmarkManager::PlaceWallmark(const Fvector& dir, const Fvector& start_pos, 
+void CWalmarkManager::PlaceWallmark(const Fvector& dir, const Fvector& start_pos,
 									  float trace_dist, float wallmark_size,
 									  SHADER_VECTOR& wallmarks_vector,CObject* ignore_obj)
 {
 	collide::rq_result	result;
-	BOOL				reach_wall = 
+	BOOL				reach_wall =
 		Level().ObjectSpace.RayPick(
 		start_pos,
 		dir,
-		trace_dist, 
+		trace_dist,
 		collide::rqtBoth,
 		result,
 		ignore_obj
@@ -126,7 +126,7 @@ void CWalmarkManager::StartWorkflow()
 		DBG_OpenCashedDraw		();
 		DBG_DrawAABB			(m_pos,Fvector().set(m_trace_dist,m_trace_dist,m_trace_dist),D3DCOLOR_XRGB(255,0,0));
 		DBG_DrawAABB			(m_pos,Fvector().set(0.05f,0.05f,0.05f),D3DCOLOR_XRGB(0,255,0));
-		
+
 		CTimer T; T.Start();
 	*/
 	for (CDB::RESULT* Res = R_begin; Res != R_end; ++Res)
@@ -156,7 +156,7 @@ void CWalmarkManager::StartWorkflow()
 		float dist = Distance(m_pos, _tri, pfSParam, pfTParam, end_point, pdir);
 
 
-		/*		
+		/*
 				if (c==tdBehind){
 					++_tri_behind;
 					continue;
@@ -195,7 +195,7 @@ void CWalmarkManager::StartWorkflow()
 		Msg	("c!=tdPlane && dist>ndist = %d",	_tri_not_plane);
 		Msg("Wallmarks added = %d",				wm_count);
 		Msg("Time: %d",							T.GetElapsed_ms());
-	
+
 		DBG_ClosedCashedDraw	(10000);
 	*/
 }

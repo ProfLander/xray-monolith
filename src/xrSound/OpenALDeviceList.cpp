@@ -1,17 +1,17 @@
 /*
  * Copyright (c) 2005, Creative Labs Inc.
  * All rights reserved.
- * 
+ *
  * Redistribution and use in source and binary forms, with or without modification, are permitted provided
  * that the following conditions are met:
- * 
+ *
  *     * Redistributions of source code must retain the above copyright notice, this list of conditions and
  * 	     the following disclaimer.
  *     * Redistributions in binary form must reproduce the above copyright notice, this list of conditions
  * 	     and the following disclaimer in the documentation and/or other materials provided with the distribution.
  *     * Neither the name of Creative Labs Inc. nor the names of its contributors may be used to endorse or
  * 	     promote products derived from this software without specific prior written permission.
- * 
+ *
  * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED
  * WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A
  * PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR
@@ -42,7 +42,7 @@ ALDeviceList::ALDeviceList()
 	Enumerate();
 }
 
-/* 
+/*
  * Exit call
  */
 ALDeviceList::~ALDeviceList()
@@ -79,7 +79,7 @@ void ALDeviceList::Enumerate()
 		Msg("SOUND: OpenAL: system  default SndDevice name is %s", m_defaultDeviceName);
 
 		// ManowaR
-		// "Generic Hardware" device on software AC'97 codecs introduce 
+		// "Generic Hardware" device on software AC'97 codecs introduce
 		// high CPU usage ( up to 30% ) as a consequence - freezes, FPS drop
 		// So if default device is "Generic Hardware" which maps to DirectSound3D interface
 		// We re-assign it to "Generic Software" to get use of old good DirectSound interface

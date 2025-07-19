@@ -16,7 +16,7 @@ void CUIProgressBar::script_register(lua_State* L)
 		.def("GetRange_min", &CUIProgressBar::GetRange_min)
 		.def("GetRange_max", &CUIProgressBar::GetRange_max)
 		.def("SetRange", &CUIProgressBar::SetRange)
-		
+
 		// Tronex
 		.def("ShowBackground", &CUIProgressBar::ShowBackground)
 		.def("SetColor", &CUIProgressBar::SetColor)

@@ -3,7 +3,7 @@
 //	Created 	: 22.05.2003
 //  Modified 	: 23.09.2003
 //	Author		: Serge Zhem
-//	Description : Animations for monsters of biting class 
+//	Description : Animations for monsters of biting class
 ////////////////////////////////////////////////////////////////////////////
 
 #include "stdafx.h"

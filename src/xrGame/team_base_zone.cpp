@@ -149,7 +149,7 @@ bool CTeamBaseZone::feel_touch_contact(CObject* O)
 
 #ifdef DEBUG
 extern	Flags32	dbg_net_Draw_Flags;
-void CTeamBaseZone::OnRender() 
+void CTeamBaseZone::OnRender()
 {
 	if(!bDebug) return;
 	if (!(dbg_net_Draw_Flags.is_any(dbg_draw_teamzone))) return;
@@ -158,8 +158,8 @@ void CTeamBaseZone::OnRender()
 	Fmatrix l_ball, l_box;
 	xr_vector<CCF_Shape::shape_def> &l_shapes = ((CCF_Shape*)CFORM())->Shapes();
 	xr_vector<CCF_Shape::shape_def>::iterator l_pShape;
-	
-	for(l_pShape = l_shapes.begin(); l_shapes.end() != l_pShape; ++l_pShape) 
+
+	for(l_pShape = l_shapes.begin(); l_shapes.end() != l_pShape; ++l_pShape)
 	{
 		switch(l_pShape->type)
 		{

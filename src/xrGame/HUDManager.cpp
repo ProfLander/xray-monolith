@@ -372,7 +372,7 @@ ICF static BOOL pick_trace_callback(collide::rq_result& result, LPVOID params)
 		{
 			return TRUE;
 		}
-		//.		if (mtl->Flags.is(SGameMtl::flPassable)) 
+		//.		if (mtl->Flags.is(SGameMtl::flPassable))
 		//.			return TRUE;
 	}
 	pp->result = result;

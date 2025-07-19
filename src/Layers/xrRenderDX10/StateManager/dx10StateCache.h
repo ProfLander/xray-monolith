@@ -15,7 +15,7 @@ public:
 	IDeviceState* GetState(SimulatorStates& state_code);
 	IDeviceState* GetState(StateDecs& desc);
 	//	Can be called on device destruction only!
-	//	dx10State holds weak links on manager's states and 
+	//	dx10State holds weak links on manager's states and
 	//	won't understand that state was destroyed
 	//void	FlushStates();
 	//	Private functionality

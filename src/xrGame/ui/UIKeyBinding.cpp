@@ -105,7 +105,7 @@ void CUIKeyBinding::CheckStructure(CUIXml& xml_doc)
 {
 	bool first = true;
 	CUITextWnd*	pItem = false;
-	
+
 	for (int i=0; true; i++)
 	{
 		LPCSTR action_name = actions[i].action_name;
@@ -126,7 +126,7 @@ void CUIKeyBinding::CheckStructure(CUIXml& xml_doc)
 					pItem->SetAutoDelete	(true);
 					m_scroll_wnd->AddWindow	(pItem, true);
 				}
-				
+
 				pItem						= xr_new<CUITextWnd>();
 				pItem->SetWndPos			(Fvector2().set(0,0));
 				pItem->SetWndSize			(Fvector2().set(m_scroll_wnd->GetWndSize().x,20.0f));
@@ -136,7 +136,7 @@ void CUIKeyBinding::CheckStructure(CUIXml& xml_doc)
 			}
 		}
 		else
-			break;				
+			break;
 	}
 }
 

@@ -24,7 +24,7 @@
 #include "ai/monsters/basemonster/base_monster.h"
 #include "script_game_object.h"
 
-//константы ShootFactor, определяющие 
+//константы ShootFactor, определяющие
 //поведение пули при столкновении с объектом
 #define RICOCHET_THRESHOLD		0.1
 #define STUCK_THRESHOLD			0.4
@@ -32,7 +32,7 @@
 //расстояния не пролетев которого пуля не трогает того кто ее пустил
 extern float gCheckHitK;
 
-//test callback функция 
+//test callback функция
 //  object - object for testing
 //return TRUE-тестировать объект / FALSE-пропустить объект
 BOOL CBulletManager::test_callback(const collide::ray_defs& rd, CObject* object, LPVOID params)
@@ -64,7 +64,7 @@ BOOL CBulletManager::test_callback(const collide::ray_defs& rd, CObject* object,
 				Fsphere S = cform->getSphere();
 				entity->XFORM().transform_tiny(S.P);
 				float dist = rd.range;
-				// проверим попали ли мы в описывающую сферу 
+				// проверим попали ли мы в описывающую сферу
 				if (Fsphere::rpNone != S.intersect_full(bullet->bullet_pos, bullet->dir, dist))
 				{
 					// да попали, найдем кто стрелял
@@ -160,9 +160,9 @@ BOOL CBulletManager::test_callback(const collide::ray_defs& rd, CObject* object,
 	return bRes;
 }
 
-//callback функция 
+//callback функция
 //	result.O;		// 0-static else CObject*
-//	result.range;	// range from start to element 
+//	result.range;	// range from start to element
 //	result.element;	// if (O) "num tri" else "num bone"
 //	params;			// user defined abstract data
 //	Device.Statistic.TEST0.End();
@@ -356,7 +356,7 @@ void CBulletManager::DynamicObjectHit(CBulletManager::_event& E)
 		Hit.weaponID = E.bullet.weapon_id;
 		Hit.BulletID = E.bullet.m_dwID;
 		Hit.GenHeader(u16((AddStatistic) ? GE_HIT_STATISTIC : GE_HIT) & 0xffff, E.R.O->ID());
-		
+
 		NET_Packet np;
 		Hit.Write_Packet(np);
 
@@ -435,7 +435,7 @@ bool CBulletManager::ObjectHit(SBullet_Hit* hit_res, SBullet* bullet, const Fvec
 
 	hit_res->power = bullet->hit_param.power * speed_factor;
 
-	//(Если = 0, то пуля либо рикошетит(если контакт идёт по касательной), либо застряёт в текущем 
+	//(Если = 0, то пуля либо рикошетит(если контакт идёт по касательной), либо застряёт в текущем
 	//объекте, если больше 0, то пуля прошивает объект)
 
 	SGameMtl* mtl = GMLib.GetMaterialByIdx(target_material);

@@ -13,7 +13,7 @@ class CInvisibility
 
 	bool m_manual;
 
-	bool m_active; // 
+	bool m_active; //
 	float m_energy; // [0..1]
 	float m_speed; // energy change speed (external)
 

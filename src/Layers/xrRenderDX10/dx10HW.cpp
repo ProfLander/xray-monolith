@@ -581,7 +581,7 @@ void CHW::CreateDevice(HWND hwnd, bool move_window)
 
     // NOTE: this seems required to get the default render target to match the swap chain resolution
     // probably the sequence ResizeTarget, ResizeBuffers, and UpdateViews is important
-    
+
     // u32	memory									= pDevice->GetAvailableTextureMem	();
     if (strstr(Core.Params, dxgiOld)) {
         Msg("* %s enabled", dxgiOld);
@@ -599,7 +599,7 @@ void CHW::CreateDevice(HWND hwnd, bool move_window)
         Reset(hwnd);
         fill_vid_mode_list(this);
     }
-    
+
 
     // #ifndef _EDITOR
     //    updateWindowProps(hwnd); // Reset() does this as well
@@ -1027,7 +1027,7 @@ void CHW::OnAppDeactivate()
 	{
 		if (use_reshade)
             unregister_reshade();
-		
+
         m_pSwapChain->SetFullscreenState(FALSE, NULL);
 
 #ifdef USE_DX11

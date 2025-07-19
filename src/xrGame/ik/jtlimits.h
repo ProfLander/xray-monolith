@@ -91,8 +91,8 @@ enum { SinJtLimit, CosJtLimit };
 // A simple joint limit is one of the form
 //
 // cos(theta) or sin(theta) = a*cos(psi) + b*sin(psi) + c
-// 
-// where x theta the joint variable and psi is the elbow 
+//
+// where x theta the joint variable and psi is the elbow
 // swivel angle
 //
 //
@@ -102,9 +102,9 @@ enum { SinJtLimit, CosJtLimit };
 // quadrants I,IV and quadrants II,III. If the psi
 // equation represents the cos of theta, then the
 // two families lie in quadrants I,II and quadrants
-// III,IV. 
+// III,IV.
 //
-// For a given set of bounds on theta there are two 
+// For a given set of bounds on theta there are two
 // sets of bounds on psi one for each family
 //
 
@@ -206,8 +206,8 @@ public:
 // Given two psi equations that represents equations of the
 // form
 //
-// sin(theta)*(cos(x) or sin(x)) = a1*cos(psi) + b1*sin(psi) + c1 
-// cos(theta)*(cos(x) or sin(x)) = a2*cos(psi) + b2*sin(psi) + c2 
+// sin(theta)*(cos(x) or sin(x)) = a1*cos(psi) + b1*sin(psi) + c1
+// cos(theta)*(cos(x) or sin(x)) = a2*cos(psi) + b2*sin(psi) + c2
 //
 // Find two sets of psi intervals that satisfy the joint limits
 // on theta
@@ -222,7 +222,7 @@ public:
 // theta = atan2(a1*cos(psi) + b1*sin(psi) + c1,
 //               a2*cos(psi) + b2*sin(psi) + c2)
 //
-// 
+//
 // pos_interval indicates an angle interval for psi in which
 // sin(x) or cos(x) is positive
 //
@@ -240,7 +240,7 @@ public:
 
 //
 // or of the form
-// 
+//
 // sin(theta)*cos(gamma) = a1*cos(psi) + b1*sin(psi) + c1
 // cos(theta)*cos(gamma) = a2*cos(psi) + b2*sin(psi) + c2
 // sin(gamma) = a3*cos(psi) + b3*sin(psi) + c3
@@ -251,7 +251,7 @@ class ComplexJtLimit
 private:
 	PsiEquation cos_eq; // cos(theta) equation
 	PsiEquation sin_eq; // sin(theta) equation
-	PsiEquation eq; // gamma equation 
+	PsiEquation eq; // gamma equation
 	int type; // Whether eq is a sin or cos of gamma
 	PsiEquation deriv; // Derivative of sin_eq/cos_eq without denom
 	AngleInt limits;
@@ -260,9 +260,9 @@ private:
 	float theta1_d_aux(float v, float delta) const;
 
 #if 0
-    void clip(int family, 
-	      float psi0, float psi1, 
-	      float low, float high, 
+    void clip(int family,
+	      float psi0, float psi1,
+	      float low, float high,
 	      AngleIntList &a) const;
 #else
 	void clip(float low, float high,
@@ -345,9 +345,9 @@ public:
 	// Given a joint limit, return a set of joint limits
 	// for psi. psi1 contains valid regions for the first
 	// family, and psi2 contains valid regions for the
-	// second family. 
+	// second family.
 
-	// For efficiency take in the singular pts as a 
+	// For efficiency take in the singular pts as a
 	// paramter in case this routine is called repeatedly
 	// the singular pts are only computed once.
 
@@ -359,7 +359,7 @@ public:
 
 	//
 	// Returns the values of psi for which tan(theta) = 0
-	// 
+	//
 	int CritPoints(float psi[2]) const;
 
 	//
