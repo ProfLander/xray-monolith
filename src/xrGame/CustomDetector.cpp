@@ -1,4 +1,4 @@
-﻿#include "stdafx.h"
+#include "stdafx.h"
 #include "customdetector.h"
 #include "ui/ArtefactDetectorUI.h"
 #include "hudmanager.h"

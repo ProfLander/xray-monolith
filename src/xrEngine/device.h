@@ -1,4 +1,4 @@
-﻿#ifndef xr_device
+#ifndef xr_device
 #define xr_device
 #pragma once
 

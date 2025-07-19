@@ -1,4 +1,4 @@
-﻿#include "stdafx.h"
+#include "stdafx.h"
 #include "customdevice.h"
 #include "inventory.h"
 #include "actor.h"

@@ -1,4 +1,4 @@
-﻿#include "stdafx.h"
+#include "stdafx.h"
 #include "WeaponSSRS.h"
 #include "entity.h"
 #include "explosiveRocket.h"

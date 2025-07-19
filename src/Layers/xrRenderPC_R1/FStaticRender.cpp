@@ -1,4 +1,4 @@
-﻿// CRender.cpp: implementation of the CRender class.
+// CRender.cpp: implementation of the CRender class.
 //
 //////////////////////////////////////////////////////////////////////
 
