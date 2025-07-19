@@ -201,22 +201,22 @@ Example below of appending text to existing text in element
 
 ```lua
 function on_xml_read()
-	RegisterScriptCallback("on_xml_read", function(xml_file_name, xml_obj)
-		if xml_file_name == [[text\eng\_game_version.xml]]
-		or xml_file_name == [[text\rus\_game_version.xml]]
-		then
-			-- Find string element with "id=ui_st_game_version" text inside it
-			local res = xml_obj:query("string[id=ui_st_game_version] > text")
-			if res[1] then
-				local el = res[1]
-				local el_text = xml_obj:getText(el)
-				if el_text then
-					-- Set new text
-					xml_obj:setText(el, el_text .. ". Modified exes (DLTX, DXML, Shader Scopes, SSS)")
-				end
-			end
-		end
-	end)
+    RegisterScriptCallback("on_xml_read", function(xml_file_name, xml_obj)
+        if xml_file_name == [[text\eng\_game_version.xml]]
+        or xml_file_name == [[text\rus\_game_version.xml]]
+        then
+            -- Find string element with "id=ui_st_game_version" text inside it
+            local res = xml_obj:query("string[id=ui_st_game_version] > text")
+            if res[1] then
+                local el = res[1]
+                local el_text = xml_obj:getText(el)
+                if el_text then
+                    -- Set new text
+                    xml_obj:setText(el, el_text .. ". Modified exes (DLTX, DXML, Shader Scopes, SSS)")
+                end
+            end
+        end
+    end)
 end
 ```
 
@@ -248,16 +248,16 @@ To remove attributes of element, use `removeElementAttr` function
 
 ```lua
 function on_xml_read()
-	RegisterScriptCallback("on_xml_read", function(xml_file_name, xml_obj)
-		if xml_file_name == [[ui\ui_inventory.xml]]
-		then
-			local res = xml_obj:query("player > money")
-			if res[1] then
-				local el = res[1]
-				xml_obj:setElementAttr(el, {x=20, y=60})
-			end
-		end
-	end)
+    RegisterScriptCallback("on_xml_read", function(xml_file_name, xml_obj)
+        if xml_file_name == [[ui\ui_inventory.xml]]
+        then
+            local res = xml_obj:query("player > money")
+            if res[1] then
+                local el = res[1]
+                xml_obj:setElementAttr(el, {x=20, y=60})
+            end
+        end
+    end)
 end
 ```
 
