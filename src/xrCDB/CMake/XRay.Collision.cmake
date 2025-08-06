@@ -46,6 +46,7 @@ add_module(XRay.Collision
 
 target_compile_options(XRay.Collision
   PRIVATE
+  $<$<CXX_COMPILER_ID:MSVC>:/permissive->
   $<$<CXX_COMPILER_ID:MSVC>:/wd4458>
 )
 
