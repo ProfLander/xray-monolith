@@ -18,3 +18,8 @@ add_module(XRay.XMLParser
   xrXMLParser.cpp
   xrXMLParser.h
 )
+
+target_compile_options(XRay.XMLParser
+  PRIVATE
+  $<$<CXX_COMPILER_ID:MSVC>:/permissive->
+)
