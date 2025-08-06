@@ -81,6 +81,7 @@ endif()
 
 target_compile_options(XRay.Sound
   PRIVATE
+  $<$<CXX_COMPILER_ID:MSVC>:/permissive->
   $<$<CXX_COMPILER_ID:MSVC>:/wd4005>
   $<$<CXX_COMPILER_ID:MSVC>:/wd4995>
 )
