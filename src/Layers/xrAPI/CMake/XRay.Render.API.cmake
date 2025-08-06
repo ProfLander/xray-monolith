@@ -15,3 +15,8 @@ add_module(XRay.Render.API
   xrAPI.cpp
   xrAPI.h
 )
+
+target_compile_options(XRay.Render.API
+  PRIVATE
+  $<$<CXX_COMPILER_ID:MSVC>:/permissive->
+)
