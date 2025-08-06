@@ -556,8 +556,12 @@ IC T1 smart_cast(T2* p)
 #ifdef PURE_DYNAMIC_CAST_COMPATIBILITY_CHECK
 	STATIC_CHECK(object_type_traits::is_pointer<T1>::value, Invalid_target_type_for_Dynamic_Cast);
 	STATIC_CHECK(
-		object_type_traits::is_void<object_type_traits::remove_pointer<T1>::type>::value || is_polymorphic<
-		object_type_traits::remove_pointer<T1>::type>::result, Invalid_target_type_for_Dynamic_Cast);
+		object_type_traits::is_void<typename object_type_traits::remove_pointer<T1>::type>::value ||
+		is_polymorphic<
+			typename object_type_traits::remove_pointer<T1>::type
+		>::result,
+		Invalid_target_type_for_Dynamic_Cast
+	);
 	STATIC_CHECK(is_polymorphic<T2>::result, Invalid_source_type_for_Dynamic_Cast);
 #endif
 #ifdef SMART_CAST_STATS_ALL
