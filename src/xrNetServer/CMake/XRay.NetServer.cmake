@@ -49,6 +49,11 @@ add_module(XRay.NetServer
   NET_Shared.h
 )
 
+target_compile_options(XRay.NetServer
+  PRIVATE
+  $<$<CXX_COMPILER_ID:MSVC>:/permissive->
+)
+
 set_source_files_properties(
   NET_Server.cpp
   PROPERTIES
