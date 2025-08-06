@@ -248,6 +248,7 @@ void CRender::ScreenshotImpl(ScreenshotMode mode, LPCSTR name, CMemoryWriter* me
 
 #else	//	USE_DX10
 
+#define END(...) { _RELEASE(pFB); return; }
 void CRender::ScreenshotImpl(ScreenshotMode mode, LPCSTR name, CMemoryWriter* memory_writer)
 {
 	if (!Device.b_is_Ready) return;
@@ -261,10 +262,10 @@ void CRender::ScreenshotImpl(ScreenshotMode mode, LPCSTR name, CMemoryWriter* me
 	if (FAILED(hr)) return;
 
 	hr = HW.pDevice->GetRenderTargetData(HW.pBaseRT, pFB);
-	if (FAILED(hr)) goto _end_;
+	if (FAILED(hr)) END();
 
 	hr = pFB->LockRect(&D, 0, D3DLOCK_NOSYSLOCK);
-	if (FAILED(hr)) goto _end_;
+	if (FAILED(hr)) END();
 
 	// Image processing (gamma-correct)
 	u32* pPixel = (u32*)D.pBits;
@@ -278,7 +279,7 @@ void CRender::ScreenshotImpl(ScreenshotMode mode, LPCSTR name, CMemoryWriter* me
 	}
 
 	hr = pFB->UnlockRect();
-	if (hr != D3D_OK) goto _end_;
+	if (hr != D3D_OK) END();
 
 
 	// Save
@@ -290,22 +291,22 @@ void CRender::ScreenshotImpl(ScreenshotMode mode, LPCSTR name, CMemoryWriter* me
 			ID3DTexture2D* texture = NULL;
 			hr = D3DXCreateTexture(HW.pDevice,GAMESAVE_SIZE,GAMESAVE_SIZE, 1, 0, D3DFMT_DXT1, D3DPOOL_SCRATCH,
 			                       &texture);
-			if (hr != D3D_OK) goto _end_;
-			if (NULL == texture) goto _end_;
+			if (hr != D3D_OK) END();
+			if (NULL == texture) END();
 
 			// resize&convert to surface
 			IDirect3DSurface9* surface = 0;
 			hr = texture->GetSurfaceLevel(0, &surface);
-			if (hr != D3D_OK) goto _end_;
+			if (hr != D3D_OK) END();
 			VERIFY(surface);
 			hr = D3DXLoadSurfaceFromSurface(surface, 0, 0, pFB, 0, 0,D3DX_DEFAULT, 0);
 			_RELEASE(surface);
-			if (hr != D3D_OK) goto _end_;
+			if (hr != D3D_OK) END();
 
 			// save (logical & physical)
 			ID3DBlob* saved = 0;
 			hr = D3DXSaveTextureToFileInMemory(&saved, D3DXIFF_DDS, texture, 0);
-			if (hr != D3D_OK) goto _end_;
+			if (hr != D3D_OK) END();
 
 			IWriter* fs = FS.w_open(name);
 			if (fs)
@@ -325,22 +326,22 @@ void CRender::ScreenshotImpl(ScreenshotMode mode, LPCSTR name, CMemoryWriter* me
 			ID3DTexture2D* texture = NULL;
 			hr = D3DXCreateTexture(HW.pDevice,SM_FOR_SEND_WIDTH,SM_FOR_SEND_HEIGHT, 1, 0, D3DFMT_R8G8B8,
 			                       D3DPOOL_SCRATCH, &texture);
-			if (hr != D3D_OK) goto _end_;
-			if (NULL == texture) goto _end_;
+			if (hr != D3D_OK) END();
+			if (NULL == texture) END();
 
 			// resize&convert to surface
 			IDirect3DSurface9* surface = 0;
 			hr = texture->GetSurfaceLevel(0, &surface);
-			if (hr != D3D_OK) goto _end_;
+			if (hr != D3D_OK) END();
 			VERIFY(surface);
 			hr = D3DXLoadSurfaceFromSurface(surface, 0, 0, pFB, 0, 0,D3DX_DEFAULT, 0);
 			_RELEASE(surface);
-			if (hr != D3D_OK) goto _end_;
+			if (hr != D3D_OK) END();
 
 			// save (logical & physical)
 			ID3DBlob* saved = 0;
 			hr = D3DXSaveTextureToFileInMemory(&saved, D3DXIFF_DDS, texture, 0);
-			if (hr != D3D_OK) goto _end_;
+			if (hr != D3D_OK) END();
 
 			if (!memory_writer)
 			{
@@ -394,7 +395,7 @@ void CRender::ScreenshotImpl(ScreenshotMode mode, LPCSTR name, CMemoryWriter* me
 			hr = pFB->LockRect(&D, 0,D3DLOCK_NOSYSLOCK);
 			if (hr != D3D_OK) return;
 			hr = pFB->UnlockRect();
-			if (hr != D3D_OK) goto _end_;
+			if (hr != D3D_OK) END();
 
 			// save
 			u32* data = (u32*)xr_malloc(Device.dwHeight * Device.dwHeight * 4);
@@ -411,10 +412,8 @@ void CRender::ScreenshotImpl(ScreenshotMode mode, LPCSTR name, CMemoryWriter* me
 		}
 		break;
 	}
-
-_end_:
-	_RELEASE(pFB);
 }
+#undef END
 
 #endif	//	USE_DX10
 
