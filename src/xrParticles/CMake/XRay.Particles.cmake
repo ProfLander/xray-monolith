@@ -39,3 +39,8 @@ add_module(XRay.Particles
   particle_effect.h
   particle_manager.h
 )
+
+target_compile_options(XRay.Particles
+  PRIVATE
+  $<$<CXX_COMPILER_ID:MSVC>:/permissive->
+)
