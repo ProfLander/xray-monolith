@@ -8,6 +8,8 @@
 
 #pragma once
 
+#include <FixedVector.h>
+
 struct CCloner
 {
 	template <typename T>
@@ -55,9 +57,9 @@ struct CCloner
 	IC static void clone(const svector<T, size>& _1, svector<T, size>& _2)
 	{
 		_2.resize(_1.size());
-		svector<T, size>::iterator J = _2.begin();
-		svector<T, size>::const_iterator I = _1.begin();
-		svector<T, size>::const_iterator E = _1.end();
+		auto J = _2.begin();
+		auto I = _1.begin();
+		auto E = _1.end();
 		for (; I != E; ++I, ++J)
 			clone(*I, *J);
 	}
@@ -76,7 +78,7 @@ struct CCloner
 
 		for (; !_2.empty(); _2.pop())
 		{
-			std::queue<T1, T2>::value_type t;
+			typename std::queue<T1, T2>::value_type t;
 			CCloner::clone(_2.front(), t);
 			__2.push(t);
 		}
@@ -96,7 +98,7 @@ struct CCloner
 
 		for (; !_2.empty(); _2.pop())
 		{
-			T1<T2, T3>::value_type t;
+			typename T1<T2, T3>::value_type t;
 			CCloner::clone(_2.top(), t);
 			__2.push(t);
 		}
@@ -116,7 +118,7 @@ struct CCloner
 
 		for (; !_2.empty(); _2.pop())
 		{
-			T1<T2, T3, T4>::value_type t;
+			typename T1<T2, T3, T4>::value_type t;
 			CCloner::clone(_2.top(), t);
 			__2.push(t);
 		}
@@ -152,11 +154,11 @@ struct CCloner
 		IC static void clone(const T& _1, T& _2)
 		{
 			_2.clear();
-			T::const_iterator I = _1.begin();
-			T::const_iterator E = _1.end();
+			auto I = _1.begin();
+			auto E = _1.end();
 			for (; I != E; ++I)
 			{
-				T::value_type t;
+				typename T::value_type t;
 				CCloner::clone(*I, t);
 				add(_2, t);
 			}

@@ -56,8 +56,8 @@ struct CSaver
 		IC static void save_data(const T& data, M& stream, const P& p)
 		{
 			stream.w_u32((u32)data.size());
-			T::const_iterator I = data.begin();
-			T::const_iterator E = data.end();
+			auto I = data.begin();
+			auto E = data.end();
 			for (; I != E; ++I)
 				if (p(data, *I))
 					CSaver<M, P>::save_data(*I, stream, p);

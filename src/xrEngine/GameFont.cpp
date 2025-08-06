@@ -29,7 +29,7 @@ CGameFont::CGameFont(LPCSTR section, u32 flags)
 
 	const auto FindTextureName = [&](LPCSTR _sect)
 	{
-		static char* tex_names[] = { "texture800", "texture", "texture1600", "texture2160" };
+		static const char* tex_names[] = { "texture800", "texture", "texture1600", "texture2160" };
 		int idx = 1;
 		u32 h = Device.dwHeight;
 		if (h <= 600) idx = 0;

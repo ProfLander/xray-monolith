@@ -17,7 +17,7 @@ namespace text_editor
 
 	class base;
 
-	enum key_state // Flags32
+	enum key_state : u32 // Flags32
 	{
 		ks_free = u32(0),
 		ks_LShift = u32(1) << 0,

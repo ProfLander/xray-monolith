@@ -121,7 +121,7 @@ public:
 	// assignment
 	self& operator=(const self& rhs)
 	{
-		_set(rhs);
+		this->_set(rhs);
 		return (self&)*this;
 	}
 

@@ -196,7 +196,7 @@ public:
 		{
 			u32 old = size();
 			clear_and_free();
-			reserve(old);
+			inherited::reserve(old);
 		}
 	}
 
