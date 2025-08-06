@@ -18,6 +18,11 @@ target_link_libraries(TinyXML
   XRay.XMLParser.Includes
 )
 
+target_compile_options(TinyXML
+  PRIVATE
+  $<$<CXX_COMPILER_ID:MSVC>:/permissive->
+)
+
 target_precompile_headers(TinyXML
   PRIVATE
   #[["xrCore.h"]]
