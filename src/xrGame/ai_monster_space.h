@@ -132,7 +132,7 @@ namespace MonsterSpace
 		eAnimSoundDefault,
 	};
 
-	enum EMonsterHeadAnimType
+	enum EMonsterHeadAnimType : u32
 	{
 		eHeadAnimNormal = u32(0),
 		eHeadAnimAngry,

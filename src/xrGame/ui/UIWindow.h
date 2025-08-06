@@ -1,5 +1,6 @@
 #pragma once
-#include "../xr_level_controller.h"
+
+#include <xr_level_controller.h>
 
 class UIHint;
 class CScriptXmlInit;
@@ -78,8 +79,8 @@ public:
 		ui_allocator.destroy(p_);
 	}
 
-	void construct(pointer p, const T& _Val) { std::_Construct(p, _Val); }
-	void destroy(pointer p) { std::_Destroy(p); }
+	void construct(pointer p, const T& _Val) { T(p, _Val); }
+	void destroy(pointer p) { ~T(p); }
 
 	size_type max_size() const
 	{

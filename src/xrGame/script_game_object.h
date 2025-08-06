@@ -79,7 +79,7 @@ namespace MonsterSpace {
 	enum EScriptMonsterGlobalAction;
 	enum EScriptSoundAnim;
 	enum EMonsterSounds;
-	enum EMonsterHeadAnimType;
+	enum EMonsterHeadAnimType : u32;
 	struct SBoneRotation;
 };
 

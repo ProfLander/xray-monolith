@@ -8,6 +8,7 @@
 
 #pragma once
 
+#include "ai_space.h"
 #include "script_export_space.h"
 
 #define AI_MAX_EVALUATION_FUNCTION_COUNT	128

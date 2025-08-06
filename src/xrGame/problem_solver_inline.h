@@ -8,6 +8,8 @@
 
 #pragma once
 
+#include "graph_engine_space.h"
+
 #define TEMPLATE_SPECIALIZATION template<\
 	typename _operator_condition,\
 	typename _operator,\
@@ -96,7 +98,7 @@ IC bool CProblemSolverAbstract::actual() const
 TEMPLATE_SPECIALIZATION
 IC void CProblemSolverAbstract::add_operator(const _edge_type& operator_id, _operator_ptr _operator)
 {
-	OPERATOR_VECTOR::iterator I = std::lower_bound(m_operators.begin(), m_operators.end(), operator_id);
+	auto I = std::lower_bound(m_operators.begin(), m_operators.end(), operator_id);
 	THROW((I == m_operators.end()) || ((*I).m_operator_id != operator_id));
 #ifdef DEBUG
 	validate_properties			(_operator->conditions());
@@ -124,7 +126,7 @@ IC	void CProblemSolverAbstract::validate_properties	(const CState &conditions) c
 TEMPLATE_SPECIALIZATION
 IC void CProblemSolverAbstract::remove_operator(const _edge_type& operator_id)
 {
-	OPERATOR_VECTOR::iterator I = std::lower_bound(m_operators.begin(), m_operators.end(), operator_id);
+	auto I = std::lower_bound(m_operators.begin(), m_operators.end(), operator_id);
 	THROW(m_operators.end() != I);
 	try
 	{
@@ -174,7 +176,7 @@ IC void CProblemSolverAbstract::add_evaluator(const _condition_type& condition_i
 TEMPLATE_SPECIALIZATION
 IC void CProblemSolverAbstract::remove_evaluator(const _condition_type& condition_id)
 {
-	EVALUATORS::iterator I = m_evaluators.find(condition_id);
+	auto I = m_evaluators.find(condition_id);
 	THROW(I != m_evaluators.end());
 	try
 	{
@@ -192,7 +194,7 @@ TEMPLATE_SPECIALIZATION
 IC typename CProblemSolverAbstract::_condition_evaluator_ptr CProblemSolverAbstract::evaluator(
 	const _condition_type& condition_id) const
 {
-	EVALUATORS::const_iterator I = evaluators().find(condition_id);
+	auto I = evaluators().find(condition_id);
 	THROW(evaluators().end() != I);
 	return ((*I).second);
 }
@@ -368,7 +370,7 @@ IC const xr_vector<typename CProblemSolverAbstract::_edge_type>&CProblemSolverAb
 TEMPLATE_SPECIALIZATION
 IC typename CProblemSolverAbstract::_operator_ptr CProblemSolverAbstract::get_operator(const _edge_type& operator_id)
 {
-	OPERATOR_VECTOR::iterator I = std::lower_bound(m_operators.begin(), m_operators.end(), operator_id);
+	auto I = std::lower_bound(m_operators.begin(), m_operators.end(), operator_id);
 	if (m_operators.end() == I) return 0;
 	THROW(m_operators.end() != I);
 	return ((*I).get_operator());

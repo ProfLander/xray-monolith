@@ -7,6 +7,8 @@
 
 #pragma once
 
+#include "xr_ini.h"
+
 //T_ID, T_INDEX -	тип индекса и id
 
 //ITEM_DATA		-	структура с полями id и index типа T_ID и T_INDEX,
@@ -123,7 +125,7 @@ CSINI_IdToIndex::~CIni_IdToIndex()
 TEMPLATE_SPECIALIZATION
 const typename ITEM_DATA* CSINI_IdToIndex::GetById(const T_ID& str_id, bool no_assert)
 {
-	T_VECTOR::iterator it = m_pItemDataVector->begin();
+	auto it = m_pItemDataVector->begin();
 	for (; m_pItemDataVector->end() != it; ++it)
 	{
 		if (!xr_strcmp((*it).id, str_id))

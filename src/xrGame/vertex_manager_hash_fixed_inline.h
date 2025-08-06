@@ -8,6 +8,8 @@
 
 #pragma once
 
+#include "graph_engine.h"
+
 #define TEMPLATE_SPECIALIZATION \
 	template <\
 		typename _path_id_type,\

@@ -8,6 +8,8 @@
 
 #pragma once
 
+#include "macros.h"
+
 #define TEMPLATE_SPECIALIZATION \
 	template <\
 		typename _dist_type,\
@@ -156,8 +158,8 @@ IC bool CSDijkstra::step(_PathManager& path_manager)
 	data_storage().remove_best_opened();
 
 	// iterating on the best node neighbours
-	_PathManager::const_iterator i;
-	_PathManager::const_iterator e;
+	typename _PathManager::const_iterator i;
+	typename _PathManager::const_iterator e;
 	path_manager.begin(best.index(), i, e);
 	for (; i != e; ++i)
 	{

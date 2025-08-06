@@ -4,6 +4,7 @@
 
 #include "_matrix.h"
 #include "_vector3d.h"
+#include "MathUtils.h"
 #include "xrPhysics.h"
 
 struct dContactGeom;

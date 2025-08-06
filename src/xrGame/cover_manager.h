@@ -8,10 +8,9 @@
 
 #pragma once
 
-#include "profiler.h"
 #include "quadtree.h"
-
-class CCoverPoint;
+#include "cover_point.h"
+#include "profiler.h"
 
 namespace LevelGraph
 {

@@ -90,7 +90,7 @@ IC void CSingleLinkedList::decrease_opened(CGraphVertex& vertex, const _dist_typ
 		m_list_head->next() = &vertex;
 	}
 	else
-		for (i = m_list_head; ; i = i->next())
+		for (auto i = m_list_head; ; i = i->next())
 			if (i->next()->f() >= vertex.f())
 			{
 				vertex.next() = i->next();
@@ -129,11 +129,11 @@ IC typename CSingleLinkedList::CGraphVertex&CSingleLinkedList::get_best() const
 			best_prev = i;
 		}
 
-	VERIFY(best_prev);
-	if (best_prev != m_list_head)
+	VERIFY(this->best_prev);
+	if (this->best_prev != m_list_head)
 	{
-		CGraphVertex* best = best_prev->next();
-		best_prev->next() = best->next();
+		CGraphVertex* best = this->best_prev->next();
+		this->best_prev->next() = best->next();
 		best->next() = m_list_head->next();
 		m_list_head->next() = best;
 	}

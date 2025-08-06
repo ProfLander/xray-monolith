@@ -8,6 +8,8 @@
 
 #pragma once
 
+#include "game_graph.h"
+
 IC CGameGraph& CAI_Space::game_graph() const
 {
 	VERIFY(m_game_graph);
