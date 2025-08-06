@@ -233,7 +233,7 @@ IC typename _associative_vector::insert_result _associative_vector::insert(const
 	actualize();
 	bool found = true;
 	iterator I = lower_bound(value.first);
-	if (I == end() || operator()(value.first, (*I).first))
+	if (I == end() || (*this)(value.first, (*I).first))
 	{
 		I = inherited::insert(I, value);
 		found = false;
@@ -255,7 +255,7 @@ IC typename _associative_vector::iterator _associative_vector::insert(iterator w
 	)
 		return (inherited::insert(where, value));
 
-	return (insert(val).first);
+	return (insert(this->val).first);
 }
 
 TEMPLATE_SPECIALIZATION
@@ -296,7 +296,7 @@ IC typename _associative_vector::const_iterator _associative_vector::find(const 
 	if (I == end())
 		return (end());
 
-	if (operator()(key, (*I).first))
+	if ((*this)(key, (*I).first))
 		return (end());
 
 	return (I);
@@ -355,19 +355,19 @@ IC bool _associative_vector::operator<(const self_type& right) const
 TEMPLATE_SPECIALIZATION
 IC bool _associative_vector::operator<=(const self_type& right) const
 {
-	return !(right < left);
+	return !(right < this->left);
 }
 
 TEMPLATE_SPECIALIZATION
 IC bool _associative_vector::operator>(const self_type& right) const
 {
-	return (right < left);
+	return (right < this->left);
 }
 
 TEMPLATE_SPECIALIZATION
 IC bool _associative_vector::operator>=(const self_type& right) const
 {
-	return !(left < right);
+	return !(this->left < right);
 }
 
 TEMPLATE_SPECIALIZATION
@@ -379,7 +379,7 @@ IC bool _associative_vector::operator==(const self_type& right) const
 TEMPLATE_SPECIALIZATION
 IC bool _associative_vector::operator!=(const self_type& right) const
 {
-	return !(left == right);
+	return !(this->left == right);
 }
 
 #undef TEMPLATE_SPECIALIZATION

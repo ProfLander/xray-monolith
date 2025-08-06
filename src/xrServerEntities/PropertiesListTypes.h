@@ -577,8 +577,8 @@ public:
 	                                                       dec(decim)
 	{
 		clamp(*val, lim_mn, lim_mx);
-		value = val;
-		init_value = *value;
+		this->value = val;
+		this->init_value = *this->value;
 	};
 
 	bool ApplyValue(const T& _val)
@@ -709,16 +709,16 @@ public:
 		return draw_val;
 	}
 
-	virtual bool Equal(PropValue* val) { return !!value->equal(*((FlagValue<T>*)val)->value, mask); }
-	virtual const T& GetValue() { return *value; }
-	virtual void ResetValue() { value->set(mask, init_value.is(mask)); }
-	virtual bool GetValueEx() { return !!value->is(mask); }
+	virtual bool Equal(PropValue* val) { return !!this->value->equal(*((FlagValue<T>*)val)->value, mask); }
+	virtual const T& GetValue() { return *this->value; }
+	virtual void ResetValue() { this->value->set(mask, this->init_value.is(mask)); }
+	virtual bool GetValueEx() { return !!this->value->is(mask); }
 
 	bool ApplyValue(const T& val)
 	{
-		if (!val.equal(*value, mask))
+		if (!val.equal(*this->value, mask))
 		{
-			value->set(mask, val.is(mask));
+			this->value->set(mask, val.is(mask));
 			return true;
 		}
 		return false;
@@ -754,7 +754,7 @@ public:
 	{
 		xr_string draw_val;
 		if (!OnDrawText.empty()) OnDrawText(this, draw_val);
-		else for (int i = 0; token[i].name; i++) if (token[i].id == (int)GetValue()) return token[i].name;
+		else for (int i = 0; token[i].name; i++) if (token[i].id == (int)this->GetValue()) return token[i].name;
 		return draw_val;
 	}
 };
@@ -786,7 +786,7 @@ public:
 	{
 		xr_string draw_val;
 		if (!OnDrawText.empty()) OnDrawText(this, draw_val);
-		else for (u32 k = 0; k < token_count; k++) if ((T)token[k].id == GetValue()) return *token[k].name;
+		else for (u32 k = 0; k < token_count; k++) if ((T)token[k].id == this->GetValue()) return *token[k].name;
 		return draw_val;
 	}
 };

@@ -46,6 +46,11 @@ add_module(XRay.Game
   xrGame.cpp
 )
 
+target_compile_options(XRay.Game
+  PRIVATE
+  $<$<CXX_COMPILER_ID:MSVC>:/permissive->
+)
+
 include(XRay.Game.AI)
 include(XRay.Game.Core)
 include(XRay.Game.Physics)
