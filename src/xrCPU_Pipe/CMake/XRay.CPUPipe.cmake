@@ -43,6 +43,7 @@ add_module(XRay.CPUPipe
 
 target_compile_options(XRay.CPUPipe
   PRIVATE
+  $<$<CXX_COMPILER_ID:MSVC>:/permissive->
   $<$<CXX_COMPILER_ID:MSVC>:/wd4005>
 )
 
