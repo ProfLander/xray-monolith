@@ -35,3 +35,8 @@ add_module(XRay.Core.Crypto
   crypto/xr_dsa_verifyer.cpp
   crypto/xr_dsa_verifyer.h
 )
+
+target_compile_options(XRay.Core.Crypto
+  PRIVATE
+  $<$<CXX_COMPILER_ID:MSVC>:/permissive->
+)
