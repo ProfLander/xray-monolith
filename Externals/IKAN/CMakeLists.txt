@@ -24,6 +24,7 @@ target_link_libraries(IKAN
 
 target_compile_options(IKAN
   PRIVATE
+  $<$<CXX_COMPILER_ID:MSVC>:/permissive->
   $<$<CXX_COMPILER_ID:MSVC>:/wd4996>
   $<$<CXX_COMPILER_ID:MSVC>:/wd5033>
 )
