@@ -1,3 +1,5 @@
+#include <_stl_extensions.h>
+
 #include "Physics.h"
 #include "PHShell.h"
 #include "PHShellSplitter.h"

@@ -1,6 +1,7 @@
 #ifndef XRCDB_H
 #define XRCDB_H
 
+#include <_fbox.h>
 #include <log.h>
 #include <xrSyncronize.h>
 

@@ -9,6 +9,7 @@
 //class ENGINE_API CResourceManager;
 //class ENGINE_API CGammaControl;
 
+#include <_stl_extensions.h>
 #include <build_config_defines.h>
 #include <fastdelegate.h>
 #include <ftimer.h>
@@ -263,7 +264,10 @@ public:
 
 	// Mode control
 	void DumpFlags();
+
+	#pragma warning(disable : 4366)
 	IC CTimer_paused* GetTimerGlobal() { return &TimerGlobal; }
+	
 	u32 TimerAsync() { return TimerGlobal.GetElapsed_ms(); }
 	u32 TimerAsync_MMT() { return TimerMM.GetElapsed_ms() + Timer_MM_Delta; }
 

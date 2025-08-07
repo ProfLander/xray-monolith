@@ -8,8 +8,17 @@
 #include <hash_map>
 #include <hash_set>
 
+#include "_types.h"
 #include "_type_traits.h"
-#include "vector.h"
+#include "_std_extensions.h"
+#include "_vector2.h"
+#include "_vector3d.h"
+#include "_vector4.h"
+#include "_quaternion.h"
+#include "_matrix.h"
+#include "_rect.h"
+#include "_plane.h"
+#include "_color.h"
 #include "xrMemory.h"
 
 using std::swap;
@@ -160,6 +169,7 @@ private:
 public:
 	typedef allocator allocator_type;
 	typedef const T& const_reference;
+	typedef T& reference;
 
 public:
 	xr_vector() : inherited()
@@ -177,11 +187,11 @@ public:
 	u32 size() const { return (u32)inherited::size(); }
 
 	void clear_and_free() { inherited::clear(); }
-	void clear_not_free() { erase(begin(), end()); }
+	void clear_not_free() { erase(inherited::begin(), inherited::end()); }
 
 	void clear_and_reserve()
 	{
-		if (capacity() <= (size() + size() / 4)) clear_not_free();
+		if (inherited::capacity() <= (size() + size() / 4)) clear_not_free();
 		else
 		{
 			u32 old = size();
@@ -196,24 +206,24 @@ public:
     void clear() { clear_not_free(); }
 #endif
 
-	const_reference operator[](size_type _Pos) const
+	const_reference operator[](inherited::size_type _Pos) const
 	{
 		{
 			VERIFY2(_Pos < size(),
 			        make_string("index is out of range: index requested[%d], size of container[%d]", _Pos, size()).c_str
 			        ());
 		}
-		return (*(begin() + _Pos));
+		return (*(inherited::begin() + _Pos));
 	}
 
-	reference operator[](size_type _Pos)
+	reference operator[](inherited::size_type _Pos)
 	{
 		{
 			VERIFY2(_Pos < size(),
 			        make_string("index is out of range: index requested[%d], size of container[%d]", _Pos, size()).c_str
 			        ());
 		}
-		return (*(begin() + _Pos));
+		return (*(inherited::begin() + _Pos));
 	}
 };
 
@@ -226,7 +236,7 @@ private:
 
 public:
 	u32 size() const { return (u32)inherited::size(); }
-	void clear() { erase(begin(), end()); }
+	void clear() { erase(inherited::begin(), inherited::end()); }
 };
 
 template <typename allocator>
@@ -237,7 +247,7 @@ private:
 
 public:
 	u32 size() const { return (u32)inherited::size(); }
-	void clear() { erase(begin(), end()); }
+	void clear() { erase(inherited::begin(), inherited::end()); }
 };
 
 // deque

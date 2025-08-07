@@ -2,6 +2,7 @@
 #define XRENGINE_ISPATIAL_H_INCLUDED
 #pragma once
 
+#include <_sphere.h>
 #include <FTimer.h>
 #include <xrPool.h>
 

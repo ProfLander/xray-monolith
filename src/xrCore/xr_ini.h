@@ -1,10 +1,10 @@
 #ifndef xr_iniH
 #define xr_iniH
 
-#include <clsid.h>
-
-#include "xrstring.h"
+#include "_flags.h"
+#include "clsid.h"
 #include "fastdelegate.h"
+#include "xrstring.h"
 
 #ifdef USE_ROBINHOOD
 #include "robin_hood.h"

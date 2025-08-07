@@ -2,9 +2,13 @@
 #define PhysicsShellH
 #pragma once
 
-#include <xrstring.h>
+#include <_flags.h>
+#include <_obb.h>
+#include <_cylinder.h>
+#include <_sphere.h>
 #include <alife_space.h>
 #include <iphysicsshell.h>
+#include <xrstring.h>
 
 #include "xrPhysics.h"
 #include "PHDefs.h"

@@ -8,8 +8,14 @@ add_module(XRay.Particles
   tbb
   
   XRay.Core.Defines
+  XRay.Engine.Defines
+
   XRay.Core.Includes
+  XRay.Engine.Includes
   XRay.CPUPipe.Includes
+  XRay.ServerEntities.Includes
+  XRay.Render.API.Includes
+  XRay.Render.Common.Includes
 
   PRECOMPILES
   #[["xrCore.h"]]

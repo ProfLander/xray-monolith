@@ -921,17 +921,8 @@ public:
 		xyz.mul(-1.f);
 	}
 
-	IC SelfRef hud_to_world()
-	{
-		Device.hud_to_world(*this);
-		return *this;
-	}
-
-	IC SelfRef world_to_hud()
-	{
-		Device.world_to_hud(*this);
-		return *this;
-	}
+	IC SelfRef hud_to_world();
+	IC SelfRef world_to_hud();
 };
 
 typedef _matrix<float> Fmatrix;

@@ -3,6 +3,21 @@
 
 #include <_matrix.h>
 #include <_quaternion.h>
+#include <device.h>
+
+template<class T>
+IC _matrix<T>& _matrix<T>::hud_to_world()
+{
+	Device.hud_to_world(*this);
+	return *this;
+}
+
+template<class T>
+IC _matrix<T>& _matrix<T>::world_to_hud()
+{
+	Device.world_to_hud(*this);
+	return *this;
+}
 
 template <class T>
 IC _matrix<T>& _matrix<T>::rotation(const _quaternion<T>& Q)

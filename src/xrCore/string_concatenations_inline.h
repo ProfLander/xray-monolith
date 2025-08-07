@@ -1,3 +1,5 @@
+#include "xrstring.h"
+
 namespace xray
 {
 	namespace core

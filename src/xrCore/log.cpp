@@ -87,7 +87,7 @@ std::string timeInHMSMMM()
 }
 
 BOOL logTimestamps = FALSE;
-enum Console_mark;
+enum Console_mark : char;
 extern bool is_console_mark(Console_mark type);
 
 void AddOne(const char* split)

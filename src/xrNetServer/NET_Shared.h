@@ -4,6 +4,7 @@
 
 #include <dplay/dplay8.h>
 
+#include <_flags.h>
 #include <FTimer.h>
 #include <net_utils.h>
 

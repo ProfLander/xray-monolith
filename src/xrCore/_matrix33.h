@@ -1,6 +1,8 @@
 #ifndef _matrix33H_
 #define _matrix33H_
 
+#include "_matrix.h"
+
 template <class T>
 struct _matrix33
 {

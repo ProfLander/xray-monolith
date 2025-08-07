@@ -3,6 +3,8 @@
 
 #pragma once
 
+#include "_flags.h"
+
 enum FS_List
 {
 	FS_ListFiles = (1 << 0),

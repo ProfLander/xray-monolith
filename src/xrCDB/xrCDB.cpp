@@ -3,6 +3,7 @@
 
 #include <opcode.h>
 
+#include "_math.h"
 #include "xrCDB.h"
 #include "profiler.h"
 

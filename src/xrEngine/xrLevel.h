@@ -1,6 +1,7 @@
 #ifndef xrLevelH
 #define xrLevelH
 
+#include <_fbox.h>
 #include <string_concatenations.h>
 #include <xr_ini.h>
 

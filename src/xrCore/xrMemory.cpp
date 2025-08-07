@@ -1,5 +1,6 @@
 #include <malloc.h>
 
+#include "_math.h"
 #include "xrMemory.h"
 #include "xrMemory_pure.h"
 #include "xrsharedmem.h"

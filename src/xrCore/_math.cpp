@@ -11,6 +11,7 @@
 #include "_math.h"
 #include "_matrix.h"
 #include "_random.h"
+#include "_compressed_normal.h"
 #include "cpuid.h"
 #include "log.h"
 #include "profiler.h"

@@ -1,5 +1,6 @@
 #include "_stl_extensions.h"
 #include "_vector3d.h"
+#include "_sphere.h"
 
 class Miniball;
 class Basis;

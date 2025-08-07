@@ -2,6 +2,10 @@
 #ifndef BoneH
 #define BoneH
 
+#include <_flags.h>
+#include <_obb.h>
+#include <_cylinder.h>
+#include <_sphere.h>
 #include <FS.h>
 
 class IReader;

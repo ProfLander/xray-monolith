@@ -1,6 +1,7 @@
 #ifndef _RENDER_H_
 #define _RENDER_H_
 
+#include <_fbox2.h>
 #include <FactoryPtr.h>
 #include <xrAPI.h>
 #include <xr_resource.h>

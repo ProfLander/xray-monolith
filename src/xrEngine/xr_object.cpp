@@ -186,7 +186,7 @@ float CObject::Radius() const
 //const Fbox& CObject::BoundingBox () const { VERIFY2(renderable.visual,*cName()); return renderable.visual->vis.box; }
 const Fbox& CObject::BoundingBox() const
 {
-	static const Fbox NULL_BOX = Fbox{}.null();
+	static const Fbox NULL_BOX = Fbox{}.set_zero();
 	VERIFY2(renderable.visual, *cName());
 	return renderable.visual ? renderable.visual->getVisData().box : NULL_BOX;
 }

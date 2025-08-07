@@ -1,5 +1,6 @@
 #pragma once
 
+#include <math_funcs.h>
 #include <xr_ini.h>
 #include <xr_trims.h>
 

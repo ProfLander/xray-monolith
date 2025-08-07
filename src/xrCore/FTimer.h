@@ -2,7 +2,9 @@
 #define FTimerH
 #pragma once
 
-#include <log.h>
+#include "_stl_extensions.h"
+#include "_math.h"
+#include "log.h"
 
 class CTimer_paused;
 

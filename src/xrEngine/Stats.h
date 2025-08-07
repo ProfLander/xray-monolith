@@ -8,6 +8,8 @@
 
 class ENGINE_API CGameFont;
 
+#include <_flags.h>
+
 #include "FactoryPtr.h"
 #include "StatsRender.h"
 

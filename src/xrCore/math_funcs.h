@@ -135,4 +135,25 @@ IC float angle_inertion_var(float src, float tgt, float min_speed, float max_spe
 	return src;
 }
 
+// linear interpolation
+template <class T>
+inline constexpr T _lerp(const T& _val_a, const T& _val_b, const float& _factor)
+{
+	return (_val_a * (1.0f - _factor)) + (_val_b * _factor);
+}
+
+template <class T>
+inline constexpr T _lerpc(const T& _val_a, const T& _val_b, const float& _factor)
+{
+	float factor_c = clampr(_factor, 0.0f, 1.0f);
+	return (_val_a * (1.0 - factor_c)) + (_val_b * factor_c);
+}
+
+// inertion
+IC float _inertion(float _val_cur, float _val_trgt, float _friction)
+{
+	float friction_i = 1.f - _friction;
+	return _val_cur * _friction + _val_trgt * friction_i;
+}
+
 #endif //_XRCORE_MATH_FUNCS_

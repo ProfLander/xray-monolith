@@ -10,6 +10,7 @@
 # include <malloc.h>
 #endif // DEBUG
 
+#include "_math.h"
 #include "FileSystem.h"
 #include "LocatorAPI.h"
 #include "string_concatenations.h"

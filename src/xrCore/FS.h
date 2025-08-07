@@ -8,6 +8,9 @@
 #include <xrstring.h>
 #include <xrMemory.h>
 
+#include "_compressed_normal.h"
+#include "math_funcs.h"
+
 #define CFS_CompressMark (1ul << 31ul)
 #define CFS_HeaderChunkID (666)
 

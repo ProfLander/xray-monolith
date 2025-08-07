@@ -8,6 +8,8 @@
 
 #pragma once
 
+#include <math_funcs.h>
+
 IC float CLevelGraph::distance(const Fvector& position, const Fvector& point0, const Fvector& point1) const
 {
 	Fvector c, V;

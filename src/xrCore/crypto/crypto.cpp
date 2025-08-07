@@ -2,6 +2,7 @@
 #include <openssl/rand.h>
 #include <openssl/dsa.h>
 
+#include "_math.h"
 #include "crypto.h"
 #include "xrMemory.h"
 

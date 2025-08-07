@@ -8,6 +8,8 @@
 
 #pragma once
 
+#include <_compressed_normal.h>
+
 IC CLevelGraph::const_vertex_iterator CLevelGraph::begin() const
 {
 	return (m_nodes);

@@ -1,5 +1,6 @@
 #include <xmmintrin.h>
 
+#include <_math.h>
 #include <Opcode.h>
 
 #include "xrCDB.h"

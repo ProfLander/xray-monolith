@@ -6,6 +6,8 @@
 //	Description : Script float vector script export
 ////////////////////////////////////////////////////////////////////////////
 
+#include <_vector3d_ext.h>
+
 #include "pch_script.h"
 #include "script_fvector.h"
 

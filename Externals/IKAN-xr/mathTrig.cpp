@@ -30,6 +30,7 @@
 
  */
 
+#include "math_funcs.h"
 #include "mathTrig.h"
 
 //

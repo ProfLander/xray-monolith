@@ -52,6 +52,7 @@ add_module(XRay.Core
 
 target_compile_options(XRay.Core
   PRIVATE
+  $<$<CXX_COMPILER_ID:MSVC>:/permissive->
   $<$<CXX_COMPILER_ID:MSVC>:/wd4244>
 )
 

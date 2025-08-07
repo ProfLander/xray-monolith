@@ -2,11 +2,17 @@ add_module(XRay.Core.Crypto
   TYPE STATIC
 
   LINKS
+  loki
   OpenSSL
 
   XRay.Core.Defines
+  XRay.Engine.Defines
   
   XRay.Core.Includes
+  XRay.Engine.Includes
+  XRay.Render.API.Includes
+  XRay.Render.Common.Includes
+  XRay.ServerEntities.Includes
 
   DEFINES
   CRYPTO_BUILD

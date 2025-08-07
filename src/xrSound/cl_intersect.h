@@ -2,6 +2,11 @@
 #ifndef intersectH
 #define intersectH
 
+#include <_fbox.h>
+#include <_sphere.h>
+#include <_obb.h>
+#include <_matrix33.h>
+
 #include "resource.h"
 
 namespace CDB

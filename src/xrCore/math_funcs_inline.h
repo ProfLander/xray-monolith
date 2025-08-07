@@ -1,6 +1,8 @@
 #ifndef _XRCORE_MATH_FUNCS_INLINE_
 #define _XRCORE_MATH_FUNCS_INLINE_
 
+#include "_bitwise.h"
+
 // comparisions
 IC BOOL fsimilar(float a, float b, float cmp = EPS) { return _abs(a - b) < cmp; }
 IC BOOL dsimilar(double a, double b, double cmp = EPS) { return _abs(a - b) < cmp; }

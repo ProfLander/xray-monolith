@@ -1,8 +1,7 @@
 #ifndef logH
 #define logH
 
-#include <windows.h>
-
+#include "_stl_extensions.h"
 #include "xrstring.h"
 
 #define VPUSH(a) ((a).x), ((a).y), ((a).z)

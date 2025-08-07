@@ -661,7 +661,7 @@ NO_LOOP:
 	return pc;
 }
 
-
+#define RESTART_MODEL(...) { return RestoreModelRare(pc1, MinContext, FSuccessor); }
 static inline void UpdateModel(PPM_CONTEXT* MinContext)
 {
 	PPM_CONTEXT::STATE* p = NULL;
@@ -706,7 +706,7 @@ static inline void UpdateModel(PPM_CONTEXT* MinContext)
 	{
 		FoundState->Successor = CreateSuccessors(TRUE, p, MinContext);
 		if (!FoundState->Successor)
-			goto RESTART_MODEL;
+			RESTART_MODEL()
 		MaxContext = FoundState->Successor;
 		return;
 	}
@@ -716,7 +716,7 @@ static inline void UpdateModel(PPM_CONTEXT* MinContext)
 	PPM_CONTEXT* Successor = (PPM_CONTEXT*)pText;
 
 	if (pText >= UnitsStart)
-		goto RESTART_MODEL;
+		RESTART_MODEL()
 
 
 	if (FSuccessor)
@@ -730,7 +730,7 @@ static inline void UpdateModel(PPM_CONTEXT* MinContext)
 	}
 
 	if (!FSuccessor)
-		goto RESTART_MODEL;
+		RESTART_MODEL()
 
 
 	if (!--OrderFall)
@@ -754,7 +754,7 @@ static inline void UpdateModel(PPM_CONTEXT* MinContext)
 			{
 				p = (PPM_CONTEXT::STATE*)ExpandUnits(pc1->Stats, (ns1 + 1) >> 1);
 				if (!p)
-					goto RESTART_MODEL;
+					RESTART_MODEL()
 				pc1->Stats = p;
 			}
 			pc1->SummFreq += (3 * ns1 + 1 < ns);
@@ -763,7 +763,7 @@ static inline void UpdateModel(PPM_CONTEXT* MinContext)
 		{
 			p = (PPM_CONTEXT::STATE*)AllocUnits(1);
 			if (!p)
-				goto RESTART_MODEL;
+				RESTART_MODEL()
 
 			StateCpy(*p, pc1->oneState());
 			pc1->Stats = p;
@@ -796,9 +796,6 @@ static inline void UpdateModel(PPM_CONTEXT* MinContext)
 
 	MaxContext = FSuccessor;
 	return;
-
-RESTART_MODEL:
-	RestoreModelRare(pc1, MinContext, FSuccessor);
 }
 
 // Tabulated escapes for exponential symbol distribution

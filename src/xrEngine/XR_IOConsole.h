@@ -61,7 +61,7 @@ struct TipString
 };
 
 // demonized: export console mark enum outside of CConsole class
-enum Console_mark // (int)=char
+enum Console_mark : char // (int)=char
 {
 	no_mark = ' ',
 	mark0 = '~',
