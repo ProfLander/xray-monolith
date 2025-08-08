@@ -49,6 +49,8 @@ struct SafemodeAnm
 class CWeapon : public CHudItemObject,
                 public CShootingObject
 {
+	friend class CWeaponGrenadeLauncher;
+	
 private:
 	typedef CHudItemObject inherited;
 

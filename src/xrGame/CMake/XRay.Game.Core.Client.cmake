@@ -1038,6 +1038,12 @@ add_module(XRay.Game.Core.Client.Objects.ItemsWeapons.Weapons.Various.RG6
   WeaponRG6.h
 )
 
+add_module(XRay.Game.Core.Client.Objects.ItemsWeapons.Weapons.Various.GrenadeLauncher
+  SOURCES
+  WeaponGrenadeLauncher.cpp
+  WeaponGrenadeLauncher.h
+)
+
 add_module(XRay.Game.Core.Client.Objects.ItemsWeapons.Weapons.Various.Shotgun
   SOURCES
   WeaponShotgun.cpp

@@ -1,7 +1,7 @@
 #pragma once
 #include "weaponmagazined.h"
 #include "rocketlauncher.h"
-
+#include "WeaponGrenadeLauncher.h"
 
 class CWeaponFakeGrenade;
 
