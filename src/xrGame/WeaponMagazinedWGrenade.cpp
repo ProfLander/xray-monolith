@@ -403,6 +403,13 @@ void CWeaponMagazinedWGrenade::LaunchGrenade()
 	if (!getRocketCount()) return;
 	R_ASSERT(m_bGrenadeMode);
 	CWeaponGrenadeLauncher::LaunchGrenade(this);
+	if (Local() && OnServer())
+	{
+		VERIFY(m_magazine.size());
+		m_magazine.pop_back();
+		--iAmmoElapsed;
+		VERIFY((u32) iAmmoElapsed == m_magazine.size());
+	};
 }
 
 void CWeaponMagazinedWGrenade::OnMagazineEmpty()

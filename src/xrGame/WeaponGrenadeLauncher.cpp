@@ -131,11 +131,6 @@ void CWeaponGrenadeLauncher::LaunchGrenade(CWeapon* wpn)
 
     if (wpn->Local() && OnServer())
     {
-        VERIFY(wm->m_magazine.size());
-        wm->m_magazine.pop_back();
-        --wm->iAmmoElapsed;
-        VERIFY((u32) wpn->iAmmoElapsed == wm->m_magazine.size());
-
         NET_Packet P;
         wpn->u_EventGen(P, GE_LAUNCH_ROCKET, wpn->ID());
         P.w_u16(rl->getCurrentRocket()->ID());
