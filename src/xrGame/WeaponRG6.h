@@ -11,6 +11,9 @@ class CWeaponRG6 : public CRocketLauncher,
 	typedef CRocketLauncher inheritedRL;
 	typedef CWeaponShotgun inheritedSG;
 
+private:
+	virtual bool is_grenade();
+
 public:
 	virtual ~CWeaponRG6();
 	virtual BOOL net_Spawn(CSE_Abstract* DC);

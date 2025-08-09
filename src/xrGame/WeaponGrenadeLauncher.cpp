@@ -11,6 +11,29 @@
 #include "ExplosiveRocket.h"
 #include "xrDebug.h"
 
+BOOL g_launcher_dynamic_range = FALSE;
+BOOL g_launcher_dynamic_range_zoom = TRUE;
+BOOL g_launcher_dynamic_range_mode = FALSE;
+float g_launcher_dynamic_range_max = 300.0f;
+
+BOOL CWeaponGrenadeLauncher::use_dynamic_range(CWeapon* wpn)
+{
+    if (wpn->IsZoomed())
+    {
+        return g_launcher_dynamic_range_zoom;
+    }
+
+    return g_launcher_dynamic_range;
+}
+
+collide::rq_target CWeaponGrenadeLauncher::get_rq_target()
+{
+    if(g_launcher_dynamic_range_mode)
+        return collide::rqtBoth;
+    
+    return collide::rqtStatic;
+}
+
 void CWeaponGrenadeLauncher::LaunchGrenade(CWeapon* wpn)
 {
     CWeaponMagazined* wm = smart_cast<CWeaponMagazined*>(wpn);
@@ -52,13 +75,13 @@ void CWeaponGrenadeLauncher::LaunchGrenade(CWeapon* wpn)
 
     launch_matrix.c.set(p1);
 
-    if (IsGameTypeSingle() && wpn->IsZoomed() && smart_cast<CActor*>(wpn->H_Parent()))
+    if (IsGameTypeSingle() && use_dynamic_range(wpn) && smart_cast<CActor*>(wpn->H_Parent()))
     {
         wpn->H_Parent()->setEnabled(FALSE);
         wpn->setEnabled(FALSE);
 
         collide::rq_result RQ;
-        BOOL HasPick = Level().ObjectSpace.RayPick(p1, d, 300.0f, collide::rqtStatic, RQ, wpn);
+        BOOL HasPick = Level().ObjectSpace.RayPick(p1, d, g_launcher_dynamic_range_max, get_rq_target(), RQ, wpn);
 
         wpn->setEnabled(TRUE);
         wpn->H_Parent()->setEnabled(TRUE);

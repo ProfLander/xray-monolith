@@ -16,6 +16,11 @@ CWeaponRG6::~CWeaponRG6()
 {
 }
 
+bool CWeaponRG6::is_grenade()
+{
+	return pSettings->line_exist(m_ammoTypes[m_ammoType], "fake_grenade_name");
+}
+
 BOOL CWeaponRG6::net_Spawn(CSE_Abstract* DC)
 {
 	BOOL l_res = inheritedSG::net_Spawn(DC);
@@ -35,9 +40,7 @@ BOOL CWeaponRG6::net_Spawn(CSE_Abstract* DC)
 				inheritedRL::SpawnRocket(*fake_grenade_name, this);
 			}
 		}
-		//			inheritedRL::SpawnRocket(*fake_grenade_name, this);
 	}
-
 
 	return l_res;
 };
@@ -53,6 +56,9 @@ void CWeaponRG6::Load(LPCSTR section)
 
 void CWeaponRG6::FireStart()
 {
+	if (!is_grenade())
+		return inheritedSG::FireStart();
+
 	if (GetState() == eIdle && getRocketCount() && iAmmoElapsed)
 	{
 		inheritedSG::FireStart();
@@ -64,19 +70,27 @@ void CWeaponRG6::FireStart()
 u8 CWeaponRG6::AddCartridge(u8 cnt)
 {
 	u8 t = inheritedSG::AddCartridge(cnt);
-	u8 k = cnt - t;
-	shared_str fake_grenade_name = pSettings->r_string(m_ammoTypes[m_ammoType].c_str(), "fake_grenade_name");
-	while (k)
+
+	if (is_grenade())
 	{
-		--k;
-		inheritedRL::SpawnRocket(*fake_grenade_name, this);
+		u8 k = cnt - t;
+		shared_str fake_grenade_name = pSettings->r_string(m_ammoTypes[m_ammoType].c_str(), "fake_grenade_name");
+		while (k)
+		{
+			--k;
+			inheritedRL::SpawnRocket(*fake_grenade_name, this);
+		}
 	}
+
 	return t;
 }
 
 void CWeaponRG6::OnEvent(NET_Packet& P, u16 type)
 {
 	inheritedSG::OnEvent(P, type);
+
+	if(!is_grenade())
+		return;
 
 	u16 id;
 	switch (type)

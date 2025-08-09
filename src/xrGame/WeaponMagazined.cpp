@@ -33,6 +33,8 @@ ENGINE_API extern float psHUD_FOV_def;
 float g_gunsnd_indoor = 0.f;
 float g_gunsnd_indoor_volume = 1.f;
 
+BOOL g_auto_reload = FALSE;
+
 CUIXml* pWpnScopeXml = NULL;
 
 void createWpnScopeXML()
@@ -308,11 +310,14 @@ void CWeaponMagazined::FireEnd()
 {
 	inherited::FireEnd();
 
-	/* Alundaio: Removed auto-reload since it's widely asked by just about everyone who is a gun whore
-    CActor	*actor = smart_cast<CActor*>(H_Parent());
-    if (m_pInventory && !iAmmoElapsed && actor && GetState() != eReload)
-        Reload();
-	*/
+	// Alundaio: Removed auto-reload since it's widely asked by just about everyone who is a gun whore
+	// Lander: Reinstated as a cvar
+	if (g_auto_reload)
+	{
+		CActor	*actor = smart_cast<CActor*>(H_Parent());
+		if (m_pInventory && !iAmmoElapsed && actor && GetState() != eReload)
+			Reload();
+	}
 }
 
 void CWeaponMagazined::Reload()

@@ -234,6 +234,13 @@ extern float wallmark_range_skeleton;
 
 ENGINE_API extern float g_console_sensitive;
 
+extern BOOL g_auto_reload;
+extern BOOL g_fire_reloads_ubgl;
+extern BOOL g_launcher_dynamic_range;
+extern BOOL g_launcher_dynamic_range_zoom;
+extern BOOL g_launcher_dynamic_range_mode;
+extern float g_launcher_dynamic_range_max;
+
 u32 g_dead_body_collision = 1;
 
 xr_token dead_body_collision_tokens[] =
@@ -2576,6 +2583,13 @@ void CCC_RegisterCommands()
 	CMD3(CCC_Mask, "g_aimpos_zoom", &psActorFlags, AF_AIMPOS_ZOOM);
 	CMD4(CCC_Integer, "g_nearwall", &g_nearwall, 0, 2);
 	CMD4(CCC_Integer, "g_nearwall_trace", &g_nearwall_trace, 0, 1);
+
+	CMD4(CCC_Integer, "g_auto_reload", &g_auto_reload, 0, 1);
+	CMD4(CCC_Integer, "g_fire_reloads_ubgl", &g_fire_reloads_ubgl, 0, 1);
+	CMD4(CCC_Integer, "g_launcher_dynamic_range", &g_launcher_dynamic_range, 0, 1);
+	CMD4(CCC_Integer, "g_launcher_dynamic_range_zoom", &g_launcher_dynamic_range_zoom, 0, 1);
+	CMD4(CCC_Integer, "g_launcher_dynamic_range_mode", &g_launcher_dynamic_range_mode, 0, 1);
+	CMD4(CCC_Float, "g_launcher_dynamic_range_max", &g_launcher_dynamic_range_max, 0.f, 1000.f);
 
 	CMD3(CCC_Mask, "g_crosshair_show_always", &psCrosshair_Flags, CROSSHAIR_SHOW_ALWAYS);
 	CMD3(CCC_Mask, "g_crosshair_independent", &psCrosshair_Flags, CROSSHAIR_INDEPENDENT);
