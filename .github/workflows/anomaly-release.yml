@@ -43,10 +43,10 @@ jobs:
     strategy:
       matrix:
         configure-preset:
-          - 'MSVS.MSVC.Ninja'
-          - 'MSVS.MSVC.Ninja.AVX'
-         #- 'System.Clang'
-         #- 'System.Clang.AVX'
+         #- 'MSVS.MSVC.Ninja'
+         #- 'MSVS.MSVC.Ninja.AVX'
+          - 'System.Clang'
+          - 'System.Clang.AVX'
          #- 'System.GNU'
          #- 'System.GNU.AVX'
         target:
@@ -91,7 +91,7 @@ jobs:
     runs-on: windows-latest
 
     env:
-      configure-preset: 'MSVS.MSVC.Ninja.AVX'
+      configure-preset: 'System.Clang.AVX'
       build-preset: 'RelWithDebInfo'
       target: 'Gamedata'
 
@@ -195,7 +195,7 @@ jobs:
     name: Release
     runs-on: ubuntu-latest
     env:
-      configure-preset: MSVS.MSVC.Ninja
+      configure-preset: System.Clang
       build-preset: RelWithDebInfo
     steps:
     - uses: actions/checkout@v4
